@@ -1,0 +1,56 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--member shell-main--member-column">
+  <div class="main-content main-content--signup-error">
+    <div class="messege-card">
+      <div class="messege-card__title">
+        <span class="title__text">헤지스닷컴에</span>
+        <span class="title__text">이미 가입하셨어요~</span>
+      </div>
+      <div class="messege-card__body">
+        <div class="box">
+          <div class="info">
+            <span class="info__label">아이디</span>
+            <span class="info__value">hazzyshazzys123</span>
+          </div>
+          <div class="info">
+            <span class="info__label">가입일자</span>
+            <span class="info__value">2021.03.30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="member-form">
+      <div class="member-form__field member-form__submit">
+        <button type="button" class="form-button form-button--main">로그인</button>
+      </div>
+    </div>
+    <div class="member-util">
+      <div class="member-util__help">
+        <a href="#" class="button">아이디/비밀번호 찾기</a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% include "modal/agreement-marketing.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/member.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/member.js"></script>
+<script>
+$(function(){
+  $('#modalAgreementMarketing').on('open', function(e){
+    console.log(e.detail);
+  })
+})
+</script>
+{% endblock js %}
+

@@ -1,0 +1,31 @@
+<header class="shell-header">
+  <h1 class="shell-header__title">
+    <a href="#" class="shell-header__logo">{% icon "logo", '', [90, 40], 'Hazzys' %}</a>
+  </h1>
+  <ul class="shell-header__util util">
+    <li class="util__item">
+      <button type="button" class="button">
+        {% icon "search", '', [24, 24], '검색' %}
+      </button>
+    </li>
+    <li class="util__item util__item--member">
+      <a href="#" class="button">
+        {% icon "my", '', [24, 24], '마이페이지' %}
+      </a>
+    </li>
+    <li class="util__item">
+      <a href="#" class="button button--cart">
+      {% icon "cart", '', [24, 24], '장바구니' %}</a>
+    </li>
+    <li class="util__item">
+      <a href="#" class="button button--cart">
+        {% icon "cart-fill", '', [24, 24], '장바구니' %}
+        <span class="cart-count">3</span>
+      </a>
+    </li>
+    <li class="util__item util__item--navigation">
+      <a href="#" class="button" data-nav-toggle>
+      {% icon "menu", '', [24, 24], '메뉴열기' %}</a>
+    </li>
+  </ul>
+</header>

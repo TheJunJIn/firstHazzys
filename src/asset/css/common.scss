@@ -1,0 +1,25 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '../../cmsstatic/asset/fonts/gotham/index';
+@import '../../cmsstatic/asset/fonts/noto-sans/index.scss';
+@import '_reset.scss';
+
+@import '../../components/sprites/sprite-common.scss';
+@import '../../components/header/index.scss';
+@import '../../components/navigation/index.scss';
+@import '../../components/footer/index.scss';
+@import '../../components/form/index.scss';
+@import '../../components/modal/index.scss';
+@import '../../components/marquee/index.scss';
+
+@include sprites($sprite-common-sprites);
+.sprite-icon {
+  display: inline-block;
+  text-indent: 100%;
+  line-height: 2;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.shell-main {
+  padding-top: 60px;
+}

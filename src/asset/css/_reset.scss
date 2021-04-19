@@ -1,0 +1,147 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+// reset
+// =============================================================================
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $font-famliy-default;
+  color: $color-text-primary;
+  width: 100%;
+}
+
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea,
+button,
+pre {
+  font-family: $font-famliy-default;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+main {
+  display: block;
+}
+
+img,
+fieldset,
+iframe {
+  border: 0 none;
+}
+
+img {
+  vertical-align: top;
+}
+
+[role='button'],
+label,
+button,
+a {
+  cursor: pointer;
+}
+caption,
+legend {
+  font-size: 1px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  color: transparent;
+  line-height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+input {
+  // appearance: none;
+  border-radius: 0;
+  &[type='text'],
+  &[type='password'],
+  &[type='search'],
+  &[type='number'] {
+    font-size: 14px;
+    line-height: 1.15;
+    overflow: visible;
+    text-transform: none;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: none;
+    border-radius: 2px;
+    border-width: 1px;
+  }
+  &[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+}
+
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button {
+  display: inline-block;
+  background-color: transparent;
+  text-decoration: none;
+  appearance: none;
+  border: 0;
+}
+
+// @supports #{'selector(:focus-visible)'} {
+//   :focus {
+//     outline: none;
+//   }
+//   :focus-visible {
+//     outline: 5px auto Highlight;
+//     outline: 5px auto -webkit-focus-ring-color;
+//   }
+// }
+
+// a {
+//   color: #919191;
+//   &:hover {
+//     color: #000;
+//     // color: $color-text-point;
+//   }
+// }

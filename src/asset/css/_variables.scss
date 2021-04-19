@@ -1,0 +1,71 @@
+// Font Family
+// =============================================================================
+// "Noto Sans KR", 
+$font-famliy-default: 'Gotham', 'Noto Sans KR', 'Malgun Gothic', '맑은고딕', 'AppleSDGothicNeo', sans-serif;
+$font-noto-sans: 'Noto Sans KR', sans-serif;
+$font-noto-sans-thin: 100;
+$font-noto-sans-light: 300;
+$font-noto-sans-regular: 400;
+$font-noto-sans-medium: 500;
+$font-noto-sans-bold: 700;
+$font-noto-sans-black: 900;
+
+$font-gotham: 'Gotham', sans-serif;
+$font-gotham-normal: 400;
+$font-gotham-book: 450;
+$font-gotham-medium: 500;
+$font-gotham-bold: 600;
+$font-gotham-black: 700;
+
+
+// Color
+// =============================================================================
+$color-black: #000;
+$color-grey-01: #e6e6e6;
+$color-grey-02: #919191;
+$color-grey-03: #717171;
+$color-grey-04: #c9c9c9;
+$color-orange-keycolor: #ff781e;
+$color-white: #fff;
+
+// Text Color
+// =============================================================================
+$color-text-primary: $color-grey-02;
+$color-text-emphasize: $color-black;
+$color-text-disabled: $color-grey-04;
+$color-text-point: $color-orange-keycolor;
+$color-text-error: #f00;
+$color-text-white: $color-white;
+
+// Line Color
+$color-line-default: $color-grey-02;
+$color-line-emphasize: $color-black;
+$color-line-ready: $color-grey-04;
+$color-line-border: $color-grey-01;
+$color-line-error: #f00;
+$color-line-point: $color-orange-keycolor;
+
+// Solid color
+$color-solid-default: $color-grey-02;
+$color-solid-ready: $color-grey-04;
+$color-solid-emphasize: $color-black;
+$color-solid-point: $color-orange-keycolor;
+$color-solid-white: $color-white;
+
+
+$breakpoints: (
+  'phone': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  // 'desktop': 1248px,
+  'desktop': 1024px,
+  'desktop-wide': 1440px,
+);
+
+:export {
+  // desktopWidth: 1248px
+  desktopWidth: 1024px
+}

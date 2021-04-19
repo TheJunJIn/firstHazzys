@@ -1,0 +1,112 @@
+<div id="modalFindAccountList" class="modal modal--find-account-list modal--bottom-top" tabindex="-1" role="dialog" data-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <h1 class="modal__header__title">아이디 찾기 / 비밀번호 재설정</h1>
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+        <i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="select-account">
+        <div class="select-account__title">찾으시는 계정을 선택해주세요</div>
+        <ul class="select-account__list">
+          <li class="select-account__item account">
+            <ul class="account__info">
+              <li class="account__info__item info">
+                <span class="info__label">아이디</span>
+                <span class="info__value">hazz**</span>
+              </li>
+              <li class="account__info__item info">
+                <span class="info__label">이름</span>
+                <span class="info__value">김*지</span>
+              </li>
+              <li class="account__info__item info">
+                <span class="info__label">이메일</span>
+                <span class="info__value">hazz**@gmail.com</span>
+              </li>
+              <li class="account__info__item info">
+                <span class="info__label">가입일</span>
+                <span class="info__value">2021.03.19</span>
+              </li>
+            </ul>
+            <span class="account__radio form-radio form-radio--large">
+              <input type="radio" class="radio" name="account" value="hazz**" selected/>
+              <i class="icon"></i>
+            </span>
+          </li>
+          <li class="select-account__item account">
+            <ul class="account__info">
+              <li class="account__info__item info">
+                <span class="info__label">아이디</span>
+                <span class="info__value">hazz**22</span>
+              </li>
+              <li class="account__info__item info">
+                <span class="info__label">이름</span>
+                <span class="info__value">김*지</span>
+              </li>
+              <li class="account__info__item info">
+                <span class="info__label">이메일</span>
+                <span class="info__value">hazz**@gmail.com</span>
+              </li>
+              <li class="account__info__item info">
+                <span class="info__label">가입일</span>
+                <span class="info__value">2021.03.19</span>
+              </li>
+            </ul>
+            <span class="account__radio form-radio form-radio--large">
+              <input type="radio" class="radio" name="account" value="hazz**22"/>
+              <i class="icon"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <ul class="button-group">
+        <li class="button-group__item">
+          <button type="button" class="form-button form-button--main" data-modal-close>이메일로 인증</button>
+        </li>
+        <li class="button-group__item">
+          <button type="button" class="form-button form-button--main" data-modal-close>SMS로 인증</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    // 계정 선택
+    $(document)
+      .off('.selectAccount')
+      .on('click.selectAccount', '.select-account__item', function (e) {
+        if (!$(e.target).closest('.account__radio').length) {
+          $(this)
+            .find('input[name=account]')
+            .prop('checked', true)
+            .change();
+        }
+      })
+      .on('change.selectAccount', 'input[name=account]', function () {
+        var activeIndex = $('input[name=account]:checked')
+          .closest('.select-account__item')
+          .index();
+
+        if (activeIndex < 0) {
+          activeIndex = 0;
+          $('.select-account__item')
+            .eq(activeIndex)
+            .find('input[name=account]')
+            .prop('checked', true);
+          return;
+        }
+        $('.select-account__item').each(function (i) {
+          if (activeIndex === i) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        })
+      });
+  })
+</script>

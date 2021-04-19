@@ -1,0 +1,130 @@
+---
+layout: guide
+title: 메인
+---
+<article class="guide-contents">
+  <header class="guide-contents__header">
+    <h1 class="guide-contents__title">
+      시작
+      <small class="guide-contents__title-small"> 환경설정 및 구조 </small>
+    </h1>
+  </header>
+  <div class="guide-contents__body">
+    <section class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">프로젝트 실행</h1>
+      </header>
+      <div class="guide-section__contents">
+        <div class="guide-description">
+          <p class="guide-description__text">
+            * 해당 프로젝트의 지원 브라우저 리스트는 <span class="code">`.browserslistrc`</span> 파일을 참고하시기 바랍니다.
+          </p>
+        </div>
+        <ol class="guide-description">
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              1. git 저장소에서 프로젝트를 Clone 합니다.
+            </p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              2. <span class="code">npm install</span> 명령어로 패키지를 설치합니다.
+            </p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              3. <span class="code">npm start</span> 명령어로 로컬서버를 실행을 합니다.
+            </p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              4. <span class="code">npm run sprites</span> 명령어로 스프라이트 이미지(png)를 생성할 수 있습니다.
+            </p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              5. <span class="code">npm run build</span> 명령어로 빌드하여 <span class="code">/dist</span> 디렉토리에 산출물을 생성할 수 있습니다.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">프로젝트 구조</h1>
+      </header>
+      <div class="guide-section__contents">
+        <ul class="guide-description guide-description--list-type guide-description__list">
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              프로젝트 구조는 크게 <span class="code">assets</span>, <span class="code">components</span>,
+              <span class="code">guide</span>, <span class="code">pages</span>,
+              <span class="code">layouts</span>, <span class="code">_data</span>로 나뉘어 있습니다.
+            </p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              <span class="code">gulp</span>, <span class="code">gulp</span>, <span class="code">webpack</span> 으로 작업환경이 구성되어 있습니다.
+            </p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              <span class="code">Node v14.16.0 (LTS)</span> 에서 정상 작동 합니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="guide-section__contents">
+        <h2 class="guide-section__title guide-section__title--sub">layouts, _data</h2>
+        <ul class="guide-description guide-description--list-type guide-description__list">
+          <li class="guide-description__item">
+            <p class="guide-description__text">nunjunks(.njk)에서 사용하는 공통 layout 과 data 가 있는 디렉토리입니다.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="guide-section__contents">
+        <h2 class="guide-section__title guide-section__title--sub">assets</h2>
+        <ul class="guide-description guide-description--list-type guide-description__list">
+          <li class="guide-description__item">
+            <p class="guide-description__text">
+              scss(css), images(jpg,png,svg), javascript(js)가 있는 디렉토리입니다. 
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="guide-section__contents">
+        <h2 class="guide-section__title guide-section__title--sub">components</h2>
+        <ul class="guide-description guide-description--list-type guide-description__list">
+          <li class="guide-description__item">
+            <p class="guide-description__text">UI 모듈이 있는 디렉토리입니다.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="guide-section__contents">
+        <h2 class="guide-section__title guide-section__title--sub">guide</h2>
+        <ul class="guide-description guide-description--list-type guide-description__list">
+          <li class="guide-description__item">
+            <p class="guide-description__text">가이드 관련 파일이 있는 디렉토리입니다.</p>
+          </li>
+          <li class="guide-description__item">
+            <p class="guide-description__text">프로젝트 내에 쓰이는 파일과 별개로 관리됩니다.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="guide-section__contents">
+        <h2 class="guide-section__title guide-section__title--sub">Pages</h2>
+        <ul class="guide-description guide-description--list-type guide-description__list">
+          <li class="guide-description__item">
+            <p class="guide-description__text">html파일이 있는 디렉토리입니다.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</article>

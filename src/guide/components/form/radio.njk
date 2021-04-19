@@ -1,0 +1,120 @@
+---
+layout: guide
+title: 메인
+---
+<article class="guide-contents">
+  <header class="guide-contents__header">
+    <h1 class="guide-contents__title">
+      Form
+      <small class="guide-contents__title-small">
+        Radio
+      </small>
+    </h1>
+  </header>
+  <div class="guide-contents__body">
+    <article class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">
+          input:radio
+        </h1>
+      </header>
+      <div class="guide-section__contents">
+        <div class="guide-example">
+          <span class="form-radio form-radio">
+            <input type="radio" class="radio" name="radio-1" title="레이블 대신 title 속성 사용">
+            <i class="icon"></i>
+          </span>
+          <label class="form-radio">
+            <input type="radio" class="radio" name="radio-1">
+            <span class="name">레이블</span>
+          </label>
+        </div>
+        <div class="guide-code">
+{% highlight "html" %}
+<!-- label 미사용 -->
+<span class="form-radio">
+  <input type="radio" class="radio" title="레이블 대신 title 속성 사용">
+  <i class="icon"></i>
+</span>
+<!-- label 사용 -->
+<label class="form-radio form-radio">
+  <input type="radio" class="radio">
+  <span class="name">레이블</span>
+</label>
+{% endhighlight %}
+        </div>
+      </div>
+    </article>
+
+    <article class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">
+          input:radio large
+        </h1>
+      </header>
+      <div class="guide-section__contents">
+        <div class="guide-example">
+          <span class="form-radio form-radio--large">
+            <input type="radio" class="radio" name="radio-2" title="레이블 대신 title 속성 사용">
+            <i class="icon"></i>
+          </span>
+          <label class="form-radio form-radio--large">
+            <input type="radio" class="radio" name="radio-2">
+            <span class="name">레이블</span>
+          </label>
+        </div>
+        <div class="guide-code">
+{% highlight "html" %}
+<!-- label 미사용 -->
+<span class="form-radio form-radio--large">
+  <input type="radio" class="radio" title="레이블 대신 title 속성 사용">
+  <i class="icon"></i>
+</span>
+<!-- label 사용 -->
+<label class="form-radio form-radio--large">
+  <input type="radio" class="radio">
+  <span class="name">레이블</span>
+</label>
+{% endhighlight %}
+        </div>
+      </div>
+    </article>
+
+    <article class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">
+          input:radio 성별
+        </h1>
+      </header>
+      <div class="guide-section__contents">
+        <div class="guide-example">
+          <div class="form-radio-button-group">
+            <label class="form-radio">
+              <input type="radio" class="radio" name="gender">
+              <span class="name">남</span>
+            </label>
+            <label class="form-radio">
+              <input type="radio" class="radio" name="gender">
+              <span class="name">여</span>
+            </label>
+          </div>
+        </div>
+        <div class="guide-code">
+{% highlight "html" %}
+<div class="form-radio-button-group">
+  <label class="form-radio">
+    <input type="radio" class="radio" name="gender">
+    <span class="name">남</span>
+  </label>
+  <label class="form-radio">
+    <input type="radio" class="radio" name="gender">
+    <span class="name">여</span>
+  </label>
+</div>
+{% endhighlight %}
+        </div>
+      </div>
+    </article>
+
+  </div>
+</article>

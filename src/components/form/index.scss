@@ -1,0 +1,599 @@
+// .form-input {}
+@import '../sprites/sprite-common.scss';
+
+// button
+// =============================================================================
+$button-height: 50px;
+$button-height-small: 36px;
+$button-font-size: 14px;
+.form-button {
+  display: inline-block;
+  width: 100%;
+  height: $button-height;
+  line-height: $button-height - 2;
+  padding: 0;
+  border: 1px solid $color-line-ready;
+  border-radius: 2px;
+  background-color: $color-solid-ready;
+  color: $color-text-white;
+  font-size: $button-font-size;
+  font-weight: 300;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+  outline: 0;
+  &:hover {
+    color: $color-text-white;
+  }
+  &.active,
+  &.form-button--main {
+    background-color: $color-solid-emphasize;
+    border-color: $color-line-emphasize;
+  }
+  &.form-button--point {
+    background-color: $color-solid-point;
+    border-color: $color-line-point;
+  }
+  &.form-button--plain {
+    background-color: $color-solid-white;
+    border-color: $color-line-emphasize;
+    color: $color-text-emphasize;
+  }
+  &.form-button--small {
+    height: $button-height-small;
+    line-height: $button-height-small - 2;
+  }
+}
+
+// Checkbox
+// =============================================================================
+.form-checkbox {
+  display: inline-block;
+  position: relative;
+  .checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    cursor: pointer;
+
+    &:checked {
+      + .name:before,
+      + .icon {
+        @include sprite-position($common-checkbox-on);
+      }
+      + .name {
+        color: $color-text-emphasize;
+      }
+    }
+  }
+  > .name {
+    display: inline-block;
+    margin-top: 2px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-text-primary;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -2px;
+      margin-right: 10px;
+      @include sprite($common-checkbox);
+    }
+  }
+  > .icon {
+    display: inline-block;
+    vertical-align: middle;
+    @include sprite($common-checkbox);
+  }
+  &--small {
+    .checkbox {
+      &:checked {
+        + .name:before,
+        + .icon {
+          @include sprite-position($common-checkbox-small-on);
+        }
+      }
+    }
+    > .name {
+      &:before {
+        margin-right: 8px;
+        @include sprite($common-checkbox-small);
+      }
+    }
+    > .icon {
+      @include sprite($common-checkbox-small);
+    }
+  }
+  &--plain {
+    .checkbox {
+      &:checked {
+        + .name:before,
+        + .icon {
+          @include sprite-position($common-checkbox-plain-on);
+        }
+      }
+    }
+    > .name {
+      &:before {
+        margin-right: 6px;
+        @include sprite($common-checkbox-plain);
+      }
+    }
+    > .icon {
+      @include sprite($common-checkbox-plain);
+    }
+  }
+}
+
+// radio
+// =============================================================================
+.form-radio {
+  display: inline-block;
+  position: relative;
+  .radio {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    cursor: pointer;
+
+    &:checked {
+      + .name:before,
+      + .icon {
+        @include sprite-position($common-radio-on);
+      }
+      + .name {
+        color: $color-text-emphasize;
+      }
+    }
+  }
+  > .name {
+    display: inline-block;
+    margin-top: 2px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: $color-text-primary;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -2px;
+      margin-right: 10px;
+      @include sprite($common-radio);
+    }
+  }
+  > .icon {
+    display: inline-block;
+    vertical-align: middle;
+    @include sprite($common-radio);
+  }
+  &--large {
+    .radio {
+      &:checked {
+        + .name:before,
+        + .icon {
+          @include sprite-position($common-radio-large-on);
+        }
+      }
+    }
+    > .name {
+      &:before {
+        margin-right: 8px;
+        @include sprite($common-radio-large);
+      }
+    }
+    > .icon {
+      @include sprite($common-radio-large);
+    }
+  }
+}
+// radio group - 성별 선택
+// =============================================================================
+.form-radio-button-group {
+  @include self-clear;
+  .form-radio {
+    float: left;
+    + .form-radio {
+      margin-left: 6px;
+    }
+    > .radio {
+      border: 1px solid red;
+      &:checked {
+        + .name {
+          background-color: $color-solid-emphasize;
+          color: $color-text-white;
+        }
+      }
+    }
+    > .name {
+      border-radius: 2px;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      text-align: center;
+      line-height: 50px;
+      color: $color-text-emphasize;
+      border: 1px solid $color-black;
+      box-sizing: border-box;
+      &:before {
+        content: none;
+      }
+    }
+  }
+  // .form-radio {
+  //   display: inline-block;
+  //   position: relative;
+  //   .radio {
+  //     position: absolute;
+  //     opacity: 0;
+  //     width: 100%;
+  //     height: 100%;
+  
+  //     z-index: 2;
+  //     cursor: pointer;
+  
+  //     &:checked {
+  //       + .name:before,
+  //       + .icon {
+  //         @include sprite-position($common-radio-on);
+  //       }
+  //       + .name {
+  //         color: $color-text-emphasize;
+  //       }
+  //     }
+  //   }
+  //   > .name {
+  //     display: inline-block;
+  //     margin-top: 2px;
+  //     font-family: inherit;
+  //     font-size: 14px;
+  //     line-height: 20px;
+  //     color: $color-text-primary;
+  //     user-select: none;
+  //     vertical-align: middle;
+  //     white-space: nowrap;
+  
+  //     &:before {
+  //       content: '';
+  //       display: inline-block;
+  //       vertical-align: middle;
+  //       margin-top: -2px;
+  //       margin-right: 10px;
+  //       @include sprite($common-radio);
+  //     }
+  //   }
+  //   > .icon {
+  //     display: inline-block;
+  //     vertical-align: middle;
+  //     @include sprite($common-radio);
+  //   }
+  // }
+}
+.form-radio-button {
+  &__button {
+    position: relative;
+    float: left;
+    & + & {
+      margin-left: 6px;
+    }
+    .form-input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      z-index: -1;
+      border-color: transparent;
+
+      &:checked + .form-radio-button__label {
+        background-color: #000;
+        color: #fff;
+        border: 0;
+      }
+    }
+  }
+  &__label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+// Input
+// =============================================================================
+$field-height: 50px;
+$field-font-size: 14px;
+.form-text {
+  width: 100%;
+  height: $field-height;
+  padding: 0 9px;
+  border: 1px solid $color-line-default;
+  color: $color-text-emphasize;
+  font-size: $field-font-size;
+  line-height: $field-height;
+  border-radius: 2px;
+  background-color: #fff;
+  vertical-align: middle;
+  box-sizing: border-box;
+  outline: 0;
+
+  &:focus {
+    border-color: $color-line-emphasize;
+  }
+  &:focus-visible {
+    outline: 0;
+  }
+  &::placeholder {
+    color: $color-text-primary;
+    font-size: $field-font-size;
+    font-weight: 300;
+  }
+}
+
+// Input Block
+.input-block {
+  .input-block__comment {
+    padding: 6px 0 0 10px;
+    line-height: 16px;
+    font-size: 11px;
+    &:empty {
+      padding: 0;
+      line-height: 0;
+      font-size: 0;
+    }
+  }
+  // 비밀번호 보기/숨기기
+  .input-block__password {
+    position: relative;
+    .form-text {
+      padding-right: 50px;
+    }
+    .form-toggle-button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      border: 0;
+      background-color: transparent;
+      text-indent: 100%;
+      line-height: 2;
+      white-space: nowrap;
+      overflow: hidden;
+      outline: 0;
+      @include sprite($common-eye);
+      @at-root {
+        .visible#{&} {
+          @include sprite-position($common-eye-close);
+        }
+      }
+    }
+  }
+  // Error
+  &.input-block--error {
+    .form-text {
+      border-color: $color-line-error;
+    }
+    .input-block__comment {
+      color: $color-text-error;
+    }
+  }
+}
+
+// select
+.form-input-select {
+  position: relative;
+  .form-input {
+    appearance: none;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid #c9c9c9;
+    font-size: 16px;
+    color: #000;
+    outline: 0;
+    // &:focus {
+    //   border-color: #000;
+    // }
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  .sprite-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    @include sprite($common-arrow-down-selectbox);
+  }
+}
+// Input
+// =============================================================================
+// .form-input-text {
+//   .form-input {
+//     width: 100%;
+//     height: 50px;
+//     padding: 0 10px;
+//     box-sizing: border-box;
+//     border: 1px solid #c9c9c9;
+//     font-size: 14px;
+//     color: #000;
+//     outline: 0;
+
+//     &:focus {
+//       border-color: #000;
+//     }
+//     &::placeholder {
+//       color: #c9c9c9;
+//       font-size: 14px;
+//       line-height: 20px;
+//     }
+//   }
+//   &__input {
+//     position: relative;
+//   }
+//   &__comment {
+//     padding: 6px 0 0 10px;
+//     line-height: 16px;
+//     font-size: 11px;
+//   }
+//   &__validate {
+//     @include self-clear;
+//     > .list__item {
+//       float: left;
+
+//       font-size: 11px;
+//       line-height: 16px;
+//       color: #c9c9c9;
+//       + .list__item {
+//         margin-left: 14px;
+//       }
+//       &.active {
+//         color: #000;
+//       }
+//       &.invalid {
+//         color: #f00;
+//       }
+//     }
+//   }
+//   &--password {
+//     .form-input {
+//       padding-right: 50px;
+//     }
+//     .form-input-text__toggle {
+//       position: absolute;
+//       top: 50%;
+//       right: 10px;
+//       transform: translateY(-50%);
+//       border: 0;
+//       background-color: transparent;
+//       text-indent: 100%;
+//       line-height: 2;
+//       white-space: nowrap;
+//       overflow: hidden;
+//       @include sprite($common-eye);
+//     }
+//     &.visible {
+//       .form-input-text__toggle {
+//         @include sprite-position($common-eye-close);
+//       }
+//     }
+//   }
+//   &--invalid {
+//     .form-input {
+//       &,
+//       &:focus {
+//         border-color: #f00;
+//       }
+//     }
+//     .form-input-text__comment {
+//       color: #f00;
+//     }
+//   }
+// }
+
+// 수량선택 Input
+// =============================================================================
+$button-width: 29px;
+$button-height: 29px;
+.form-input-qty {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  &__input {
+    display: inline-block;
+    height: $button-height;
+    .form-input {
+      height: 100%;
+      font-size: 16px;
+      min-width: $button-width * 3;
+      padding-right: $button-width;
+      padding-left: $button-width;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      text-align: center;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+  &__decrease,
+  &__increase {
+    position: absolute;
+    top: 0;
+    width: $button-width;
+    height: $button-height;
+    border: 0;
+    background-color: transparent;
+  }
+  &__decrease {
+    left: 0;
+    border-right: 1px solid #000;
+  }
+  &__increase {
+    right: 0;
+    border-left: 1px solid #000;
+  }
+}
+
+// Selectbox
+// =============================================================================
+$select-height: 50px;
+$select-font-size: 14px;
+.form-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .select {
+    appearance: none;
+    width: 100%;
+    height: $select-height;
+    line-height: $select-height;
+    padding: 0 40px 0 10px;
+    box-sizing: border-box;
+    border: 1px solid $color-line-default;
+    border-radius: 2px;
+    font-size: $select-font-size;
+    color: $color-text-emphasize;
+    outline: 0;
+    &:focus {
+      border-color: $color-line-emphasize;
+      + .icon {
+        transform: rotate(180deg) translateY(50%);
+      }
+    }
+  }
+  > .icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    @include sprite($common-arrow-down-selectbox);
+  }
+}

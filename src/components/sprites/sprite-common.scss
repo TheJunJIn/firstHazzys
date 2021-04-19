@@ -1,0 +1,412 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+
+$common-arrow-down-dropdown-name: 'common-arrow-down-dropdown';
+$common-arrow-down-dropdown-x: 173px;
+$common-arrow-down-dropdown-y: 154px;
+$common-arrow-down-dropdown-offset-x: -173px;
+$common-arrow-down-dropdown-offset-y: -154px;
+$common-arrow-down-dropdown-width: 10px;
+$common-arrow-down-dropdown-height: 10px;
+$common-arrow-down-dropdown-total-width: 203px;
+$common-arrow-down-dropdown-total-height: 185px;
+$common-arrow-down-dropdown-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-arrow-down-dropdown: (173px, 154px, -173px, -154px, 10px, 10px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'arrow-down-dropdown', );
+$common-arrow-down-dropdown-small-name: 'common-arrow-down-dropdown-small';
+$common-arrow-down-dropdown-small-x: 44px;
+$common-arrow-down-dropdown-small-y: 74px;
+$common-arrow-down-dropdown-small-offset-x: -44px;
+$common-arrow-down-dropdown-small-offset-y: -74px;
+$common-arrow-down-dropdown-small-width: 10px;
+$common-arrow-down-dropdown-small-height: 6px;
+$common-arrow-down-dropdown-small-total-width: 203px;
+$common-arrow-down-dropdown-small-total-height: 185px;
+$common-arrow-down-dropdown-small-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-arrow-down-dropdown-small: (44px, 74px, -44px, -74px, 10px, 6px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'arrow-down-dropdown-small', );
+$common-arrow-down-selectbox-name: 'common-arrow-down-selectbox';
+$common-arrow-down-selectbox-x: 187px;
+$common-arrow-down-selectbox-y: 154px;
+$common-arrow-down-selectbox-offset-x: -187px;
+$common-arrow-down-selectbox-offset-y: -154px;
+$common-arrow-down-selectbox-width: 10px;
+$common-arrow-down-selectbox-height: 10px;
+$common-arrow-down-selectbox-total-width: 203px;
+$common-arrow-down-selectbox-total-height: 185px;
+$common-arrow-down-selectbox-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-arrow-down-selectbox: (187px, 154px, -187px, -154px, 10px, 10px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'arrow-down-selectbox', );
+$common-arrow-right-link-name: 'common-arrow-right-link';
+$common-arrow-right-link-x: 173px;
+$common-arrow-right-link-y: 58px;
+$common-arrow-right-link-offset-x: -173px;
+$common-arrow-right-link-offset-y: -58px;
+$common-arrow-right-link-width: 20px;
+$common-arrow-right-link-height: 20px;
+$common-arrow-right-link-total-width: 203px;
+$common-arrow-right-link-total-height: 185px;
+$common-arrow-right-link-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-arrow-right-link: (173px, 58px, -173px, -58px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'arrow-right-link', );
+$common-arrow-right-link-over-name: 'common-arrow-right-link-over';
+$common-arrow-right-link-over-x: 173px;
+$common-arrow-right-link-over-y: 34px;
+$common-arrow-right-link-over-offset-x: -173px;
+$common-arrow-right-link-over-offset-y: -34px;
+$common-arrow-right-link-over-width: 20px;
+$common-arrow-right-link-over-height: 20px;
+$common-arrow-right-link-over-total-width: 203px;
+$common-arrow-right-link-over-total-height: 185px;
+$common-arrow-right-link-over-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-arrow-right-link-over: (173px, 34px, -173px, -34px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'arrow-right-link-over', );
+$common-arrow-up-dropdown-small-name: 'common-arrow-up-dropdown-small';
+$common-arrow-up-dropdown-small-x: 58px;
+$common-arrow-up-dropdown-small-y: 74px;
+$common-arrow-up-dropdown-small-offset-x: -58px;
+$common-arrow-up-dropdown-small-offset-y: -74px;
+$common-arrow-up-dropdown-small-width: 10px;
+$common-arrow-up-dropdown-small-height: 6px;
+$common-arrow-up-dropdown-small-total-width: 203px;
+$common-arrow-up-dropdown-small-total-height: 185px;
+$common-arrow-up-dropdown-small-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-arrow-up-dropdown-small: (58px, 74px, -58px, -74px, 10px, 6px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'arrow-up-dropdown-small', );
+$common-benefit-1-name: 'common-benefit-1';
+$common-benefit-1-x: 129px;
+$common-benefit-1-y: 44px;
+$common-benefit-1-offset-x: -129px;
+$common-benefit-1-offset-y: -44px;
+$common-benefit-1-width: 39px;
+$common-benefit-1-height: 39px;
+$common-benefit-1-total-width: 203px;
+$common-benefit-1-total-height: 185px;
+$common-benefit-1-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-benefit-1: (129px, 44px, -129px, -44px, 39px, 39px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'benefit-1', );
+$common-benefit-2-name: 'common-benefit-2';
+$common-benefit-2-x: 45px;
+$common-benefit-2-y: 128px;
+$common-benefit-2-offset-x: -45px;
+$common-benefit-2-offset-y: -128px;
+$common-benefit-2-width: 41px;
+$common-benefit-2-height: 29px;
+$common-benefit-2-total-width: 203px;
+$common-benefit-2-total-height: 185px;
+$common-benefit-2-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-benefit-2: (45px, 128px, -45px, -128px, 41px, 29px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'benefit-2', );
+$common-benefit-3-name: 'common-benefit-3';
+$common-benefit-3-x: 129px;
+$common-benefit-3-y: 87px;
+$common-benefit-3-offset-x: -129px;
+$common-benefit-3-offset-y: -87px;
+$common-benefit-3-width: 37px;
+$common-benefit-3-height: 30px;
+$common-benefit-3-total-width: 203px;
+$common-benefit-3-total-height: 185px;
+$common-benefit-3-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-benefit-3: (129px, 87px, -129px, -87px, 37px, 30px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'benefit-3', );
+$common-benefit-4-name: 'common-benefit-4';
+$common-benefit-4-x: 0px;
+$common-benefit-4-y: 128px;
+$common-benefit-4-offset-x: 0px;
+$common-benefit-4-offset-y: -128px;
+$common-benefit-4-width: 41px;
+$common-benefit-4-height: 39px;
+$common-benefit-4-total-width: 203px;
+$common-benefit-4-total-height: 185px;
+$common-benefit-4-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-benefit-4: (0px, 128px, 0px, -128px, 41px, 39px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'benefit-4', );
+$common-checkbox-name: 'common-checkbox';
+$common-checkbox-x: 90px;
+$common-checkbox-y: 128px;
+$common-checkbox-offset-x: -90px;
+$common-checkbox-offset-y: -128px;
+$common-checkbox-width: 20px;
+$common-checkbox-height: 20px;
+$common-checkbox-total-width: 203px;
+$common-checkbox-total-height: 185px;
+$common-checkbox-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-checkbox: (90px, 128px, -90px, -128px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'checkbox', );
+$common-checkbox-on-name: 'common-checkbox-on';
+$common-checkbox-on-x: 173px;
+$common-checkbox-on-y: 82px;
+$common-checkbox-on-offset-x: -173px;
+$common-checkbox-on-offset-y: -82px;
+$common-checkbox-on-width: 20px;
+$common-checkbox-on-height: 20px;
+$common-checkbox-on-total-width: 203px;
+$common-checkbox-on-total-height: 185px;
+$common-checkbox-on-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-checkbox-on: (173px, 82px, -173px, -82px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'checkbox-on', );
+$common-checkbox-plain-name: 'common-checkbox-plain';
+$common-checkbox-plain-x: 173px;
+$common-checkbox-plain-y: 130px;
+$common-checkbox-plain-offset-x: -173px;
+$common-checkbox-plain-offset-y: -130px;
+$common-checkbox-plain-width: 20px;
+$common-checkbox-plain-height: 20px;
+$common-checkbox-plain-total-width: 203px;
+$common-checkbox-plain-total-height: 185px;
+$common-checkbox-plain-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-checkbox-plain: (173px, 130px, -173px, -130px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'checkbox-plain', );
+$common-checkbox-plain-on-name: 'common-checkbox-plain-on';
+$common-checkbox-plain-on-x: 173px;
+$common-checkbox-plain-on-y: 106px;
+$common-checkbox-plain-on-offset-x: -173px;
+$common-checkbox-plain-on-offset-y: -106px;
+$common-checkbox-plain-on-width: 20px;
+$common-checkbox-plain-on-height: 20px;
+$common-checkbox-plain-on-total-width: 203px;
+$common-checkbox-plain-on-total-height: 185px;
+$common-checkbox-plain-on-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-checkbox-plain-on: (173px, 106px, -173px, -106px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'checkbox-plain-on', );
+$common-checkbox-small-name: 'common-checkbox-small';
+$common-checkbox-small-x: 18px;
+$common-checkbox-small-y: 171px;
+$common-checkbox-small-offset-x: -18px;
+$common-checkbox-small-offset-y: -171px;
+$common-checkbox-small-width: 14px;
+$common-checkbox-small-height: 14px;
+$common-checkbox-small-total-width: 203px;
+$common-checkbox-small-total-height: 185px;
+$common-checkbox-small-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-checkbox-small: (18px, 171px, -18px, -171px, 14px, 14px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'checkbox-small', );
+$common-checkbox-small-on-name: 'common-checkbox-small-on';
+$common-checkbox-small-on-x: 0px;
+$common-checkbox-small-on-y: 171px;
+$common-checkbox-small-on-offset-x: 0px;
+$common-checkbox-small-on-offset-y: -171px;
+$common-checkbox-small-on-width: 14px;
+$common-checkbox-small-on-height: 14px;
+$common-checkbox-small-on-total-width: 203px;
+$common-checkbox-small-on-total-height: 185px;
+$common-checkbox-small-on-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-checkbox-small-on: (0px, 171px, 0px, -171px, 14px, 14px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'checkbox-small-on', );
+$common-close-layer-name: 'common-close-layer';
+$common-close-layer-x: 0px;
+$common-close-layer-y: 40px;
+$common-close-layer-offset-x: 0px;
+$common-close-layer-offset-y: -40px;
+$common-close-layer-width: 40px;
+$common-close-layer-height: 40px;
+$common-close-layer-total-width: 203px;
+$common-close-layer-total-height: 185px;
+$common-close-layer-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-close-layer: (0px, 40px, 0px, -40px, 40px, 40px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'close-layer', );
+$common-dropdown-arrow-right-name: 'common-dropdown-arrow-right';
+$common-dropdown-arrow-right-x: 162px;
+$common-dropdown-arrow-right-y: 128px;
+$common-dropdown-arrow-right-offset-x: -162px;
+$common-dropdown-arrow-right-offset-y: -128px;
+$common-dropdown-arrow-right-width: 7px;
+$common-dropdown-arrow-right-height: 12px;
+$common-dropdown-arrow-right-total-width: 203px;
+$common-dropdown-arrow-right-total-height: 185px;
+$common-dropdown-arrow-right-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-dropdown-arrow-right: (162px, 128px, -162px, -128px, 7px, 12px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'dropdown-arrow-right', );
+$common-eye-name: 'common-eye';
+$common-eye-x: 44px;
+$common-eye-y: 40px;
+$common-eye-offset-x: -44px;
+$common-eye-offset-y: -40px;
+$common-eye-width: 30px;
+$common-eye-height: 30px;
+$common-eye-total-width: 203px;
+$common-eye-total-height: 185px;
+$common-eye-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-eye: (44px, 40px, -44px, -40px, 30px, 30px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'eye', );
+$common-eye-close-name: 'common-eye-close';
+$common-eye-close-x: 85px;
+$common-eye-close-y: 44px;
+$common-eye-close-offset-x: -85px;
+$common-eye-close-offset-y: -44px;
+$common-eye-close-width: 30px;
+$common-eye-close-height: 30px;
+$common-eye-close-total-width: 203px;
+$common-eye-close-total-height: 185px;
+$common-eye-close-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-eye-close: (85px, 44px, -85px, -44px, 30px, 30px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'eye-close', );
+$common-logo-footer-name: 'common-logo-footer';
+$common-logo-footer-x: 0px;
+$common-logo-footer-y: 0px;
+$common-logo-footer-offset-x: 0px;
+$common-logo-footer-offset-y: 0px;
+$common-logo-footer-width: 81px;
+$common-logo-footer-height: 36px;
+$common-logo-footer-total-width: 203px;
+$common-logo-footer-total-height: 185px;
+$common-logo-footer-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-logo-footer: (0px, 0px, 0px, 0px, 81px, 36px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'logo-footer', );
+$common-radio-name: 'common-radio';
+$common-radio-x: 138px;
+$common-radio-y: 128px;
+$common-radio-offset-x: -138px;
+$common-radio-offset-y: -128px;
+$common-radio-width: 20px;
+$common-radio-height: 20px;
+$common-radio-total-width: 203px;
+$common-radio-total-height: 185px;
+$common-radio-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-radio: (138px, 128px, -138px, -128px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'radio', );
+$common-radio-large-name: 'common-radio-large';
+$common-radio-large-x: 173px;
+$common-radio-large-y: 0px;
+$common-radio-large-offset-x: -173px;
+$common-radio-large-offset-y: 0px;
+$common-radio-large-width: 30px;
+$common-radio-large-height: 30px;
+$common-radio-large-total-width: 203px;
+$common-radio-large-total-height: 185px;
+$common-radio-large-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-radio-large: (173px, 0px, -173px, 0px, 30px, 30px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'radio-large', );
+$common-radio-large-on-name: 'common-radio-large-on';
+$common-radio-large-on-x: 88px;
+$common-radio-large-on-y: 84px;
+$common-radio-large-on-offset-x: -88px;
+$common-radio-large-on-offset-y: -84px;
+$common-radio-large-on-width: 30px;
+$common-radio-large-on-height: 30px;
+$common-radio-large-on-total-width: 203px;
+$common-radio-large-on-total-height: 185px;
+$common-radio-large-on-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-radio-large-on: (88px, 84px, -88px, -84px, 30px, 30px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'radio-large-on', );
+$common-radio-on-name: 'common-radio-on';
+$common-radio-on-x: 114px;
+$common-radio-on-y: 128px;
+$common-radio-on-offset-x: -114px;
+$common-radio-on-offset-y: -128px;
+$common-radio-on-width: 20px;
+$common-radio-on-height: 20px;
+$common-radio-on-total-width: 203px;
+$common-radio-on-total-height: 185px;
+$common-radio-on-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-radio-on: (114px, 128px, -114px, -128px, 20px, 20px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'radio-on', );
+$common-sns-facebook-name: 'common-sns-facebook';
+$common-sns-facebook-x: 85px;
+$common-sns-facebook-y: 0px;
+$common-sns-facebook-offset-x: -85px;
+$common-sns-facebook-offset-y: 0px;
+$common-sns-facebook-width: 40px;
+$common-sns-facebook-height: 40px;
+$common-sns-facebook-total-width: 203px;
+$common-sns-facebook-total-height: 185px;
+$common-sns-facebook-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-sns-facebook: (85px, 0px, -85px, 0px, 40px, 40px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'sns-facebook', );
+$common-sns-insta-name: 'common-sns-insta';
+$common-sns-insta-x: 0px;
+$common-sns-insta-y: 84px;
+$common-sns-insta-offset-x: 0px;
+$common-sns-insta-offset-y: -84px;
+$common-sns-insta-width: 40px;
+$common-sns-insta-height: 40px;
+$common-sns-insta-total-width: 203px;
+$common-sns-insta-total-height: 185px;
+$common-sns-insta-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-sns-insta: (0px, 84px, 0px, -84px, 40px, 40px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'sns-insta', );
+$common-sns-kakao-name: 'common-sns-kakao';
+$common-sns-kakao-x: 44px;
+$common-sns-kakao-y: 84px;
+$common-sns-kakao-offset-x: -44px;
+$common-sns-kakao-offset-y: -84px;
+$common-sns-kakao-width: 40px;
+$common-sns-kakao-height: 40px;
+$common-sns-kakao-total-width: 203px;
+$common-sns-kakao-total-height: 185px;
+$common-sns-kakao-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-sns-kakao: (44px, 84px, -44px, -84px, 40px, 40px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'sns-kakao', );
+$common-sns-youtube-name: 'common-sns-youtube';
+$common-sns-youtube-x: 129px;
+$common-sns-youtube-y: 0px;
+$common-sns-youtube-offset-x: -129px;
+$common-sns-youtube-offset-y: 0px;
+$common-sns-youtube-width: 40px;
+$common-sns-youtube-height: 40px;
+$common-sns-youtube-total-width: 203px;
+$common-sns-youtube-total-height: 185px;
+$common-sns-youtube-image: '/cmsstatic/asset/images/sprite-common.png';
+$common-sns-youtube: (129px, 0px, -129px, 0px, 40px, 40px, 203px, 185px, '/cmsstatic/asset/images/sprite-common.png', 'sns-youtube', );
+$sprite-common-width: 203px;
+$sprite-common-height: 185px;
+$sprite-common-image: '/cmsstatic/asset/images/sprite-common.png';
+$sprite-common-sprites: ($common-arrow-down-dropdown, $common-arrow-down-dropdown-small, $common-arrow-down-selectbox, $common-arrow-right-link, $common-arrow-right-link-over, $common-arrow-up-dropdown-small, $common-benefit-1, $common-benefit-2, $common-benefit-3, $common-benefit-4, $common-checkbox, $common-checkbox-on, $common-checkbox-plain, $common-checkbox-plain-on, $common-checkbox-small, $common-checkbox-small-on, $common-close-layer, $common-dropdown-arrow-right, $common-eye, $common-eye-close, $common-logo-footer, $common-radio, $common-radio-large, $common-radio-large-on, $common-radio-on, $common-sns-facebook, $common-sns-insta, $common-sns-kakao, $common-sns-youtube, );
+$sprite-common: (203px, 185px, '/cmsstatic/asset/images/sprite-common.png', $sprite-common-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-size($sprite) {
+  $sprite-width: nth($sprite, 7);
+  $sprite-height: nth($sprite, 8);
+  background-size: $sprite-width $sprite-height;
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+  @include sprite-size($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  .sprite-common {
+    background-image: url('/cmsstatic/asset/images/sprite-common.png');
+    background-size: 203px 185px;
+  }
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .sprite-common-#{$sprite-name} {
+      @include sprite-position($sprite);
+      @include sprite-width($sprite);
+      @include sprite-height($sprite);
+    }
+  }
+}

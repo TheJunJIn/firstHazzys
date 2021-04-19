@@ -1,0 +1,72 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--member shell-main--member-row">
+  <div class="main-visual">
+    <div>
+      일러스트 예정
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="messege-card">
+      <div class="messege-card__title">
+        김헤지 고객님<br>회원이 되신걸 환영해요!
+      </div>
+      <div class="messege-card__body">
+        <div class="box">
+          <div class="info">
+            <span class="info__label">아이디</span>
+            <span class="info__value">hazzyshazzys123</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form action="#">
+      <div class="member-form">
+        <!-- 헤지스닷컴 이용약관 동의 -->
+        <div class="member-form__agreement agreement-marketing">
+          <div class="agreement-marketing__header">
+            마케팅 수신 동의하고 다양한 소식과 혜택을 받아보세요!
+          </div>
+          <div class="agreement-marketing__body">
+            <ul class="policy">
+              <li class="policy__item">
+                <label class="policy__name form-checkbox">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[선택] 마케팅 및 광고 정보 수신 동의</span>
+                </label>
+                <button type="button" class="button policy-view-button" data-modal-open="#modalAgreementMarketing">보기</button>
+              </li>
+            </ul>
+            <div class="policy-comment">
+              헤지스에서 마케팅 및 광고정보(할인쿠폰, 마일리지, 세일, 이벤트 등) 안내를 위한 개인정보 수집 및 이용 등 처리에 관해 동의하십니까?
+            </div>
+          </div>
+        </div>
+        <div class="member-form__field member-form__submit">
+          <button type="button" class="form-button form-button--main">쇼핑하러가기</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% include "modal/agreement-marketing.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/member.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/member.js"></script>
+<script>
+$(function(){
+  $('#modalAgreementMarketing').on('open', function(e){
+    console.log(e.detail);
+  })
+})
+</script>
+{% endblock js %}

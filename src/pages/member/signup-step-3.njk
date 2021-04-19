@@ -1,0 +1,200 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--member shell-main--member-row">
+  <div class="shell-main__step step">
+    <div class="step__count">
+      <span class="count__number count__number--now">3</span>/
+      <span class="count__number count__number--total">3</span>
+    </div>
+    <ol class="step__guide progress">
+      <li class="progress__item">본인확인</li>
+      <li class="progress__item">정보입력</li>
+      <li class="progress__item active">약관동의</li>
+    </ol>
+  </div>
+  <div class="main-header">
+    <h2 class="main-header__title">회원가입</h2>
+    <p class="main-header__comment">마지막으로 약관에 동의하시면<br>회원가입이 완료됩니다!</p>
+  </div>
+  <div class="main-content">
+    <form action="#">
+      <div class="member-form member-form--signup">
+
+        <!-- 헤지스닷컴 이용약관 동의 -->
+        <div class="member-form__agreement agreement" data-foldable>
+          <div class="agreement__header">
+            <label class="form-checkbox agreement-check-all">
+              <input type="checkbox" class="checkbox">
+              <span class="name">[필수] 헤지스닷컴 이용약관 모두 동의</span>
+            </label>
+            <button type="button" class="button policy-toggle-button" data-foldable-toggle>열기/닫기</button>
+          </div>
+          <div class="agreement__body" data-foldable-content>
+            <ul class="policy">
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 만 14세 이상입니다.</span>
+                </label>
+              </li>
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 헤지스닷컴 이용약관</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="name">[필수] 개인정보 수집 및 이용 동의</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LF members 이용약관 동의 -->
+        <div class="member-form__agreement agreement" data-foldable>
+          <div class="agreement__header">
+            <label class="form-checkbox agreement-check-all">
+              <input type="checkbox" class="checkbox">
+              <span class="name">[필수] LFmembers 이용약관 모두 동의</span>
+            </label>
+            <button type="button" class="button policy-toggle-button" data-foldable-toggle>열기/닫기</button>
+          </div>
+          <div class="agreement__body" data-foldable-content>
+            <ul class="policy">
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] LFmembers 통합회원 이용약관</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] LFmembers 개인정보 수집 및 이용 동의</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- LF members 패밀리사이트 약관 동의 -->
+        <div class="member-form__agreement agreement" data-foldable>
+          <div class="agreement__header">
+            <label class="form-checkbox agreement-check-all">
+              <input type="checkbox" class="checkbox">
+              <span class="name">[선택] LFmembers 패밀리사이트 이용약관</span>
+            </label>
+            <button type="button" class="button policy-toggle-button" data-foldable-toggle>열기/닫기</button>
+          </div>
+          <div class="agreement__body" data-foldable-content>
+            <ul class="policy">
+              <!-- 선택 1  -->
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[선택] LF Mall 이용약관 모두 동의</span>
+                </label>
+              </li>
+              <li class="policy__item policy__item--indent">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] LF Mall 이용약관</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <li class="policy__item policy__item--indent">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 개인정보 수집 및 이용 동의</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <li class="policy__item policy__item--indent">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 개인정보 처리업무 위탁 동의</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <!-- // 선택 1  -->
+              <!-- 선택 2  -->
+              <li class="policy__item">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[선택] LF Mall 이용약관 모두 동의</span>
+                </label>
+              </li>
+              <li class="policy__item policy__item--indent">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 어라운드더코너 이용약관</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <li class="policy__item policy__item--indent">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 개인정보 수집 및 이용 동의</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <li class="policy__item policy__item--indent">
+                <label class="policy__name form-checkbox form-checkbox--plain">
+                  <input type="checkbox" class="checkbox">
+                  <span class="name">[필수] 개인정보 취급 위탁</span>
+                </label>
+                <button type="button" class="button policy-view-button">보기</button>
+              </li>
+              <!-- // 선택 2  -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- 개인정보 유효기간 설정 -->
+        <div class="member-form__field privacy_expiry_date member-form__field-guide">
+          <div class="privacy_expiry_date__title">개인정보 유효기간 설정</div>
+          <div class="privacy_expiry_date__content">미 선택 시 개인정보 유효기간은 1년으로 설정됩니다.</div>
+          <div class="form-block">
+            <div class="form-block__field">
+              <label class="form-radio form-radio">
+                <input type="radio" name="privacy_expiry_date" class="radio">
+                <span class="name">회원 탈퇴시까지</span>
+              </label>
+            </div>
+            <div class="form-block__field">
+              <label class="form-radio form-radio">
+                <input type="radio" name="privacy_expiry_date" class="radio">
+                <span class="name">3년</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="member-form__field member-form__submit">
+          <button type="button" class="form-button">회원가입</button>
+          <button type="button" class="form-button active">회원가입</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/member.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/member.js"></script>
+{% endblock js %}
