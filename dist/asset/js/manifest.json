@@ -1,0 +1,6 @@
+{
+  "main.js": "/asset/js/main.js",
+  "member.js": "/asset/js/member.js",
+  "ui.js": "/asset/js/ui.js",
+  "vendor.js": "/asset/js/vendor.js"
+}

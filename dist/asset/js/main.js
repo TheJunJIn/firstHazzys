@@ -1,0 +1,1 @@
+!function(){var o=window.$;console.log("main.js"),o((function(){console.log("jQuery")}))}();
