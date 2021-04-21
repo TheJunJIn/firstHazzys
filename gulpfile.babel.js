@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs';
 import path from 'path';
 import del from 'del';
 import gulp from 'gulp';
@@ -8,14 +7,9 @@ import nodeSass from 'node-sass';
 import autoprefixer from 'autoprefixer';
 import postcssClean from 'postcss-clean';
 import spritesmith from 'gulp.spritesmith-multi';
-import matter from 'gray-matter';
-import outdent from 'outdent';
-import nunjucks from 'nunjucks';
-import addShortcode from './utils/add-shortcode';
-import filters from './utils/filters';
-import shortcodes from './utils/shortcodes';
-import HighlightExtension from './utils/highlight';
 import browserSync from 'browser-sync';
+import { createEnv, layoutToExtends, isInclude } from './utils/nunjucks-env';
+import readJson from './utils/read-json';
 
 sass.compiler = nodeSass;
 const isProduction = process.env.NODE_ENV === 'production';
@@ -27,81 +21,51 @@ const clean = {
     del(['src/cmsstatic/asset/images/sprite-*.png', 'src/components/sprites/*.scss'])
 };
 
-const markup = () => {
-  const env = new nunjucks.Environment([
-    new nunjucks.FileSystemLoader([
-      'src/',
-      'src/pages/',
-      'src/guide/',
-      'src/layouts/',
-      'src/components/'
-    ])
-  ]);
-  Object.keys(shortcodes).forEach((key) => {
-    addShortcode(env, key, shortcodes[key]);
-  });
-  Object.keys(filters).forEach((key) => {
-    env.addFilter(key, filters[key]);
-  });
-  env.addExtension('HighlightExtension', new HighlightExtension());
-
-  const LAYOUT_ROOT = path.resolve(__dirname, 'src', 'layouts');
-  const pageFilter = plugins.filter([
-    'src/**/*',
-    '!src/layouts/**',
-    '!src/components/**'
-  ]);
-  const globalData = {
-    site: JSON.parse(
-      readFileSync('./src/_data/site.json', { encoding: 'utf-8' })
-    ),
-    layout: {}
+function makeMarkupTask(src) {
+  const SRC = path.resolve(__dirname, 'src');
+  const DEST = path.resolve(__dirname, 'dist');
+  const njk = {
+    path: {
+      layout: path.resolve(SRC, 'layouts'),
+      data: path.resolve(SRC, '_data')
+    },
+    data: {},
+    layout: {},
+    env: null,
+    destFilter: null
   };
 
-  return gulp
-    .src(['src/**/*.njk', '!src/layouts/**/*.njk', '!src/components/**/*.njk'])
-    .pipe(plugins.plumberNotifier())
-    .pipe(
-      plugins.data((file) => {
-        const { content, data } = matter(file.contents.toString());
-        let newContent = content;
+  let dest = 'dist/';
+  if (src) {
+    const relToSrc = path.relative(SRC, src);
+    dest = path.dirname(path.resolve(DEST, relToSrc));
+  }
+  src = src || [
+    'src/**/*.njk',
+    '!src/layouts/**/*.njk',
+    '!src/components/**/*.njk'
+  ];
 
-        if (typeof data.layout === 'string') {
-          const layoutName = path.basename(data.layout, '.njk');
+  return function markup() {
+    njk.env = createEnv();
+    njk.destFilter = plugins.filter([
+      'src/**/*',
+      '!src/layouts/**',
+      '!src/components/**'
+    ]);
+    njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
+    njk.layout = {};
 
-          if (layoutName in globalData.layout) {
-            data.layout = globalData.layout[layoutName];
-          } else {
-            const layoutPath = path.resolve(LAYOUT_ROOT, layoutName + '.njk');
-            const layoutSrc = readFileSync(layoutPath, 'utf8');
-            const compiledLayout = nunjucks.compile(layoutSrc, env);
-            globalData.layout[layoutName] = compiledLayout;
-            data.layout = compiledLayout;
-          }
-        }
-
-        if (data.layout) {
-          newContent = outdent`
-            {% extends layout %}
-            {% block content %}
-            ${content}
-            {% endblock %}
-            `;
-        }
-
-        file.contents = Buffer.from(newContent);
-        return data || {};
-      })
-    )
-    .pipe(
-      plugins.nunjucks.compile(globalData, {
-        env
-      })
-    )
-    .pipe(pageFilter)
-    .pipe(plugins.prettier())
-    .pipe(gulp.dest('dist/'));
-};
+    return gulp
+      .src(src)
+      .pipe(plugins.plumberNotifier())
+      .pipe(plugins.data((file) => layoutToExtends(njk, file)))
+      .pipe(plugins.nunjucks.compile(njk.data, { env: njk.env }))
+      .pipe(njk.destFilter)
+      .pipe(plugins.prettier())
+      .pipe(gulp.dest(dest));
+  };
+}
 
 const styles = () => {
   return gulp
@@ -256,8 +220,10 @@ const copy = {
   }
 };
 
+let bs;
+
 const serve = () => {
-  const bs = browserSync.create();
+  bs = browserSync.create();
 
   // https://browsersync.io/docs/options
   bs.init({
@@ -272,22 +238,35 @@ const serve = () => {
   });
 };
 
-const watch = () => {
+const startWatchers = () => {
   gulp.watch('src/**/*.scss', styles);
   gulp.watch('src/cmsstatic/asset/images/**/*.{png,jpg,jpeg,gif}', image);
   gulp.watch('src/cmsstatic/asset/fonts/**/*.{woff,woff2,eot,ttf,otf}', copy.font);
   gulp.watch('src/cmsstatic/asset/media/**/*.{mp4,ogg,webm}', copy.media);
-  gulp.watch('src/**/*.njk', markup);
+  gulp.watch('src/**/*.njk').on('change', (file) => {
+    let task;
+    if (isInclude(file)) {
+      task = makeMarkupTask();
+    } else {
+      task = makeMarkupTask(file);
+    }
+    gulp.series(task, function (cb) {
+      if (bs && bs.reload) {
+        bs.reload();
+      }
+      cb();
+    })();
+  });
 };
 
 const copyTaskList = [copy.ico, copy.font, copy.media];
 const cleanTask = gulp.parallel([clean.demo]);
 const spritesTask = gulp.series([clean.sprites, sprites]);
-const buildTask = gulp.parallel(markup, styles, svgSprites, image);
+const buildTask = gulp.parallel(makeMarkupTask(), styles, svgSprites, image);
 const copyTask = gulp.parallel(copyTaskList);
 const build = gulp.parallel(buildTask, copyTask);
 
-const watchTask = gulp.series(build, watch);
+const watchTask = gulp.series(build, startWatchers);
 const serveTask = gulp.parallel(watchTask, serve);
 
 // export { build as default, cleanTask as clean, watchTask as watch, sprites };
