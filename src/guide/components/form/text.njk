@@ -131,5 +131,37 @@ title: 메인
       </div>
     </article>
 
+    <article class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">
+          input:number ( 수량 )
+        </h1>
+      </header>
+      <div class="guide-section__contents">
+        <div class="guide-example">
+          <div class="form-input-qty" data-form-text>
+            <button type="button" class="form-input-qty__decrease" data-form-qty="decrease">-</button>
+            <label class="form-input-qty__input">
+              <input type="number" class="form-text" min="1" max="99" pattern="[0-9]*" value="1" />
+            </label>
+            <button type="button" class="form-input-qty__increase" data-form-qty="increase">+</button>
+          </div>
+        </div>
+        <div class="guide-code">
+{% highlight "html" %}
+<div class="form-input-qty" data-form-text>
+  <button type="button" class="form-input-qty__decrease" data-form-qty="decrease">-</button>
+  <label class="form-input-qty__input">
+    <input type="number" class="form-text" min="0" max="99" pattern="[0-9]*" value="1" />
+  </label>
+  <button type="button" class="form-input-qty__increase" data-form-qty="increase">+</button>
+</div>
+{% endhighlight %}
+        </div>
+      </div>
+    </article>
+
+
+
   </div>
 </article>

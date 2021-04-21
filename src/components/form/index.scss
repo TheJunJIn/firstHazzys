@@ -216,7 +216,6 @@ $button-font-size: 14px;
       margin-left: 6px;
     }
     > .radio {
-      border: 1px solid red;
       &:checked {
         + .name {
           background-color: $color-solid-emphasize;
@@ -239,54 +238,6 @@ $button-font-size: 14px;
       }
     }
   }
-  // .form-radio {
-  //   display: inline-block;
-  //   position: relative;
-  //   .radio {
-  //     position: absolute;
-  //     opacity: 0;
-  //     width: 100%;
-  //     height: 100%;
-  
-  //     z-index: 2;
-  //     cursor: pointer;
-  
-  //     &:checked {
-  //       + .name:before,
-  //       + .icon {
-  //         @include sprite-position($common-radio-on);
-  //       }
-  //       + .name {
-  //         color: $color-text-emphasize;
-  //       }
-  //     }
-  //   }
-  //   > .name {
-  //     display: inline-block;
-  //     margin-top: 2px;
-  //     font-family: inherit;
-  //     font-size: 14px;
-  //     line-height: 20px;
-  //     color: $color-text-primary;
-  //     user-select: none;
-  //     vertical-align: middle;
-  //     white-space: nowrap;
-  
-  //     &:before {
-  //       content: '';
-  //       display: inline-block;
-  //       vertical-align: middle;
-  //       margin-top: -2px;
-  //       margin-right: 10px;
-  //       @include sprite($common-radio);
-  //     }
-  //   }
-  //   > .icon {
-  //     display: inline-block;
-  //     vertical-align: middle;
-  //     @include sprite($common-radio);
-  //   }
-  // }
 }
 .form-radio-button {
   &__button {
@@ -321,6 +272,62 @@ $button-font-size: 14px;
     border-radius: 2px;
     text-align: center;
     box-sizing: border-box;
+  }
+}
+
+// radio select group - 상품상세 사이즈 선택
+.form-radio-selct-group {
+  white-space: nowrap;
+  .form-radio {
+    display: inline-block;
+    + .form-radio {
+      margin-left: 6px;
+    }
+    > .radio {
+      &:checked {
+        + .name {
+          background-color: $color-solid-emphasize;
+          color: $color-text-white;
+        }
+      }
+    }
+    > .name {
+      min-width: 60px;
+      height: 36px;
+      margin: 0;
+      padding: 0 5px;
+      text-align: center;
+      line-height: 36px;
+      font-size: 12px;
+      color: $color-text-emphasize;
+      border: 1px solid $color-black;
+      box-sizing: border-box;
+      &:before {
+        content: none;
+      }
+    }
+    > .button-bedge {
+      position: absolute;
+      top: -10px;
+      right: -7px;
+      outline: 0;
+      z-index: 2;
+      .sprite-common {
+        display: inline-block;
+        text-indent: 100%;
+        line-height: 2;
+        white-space: nowrap;
+        overflow: hidden;
+        outline: 0;
+      }
+    }
+    &.form-radio--disabled {
+      > .name {
+        color: $color-text-primary;
+        border-color: $color-line-default;
+        background-color: $color-solid-disabled;
+      }
+    }
   }
 }
 
@@ -404,139 +411,25 @@ $field-font-size: 14px;
   }
 }
 
-// select
-.form-input-select {
-  position: relative;
-  .form-input {
-    appearance: none;
-    width: 100%;
-    height: 50px;
-    padding: 0 10px;
-    box-sizing: border-box;
-    border: 1px solid #c9c9c9;
-    font-size: 16px;
-    color: #000;
-    outline: 0;
-    // &:focus {
-    //   border-color: #000;
-    // }
-    &::-ms-expand {
-      display: none;
-    }
-  }
-  .sprite-icon {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    @include sprite($common-arrow-down-selectbox);
-  }
-}
-// Input
-// =============================================================================
-// .form-input-text {
-//   .form-input {
-//     width: 100%;
-//     height: 50px;
-//     padding: 0 10px;
-//     box-sizing: border-box;
-//     border: 1px solid #c9c9c9;
-//     font-size: 14px;
-//     color: #000;
-//     outline: 0;
-
-//     &:focus {
-//       border-color: #000;
-//     }
-//     &::placeholder {
-//       color: #c9c9c9;
-//       font-size: 14px;
-//       line-height: 20px;
-//     }
-//   }
-//   &__input {
-//     position: relative;
-//   }
-//   &__comment {
-//     padding: 6px 0 0 10px;
-//     line-height: 16px;
-//     font-size: 11px;
-//   }
-//   &__validate {
-//     @include self-clear;
-//     > .list__item {
-//       float: left;
-
-//       font-size: 11px;
-//       line-height: 16px;
-//       color: #c9c9c9;
-//       + .list__item {
-//         margin-left: 14px;
-//       }
-//       &.active {
-//         color: #000;
-//       }
-//       &.invalid {
-//         color: #f00;
-//       }
-//     }
-//   }
-//   &--password {
-//     .form-input {
-//       padding-right: 50px;
-//     }
-//     .form-input-text__toggle {
-//       position: absolute;
-//       top: 50%;
-//       right: 10px;
-//       transform: translateY(-50%);
-//       border: 0;
-//       background-color: transparent;
-//       text-indent: 100%;
-//       line-height: 2;
-//       white-space: nowrap;
-//       overflow: hidden;
-//       @include sprite($common-eye);
-//     }
-//     &.visible {
-//       .form-input-text__toggle {
-//         @include sprite-position($common-eye-close);
-//       }
-//     }
-//   }
-//   &--invalid {
-//     .form-input {
-//       &,
-//       &:focus {
-//         border-color: #f00;
-//       }
-//     }
-//     .form-input-text__comment {
-//       color: #f00;
-//     }
-//   }
-// }
-
 // 수량선택 Input
 // =============================================================================
-$button-width: 29px;
-$button-height: 29px;
 .form-input-qty {
   position: relative;
   display: inline-block;
   background-color: #fff;
   &__input {
     display: inline-block;
-    height: $button-height;
-    .form-input {
+    height: 36px;
+    .form-text {
       height: 100%;
-      font-size: 16px;
-      min-width: $button-width * 3;
-      padding-right: $button-width;
-      padding-left: $button-width;
+      font-size: 14px;
+      min-width: 122px;
+      padding-right: 36px;
+      padding-left: 36px;
       border: 1px solid #000;
       box-sizing: border-box;
       text-align: center;
+      border-radius: 0;
 
       &:focus {
         outline: 0;
@@ -547,18 +440,45 @@ $button-height: 29px;
   &__increase {
     position: absolute;
     top: 0;
-    width: $button-width;
-    height: $button-height;
+    width: 36px;
+    height: 36px;
     border: 0;
     background-color: transparent;
+    outline: 0;
+    text-indent: 100%;
+    line-height: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      background: #000;
+    }
   }
   &__decrease {
     left: 0;
     border-right: 1px solid #000;
+    &:before {
+      width: 12px;
+      height: 1px;
+    }
   }
   &__increase {
     right: 0;
     border-left: 1px solid #000;
+    &:before {
+      width: 12px;
+      height: 1px;
+    }
+    &:after {
+      width: 1px;
+      height: 12px;
+    }
   }
 }
 

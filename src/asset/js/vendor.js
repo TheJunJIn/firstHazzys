@@ -1,10 +1,14 @@
 import './_polyfills';
 import $ from 'jquery';
 import 'jquery-ui/ui/effect';
-import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 import anime from 'animejs/lib/anime.es.js';
+// import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
+// Swiper.use([Autoplay, Navigation, Pagination]);
+import { Swiper, Autoplay, Navigation, Pagination } from 'swiper/dist/js/swiper.esm.js';
 Swiper.use([Autoplay, Navigation, Pagination]);
+
 window.jQuery = $;
 window.$ = window.jQuery;
 window.Swiper = Swiper;
 window.anime = anime;
+
