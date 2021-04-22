@@ -111,24 +111,24 @@
 @media only screen and (min-width:1024px){
 .signup-intro__submit{margin-top:50px}
 }
-.messege-card{padding:20px 0 70px 0}
-.messege-card__title{font-size:24px;font-weight:500;line-height:36px;color:#000;text-align:center}
-.messege-card__title .title__text{display:block;text-align:center}
-.messege-card__text{padding-top:20px;font-size:14px;font-weight:300;line-height:22px;color:#000;text-align:center}
-.messege-card__text .title__text{display:block;text-align:center}
-.messege-card__body{margin-top:40px;font-size:14px;line-height:24px;font-weight:300}
-.messege-card__body .box{width:250px;margin:0 auto;padding:28px 46px 28px 20px;box-shadow:0 20px 20px 0 rgba(0,0,0,.1);background-color:#fff;box-sizing:border-box}
-.messege-card__body .box .info{display:table}
-.messege-card__body .box .info+.info{margin-top:6px}
-.messege-card__body .box .info__label{display:table-cell;min-width:80px}
-.messege-card__body .box .info__value{display:table-cell;color:#000}
+.message-card{padding:20px 0 70px 0}
+.message-card__title{font-size:24px;font-weight:500;line-height:36px;color:#000;text-align:center}
+.message-card__title .title__text{display:block;text-align:center}
+.message-card__text{padding-top:20px;font-size:14px;font-weight:300;line-height:22px;color:#000;text-align:center}
+.message-card__text .title__text{display:block;text-align:center}
+.message-card__body{margin-top:40px;font-size:14px;line-height:24px;font-weight:300}
+.message-card__body .box{width:250px;margin:0 auto;padding:28px 46px 28px 20px;box-shadow:0 20px 20px 0 rgba(0,0,0,.1);background-color:#fff;box-sizing:border-box}
+.message-card__body .box .info{display:table}
+.message-card__body .box .info+.info{margin-top:6px}
+.message-card__body .box .info__label{display:table-cell;min-width:80px}
+.message-card__body .box .info__value{display:table-cell;color:#000}
 @media only screen and (min-width:1024px){
-.messege-card{padding-top:0}
-.messege-card__title{font-size:34px;line-height:44px}
-.messege-card__title .title__text{display:inline-block}
-.messege-card__text+.messege-card__body{margin-top:90px}
-.messege-card__body{margin-top:50px}
-.messege-card__body .box{width:375px;padding:48px 53px 47px 48px}
+.message-card{padding-top:0}
+.message-card__title{font-size:34px;line-height:44px}
+.message-card__title .title__text{display:inline-block}
+.message-card__text+.message-card__body{margin-top:90px}
+.message-card__body{margin-top:50px}
+.message-card__body .box{width:375px;padding:48px 53px 47px 48px}
 }
 @media only screen and (min-width:1024px){
 .main-content.main-content--signup-error{margin-top:0}

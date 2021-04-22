@@ -216,8 +216,8 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 }
 .modal__body{margin:0 24px;padding:30px 0 20px}
 .modal__footer{margin:30px 24px 20px}
-.modal .messege{font-size:14px;font-family:"Noto Sans KR",sans-serif;font-weight:300;line-height:22px;color:#000}
-.modal .messege .messege__hilite{color:#ff781e}
+.modal .message{font-size:14px;font-family:"Noto Sans KR",sans-serif;font-weight:300;line-height:22px;color:#000}
+.modal .message .message__hilite{color:#ff781e}
 .modal .terms-agreement__box{height:90px;overflow:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch;font-size:12px;line-height:22px;font-weight:300;padding:6px 6px 12px 10px;background-color:#f4f4f4;box-sizing:border-box}
 .modal .terms-agreement__form{margin-top:38px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}
 .modal .policy__content{overflow:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch;font-size:12px;line-height:22px;font-weight:300;box-sizing:border-box;height:160px;padding:10px;background-color:#f4f4f4}
@@ -245,7 +245,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 .modal.modal--bottom-top.active{transition-delay:0s}
 .modal.modal--bottom-top.active .modal-dialog{-webkit-transform:translate(0,0);transform:translate(0,0);transition-delay:.2s}
 .modal.active{visibility:visible;opacity:1}
-.modal.modal--reactivated-account .messege .messege__text+.messege__text{margin-top:20px}
+.modal.modal--reactivated-account .message .message__text+.message__text{margin-top:20px}
 .modal.modal--expired-password .text-button-group{margin-top:20px}
 .modal.modal--find-account-list .select-account__title{margin-bottom:20px;font-family:"Noto Sans KR",sans-serif;font-size:20px;line-height:30px;font-weight:300;color:#000}
 .modal.modal--find-account-list .select-account__list{border:1px solid red;max-height:260px;overflow:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch}

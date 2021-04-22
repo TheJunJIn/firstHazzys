@@ -72,14 +72,14 @@
   &__footer {
     margin: 30px 24px 20px;
   }
-  .messege {
+  .message {
     font-size: 14px;
     font-family: $font-noto-sans;
     font-weight: 300;
     line-height: 22px;
     color: #000;
-    // .messege__text {}
-    .messege__hilite {
+    // .message__text {}
+    .message__hilite {
       color: #ff781e;
     }
   }
@@ -216,8 +216,8 @@
 
   // 휴면 해제 안내
   &.modal--reactivated-account {
-    .messege {
-      .messege__text + .messege__text {
+    .message {
+      .message__text + .message__text {
         margin-top: 20px;
       }
     }

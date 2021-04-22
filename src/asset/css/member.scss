@@ -570,7 +570,7 @@
 
 // 회원 가입 완료
 // =============================================================================
-.messege-card {
+.message-card {
   padding: 20px 0 70px 0;
   &__title {
     font-size: 24px;
@@ -633,7 +633,7 @@
       }
     }
     &__text {
-      + .messege-card__body {
+      + .message-card__body {
         margin-top: 90px;
       }
     }
