@@ -10,6 +10,7 @@ import spritesmith from 'gulp.spritesmith-multi';
 import browserSync from 'browser-sync';
 import { createEnv, layoutToExtends, isInclude } from './utils/nunjucks-env';
 import readJson from './utils/read-json';
+import through from 'through2';
 
 sass.compiler = nodeSass;
 const isProduction = process.env.NODE_ENV === 'production';
@@ -40,7 +41,7 @@ function makeMarkupTask(src) {
     const relToSrc = path.relative(SRC, src);
     dest = path.dirname(path.resolve(DEST, relToSrc));
   }
-  src = src || [
+  const gulpSrc = src || [
     'src/**/*.njk',
     '!src/layouts/**/*.njk',
     '!src/components/**/*.njk'
@@ -55,14 +56,24 @@ function makeMarkupTask(src) {
     ]);
     njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
     njk.layout = {};
+    const onlyUseBasename = !!src && process.platform === "win32";
 
     return gulp
-      .src(src)
+      .src(gulpSrc)
       .pipe(plugins.plumberNotifier())
       .pipe(plugins.data((file) => layoutToExtends(njk, file)))
       .pipe(plugins.nunjucks.compile(njk.data, { env: njk.env }))
       .pipe(njk.destFilter)
       .pipe(plugins.prettier())
+      .pipe(
+        plugins.if(
+          onlyUseBasename,
+          through.obj(function (file, _, cb) {
+            file.path = path.basename(file.path);
+            cb(null, file);
+          })
+        )
+      )
       .pipe(gulp.dest(dest));
   };
 }
