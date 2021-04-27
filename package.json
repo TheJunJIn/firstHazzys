@@ -67,6 +67,7 @@
     "animejs": "^3.2.1",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
+    "promise-polyfill": "^8.2.0",
     "swiper": "^4.5.1",
     "throttle-debounce": "^3.0.1"
   }

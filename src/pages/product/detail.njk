@@ -9,17 +9,17 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="product-image">
-                  <img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                  <img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자" data-modal-open="#modalDetailPhotoView">
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="product-image">
-                  <img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                  <img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자" data-modal-open="#modalDetailPhotoView">
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="product-image">
-                  <img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                  <img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자" data-modal-open="#modalDetailPhotoView">
                 </div>
               </div>
             </div>
@@ -63,6 +63,29 @@
             </div>
           </div>
           <button type="button" class="button button-coordi" data-sidebar-open="coordinationProducts">코디</button>
+        </div>
+
+        <div class="product-detail-sticky">
+          <div class="product-detail-sticky__content">
+            <div class="product product--table">
+              <div class="product__image">
+                <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+              </div>
+              <div class="product__content">
+                <div class="product__info">
+                  <p class="product__brand">HAZZZYS ACC</p>
+                  <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                </div>
+                <div class="product__price">
+                  <span class="product__price-sale">966,000</span>
+                  <span class="product__price-info">
+                    <span class="retail">1,280,000</span>
+                    <span class="discount">30%</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- 상품 정보 ( 나의 최대 할인가 - 로그인 X ) -->
@@ -138,7 +161,7 @@
               </label>
               <!-- disabled -->
               <span class="form-radio form-radio--disabled">
-                <input type="radio" class="radio" name="size" disabled>
+                <input type="radio" class="radio" name="size" disabled="disabled">
                 <span class="name">67L</span>
                 <button type="button" class="button button-bedge" data-sidebar-open="restockNotification">
                   <i class="sprite-common sprite-common-bell">재입고 알림</i>
@@ -156,7 +179,7 @@
           </div>
           <!-- 수량 -->
           <div class="product-option__qty">
-            <div class="form-input-qty" data-form-text>
+            <div class="form-input-qty" data-form-text="data-form-text">
               <button type="button" class="form-input-qty__decrease" data-form-qty="decrease">-</button>
               <label class="form-input-qty__input">
                 <input type="number" class="form-text" min="1" max="5" pattern="[0-9]*" value="1"/>
@@ -180,21 +203,11 @@
             <button type="button" class="form-button form-button--main" data-modal-open="#modalShoppingbagAdd">쇼핑백에 담기</button>
             <button type="button" class="form-button form-button--point">구매하기</button>
           </div>
-        </div>
-        <!-- //총 상품 금액 -->
-
-        <!-- 총 상품 금액 - 품절 -->
-        <div class="total-amount">
-          <div class="total-amount__header">
-            <span class="name">총 상품 금액</span>
-            <span class="value">
-              <em>12,345,000</em>원</span>
-          </div>
           <div class="total-amount__content">
             <button type="button" class="form-button">일시 품절</button>
           </div>
         </div>
-        <!-- //총 상품 금액 - 품절 -->
+        <!-- //총 상품 금액 -->
 
         <!-- 악세사리 -->
         <div class="acc-guide">
@@ -355,16 +368,16 @@
             <div class="header__title">추가 혜택 안내</div>
           </div>
           <div class="product-benefit__body">
-            <ul class="accordion" data-accordion role="tablist">
-              <li class="benefit accordion__item" data-accordion-item>
+            <ul class="accordion" data-accordion="data-accordion" role="tablist">
+              <li class="benefit accordion__item" data-accordion-item="data-accordion-item">
                 <div class="benefit__title accordion__title">
-                  <button type="button" class="button benefit__name" data-tab-toggle role="tab" aria-controls="benefit1-accordion" id="benefit1-accordion-label">적립 혜택</button>
+                  <button type="button" class="button benefit__name" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit1-accordion" id="benefit1-accordion-label">적립 혜택</button>
                   <p class="benefit__summary">
                     <span class="icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
                     <span>최대 800M 적립 예정</span>
                   </p>
                 </div>
-                <div class="benefit__content accordion__content" data-tab-content role="tabpanel" aria-labelledby="benefit1-accordion-label" id="benefit1-accordion">
+                <div class="benefit__content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit1-accordion-label" id="benefit1-accordion">
                   <ul class="benefit-detail">
                     <li class="benefit-detail__item">헤지스 브랜드 상품 구매 시, 등급별로 마일리지 적립혜택을 드립니다. 아래 등급별 혜택을 참조해 주세요.</li>
                     <li class="benefit-detail__item">
@@ -376,7 +389,8 @@
                               <span class="grade__name">
                                 <span class="icon"><img src="/cmsstatic/asset/images/badge/s-platinum-small.png" alt="S-Platinum"></span>
                                 S-platinum
-                              </span> &amp;
+                              </span>
+                              &amp;
                               <span class="grade__name">
                                 <span class="icon"><img src="/cmsstatic/asset/images/badge/platinum-small.png" alt="platinum"></span>
                                 Platinum
@@ -387,7 +401,8 @@
                               <span class="grade__name">
                                 <span class="icon"><img src="/cmsstatic/asset/images/badge/gold-small.png" alt="Gold"></span>
                                 Gold
-                              </span> &amp;
+                              </span>
+                              &amp;
                               <span class="grade__name">
                                 <span class="icon"><img src="/cmsstatic/asset/images/badge/silver-small.png" alt="Sliver"></span>
                                 Sliver
@@ -422,14 +437,14 @@
                   </ul>
                 </div>
               </li>
-              <li class="benefit accordion__item" data-accordion-item>
+              <li class="benefit accordion__item" data-accordion-item="data-accordion-item">
                 <div class="benefit__title accordion__title">
-                  <button type="button" class="button benefit__name" data-tab-toggle role="tab" aria-controls="benefit2-accordion" id="benefit2-accordion-label">무이자 혜택</button>
+                  <button type="button" class="button benefit__name" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit2-accordion" id="benefit2-accordion-label">무이자 혜택</button>
                   <p class="benefit__summary">
                     <span>최대 8개월</span>
                   </p>
                 </div>
-                <div class="benefit__content accordion__content" data-tab-content role="tabpanel" aria-labelledby="benefit2-accordion-label" id="benefit2-accordion">
+                <div class="benefit__content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit2-accordion-label" id="benefit2-accordion">
                   <ul class="benefit-detail">
                     <li class="benefit-detail__item">무이자 할부는 결제 금액 기준으로 적용됩니다.</li>
                     <li class="benefit-detail__item">정확한 무이자 혜택은 주문서에서 확인 가능합니다.</li>
@@ -478,30 +493,30 @@
                   </div>
                 </div>
               </li>
-              <li class="benefit accordion__item" data-accordion-item>
+              <li class="benefit accordion__item" data-accordion-item="data-accordion-item">
                 <div class="benefit__title accordion__title">
-                  <button type="button" class="button benefit__name" data-tab-toggle role="tab" aria-controls="benefit3-accordion" id="benefit3-accordion-label">무료배송</button>
+                  <button type="button" class="button benefit__name" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit3-accordion" id="benefit3-accordion-label">무료배송</button>
                   <p class="benefit__summary">
                     <span>03/23(화) 도착예정</span>
                     <span>(지금 결제 시)</span>
                   </p>
                 </div>
-                <div class="benefit__content accordion__content" data-tab-content role="tabpanel" aria-labelledby="benefit3-accordion-label" id="benefit3-accordion">
+                <div class="benefit__content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit3-accordion-label" id="benefit3-accordion">
                   <ul class="benefit-detail">
                     <li class="benefit-detail__item">15시 이전에 결제하시면 다음날에 받으실 수 있습니다.</li>
                     <li class="benefit-detail__item">단, 휴일/공휴일은 제외이며, 도서산간 및 일부 지역은 택배사 사정에 따라 배송이 늦어질 수 있습니다.</li>
                   </ul>
                 </div>
               </li>
-              <li class="benefit accordion__item" data-accordion-item>
+              <li class="benefit accordion__item" data-accordion-item="data-accordion-item">
                 <div class="benefit__title accordion__title">
-                  <button type="button" class="button benefit__name" data-tab-toggle role="tab" aria-controls="benefit4-accordion" id="benefit4-accordion-label">배송비 2500원<span>(30,000원 이상 무료 배송)</span></button>
+                  <button type="button" class="button benefit__name" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit4-accordion" id="benefit4-accordion-label">배송비 2500원<span>(30,000원 이상 무료 배송)</span></button>
                   <p class="benefit__summary">
                     <span>03/23(화) 도착예정</span>
                     <span>(지금 결제 시)</span>
                   </p>
                 </div>
-                <div class="benefit__content accordion__content" data-tab-content role="tabpanel" aria-labelledby="benefit4-accordion-label" id="benefit4-accordion">
+                <div class="benefit__content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit4-accordion-label" id="benefit4-accordion">
                   <ul class="benefit-detail">
                     <li class="benefit-detail__item">15시 이전에 결제하시면 다음날에 받으실 수 있습니다.</li>
                     <li class="benefit-detail__item">단, 휴일/공휴일은 제외이며, 도서산간 및 일부 지역은 택배사 사정에 따라 배송이 늦어질 수 있습니다.</li>
@@ -1126,22 +1141,22 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="review-content">
-                    <img src="/cmsstatic/asset/images/temp/product-review_360x474_1.jpg" alt="">
+                    <img src="/cmsstatic/asset/images/temp/product-review_360x474_1.jpg" alt="" data-modal-open="#modalReviewPhotoView">
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="review-content">
-                    <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="">
+                    <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="" data-modal-open="#modalReviewPhotoView">
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="review-content">
-                    <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="">
+                    <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="" data-modal-open="#modalReviewPhotoView">
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="review-content">
-                    <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="">
+                    <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="" data-modal-open="#modalReviewPhotoView">
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -1226,7 +1241,7 @@
                     </div>
                     <div class="review__photo">
                       <div class="photo-container">
-                        <div class="review-content"><img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt=""></div>
+                        <div class="review-content"><img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="" data-modal-open="#modalReviewPhotoView"></div>
                       </div>
                     </div>
                   </div>
@@ -1533,8 +1548,7 @@
 
 
 <!-- 리뷰이미지 보기 -->
-{# modal--dim active #}
-<div class="modal modal--full modal--review-photo-view" tabindex="-1" role="dialog" data-modal>
+<div id="modalReviewPhotoView" class="modal modal--full modal--review-photo-view" tabindex="-1" role="dialog" data-modal>
   <div class="modal-dialog" role="document">
     <div class="modal__header">
       <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
@@ -1546,22 +1560,25 @@
         <div class="swiper-container" id="reviewPhotoView">
           <div class="review-content is-limit">
             <div class="content">매번 시즌마다 사는거 같아요. 가성비 갑이에요. 색상별로 구입했을정도로 예쁘고 좋아요.사이즈, 재질, 색상 모두 마음에 들어요.`인생슬랙스' 라는 말에 피식 웃음이 나와서 자세히보나 상품평이 좋아서 나도 샀다 마음에 쏙 들었다 인생슬랙스라고 이름 붙일 만하다고 느꼈다 요즘 잘입고 다니고있다.들었다 인생슬랙스라고 이름 붙일 만하다고 느꼈다 요즘 잘입고 다니고있다.</div>
-            <button type="button" class="button button-more">더보기</button>
+            <button type="button" class="button button--more">더보기</button>
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="review-photo">
                 <img src="/cmsstatic/asset/images/temp/product-review_360x474_1.jpg" alt="">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="review-photo">
                 <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="review-photo">
                 <img src="/cmsstatic/asset/images/temp/product-review_220x220_1.jpg" alt="">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
               </div>
             </div>
           </div>
@@ -1573,7 +1590,58 @@
           </div>
         </div>
 
-                
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 사진보기 -->
+<div id="modalDetailPhotoView" class="modal modal--full modal--detail-photo-view" tabindex="-1" role="dialog" data-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+        <i class="sprite-icon sprite-common sprite-common-close-layer-white">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="detail-photo-view">
+        <div class="swiper-container" id="detailPhotoView">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product-image">
+                <img src="/cmsstatic/asset/images/temp/product_1170x1521_1.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-image">
+                <img src="/cmsstatic/asset/images/temp/product_1170x1521_2.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-image">
+                <img src="/cmsstatic/asset/images/temp/product_1170x1521_3.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-image">
+                <img src="/cmsstatic/asset/images/temp/product_1170x1521_4.jpg" alt="Hazzys Ladies 네이비로고 자수 면 벙거지 모자">
+                <button type="button" class="button button--close" data-modal-close>닫기</button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination-container">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-progress">
+              <span class="swiper-progress__fill"></span>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1683,7 +1751,7 @@
         }
       })
 
-      // For U 
+      // For U
       new Swiper('#foruProductSwiper', {
         loop: false,
         {# centeredSlides: true, #}
@@ -1707,8 +1775,50 @@
         }
       })
 
-      window.reviewPhotoView = new Swiper('#reviewPhotoView', {
+      new Swiper('#reviewPhotoView', {
         loop: false,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        on: {
+          init: function (swiper) {
+            var swiper = this;
+            var length = swiper.slides.length;
+            if (swiper.activeIndex !== swiper.realIndex) {
+              length = length - 2;
+            }
+            var percent = (swiper.realIndex + 1) / length * 100;
+            window.setTimeout(function () {
+              $(swiper.pagination.el)
+                .parent()
+                .find('.swiper-progress__fill')
+                .width(percent + '%');
+            }, 10)
+          },
+          slideChange(){
+            var swiper = this;
+            var length = swiper.slides.length;
+            if (swiper.activeIndex !== swiper.realIndex) {
+              length = length - 2;
+            }
+            var percent = (swiper.realIndex + 1) / length * 100;
+            window.setTimeout(function () {
+              $(swiper.pagination.el)
+                .parent()
+                .find('.swiper-progress__fill')
+                .width(percent + '%');
+            }, 10)
+          }
+        }
+      })
+
+      new Swiper('#detailPhotoView', {
+      loop: false,
         pagination: {
           el: '.swiper-pagination',
           type: 'fraction'

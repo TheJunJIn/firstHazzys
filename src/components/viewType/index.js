@@ -11,6 +11,7 @@ export default class ViewType extends UIModule {
         this.setViewType();
       });
     });
+    this.setViewType();
   }
   setViewType() {
     /**
@@ -39,6 +40,11 @@ export default class ViewType extends UIModule {
     this.shout('viewTypeChange', {
       oldValue,
       value
+    });
+  }
+  reportback() {
+    this.shout('report:viewType', {
+      viewType: this.viewType
     });
   }
 }

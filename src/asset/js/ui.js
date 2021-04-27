@@ -37,6 +37,7 @@ class UI extends ShoutAndListen {
     };
     const instance = this;
     let resizeTimeOutFunction;
+    let scrollTimeOutFunction;
     this.listeners = {
       resize: throttle(100, () => {
         if (!resizeTimeOutFunction) {
@@ -50,7 +51,32 @@ class UI extends ShoutAndListen {
         }, 100);
       }),
       scroll: throttle(100, () => {
-        instance.shout("scroll", window.scrollY);
+        let isFirstScroll = false;
+        const time = performance.now();
+
+        if (scrollTimeOutFunction) {
+          window.clearTimeout(scrollTimeOutFunction);
+          scrollTimeOutFunction = null;
+        } else {
+          isFirstScroll = true;
+        }
+
+        const { scrollY } = window;
+        const info = {
+          scrollY,
+          time
+        };
+
+        if (isFirstScroll) {
+          instance.shout('scrollStart', info);
+        } else {
+          instance.shout('scroll', info);
+        }
+
+        scrollTimeOutFunction = window.setTimeout(() => {
+          instance.shout('scrollEnd', info);
+          scrollTimeOutFunction = null;
+        }, 101);
       })
     };
 
@@ -81,22 +107,26 @@ class UI extends ShoutAndListen {
     const { scrollY } = window;
     const app = document.querySelector('.app');
     const scrollbar = getScrollbarWidth();
-    body.classList.add(options.scrollLockClass);
-    body.style.position = 'fixed';
-    body.style.top = `-${scrollY}px`;
-    app.style.paddingRight = `${scrollbar}px`;
+    if(!body.classList.contains(options.scrollLockClass)){
+      body.classList.add(options.scrollLockClass);
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollY}px`;
+      app.style.paddingRight = `${scrollbar}px`;
+    }
   }
   scrollRelease() {
     const { options } = this;
     const { body } = document;
     const app = document.querySelector('.app');
     const scrollY = body.style.top;
-    body.classList.remove(options.scrollLockClass);
-    body.style.position = '';
-    body.style.top = '';
-    body.style.right = '';
-    app.style.paddingRight = '';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    if(body.classList.contains(options.scrollLockClass)){
+      body.classList.remove(options.scrollLockClass);
+      body.style.position = '';
+      body.style.top = '';
+      body.style.right = '';
+      app.style.paddingRight = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
   }
   destroy() {
     super.destroy();
