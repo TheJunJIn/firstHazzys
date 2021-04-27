@@ -1,13 +1,17 @@
 import variables from '../../asset/css/_variables.scss';
+import UIModule from '../ui-module';
 
-const defaults = {
-  onViewtypeChange: () => {}
-};
-export default class ViewType {
+const defaults = {};
+export default class ViewType extends UIModule {
   constructor(params = {}) {
-    const options = { ...defaults, ...params };
-    this.options = options;
+    super({ ...defaults, ...params });
     this.viewType = null;
+    ['load', 'resizeEnd'].forEach((message) => {
+      this.listen(message, () => {
+        this.setViewType();
+      });
+    });
+    this.setViewType();
   }
   setViewType() {
     /**
@@ -33,12 +37,14 @@ export default class ViewType {
     }
   }
   changeViewType(value, oldValue) {
-    this.options.onViewtypeChange(value, oldValue);
+    this.shout('viewTypeChange', {
+      oldValue,
+      value
+    });
   }
-  onLoad() {
-    this.setViewType();
-  }
-  onResizeEnd() {
-    this.setViewType();
+  reportback() {
+    this.shout('report:viewType', {
+      viewType: this.viewType
+    });
   }
 }

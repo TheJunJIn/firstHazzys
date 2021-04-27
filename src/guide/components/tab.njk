@@ -1,0 +1,52 @@
+{% extends 'guide.njk' %}
+
+{% block content %}
+<article class="guide-contents">
+  <header class="guide-contents__header">
+    <h1 class="guide-contents__title">
+      Tab
+    </h1>
+  </header>
+  <div class="guide-contents__body">
+    <article class="guide-section">
+      <header class="guide-section__header">
+        <h1 class="guide-section__title">
+          input:text
+        </h1>
+      </header>
+      <div class="guide-section__contents">
+        <div class="guide-example">
+<div class="tabs">
+  <div class="tablist" role="tablist" aria-label="review">
+    <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="allReview-tab" id="allReview">전체리뷰(1,200)</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="photoReview-tab" id="photoReview" tabindex="-1">포토리뷰(10)</button>
+  </div>
+  <div class="tabpanel" tabindex="0" role="tabpanel" id="allReview-tab" aria-labelledby="allReview">
+    내용 1
+  </div>
+  <div class="tabpanel" tabindex="0" role="tabpanel" id="photoReview-tab" aria-labelledby="photoReview" hidden>
+    내용 2
+  </div>
+</div>
+        </div>
+        <div class="guide-code">
+{% highlight "html" %}
+<div class="tabs">
+  <div class="tablist" role="tablist" aria-label="review">
+    <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="allReview-tab" id="allReview">전체리뷰(1,200)</button>
+    <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="photoReview-tab" id="photoReview" tabindex="-1">포토리뷰(10)</button>
+  </div>
+  <div class="tabpanel" tabindex="0" role="tabpanel" id="allReview-tab" aria-labelledby="allReview">
+    내용 1
+  </div>
+  <div class="tabpanel" tabindex="0" role="tabpanel" id="photoReview-tab" aria-labelledby="photoReview" hidden>
+    내용 2
+  </div>
+</div>
+{% endhighlight %}
+        </div>
+      </div>
+    </article>
+  </div>
+</article>
+{% endblock %}

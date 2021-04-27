@@ -1,11 +1,5 @@
 $breakpoints: (
-  'phone': 400px,
-  'phone-wide': 480px,
-  'phablet': 560px,
-  'tablet-small': 640px,
   'tablet': 768px,
-  'tablet-wide': 1024px,
-  // 'desktop': 1248px,
   'desktop': 1024px,
   'desktop-wide': 1440px,
 );
@@ -30,6 +24,26 @@ $breakpoints: (
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+// 단어 단위로 줄바꿈
+@mixin keep-word() {
+  word-break: keep-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-ellipsis-line($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 // Self Clear

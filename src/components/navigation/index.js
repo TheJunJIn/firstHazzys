@@ -1,21 +1,20 @@
 import anime from 'animejs/lib/anime.es.js';
+import UIModule from '../ui-module';
 
 const defaults = {
-  rootSelector: '.shell-navigation',
+  root: '.shell-navigation',
   containerSelector: '.navigation-container',
   buttonSelector: '[data-nav-toggle]',
   activeClass: 'active',
-  isActive: false,
-  callback: {
-    shown: ()=> {},
-    hidden: ()=> {}
-  }
+  isActive: false
 };
 
-export default class Navigation {
+export default class Navigation extends UIModule {
   constructor(params = {}) {
     const options = { ...defaults, ...params };
-    const root = document.querySelector(options.rootSelector);
+    super(options);
+
+    const { root } = this;
     const container = root && root.querySelector(options.containerSelector);
 
     if (root) {
@@ -43,10 +42,16 @@ export default class Navigation {
         }
       });
     }
-    this.root = root;
     this.container = container;
-    this.options = options;
     this.enable = true;
+
+    this.listen("viewTypeChange", async ({ value, oldValue }) => {
+      const enable = value === 'mobile' ? true : false;
+      if (!enable && oldValue) {
+        await this.reset();
+      }
+      this.enable = enable;
+    });
   }
   async show(withoutAnimation = false) {
     const { root, container, options } = this;
@@ -74,7 +79,7 @@ export default class Navigation {
     root.classList.add(options.activeClass);
     this.isActive = true;
     this.enable = true;
-    options.callback.shown();
+    this.shout('UI', 'scrollLock');
   }
   async hide(withoutAnimation = false) {
     const { root, container, options } = this;
@@ -104,7 +109,7 @@ export default class Navigation {
     root.classList.remove(options.activeClass);
     this.isActive = false;
     this.enable = true;
-    options.callback.hidden();
+    this.shout('UI', 'scrollRelease');
   }
   async reset() {
     const { root, container } = this;
@@ -113,11 +118,7 @@ export default class Navigation {
     container.style.transform = '';
     await this.hide(true);
   }
-  async onViewtypeChange(value, oldValue) {
-    const enable = value === 'mobile' ? true : false;
-    if (!enable && oldValue) {
-      await this.reset();
-    }
-    this.enable = enable;
+  destroy() {
+    super.destroy();
   }
 }

@@ -1,0 +1,49 @@
+
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '../../components/sprites/sprite-common.scss';
+
+.accordion {
+  list-style-type: none;
+  border-bottom: 1px solid #e6e6e6;
+  &__item {
+    + .accordion__item {
+      border-top: 1px solid #e6e6e6;
+    }
+    &.active {
+      .accordion__title {
+        &:before {
+          content: '-';
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    &:before {
+      content: '+';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -5px;
+      text-indent: 100%;
+      overflow: hidden;
+      line-height: 2;
+      white-space: nowrap;
+      transition: transform .2s linear;
+      @include sprite($common-arrow-down-accordion);
+    }
+  }
+  &__content {
+    display: none;
+    border-top: 1px solid #e6e6e6;
+  }
+  @include mq('desktop') {
+    &__title {
+      &:before {
+        right: 0;
+      }
+    }
+  }
+}

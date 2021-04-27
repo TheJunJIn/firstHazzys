@@ -204,6 +204,16 @@ $colors: (
   }
   left: 30px;
   right: auto;
+  @at-root .swiper-container--controls-bottom #{&} {
+    top: auto;
+    margin-top: 0;
+    left: auto;
+    right: 30px;
+    bottom: 0;
+    &:after {
+      @include sprite($common-arrow-left-swiper-small);
+    }
+  }
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
@@ -213,6 +223,15 @@ $colors: (
   }
   right: 30px;
   left: auto;
+  @at-root .swiper-container--controls-bottom #{&} {
+    top: auto;
+    margin-top: 0;
+    bottom: 0;
+    &:after {
+      right: 0;
+      @include sprite($common-arrow-right-swiper-small);
+    }
+  }
 }
 // @each $navColorName, $navColorValue in $colors {
 //   .swiper-button-prev,
@@ -253,6 +272,9 @@ $colors: (
     height: 1px;
     background-color: $themeColor;
     transition: 300ms width linear;
+    @at-root .is-move #{&} {
+      transition: none;
+    }
   }
 }
 .swiper-pagination {
@@ -279,6 +301,7 @@ $colors: (
     font-size: 14px;
     line-height: 1;
     color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
   }
   .swiper-pagination-current {
     left: 0;
@@ -286,9 +309,6 @@ $colors: (
   .swiper-pagination-total {
     right: 0;
   }
-  // bottom: 10px;
-  // left: 0;
-  // width: 100%;
 }
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
