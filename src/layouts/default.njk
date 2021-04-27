@@ -25,6 +25,8 @@
       {% block content %}
         {{ content | safe }}
       {% endblock %}
+      {% block sidebar %}
+      {% endblock %}
       {% include "footer/default.njk" %}
     </div>
     {% block modal %}

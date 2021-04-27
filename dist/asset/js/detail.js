@@ -1,0 +1,1 @@
+!function(){var i=window.$;i((function(){i(document).on("click",".review-content.is-limit .button-more",(function(){i(this).closest(".is-limit").removeClass("is-limit")}))}))}();

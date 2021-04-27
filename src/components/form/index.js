@@ -1,4 +1,5 @@
 import triggerEvent from '../../asset/js/_util/trigger-event';
+import SelectBox from './selectbox';
 
 const defaults = {
   rootSelector: '[data-form-text]',
@@ -13,6 +14,8 @@ export default class FormController {
   constructor(params = {}) {
     const options = { ...defaults, ...params };
     this.options = options;
+
+    new SelectBox();
 
     document.addEventListener('click', (e) => {
       const { target } = e;
@@ -52,7 +55,7 @@ export default class FormController {
         const min = input.getAttribute('min') || 1;
         const max = input.getAttribute('max') || 9999;
 
-        if( min > newValue || max < newValue ) {
+        if (min > newValue || max < newValue) {
           triggerEvent('error', {
             target: root,
             detail: {
@@ -60,7 +63,7 @@ export default class FormController {
               min,
               max,
               newValue
-            },
+            }
           });
           return false;
         }

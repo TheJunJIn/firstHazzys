@@ -18,7 +18,6 @@
 		<style>
 			.wrapper {
 				height: 100%;
-				background: rgba(255, 0, 0, 0.1);
 			}
 		</style>
 	</head>
@@ -47,7 +46,7 @@
 					<li><a href="#p9">기획전</a></li>
 				</ul>
 				<h3 class="guide-list__toggle open" id="p1">공통</h3>
-				<div class="section">
+				<div class="giude_sub">
 					<table class="guide-list__tbl-style guide-list__tbl-style--sorttable">
 						<caption>
 							퍼블리싱 작업목록을 파일명과 완료일자로 보여주는 표
@@ -96,7 +95,7 @@
 					</table>
 				</div>
 				<h3 class="guide-list__toggle open" id="p2">메인</h3>
-				<div class="section">
+				<div class="giude_sub">
 					<table class="guide-list__tbl-style guide-list__tbl-style--sorttable">
 						<caption>
 							퍼블리싱 작업목록을 파일명과 완료일자로 보여주는 표
@@ -131,7 +130,7 @@
 					</table>
 				</div>
 				<h3 class="guide-list__toggle open" id="p3">회원/로그인<span class="guide-list__toggle__sub">member</span></h3>
-				<div class="section">
+				<div class="giude_sub">
 					<table class="guide-list__tbl-style guide-list__tbl-style--sorttable">
 						<caption>
 							퍼블리싱 작업목록을 파일명과 완료일자로 보여주는 표
@@ -243,10 +242,65 @@
 					</table>
 				</div>
 				<h3 class="guide-list__toggle" id="p4">전시/상품</h3>
-				<h3 class="guide-list__toggle open" id="p5">주문/결제</h3>
+				<h3 class="guide-list__toggle open" id="p5">주문/결제<span class="guide-list__toggle__sub">member</span></h3>
+				<div class="giude_sub">
+					<table class="guide-list__tbl-style guide-list__tbl-style--sorttable">
+						<caption>
+							퍼블리싱 작업목록을 파일명과 완료일자로 보여주는 표
+						</caption>
+						<colgroup>
+							<col style="width: 3%" />
+							<col style="width: 25%" />
+							<col style="width: 25%" />
+							<col style="width: 20%" />
+							<col style="*" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><span>No</span></th>
+								<th scope="col"><span>1Depth</span></th>
+								<th scope="col"><span>2Depth</span></th>
+								<th scope="col">
+									<span>파일명<br />[화면코드]</span>
+								</th>
+								<th scope="col">기타</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td>쇼핑백 > 일반회원</td>
+								<td></td>
+								<td><a href="#" target="_blank" title="">화면코드</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>쇼핑백 > 패밀리회원</td>
+								<td></td>
+								<td><a href="#" target="_blank" title="">화면코드</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>쇼핑백 > 상품이 없을 경우</td>
+								<td></td>
+								<td><a href="#" target="_blank" title="">화면코드</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>주문서</td>
+								<td></td>
+								<td><a href="#" target="_blank" title="">화면코드</a></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 				<h3 class="guide-list__toggle open" id="p6">마이페이지</h3>
 				<h3 class="guide-list__toggle open" id="p7">검색</h3>
-				<div class="section">
+				<div class="giude_sub">
 					<table class="guide-list__tbl-style guide-list__tbl-style--sorttable">
 						<caption>
 							퍼블리싱 작업목록을 파일명과 완료일자로 보여주는 표
@@ -333,13 +387,16 @@
 				<h3 class="guide-list__toggle open" id="p9">메일템플릿</h3>
 				<h3 class="guide-list__toggle open" id="p10">기획전</h3>
 			</article>
+			<div class="go-top" onclick="window.scrollTo(0,0);">TOP</div>
 		</div>
 
 		<script src="/asset/js/vendor.js"></script>
 		<script src="/asset/js/ui.js"></script>
 
 		<script>
-			console.log('index.html');
+			$(document).on('click', '.guide-list__toggle', function () {
+				$(this).toggleClass('open');
+			});
 		</script>
 	</body>
 </html>

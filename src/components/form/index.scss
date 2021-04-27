@@ -276,12 +276,13 @@ $button-font-size: 14px;
 }
 
 // radio select group - 상품상세 사이즈 선택
-.form-radio-selct-group {
+.form-radio-select-group {
   white-space: nowrap;
+  font-size: 0;
   .form-radio {
     display: inline-block;
     + .form-radio {
-      margin-left: 6px;
+      margin-left: 15px;
     }
     > .radio {
       &:checked {
@@ -359,6 +360,12 @@ $field-font-size: 14px;
     color: $color-text-primary;
     font-size: $field-font-size;
     font-weight: 300;
+  }
+  @at-root {
+    textarea#{&} {
+      max-width: 100%;
+      min-height: 150px;
+    }
   }
 }
 
@@ -515,5 +522,104 @@ $select-font-size: 14px;
     right: 20px;
     transform: translateY(-50%);
     @include sprite($common-arrow-down-selectbox);
+  }
+}
+
+
+// Tab
+// =============================================================================
+.tabs {
+  [role="tablist"] {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  [role="tab"] {
+    position: relative;
+    width: 100%;
+    border: 0;
+    background: #f8f8f8;
+    outline: 0;
+    font-size: 14px;
+    font-weight: 300;
+    height: 50px;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      bottom: 0;
+      border-bottom: 1px solid $color-line-emphasize;
+    }
+
+    &[aria-selected="true"] {
+      background-color: #fff;
+      outline: 0;
+      border-top: 1px solid $color-line-emphasize;
+      border-left: 1px solid $color-line-emphasize;
+      border-right: 1px solid $color-line-emphasize;
+      font-weight: 400;
+      &:before {
+        border-bottom-color: transparent;
+      }
+    }
+    &:first-child {
+      border-left-width: 0;
+    }
+    &:last-child {
+      border-right-width: 0;
+    }
+  }
+}
+
+// Selectbox 
+.filter {
+  position: relative;
+  &__selected {
+    position: relative;
+    border-bottom: 1px solid $color-line-emphasize;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      @include sprite($common-arrow-down-accordion);
+    }
+    .button {
+      height: 29px;
+    }
+  }
+  &__list {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $color-line-emphasize;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    display: none;
+    &.is-opened {
+      display: block;
+    }
+    .button {
+      height: 22px;
+      color: $color-text-primary;
+      &.is-selected,
+      &:hover {
+        color: $color-text-emphasize;
+      }
+    }
+  }
+  .button {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
   }
 }

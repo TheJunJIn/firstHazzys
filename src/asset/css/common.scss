@@ -8,10 +8,6 @@
 @import '../../components/header/index.scss';
 @import '../../components/navigation/index.scss';
 @import '../../components/footer/index.scss';
-@import '../../components/form/index.scss';
-@import '../../components/modal/index.scss';
-@import '../../components/marquee/index.scss';
-
 @include sprites($sprite-common-sprites);
 .sprite-icon {
   display: inline-block;
@@ -23,3 +19,10 @@
 .shell-main {
   padding-top: 60px;
 }
+
+// TODO - 각 페이지에서 사용하는 css로 이동
+@import '../../components/form/index.scss';
+@import '../../components/table/index.scss';
+@import '../../components/accordion/index.scss';
+@import '../../components/modal/index.scss';
+@import '../../components/marquee/index.scss';
