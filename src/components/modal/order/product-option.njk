@@ -1,0 +1,87 @@
+<!-- 옵션 변경 -->
+<div id="modalProductOption" class="modal modal--bottom-top modal--product-option" tabindex="-1" role="dialog" data-modal="timer:2">
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <h1 class="modal__header__title">옵션 변경</h1>
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close="">
+        <i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <!-- 옵션 -->
+      <div class="product-option">
+        <!-- 색상 -->
+        <div class="product-option__color">
+          <ul class="colorchip">
+            <!-- 선택된 색상 active -->
+            <li class="colorchip__item active">
+              <a href="#" class="colorchip__link">
+                <img src="/cmsstatic/asset/images/temp/colorchip-01.jpg" alt="RED">
+              </a>
+            </li>
+            <li class="colorchip__item">
+              <a href="#" class="colorchip__link">
+                <img src="/cmsstatic/asset/images/temp/colorchip-02.jpg" alt="Green">
+              </a>
+            </li>
+            <li class="colorchip__item">
+              <a href="#" class="colorchip__link">
+                <img src="/cmsstatic/asset/images/temp/colorchip-03.jpg" alt="Blue">
+              </a>
+            </li>
+            <li class="colorchip__item">
+              <a href="#" class="colorchip__link">
+                <img src="/cmsstatic/asset/images/temp/colorchip-04.jpg" alt="Green">
+              </a>
+            </li>
+            <li class="colorchip__item">
+              <a href="#" class="colorchip__link">
+                <img src="/cmsstatic/asset/images/temp/colorchip-05.jpg" alt="Blue">
+              </a>
+            </li>
+
+          </ul>
+        </div>
+        <!-- 사이즈 -->
+        <div class="product-option__size">
+          <div class="form-radio-select-group">
+            <label class="form-radio">
+              <input type="radio" class="radio" name="size">
+              <span class="name">FREE</span>
+            </label>
+            <!-- disabled -->
+            <span class="form-radio form-radio--disabled">
+              <input type="radio" class="radio" name="size" disabled="disabled">
+              <span class="name">67L</span>
+              <button type="button" class="button button-bedge" data-sidebar-open="restockNotification">
+                <i class="sprite-common sprite-common-bell">재입고 알림</i>
+              </button>
+            </span>
+            <label class="form-radio">
+              <input type="radio" class="radio" name="size">
+              <span class="name">68L</span>
+            </label>
+            <label class="form-radio">
+              <input type="radio" class="radio" name="size">
+              <span class="name">68XL</span>
+            </label>
+          </div>
+        </div>
+        <!-- 수량 -->
+        <div class="product-option__qty">
+          <div class="form-input-qty" data-form-text="data-form-text">
+            <button type="button" class="form-input-qty__decrease" data-form-qty="decrease">-</button>
+            <label class="form-input-qty__input">
+              <input type="number" class="form-text" min="1" max="5" pattern="[0-9]*" value="1"/>
+            </label>
+            <button type="button" class="form-input-qty__increase" data-form-qty="increase">+</button>
+          </div>
+          <div class="qty-message">마지막 1개 남음</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button type="button" class="form-button form-button--main">변경하기</button>
+    </div>
+  </div>
+</div>
