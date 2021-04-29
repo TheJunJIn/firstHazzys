@@ -516,4 +516,153 @@
   // &.modal--withdrawn-member {
 
   // }
+  &.modal--product-option {
+    .modal__body {
+      .product-option {
+        position: relative;
+        padding: 23px 0 35px;
+        margin: 0 10px;
+        &__guide {
+          position: absolute;
+          top: 15px;
+          right: 0;
+          font-size: 12px;
+          font-weight: 300;
+          color: $color-text-primary;
+          outline: 0;
+          &:after {
+            content: '';
+            display: inline-block;
+            margin-left: 1px;
+            @include sprite($common-landing-small-grey);
+          }
+        }
+        &__color {
+          margin: 0 -10px;
+          padding: 10px 0 30px;
+          text-align: center;
+          border-bottom: 1px solid $color-line-border;
+          .colorchip {
+            display: inline-block;
+            white-space: nowrap;
+            padding: 0 30px;
+            font-size: 0;
+            vertical-align: top;
+            &__item {
+              display: inline-block;
+              border-radius: 100%;
+              overflow: hidden;
+              border: 1px solid transparent;
+              &.active {
+                border-color: $color-line-emphasize;
+              }
+              + .colorchip__item {
+                margin-left: 15px;
+              }
+            }
+            &__link {
+              border: 2px solid transparent;
+              box-sizing: content-box;
+              display: block;
+              width: 30px;
+              height: 30px;
+              border-radius: 100%;
+              overflow: hidden;
+              img {
+                width: 100%;
+                display: inline-block;
+                white-space: nowrap;
+              }
+            }
+          }
+          ~ .product-option__size {
+            margin-top: 30px;
+          }
+          ~ .product-option__qty {
+            margin-top: 30px;
+          }
+        }
+        &__size {
+          margin: 0 -10px;
+          padding: 10px 0 30px;
+          overflow: auto;
+          overflow-y: hidden;
+          text-align: center;
+          border-bottom: 1px solid $color-line-border;
+          .form-radio-select-group {
+            padding: 0 30px;
+            display: inline-block;
+          }
+          ~ .product-option__qty {
+            margin-top: 20px;
+          }
+        }
+        &__qty {
+          padding-top: 10px;
+          text-align: center;
+          .qty-message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            color: $color-text-emphasize;
+          }
+        }
+        @include mq('desktop') {
+          margin: 0;
+          padding: 60px 0 40px;
+          &__guide {
+            top: 20px;
+            font-size: 14px;
+            color: $color-text-emphasize;
+            &:after {
+              @include sprite($common-landing-small-black);
+            }
+          }
+          &__color {
+            margin: 0;
+            padding-top: 20px;
+            text-align: left;
+            .colorchip {
+              padding: 0;
+            }
+            ~ .product-option__size {
+              margin-top: 20px;
+            }
+            ~ .product-option__qty {
+              margin-top: 20px;
+            }
+          }
+          &__size {
+            margin: 0;
+            padding-top: 20px;
+            text-align: left;
+            .form-radio-select-group {
+              .form-radio .name {
+                min-width: 70px;
+              }
+              padding: 0;
+            }
+            ~ .product-option__qty {
+              margin-top: 20px;
+            }
+          }
+          &__qty {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            text-align: left;
+            .qty-message {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      .modal__footer {
+        margin: 30px 40px 60px;
+      }
+    }
+  }
 }
