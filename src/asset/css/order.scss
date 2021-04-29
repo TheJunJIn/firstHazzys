@@ -107,8 +107,8 @@
             text-align: center;
             .form-checkbox {
               position: relative;
-              top: initial;
-              left: initial;
+              top: auto;
+              left: auto;
             }
           }
           .top-area {
@@ -177,9 +177,9 @@
             }
           }
           .product-delete {
-            position: static;
-            top: initial;
-            left: initial;
+            position: relative;;
+            top: auto;
+            left: auto;
             width: 70px;
             text-align: center;
             .sprite-common-close-layer {
@@ -208,6 +208,13 @@
       }
       .coupon-mileage-text {
         display: none;
+      }
+      .button-bx {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        width: 270px;
       }
     }
   }
@@ -459,7 +466,6 @@
     }
   }
   .mnodr-bx.select-total-price {
-    margin-bottom: 16px;
     .mnodr-bx__tit {
       font-size: 16px;
       line-height: 16px;
@@ -470,9 +476,16 @@
       line-height: 16px;
     }
   }
+  .button-bx {
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
   .coupon-mileage-text {
     position: relative;
-    margin-bottom: 60px;
     padding: 0 0 0 10px;
     font-size: 12px;
     line-height: 18px;
