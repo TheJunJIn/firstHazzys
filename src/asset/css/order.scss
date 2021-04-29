@@ -1,0 +1,558 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '../../components/sprites/sprite-common.scss';
+
+
+.main-header {
+  position: relative;
+  &__title {
+    padding: 10px 0 0;
+    color: $color-text-emphasize;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+  }
+  &__btn-back {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    width: 40px;
+    height: 40px;
+
+  }
+  @include mq('desktop') {
+    &__title {
+      margin-bottom: 100px;
+      font-size: 24px;
+      line-height: 34px;
+      text-align: left;
+    }
+    &__btn-back {
+      display: none;
+    }
+  }
+}
+
+// 쇼핑백
+.order-wrap {
+  position: relative;
+  margin-top: 65px;
+  @include mq('desktop') {
+    .product-wrap {
+      width: 770px;
+      .all-delete {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        margin: 0 0 10px;
+        padding: 0;
+        background-color: #f8f8f8;
+        border-bottom: 0 none;
+        .form-checkbox {
+          width: 40px;
+          text-align: center;
+          .checkbox {
+            &:checked {
+              + .name:before,
+              + .icon {
+                @include sprite($common-checkbox-small-2-on);
+              }
+            }
+          }
+          .name {
+            line-height: 14px;
+            &:before {
+              margin-right: 0;
+              @include sprite($common-checkbox-small-2);
+            }
+            .txt{
+              display: none;
+            }
+          }
+        }
+        &__select-delete {
+          display: none;
+        }
+        &__title-bx {
+          display: block;
+          span {
+            display: inline-block;
+            color: $color-text-emphasize;
+            font-size: 12px;
+            text-align: center;
+          }
+          .title-info {
+            width: 330px;
+          }
+          .title-price {
+            width: 180px;
+          }
+          .title-add {
+            width: 140px;
+          }
+          .title-delete {
+            width: 60px;
+          }
+        }
+      }
+      .product-list {
+        margin: 0 0 20px;
+        li {
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          margin-top:20px;
+          .product-checkbox {
+            width: 40px;
+            text-align: center;
+            .form-checkbox {
+              position: relative;
+              top: initial;
+              left: initial;
+            }
+          }
+          .top-area {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            margin-bottom: 0;
+            .today-special-time {
+              width: 310px;
+              margin: 0;
+            }
+          }
+          .product-detail {
+            width: 340px;
+            margin-top: 30px;
+            padding-left: 10px;
+            &__detail-info {
+              width: 210px;
+              .price-bx {
+                display: none;
+              }
+            }
+          }
+          .price-bx.web-price {
+            display: block;
+            width: 180px;
+            text-align: center;
+            .product-price {
+              margin-bottom: 10px;
+              .sale-price {
+                font-size: 12px;
+              }
+              .button-price-info {
+                margin-left: 0;
+                vertical-align:-4px;
+              }
+              .tx-family-price {
+                margin-top: 4px;
+                font-size: 12px;
+                line-height: 18px;
+              }
+            }
+            .real-price {
+              margin-bottom: 4px;
+              font-size: 12px;
+            }
+            .tx-family-price {
+              font-size: 11px;
+            }
+          }
+          .button-opt-buy {
+            display: block;
+            width: 140px;
+            margin: 0;
+            text-align: center;
+            .form-button {
+              display: inline-block;
+              width: 90px;
+              height: 20px;
+              margin-bottom: 5px;
+              font-size: 11px;
+              line-height: 19px;
+              &:first-child {
+                margin: 0 0 5px;
+              }
+            }
+          }
+          .product-delete {
+            position: static;
+            top: initial;
+            left: initial;
+            width: 70px;
+            text-align: center;
+            .sprite-common-close-layer {
+              @include sprite($common-close-layer-small);
+            }
+          }
+        }
+      }
+      .select-price {
+        font-size: 14px;
+      }
+    }
+    .mnodr-total {
+      float: right;
+      width: 270px;
+      height: 100%;
+      padding-bottom: 124px;
+      .mnodr-txt {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+      }
+      .select-total-price {
+        display: none;
+      }
+      .coupon-mileage-text {
+        display: none;
+      }
+    }
+  }
+}
+
+// 전체삭제 및 상단 타이틀
+.all-delete {
+  position: relative;
+  margin: 0 10px 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-solid-emphasize;
+  .form-checkbox {
+    .name {
+      color: $color-text-emphasize;
+    }
+  }
+  &__select-delete {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 80px;
+    height: 30px;
+    background-color: $color-white;
+    border-radius: 2px;
+    border: solid 1px $color-black;
+  }
+  &__title-bx {
+    display: none;
+  }
+}
+
+// 상품 리스트
+.product-list {
+  margin: 0 10px 20px;
+  li {
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 29px;
+    border-bottom: 1px solid $color-grey-01;
+    &:first-child {
+      margin-top: 0;
+    }
+    .form-checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      vertical-align: top;
+    }
+    .top-area {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      height: 20px;
+      margin-bottom: 20px;
+      .today-special-time {
+        display: inline-block;
+        width: 100%;
+        height: 20px;
+        margin: 0 50px;
+        padding: 0 10px;
+        background-color: $color-orange-keycolor;
+        color: $color-text-white;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+    .product-detail {
+      display: flex;
+      margin-top: 20px;
+      &__thmb-img {
+        width: 80px;
+        flex: 0 0 80px;
+      }
+      &__detail-info {
+        width: 100%;
+        margin-left: 10px;
+        font-size: 12px;
+        line-height: 18px;
+        .brand-name {
+          margin-bottom: 2px;
+          color: $color-text-emphasize;
+          font-weight: 500;
+        }
+        .product-name {
+          margin-bottom: 2px;
+          color: $color-text-emphasize;
+        }
+        .product-opt {
+          margin-bottom: 14px;
+        }
+        .point-delivery {
+          .point-delivery__bx{
+            color: $color-text-emphasize;
+            font-size: 12px;
+            font-weight: 300;
+            .tx-color-orange {
+              color: $color-text-point;
+              font-weight: 500;
+            }
+            .tx-color-gray {
+              color: $color-text-primary;
+            }
+          }
+        }
+      }
+    }
+    .price-bx {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .product-price {
+        .sale-price {
+          color: $color-text-emphasize;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .button-price-info {
+          width: 16px;
+          height: 16px;
+          margin-left: 4px;
+          display: inline-block;
+          text-indent: 100%;
+          line-height: 2;
+          white-space: nowrap;
+          overflow: hidden;
+          outline: 0;
+          @include sprite($common-question-small);
+          vertical-align:-4px;
+        }
+        .tx-family-price {
+          margin-top: 4px;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      .real-price {
+        font-size: 14px;
+        font-weight: 500;
+        .sale {
+          color: $color-text-point;
+        }
+      }
+    }
+    .price-bx.web-price {
+      display: none;
+    }
+    .button-opt-buy {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .form-button{
+        height: 30px;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 30px;
+        &:first-child {
+          margin-right:5px;
+        }
+      }
+    }
+    .product-delete {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: transparent;
+      border: 0 none;
+    }
+  }
+}
+.select-price {
+  margin: 20px 0 60px;
+  color: $color-grey-02;
+  font-size: 12px;
+  text-align: center;
+}
+
+// 결제 예정 금액
+.mnodr-total {
+  position: relative;
+  margin: 0 10px;
+  .mnodr-tit {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $color-solid-emphasize;
+    color: $color-text-emphasize;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mnodr-bx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__tit {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      color: $color-text-emphasize;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 34px;
+      .ex-text {
+        color: $color-text-primary;
+        font-size: 12px;
+      }
+    }
+    &__price {
+      width: 140px;
+      text-align: right;
+      color: $color-text-emphasize;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 34px;
+    }
+  }
+  .mnodr-bx.total-price {
+    margin: 20px 0 60px;
+    padding-top: 20px;
+    border-top: 1px solid $color-grey-01;
+    .mnodr-bx__tit{
+      font-size: 14px;
+    }
+    .mnodr-bx__price {
+      color: $color-text-point;
+      font-size: 14px;
+    }
+  }
+  .mnodr-txt{
+    margin-bottom: 47px;
+    li {
+      position: relative;
+      padding: 0 0 0 10px;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 18px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 7px;
+        width: 2px;
+        height: 2px;
+        background-color: $color-grey-02;
+      }
+    }
+  }
+  .mnodr-bx.select-total-price {
+    margin-bottom: 16px;
+    .mnodr-bx__tit {
+      font-size: 16px;
+      line-height: 16px;
+    }
+    .mnodr-bx__price {
+      color: $color-text-point;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  .coupon-mileage-text {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0 0 0 10px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300;
+    &:before{
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 7px;
+      width: 2px;
+      height: 2px;
+      background-color: $color-grey-02;
+    }
+  }
+}
+
+// 쇼핑백 없을 때
+.empty-shoppingback {
+  margin-top: 56px;
+  text-align: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+    @include sprite($common-icon-shoppingback);
+  }
+  .empty-text {
+    margin-bottom: 10px;
+    color: $color-text-emphasize;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .whis-text {
+    margin-bottom: 40px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .form-button {
+    width: 165px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 38px;
+  }
+  @include mq('desktop') {
+    .empty-text {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    .whis-text {
+      margin-bottom: 60px;
+      font-size: 14px;
+    }
+    .form-button {
+      width: 370px;
+    }
+  }
+}
+
+// 주문서
+.order-sheet {
+  .product-list {
+    margin: 0 10px 60px;
+  }
+  @include mq('desktop') {
+
+  }
+}
+
+
+@include mq('desktop') {
+  .shell-main--order {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 15px 0;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+  .order-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}

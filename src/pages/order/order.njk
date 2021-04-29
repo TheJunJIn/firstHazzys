@@ -1,0 +1,147 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--order">
+  <div class="main-header">
+    <h2 class="main-header__title">주문서</h2>
+    <button type="button" class="button main-header__btn-back" aria-label="닫기" data-sidebar-close>
+      <i class="sprite-icon sprite-common sprite-common-back">닫기</i>
+    </button>
+  </div>
+  <div class="main-content">
+    <!-- 주문서 -->
+    <div class="order-wrap order-sheet">
+      <div class="product-wrap">
+        <!-- 주문서 상품 리스트 -->
+        <div class="product-list">
+          <ul>
+            <li>
+              <div class="product-detail">
+                <div class="product-detail__thmb-img">
+                  <a href="#">
+                    <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="product-detail__detail-info">
+                  <p class="brand-name">HAZZYS ACC</p>
+                  <p class="product-name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                  <p class="product-opt">차콜그레이 / 68 XL / 1개</p>
+                  <div class="price-bx">
+                    <div class="product-price">
+                      <span class="sale-price">680,000</span>
+                      <button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+                    </div>
+                    <div class="real-price">
+                      <del>966,000</del>
+                      <span class="sale">40%</span>
+                    </div>
+                  </div>
+                  <div class="point-delivery">
+                    <p class="point-delivery__bx"><span class="tx-color-orange">1,070M</span> 적립예정</p>
+                    <p class="point-delivery__bx"><span class="tx-color-orange">03/24(수)</span> 도착예정 <span class="tx-color-gray">(15시 이전 결제 시)</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-bx web-price">
+                <div class="product-price">
+                  <span class="sale-price">680,000</span>
+                  <button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+                </div>
+                <div class="real-price">
+                  <del>966,000</del>
+                  <span class="sale">40%</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="product-detail">
+                <div class="product-detail__thmb-img">
+                  <a href="#">
+                    <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="product-detail__detail-info">
+                  <p class="brand-name">HAZZYS ACC</p>
+                  <p class="product-name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                  <p class="product-opt">차콜그레이 / 68 XL / 1개</p>
+                  <div class="price-bx">
+                    <div class="product-price">
+                      <span class="sale-price">680,000</span>
+                      <button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+                    </div>
+                    <span class="real-price">
+                      <del>966,000</del>
+                      <span class="sale">40%</span>
+                    </span>
+                  </div>
+                  <div class="point-delivery">
+                    <p class="point-delivery__bx"><span class="tx-color-orange">1,070M</span> 적립예정</p>
+                    <p class="point-delivery__bx"><span class="tx-color-orange">03/24(수)</span> 도착예정 <span class="tx-color-gray">(15시 이전 결제 시)</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-bx web-price">
+                <div class="product-price">
+                  <span class="sale-price">680,000</span>
+                  <button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+                </div>
+                <div class="real-price">
+                  <del>966,000</del>
+                  <span class="sale">40%</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 결제 예정 금액 -->
+      <div class="mnodr-total">
+        <h3 class="mnodr-tit">결제 예정 금액</h3>
+        <dl class="mnodr-bx">
+          <dt class="mnodr-bx__tit">상품금액</dt>
+          <dd class="mnodr-bx__price">344,100원</dd>
+        </dl>
+        <dl class="mnodr-bx">
+          <dt class="mnodr-bx__tit">즉시할인</dt>
+          <dd class="mnodr-bx__price">-34,410원</dd>
+        </dl>
+        <dl class="mnodr-bx">
+          <dt class="mnodr-bx__tit">추가할인</dt>
+          <dd class="mnodr-bx__price">0원</dd>
+        </dl>
+        <dl class="mnodr-bx">
+          <dt class="mnodr-bx__tit">보유마일리지</dt>
+          <dd class="mnodr-bx__price">0M</dd>
+        </dl>
+        <dl class="mnodr-bx">
+          <dt class="mnodr-bx__tit">배송비</dt>
+          <dd class="mnodr-bx__price">무료</dd>
+        </dl>
+        <dl class="mnodr-bx">
+          <dt class="mnodr-bx__tit">적립예정</dt>
+          <dd class="mnodr-bx__price">17,000M</dd>
+        </dl>
+        <dl class="mnodr-bx total-price">
+          <dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
+          <dd class="mnodr-bx__price">22,347,500원</dd>
+        </dl>
+        <p class="coupon-mileage-text">쿠폰 및 마일리지 사용에 따라 최종 결제금액은 달라질 수 있습니다.</p>
+        <button type="button" class="form-button form-button--point">다음단계</button>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{# 가격안내 #modalPriceDetail #}
+{% include "modal/order/price-detail.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/order.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/order.js"></script>
+{% endblock js %}
