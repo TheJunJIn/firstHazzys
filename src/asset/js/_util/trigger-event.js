@@ -1,3 +1,24 @@
+if (typeof window.CustomEvent !== 'function') {
+  function CustomEvent(type, params) {
+    const init = {
+      bubbles: false,
+      cancelable: false,
+      detail: null,
+      ...params
+    };
+    const evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(
+      type,
+      init.bubbles,
+      init.cancelable,
+      init.detail
+    );
+    return evt;
+  }
+
+  window.CustomEvent = CustomEvent;
+}
+
 /**
  * 이벤트를 바로 생성해서 발생시키기 위한 헬퍼
  *
@@ -7,18 +28,8 @@
  * @param {*} [options.detail] - 이벤트와 같이 전달할 데이터
  */
 function triggerEvent(type, { target = document, detail } = {}) {
-  let event;
-
-  if (CustomEvent) {
-    const eventInit = detail !== undefined ? { detail } : undefined;
-    event = new CustomEvent(type, eventInit);
-  } else {
-    event = new Event(type);
-
-    if (detail) {
-      event.detail = detail;
-    }
-  }
+  const eventInit = detail !== undefined ? { detail } : undefined;
+  const event = new CustomEvent(type, eventInit);
 
   if (event && typeof target?.dispatchEvent === 'function') {
     target.dispatchEvent(event);

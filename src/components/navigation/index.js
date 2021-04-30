@@ -1,6 +1,6 @@
 import anime from 'animejs/lib/anime.es.js';
 import UIModule from '../ui-module';
-
+import Category from './category';
 const defaults = {
   root: '.shell-navigation',
   containerSelector: '.navigation-container',
@@ -16,6 +16,7 @@ export default class Navigation extends UIModule {
 
     const { root } = this;
     const container = root && root.querySelector(options.containerSelector);
+    this.category = new Category({ name: 'category' });
 
     if (root) {
       const buttons = document.querySelectorAll(options.buttonSelector);
@@ -38,14 +39,19 @@ export default class Navigation extends UIModule {
       });
       document.addEventListener('keyup', (e) => {
         if ((e.key === 'Escape' || e.key === 'Esc') && this.isActive) {
-          this.hide();
+          const { mobile } = this.category.states;
+          if(mobile.opened.length){
+            this.category.out();
+          } else {
+            this.hide();
+          }
         }
       });
     }
     this.container = container;
     this.enable = true;
 
-    this.listen("viewTypeChange", async ({ value, oldValue }) => {
+    this.listen('viewTypeChanged', async ({ value, oldValue }) => {
       const enable = value === 'mobile' ? true : false;
       if (!enable && oldValue) {
         await this.reset();
@@ -65,14 +71,14 @@ export default class Navigation extends UIModule {
         ],
         opacity: [
           { value: 0, easing: 'linear', duration: 10 },
-          { value: 1, easing: 'linear', duration: 300 }
+          { value: 1, easing: 'linear', duration: 200 }
         ]
       });
       await anime({
         targets: container,
         translateX: [
           { value: '100%', easing: 'linear', duration: 10 },
-          { value: 0, easing: 'easeOutQuad', duration: 400 }
+          { value: 0, easing: 'easeOutQuad', duration: 300 }
         ]
       }).finished;
     }
@@ -110,6 +116,7 @@ export default class Navigation extends UIModule {
     this.isActive = false;
     this.enable = true;
     this.shout('UI', 'scrollRelease');
+    this.category.reset('mobile');
   }
   async reset() {
     const { root, container } = this;

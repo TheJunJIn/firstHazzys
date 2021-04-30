@@ -68,18 +68,17 @@ const productDetailSticky = {
   }
 };
 
-const productImageSticky = {
-  __cache: {},
-  top: states.header.height,
-  get element() {
-    if (this.__cache.element) {
-      return this.__cache.element;
+function setTopButtonOffset() {
+  if (states.viewType === 'mobile') {
+    const totalAmount = document.querySelector('.total-amount');
+    if (totalAmount) {
+      const { height } = totalAmount.getBoundingClientRect();
+      shout('topButton', ['setBottomOffset', height]);
     }
-
-    this.__cache.element = document.querySelector('.product-detail__image');
-    return this.__cache.element;
+  } else {
+    shout('topButton', ['setBottomOffset', 0]);
   }
-};
+}
 
 function onViewTypeChange(viewType) {
   if (typeof viewType !== 'string') {
@@ -100,11 +99,14 @@ function onViewTypeChange(viewType) {
       hideOnScrollAfter + (states.header.height || 0)
     ]);
   }
+
+  setTopButtonOffset();
 }
 
 listen('load', () => {
   productDetailSticky.updateTop();
   productDetailSticky.showIfNeeded();
+
 });
 listen('resize', () => {
   productDetailSticky.updateTop();
@@ -118,6 +120,7 @@ listen('scroll', ({ scrollY }) => {
 listen('viewTypeChanged', ({ value }) => {
   onViewTypeChange(value);
 });
+
 report('viewType').then(({ viewType }) => {
   onViewTypeChange(viewType);
 });
@@ -152,15 +155,16 @@ const imageBlock = document.querySelector('.product-detail__image');
 function onDynamicScroll(oldScrollY, scrollY){
   const { height: containerHeight } = container.getBoundingClientRect();
   const { height: imageBlockHeight } = imageBlock.getBoundingClientRect();
-  let isFixed = false;
   let smallerThanWindow = 0;
+
+  if(scrollY < 1){
+    return false;
+  }
 
   // 스크롤이 헤더의 높이값보다 크거나 같을경우 고정
   if (scrollY >= states.header.height) {
     main.classList.add('is-fixed');
-    isFixed = true;
   } else {
-    isFixed = false;
     main.classList.remove('is-fixed');
     imageBlock.style.top = '';
   }

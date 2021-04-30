@@ -54,7 +54,6 @@ export default class Sidebar extends UIModule {
     this.shout('header', 'hide');
 
     window.setTimeout(() => {
-      console.log('sidebar');
       this.shout('UI', 'scrollLock');
     }, 300);
   }

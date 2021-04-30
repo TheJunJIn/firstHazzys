@@ -1754,8 +1754,6 @@
       // For U
       new Swiper('#foruProductSwiper', {
         loop: false,
-        {# centeredSlides: true, #}
-
         freeMode: true,
         centerInsufficientSlides: true,
         spaceBetween: 30,
@@ -1769,9 +1767,43 @@
             slidesOffsetAfter: 10
           }
         },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction'
+        },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
+        },
+        on: {
+          init: function (swiper) {
+            var swiper = this;
+            var length = swiper.slides.length;
+            if (swiper.activeIndex !== swiper.realIndex) {
+              length = length - 2;
+            }
+            var percent = (swiper.realIndex + 1) / length * 100;
+            window.setTimeout(function () {
+              $(swiper.pagination.el)
+                .parent()
+                .find('.swiper-progress__fill')
+                .width(percent + '%');
+            }, 10)
+          },
+          slideChange: function (){
+            var swiper = this;
+            var length = swiper.slides.length;
+            if (swiper.activeIndex !== swiper.realIndex) {
+              length = length - 2;
+            }
+            var percent = (swiper.realIndex + 1) / length * 100;
+            window.setTimeout(function () {
+              $(swiper.pagination.el)
+                .parent()
+                .find('.swiper-progress__fill')
+                .width(percent + '%');
+            }, 10)
+          }
         }
       })
 
@@ -1800,7 +1832,7 @@
                 .width(percent + '%');
             }, 10)
           },
-          slideChange(){
+          slideChange: function (){
             var swiper = this;
             var length = swiper.slides.length;
             if (swiper.activeIndex !== swiper.realIndex) {
@@ -1842,7 +1874,7 @@
                 .width(percent + '%');
             }, 10)
           },
-          slideChange(){
+          slideChange: function (){
             var swiper = this;
             var length = swiper.slides.length;
             if (swiper.activeIndex !== swiper.realIndex) {
@@ -1895,7 +1927,7 @@
         // 코디 - 이미지 슬라이더
         if(key === 'coordinationProducts'){
           $('#' + key).find('.swiper-container').each(function(){
-            new Swiper($(this)[0], {
+            var swiper = new Swiper($(this)[0], {
               loop: true,
               pagination: {
                 el: '.swiper-pagination',
@@ -1942,7 +1974,11 @@
                     .width(percent + '%')
                 }
               }
-            })
+            });
+            window.setTimeout(function(){
+              swiper.update();
+            }, 300);
+            
           })
         }
 

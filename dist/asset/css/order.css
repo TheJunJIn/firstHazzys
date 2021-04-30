@@ -1,0 +1,116 @@
+:export{desktopWidth:1024px}
+.main-header{position:relative}
+.main-header__title{padding:10px 0 0;color:#000;font-size:18px;font-weight:300;text-align:center}
+.main-header__btn-back{position:absolute;top:5px;left:2px;width:40px;height:40px}
+@media only screen and (min-width:1024px){
+.main-header__title{margin-bottom:100px;font-size:24px;line-height:34px;text-align:left}
+.main-header__btn-back{display:none}
+}
+.order-wrap{position:relative;margin-top:65px}
+@media only screen and (min-width:1024px){
+.order-wrap .product-wrap{width:770px}
+.order-wrap .product-wrap .all-delete{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:60px;margin:0 0 10px;padding:0;background-color:#f8f8f8;border-bottom:0 none}
+.order-wrap .product-wrap .all-delete .form-checkbox{width:40px;text-align:center}
+.order-wrap .product-wrap .all-delete .form-checkbox .checkbox:checked+.icon,.order-wrap .product-wrap .all-delete .form-checkbox .checkbox:checked+.name:before{background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-208px -192px;width:14px;height:14px;background-size:337px 314px}
+.order-wrap .product-wrap .all-delete .form-checkbox .name{line-height:14px}
+.order-wrap .product-wrap .all-delete .form-checkbox .name:before{margin-right:0;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-226px -192px;width:14px;height:14px;background-size:337px 314px}
+.order-wrap .product-wrap .all-delete .form-checkbox .name .txt{display:none}
+.order-wrap .product-wrap .all-delete__select-delete{display:none}
+.order-wrap .product-wrap .all-delete__title-bx{display:block}
+.order-wrap .product-wrap .all-delete__title-bx span{display:inline-block;color:#000;font-size:12px;text-align:center}
+.order-wrap .product-wrap .all-delete__title-bx .title-info{width:330px}
+.order-wrap .product-wrap .all-delete__title-bx .title-price{width:180px}
+.order-wrap .product-wrap .all-delete__title-bx .title-add{width:140px}
+.order-wrap .product-wrap .all-delete__title-bx .title-delete{width:60px}
+.order-wrap .product-wrap .product-list{margin:0 0 20px}
+.order-wrap .product-wrap .product-list li{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;overflow:hidden;margin-top:20px}
+.order-wrap .product-wrap .product-list li .product-checkbox{width:40px;text-align:center}
+.order-wrap .product-wrap .product-list li .product-checkbox .form-checkbox{position:relative;top:auto;left:auto}
+.order-wrap .product-wrap .product-list li .top-area{position:absolute;top:0;left:50px;margin-bottom:0}
+.order-wrap .product-wrap .product-list li .top-area .today-special-time{width:310px;margin:0}
+.order-wrap .product-wrap .product-list li .product-detail{width:340px;margin-top:30px;padding-left:10px}
+.order-wrap .product-wrap .product-list li .product-detail__detail-info{width:210px}
+.order-wrap .product-wrap .product-list li .product-detail__detail-info .price-bx{display:none}
+.order-wrap .product-wrap .product-list li .price-bx.web-price{display:block;width:180px;text-align:center}
+.order-wrap .product-wrap .product-list li .price-bx.web-price .product-price{margin-bottom:10px}
+.order-wrap .product-wrap .product-list li .price-bx.web-price .product-price .sale-price{font-size:12px}
+.order-wrap .product-wrap .product-list li .price-bx.web-price .product-price .button-price-info{margin-left:0;vertical-align:-4px}
+.order-wrap .product-wrap .product-list li .price-bx.web-price .product-price .tx-family-price{margin-top:4px;font-size:12px;line-height:18px}
+.order-wrap .product-wrap .product-list li .price-bx.web-price .real-price{margin-bottom:4px;font-size:12px}
+.order-wrap .product-wrap .product-list li .price-bx.web-price .tx-family-price{font-size:11px}
+.order-wrap .product-wrap .product-list li .button-opt-buy{display:block;width:140px;margin:0;text-align:center}
+.order-wrap .product-wrap .product-list li .button-opt-buy .form-button{display:inline-block;width:90px;height:20px;margin-bottom:5px;font-size:11px;line-height:19px}
+.order-wrap .product-wrap .product-list li .button-opt-buy .form-button:first-child{margin:0 0 5px}
+.order-wrap .product-wrap .product-list li .product-delete{position:relative;top:auto;left:auto;width:70px;text-align:center}
+.order-wrap .product-wrap .product-list li .product-delete .sprite-common-close-layer{background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-286px -216px;width:12px;height:12px;background-size:337px 314px}
+.order-wrap .product-wrap .select-price{font-size:14px}
+.order-wrap .mnodr-total{float:right;width:270px;height:100%;padding-bottom:124px}
+.order-wrap .mnodr-total .mnodr-txt{position:absolute;bottom:0;left:0;margin:0}
+.order-wrap .mnodr-total .select-total-price{display:none}
+.order-wrap .mnodr-total .coupon-mileage-text{display:none}
+.order-wrap .mnodr-total .button-bx{position:relative;right:auto;bottom:auto;left:auto;width:270px}
+}
+.all-delete{position:relative;margin:0 10px 10px;padding-bottom:20px;border-bottom:1px solid #000}
+.all-delete .form-checkbox .name{color:#000}
+.all-delete__select-delete{position:absolute;top:0;right:0;width:80px;height:30px;background-color:#fff;border-radius:2px;border:solid 1px #000}
+.all-delete__title-bx{display:none}
+.product-list{margin:0 10px 20px}
+.product-list li{position:relative;margin-top:10px;padding-bottom:29px;border-bottom:1px solid #e6e6e6}
+.product-list li:first-child{margin-top:0}
+.product-list li .form-checkbox{position:absolute;top:0;left:0;vertical-align:top}
+.product-list li .top-area{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;position:relative;height:20px;margin-bottom:20px}
+.product-list li .top-area .today-special-time{display:inline-block;width:100%;height:20px;margin:0 50px;padding:0 10px;background-color:#ff781e;color:#fff;font-size:12px;line-height:20px;text-align:center}
+.product-list li .product-detail{display:-ms-flexbox;display:flex;margin-top:20px}
+.product-list li .product-detail__thmb-img{width:80px;-ms-flex:0 0 80px;flex:0 0 80px}
+.product-list li .product-detail__detail-info{width:100%;margin-left:10px;font-size:12px;line-height:18px}
+.product-list li .product-detail__detail-info .brand-name{margin-bottom:2px;color:#000;font-weight:500}
+.product-list li .product-detail__detail-info .product-name{margin-bottom:2px;color:#000}
+.product-list li .product-detail__detail-info .product-opt{margin-bottom:14px}
+.product-list li .product-detail__detail-info .point-delivery .point-delivery__bx{color:#000;font-size:12px;font-weight:300}
+.product-list li .product-detail__detail-info .point-delivery .point-delivery__bx .tx-color-orange{color:#ff781e;font-weight:500}
+.product-list li .product-detail__detail-info .point-delivery .point-delivery__bx .tx-color-gray{color:#919191}
+.product-list li .price-bx{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:20px}
+.product-list li .price-bx .product-price .sale-price{color:#000;font-size:14px;font-weight:500}
+.product-list li .price-bx .product-price .button-price-info{width:16px;height:16px;margin-left:4px;display:inline-block;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden;outline:0;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-218px -168px;width:16px;height:16px;background-size:337px 314px;vertical-align:-4px}
+.product-list li .price-bx .product-price .tx-family-price{margin-top:4px;font-size:12px;line-height:18px}
+.product-list li .price-bx .real-price{font-size:14px;font-weight:500}
+.product-list li .price-bx .real-price .sale{color:#ff781e}
+.product-list li .price-bx.web-price{display:none}
+.product-list li .button-opt-buy{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;margin-top:20px}
+.product-list li .button-opt-buy .form-button{height:30px;font-size:12px;font-weight:300;line-height:30px}
+.product-list li .button-opt-buy .form-button:first-child{margin-right:5px}
+.product-list li .product-delete{position:absolute;top:-10px;right:-10px;background-color:transparent;border:0 none}
+.select-price{margin:20px 0 60px;color:#919191;font-size:12px;text-align:center}
+.mnodr-total{position:relative;margin:0 10px}
+.mnodr-total .mnodr-tit{margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #000;color:#000;font-size:14px;font-weight:500}
+.mnodr-total .mnodr-bx{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center}
+.mnodr-total .mnodr-bx__tit{-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1;-ms-flex-preferred-size:0;flex-basis:0;color:#000;font-size:12px;font-weight:300;line-height:34px}
+.mnodr-total .mnodr-bx__tit .ex-text{color:#919191;font-size:12px}
+.mnodr-total .mnodr-bx__price{width:140px;text-align:right;color:#000;font-size:12px;font-weight:500;line-height:34px}
+.mnodr-total .mnodr-bx.total-price{margin:20px 0 60px;padding-top:20px;border-top:1px solid #e6e6e6}
+.mnodr-total .mnodr-bx.total-price .mnodr-bx__tit{font-size:14px}
+.mnodr-total .mnodr-bx.total-price .mnodr-bx__price{color:#ff781e;font-size:14px}
+.mnodr-total .mnodr-txt{margin-bottom:47px}
+.mnodr-total .mnodr-txt li{position:relative;padding:0 0 0 10px;margin-top:10px;font-size:12px;font-weight:300;line-height:18px}
+.mnodr-total .mnodr-txt li:first-child{margin-top:0}
+.mnodr-total .mnodr-txt li:before{position:absolute;content:'';left:0;top:7px;width:2px;height:2px;background-color:#919191}
+.mnodr-total .mnodr-bx.select-total-price .mnodr-bx__tit{font-size:16px;line-height:16px}
+.mnodr-total .mnodr-bx.select-total-price .mnodr-bx__price{color:#ff781e;font-size:16px;line-height:16px}
+.mnodr-total .button-bx{position:fixed;z-index:20;right:0;bottom:0;left:0;width:100%}
+.mnodr-total .coupon-mileage-text{position:relative;padding:0 0 0 10px;font-size:12px;line-height:18px;font-weight:300}
+.mnodr-total .coupon-mileage-text:before{position:absolute;content:'';left:0;top:7px;width:2px;height:2px;background-color:#919191}
+.empty-shoppingback{margin-top:56px;text-align:center}
+.empty-shoppingback:before{content:'';display:inline-block;margin-bottom:20px;text-align:center;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:0 0;width:80px;height:80px;background-size:337px 314px}
+.empty-shoppingback .empty-text{margin-bottom:10px;color:#000;font-size:14px;line-height:14px}
+.empty-shoppingback .whis-text{margin-bottom:40px;font-size:12px;line-height:18px}
+.empty-shoppingback .form-button{width:165px;height:40px;font-size:12px;line-height:38px}
+@media only screen and (min-width:1024px){
+.empty-shoppingback .empty-text{font-size:18px;line-height:20px}
+.empty-shoppingback .whis-text{margin-bottom:60px;font-size:14px}
+.empty-shoppingback .form-button{width:370px}
+}
+.order-sheet .product-list{margin:0 10px 60px}
+@media only screen and (min-width:1024px){
+.shell-main--order{margin-left:auto;margin-right:auto;padding:100px 15px 0;max-width:1200px;box-sizing:border-box}
+.order-wrap{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}
+}

@@ -9,6 +9,7 @@ import FormController from '../../components/form';
 import FoldableController from '../../components/foldable';
 import AccordionController from '../../components/accordion';
 import TabController from '../../components/tab';
+import TopButton from '../../components/top-button';
 import getScrollbarWidth from './_util/get-scrollbar-width';
 
 const defaults = {
@@ -19,11 +20,12 @@ class UI extends ShoutAndListen {
     super();
 
     const options = { ...defaults, ...params };
-    const viewType = new ViewType();
-    const header = new Header({});
+    const viewType = new ViewType({ name: 'viewType' });
+    const header = new Header({ name: 'header' });
     const nav = new Navigation({ name: 'nav' });
-    const sidebar = new Sidebar();
-    const modalController = new ModalController();
+    const sidebar = new Sidebar({ name: 'sidebar' });
+    const modalController = new ModalController({ name: 'modalController' });
+    const topButton = new TopButton({ name: 'topButton' });
     new FormController();
     new FoldableController();
     new AccordionController();
@@ -33,6 +35,7 @@ class UI extends ShoutAndListen {
       header,
       nav,
       sidebar,
+      topButton,
       modalController
     };
     const instance = this;
@@ -61,9 +64,9 @@ class UI extends ShoutAndListen {
           isFirstScroll = true;
         }
 
-        const { scrollY } = window;
+        const { scrollY, pageYOffset } = window;
         const info = {
-          scrollY,
+          scrollY: scrollY || pageYOffset,
           time
         };
 
@@ -107,26 +110,22 @@ class UI extends ShoutAndListen {
     const { scrollY } = window;
     const app = document.querySelector('.app');
     const scrollbar = getScrollbarWidth();
-    if(!body.classList.contains(options.scrollLockClass)){
-      body.classList.add(options.scrollLockClass);
-      body.style.position = 'fixed';
-      body.style.top = `-${scrollY}px`;
-      app.style.paddingRight = `${scrollbar}px`;
-    }
+    body.classList.add(options.scrollLockClass);
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    app.style.paddingRight = `${scrollbar}px`;
   }
   scrollRelease() {
     const { options } = this;
     const { body } = document;
     const app = document.querySelector('.app');
     const scrollY = body.style.top;
-    if(body.classList.contains(options.scrollLockClass)){
-      body.classList.remove(options.scrollLockClass);
-      body.style.position = '';
-      body.style.top = '';
-      body.style.right = '';
-      app.style.paddingRight = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    }
+    body.classList.remove(options.scrollLockClass);
+    body.style.position = '';
+    body.style.top = '';
+    body.style.right = '';
+    app.style.paddingRight = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
   destroy() {
     super.destroy();
