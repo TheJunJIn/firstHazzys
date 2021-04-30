@@ -2,6 +2,7 @@
 # dist/
 dist/asset/js/manifest.json
 dist/asset/js/*.LICENSE.txt
+ui-publish/
 .cache/
 
 # Visual Studio
