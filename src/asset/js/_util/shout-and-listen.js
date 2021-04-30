@@ -1,4 +1,4 @@
-const supportsBroadcastChannel = 'BroadcastChannel' in window;
+import triggerEvent from './trigger-event';
 
 /**
  * @typedef {() => void} MessageCallback
@@ -33,36 +33,27 @@ class ShoutAndListen {
     );
 
     /**
-     * 메시지를 외치기 위해 사용할 `postMessage()` 대상 객체
+     * 메시지를 외치기 위해 사용할 대상 객체
      *
-     * - BroadcastChannel을 지원하면 이를 사용
-     * - 지원하지 않으면(IE, Safari) Window를 사용
-     *
-     * @member {(BroadcastChannel|Window)}
-     * @see https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel
+     * @member {EventTarget}
      */
-    this.messageTarget = supportsBroadcastChannel
-      ? new BroadcastChannel('ui')
-      : window.top;
-
-    /** @type {string} */
-    const origin = supportsBroadcastChannel ? null : window.top.location.origin;
+    this.messageTarget = window.top.document;
 
     /** @type {{[key:string]: ((data)=>void)[]}} */
     const listeners = {};
 
     const instance = this;
 
-    /** @type {(event:MessageEvent) => void} */
+    /** @type {(event: Event) => void} */
     const messageEventListener = (event) => {
-      if (!event.data || (origin && origin !== event.origin)) {
+      if (!event.detail) {
         return;
       }
 
-      const { data } = event;
+      const data = event.detail;
 
       // TODO: 배포 전 삭제
-      // console.group('messageEventListener');
+      // console.group(`[${instance.name}]messageEventListener`);
       // console.groupCollapsed('event');
       // console.log(event);
       // console.groupEnd();
@@ -106,10 +97,8 @@ class ShoutAndListen {
       });
     };
 
-    this.messageTarget.addEventListener('message', messageEventListener);
+    this.messageTarget.addEventListener('shout', messageEventListener);
     this.__internal__ = {
-      supportsBroadcastChannel,
-      origin,
       listeners,
       messageEventListener
     };
@@ -149,7 +138,7 @@ class ShoutAndListen {
     if (typeof message === 'string') {
       data = {};
       data[message] = typeof detail === undefined ? null : detail;
-    } else if (!detail) {
+    } else if (!detail && message) {
       data = { ...message };
     }
 
@@ -157,11 +146,10 @@ class ShoutAndListen {
       return;
     }
 
-    if (this.__internal__.supportsBroadcastChannel) {
-      this.messageTarget.postMessage(data);
-    } else {
-      this.messageTarget.postMessage(data, this.__internal__.origin);
-    }
+    triggerEvent('shout', {
+      target: this.messageTarget,
+      detail: data
+    });
   }
 
   /**
@@ -230,7 +218,7 @@ class ShoutAndListen {
    * - `target` 모듈에 `reportback` 메소드를 호출하고 그 결과 값을 반환하는 Promise를 반환합니다.
    * - 대상이 되는 모듈에 데이터를 반환하는 `reportback` 메소드가 정의되어 있어야 합니다.
    * @param {string} target
-   * @param {number} [wait=100] 데이터 반환을 기다리는 시간(`ms`). 시간 초과 시 `reject` 됩니다.
+   * @param {number} [wait=500] 데이터 반환을 기다리는 시간(`ms`). 시간 초과 시 `reject` 됩니다.
    * @returns {Promise<*>}
    * @example
    * module.report('viewType').then(({ viewType }) => {
@@ -240,7 +228,7 @@ class ShoutAndListen {
   report(target, wait = 500) {
     return new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
-        reject(new Error(`${target}이 'report'에 반응하지 않습니다.`));
+        reject(new Error(`${target}이(가) 'report'에 반응하지 않습니다.`));
       }, wait);
       const cancel = this.listen(`report:${target}`, (data) => {
         clearTimeout(timeout);
