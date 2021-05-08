@@ -1,0 +1,145 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--order">
+  <div class="main-header">
+    <h2 class="main-header__title">주문 완료</h2>
+    <button type="button" class="button main-header__btn-back" aria-label="닫기" data-sidebar-close>
+      <i class="sprite-icon sprite-common sprite-common-back">닫기</i>
+    </button>
+  </div>
+  <div class="main-content">
+    <!-- 주문 완료 -->
+    <div class="order-wrap order-complete">
+      <div class="delivery-left">
+        <div class="complete-bx">
+          <p class="complete-text">김헤지 고객님의 주문이 완료되었습니다.</p>
+          <p class="complete-text">김헤지 고객님의 첫! 주문이 완료되었습니다.</p>
+          <p class="delivery-text">주문하신 상품을 빠르고 안전하게 배송해드리겠습니다. 헤지스닷컴을 이용해 주셔서 감사합니다.</p>
+          <div class="order-detail-bx">
+            <dl class="order-detail">
+              <dt class="order-detail__tit">주문번호</dt>
+              <dd class="order-detail__price">12345678</dd>
+            </dl>
+            <dl class="order-detail">
+              <dt class="order-detail__tit">결제수단</dt>
+              <dd class="order-detail__price">신용카드(신한) / 일시불</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- 결제 내역 -->
+        <div class="mnodr-total">
+          <h3 class="mnodr-tit">결제 내역</h3>
+          <dl class="mnodr-bx">
+            <dt class="mnodr-bx__tit">총 상품 금액</dt>
+            <dd class="mnodr-bx__price">344,100원</dd>
+          </dl>
+          <dl class="mnodr-bx">
+            <dt class="mnodr-bx__tit">총 할인 금액</dt>
+            <dd class="mnodr-bx__price">-34,150원</dd>
+          </dl>
+          <dl class="mnodr-bx">
+            <dt class="mnodr-bx__tit">배송비</dt>
+            <dd class="mnodr-bx__price">무료</dd>
+          </dl>
+          <dl class="mnodr-bx">
+            <dt class="mnodr-bx__tit">적립예정 <span class="ex-text">(주문 14일 후 적립 예정입니다.)</span></dt>
+            <dd class="mnodr-bx__price">4,980M</dd>
+          </dl>
+          <dl class="mnodr-bx total-price">
+            <dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
+            <dd class="mnodr-bx__price">309,900원</dd>
+          </dl>
+          <dl class="mnodr-bx family-price">
+            <dt class="mnodr-bx__tit">제품 구입비 적용가</dt>
+            <dd class="mnodr-bx__price">209,900원</dd>
+          </dl>
+        </div>
+      </div>
+      <!-- 배송 정보 및 주문 상품 -->
+      <div class="delivery-right">
+        <!-- 배송 정보 -->
+        <div class="delivery-info">
+          <div class="title-bx">
+            <h3 class="title">배송 정보</h3>
+            <button type="button" class="delivery-info-change">변경</button>
+          </div>
+          <div class="delivery-form">
+            <p class="member-info">
+              <em>[기본]</em>김헤지<span class="num">010-1234-5678</span>
+            </p>
+            <p class="real-address">[06017] 서울 강남구 언주로 870 헤지스타워 5층</p>
+          </div>
+        </div>
+        <!-- 주문 상품 -->
+        <div class="product-wrap">
+          <div class="title-bx">
+            <h3 class="title">주문 상품</h3>
+            <span class="product-arrive">3/30 (수) 도착 예정</span>
+          </div>
+          <!-- 주문서 상품 리스트 -->
+          <div class="product-list">
+            <ul>
+              <li>
+                <div class="product-detail">
+                  <div class="product-detail__thmb-img">
+                    <a href="#">
+                      <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                    </a>
+                  </div>
+                  <div class="product-detail__detail-info">
+                    <p class="brand-name">HAZZYS ACC</p>
+                    <p class="product-name">네이비로고 자수 면 벙거지 모로고 자수</p>
+                    <p class="product-opt">차콜그레이 / 68 XL / 1개</p>
+                    <div class="price-bx">
+                      <div class="product-price">
+                        <span class="sale-price">680,000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="product-detail">
+                  <div class="product-detail__thmb-img">
+                    <a href="#">
+                      <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                    </a>
+                  </div>
+                  <div class="product-detail__detail-info">
+                    <p class="brand-name">HAZZYS ACC</p>
+                    <p class="product-name">네이비로고 자수 면 벙거지 모로고 자수</p>
+                    <p class="product-opt">차콜그레이 / 68 XL / 1개</p>
+                    <div class="price-bx">
+                      <div class="product-price">
+                        <span class="sale-price">680,000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 버튼 -->
+        <div class="button-wrap">
+          <a href="#" class="button-wrap__normal">쇼핑 계속하기</a>
+          <a href="#" class="button-wrap__normal button-black">주문내역 상세보기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/order.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/order.js"></script>
+{% endblock js %}
