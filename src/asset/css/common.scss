@@ -5,11 +5,13 @@
 @import '_reset.scss';
 
 @import '../../components/sprites/sprite-common.scss';
+@import '../../components/sprites/sprite-order.scss';
 @import '../../components/header/index.scss';
 @import '../../components/navigation/index.scss';
 @import '../../components/footer/index.scss';
 @import '../../components/top-button/index.scss';
 @include sprites($sprite-common-sprites);
+@include sprites($sprite-order-sprites);
 .sprite-icon {
   display: inline-block;
   text-indent: 100%;

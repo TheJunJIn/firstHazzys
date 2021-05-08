@@ -1,0 +1,291 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+
+$order-check-name: 'order-check';
+$order-check-x: 118px;
+$order-check-y: 58px;
+$order-check-offset-x: -118px;
+$order-check-offset-y: -58px;
+$order-check-width: 20px;
+$order-check-height: 20px;
+$order-check-total-width: 172px;
+$order-check-total-height: 138px;
+$order-check-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-check: (118px, 58px, -118px, -58px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'check', );
+$order-check-on-name: 'order-check-on';
+$order-check-on-x: 118px;
+$order-check-on-y: 34px;
+$order-check-on-offset-x: -118px;
+$order-check-on-offset-y: -34px;
+$order-check-on-width: 20px;
+$order-check-on-height: 20px;
+$order-check-on-total-width: 172px;
+$order-check-on-total-height: 138px;
+$order-check-on-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-check-on: (118px, 34px, -118px, -34px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'check-on', );
+$order-combined-shape-name: 'order-combined-shape';
+$order-combined-shape-x: 152px;
+$order-combined-shape-y: 24px;
+$order-combined-shape-offset-x: -152px;
+$order-combined-shape-offset-y: -24px;
+$order-combined-shape-width: 10px;
+$order-combined-shape-height: 10px;
+$order-combined-shape-total-width: 172px;
+$order-combined-shape-total-height: 138px;
+$order-combined-shape-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-combined-shape: (152px, 24px, -152px, -24px, 10px, 10px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'combined-shape', );
+$order-delivery-complete-name: 'order-delivery-complete';
+$order-delivery-complete-x: 0px;
+$order-delivery-complete-y: 0px;
+$order-delivery-complete-offset-x: 0px;
+$order-delivery-complete-offset-y: 0px;
+$order-delivery-complete-width: 80px;
+$order-delivery-complete-height: 80px;
+$order-delivery-complete-total-width: 172px;
+$order-delivery-complete-total-height: 138px;
+$order-delivery-complete-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-delivery-complete: (0px, 0px, 0px, 0px, 80px, 80px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'delivery-complete', );
+$order-payment-1-name: 'order-payment-1';
+$order-payment-1-x: 118px;
+$order-payment-1-y: 82px;
+$order-payment-1-offset-x: -118px;
+$order-payment-1-offset-y: -82px;
+$order-payment-1-width: 20px;
+$order-payment-1-height: 20px;
+$order-payment-1-total-width: 172px;
+$order-payment-1-total-height: 138px;
+$order-payment-1-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-payment-1: (118px, 82px, -118px, -82px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'payment-1', );
+$order-payment-2-name: 'order-payment-2';
+$order-payment-2-x: 0px;
+$order-payment-2-y: 118px;
+$order-payment-2-offset-x: 0px;
+$order-payment-2-offset-y: -118px;
+$order-payment-2-width: 20px;
+$order-payment-2-height: 20px;
+$order-payment-2-total-width: 172px;
+$order-payment-2-total-height: 138px;
+$order-payment-2-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-payment-2: (0px, 118px, 0px, -118px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'payment-2', );
+$order-payment-3-name: 'order-payment-3';
+$order-payment-3-x: 24px;
+$order-payment-3-y: 118px;
+$order-payment-3-offset-x: -24px;
+$order-payment-3-offset-y: -118px;
+$order-payment-3-width: 20px;
+$order-payment-3-height: 20px;
+$order-payment-3-total-width: 172px;
+$order-payment-3-total-height: 138px;
+$order-payment-3-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-payment-3: (24px, 118px, -24px, -118px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'payment-3', );
+$order-payment-4-name: 'order-payment-4';
+$order-payment-4-x: 48px;
+$order-payment-4-y: 118px;
+$order-payment-4-offset-x: -48px;
+$order-payment-4-offset-y: -118px;
+$order-payment-4-width: 20px;
+$order-payment-4-height: 20px;
+$order-payment-4-total-width: 172px;
+$order-payment-4-total-height: 138px;
+$order-payment-4-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-payment-4: (48px, 118px, -48px, -118px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'payment-4', );
+$order-pickup-benefit-1-name: 'order-pickup-benefit-1';
+$order-pickup-benefit-1-x: 84px;
+$order-pickup-benefit-1-y: 0px;
+$order-pickup-benefit-1-offset-x: -84px;
+$order-pickup-benefit-1-offset-y: 0px;
+$order-pickup-benefit-1-width: 30px;
+$order-pickup-benefit-1-height: 30px;
+$order-pickup-benefit-1-total-width: 172px;
+$order-pickup-benefit-1-total-height: 138px;
+$order-pickup-benefit-1-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-pickup-benefit-1: (84px, 0px, -84px, 0px, 30px, 30px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'pickup-benefit-1', );
+$order-pickup-benefit-2-name: 'order-pickup-benefit-2';
+$order-pickup-benefit-2-x: 84px;
+$order-pickup-benefit-2-y: 34px;
+$order-pickup-benefit-2-offset-x: -84px;
+$order-pickup-benefit-2-offset-y: -34px;
+$order-pickup-benefit-2-width: 30px;
+$order-pickup-benefit-2-height: 30px;
+$order-pickup-benefit-2-total-width: 172px;
+$order-pickup-benefit-2-total-height: 138px;
+$order-pickup-benefit-2-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-pickup-benefit-2: (84px, 34px, -84px, -34px, 30px, 30px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'pickup-benefit-2', );
+$order-pickup-benefit-3-name: 'order-pickup-benefit-3';
+$order-pickup-benefit-3-x: 0px;
+$order-pickup-benefit-3-y: 84px;
+$order-pickup-benefit-3-offset-x: 0px;
+$order-pickup-benefit-3-offset-y: -84px;
+$order-pickup-benefit-3-width: 30px;
+$order-pickup-benefit-3-height: 30px;
+$order-pickup-benefit-3-total-width: 172px;
+$order-pickup-benefit-3-total-height: 138px;
+$order-pickup-benefit-3-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-pickup-benefit-3: (0px, 84px, 0px, -84px, 30px, 30px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'pickup-benefit-3', );
+$order-pickup-benefit-4-name: 'order-pickup-benefit-4';
+$order-pickup-benefit-4-x: 34px;
+$order-pickup-benefit-4-y: 84px;
+$order-pickup-benefit-4-offset-x: -34px;
+$order-pickup-benefit-4-offset-y: -84px;
+$order-pickup-benefit-4-width: 30px;
+$order-pickup-benefit-4-height: 30px;
+$order-pickup-benefit-4-total-width: 172px;
+$order-pickup-benefit-4-total-height: 138px;
+$order-pickup-benefit-4-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-pickup-benefit-4: (34px, 84px, -34px, -84px, 30px, 30px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'pickup-benefit-4', );
+$order-pickup-benefit-5-name: 'order-pickup-benefit-5';
+$order-pickup-benefit-5-x: 68px;
+$order-pickup-benefit-5-y: 84px;
+$order-pickup-benefit-5-offset-x: -68px;
+$order-pickup-benefit-5-offset-y: -84px;
+$order-pickup-benefit-5-width: 30px;
+$order-pickup-benefit-5-height: 30px;
+$order-pickup-benefit-5-total-width: 172px;
+$order-pickup-benefit-5-total-height: 138px;
+$order-pickup-benefit-5-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-pickup-benefit-5: (68px, 84px, -68px, -84px, 30px, 30px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'pickup-benefit-5', );
+$order-pickup-benefit-6-name: 'order-pickup-benefit-6';
+$order-pickup-benefit-6-x: 118px;
+$order-pickup-benefit-6-y: 0px;
+$order-pickup-benefit-6-offset-x: -118px;
+$order-pickup-benefit-6-offset-y: 0px;
+$order-pickup-benefit-6-width: 30px;
+$order-pickup-benefit-6-height: 30px;
+$order-pickup-benefit-6-total-width: 172px;
+$order-pickup-benefit-6-total-height: 138px;
+$order-pickup-benefit-6-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-pickup-benefit-6: (118px, 0px, -118px, 0px, 30px, 30px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'pickup-benefit-6', );
+$order-radio-name: 'order-radio';
+$order-radio-x: 96px;
+$order-radio-y: 118px;
+$order-radio-offset-x: -96px;
+$order-radio-offset-y: -118px;
+$order-radio-width: 20px;
+$order-radio-height: 20px;
+$order-radio-total-width: 172px;
+$order-radio-total-height: 138px;
+$order-radio-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-radio: (96px, 118px, -96px, -118px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'radio', );
+$order-radio-on-name: 'order-radio-on';
+$order-radio-on-x: 72px;
+$order-radio-on-y: 118px;
+$order-radio-on-offset-x: -72px;
+$order-radio-on-offset-y: -118px;
+$order-radio-on-width: 20px;
+$order-radio-on-height: 20px;
+$order-radio-on-total-width: 172px;
+$order-radio-on-total-height: 138px;
+$order-radio-on-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-radio-on: (72px, 118px, -72px, -118px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'radio-on', );
+$order-rocation-info-name: 'order-rocation-info';
+$order-rocation-info-x: 120px;
+$order-rocation-info-y: 118px;
+$order-rocation-info-offset-x: -120px;
+$order-rocation-info-offset-y: -118px;
+$order-rocation-info-width: 20px;
+$order-rocation-info-height: 20px;
+$order-rocation-info-total-width: 172px;
+$order-rocation-info-total-height: 138px;
+$order-rocation-info-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-rocation-info: (120px, 118px, -120px, -118px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'rocation-info', );
+$order-tel-name: 'order-tel';
+$order-tel-x: 152px;
+$order-tel-y: 0px;
+$order-tel-offset-x: -152px;
+$order-tel-offset-y: 0px;
+$order-tel-width: 20px;
+$order-tel-height: 20px;
+$order-tel-total-width: 172px;
+$order-tel-total-height: 138px;
+$order-tel-image: '/cmsstatic/asset/images/sprite-order.png';
+$order-tel: (152px, 0px, -152px, 0px, 20px, 20px, 172px, 138px, '/cmsstatic/asset/images/sprite-order.png', 'tel', );
+$sprite-order-width: 172px;
+$sprite-order-height: 138px;
+$sprite-order-image: '/cmsstatic/asset/images/sprite-order.png';
+$sprite-order-sprites: ($order-check, $order-check-on, $order-combined-shape, $order-delivery-complete, $order-payment-1, $order-payment-2, $order-payment-3, $order-payment-4, $order-pickup-benefit-1, $order-pickup-benefit-2, $order-pickup-benefit-3, $order-pickup-benefit-4, $order-pickup-benefit-5, $order-pickup-benefit-6, $order-radio, $order-radio-on, $order-rocation-info, $order-tel, );
+$sprite-order: (172px, 138px, '/cmsstatic/asset/images/sprite-order.png', $sprite-order-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-size($sprite) {
+  $sprite-width: nth($sprite, 7);
+  $sprite-height: nth($sprite, 8);
+  background-size: $sprite-width $sprite-height;
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+  @include sprite-size($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  .sprite-order {
+    background-image: url('/cmsstatic/asset/images/sprite-order.png');
+    background-size: 172px 138px;
+  }
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .sprite-order-#{$sprite-name} {
+      @include sprite-position($sprite);
+      @include sprite-width($sprite);
+      @include sprite-height($sprite);
+    }
+  }
+}
