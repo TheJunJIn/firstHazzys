@@ -1214,8 +1214,7 @@
   }
   // 주문서 PC WEB
   @include mq('desktop') {
-    .order-product {
-      width: 770px;
+    .product-wrap {
       .accordion__item {
         margin: 0 0 60px;
       }
@@ -1240,16 +1239,18 @@
         }
       }
       .product-list {
-        .product-detail {
-          width: 570px;
-          padding: 0;
-          &__detail-info {
-            width: 300px;
+        li {
+          .product-detail {
+            width: 570px;
+            padding: 0;
+            &__detail-info {
+              width: 300px;
+            }
+          }
+          .price-bx.web-price {
+            width: 200px;
           }
         }
-      }
-      .price-bx.web-price {
-        width: 200px;
       }
     }
     .mnodr-total {
