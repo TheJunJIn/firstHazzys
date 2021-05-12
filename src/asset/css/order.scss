@@ -79,19 +79,10 @@
         .form-checkbox {
           width: 40px;
           text-align: center;
-          .checkbox {
-            &:checked {
-              + .name:before,
-              + .icon {
-                @include sprite($common-checkbox-small-2-on);
-              }
-            }
-          }
           .name {
             line-height: 14px;
             &:before {
               margin-right: 0;
-              @include sprite($common-checkbox-small-2);
             }
             .text{
               display: none;
@@ -521,7 +512,7 @@
       }
     }
     &__price {
-      width: 150px;
+      width: 145px;
       text-align: right;
       color: $color-text-emphasize;
       font-size: 12px;
@@ -529,16 +520,21 @@
       line-height: 34px;
     }
   }
-  .mnodr-bx.total-price {
-    margin: 20px 0 60px;
+  .total-price {
+    margin: 20px 0 0;
     padding-top: 20px;
     border-top: 1px solid $color-grey-01;
-    .mnodr-bx__tit{
-      font-size: 14px;
-    }
-    .mnodr-bx__price {
-      color: $color-text-point;
-      font-size: 14px;
+    .mnodr-bx {
+      .mnodr-bx__tit{
+        font-size: 14px;
+      }
+      .mnodr-bx__price {
+        color: $color-text-point;
+        font-size: 14px;
+      }
+      &:last-child {
+        margin-bottom: 60px;
+      }
     }
   }
   .mnodr-text{
@@ -1357,19 +1353,6 @@
           line-height: 34px;
           text-align: right;
         }
-      }
-    }
-  }
-  .mnodr-total {
-    margin-bottom: 60px;
-    .mnodr-bx.total-price, .mnodr-bx.family-price {
-      margin: 20px 0;
-      .mnodr-bx__tit{
-        line-height: 14px;
-      }
-      .mnodr-bx__price {
-        color: $color-text-point;
-        line-height: 14px;
       }
     }
   }

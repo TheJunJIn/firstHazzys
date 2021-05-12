@@ -135,10 +135,16 @@
           <dt class="mnodr-bx__tit">적립예정</dt>
           <dd class="mnodr-bx__price">17,000M</dd>
         </dl>
-        <dl class="mnodr-bx total-price">
-          <dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
-          <dd class="mnodr-bx__price">22,347,500원</dd>
-        </dl>
+        <div class="total-price">
+          <dl class="mnodr-bx">
+            <dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
+            <dd class="mnodr-bx__price">309,900원</dd>
+          </dl>
+          <dl class="mnodr-bx">
+            <dt class="mnodr-bx__tit">제품 구입비 적용가</dt>
+            <dd class="mnodr-bx__price">209,900원</dd>
+          </dl>
+        </div>
         <p class="coupon-mileage-text">쿠폰 및 마일리지 사용에 따라 최종 결제금액은 달라질 수 있습니다.</p>
         <div class="button-bx">
           <button type="button" class="form-button form-button--point">다음단계</button>
@@ -231,7 +237,7 @@
               <!-- 매장 픽업 -->
               <div class="tabpanel" tabindex="0" role="tabpanel" id="shopPickup-tab" aria-labelledby="shopPickup" hidden>
                 <div class="shop-pickup">
-                  <button type="button" class="button-map-view">위치 보기</button>
+                  <button type="button" class="button-map-view" data-modal-open="#modalShopLocation">위치 보기</button>
                   <p class="spaceh-text-1">SPACE H 에서 여러분을 기다리고 있습니다.</p>
                   <p class="spaceh-text-2">SPACE H 헤지스 명동점에서 상품을 픽업하시면 프리미엄 서비스를 경험하실 수 있습니다.</p>
                   <div class="visit-member-info">
@@ -363,7 +369,7 @@
         <div class="sale-benefit">
           <div class="title-bx">
             <h3 class="title">할인 혜택</h3>
-            <button type="button" class="button-coupon-change">쿠폰 변경</button>
+            <button type="button" class="button-coupon-change" data-modal-open="#modalCouponChange">쿠폰 변경</button>
           </div>
           <dl class="benefit-bx">
             <dt class="benefit-bx__tit">쿠폰 할인</dt>
@@ -504,7 +510,7 @@
               <input type="checkbox" class="checkbox">
               <span class="name">주문 내용을 확인하였으며 약관에 동의합니다.</span>
             </label>
-            <button type="button" class="button agree-view-button">보기</button>
+            <button type="button" class="button agree-view-button" data-modal-open="#modalOrderAgree">보기</button>
           </div>
         </div>
       </div>
@@ -516,6 +522,12 @@
 {% block modal %}
 {# 가격안내 #modalPriceDetail #}
 {% include "modal/order/price-detail.njk" %}
+{# 주문 이용 약관 #modalOrderAgree #}
+{% include "modal/order/order-agree.njk" %}
+{# 매장 위치 안내 #modalShopLocation #}
+{% include "modal/order/shop-location.njk" %}
+{# 쿠폰변경 #modalCouponChange #}
+{% include "modal/order/coupon-change.njk" %}
 {% endblock modal %}
 
 {% block css %}
