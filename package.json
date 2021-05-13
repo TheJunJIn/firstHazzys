@@ -14,7 +14,9 @@
     "start:webpack": "webpack --watch",
     "build": "cross-env NODE_ENV=production npm-run-all -l clean build:*",
     "build:webpack": "webpack",
-    "build:gulp": "gulp"
+    "build:gulp": "gulp",
+    "gulp:publish": "gulp publish",
+    "publish": "cross-env NODE_ENV=production npm-run-all -l clean build:* gulp:publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
@@ -65,9 +67,11 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "aos": "^2.3.4",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
     "promise-polyfill": "^8.2.0",
+    "rangeslider-js": "^3.2.5",
     "swiper": "^4.5.1",
     "throttle-debounce": "^3.0.1"
   }

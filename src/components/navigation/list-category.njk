@@ -1,0 +1,93 @@
+{% macro catNav(main, sub, subsub, subsubsub) %}
+  {% if not sub %}
+    {% set sub = "All" %}
+  {% endif %}
+  {% if sub != "All" and not subsub %}
+    {% set subsub = "All" %}
+  {% endif %}
+  {% if subsub and subsub != "All" and not subsubsub %}
+    {% set subsubsub = "All" %}
+  {% endif %}
+  {% set subCategories = getSubCategories(categories, main) %}
+  {% set subSubCategories = getSubCategories(subCategories, sub) %}
+  {% if subsub and subSubCategories %}
+    {% set subSubSubCategories = getSubCategories(subSubCategories, subsub) %}
+  {% endif %}
+  <nav class="category-navigation" aria-label="카테고리">
+    <div class="category-main-nav">
+      <h2 class="category-title">
+        <button type="button" class="category-main-nav-toggle dropdown-controller" aria-controls="catMainDropdown" aria-expanded="false">
+          {{ main }}
+        </button>
+      </h2>
+
+      <div class="category-fixed-nav">
+        <button type="button" class="category-fixed-nav__button dropdown-controller" aria-controls="catMainDropdown" aria-expanded="false">{{ main }}</button>
+        <button type="button" class="category-fixed-nav__button dropdown-controller" aria-controls="catSubDropdown" aria-expanded="false">{{ sub }}</button>
+      </div>
+
+      <div class="category-nav-dropdown" id="catMainDropdown" hidden="hidden">
+        <ul class="category-dropdown-list" aria-label="최상위 카테고리">
+          {% for category in categories %}
+            <li>
+              <a href="{{ category.url }}" {% if matchesCategoryName(category, main) %} aria-current="true"{% endif %}>{{ getCategoryName(category, "eng") }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="category-nav-dropdown" id="catSubDropdown" hidden="hidden">
+        <ul class="category-dropdown-list" aria-label="{{ main }} 하위 카테고리">
+          {% for category in subCategories %}
+            <li>
+              <a href="{{ category.url }}" {% if matchesCategoryName(category, sub) %} aria-current="true"{% endif %}>{{ getCategoryName(category, "eng") }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="category-sub-nav">
+      {% if subCategories %}
+        <div class="category-sub-nav_depth_1">
+          <div class="category-scroller">
+            <ul class="category-nav-list" aria-label="{{ main }} 하위 카테고리">
+              {% for category in subCategories %}
+                <li>
+                  <a href="{{ category.url }}" {% if matchesCategoryName(category, sub) %} aria-current="true"{% endif %}>{{ getCategoryName(category, "eng") }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        {% if subSubCategories %}
+          <div class="category-sub-nav_depth_2">
+            <div class="category-scroller">
+              <ul class="category-nav-list" aria-label="{{ main }} &gt; {{ sub }} 하위 카테고리">
+                {% for category in subSubCategories %}
+                  <li>
+                    <a href="{{ category.url }}" {% if matchesCategoryName(category, subsub) %} aria-current="true"{% endif %}>{{ getCategoryName(category, "kor") }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if subSubSubCategories %}
+          <div class="category-sub-nav_depth_3">
+            <div class="category-scroller">
+              <ul class="category-nav-list" aria-label="{{ main }} &gt; {{ sub }} &gt; {{ subsub }} 하위 카테고리">
+                {% for category in subSubSubCategories %}
+                  <li>
+                    <a href="{{ category.url }}" {% if matchesCategoryName(category, subsubsub) %} aria-current="true"{% endif %}>{{ getCategoryName(category, "kor") }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </nav>
+{% endmacro %}

@@ -6,6 +6,7 @@ const outdent = require('outdent');
 const addShortcode = require('./add-shortcode');
 const shortcodes = require('./shortcodes');
 const filters = require('./filters');
+const globals = require('./nunjucks-globals');
 const HighlightExtension = require('./highlight');
 
 /** @returns {nunjucks.Environment} */
@@ -19,11 +20,14 @@ function createEnv() {
       'src/components/'
     ])
   ]);
-  Object.keys(shortcodes).forEach((key) => {
-    addShortcode(env, key, shortcodes[key]);
+  Object.entries(shortcodes).forEach(([key, shortcode]) => {
+    addShortcode(env, key, shortcode);
   });
-  Object.keys(filters).forEach((key) => {
-    env.addFilter(key, filters[key]);
+  Object.entries(filters).forEach(([key, filter]) => {
+    env.addFilter(key, filter);
+  });
+  Object.entries(globals).forEach(([key, value]) => {
+    env.addGlobal(key, value);
   });
   env.addExtension('HighlightExtension', new HighlightExtension());
 

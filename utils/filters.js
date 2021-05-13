@@ -45,5 +45,25 @@ module.exports = {
     }
 
     return normUrl;
+  },
+  subCategory(category, name) {
+    if (!Array.isArray(category)) {
+      throw new TypeError(`${category}는 배열이 아닙니다.`);
+    }
+    if (typeof name !== "string") {
+      throw new TypeError(`${name}은 문자열이 아닙니다.`);
+    }
+    name = name.toLowerCase();
+    return category.filter((sub) => {
+      if (typeof sub.name === 'string') {
+        return sub.name.toLowerCase() === name;
+      }
+      if (sub.name && typeof sub.name.eng === "string" && typeof sub.name.kor === "string") {
+        return (
+          sub.name.eng.toLowerCase() === name ||
+          sub.name.kor.toLowerCase() === name
+        );
+      }
+    });
   }
 };

@@ -261,7 +261,7 @@ $colors: (
   left: 30px;
   right: 30px;
   height: 1px;
-  background-color: #fff;
+  background-color: #e6e6e6;
   text-align: left;
   &__fill {
     font-family: $font-gotham;
@@ -294,7 +294,6 @@ $colors: (
   right: 10px;
   font-size: 0;
   color: transparent;
-  background: rgba(255, 0, 0, .2);
   .swiper-pagination-current,
   .swiper-pagination-total {
     position: absolute;

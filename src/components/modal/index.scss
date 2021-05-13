@@ -331,6 +331,7 @@
   }
   // 마케팅 정보 수신 동의
   .terms-agreement {
+    margin-bottom: -15px;
     &__box {
       height: 90px;
       overflow: scroll;
@@ -339,12 +340,13 @@
       font-size: 12px;
       line-height: 22px;
       font-weight: 300;
-      padding: 6px 6px 12px 10px;
-      background-color: #f4f4f4;
+      padding: 10px;
+      color: #717171;
+      background-color: #f8f8f8;
       box-sizing: border-box;
     }
     &__form {
-      margin-top: 38px;
+      margin-top: 26px;
       display: flex;
       justify-content: space-between;
     }
@@ -359,9 +361,10 @@
       line-height: 22px;
       font-weight: 300;
       box-sizing: border-box;
-      height: 160px;
+      height: 220px;
       padding: 10px;
-      background-color: #f4f4f4;
+      color: #717171;
+      background-color: #f8f8f8;
     }
   }
   // 가격 요소 목록
@@ -661,7 +664,6 @@
         color: #000;
       }
       &__list {
-        border: 1px solid red;
         max-height: 260px;
         overflow: scroll;
         overflow-x: hidden;
@@ -719,21 +721,11 @@
     }
   }
   // 마케팅 정보 수신 동의
-  &.modal--agreement-marketing {
-    .modal__body {
-      margin-bottom: -30px;
-    }
-  }
+  // &.modal--agreement-marketing {}
   // 약관 보기
-  &.modal--policy-view {
-    .modal__body {
-      margin-bottom: -25px;
-    }
-  }
+  // &.modal--policy-view {}
   // 탈퇴 회원
-  // &.modal--withdrawn-member {
-
-  // }
+  // &.modal--withdrawn-member {}
   &.modal--product-option {
     .modal__body {
       .product-option {
@@ -880,6 +872,341 @@
     @include mq('desktop') {
       .modal__footer {
         margin: 30px 40px 60px;
+      }
+    }
+  }
+}
+
+// 검색
+.modal.modal--global-search {
+  .modal-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    transform: none;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .modal__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    z-index: 2;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.8);
+
+    &__title {
+      font-size: 18px;
+      line-height: 60px;
+      font-weight: 300;
+      color: #000;
+      text-align: center;
+    }
+    &__button {
+      top: 0;
+      left: 0;
+      right: auto;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .modal__body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+
+  transition-delay: 0.2s;
+  .modal-dialog {
+    transform: translate(100%, 0);
+    transition: transform 0.3s ease-out;
+    transition-delay: 0s;
+  }
+  &.active {
+    transition-delay: 0s;
+    .modal-dialog {
+      transform: translate(0, 0);
+      transition-delay: 0.2s;
+    }
+  }
+  @include mq('desktop') {
+    .modal-dialog {
+      top: 100px;
+      left: auto;
+      right: 30px;
+      height: auto;
+      width: 580px;
+      max-width: none;
+      margin: 0;
+      transform: translate(0, -60px);
+      background: transparent;
+      .modal__header {
+        display: none;
+      }
+      .modal__body {
+        padding-top: 0;
+        height: auto;
+        overflow: visible;
+        max-height: none;
+      }
+    }
+    &.active {
+      transition-delay: 0s;
+      .modal-dialog {
+        transform: translate(0, 0);
+        transition-delay: 0s;
+      }
+    }
+  }
+}
+
+.global-search-form {
+  > .input-block {
+    position: relative;
+    margin: 0 10px;
+    .form-text {
+      padding-right: 70px;
+      border-color: #c9c9c9;
+      &:focus {
+        border-color: #000;
+      }
+    }
+    .button--clear {
+      position: absolute;
+      top: 15px;
+      right: 44px;
+      display: none;
+      cursor: pointer;
+    }
+    .button--search {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 44px;
+      height: 50px;
+    }
+  }
+  .keyword--related {
+    margin: 10px 10px 0;
+
+    .keyword__list {
+      padding: 0 10px;
+    }
+    .keyword__item {
+      padding: 5px 0;
+      a {
+        position: relative;
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        text-decoration: none;
+        color: $color-text-emphasize;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          @include sprite($common-arrow-up-search);
+        }
+        mark {
+          background: transparent;
+          font-style: normal;
+          color: $color-text-point;
+        }
+      }
+    }
+  }
+
+  + .global-search-helper {
+    margin-top: 30px;
+  }
+  @include mq('desktop') {
+    > .input-block {
+      width: 100%;
+      margin: 0;
+      .form-text {
+        height: 80px;
+        border: 0;
+        font-size: 24px;
+        padding: 0 120px 0 20px;
+        &::placeholder {
+          font-size: 24px;
+        }
+      }
+      .button--clear {
+        top: 20px;
+        right: 70px;
+        .sprite-common-clear {
+          @include sprite($common-clear-large);
+        }
+      }
+      .button--search {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        .sprite-common-search {
+          @include sprite($common-search-large);
+        }
+      }
+    }
+    .keyword--related {
+      margin: 20px 0 0 0;
+      background-color: #fff;
+      .keyword__list {
+        padding: 30px;
+        min-height: 300px;
+        box-sizing: border-box;
+      }
+      .keyword__item {
+        padding: 5px 0;
+      }
+    }
+  }
+}
+.global-search-helper {
+  padding: 0 0 50px;
+  @include mq('desktop') {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.global-search-keyword {
+  margin: 0 20px;
+  .keyword {
+    position: relative;
+    + .keyword {
+      margin-top: 40px;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: $color-text-emphasize;
+      ~ .keyword__list {
+        margin-top: 10px;
+      }
+    }
+    &__list {
+      .keyword__item {
+        font-size: 14px;
+        font-weight: 300;
+        padding: 6px 0;
+        a {
+          display: inline-block;
+          font-size: inherit;
+          font-weight: inherit;
+          line-height: 18px;
+          color: $color-text-emphasize;
+          text-decoration: none;
+          vertical-align: top;
+        }
+      }
+    }
+    &__util {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .date {
+        font-size: 12px;
+        line-height: 18px;
+        color: $color-text-primary;
+        em {
+          font-style: normal;
+          font-weight: 450;
+        }
+      }
+      .button--delete {
+        position: relative;
+        padding-right: 26px;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 300;
+        color: $color-text-primary;
+        &:after {
+          content: '';
+          position: absolute;
+          top: -2px;
+          right: 0;
+          @include sprite($common-clear);
+        }
+      }
+    }
+  }
+  @include mq('desktop') {
+    width: 350px;
+    margin: 0;
+    padding: 30px 36px 50px 30px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+}
+.global-search-recommend {
+  margin: 40px 20px 0;
+  .keyword {
+    position: relative;
+    &__title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: $color-text-emphasize;
+    }
+    &__list {
+      font-size: 0;
+      margin: 10px -10px 0 -10px;
+      .keyword__item {
+        display: inline-block;
+        height: 34px;
+        margin: 10px 0 0 10px;
+        a {
+          display: inline-block;
+          padding: 0 10px;
+          height: 34px;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 32px;
+          color: $color-text-point;
+          white-space: nowrap;
+          text-decoration: none;
+          box-sizing: border-box;
+          border-radius: 2px;
+          border: solid 1px $color-line-point;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  @include mq('desktop') {
+    width: 220px;
+    margin: 0;
+    padding: 30px 30px 50px;
+    background-color: #fff;
+    box-sizing: border-box;
+    .keyword {
+      &__list {
+        margin: 20px 0 0 0;
+        .keyword__item {
+          display: block;
+          margin: 0;
+          + .keyword__item {
+            margin-top: 14px;
+          }
+        }
       }
     }
   }

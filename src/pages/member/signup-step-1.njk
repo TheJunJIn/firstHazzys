@@ -154,9 +154,23 @@
             <p class="countdown-text">남은시간 <em>2</em>분<em>51</em>초</p>
           </div>
           <div class="form-block__field form-block__field--button">
-            <button type="button" class="form-button form-button--plain">재전송</button>
             <button type="button" class="form-button form-button--main">확인</button>
             <button type="button" class="button time-extension-button">시간 연장</button>
+          </div>
+        </div>
+
+        <!-- 인증번호 입력 -->
+        <div class="member-form__field form-block form-block--sms-auth">
+          <div class="form-block__field">
+            <div class="input-block">
+              <input type="text" class="form-text" placeholder="인증번호 입력">
+            </div>
+            <p class="countdown-text countdown-text--error">
+              <span class="timeout">인증 시간이 초과되었습니다. SMS 재전송을 하시기 바랍니다.</span>
+            </p>
+          </div>
+          <div class="form-block__field form-block__field--button">
+            <button type="button" class="form-button form-button--plain">재전송</button>
           </div>
         </div>
 

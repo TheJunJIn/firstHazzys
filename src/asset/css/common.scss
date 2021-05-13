@@ -9,6 +9,7 @@
 @import '../../components/header/index.scss';
 @import '../../components/navigation/index.scss';
 @import '../../components/footer/index.scss';
+@import '../../components/top-button/index.scss';
 @include sprites($sprite-common-sprites);
 @include sprites($sprite-order-sprites);
 .sprite-icon {

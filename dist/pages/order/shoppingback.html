@@ -30,7 +30,7 @@
 				</h1>
 				<ul class="shell-header__util util">
 					<li class="util__item">
-						<button type="button" class="button">
+						<button type="button" class="button" data-modal-open="#modalHeaderSearch">
 							<svg class="svg-icon svg-icon--search" role="img" aria-hidden="true" width="24" height="24" title="검색">
 								<title>검색</title>
 								<use xlink:href="/cmsstatic/asset/images/sprite.svg#search"></use>
@@ -73,47 +73,1691 @@
 
 			<div class="shell-navigation">
 				<div class="navigation-container">
-					<div class="shell-navigation__member">
-						<ul class="util">
-							<li class="util__item">
-								<a href="#" class="form-button form-button--small form-button--main">LOGIN</a>
-							</li>
-							<li class="util__item">
-								<a href="#" class="form-button form-button--small form-button--plain">JOIN</a>
-							</li>
-						</ul>
-					</div>
-					<nav class="shell-navigation__category">
-						<ul class="category-list">
-							<li class="category-list__item"><a href="#">ACC</a></li>
-							<li class="category-list__item"><a href="#">Men</a></li>
-							<li class="category-list__item"><a href="#">Ladies</a></li>
-							<li class="category-list__item"><a href="#">Golf</a></li>
-							<li class="category-list__item"><a href="#">Beauty</a></li>
-							<li class="category-list__item"><a href="#">Outlet</a></li>
-							<li class="category-list__item category-list__item--hilite"><a href="#">Paddington Line</a></li>
-							<li class="category-list__item category-list__item--hilite"><a href="#">HIS Line</a></li>
-							<li class="category-list__item category-list__item--hilite"><a href="#">H line</a></li>
-						</ul>
-					</nav>
-					<div class="shell-navigation__display">
-						<div class="display-product">
-							<h2 class="display-product__title">최근 본 상품</h2>
-							<div class="display-product__content">
-								<ul class="content-list list">
-									<li class="list__item">
-										<div class="product">
-											<div class="product__image">상품이미지</div>
-											<div class="product__name">상품명</div>
-											<div class="product__price">가격</div>
+					<div id="category" class="category">
+						<div class="category-inner">
+							<div class="category__main">
+								<div class="category__util category__util--member">
+									<ul class="util">
+										<li class="util__item">
+											<a href="#" class="form-button form-button--small form-button--main">LOGIN</a>
+										</li>
+										<li class="util__item">
+											<a href="#" class="form-button form-button--small form-button--plain">JOIN</a>
+										</li>
+									</ul>
+								</div>
+								<nav class="category__navigation">
+									<ul class="category-list">
+										<li class="category-list__item">
+											<a href="#" data-category="#categoryUniqueSeq1" class="anchor menu">ACC</a>
+										</li>
+										<li class="category-list__item">
+											<a href="#" data-category="#categoryUniqueSeq2" class="anchor menu">MEN</a>
+										</li>
+										<li class="category-list__item">
+											<a href="#" data-category="#categoryUniqueSeq3" class="anchor menu">LADIES</a>
+										</li>
+										<li class="category-list__item">
+											<a href="#" data-category="#categoryUniqueSeq4" class="anchor menu">GOLF</a>
+										</li>
+										<li class="category-list__item">
+											<a href="#" data-category="#categoryUniqueSeq5" class="anchor menu">BEAUTY</a>
+										</li>
+										<li class="category-list__item">
+											<a href="#" data-category="#categoryUniqueSeq6" class="anchor menu">OUTLET</a>
+										</li>
+										<li class="category-list__item category-list__item--hilite">
+											<a href="#" class="anchor">Paddington Line</a>
+										</li>
+										<li class="category-list__item category-list__item--hilite">
+											<a href="#" class="anchor">HIS Line</a>
+										</li>
+										<li class="category-list__item category-list__item--hilite">
+											<a href="#" class="anchor">H line</a>
+										</li>
+									</ul>
+									<span class="category__indicator is-hidden"></span>
+								</nav>
+								<div class="category__util category__util--display">
+									<div class="display-product">
+										<h2 class="display-product__title">최근 본 상품</h2>
+										<div class="display-product__content">
+											<ul class="content-list list">
+												<li class="list__item">
+													<div class="product">
+														<div class="product__image">상품이미지</div>
+														<div class="product__name">상품명</div>
+														<div class="product__price">가격</div>
+													</div>
+												</li>
+											</ul>
 										</div>
-									</li>
-								</ul>
+									</div>
+								</div>
+							</div>
+							<div class="category__sub">
+								<div class="category__sub-inner">
+									<div class="category__banner">배너영역</div>
+									<div class="category__navigation">
+										<!-- 2depth -->
+										<!-- ACC -->
+										<div id="categoryUniqueSeq1" class="category-depth category-depth--2">
+											<button type="button" class="button category-depth__back">BACK</button>
+											<p class="category-depth__title">ACC</p>
+											<ul class="category-list">
+												<li class="category-list__item">
+													<a href="#" class="anchor">ALL</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">BAG</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">BAG</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">남성가방</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">남성가방</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">랩탑백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">백팩</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">숄더백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">크로스백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">클러치백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">파우치</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">여성가방</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">여성가방</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">백팩</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">쇼퍼백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">토트백/숄더백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">크로스백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">클러치백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">파우치</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">SHOES</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">SHOES</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor">여성슈즈</a>
+															</li>
+															<li>
+																<a href="#" class="anchor">남성슈즈</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">WALLET</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">WALLET</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">여성지갑</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">여성지갑</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">장지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">중지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">카드지갑/명함지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">동전지갑</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">남성지갑</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">남성지갑</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">장지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">중지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반지갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">카드지갑/명함지갑</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">SMALL ACC</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">SMALL ACC</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">벨트</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">양말</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">모자</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">스카프</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">기타</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">기타</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">IT소품</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">키홀더/키링</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">넥타이</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- // ACC -->
+
+										<!-- MEN -->
+										<div id="categoryUniqueSeq2" class="category-depth category-depth--2">
+											<button type="button" class="button category-depth__back">BACK</button>
+											<p class="category-depth__title">MEN</p>
+											<ul class="category-list">
+												<li class="category-list__item">
+													<a href="#" class="anchor">ALL</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">OUTER</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">OUTER</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">코트</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">코트</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">트렌치/맥</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">울/캐시미어</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">구스다운</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">기타</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">점퍼</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">점퍼</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">캐쥬얼</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">다운/패딩</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">바람막이</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">야상/사파리</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">자켓</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">베스트</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">TOP</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">TOP</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">셔츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">셔츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">체크/스트라이프</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">티셔츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">티셔츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">후드</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">니트웨어</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">니트웨어</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">풀오버</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">카라</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">울혼방</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">가디건</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">BOTTOM</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">BOTTOM</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor">롱</a>
+															</li>
+															<li>
+																<a href="#" class="anchor">하프</a>
+															</li>
+															<li>
+																<a href="#" class="anchor">데님</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- //MEN -->
+
+										<!-- LADIES -->
+										<div id="categoryUniqueSeq3" class="category-depth category-depth--2">
+											<button type="button" class="button category-depth__back">BACK</button>
+											<p class="category-depth__title">LADIES</p>
+											<ul class="category-list">
+												<li class="category-list__item">
+													<a href="#" class="anchor">ALL</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">OUTER</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">OUTER</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">코트</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">코트</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">트렌치/맥</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">울/캐시미어</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">핸드메이드</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">기타</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">점퍼</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">점퍼</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">캐쥬얼</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">다운/패딩</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">야상/사파리</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">자켓</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">자켓</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">린넨</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">레더</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">트위드</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">울혼방</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">기타</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">베스트</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">TOP</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">TOP</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">블라우스/셔츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">블라우스/셔츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">민소매</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">티셔츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">티셔츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">민소매</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">니트웨어</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">니트웨어</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">풀오버</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">카라</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">울혼방</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">가디건</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">BOTTOM</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">BOTTOM</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">원피스</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">원피스</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">민소매</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">스커트</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">스커트</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">롱</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">미디</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">미니</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">팬츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">팬츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">일반</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반바지</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">데님</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- //LADIES -->
+
+										<!-- GOLF -->
+										<div id="categoryUniqueSeq4" class="category-depth category-depth--2">
+											<button type="button" class="button category-depth__back">BACK</button>
+											<p class="category-depth__title">GOLF</p>
+											<ul class="category-list">
+												<li class="category-list__item">
+													<a href="#" class="anchor">ALL</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">OUTER</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">OUTER</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">점퍼</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">점퍼</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">두잉점퍼</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">다운/패딩</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">바람막이</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">플리스</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">자켓</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">TOP</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">TOP</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">티셔츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">티셔츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">민소매</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">셔츠</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">셔츠</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">긴팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">니트웨어</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">니트웨어</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">반팔</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">풀오버</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">풀집업/반집업</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">가디건</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">베스트</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">BOTTOM</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">BOTTOM</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">롱</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">하프</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">스커트</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">ACC</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">ACC</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">가방</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">가방</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">보스톤백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">숄더백/토트백</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">캐디백</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">골프화</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">모자</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">장갑</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">벨트</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">기타</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">기타</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">귀마개</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">마스크</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">파우치</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- //GOLF -->
+
+										<!-- BEAUTY -->
+										<div id="categoryUniqueSeq5" class="category-depth category-depth--2">
+											<button type="button" class="button category-depth__back">BACK</button>
+											<p class="category-depth__title">BEAUTY</p>
+											<ul class="category-list">
+												<li class="category-list__item">
+													<a href="#" class="anchor">ALL</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor">SKIN CARE</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor">MAKEUP</a>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor">HAIR/BODY</a>
+												</li>
+											</ul>
+										</div>
+										<!-- //BEAUTY -->
+
+										<!-- OUTLET -->
+										<div id="categoryUniqueSeq6" class="category-depth category-depth--2">
+											<button type="button" class="button category-depth__back">BACK</button>
+											<p class="category-depth__title">OUTLET</p>
+											<ul class="category-list">
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">ACC</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">ACC</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">가방</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">가방</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">남성가방</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">남성가방</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">랩탑백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">백팩</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">숄더백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">크로스백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">클러치백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">파우치</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">여성가방</a>
+																			<div class="category-depth category-depth--4">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">여성가방</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">백팩</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">쇼퍼백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">토트백/숄더백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">크로스백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">클러치백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">파우치</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">슈즈</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">슈즈</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor">여성슈즈</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor">남성슈즈</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">지갑</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">지갑</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">여성지갑</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">여성지갑</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">장지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">중지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">카드지갑/명함지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">동전지갑</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">남성지갑</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">남성지갑</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">장지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">중지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반지갑</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">카드지갑/명함지갑</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">용품</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">용품</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">벨트</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">양말</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">모자</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">스카프</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">기타</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">기타</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">IT소품</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">키홀더/키링</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">넥타이</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">MEN</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">MEN</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">아우터</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">아우터</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">코트</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">코트</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">트렌치/맥</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">울/캐시미어</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">구스다운</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">기타</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">점퍼</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">점퍼</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">캐쥬얼</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">다운/패딩</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">바람막이</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">야상/사파리</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">자켓</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">베스트</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">상의</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">상의</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">셔츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">셔츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">체크/스트라이프</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">티셔츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">티셔츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">후드</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor menu">니트웨어</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">니트웨어</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">풀오버</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">카라</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">울혼방</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">가디건</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">하의</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">하의</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor">롱</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor">하프</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor">데님</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">LADIES</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">LADIES</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">아우터</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">아우터</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">코트</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">코트</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">트렌치/맥</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">울/캐시미어</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">핸드메이드</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">기타</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">점퍼</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">점퍼</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">캐쥬얼</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">다운/패딩</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">야상/사파리</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor menu">자켓</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">자켓</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">린넨</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">레더</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">트위드</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">울혼방</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">기타</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">베스트</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">상의</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">TOP</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">블라우스/셔츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">블라우스/셔츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">민소매</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">티셔츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">티셔츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">민소매</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor menu">니트웨어</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">니트웨어</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">풀오버</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">카라</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">울혼방</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">가디건</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li>
+																<a href="#" class="anchor menu">하의</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">하의</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">원피스</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">원피스</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">민소매</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">스커트</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">스커트</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">롱</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">미디</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">미니</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">팬츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">팬츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">일반</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반바지</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">데님</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">GOLF</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">GOLF</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">아우터</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">OUTER</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">점퍼</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">점퍼</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">두잉점퍼</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">다운/패딩</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">바람막이</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">플리스</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">자켓</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">상의</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">상의</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">티셔츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">티셔츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">민소매</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">셔츠</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">셔츠</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">긴팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor menu">니트웨어</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">니트웨어</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">반팔</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">풀오버</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">풀집업/반집업</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">가디건</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">베스트</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">하의</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">하의</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">롱</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">하프</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">스커트</a>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor menu">용품</a>
+																<div class="category-depth category-depth--4">
+																	<button type="button" class="button category-depth__back">BACK</button>
+																	<p class="category-depth__title">ACC</p>
+																	<ul class="category-list">
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">ALL</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">가방</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">가방</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">보스톤백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">숄더백/토트백</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">캐디백</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">골프화</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">모자</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">장갑</a>
+																		</li>
+																		<li class="category-list__item">
+																			<a href="#" class="anchor">벨트</a>
+																		</li>
+																		<li>
+																			<a href="#" class="anchor menu">기타</a>
+																			<div class="category-depth category-depth--5">
+																				<button type="button" class="button category-depth__back">BACK</button>
+																				<p class="category-depth__title">기타</p>
+																				<ul class="category-list">
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">귀마개</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">마스크</a>
+																					</li>
+																					<li class="category-list__item">
+																						<a href="#" class="anchor">파우치</a>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="category-list__item">
+													<a href="#" class="anchor menu">BEAUTY</a>
+													<div class="category-depth category-depth--3">
+														<button type="button" class="button category-depth__back">BACK</button>
+														<p class="category-depth__title">BEAUTY</p>
+														<ul class="category-list">
+															<li class="category-list__item">
+																<a href="#" class="anchor">ALL</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">스킨케어</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">메이크업</a>
+															</li>
+															<li class="category-list__item">
+																<a href="#" class="anchor">헤어/바디</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- //OUTLET -->
+										<!-- // 2depth -->
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="shell-navigation__close">
-						<button type="button" class="button" data-nav-toggle="hide">CLOSE</button>
+						<button type="button" class="button" data-nav-toggle="hide"><span>CLOSE</span></button>
 					</div>
 				</div>
 			</div>
@@ -133,7 +1777,7 @@
 							<div class="all-delete">
 								<label class="form-checkbox">
 									<input type="checkbox" class="checkbox" />
-									<span class="name"><span class="txt">전체선택 (4개)</span></span>
+									<span class="name"><span class="text">전체선택 (4개)</span></span>
 								</label>
 								<button type="button" class="all-delete__select-delete">선택삭제</button>
 								<div class="all-delete__title-bx">
@@ -167,7 +1811,7 @@
 												<div class="price-bx">
 													<div class="product-price">
 														<span class="sale-price">680,000</span>
-														<button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+														<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
 														<p class="tx-family-price">패밀리 회원가 적용 중</p>
 													</div>
 													<div class="real-price">
@@ -184,7 +1828,7 @@
 										<div class="price-bx web-price">
 											<div class="product-price">
 												<span class="sale-price">680,000</span>
-												<button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+												<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
 											</div>
 											<div class="real-price">
 												<del>966,000</del>
@@ -202,7 +1846,7 @@
 									</li>
 									<li>
 										<div class="product-checkbox">
-											<span class="form-checkbox">
+											<span class="form-checkbox form-checkbox--disabled">
 												<input type="checkbox" class="checkbox" title="선택삭제" />
 												<i class="icon"></i>
 											</span>
@@ -223,19 +1867,19 @@
 												<div class="price-bx">
 													<div class="product-price">
 														<span class="sale-price">680,000</span>
-														<button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+														<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
 													</div>
-													<span class="real-price">
+													<div class="real-price">
 														<del>966,000</del>
 														<span class="sale">40%</span>
-													</span>
+													</div>
 												</div>
 											</div>
 										</div>
 										<div class="price-bx web-price">
 											<div class="product-price">
 												<span class="sale-price">680,000</span>
-												<button type="button" class="button button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
+												<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
 											</div>
 											<div class="real-price">
 												<del>966,000</del>
@@ -245,7 +1889,7 @@
 										</div>
 										<div class="button-opt-buy">
 											<button type="button" class="form-button">일시 품절</button>
-											<button type="button" class="form-button form-button--point">재입고 알림</button>
+											<button type="button" class="form-button form-button--point button-combined">재입고 알림</button>
 										</div>
 										<button type="button" class="product-delete" aria-label="삭제" data-modal-close="">
 											<i class="sprite-icon sprite-common sprite-common-close-layer">삭제</i>
@@ -271,11 +1915,17 @@
 								<dt class="mnodr-bx__tit">배송비 <span class="ex-text">(3만원이상 무료)</span></dt>
 								<dd class="mnodr-bx__price">무료</dd>
 							</dl>
-							<dl class="mnodr-bx total-price">
-								<dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
-								<dd class="mnodr-bx__price">22,347,500원</dd>
-							</dl>
-							<ul class="mnodr-txt">
+							<div class="total-price">
+								<dl class="mnodr-bx">
+									<dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
+									<dd class="mnodr-bx__price">309,900원</dd>
+								</dl>
+								<dl class="mnodr-bx">
+									<dt class="mnodr-bx__tit">제품 구입비 적용가</dt>
+									<dd class="mnodr-bx__price">209,900원</dd>
+								</dl>
+							</div>
+							<ul class="mnodr-text">
 								<li>쇼핑백에 담긴 상품은 최대 30일까지 보관됩니다.</li>
 								<li>적립예정 마일리지는 결제금액에 따라 달라질 수 있습니다.</li>
 							</ul>
@@ -283,7 +1933,9 @@
 								<dt class="mnodr-bx__tit">12개 선택 총 상품 금액</dt>
 								<dd class="mnodr-bx__price">12,345,000원</dd>
 							</dl>
-							<button type="button" class="form-button form-button--point">주문하기</button>
+							<div class="button-bx">
+								<button type="button" class="form-button form-button--point">주문하기</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -336,6 +1988,106 @@
 					<p class="footer__copyright">&copy; 2021 HAZZYS ALL RIGHTS RESERVED.</p>
 				</div>
 			</footer>
+		</div>
+		<a href="#top" class="top-button">페이지 상단으로 이동</a>
+
+		<div id="modalHeaderSearch" class="modal modal--dim modal--global-search" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">검색</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-back">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<!-- 검색폼 -->
+					<div class="global-search-form">
+						<div class="input-block">
+							<input type="text" class="form-text" placeholder="아워스 프린트 셔츠" />
+							<span class="button--clear">
+								<i class="sprite-icon sprite-common sprite-common-clear">삭제</i>
+							</span>
+							<button type="button" class="button button--search">
+								<i class="sprite-icon sprite-common sprite-common-search">검색</i>
+							</button>
+						</div>
+
+						<div class="keyword keyword--related">
+							<ul class="keyword__list">
+								<li class="keyword__item">
+									<a href="#"><mark>청</mark>바지</a>
+								</li>
+								<li class="keyword__item">
+									<a href="#">남성 <mark>청</mark>바지</a>
+								</li>
+								<li class="keyword__item">
+									<a href="#">여성 <mark>청</mark>바지</a>
+								</li>
+								<li class="keyword__item">
+									<a href="#"><mark>청</mark>자켓</a>
+								</li>
+								<li class="keyword__item">
+									<a href="#">여성 <mark>청</mark>자켓</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //검색폼 -->
+
+					<div class="global-search-helper">
+						<!-- 검색어 -->
+						<div class="global-search-keyword">
+							<div class="keyword keyword--history">
+								<div class="keyword__title">최근 검색어</div>
+								<ul class="keyword__list">
+									<li class="keyword__item"><a href="#">니트</a></li>
+									<li class="keyword__item"><a href="#">양말</a></li>
+									<li class="keyword__item"><a href="#">세일상품</a></li>
+									<li class="keyword__item"><a href="#">골프용품</a></li>
+								</ul>
+								<div class="keyword__util">
+									<button type="button" class="button button--delete">전체 삭제</button>
+								</div>
+							</div>
+							<div class="keyword keyword--popular">
+								<div class="keyword__title">인기 검색어</div>
+								<ul class="keyword__list">
+									<li class="keyword__item"><a href="#">가디건</a></li>
+									<li class="keyword__item"><a href="#">봄자켓</a></li>
+									<li class="keyword__item"><a href="#">골프바지</a></li>
+									<li class="keyword__item"><a href="#">남자가방</a></li>
+									<li class="keyword__item"><a href="#">반팔</a></li>
+									<li class="keyword__item"><a href="#">청바지</a></li>
+									<li class="keyword__item"><a href="#">니트</a></li>
+									<li class="keyword__item"><a href="#">슬랙스</a></li>
+									<li class="keyword__item"><a href="#">반바지</a></li>
+									<li class="keyword__item"><a href="#">여자가방</a></li>
+								</ul>
+								<div class="keyword__util">
+									<span class="date"><em>2021.04.14</em> 기준</span>
+								</div>
+							</div>
+						</div>
+						<!-- //검색어 -->
+						<!-- 헤지스 추천 -->
+						<div class="global-search-recommend">
+							<div class="keyword keyword--recommend">
+								<div class="keyword__title">헤지스 추천</div>
+								<ul class="keyword__list">
+									<li class="keyword__item"><a href="#">#패딩턴</a></li>
+									<li class="keyword__item"><a href="#">#도트백</a></li>
+									<li class="keyword__item"><a href="#">#THE H.</a></li>
+									<li class="keyword__item"><a href="#">#골프상의</a></li>
+									<li class="keyword__item"><a href="#">#맨룰429</a></li>
+									<li class="keyword__item"><a href="#">#H.OURS</a></li>
+									<li class="keyword__item"><a href="#">#티셔츠</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //헤지스 추천 -->
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- 가격안내 -->
@@ -429,9 +2181,7 @@
 								<span class="form-radio form-radio--disabled">
 									<input type="radio" class="radio" name="size" disabled="disabled" />
 									<span class="name">67L</span>
-									<button type="button" class="button button-bedge" data-sidebar-open="restockNotification">
-										<i class="sprite-common sprite-common-bell">재입고 알림</i>
-									</button>
+									<button type="button" class="button button-bedge" data-sidebar-open="restockNotification"></button>
 								</span>
 								<label class="form-radio">
 									<input type="radio" class="radio" name="size" />
@@ -452,7 +2202,6 @@
 								</label>
 								<button type="button" class="form-input-qty__increase" data-form-qty="increase">+</button>
 							</div>
-							<div class="qty-message">마지막 1개 남음</div>
 						</div>
 					</div>
 				</div>

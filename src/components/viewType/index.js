@@ -37,7 +37,7 @@ export default class ViewType extends UIModule {
     }
   }
   changeViewType(value, oldValue) {
-    this.shout('viewTypeChange', {
+    this.shout('viewTypeChanged', {
       oldValue,
       value
     });

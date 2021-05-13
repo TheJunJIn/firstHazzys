@@ -18,8 +18,12 @@ const plugins = gulpLoadPlugins();
 
 const clean = {
   demo: () => del('dist'),
+  uiPublish: () => del('ui-publish'),
   sprites: () =>
-    del(['src/cmsstatic/asset/images/sprite-*.png', 'src/components/sprites/*.scss'])
+    del([
+      'src/cmsstatic/asset/images/sprite-*.png',
+      'src/components/sprites/*.scss'
+    ])
 };
 
 function makeMarkupTask(src) {
@@ -55,6 +59,7 @@ function makeMarkupTask(src) {
       '!src/components/**'
     ]);
     njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
+    njk.data.categories = readJson(path.resolve(njk.path.data, 'categories.json'));
     njk.layout = {};
     const onlyUseBasename = !!src && process.platform === "win32";
 
@@ -270,6 +275,36 @@ const startWatchers = () => {
   });
 };
 
+const prefixPath = (content, prefix = '/ui-publish') => {
+  let replaced = content;
+  [
+    /(\/cmsstatic\/)/g,
+    /(\/asset\/css\/)/g,
+    /(\/asset\/js\/)/g,
+    /(\/pages\/)/g,
+    /(\/guide\/)/g
+  ].forEach((regexp) => {
+    replaced = replaced.replace(regexp, (match) => prefix + match);
+  });
+  return replaced;
+};
+
+const uiPublish = () => {
+  return gulp.src('dist/**/*')
+    .pipe(through.obj(function (file, _, cb) {
+      const ext = path.extname(file.path);
+
+      if (ext === '.css' || ext === '.html' || ext === ".json" || ext === ".js") {
+        const fileContents = file.contents.toString();
+        const pathReplaced = prefixPath(fileContents);
+        file.contents = Buffer.from(pathReplaced);
+      }
+
+      cb(null, file);
+    }))
+    .pipe(gulp.dest('ui-publish/'));
+};
+
 const copyTaskList = [copy.ico, copy.font, copy.media];
 const cleanTask = gulp.parallel([clean.demo]);
 const spritesTask = gulp.series([clean.sprites, sprites]);
@@ -286,5 +321,6 @@ export {
   cleanTask as clean,
   watchTask as watch,
   spritesTask as sprites,
-  serveTask as serve
+  serveTask as serve,
+  uiPublish as publish
 };

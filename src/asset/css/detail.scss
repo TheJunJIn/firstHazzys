@@ -1566,9 +1566,6 @@
         .product__option {
           margin-top: 6px;
         }
-        .product__price {
-          // margin-top: 20px;
-        }
       }
     }
     &__submit {
@@ -2440,6 +2437,16 @@
         }
       }
     }
+    .swiper-container {
+      padding-bottom: 50px;
+    }
+    .swiper-pagination {
+      visibility: hidden;
+    }
+    .swiper-progress {
+      left: 10px;
+      right: 10px;
+    }
     @include mq('desktop', 'max') {
       .swiper-button-prev,
       .swiper-button-next {
@@ -2464,6 +2471,12 @@
         top: 240px;
         z-index: 3;
         pointer-events: auto !important;
+      }
+      .swiper-container {
+        padding-bottom: 0;
+      }
+      .swiper-pagination-container {
+        display: none;
       }
     }
   }

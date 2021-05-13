@@ -1,5 +1,5 @@
-@import '_variables.scss';
-@import '_mixins.scss';
+@import '../../asset/css/variables.scss';
+@import '../../asset/css/mixins.scss';
 @import '../../components/sprites/sprite-common.scss';
 
 $navigation-width: 80%;
@@ -16,9 +16,8 @@ $navigation-width: 80%;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 20;
+  z-index: 30;
   transition: top 0.3s;
-
 
   .navigation-container {
     width: $navigation-width;
@@ -26,80 +25,30 @@ $navigation-width: 80%;
     margin-left: auto;
     background: #fff;
     transform: translate(100%, 0);
-    @include mq('desktop'){
-      width: 100%;
-      height: auto;
-      transform: none;
-      transition: none;
-    }
-  }
-
-  &__category {
-    .category-list {
-      &__item {
-        a {
-          position: relative;
-          display: block;
-          font-family: $font-gotham;
-          font-weight: 450;
-          font-size: 20px;
-          color: #000;
-          text-transform: uppercase;
-          line-height: 42px;
-          text-decoration: none;
-          padding: 0 30px 0 20px;
-          &:after {
-            content: '>';
-            position: absolute;
-            top: 50%;
-            right: 12px;
-            transform: translateY(-50%);
-            text-indent: 100%;
-            line-height: 2;
-            overflow: hidden;
-            white-space: nowrap;
-            @include sprite($common-dropdown-arrow-right);
-          }
-        }
-      }
-      &__item--hilite {
-        a {
-          color: $color-text-point;
-        }
-      }
-    }
-  }
-
-  &__member {
-    .util {
-      padding: 60px 0 40px;
-      margin: 0 10px 0 20px;
-      display: flex;
-      &__item {
-        width: 100%;
-        + .util__item {
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-  &__display {
-    background-color: rgba(0, 255, 0, .1);
   }
   &__close {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: rotate(-90deg);
-    transform-origin: bottom left;
-
+    top: 0;
+    left: -25%;
+    width: 25%;
+    height: 100%;
     .button {
-      padding: 10px;
+      width: 100%;
+      height: 100%;
       font-family: $font-gotham;
       font-weight: $font-gotham-bold;
       font-size: 18px;
       color: #fff;
       outline: 0;
+      span {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: inline-block;
+        padding: 10px;
+        transform: rotate(-90deg);
+        transform-origin: top center;
+      }
     }
   }
   @include mq('desktop'){
@@ -109,64 +58,357 @@ $navigation-width: 80%;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background: none;
+    .navigation-container {
+      width: 100%;
+      height: auto;
+      transform: none;
+      transition: none;
+    }
+    &__close {
+      display: none;
+    }
+  }
 
-    &__category {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      z-index: 2;
-      transform: translate(-50%, -100%);
-      height: 60px;
-      .category-list {
-        white-space: nowrap;
-        font-size: 0;
-        line-height: 0;
+  visibility: hidden;
+  @at-root .is-mobile #{&}, .is-desktop #{&} {
+    visibility: visible;
+  }
+}
 
-        &__item {
-          display: inline-block;
-          white-space: nowrap;
-          a {
-            font-size: 14px;
-            line-height: 60px;
-            letter-spacing: -0.025em;
-            padding: 0 20px;
-            &:hover {
-              font-weight: 600;
-              letter-spacing: -0.03em;
+// Mobile
+// =============================================================================
+.is-mobile {
+  .navigation-container {
+    .category {
+      overflow: hidden;
+      .category-inner {
+        position: relative;
+      }
+      .category__main {
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+        .category__navigation {
+          .category-list {
+            &__item {
+              .anchor {
+                position: relative;
+                display: block;
+                font-family: $font-gotham;
+                font-weight: 450;
+                font-size: 20px;
+                color: #000;
+                text-transform: uppercase;
+                line-height: 42px;
+                text-decoration: none;
+                padding: 0 30px 0 20px;
+                &.menu {
+                  &:after {
+                    content: '>';
+                    position: absolute;
+                    top: 50%;
+                    right: 12px;
+                    transform: translateY(-50%);
+                    text-indent: 100%;
+                    line-height: 2;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    @include sprite($common-dropdown-arrow-right);
+                  }
+                }
+              }
             }
-            &:after {
-              content: none;
+            &__item--hilite {
+              .anchor {
+                color: $color-text-point;
+              }
+            }
+          }
+        }
+      }
+      .category__sub {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        overflow-x: hidden;
+        background: #fff;
+
+        // 2depth 메뉴
+        .category__navigation {
+          .anchor {
+            display: block;
+            position: relative;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 38px;
+            color: #000;
+            text-decoration: none;
+
+            &.menu {
+              &:after {
+                content: '>';
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                text-indent: 100%;
+                line-height: 2;
+                overflow: hidden;
+                white-space: nowrap;
+                @include sprite($common-dropdown-arrow-right);
+              }
+            }
+          }
+          // 각 메뉴
+          .category-depth {
+            display: none;
+            height: 100vh;
+            background: #fff;
+            .category-depth__back {
+              position: relative;
+              margin: 60px 0 0 20px;
+              height: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 20px;
+              padding-left: 26px;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include sprite($common-arrow-left-nav-back);
+              }
+            }
+            .category-depth__title {
+              margin: 40px 0 0 20px;
+              font-size: 20px;
+              font-weight: 500;
+              color: #000;
+              height: 20px;
+              line-height: 20px;
+              overflow: hidden;
+            }
+            .category-list {
+              position: relative;
+              padding: 20px 0 0 20px;
+            }
+            &.category-depth--3 {
+              position: absolute;
+              top: -140px;
+              width: 100%;
+              left: 100%;
+              background: #fff;
+              z-index: 2;
+            }
+            &.category-depth--4 {
+              position: absolute;
+              top: -140px;
+              width: 100%;
+              left: 100%;
+              background: #fff;
+              z-index: 3;
+            }
+            &.category-depth--5 {
+              position: absolute;
+              top: -140px;
+              width: 100%;
+              left: 100%;
+              background: #fff;
+              z-index: 4;
             }
           }
         }
       }
     }
-    &__member,
-    &__display {
-      display: none;
-    }
   }
 }
 
-.display-product {
-  &__title {
-    color: blue;
+// [Mobile] 네비게이션 > 상단 로그인/회원정보 버튼
+.category__util--member {
+  display: none;
+  .util {
+    padding: 60px 0 40px;
+    margin: 0 10px 0 20px;
+    display: flex;
+    &__item {
+      width: 100%;
+      + .util__item {
+        margin-left: 10px;
+      }
+    }
   }
-  &__content {
-    > .content-list {
-      &.list {
-        @include self-clear;
-        .list__item {
-          float: left;
-          width: 100px;
-          border: 1px solid red;
-          overflow: hidden;
+}
+// [Mobile] 네비게이션 > 하단 최근 본 상품
+.category__util--display {
+  display: none;
+  background-color: rgba(0, 255, 0, .1);
+  .display-product {
+    &__title {
+      color: blue;
+    }
+    &__content {
+      > .content-list {
+        &.list {
+          @include self-clear;
+          .list__item {
+            float: left;
+            width: 100px;
+            border: 1px solid red;
+            overflow: hidden;
+          }
         }
       }
     }
   }
 }
 
-@include mq('desktop'){
+.is-mobile {
+  .category__util--member,
+  .category__util--display {
+    display: block;
+  }
+  .category__banner {
+    display: none;
+  }
+}
 
+// Desktop
+// =============================================================================
+// .is-desktop { }
+@include mq('desktop'){
+  .navigation-container {
+    width: 100%;
+    .category {
+      .category__main {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -100%);
+        height: 60px;
+        .category-list {
+          white-space: nowrap;
+          font-size: 0;
+          line-height: 0;
+          &__item {
+            display: inline-block;
+            white-space: nowrap;
+            a {
+              position: relative;
+              display: block;
+              font-family: $font-gotham;
+              font-weight: 450;
+              font-size: 14px;
+              color: #000;
+              text-transform: uppercase;
+              line-height: 60px;
+              letter-spacing: -0.025em;
+              text-decoration: none;
+              padding: 0 20px;
+            }
+          }
+          &__item--hilite {
+            a {
+              color: $color-text-point;
+            }
+          }
+        }
+        .category__indicator {
+          position: absolute;
+          bottom: 12px;
+          height: 1px;
+          background: #000;
+          pointer-events: none;
+          transform-style: preserve-3d;
+          transition-duration: 0.3s;
+          transition-property: width, left, transform;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+          transform: scaleX(1);
+          transform-origin: left;
+          &.is-hidden {
+            transform: scaleX(0);
+            transition-property: transform;
+          }
+        }
+      }
+      .category__sub {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+        background: #fff;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+
+        .category__sub-inner {
+          width: 1040px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+        }
+        .category__banner {
+          background: pink;
+        }
+        .category__navigation {
+          padding: 41px 0 0 0;
+          .anchor {
+            display: block;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            color: #1e1e1e;
+            text-decoration: none;
+          }
+          .category-depth {
+            .category-depth__back {
+              display: none;
+            }
+            .category-depth__title {
+              display: none;
+            }
+            &.category-depth--2 {
+              visibility: hidden;
+              opacity: 0;
+              height: 0;
+              overflow: hidden;
+              &.active {
+                height: auto;
+                opacity: 1;
+                visibility: visible;
+                overflow: visible;
+                transition: visibility 0.1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.1s 0.1s linear;
+              }
+              > .category-list {
+                @include self-clear;
+                > .category-list__item {
+                  width: 100px;
+                  float: left;
+
+                  > .anchor {
+                    font-size: 14px;
+                    font-weight: 500;
+                  }
+
+                  + .category-list__item {
+                    margin-left: 20px;
+                  }
+                }
+              }
+            }
+            &.category-depth--3 {
+              margin-top: 5px;
+            }
+            &.category-depth--4 {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

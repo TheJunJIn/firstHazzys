@@ -14,6 +14,11 @@ export default class Header extends UIModule {
       ...params
     });
 
+    if (!this.root) {
+      this.destroy();
+      return;
+    }
+
     if (!this.getOption('hideOnScrollAfter')) {
       this.setOption('hideOnScrollAfter', this.height);
     }
