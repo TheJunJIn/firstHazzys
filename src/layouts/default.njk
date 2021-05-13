@@ -30,8 +30,11 @@
       {% include "footer/default.njk" %}
     </div>
     <a href="#top" class="top-button">페이지 상단으로 이동</a>
+    {# 검색 레이어 #modalHeaderSearch #}
+    {% include "modal/header-search.njk" %}
     {% block modal %}
     {% endblock %}
+
     <script src="{% webpack 'vendor.js' %}"></script>
     <script src="{% webpack 'ui.js' %}"></script>
     {% block js %}

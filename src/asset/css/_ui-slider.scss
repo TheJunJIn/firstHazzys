@@ -1,0 +1,59 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.form-range {
+  visibility: hidden;
+}
+.rangeslider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  height: 31px;
+  width: 100%;
+}
+.rangeslider__fill,
+.rangeslider__fill__bg {
+  display: block;
+  position: absolute;
+  top: 15px;
+  height: 1px;
+  z-index: 2;
+  background: #d4d4d4;
+  will-change: width;
+}
+.rangeslider__handle {
+  will-change: width, height, top;
+  width: 31px;
+  height: 31px;
+  position: absolute;
+  top:  50%;
+  display: inline-block;
+  z-index: 3;
+  cursor: pointer;
+  background: $color-solid-point;
+  border-radius: 50%;
+  box-shadow: 0 10px 10px 0 rgba(255, 120, 30, 0.4);
+  &.is-touch-end {
+    transition: transform 0.1s ease-out;
+  }
+}
+// .rangeslider__handle:active {}
+.rangeslider__fill__bg {
+  width: 100%;
+}
+.rangeslider--disabled {
+  opacity: 0.4;
+}
+@include mq('desktop') {
+  .rangeslider {
+    height: 21px;
+  }
+  .rangeslider__fill,
+  .rangeslider__fill__bg {
+    top: 10px;
+  }
+  .rangeslider__handle {
+    width: 21px;
+    height: 21px;
+  }
+}

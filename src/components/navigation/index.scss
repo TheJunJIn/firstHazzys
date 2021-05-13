@@ -212,6 +212,14 @@ $navigation-width: 80%;
               background: #fff;
               z-index: 3;
             }
+            &.category-depth--5 {
+              position: absolute;
+              top: -140px;
+              width: 100%;
+              left: 100%;
+              background: #fff;
+              z-index: 4;
+            }
           }
         }
       }

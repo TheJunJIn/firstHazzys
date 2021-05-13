@@ -243,14 +243,15 @@ class ShoutAndListen {
    * 더이상 메시지를 외치거나 듣지 않습니다.
    */
   destroy() {
-    this.messageTarget.removeEventListener(
-      'message',
-      this.__internal__.messageEventListener
-    );
-    if (typeof this.messageTarget.close === 'function') {
-      this.messageTarget.close();
+    if (this.__internal__) {
+      if (this.messageTarget) {
+        this.messageTarget.removeEventListener(
+          'message',
+          this.__internal__.messageEventListener
+        );
+      }
+      delete this.__internal__;
     }
-    delete this.__internal__;
   }
 }
 

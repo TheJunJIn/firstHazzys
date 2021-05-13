@@ -15,6 +15,12 @@ export default class Navigation extends UIModule {
     super(options);
 
     const { root } = this;
+
+    if (!root) {
+      this.destroy();
+      return;
+    }
+
     const container = root && root.querySelector(options.containerSelector);
     this.category = new Category({ name: 'category' });
 
