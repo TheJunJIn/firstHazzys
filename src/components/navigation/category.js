@@ -23,7 +23,7 @@ function getDemensions(element) {
 
   return {
     width: width - paddingLeft - paddingRight,
-    left: element.offsetLeft + paddingLeft 
+    left: element.offsetLeft + paddingLeft
   };
 }
 
@@ -33,6 +33,12 @@ export default class Category extends UIModule {
     super(options);
 
     const { root } = this;
+
+    if (!root) {
+      this.destroy();
+      return;
+    }
+
     const mainMenuRoot = root.querySelector(options.mainCategorySelector);
     const mainMenuButons = mainMenuRoot.querySelectorAll('.anchor.menu');
     const menuButtons = root.querySelectorAll('.anchor.menu');
@@ -118,7 +124,7 @@ export default class Category extends UIModule {
       this.reset(oldValue);
     });
 
-    
+
     const menuDelayOpen = (e) => {
       if(this.mode === 'desktop') {
         const { desktop } = this.states;

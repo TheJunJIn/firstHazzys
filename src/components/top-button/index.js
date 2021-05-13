@@ -13,6 +13,11 @@ class TopButton extends UIModule {
       ...params
     });
 
+    if (!this.root) {
+      this.destroy();
+      return;
+    }
+
     this.isEnabled = true;
     this.bottomOffset = this.options.bottomOffset;
     this.showAfter = this.options.showAfter();

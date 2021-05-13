@@ -12,6 +12,7 @@ import TabController from '../../components/tab';
 import TopButton from '../../components/top-button';
 import getScrollbarWidth from './_util/get-scrollbar-width';
 
+const $ = window.jQuery;
 const defaults = {
   scrollLockClass: 'scroll-lock'
 };
@@ -97,6 +98,22 @@ class UI extends ShoutAndListen {
     window.addEventListener('resize', this.listeners.resize);
 
     this.modal = modalController;
+
+    $('.button--clear').each(function(){
+      var inputblock = $(this).closest('.input-block');
+      var inputForm = inputblock.find('input.form-text');
+      var clearButton = $(this);
+      inputForm.off('.clear').on('propertychange.clear change.clear keyup.clear paste.clear input.clear', function(){
+        if($(this).val() !== '') {
+          clearButton.show();
+        } else {
+          clearButton.hide();
+        }
+      }).change();
+      clearButton.off('.clear').on('click.clear', function(){
+        inputForm.val('').change().focus();
+      })
+    });
   }
   // 각 모듈에 on*() 메소드를 지정하고 이를 ui.js에서 일괄 관리하는대신 각 모듈에서 shout(), listen() 메소드를 사용
   // onLoad() 대신 module.listen("load")

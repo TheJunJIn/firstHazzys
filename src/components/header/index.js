@@ -15,6 +15,7 @@ export default class Header extends UIModule {
     });
 
     if (!this.root) {
+      this.destroy();
       return;
     }
 

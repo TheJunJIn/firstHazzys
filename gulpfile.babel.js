@@ -59,6 +59,7 @@ function makeMarkupTask(src) {
       '!src/components/**'
     ]);
     njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
+    njk.data.categories = readJson(path.resolve(njk.path.data, 'categories.json'));
     njk.layout = {};
     const onlyUseBasename = !!src && process.platform === "win32";
 

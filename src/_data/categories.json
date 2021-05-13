@@ -1,0 +1,935 @@
+[
+  {
+    "name": "Acc",
+    "url": "#",
+    "subCategories": [
+      {
+        "name": { "eng": "All", "kor": "전체" },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Bag",
+          "kor": "가방"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "남성가방",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "랩탑백",
+                "url": "#"
+              },
+              {
+                "name": "백팩",
+                "url": "#"
+              },
+              {
+                "name": "숄더백",
+                "url": "#"
+              },
+              {
+                "name": "크로스백",
+                "url": "#"
+              },
+              {
+                "name": "클러치백",
+                "url": "#"
+              },
+              {
+                "name": "파우치",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "여성가방",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "백팩",
+                "url": "#"
+              },
+              {
+                "name": "쇼퍼팩",
+                "url": "#"
+              },
+              {
+                "name": "토트백/숄더백",
+                "url": "#"
+              },
+              {
+                "name": "크로스백",
+                "url": "#"
+              },
+              {
+                "name": "클러치백",
+                "url": "#"
+              },
+              {
+                "name": "파우치",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Shoes",
+          "kor": "슈즈"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "여성슈즈",
+            "url": "#"
+          },
+          {
+            "name": "남성슈즈",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": {
+          "kor": "지갑",
+          "eng": "Wallet"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "여성지갑",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "장지갑",
+                "url": "#"
+              },
+              {
+                "name": "중지갑",
+                "url": "#"
+              },
+              {
+                "name": "반지갑",
+                "url": "#"
+              },
+              {
+                "name": "카드지갑/명함지갑",
+                "url": "#"
+              },
+              {
+                "name": "동전지갑",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "남성지갑",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "장지갑",
+                "url": "#"
+              },
+              {
+                "name": "중지갑",
+                "url": "#"
+              },
+              {
+                "name": "반지갑",
+                "url": "#"
+              },
+              {
+                "name": "카드지갑/명함지갑",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "kor": "용품",
+          "eng": "Acc/Goods"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "벨트",
+            "url": "#"
+          },
+          {
+            "name": "양말",
+            "url": "#"
+          },
+          {
+            "name": "모자",
+            "url": "#"
+          },
+          {
+            "name": "스카프",
+            "url": "#"
+          },
+          {
+            "name": "기타",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "IT소품",
+                "url": "#"
+              },
+              {
+                "name": "키홀더/키링",
+                "url": "#"
+              },
+              {
+                "name": "넥타이",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Men",
+    "url": "#",
+    "subCategories": [
+      {
+        "name": { "eng": "All", "kor": "전체" },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Outer",
+          "kor": "아우터"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "코트",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "트렌치/맥",
+                "url": "#"
+              },
+              {
+                "name": "울/캐시미어",
+                "url": "#"
+              },
+              {
+                "name": "구스다운",
+                "url": "#"
+              },
+              {
+                "name": "기타",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "점퍼",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "캐쥬얼",
+                "url": "#"
+              },
+              {
+                "name": "다운/패딩",
+                "url": "#"
+              },
+              {
+                "name": "바람막이",
+                "url": "#"
+              },
+              {
+                "name": "야상/사파리",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "자켓",
+            "url": "#"
+          },
+          {
+            "name": "베스트",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Top",
+          "kor": "상의"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "셔츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "체크/스트라이프",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "티셔츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "후드",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "니트웨어",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": "풀오버",
+                "url": "#"
+              },
+              {
+                "name": "카라",
+                "url": "#"
+              },
+              {
+                "name": "울혼방",
+                "url": "#"
+              },
+              {
+                "name": "가디건",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Bottom",
+          "kor": "하의"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "롱",
+            "url": "#"
+          },
+          {
+            "name": "하프",
+            "url": "#"
+          },
+          {
+            "name": "데님",
+            "url": "#"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ladies",
+    "url": "#",
+    "subCategories": [
+      {
+        "name": { "eng": "All", "kor": "전체" },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Outer",
+          "kor": "아우터"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "코트",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "트렌치/맥",
+                "url": "#"
+              },
+              {
+                "name": "울/캐시미어",
+                "url": "#"
+              },
+              {
+                "name": "핸드메이드",
+                "url": "#"
+              },
+              {
+                "name": "기타",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "점퍼",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "캐쥬얼",
+                "url": "#"
+              },
+              {
+                "name": "다운/패딩",
+                "url": "#"
+              },
+              {
+                "name": "야상/사파리",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "자켓",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "린넨",
+                "url": "#"
+              },
+              {
+                "name": "레더",
+                "url": "#"
+              },
+              {
+                "name": "트위드",
+                "url": "#"
+              },
+              {
+                "name": "울혼방",
+                "url": "#"
+              },
+              {
+                "name": "기타",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "베스트",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Top",
+          "kor": "상의"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "블라우스/셔츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "민소매",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "티셔츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "민소매",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "니트웨어",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "풀오버",
+                "url": "#"
+              },
+              {
+                "name": "카라",
+                "url": "#"
+              },
+              {
+                "name": "울혼방",
+                "url": "#"
+              },
+              {
+                "name": "가디건",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Bottom",
+          "kor": "하의"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "원피스",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "민소매",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "스커트",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "롱",
+                "url": "#"
+              },
+              {
+                "name": "미디",
+                "url": "#"
+              },
+              {
+                "name": "미니",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "팬츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "일반",
+                "url": "#"
+              },
+              {
+                "name": "반바지",
+                "url": "#"
+              },
+              {
+                "name": "데님",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Golf",
+    "url": "#",
+    "subCategories": [
+      {
+        "name": { "eng": "All", "kor": "전체" },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Outer",
+          "kor": "아우터"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "점퍼",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "두잉점퍼",
+                "url": "#"
+              },
+              {
+                "name": "다운/패딩",
+                "url": "#"
+              },
+              {
+                "name": "바람막이",
+                "url": "#"
+              },
+              {
+                "name": "플리스",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "자켓",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Top",
+          "kor": "상의"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "티셔츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "민소매",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "셔츠",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "긴팔",
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "니트웨어",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "반팔",
+                "url": "#"
+              },
+              {
+                "name": "풀오버",
+                "url": "#"
+              },
+              {
+                "name": "풀집업/반집업",
+                "url": "#"
+              },
+              {
+                "name": "가디건",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "베스트",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Bottom",
+          "kor": "하의"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "롱",
+            "url": "#"
+          },
+          {
+            "name": "하프",
+            "url": "#"
+          },
+          {
+            "name": "스커트",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": {
+          "eng": "Goods",
+          "kor": "용품"
+        },
+        "url": "#",
+        "subCategories": [
+          {
+            "name": { "eng": "All", "kor": "전체" },
+            "url": "#"
+          },
+          {
+            "name": "가방",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "보스톤백",
+                "url": "#"
+              },
+              {
+                "name": "숄더백/토트백",
+                "url": "#"
+              },
+              {
+                "name": "캐디백",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "골프화",
+            "url": "#"
+          },
+          {
+            "name": "모자",
+            "url": "#"
+          },
+          {
+            "name": "장갑",
+            "url": "#"
+          },
+          {
+            "name": "벨트",
+            "url": "#"
+          },
+          {
+            "name": "기타",
+            "url": "#",
+            "subCategories": [
+              {
+                "name": { "eng": "All", "kor": "전체" },
+                "url": "#"
+              },
+              {
+                "name": "귀마개",
+                "url": "#"
+              },
+              {
+                "name": "마스크",
+                "url": "#"
+              },
+              {
+                "name": "파우치",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beauty",
+    "url": "#",
+    "subCategories": [
+      {
+        "name": { "eng": "All", "kor": "전체" },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Skincare",
+          "kor": "스킨케어"
+        },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Makeup",
+          "kor": "메이크업"
+        },
+        "url": "#"
+      },
+      {
+        "name": {
+          "eng": "Hair/Body",
+          "kor": "헤어/바디"
+        },
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "name": "Outlet",
+    "url": "#",
+    "subCategories": [
+      {
+        "name": { "eng": "All", "kor": "전체" },
+        "url": "#"
+      },
+      {
+        "name": "Sub 1",
+        "url": "#"
+      },
+      {
+        "name": "Sub 2",
+        "url": "#"
+      }
+    ]
+  }
+]
