@@ -1765,178 +1765,25 @@
 			<main class="shell-main shell-main--order">
 				<div class="main-header">
 					<h2 class="main-header__title">쇼핑백</h2>
-					<button type="button" class="button main-header__btn-back" aria-label="닫기" data-sidebar-close>
-						<i class="sprite-icon sprite-common sprite-common-back">닫기</i>
+					<button type="button" class="button main-header__btn-back">
+						<i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
 					</button>
 				</div>
 				<div class="main-content">
-					<!-- 쇼핑백 -->
-					<div class="order-wrap shoppingback">
-						<div class="product-wrap">
-							<!-- 전체삭제 및 타이틀 -->
-							<div class="all-delete">
-								<label class="form-checkbox">
-									<input type="checkbox" class="checkbox" />
-									<span class="name"><span class="text">전체선택 (4개)</span></span>
-								</label>
-								<button type="button" class="all-delete__select-delete">선택삭제</button>
-								<div class="all-delete__title-bx">
-									<span class="title-info">상품정보</span>
-									<span class="title-price">상품금액</span>
-									<span class="title-add">추가선택</span>
-									<span class="title-delete">삭제</span>
-								</div>
-							</div>
-							<!-- 쇼핑백 리스트 -->
-							<div class="product-list">
-								<ul>
-									<li>
-										<div class="product-checkbox">
-											<span class="form-checkbox">
-												<input type="checkbox" class="checkbox" title="선택삭제" />
-												<i class="icon"></i>
-											</span>
-										</div>
-										<div class="top-area"></div>
-										<div class="product-detail">
-											<div class="product-detail__thmb-img">
-												<a href="#">
-													<img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
-												</a>
-											</div>
-											<div class="product-detail__detail-info">
-												<p class="brand-name">HAZZYS ACC</p>
-												<p class="product-name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
-												<p class="product-opt">차콜그레이 / 68 XL / 1개</p>
-												<div class="price-bx">
-													<div class="product-price">
-														<span class="sale-price">680,000</span>
-														<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-														<p class="tx-family-price">패밀리 회원가 적용 중</p>
-													</div>
-													<div class="real-price">
-														<del>966,000</del>
-														<span class="sale">40%</span>
-													</div>
-												</div>
-												<div class="point-delivery">
-													<p class="point-delivery__bx"><span class="tx-color-orange">1,070M</span> 적립예정</p>
-													<p class="point-delivery__bx"><span class="tx-color-orange">03/24(수)</span> 도착예정 <span class="tx-color-gray">(15시 이전 결제 시)</span></p>
-												</div>
-											</div>
-										</div>
-										<div class="price-bx web-price">
-											<div class="product-price">
-												<span class="sale-price">680,000</span>
-												<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-											</div>
-											<div class="real-price">
-												<del>966,000</del>
-												<span class="sale">40%</span>
-											</div>
-											<p class="tx-family-price">패밀리 회원가 적용 중</p>
-										</div>
-										<div class="button-opt-buy">
-											<button type="button" class="form-button form-button--plain" data-modal-open="#modalProductOption">옵션 변경</button>
-											<button type="button" class="form-button form-button--main">바로 구매</button>
-										</div>
-										<button type="button" class="product-delete" aria-label="삭제" data-modal-close="">
-											<i class="sprite-icon sprite-common sprite-common-close-layer">삭제</i>
-										</button>
-									</li>
-									<li>
-										<div class="product-checkbox">
-											<span class="form-checkbox form-checkbox--disabled">
-												<input type="checkbox" class="checkbox" title="선택삭제" />
-												<i class="icon"></i>
-											</span>
-										</div>
-										<div class="top-area">
-											<span class="today-special-time">오늘의 특가 23:06:34</span>
-										</div>
-										<div class="product-detail">
-											<div class="product-detail__thmb-img">
-												<a href="#">
-													<img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
-												</a>
-											</div>
-											<div class="product-detail__detail-info">
-												<p class="brand-name">HAZZYS ACC</p>
-												<p class="product-name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
-												<p class="product-opt">차콜그레이 / 68 XL / 1개</p>
-												<div class="price-bx">
-													<div class="product-price">
-														<span class="sale-price">680,000</span>
-														<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-													</div>
-													<div class="real-price">
-														<del>966,000</del>
-														<span class="sale">40%</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="price-bx web-price">
-											<div class="product-price">
-												<span class="sale-price">680,000</span>
-												<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-											</div>
-											<div class="real-price">
-												<del>966,000</del>
-												<span class="sale">40%</span>
-											</div>
-											<p class="tx-family-price">패밀리 회원가 적용 중</p>
-										</div>
-										<div class="button-opt-buy">
-											<button type="button" class="form-button">일시 품절</button>
-											<button type="button" class="form-button form-button--point button-combined">재입고 알림</button>
-										</div>
-										<button type="button" class="product-delete" aria-label="삭제" data-modal-close="">
-											<i class="sprite-icon sprite-common sprite-common-close-layer">삭제</i>
-										</button>
-									</li>
-								</ul>
-								<!-- 선택상품 총 합계 -->
-								<p class="select-price">선택상품 3개 644,050원 + 배송비 2,500 = 644,050원</p>
-							</div>
-						</div>
-						<!-- 결제 예정 금액 -->
-						<div class="mnodr-total">
-							<h3 class="mnodr-tit">결제 예정 금액</h3>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">주문금액</dt>
-								<dd class="mnodr-bx__price">688,000원</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">할인금액 <span class="ex-text">(10%)</span></dt>
-								<dd class="mnodr-bx__price">-44,000원</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">배송비 <span class="ex-text">(3만원이상 무료)</span></dt>
-								<dd class="mnodr-bx__price">무료</dd>
-							</dl>
-							<div class="total-price">
-								<dl class="mnodr-bx">
-									<dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
-									<dd class="mnodr-bx__price">309,900원</dd>
-								</dl>
-								<dl class="mnodr-bx">
-									<dt class="mnodr-bx__tit">제품 구입비 적용가</dt>
-									<dd class="mnodr-bx__price">209,900원</dd>
-								</dl>
-							</div>
-							<ul class="mnodr-text">
-								<li>쇼핑백에 담긴 상품은 최대 30일까지 보관됩니다.</li>
-								<li>적립예정 마일리지는 결제금액에 따라 달라질 수 있습니다.</li>
-							</ul>
-							<dl class="mnodr-bx select-total-price">
-								<dt class="mnodr-bx__tit">12개 선택 총 상품 금액</dt>
-								<dd class="mnodr-bx__price">12,345,000원</dd>
-							</dl>
-							<div class="button-bx">
-								<button type="button" class="form-button form-button--point">주문하기</button>
-							</div>
-						</div>
+					<div class="empty-shoppingbag">
+						<p class="empty-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+								<g fill="none" fill-rule="evenodd">
+									<g stroke="#000" stroke-width="2">
+										<path d="M17.5-2.5h5c5.523 0 10 4.477 10 10s-4.477 10-10 10h-5 0" transform="translate(-140 -150) translate(10 150) translate(130) translate(15 12) rotate(-90 25 7.5) " />
+										<path d="M44.124 18.5L48.858 54H1.142l4.734-35.5h38.248z" transform="translate(-140 -150) translate(10 150) translate(130) translate(15 12) " />
+									</g>
+								</g>
+							</svg>
+						</p>
+						<p class="empty-text">쇼핑백이 비어 있어요!!</p>
+						<p class="whis-text">쇼핑백에 담긴 상품은 30일동안 보관되며<br />더 오래 보관하시려면 위시리스트에 담아주세요.</p>
+						<button type="button" class="form-button active">쇼핑하러 가기</button>
 					</div>
 				</div>
 			</main>
@@ -2090,130 +1937,20 @@
 			</div>
 		</div>
 
-		<!-- 가격안내 -->
-		<div id="modalPriceDetail" class="modal" tabindex="-1" role="dialog" data-modal>
-			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">가격 안내</h1>
-				</div>
-				<div class="modal__body">
-					<div class="price-guide">
-						<div class="price-guide__group">
-							<ul class="group__item">
-								<li class="section">
-									<span class="label">
-										<em>일반 쿠폰 5%</em>
-									</span>
-									<span class="value">
-										<em>- 6,450</em>
-									</span>
-								</li>
-								<li class="section">
-									<span class="label">
-										<em>할인가</em>
-									</span>
-									<span class="value">
-										<em class="point">160,550</em>
-									</span>
-								</li>
-							</ul>
-						</div>
-						<div class="price-guide__comment">상품에 기본 할인이 적용된 가격입니다. 주문서에서 더 큰 할인을 받아보세요.</div>
-					</div>
-				</div>
-				<div class="modal__footer">
-					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- 옵션 변경 -->
-		<div id="modalProductOption" class="modal modal--bottom-top modal--product-option" tabindex="-1" role="dialog" data-modal="timer:2">
-			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">옵션 변경</h1>
-					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close="">
-						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
-					</button>
-				</div>
-				<div class="modal__body">
-					<!-- 옵션 -->
-					<div class="product-option">
-						<!-- 색상 -->
-						<div class="product-option__color">
-							<ul class="colorchip">
-								<!-- 선택된 색상 active -->
-								<li class="colorchip__item active">
-									<a href="#" class="colorchip__link">
-										<img src="/cmsstatic/asset/images/temp/colorchip-01.jpg" alt="RED" />
-									</a>
-								</li>
-								<li class="colorchip__item">
-									<a href="#" class="colorchip__link">
-										<img src="/cmsstatic/asset/images/temp/colorchip-02.jpg" alt="Green" />
-									</a>
-								</li>
-								<li class="colorchip__item">
-									<a href="#" class="colorchip__link">
-										<img src="/cmsstatic/asset/images/temp/colorchip-03.jpg" alt="Blue" />
-									</a>
-								</li>
-								<li class="colorchip__item">
-									<a href="#" class="colorchip__link">
-										<img src="/cmsstatic/asset/images/temp/colorchip-04.jpg" alt="Green" />
-									</a>
-								</li>
-								<li class="colorchip__item">
-									<a href="#" class="colorchip__link">
-										<img src="/cmsstatic/asset/images/temp/colorchip-05.jpg" alt="Blue" />
-									</a>
-								</li>
-							</ul>
-						</div>
-						<!-- 사이즈 -->
-						<div class="product-option__size">
-							<div class="form-radio-select-group">
-								<label class="form-radio">
-									<input type="radio" class="radio" name="size" />
-									<span class="name">FREE</span>
-								</label>
-								<!-- disabled -->
-								<span class="form-radio form-radio--disabled">
-									<input type="radio" class="radio" name="size" disabled="disabled" />
-									<span class="name">67L</span>
-									<button type="button" class="button button-bedge" data-sidebar-open="restockNotification"></button>
-								</span>
-								<label class="form-radio">
-									<input type="radio" class="radio" name="size" />
-									<span class="name">68L</span>
-								</label>
-								<label class="form-radio">
-									<input type="radio" class="radio" name="size" />
-									<span class="name">68XL</span>
-								</label>
-							</div>
-						</div>
-						<!-- 수량 -->
-						<div class="product-option__qty">
-							<div class="form-input-qty" data-form-text="data-form-text">
-								<button type="button" class="form-input-qty__decrease" data-form-qty="decrease">-</button>
-								<label class="form-input-qty__input">
-									<input type="number" class="form-text" min="1" max="5" pattern="[0-9]*" value="1" />
-								</label>
-								<button type="button" class="form-input-qty__increase" data-form-qty="increase">+</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal__footer">
-					<button type="button" class="form-button form-button--main">변경하기</button>
-				</div>
-			</div>
-		</div>
-
 		<script src="/asset/js/vendor.js"></script>
 		<script src="/asset/js/ui.js"></script>
 
 		<script src="/asset/js/order.js"></script>
+		<script>
+			anime({
+				targets: '.empty-icon',
+				rotate: [-10, 10],
+				duration: 500,
+				endDelay: 30,
+				loop: true,
+				direction: 'alternate',
+				easing: 'cubicBezier(0.39, 0.4, 0.45, 0.97)'
+			});
+		</script>
 	</body>
 </html>

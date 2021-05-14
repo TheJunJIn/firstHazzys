@@ -124,12 +124,12 @@ class UI extends ShoutAndListen {
   scrollLock() {
     const { options } = this;
     const { body } = document;
-    const { scrollY } = window;
+    const { scrollY, pageYOffset } = window;
     const app = document.querySelector('.app');
     const scrollbar = getScrollbarWidth();
     body.classList.add(options.scrollLockClass);
     body.style.position = 'fixed';
-    body.style.top = `-${scrollY}px`;
+    body.style.top = `-${(scrollY || pageYOffset)}px`;
     app.style.paddingRight = `${scrollbar}px`;
   }
   scrollRelease() {
