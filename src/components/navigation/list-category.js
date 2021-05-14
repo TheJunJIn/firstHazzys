@@ -180,39 +180,122 @@ class CategoryScroller extends UIModule {
       if (!this.indicatorFillElement) {
         const element = document.createElement('div');
         element.classList.add('category-scroller-indicator-fill');
+        element.style.width = '100%';
         this.indicatorElement.appendChild(element);
         this.indicatorFillElement = element;
       }
     }
 
     const instance = this;
+    const mouseState = {
+      isDown: false,
+      startX: null,
+      startScrollLeft: null,
+      reset() {
+        this.isDown = false;
+        this.startX = null;
+        this.startScrollLeft = null;
+      }
+    };
+
     this.__listeners = {
       scroll: throttle(100, () => {
         instance.updateIndicator();
-      })
+      }),
+      mousedown: (event) => {
+        if (instance.overflows) {
+          mouseState.isDown = true;
+          mouseState.startX = event.screenX;
+          mouseState.startScrollLeft = instance.scrollLeft;
+        }
+      },
+      mousemove: (event) => {
+        if (mouseState.isDown) {
+          event.preventDefault();
+          const moved = event.screenX - mouseState.startX;
+          const to = mouseState.startScrollLeft - moved;
+          instance.scrollTo(to);
+        }
+      },
+      mousereset: (event) => {
+        if (mouseState.isDown) {
+          const moved = event.screenX - mouseState.startX;
+          const to = mouseState.startScrollLeft - moved;
+          instance.scrollTo(to);
+          instance.scrollingElement.classList.remove('prevent-grab');
+          mouseState.reset();
+        }
+      }
     };
-    this.scrollToEnd();
-    this.scrollingElement.addEventListener('scroll', this.__listeners.scroll);
     this.update();
+    this.scrollToEnd();
+
+    const { scrollingElement, __listeners } = this;
+    scrollingElement.addEventListener('scroll', this.__listeners.scroll);
+    scrollingElement.addEventListener('mousedown', __listeners.mousedown);
+    scrollingElement.addEventListener('mousemove', __listeners.mousemove);
+    scrollingElement.addEventListener('mouseleave', __listeners.mousereset);
+    document.addEventListener('mouseup', __listeners.mousereset);
+
     this.listen('resize', () => {
       this.update();
     });
     this.listen('load', () => {
-      this.scrollToEnd();
       this.update();
+      this.scrollToEnd();
       this.scrollToCurrent();
+
+      const { maxScrollLeft } = this;
+
+      setTimeout(() => {
+        this.update();
+
+        if (this.maxScrollLeft !== maxScrollLeft) {
+          this.scrollToEnd();
+          this.scrollToCurrent();
+        }
+      }, 100);
     });
   }
 
-  scrollToEnd() {
-    if (this.overflows) {
-      this.scrollingElement.scrollLeft = this.scrollingElement.scrollWidth;
+  get scrollLeft() {
+    if (this.scrollingElement) {
+      return this.scrollingElement.scrollLeft;
     }
   }
 
-  scrollTo(value) {
+  set scrollLeft(x) {
+    if (this.scrollingElement && typeof x === 'number') {
+      this.scrollingElement.scrollLeft = x;
+    }
+  }
+
+  scrollToEnd() {
+    if (this.indicatorFillElement) {
+      this.indicatorFillElement.style.width = '100%';
+    }
+
+    this.scrollLeft =
+      this.maxScrollLeft || Number.MAX_SAFE_INTEGER || Number.MAX_VALUE;
+  }
+
+  scrollTo(to, duration = 0) {
     if (this.overflows) {
-      this.scrollingElement.scrollLeft = value;
+      if (typeof duration === 'number' && duration > 0) {
+        animate(
+          {
+            from: this.scrollLeft,
+            to,
+            duration,
+            easing: easeOutQuint
+          },
+          (value) => {
+            this.scrollLeft = value;
+          }
+        );
+      } else {
+        this.scrollLeft = to;
+      }
     }
   }
 
@@ -228,25 +311,15 @@ class CategoryScroller extends UIModule {
     if (current) {
       const { containerWidth } = this;
       const { offsetWidth, offsetLeft } = current;
-      const scrollLeft = Math.max(
+      const targetScrollLeft = Math.max(
         0,
         offsetLeft - (containerWidth - offsetWidth) / 2
       );
 
       if (smooth) {
-        animate(
-          {
-            from: this.scrollingElement.scrollLeft,
-            to: scrollLeft,
-            duration: 1500,
-            easing: easeOutQuint
-          },
-          (value) => {
-            this.scrollTo(value);
-          }
-        );
+        this.scrollTo(targetScrollLeft, 1500);
       } else {
-        this.scrollTo(scrollLeft);
+        this.scrollTo(targetScrollLeft);
       }
     }
   }
@@ -254,10 +327,19 @@ class CategoryScroller extends UIModule {
   updateIndicator() {
     if (this.options.indicator) {
       this.indicatorElement.hidden = !this.overflows;
-      const { indicatorFillElement, maxScrollLeft, minFillWidth } = this;
-      const { scrollLeft } = this.scrollingElement;
+      const {
+        scrollLeft,
+        indicatorFillElement,
+        maxScrollLeft,
+        minFillRatio
+      } = this;
       indicatorFillElement.style.width =
-        Math.min((minFillWidth + scrollLeft / maxScrollLeft) * 100, 100) + '%';
+        Math.min(
+          minFillRatio + (1 - minFillRatio) * (scrollLeft / maxScrollLeft),
+          1
+        ) *
+          100 +
+        '%';
     }
   }
 
@@ -269,7 +351,7 @@ class CategoryScroller extends UIModule {
     this.containerWidth = containerWidth;
     this.overflows = scrollWidth > containerWidth;
     this.maxScrollLeft = scrollWidth - containerWidth;
-    this.minFillWidth = containerWidth / scrollWidth;
+    this.minFillRatio = containerWidth / scrollWidth;
     this.updateIndicator();
 
     if (this.overflows) {
@@ -281,12 +363,21 @@ class CategoryScroller extends UIModule {
   }
 
   destroy() {
-    if (this.scrollingElement) {
-      this.scrollingElement.removeEventListener(
-        'scroll',
-        this.__listeners.scroll
-      );
-      delete this.__listeners.scroll;
+    const { scrollingElement, __listeners } = this;
+    if (__listeners) {
+      if (scrollingElement) {
+        ['scroll', 'mousedown', 'mousemove'].forEach((type) => {
+          if (type in __listeners) {
+            scrollingElement.removeEventListener(type, __listeners[type]);
+          }
+        });
+        scrollingElement.removeEventListener(
+          'mouseleave',
+          __listeners.mousereset
+        );
+      }
+      document.removeEventListener('mouseup', __listeners.mousereset);
+      delete this.__listeners;
     }
     super.destroy();
   }
@@ -362,7 +453,7 @@ class CategoryNavigation extends UIModule {
 
   update() {
     this.height = this.root.getBoundingClientRect().height;
-    this.isFixed = scrollY > this.height;
+    this.isFixed = (window.scrollY || window.pageYOffset) > this.height;
     this.shout('header', [
       'setOption',
       'hideOnScrollAfter',
