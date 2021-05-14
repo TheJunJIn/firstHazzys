@@ -1,0 +1,70 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main">
+  <div class="main-content">
+    <style>
+      .main-content { padding-top: 100px;}
+      .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+    </style>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceDetail">
+      가격안내
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceGuest">
+      로그인 안내 레이어
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceUser">
+      내쿠폰 적용 가격 안내
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalShareSns">
+      공유하기
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalRestockNotificationComplete">
+      재입고 알림신청 완료
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalWishlistAdd">
+      위시리스트 담기
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalWishlistRemove">
+      위시리스트 삭제
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalShoppingbagAdd">
+      쇼핑백 담기
+    </button>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{# 가격안내 #modalPriceDetail #}
+{% include "modal/product/price-detail.njk" %}
+
+{# 로그인 안내 레이어 #modalPriceGuest #}
+{% include "modal/product/price-guest.njk" %}
+
+{# 내쿠폰 적용 가격 안내 #modalPriceUser #}
+{% include "modal/product/price-user.njk" %}
+
+{# 공유하기 #modalShareSns #}
+{% include "modal/product/share-sns.njk" %}
+
+{# 재입고 알림신청 완료 #modalRestockNotificationComplete #}
+{% include "modal/product/restock-notification-complete.njk" %}
+
+{# 위시리스트 담기 #modalWishlistAdd #}
+{% include "modal/product/wishlist-add.njk" %}
+
+{# 위시리스트 삭제 #modalWishlistRemove #}
+{% include "modal/product/wishlist-remove.njk" %}
+
+{# 쇼핑백 담기 #modalShoppingbagAdd #}
+{% include "modal/product/shoppingbag-add.njk" %}
+{% endblock modal %}
+
+{% block css %}
+{# 상품 상세 css #}
+<link rel="stylesheet" href="/asset/css/detail.css" />
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
