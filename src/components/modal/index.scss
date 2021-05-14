@@ -37,7 +37,7 @@
   }
   &__header {
     position: relative;
-    padding: 30px 24px;
+    padding: 30px 24px 20px;
     &__title {
       font-size: 20px;
       line-height: 30px;
@@ -60,7 +60,7 @@
     }
     @include mq('desktop') {
       &__title {
-        font-size: 24x;
+        font-size: 24px;
         line-height: 44px;
         font-weight: 500;
       }
@@ -130,6 +130,7 @@
       left: 0;
       right: 0;
       bottom: 0;
+      max-width: none;
       transform: translate(0, 100%);
       transition: transform 0.3s ease-out;
       transition-delay: 0s;
@@ -153,11 +154,10 @@
       }
     }
     .modal__body {
-      margin: 0 10px 30px;
-      padding: 30px 0 0;
+      margin: 0 10px;
     }
     .modal__footer {
-      margin: 30px 10px 60px;
+      margin: 10px 10px 50px;
     }
     &.active {
       transition-delay: 0s;
@@ -216,21 +216,21 @@
 
   @include mq('desktop') {
     &__header {
-      padding: 40px 40px 20px;
+      padding: 35px 40px 20px;
       &__button {
-        top: 22px;
-        right: 22px;
-      }
-      + .modal__body {
-        padding-top: 0;
+        top: 10px;
+        right: 10px;
       }
     }
     &__body {
       margin: 0 40px;
-      padding: 30px 0 20px;
+      padding: 40px 0 20px;
+      + .modal__footer {
+
+      }
     }
     &__footer {
-      margin: 30px 40px 30px;
+      margin: 10px 40px 30px;
     }
 
     &.modal--bottom-top {
@@ -248,17 +248,17 @@
         opacity: 0;
       }
       .modal__header {
-        padding: 40px;
+        padding: 30px 0;
         + .modal__body {
           padding-top: 0;
         }
       }
       .modal__body {
-        margin: 0 40px 30px;
-        padding: 30px 0 0;
+        margin-right: 40px;
+        margin-left: 40px;
       }
       .modal__footer {
-        margin: 30px 40px 30px;
+        margin: 15px 40px 40px;
       }
       &.active {
         transition-delay: 0s;
@@ -329,45 +329,8 @@
 
     }
   }
-  // 마케팅 정보 수신 동의
-  .terms-agreement {
-    margin-bottom: -15px;
-    &__box {
-      height: 90px;
-      overflow: scroll;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      font-size: 12px;
-      line-height: 22px;
-      font-weight: 300;
-      padding: 10px;
-      color: #717171;
-      background-color: #f8f8f8;
-      box-sizing: border-box;
-    }
-    &__form {
-      margin-top: 26px;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  // 약관
-  .policy {
-    &__content {
-      overflow: scroll;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      font-size: 12px;
-      line-height: 22px;
-      font-weight: 300;
-      box-sizing: border-box;
-      height: 220px;
-      padding: 10px;
-      color: #717171;
-      background-color: #f8f8f8;
-    }
-  }
-  // 가격 요소 목록
+
+  // 가격 요소 목록 ( 상품, 주문 )
   .price-guide {
     &__group {
       border-top: 1px solid $color-solid-emphasize;
@@ -417,40 +380,7 @@
       line-height: 24px;
     }
   }
-  // 주문
-  .modal-order {
-    .modal__header{
-      padding: 20px 24px;
-      &__title {
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 300;
-      }
-    }
-  }
-  .order-fail {
-    &__title {
-      margin-bottom: 20px;
-      color: $color-text-emphasize;
-      font-size: 18px;
-      line-height: 24px;
-      text-align: center;
-    }
-    &__text {
-      margin-bottom: 20px;
-      color: $color-text-emphasize;
-      font-size: 14px;
-      line-height: 24px;
-      text-align: center;
-    }
-  }
-  .no-family {
-    padding-top: 30px;
-    color: $color-text-emphasize;
-    font-size: 14px;
-    line-height: 22px;
-    text-align: center;
-  }
+
   .shop-location {
     .shop-name {
       margin-bottom: 6px;
@@ -477,36 +407,6 @@
         vertical-align: -4px;
         @include sprite($order-tel);
       }
-    }
-  }
-  .order-agree {
-    &__title {
-      margin: 30px 0 20px;
-      color: $color-text-emphasize;
-      font-size: 12px;
-      line-height: 14px;
-    }
-    &__box {
-      height: 90px;
-      margin-bottom: 30px;
-      overflow: scroll;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      font-size: 12px;
-      line-height: 18px;
-      font-weight: 500;
-      padding: 6px 6px 12px 10px;
-      background-color: #f8f8f8;
-      box-sizing: border-box;
-    }
-  }
-  .order-agree.box-2 {
-    .order-agree__title {
-      margin: 0 0 20px;
-    }
-    .order-agree__box {
-      height: 140px;
-      margin-bottom: 0;
     }
   }
   .coupon-change {
@@ -620,112 +520,10 @@
       }
     }
   }
-  @include mq('desktop') {
-    .modal__header{
-      padding: 30px 24px;
-      &__title {
-        font-size: 18px;
-        line-height: 22px;
-      }
-    }
-    .order-agree {
-      &__title {
-        font-size: 14px;
-        font-weight: 500;
-      }
-    }
-  }
 }
+
 // 개별 팝업
 .modal {
-  // 휴면 해제 안내
-  &.modal--reactivated-account {
-    .message {
-      .message__text + .message__text {
-        margin-top: 20px;
-      }
-    }
-  }
-  // 비밀번호 변경 안내
-  &.modal--expired-password {
-    .text-button-group {
-      margin-top: 20px;
-    }
-  }
-  // 아이디 찾기 / 비밀번호 재설정 - 계정선택
-  &.modal--find-account-list {
-    .select-account {
-      &__title {
-        margin-bottom: 20px;
-        font-family: $font-noto-sans;
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 300;
-        color: #000;
-      }
-      &__list {
-        max-height: 260px;
-        overflow: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-      }
-      &__item {
-        padding: 20px;
-        border: 1px solid #c9c9c9;
-        + .select-account__item {
-          margin-top: 10px;
-        }
-        &.active {
-          border-color: #000;
-        }
-      }
-      .account {
-        position: relative;
-        &__info {
-          &__item {
-            + .account__info__item {
-              margin-top: 5px;
-            }
-          }
-          .info {
-            font-size: 14px;
-            font-weight: 300;
-            &__label {
-              width: 60px;
-              display: inline-block;
-              white-space: nowrap;
-              color: #919191;
-              vertical-align: middle;
-            }
-            &__value {
-              display: inline-block;
-              color: #000;
-              vertical-align: middle;
-            }
-          }
-        }
-        &__radio {
-          position: absolute;
-          top: 50%;
-          right: 30px;
-          transform: translateY(-50%);
-        }
-      }
-      @include mq('desktop') {
-        &__title {
-          font-size: 24px;
-          line-height: 44px;
-          font-weight: 500;
-        }
-      }
-    }
-  }
-  // 마케팅 정보 수신 동의
-  // &.modal--agreement-marketing {}
-  // 약관 보기
-  // &.modal--policy-view {}
-  // 탈퇴 회원
-  // &.modal--withdrawn-member {}
   &.modal--product-option {
     .modal__body {
       .product-option {

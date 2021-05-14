@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="/asset/css/common.css" />
 		<!-- 개별 CSS -->
 
-		<link rel="stylesheet" href="/asset/css/order.css" />
+		<link rel="stylesheet" href="/asset/css/member.css" />
 	</head>
 	<body>
 		<div class="app">
@@ -1762,19 +1762,32 @@
 				</div>
 			</div>
 
-			<main class="shell-main shell-main--order">
-				<div class="main-header">
-					<h2 class="main-header__title">쇼핑백</h2>
-					<button type="button" class="button main-header__btn-back" aria-label="닫기" data-sidebar-close>
-						<i class="sprite-icon sprite-common sprite-common-back">닫기</i>
-					</button>
-				</div>
+			<main class="shell-main">
 				<div class="main-content">
-					<div class="empty-shoppingback">
-						<p class="empty-text">쇼핑백이 비어 있어요!!</p>
-						<p class="whis-text">쇼핑백에 담긴 상품은 30일동안 보관되며<br />더 오래 보관하시려면 위시리스트에 담아주세요.</p>
-						<button type="button" class="form-button active">쇼핑하러 가기</button>
-					</div>
+					<style>
+						.main-content {
+							padding-top: 100px;
+						}
+						.main-content > .form-button {
+							display: block;
+							width: 80%;
+							margin: 20px auto;
+						}
+					</style>
+					<style>
+						.main-content > .form-button {
+							display: block;
+							width: 80%;
+							margin: 20px auto;
+						}
+					</style>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalAgreementMarketing">마케팅 정보 수신 동의</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalPolicyView">개인정보 수집 및 이용동의</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalWithdrawnMember">탈퇴 회원</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalReactivatedAccount">휴면 해제 안내</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalExpiredPassword">비밀번호 변경 안내</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalFindAccountList">아이디 찾기 / 비밀번호 재설정 - 계정 목록</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalFindPassword">아이디 찾기 / 비밀번호 재설정 - 이메일/문자 발송 완료</button>
 				</div>
 			</main>
 
@@ -1927,9 +1940,292 @@
 			</div>
 		</div>
 
+		<div id="modalAgreementMarketing" class="modal modal--agreement-marketing" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">마케팅 정보 수신 동의</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="terms-agreement">
+						<div class="terms-agreement__box">
+							(확정아님) 개인정보보호법 제22조 제4항에 의해 선택정보 사항에 대해서는 기재하지 않으셔도 서비스를 이용하실 수 있습니다. 1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+						</div>
+						<div class="terms-agreement__form">
+							<label class="form-checkbox form-checkbox--small">
+								<input type="checkbox" class="checkbox" />
+								<span class="name">전화</span>
+							</label>
+							<label class="form-checkbox form-checkbox--small">
+								<input type="checkbox" class="checkbox" />
+								<span class="name">E-Mail</span>
+							</label>
+							<label class="form-checkbox form-checkbox--small">
+								<input type="checkbox" class="checkbox" />
+								<span class="name">문자(SMS)</span>
+							</label>
+							<label class="form-checkbox form-checkbox--small">
+								<input type="checkbox" class="checkbox" />
+								<span class="name">우편물</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalPolicyView" class="modal modal--policy-view" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">LFmembers<br />개인정보 수집 및 이용 동의</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="policy">
+						<div class="policy__content">
+							(확정아님) 개인정보보호법 제22조 제4항에 의해 선택정보 사항에 대해서는 기재하지 않으셔도 서비스를 이용하실 수 있습니다. 1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+						</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalWithdrawnMember" class="modal modal--withdrawn-member" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">탈퇴 회원</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<p class="message__text">
+							아쉽게도 최근에 탈퇴한 이력이 있어요!<br /><br />
+							고객님은 2개월 이내에 탈퇴한 이력이 있어 현재 회원가입이 불가능하세요. 재가입을 희망하시면 탈퇴 후 2개월 이후인 <span class="message__hilite">2021년 03월 30일</span>
+							메일 내 링크를 통해 비밀번호를 재설정해주세요.
+						</p>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalReactivatedAccount" class="modal modal--reactivated-account" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">휴면 해제 안내</h1>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<p class="message__hilite">2021년 03월 30일 12시 00분</p>
+						<p class="message__text">헤지스닷컴의 회원님 계정이 휴면 해제되었습니다.</p>
+						<p class="message__text">
+							다시 찾아주셔서 진심으로 감사드리며<br />
+							즐거운 쇼핑과 다양한 혜택을 즐겨보세요.
+						</p>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalExpiredPassword" class="modal modal--expired-password" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">비밀번호 변경</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<p class="message__text">고객님의 소중한 정보 보호를 위해 새로운 비밀번호를 등록하고 주기적으로 변경해보는건 어떠세요?</p>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main">확인</button>
+					<ul class="text-button-group">
+						<li class="text-button-group__item">
+							<button type="button" class="button">30일 이후 변경</button>
+						</li>
+						<li class="text-button-group__item">
+							<button type="button" class="button">90일 이후 변경</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalFindAccountList" class="modal modal--find-account-list modal--bottom-top" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">아이디 찾기 / 비밀번호 재설정</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="select-account">
+						<div class="select-account__title">찾으시는 계정을 선택해주세요</div>
+						<ul class="select-account__list">
+							<li class="select-account__item account">
+								<ul class="account__info">
+									<li class="account__info__item info">
+										<span class="info__label">아이디</span>
+										<span class="info__value">hazz**</span>
+									</li>
+									<li class="account__info__item info">
+										<span class="info__label">이름</span>
+										<span class="info__value">김*지</span>
+									</li>
+									<li class="account__info__item info">
+										<span class="info__label">이메일</span>
+										<span class="info__value">hazz**@gmail.com</span>
+									</li>
+									<li class="account__info__item info">
+										<span class="info__label">가입일</span>
+										<span class="info__value">2021.03.19</span>
+									</li>
+								</ul>
+								<span class="account__radio form-radio form-radio--large">
+									<input type="radio" class="radio" name="account" value="hazz**" selected />
+									<i class="icon"></i>
+								</span>
+							</li>
+							<li class="select-account__item account">
+								<ul class="account__info">
+									<li class="account__info__item info">
+										<span class="info__label">아이디</span>
+										<span class="info__value">hazz**22</span>
+									</li>
+									<li class="account__info__item info">
+										<span class="info__label">이름</span>
+										<span class="info__value">김*지</span>
+									</li>
+									<li class="account__info__item info">
+										<span class="info__label">이메일</span>
+										<span class="info__value">hazz**@gmail.com</span>
+									</li>
+									<li class="account__info__item info">
+										<span class="info__label">가입일</span>
+										<span class="info__value">2021.03.19</span>
+									</li>
+								</ul>
+								<span class="account__radio form-radio form-radio--large">
+									<input type="radio" class="radio" name="account" value="hazz**22" />
+									<i class="icon"></i>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>이메일로 인증</button>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>SMS로 인증</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalFindPassword" class="modal modal--find-password" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">아이디 찾기/비밀번호 재설정</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<p class="message__text">
+							비밀번호 재설정을 위한 안내 메일을 발송했어요.<br />
+							메일 내 링크를 통해 비밀번호를 재설정해주세요.
+						</p>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<a href="#" class="form-button form-button--plain">로그인</a>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 		<script src="/asset/js/vendor.js"></script>
 		<script src="/asset/js/ui.js"></script>
 
-		<script src="/asset/js/order.js"></script>
+		<script src="/asset/js/member.js"></script>
+
+		<script>
+			$(function () {
+				// 아이디 찾기 / 비밀번호 재설정 - 계정 목록 팝업
+				$(document)
+					.off('.selectAccount')
+					.on('click.selectAccount', '.select-account__item', function (e) {
+						if (!$(e.target).closest('.account__radio').length) {
+							$(this).find('input[name=account]').prop('checked', true).change();
+						}
+					})
+					.on('change.selectAccount', 'input[name=account]', function () {
+						var activeIndex = $('input[name=account]:checked').closest('.select-account__item').index();
+
+						if (activeIndex < 0) {
+							activeIndex = 0;
+							$('.select-account__item').eq(activeIndex).find('input[name=account]').prop('checked', true);
+							return;
+						}
+						$('.select-account__item').each(function (i) {
+							if (activeIndex === i) {
+								$(this).addClass('active');
+							} else {
+								$(this).removeClass('active');
+							}
+						});
+					});
+			});
+		</script>
 	</body>
 </html>

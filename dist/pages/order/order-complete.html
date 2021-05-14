@@ -1765,8 +1765,8 @@
 			<main class="shell-main shell-main--order">
 				<div class="main-header">
 					<h2 class="main-header__title">주문 완료</h2>
-					<button type="button" class="button main-header__btn-back" aria-label="닫기" data-sidebar-close>
-						<i class="sprite-icon sprite-common sprite-common-back">닫기</i>
+					<button type="button" class="button main-header__btn-back">
+						<i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
 					</button>
 				</div>
 				<div class="main-content">
@@ -1774,6 +1774,21 @@
 					<div class="order-wrap order-complete">
 						<div class="delivery-left">
 							<div class="complete-bx">
+								<p class="complete-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+										<g fill="none" fill-rule="evenodd">
+											<g stroke="#000" stroke-width="2">
+												<path
+													d="m 70.065,55.876 c 0,2.905 -2.355,5.26 -5.26,5.26 -2.905,0 -5.26,-2.355 -5.26,-5.26 0,-2.904 2.355,-5.26 5.26,-5.26 2.905,0 5.26,2.356 5.26,5.26 z m -34.224,0 c 0,2.905 -2.355,5.26 -5.26,5.26 -2.904,0 -5.26,-2.355 -5.26,-5.26 0,-2.904 2.355,-5.26 5.26,-5.26 2.905,0 5.26,2.356 5.26,5.26 z "
+												/>
+												<path class="order-complete-effect-1" d="M 15.049,37.438 H 4 " />
+												<path class="order-complete-effect-2" d="M 15.049,44.427 H 8.389 " />
+												<path class="order-complete-effect-3" d="M 25.322,30.449 H 9.819 " />
+												<path class="order-complete-truck" d="m 60.032,26.929 h 7.738 l 7.06,13.474 V 53.875 H 70.398 M 59.545,53.876 H 55.532 M 19.457,28.449 V 17 H 55.532 V 53.876 H 35.841 m -10.288,0 H 19.457 V 32.907 " />
+											</g>
+										</g>
+									</svg>
+								</p>
 								<p class="complete-text">김헤지 고객님의 주문이 완료되었습니다.</p>
 								<p class="complete-text">김헤지 고객님의 첫! 주문이 완료되었습니다.</p>
 								<p class="delivery-text">주문하신 상품을 빠르고 안전하게 배송해드리겠습니다. 헤지스닷컴을 이용해 주셔서 감사합니다.</p>
@@ -2046,5 +2061,30 @@
 		<script src="/asset/js/ui.js"></script>
 
 		<script src="/asset/js/order.js"></script>
+		<script>
+			anime
+				.timeline({
+					loop: true,
+					duration: 10,
+					direction: 'alternate',
+					easing: 'easeInExpo'
+				})
+				.add({
+					targets: '.order-complete-truck',
+					d: 'm 60.032,27.929 h 7.738 l 7.06,13.474 V 54.875 H 70.398 M 59.545,54.876 H 55.532 M 19.457,29.449 V 18 H 55.532 V 54.876 H 35.841 m -10.288,0 H 19.457 V 33.907'
+				})
+				.add({
+					targets: '.order-complete-effect-1',
+					d: 'M 15.049,37.438 H 7'
+				})
+				.add({
+					targets: '.order-complete-effect-2',
+					d: 'M 15.049,44.427 H 11.389'
+				})
+				.add({
+					targets: '.order-complete-effect-3',
+					d: 'M 22.322,30.449 H 12.819'
+				});
+		</script>
 	</body>
 </html>
