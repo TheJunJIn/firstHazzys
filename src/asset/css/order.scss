@@ -844,15 +844,12 @@
 }
 
 // 쇼핑백 없을 때
-.empty-shoppingback {
+.empty-shoppingbag {
   margin-top: 56px;
   text-align: center;
-  &:before {
-    content: '';
-    display: inline-block;
+  .empty-icon {
     margin-bottom: 20px;
-    text-align: center;
-    @include sprite($common-icon-shoppingback);
+    display: inline-block;
   }
   .empty-text {
     margin-bottom: 10px;
@@ -1310,12 +1307,8 @@
   .complete-bx {
     margin: 56px 10px 60px;
     text-align: center;
-    &:before {
-      content: '';
-      display: inline-block;
+    .complete-icon {
       margin-bottom: 20px;
-      text-align: center;
-      @include sprite($order-delivery-complete);
     }
     .complete-text {
       margin-bottom: 10px;
