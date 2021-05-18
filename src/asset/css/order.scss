@@ -735,7 +735,7 @@
       &:before {
         content: '';
         display: inline-block;
-        @include sprite($order-rocation-info);
+        @include sprite($common-rocation-info);
         vertical-align: -3px;
       }
     }

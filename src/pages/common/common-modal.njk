@@ -1,0 +1,33 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--member shell-main--member-row">
+  <div class="main-content">
+    <style>
+      .title {padding:20px 0;font-size:16px;font-weight:300;text-align:center;}
+    </style>
+    <h2 class="title">공통 팝업</h2>
+    <style>
+      .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+    </style>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalZipcodeFind">우편번호 찾기</button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryList">배송지 목록</button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalShopFind">매장 찾기</button>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{# 우편번호 찾기 #modalZipcodeFind #}
+{% include "modal/common/zipcode-find.njk" %}
+{# 배송지 목록 #modalDeliveryList #}
+{% include "modal/common/delivery-list.njk" %}
+{# 매장 찾기 #modalShopFind #}
+{% include "modal/common/shop-find.njk" %}
+{% endblock modal %}
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
