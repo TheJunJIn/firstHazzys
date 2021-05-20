@@ -1,0 +1,65 @@
+<!-- 매장 찾기 -->
+<div id="modalShopFind" class="modal modal--full modal--shop-find" tabindex="-1" role="dialog" data-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <h1 class="modal__header__title">매장 찾기</h1>
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+        <i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="shop-contents">
+        <div class="brand-area">
+          <span class="form-select">
+            <select class="select">
+              <option value="">전체브랜드</option>
+            </select>
+            <i class="icon"></i>
+          </span>
+        </div>
+        <div class="address-area">
+          <span class="form-select">
+            <select class="select">
+              <option value="">시/도</option>
+            </select>
+            <i class="icon"></i>
+          </span>
+          <span class="form-select">
+            <select class="select">
+              <option value="">구/군</option>
+            </select>
+            <i class="icon"></i>
+          </span>
+        </div>
+        <div class="input-block shop-search">
+          <input type="text" class="form-text" placeholder="매장명 검색">
+          <button type="button" class="button button--search">
+            <i class="sprite-icon sprite-common sprite-common-search">검색</i>
+          </button>
+        </div>
+        <p class="btn-shop-find"><button type="button" class="form-button form-button--main" data-modal-open="#modalShopFind">매장 찾기</button></p>
+        <div class="shop-total">
+          <span class="shop-total__num">158</span> 개 매장
+        </div>
+        <ul class="shop">
+          <li class="shop__list">
+            <p class="name">AK 분당 헤지스 골프</p>
+            <p class="address">경기도 남양주시 다산순환로 50 현대 프리미엄 아울렛 A관 1층 현대 프리미엄 아울렛</p>
+            <div class="button-area">
+              <button type="button" class="button button-area__call" onclick="location.href=''">전화걸기</button>
+              <button type="button" class="button button-area__shop" data-modal-open="#modalShopLocation">매장 위치</button>
+            </div>
+          </li>
+          <li class="shop__list">
+            <p class="name">AK 분당 헤지스 골프</p>
+            <p class="address">경기도 남양주시 다산순환로 50 현대 프리미엄 아울렛 A관 1층 현대 프리미엄 아울렛</p>
+            <div class="button-area">
+              <button type="button" class="button button-area__call" onclick="location.href=''">전화걸기</button>
+              <button type="button" class="button button-area__shop" data-modal-open="#modalShopLocation">매장 위치</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
