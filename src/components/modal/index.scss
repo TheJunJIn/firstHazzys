@@ -382,6 +382,15 @@
   }
 
   .shop-location {
+    .shop-tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 8px 8px 6px 8px;
+      color: $color-text-point;
+      border: 1px solid $color-line-point;
+      font-size: 12px;
+      line-height: 12px;
+    }
     .shop-name {
       margin-bottom: 6px;
       color: $color-text-emphasize;

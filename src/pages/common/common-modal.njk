@@ -13,6 +13,7 @@
     <button type="button" class="form-button form-button--main" data-modal-open="#modalZipcodeFind">우편번호 찾기</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryList">배송지 목록</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalShopFind">매장 찾기</button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalShopLocation">매장 위치</button>
   </div>
 </main>
 {% endblock %}
@@ -24,6 +25,8 @@
 {% include "modal/common/delivery-list.njk" %}
 {# 매장 찾기 #modalShopFind #}
 {% include "modal/common/shop-find.njk" %}
+{# 매장 위치 #modalShopFind #}
+{% include "modal/common/shop-location.njk" %}
 {% endblock modal %}
 
 {% block css %}
