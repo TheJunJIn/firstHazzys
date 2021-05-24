@@ -167,8 +167,8 @@
               </div>
               <div class="tabpanel" tabindex="0" role="tabpanel" id="generalDelivery-tab" aria-labelledby="generalDelivery">
                 <div class="delivery-link">
-                  <a href="#" class="link">신규 배송지</a>
-                  <a href="#" class="link">배송지 목록</a>
+                  <button type="button" class="link">신규 배송지</button>
+                  <button type="button" class="link" data-modal-open="#modalDeliveryList">배송지 목록</button>
                 </div>
                 <!-- 일반 배송 -->
                 <div class="delivery-form">
@@ -315,6 +315,8 @@
 {% include "modal/common/shop-location.njk" %}
 {# 쿠폰변경 #modalCouponChange #}
 {% include "modal/order/coupon-change.njk" %}
+{# 배송지 목록 #modalDeliveryList #}
+{% include "modal/common/delivery-list.njk" %}
 {% endblock modal %}
 
 {% block css %}

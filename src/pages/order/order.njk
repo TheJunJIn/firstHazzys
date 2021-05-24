@@ -154,7 +154,7 @@
       <div class="delivery-info-input">
         <div class="title-bx">
           <h3 class="title">배송 정보</h3>
-          <button type="button" class="button-delivery-list">배송지 목록</button>
+          <button type="button" class="button-delivery-list" data-modal-open="#modalDeliveryList">배송지 목록</button>
         </div>
         <div class="delivery-bx-left">
           <p class="member-info">
@@ -286,6 +286,8 @@
 {% include "modal/common/shop-location.njk" %}
 {# 쿠폰변경 #modalCouponChange #}
 {% include "modal/order/coupon-change.njk" %}
+{# 배송지 목록 #modalDeliveryList #}
+{% include "modal/common/delivery-list.njk" %}
 {% endblock modal %}
 
 {% block css %}
