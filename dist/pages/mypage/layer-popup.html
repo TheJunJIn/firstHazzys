@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="/asset/css/common.css" />
 		<!-- 개별 CSS -->
 
-		<link rel="stylesheet" href="/asset/css/member.css" />
+		<link rel="stylesheet" href="/asset/css/mypage.css" />
 	</head>
 	<body>
 		<div class="app">
@@ -1762,60 +1762,32 @@
 				</div>
 			</div>
 
-			<main class="shell-main shell-main--member shell-main--member-column">
-				<div class="main-content main-content--signup-complete">
-					<div class="message-card">
-						<div class="message-card__icon">
-							<div class="signup-complete">
-								<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
-									<g fill="none" fill-rule="evenodd">
-										<g stroke="#000" stroke-width="2">
-											<path d="M38.259 52.915c-3.295 1.394-6.917 2.164-10.72 2.164C12.33 55.079 0 42.749 0 27.54 0 12.33 12.33 0 27.539 0c12.227 0 22.594 7.969 26.189 18.996" transform="translate(-144 -110) translate(144 110) translate(3 12)" />
-											<path
-												class="signup-complete__face"
-												style="fill: none; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; paint-order: normal"
-												d="m 18.739,30.338 5.836,2.577 -5.337,2.743 m 25.68,-10.563 c 0,0 -3.9,-0.955 -7.117,1.038 M 16.16,25.095 c 0,0 3.901,-0.955 7.117,1.038 M 30.54,47.41 v 0 c -3.53,0 -6.39,-2.86 -6.39,-6.39 v -0.814 h 12.78 v 0.814 c 0,3.53 -2.862,6.39 -6.39,6.39 z M 42.339,30.338 36.504,32.915 38.899912,34.146632 41.84,35.658"
-											/>
-										</g>
-									</g>
-								</svg>
-								<div class="signup-complete__firework">
-									<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
-										<g fill="none" fill-rule="evenodd">
-											<g stroke="#000" stroke-width="2">
-												<path
-													class="signup-complete__line"
-													style="fill: none; stroke-width: 0.790269; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; paint-order: normal"
-													d="m 54.234868,52.058994 1.133246,-3.479555 m 0.126045,4.488331 3.933171,-4.401006 m -2.728798,5.494344 3.334142,-1.445402"
-												/>
-												<path
-													class="signup-complete__star"
-													style="fill: none; stroke-width: 0.790269; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; paint-order: normal"
-													d="m 62.984748,44.007199 -0.07705,1.18896 0.685953,0.973215 -1.154188,0.293981 -0.714009,0.953459 -0.636165,-1.006802 -1.127318,-0.384467 0.761028,-0.916712 0.01699,-1.190934 1.10677,0.44097 z"
-												/>
-												<path style="fill: none; stroke-width: 2; stroke-miterlimit: 4; stroke-dasharray: none; paint-order: normal; stroke-linecap: butt; stroke-linejoin: round" d="m 46.874,35.75 c 0,0.55 -3.67,16.909 -3.67,16.909 l 14.942,-6.873 z" transform="translate(3,12)" />
-											</g>
-										</g>
-									</svg>
-								</div>
-							</div>
-						</div>
-						<div class="message-card__title">김헤지 고객님 회원이 되신걸 환영해요!</div>
-						<div class="message-card__body">
-							<div class="box">
-								<div class="info">
-									<span class="info__label">아이디</span>
-									<span class="info__value">hazzyshazzys123</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="subscribe">
-						<p class="subscribe__title">마케팅 수신 동의하고 새로운 소식과 다양한 혜택을 받아보세요!</p>
-						<p class="subscribe__guide"><a href="#">MY HAZZYS &gt; 내 정보 변경</a> 에서 수신 동의를 변경할 수 있어요.</p>
-						<button type="button" class="form-button form-button--main">쇼핑하러 가기</button>
-					</div>
+			<main class="shell-main">
+				<div class="main-content">
+					<style>
+						.main-content {
+							padding-top: 100px;
+						}
+						.main-content > .form-button {
+							display: block;
+							width: 80%;
+							margin: 20px auto;
+						}
+					</style>
+					<style>
+						.main-content > .form-button {
+							display: block;
+							width: 80%;
+							margin: 20px auto;
+						}
+					</style>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalDeleteOrderHistory">주문내역 삭제</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalConfirmShipped">상품을 수령하셨어요?</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalConfirmPickedup">픽업상품을 매장에서 수령하셨어요?</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalStoreLocation">헤지스 스토어 안내</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalReturnCostGuide">예상 반품비</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalExchangeCostGuide">예상 교환비</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalDeleteClaimHistory">취소/교환/반품 내역 삭제</button>
 				</div>
 			</main>
 
@@ -1968,46 +1940,207 @@
 			</div>
 		</div>
 
-		<div id="modalAgreementMarketing" class="modal modal--agreement-marketing" tabindex="-1" role="dialog" data-modal>
+		<div id="modalDeleteOrderHistory" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
-					<h1 class="modal__header__title">마케팅 정보 수신 동의</h1>
+					<h1 class="modal__header__title">주문내역 삭제</h1>
 					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
 						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
 					</button>
 				</div>
 				<div class="modal__body">
-					<div class="terms-agreement">
-						<div class="terms-agreement__box">
-							(확정아님) 개인정보보호법 제22조 제4항에 의해 선택정보 사항에 대해서는 기재하지 않으셔도 서비스를 이용하실 수 있습니다. 1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
-							1. 할인 및 쿠폰 등 이벤트 등 광고성 정보 제공<br />
+					<div class="message">
+						<div class="message__text">주문하신 내역을 삭제하시겠습니까?</div>
+						<div class="message__text message__text--small">
+							<div class="message__hilite">
+								삭제 시 주문 내역이 표시되지 않으며 복구할 수 없습니다.<br />
+								같이 구매한 상품이 있는 경우 전체 삭제합니다.
+							</div>
 						</div>
-						<div class="terms-agreement__form">
-							<label class="form-checkbox form-checkbox--small">
-								<input type="checkbox" class="checkbox" />
-								<span class="name">전화</span>
-							</label>
-							<label class="form-checkbox form-checkbox--small">
-								<input type="checkbox" class="checkbox" />
-								<span class="name">E-Mail</span>
-							</label>
-							<label class="form-checkbox form-checkbox--small">
-								<input type="checkbox" class="checkbox" />
-								<span class="name">문자(SMS)</span>
-							</label>
-							<label class="form-checkbox form-checkbox--small">
-								<input type="checkbox" class="checkbox" />
-								<span class="name">우편물</span>
-							</label>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalConfirmShipped" class="modal" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">상품을 수령하셨어요?</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<div class="message__text">확인버튼 클릭 시 주문 상태가 배송완료로 변경되며, 상품평 작성 및 교환/반품 신청이 가능합니다.</div>
+						<div class="message__text message__text--small">
+							<div class="message__secondary">교환/반품 신청이 안되는 경우 고객센터로 연락주세요.</div>
 						</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalConfirmPickedup" class="modal" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title"><span class="title-block">픽업상품을</span> <span class="title-block">매장에서 수령하셨어요?</span></h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<div class="message__text">주문상태가 배송완료로 변경되며,<br />상품평 작성 및 교환/반품 신청이 가능합니다</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalStoreLocation" class="modal modal--store-location" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">해지스 스토어 안내</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="store-location-guide">
+						<div class="tabs">
+							<div class="tablist" role="tablist" aria-label="스토어 안내">
+								<button type="button" class="tab" role="tab" aria-selected="true" aria-controls="storeLocation-tab" id="storeLocation">매장 위치</button>
+								<button type="button" class="tab" role="tab" aria-selected="false" aria-controls="storePickupGuide-tab" id="storePickupGuide" tabindex="-1">픽업 안내</button>
+							</div>
+							<div class="tabpanel" tabindex="0" role="tabpanel" id="storeLocation-tab" aria-labelledby="storeLocation">
+								<div class="store-location">
+									<div class="store-location__map" style="height: 300px; background: #efefef">지도 영역</div>
+									<div class="store-location__info">
+										<div class="store__title">
+											<p class="store__name">헤지스 스페이스 H</p>
+											<a href="tel:02-756-1341" class="store__phone">02-756-1341</a>
+										</div>
+										<div class="store__info">
+											<div class="store__info__row">
+												<dl class="info">
+													<dt class="info__title">매장 주소</dt>
+													<dd class="info__content">서울 특별시 중구 명동8가길 28 명동헤지스</dd>
+												</dl>
+												<dl class="info">
+													<dt class="info__title">교통 편의</dt>
+													<dd class="info__content">4호선 명동역 9번 출구 앞</dd>
+												</dl>
+												<dl class="info">
+													<dt class="info__title">주차 시설</dt>
+													<dd class="info__content">매장 앞 우리은행 건물 주차 가능 <span class="comment">(주차권 지급)</span></dd>
+												</dl>
+											</div>
+											<div class="store__info__row">
+												<dl class="info">
+													<dt class="info__title">영업 시간</dt>
+													<dd class="info__content">10:00 ~ 21:00</dd>
+												</dl>
+												<dl class="info">
+													<dt class="info__title">휴무 안내</dt>
+													<dd class="info__content">명절 당일 <span class="comment">(연 2회 휴무)</span></dd>
+												</dl>
+												<dl class="info">
+													<dt class="info__title">방문 혜택</dt>
+													<dd class="info__content">
+														<ul class="guide">
+															<li class="guide__item">기본 수선 무료 서비스 <span class="comment">(자사제품)</span></li>
+															<li class="guide__item">매장 픽업 서비스 <span class="comment">(2,500점 마일리지 혜택 제공)</span></li>
+															<li class="guide__item">무료 교환/반품 대행서비스 <span class="comment">(자사제품/배송비지원)</span></li>
+															<li class="guide__item">온라인 전용 베스트상품 착장 체험 서비스</li>
+														</ul>
+													</dd>
+												</dl>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabpanel" tabindex="0" role="tabpanel" id="storePickupGuide-tab" aria-labelledby="storePickupGuide" hidden>
+								<!-- 픽업 안내 -->
+								<div class="pickup-guide">
+									<div class="pickup-guide__row">
+										<dl class="guide">
+											<dt class="guide__title">매장배송 픽업 서비스 안내</dt>
+											<dd class="guide__item">
+												주문 완료 후 선택하신 헤지스 스토어로 택배 배송 후 상품이 매장 도착 시 방문하시면 됩니다.
+												<p class="comment">(주문 후 배송조회에서 픽업 배송 정보 확인 가능)</p>
+											</dd>
+											<dd class="guide__item">픽업상품 수령 전, 매장 직원에게 헤지스 닷컴 모바일에서 주문내역을 보여주신 뒤 ‘픽업완료‘ 버튼을 클릭하세요.</dd>
+										</dl>
+										<dl class="guide">
+											<dt class="guide__title">주의사항</dt>
+											<dd class="guide__item">픽업 주문하여 매장 도착 이후 72시간 내 미수령 시 자동 결제 취소<span class="comment">(반품)</span> 처리 됩니다.</dd>
+											<dd class="guide__item">픽업상품은 본인<span class="comment">(헤지스 계정 기준)</span>외 대리수령 불가합니다.</dd>
+											<dd class="guide__item">고객님의 헤지스 닷컴 계정으로 로그인하여 마이페이지 ‘픽업완료‘ 버튼을 클릭하여 완료 처리한 시점에 상품을 인계해 드립니다.</dd>
+											<dd class="guide__item">매장을 방문하지 않은 상품 미수령 상태에서 ‘픽업완료’ 버튼을 클릭하지 마세요.</dd>
+										</dl>
+									</div>
+									<div class="pickup-guide__row">
+										<dl class="guide">
+											<dt class="guide__title">픽업 주문 마일리지 적립 안내</dt>
+											<dd class="guide__item">적립기준 : 픽업 서비스 이용 후, 매장 수령한 주문 기준</dd>
+											<dd class="guide__item">
+												적립시점 : 픽업 완료 버튼 클릭 후, +10일 이후 적립
+												<p class="comment">(단, 픽업 수령 완료 후 중간 반품 시 적립 취소)</p>
+											</dd>
+											<dd class="guide__item">적립 마일리지 : 주문 건별 2,500점 적립</dd>
+										</dl>
+									</div>
+								</div>
+								<!-- //픽업 안내 -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalReturnCostGuide" class="modal" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">예상 반품비</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<div class="message__text">예상 반품비는 반품 사유에 따라 달라지며, 헤지스 지정 택배사를 이용하지 않으실 경우 변경될 수 있습니다.</div>
 					</div>
 				</div>
 				<div class="modal__footer">
@@ -2016,52 +2149,57 @@
 			</div>
 		</div>
 
+		<div id="modalExchangeCostGuide" class="modal" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">예상 교환비</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<div class="message__text">예상 교환비는 교환 사유에 따라 달라지며, 헤지스 지정 택배사를 이용하지 않으실 경우 변경될 수 있습니다.</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalDeleteClaimHistory" class="modal" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">취소/교환/반품 내역 삭제</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<div class="message__text">요청하신 내역을 삭제하시겠습니까?</div>
+						<div class="message__text message__text--small">
+							<div class="message__hilite">삭제 시 주문 내역이 표시되지 않으며 복구할 수 없습니다.</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 		<script src="/asset/js/vendor.js"></script>
 		<script src="/asset/js/ui.js"></script>
 
-		<script src="/asset/js/member.js"></script>
-		<script>
-			$(function () {
-				window.setTimeout(function () {
-					// 마케팅 수신 동의 팝업
-					ui.modal.open($('#modalAgreementMarketing'));
-				}, 1000);
-
-				// 아이콘 애니메이션
-				anime
-					.timeline({
-						loop: true,
-						duration: 1000,
-						easing: 'cubicBezier(0.39, 0.4, 0.45, 0.97)'
-					})
-					.add({
-						targets: '.signup-complete__firework',
-						rotate: [-3, 0]
-					})
-					.add(
-						{
-							targets: '.signup-complete__line',
-							strokeWidth: 2,
-							d: 'm 55.151,47.012 2.868,-8.806 m 0.319,11.359 9.954,-11.138 m -6.906,13.905 8.438,-3.658'
-						},
-						'-=1000'
-					)
-					.add(
-						{
-							targets: '.signup-complete__star',
-							strokeWidth: 2,
-							d: 'm 77.295059,26.634647 -0.195,3.009 1.736,2.463 -2.921,0.744 -1.807,2.413 -1.61,-2.548 -2.853,-0.973 1.926,-2.32 0.043,-3.014 2.801,1.116 z'
-						},
-						'-=1000'
-					)
-					.add(
-						{
-							targets: '.signup-complete__face',
-							d: 'm 18.739,29.338 5.836,2.577 -5.337,2.743 m 25.68,-10.563 c 0,0 -3.9,-0.955 -7.117,1.038 M 16.16,24.095 c 0,0 3.901,-0.955 7.117,1.038 M 30.54,46.41 v 0 c -3.53,0 -6.39,-2.86 -6.39,-6.39 v -0.814 h 12.78 v 0.814 c 0,3.53 -2.862,6.39 -6.39,6.39 z M 42.339,29.338 36.504,31.915 38.899912,33.146632 41.84,34.658'
-						},
-						'-=800'
-					);
-			});
-		</script>
+		<script src="/asset/js/mypage.js"></script>
 	</body>
 </html>
