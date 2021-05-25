@@ -222,15 +222,15 @@
           <div class="title-bx">
             <h3 class="title">결제 수단</h3>
           </div>
-          <!-- 패밀리회원 결제 시 -->
+          <!-- 패밀리회원 결제 시 나타나는 영역 -->
           <div class="family-member">
-            <label class="form-radio">
-              <input type="radio" class="radio" name="checkFamily">
+            <label class="form-checkbox">
+              <input type="checkbox" class="checkbox" id="checkFamily" name="checkFamily">
               <span class="name"><i class="icon-payment"></i>패밀리 회원 결제하기</span>
             </label>
             <p class="family-text">(패밀리회원 구매 시 패밀리카드 결제만 가능합니다.)</p>
           </div>
-          <!-- //패밀리회원 결제 시 -->
+          <!-- //패밀리회원 결제 시 나타나는 영역 -->
           <ul class="select-payment">
             <li>
               <label class="form-radio">
@@ -307,6 +307,18 @@
       } else {
         $('.direct-message-bx').hide();
       }
+    });
+
+    $('.family-member .name').click(function(){
+        $('input[name=checkFamily]').prop('checked',function(){
+            return !$(this).prop('checked');
+        });
+    });
+
+    $('.max-sale-benefit .name').click(function(){
+        $('input[name=checkFamily]').prop('checked',function(){
+            return !$(this).prop('checked');
+        });
     });
   });
 </script>

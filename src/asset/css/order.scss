@@ -1055,9 +1055,9 @@
       .family-member {
         margin-bottom: 30px;
         text-align: center;
-        .form-radio {
+        .form-checkbox {
           margin-bottom: 10px;
-          .radio {
+          .checkbox {
             &:checked {
               + .name {
                 border: solid 1px $color-solid-point;
