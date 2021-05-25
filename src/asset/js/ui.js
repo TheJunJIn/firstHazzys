@@ -16,13 +16,24 @@ const $ = window.jQuery;
 const defaults = {
   scrollLockClass: 'scroll-lock'
 };
+
+const OVERRAP_STYLE_HEADER_LIST = ['shell-main--mypage-main']
 class UI extends ShoutAndListen {
   constructor(params = {}) {
     super();
 
+    // Header 스타일
+    const pageMainElement = document.querySelector('.shell-main');
+    const isOverlap  = OVERRAP_STYLE_HEADER_LIST.reduce( (acc, current)=> {
+      if(pageMainElement?.classList?.contains?.(current)) {
+        acc = true;
+      }
+      return acc;
+    }, false);
+
     const options = { ...defaults, ...params };
     const viewType = new ViewType({ name: 'viewType' });
-    const header = new Header({ name: 'header' });
+    const header = new Header({ name: 'header', overlap: isOverlap });
     const nav = new Navigation({ name: 'nav' });
     const sidebar = new Sidebar({ name: 'sidebar' });
     const modalController = new ModalController({ name: 'modalController' });

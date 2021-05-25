@@ -1,0 +1,301 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--mypage">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
+    <div class="main-container">
+      <h2 class="main-header__title">마이페이지</h2>
+      <div class="main-header__my-info">
+        <a href="#" class="my-info__membership grade">
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
+          <span class="grade__name"><span>RED</span> 회원</span>
+          <!--
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/s-platinum.png" alt="S-Platinum"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/platinum.png" alt="platinum"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/gold.png" alt="Gold"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/silver.png" alt="Sliver"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/black.png" alt="Black"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/purple.png" alt="Purple"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
+          -->
+        </a>
+        <div class="my-info__message">
+          <p class="message__title">해지수님, 안녕하세요. 🥰</p>
+          <p class="message__content">이번 주는 봄 신상이 많아요.</p>
+        </div>
+        <ul class="my-info__asset">
+          <li class="asset__item">
+            <a href="#" class="asset__value asset__value--coupon">3장</a>
+          </li>
+          <li class="asset__item">
+            <a href="#" class="asset__value asset__value--mileage">20,000M</a>
+          </li>
+        </ul>
+        <a href="#" class="my-info__more">내 정보 수정</a>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--shopping">
+        <div class="main-content__header">
+          <h3 class="main-content__title">주문 취소</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="product-order-container">
+          <div class="product-order-detail">
+            <!-- 주문 정보 -->
+            <div class="order-detail order-detail--product">
+              <div class="order-detail__header">
+                <p class="order-detail__title">주문 정보</p>
+              </div>
+              <div class="order-detail__content">
+
+                <div class="info-box info-box--side">
+                  <dl class="info-box__row">
+                    <dt class="info-box__header">주문번호</dt>
+                    <dd class="info-box__data">602435586</dd>
+                  </dl>
+                  <dl class="info-box__row">
+                    <dt class="info-box__header">주문일자</dt>
+                    <dd class="info-box__data">2021.03.29</dd>
+                  </dl>
+                </div>
+
+                <div class="order-product-list">
+                  <!-- 배송상품 -->
+                  <div class="product product--order product--order-claim">
+                    <a href="#" class="product__image">
+                      <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                    </a>
+                    <div class="product__content">
+                      <a href="#" class="product__info">
+                        <p class="product__brand">HAZZZYS ACC</p>
+                        <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                      </a>
+                      <div class="product__option">
+                        <p class="product__option__name">
+                          <span class="option__item">차콜그레이</span>
+                          <span class="option__item">68 XL</span>
+                          <span class="option__item">1개</span>
+                        </p>
+                      </div>
+                      <div class="product__price">
+                        <span class="product__price-sale">966,000</span>
+                      </div>
+                      <div class="product__claim-option">
+                        <label class="form-select-container">
+                          <span class="form-label">취소 수량</span>
+                          <span class="form-select">
+                            <select class="select">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                            </select>
+                            <i class="icon"></i>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //배송상품 -->
+                  <!-- 픽업상품 -->
+                  <div class="product product--order product--order-claim">
+                    <a href="#" class="product__image">
+                      <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                    </a>
+                    <div class="product__content">
+                      <a href="#" class="product__info">
+                        <p class="product__brand">HAZZZYS ACC</p>
+                        <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                      </a>
+                      <div class="product__option">
+                        <p class="product__option__name">
+                          <span class="option__item">차콜그레이</span>
+                          <span class="option__item">68 XL</span>
+                          <span class="option__item">1개</span>
+                        </p>
+                      </div>
+                      <div class="product__price">
+                        <span class="product__price-sale">966,000</span>
+                      </div>
+                      <div class="product__order">
+                        <p class="product__order-state">
+                          <span class="date">평균 배송 2-3일</span>
+                        </p>
+                        <div class="product__order-shipping">
+                          <button type="button" class="button button--guide">매장 안내</button>
+                          <span class="state-tag">
+                            <span class="state-tag__name">매장 픽업</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="product__claim-option">
+                        <label class="form-select-container">
+                          <span class="form-label">취소 수량</span>
+                          <span class="form-select">
+                            <select class="select">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                            </select>
+                            <i class="icon"></i>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //픽업상품 -->
+                </div>
+
+              </div>
+            </div>
+            <!-- //주문 정보 -->
+
+            <!-- 결제 정보 -->
+            <div class="order-detail order-detail--payment">
+              <div class="order-detail__header">
+                <p class="order-detail__title">결제 정보</p>
+              </div>
+              <div class="order-detail__content">
+                <div class="info-box info-box--side">
+                  <dl class="info-box__row">
+                    <dt class="info-box__header">결제 수단</dt>
+                    <dd class="info-box__data">신용카드(신한) / 일시불</dd>
+                  </dl>
+                  <dl class="info-box__row">
+                    <dt class="info-box__header">결제 금액</dt>
+                    <dd class="info-box__data">344,500 원</dd>
+                  </dl>
+                  <dl class="info-box__row">
+                    <dt class="info-box__header">취소 금액</dt>
+                    <dd class="info-box__data"><span class="claim">344,500 원</span></dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <!-- // 결제 정보 -->
+
+            <!-- 취소 사유 -->
+            <div class="order-detail order-detail--reason">
+              <div class="order-detail__header">
+                <p class="order-detail__title">취소 사유</p>
+              </div>
+              <div class="order-detail__content">
+                <div class="write-form">
+                  <span class="form-select">
+                    <select class="select">
+                      <option value="">취소사유를 선택해주세요</option>
+                      <option value="구매의사 없어짐">구매의사 없어짐</option>
+                      <option value="사이즈변경">사이즈변경</option>
+                      <option value="색상변경">색상변경</option>
+                      <option value="배송지연">배송지연</option>
+                      <option value="쿠폰/마일리지/적립금 미적용">쿠폰/마일리지/적립금 미적용</option>
+                      <option value="배송정보변경">배송정보변경</option>
+                      <option value="결제수단변경">결제수단변경</option>
+                      <option value="다른 상품으로 재주문">다른 상품으로 재주문</option>
+                      <option value="가격불만">가격불만</option>
+                      <option value="직접입력">직접입력</option>
+                    </select>
+                    <i class="icon"></i>
+                  </span>
+                  <div class="form-textarea">
+                    <textarea class="form-text" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // 취소 사유 -->
+
+            <div class="product-order__util">
+              <button type="button" class="form-button form-button--main form-button--double">취소 신청</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 내역</p>
+            <ul class="menu__list">
+              <li class="menu__item active">
+                <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나만의 혜택</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 뱃지</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 태그</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+  {% include "modal/member/find-password.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/mypage.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/mypage.js"></script>
+{% endblock js %}

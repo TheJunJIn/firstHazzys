@@ -1908,217 +1908,21 @@
 							</div>
 							<p class="coupon-mileage-text">쿠폰 및 마일리지 사용에 따라 최종 결제금액은 달라질 수 있습니다.</p>
 							<div class="button-bx">
-								<button type="button" class="form-button form-button--point">다음단계</button>
-							</div>
-						</div>
-						<!-- 배송정보 입력 전 -->
-						<div class="delivery-info" data-accordion role="tablist">
-							<div class="accordion__item active" data-accordion-item>
-								<div class="accordion__title">
-									<button type="button" class="button" data-tab-toggle role="tab" aria-controls="delivery-accordion" id="delivery-accordion-label">
-										<span class="title">배송정보</span>
-									</button>
-								</div>
-								<div class="accordion__content" data-tab-content role="tabpanel" aria-labelledby="delivery-accordion-label" id="delivery-accordion">
-									<!-- 배송정보 컨텐츠 -->
-									<div class="tabs">
-										<div class="tablist" role="tablist" aria-label="review">
-											<button type="button" class="tab" role="tab" aria-selected="true" aria-controls="generalDelivery-tab" id="generalDelivery">일반 배송</button>
-											<button type="button" class="tab" role="tab" aria-selected="false" aria-controls="shopPickup-tab" id="shopPickup" tabindex="-1">매장 픽업 <span class="layer-speech-bubble">2,500M 적립혜택</span></button>
-										</div>
-										<div class="tabpanel" tabindex="0" role="tabpanel" id="generalDelivery-tab" aria-labelledby="generalDelivery">
-											<div class="delivery-link">
-												<a href="#" class="link">신규 배송지</a>
-												<a href="#" class="link">배송지 목록</a>
-											</div>
-											<!-- 일반 배송 -->
-											<div class="delivery-form">
-												<div class="delivery-bx-left">
-													<div class="input-block member-name">
-														<input type="text" class="form-text" placeholder="받는 분 성함을 입력해 주세요" />
-													</div>
-													<div class="form-flex form-phone">
-														<span class="form-select">
-															<select class="select">
-																<option value="">010</option>
-																<option value="011">011</option>
-																<option value="016">016</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-														<div class="input-block form-phone-input">
-															<input type="text" class="form-text" placeholder="-없이 숫자만 입력해 주세요" />
-														</div>
-													</div>
-												</div>
-												<div class="delivery-bx-right">
-													<div class="form-flex form-address">
-														<div class="input-block form-address-inp">
-															<input type="text" class="form-text" />
-														</div>
-														<div class="address-search">
-															<button type="button" class="form-button form-button--plain">주소 검색</button>
-														</div>
-													</div>
-													<div class="input-block form-address-detail">
-														<input type="text" class="form-text" />
-													</div>
-													<div class="input-block form-address-detail">
-														<input type="text" class="form-text" placeholder=" 상세 주소를 입력해 주세요" />
-													</div>
-													<div class="check-field basics-delivery-setting">
-														<label class="form-checkbox">
-															<input type="checkbox" class="checkbox" />
-															<span class="name">기본 배송지로 설정</span>
-														</label>
-													</div>
-													<div class="delivery-requst-select">
-														<span class="form-select">
-															<select class="select" required>
-																<option value="" disabled selected>배송 요청 사항을 선택해 주세요</option>
-																<option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
-																<option value="부재시, 문앞에 놓아주세요.">부재시, 문앞에 놓아주세요.</option>
-																<option value="직접 받겠습니다.">직접 받겠습니다.</option>
-																<option value="부재시, 문앞에 놓아주세요.">부재시, 문앞에 놓아주세요.</option>
-																<option value="배송전에 연락주세요.">배송전에 연락주세요.</option>
-																<option value="직접입력">직접입력</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-													</div>
-													<div class="check-field">
-														<label class="form-checkbox delivery-request-save">
-															<input type="checkbox" class="checkbox" />
-															<span class="name">배송 요청 사항 저장</span>
-														</label>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- 매장 픽업 -->
-										<div class="tabpanel" tabindex="0" role="tabpanel" id="shopPickup-tab" aria-labelledby="shopPickup" hidden>
-											<div class="shop-pickup">
-												<button type="button" class="button-map-view" data-modal-open="#modalShopLocation">위치 보기</button>
-												<p class="spaceh-text-1">SPACE H 에서 여러분을 기다리고 있습니다.</p>
-												<p class="spaceh-text-2">SPACE H 헤지스 명동점에서 상품을 픽업하시면 프리미엄 서비스를 경험하실 수 있습니다.</p>
-												<div class="visit-member-info">
-													<div class="input-block info-name">
-														<input type="text" class="form-text" placeholder="방문하실 분의 이름을 입력해주세요" />
-													</div>
-													<div class="form-flex info-phone">
-														<span class="form-select">
-															<select class="select">
-																<option value="">010</option>
-																<option value="011">011</option>
-																<option value="016">016</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-														<div class="input-block info-phone-input">
-															<input type="text" class="form-text" placeholder="-없이 숫자만 입력해 주세요" />
-														</div>
-													</div>
-												</div>
-												<div class="spaceh-pickup-benefit">
-													<h3 class="title">SPACE H 픽업 혜택</h3>
-													<ul class="pickup-benefit-list">
-														<li>
-															<i class="icon-benefit icon-benefit-1"></i>
-															<span class="text">픽업 후 추가<br />2,500M 적립</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-2"></i>
-															<span class="text">무료<br />반품/교환</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-3"></i>
-															<span class="text">무료 수선/<br />스타일링</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-4"></i>
-															<span class="text">무료<br />선물포장</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-5"></i>
-															<span class="text">온라인전용<br />상품 피팅</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-6"></i>
-															<span class="text">상품<br />클리닝</span>
-														</li>
-													</ul>
-												</div>
-												<dl class="shop-pickup-note">
-													<dt>유의 사항</dt>
-													<dd>결제완료 2~3일 후 픽업이 가능합니다.</dd>
-													<dd>매장에 주문하신 상품이 도착하면 연락처로 픽업 안내 연락을 드립니다.</dd>
-													<dd>매장 방문 후 주문내역을 직원에게 보여주시고, 상품을 픽업해주세요.</dd>
-													<dd>매장 픽업 10일 후 2,500M가 추가 적립됩니다.</dd>
-													<dd>매장 도착 후 3일 이내 미 수령 시 자동 반품됩니다.</dd>
-												</dl>
-											</div>
-										</div>
-									</div>
-								</div>
+								<button type="button" class="form-button form-button--point">결제하기</button>
 							</div>
 						</div>
 						<!-- 배송정보 입력 후 개발 확인 탭 -->
-						<div class="delivery-info" data-accordion role="tablist">
-							<div class="accordion__item active" data-accordion-item>
-								<div class="accordion__title">
-									<button type="button" class="button" data-tab-toggle role="tab" aria-controls="delivery-accordion2" id="delivery-accordion-label2">
-										<span class="title">배송정보</span>
-									</button>
-								</div>
-								<div class="accordion__content" data-tab-content role="tabpanel" aria-labelledby="delivery-accordion-label2" id="delivery-accordion2">
-									<!-- 배송정보 컨텐츠 -->
-									<div class="tabs">
-										<div class="tablist" role="tablist" aria-label="review">
-											<button type="button" class="tab" role="tab" aria-selected="true" aria-controls="generalDelivery-tab2" id="generalDelivery2">일반 배송</button>
-											<button type="button" class="tab" role="tab" aria-selected="false" aria-controls="shopPickup-tab2" id="shopPickup2" tabindex="-1">매장 픽업 <span class="layer-speech-bubble">2,500M 적립혜택</span></button>
-										</div>
-										<div class="tabpanel" tabindex="0" role="tabpanel" id="generalDelivery-tab2" aria-labelledby="generalDelivery2">
-											<div class="delivery-link">
-												<a href="#" class="link">신규 배송지</a>
-												<a href="#" class="link">배송지 목록</a>
-											</div>
-											<!-- 일반 배송 배송정보 입력 -->
-											<div class="delivery-form">
-												<div class="delivery-bx-left">
-													<p class="member-info"><em>[기본]</em>김헤지<span class="num">010-1234-5678</span></p>
-													<p class="real-address">[06017] 서울 강남구 언주로 870 헤지스타워 5층</p>
-												</div>
-												<div class="delivery-bx-right">
-													<div class="delivery-requst-select">
-														<span class="form-select">
-															<select class="select" required>
-																<option value="" disabled selected>배송 요청 사항을 선택해 주세요</option>
-																<option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
-																<option value="부재시, 문앞에 놓아주세요.">부재시, 문앞에 놓아주세요.</option>
-																<option value="직접 받겠습니다.">직접 받겠습니다.</option>
-																<option value="부재시, 문앞에 놓아주세요.">부재시, 문앞에 놓아주세요.</option>
-																<option value="배송전에 연락주세요.">배송전에 연락주세요.</option>
-																<option value="direct">직접입력</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-														<div class="input-block direct-message-bx">
-															<textarea class="form-text direct-message" cols="40" row="5" placeholder="초인종 누르지 마시고 문 앞에 두고 가주세요"></textarea>
-														</div>
-													</div>
-													<div class="check-field">
-														<label class="form-checkbox delivery-request-save">
-															<input type="checkbox" class="checkbox" />
-															<span class="name">배송 요청 사항 저장</span>
-														</label>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- 매장 픽업 -->
-										<div class="tabpanel" tabindex="0" role="tabpanel" id="shopPickup-tab2" aria-labelledby="shopPickup2" hidden></div>
-									</div>
-								</div>
+						<div class="delivery-info-input">
+							<div class="title-bx">
+								<h3 class="title">배송 정보</h3>
+								<button type="button" class="button-delivery-list" data-modal-open="#modalDeliveryList">배송지 목록</button>
+							</div>
+							<div class="delivery-bx-left">
+								<p class="member-info"><em>[기본]</em>김헤지<span class="num">010-1234-5678</span></p>
+								<p class="real-address">[06017] 서울 강남구 언주로 870 헤지스타워 5층</p>
+							</div>
+							<div class="delivery-bx-right">
+								<span class="delivery-text">부재시 경비실에 맡겨주세요.</span>
 							</div>
 						</div>
 						<!-- 할인 혜택 및 결제 수단 -->
@@ -2177,13 +1981,15 @@
 								<div class="title-bx">
 									<h3 class="title">결제 수단</h3>
 								</div>
+								<!-- 패밀리회원 결제 시 나타나는 영역 -->
 								<div class="family-member">
-									<label class="form-radio">
-										<input type="radio" class="radio" name="checkFamily" />
+									<label class="form-checkbox">
+										<input type="checkbox" class="checkbox" id="checkFamily" name="checkFamily" />
 										<span class="name"><i class="icon-payment"></i>패밀리 회원 결제하기</span>
 									</label>
 									<p class="family-text">(패밀리회원 구매 시 패밀리카드 결제만 가능합니다.)</p>
 								</div>
+								<!-- //패밀리회원 결제 시 나타나는 영역 -->
 								<ul class="select-payment">
 									<li>
 										<label class="form-radio">
@@ -2210,53 +2016,6 @@
 										</label>
 									</li>
 								</ul>
-								<div class="cash-receipt">
-									<h3 class="title">현금영수증 발급 신청</h3>
-									<div class="desktop-layout">
-										<div class="check-receipt">
-											<label class="form-radio">
-												<input type="radio" class="radio" name="checkReceipt" />
-												<span class="name">개인소득공제</span>
-											</label>
-											<label class="form-radio">
-												<input type="radio" class="radio" name="checkReceipt" />
-												<span class="name">사업자지출증빙</span>
-											</label>
-										</div>
-										<div class="form-flex form-phone">
-											<span class="form-select">
-												<select class="select">
-													<option value="">010</option>
-													<option value="011">011</option>
-													<option value="016">016</option>
-												</select>
-												<i class="icon"></i>
-											</span>
-											<div class="input-block form-phone-input">
-												<input type="text" class="form-text" placeholder="-없이 숫자만 입력해 주세요" />
-											</div>
-										</div>
-									</div>
-									<div class="desktop-layout">
-										<div class="check-receipt">
-											<label class="form-radio">
-												<input type="radio" class="radio" name="checkReceipt" />
-												<span class="name">개인소득공제</span>
-											</label>
-											<label class="form-radio">
-												<input type="radio" class="radio" name="checkReceipt" />
-												<span class="name">사업자지출증빙</span>
-											</label>
-										</div>
-										<div class="input-block form-business-num">
-											<input type="text" class="form-text" placeholder="사업자 등록번호를 -없이 입력해주세요" />
-										</div>
-									</div>
-									<ul class="receipt-text">
-										<li>결제와 동시에 즉시 이체되며, 전체 주문취소 시에는 당일 입금/부분 취소 시에는 익일 입금됩니다.</li>
-										<li>국민, 기업, 제일, 농협의 경우 해당 은행 규정상 1,500,000원 이상 금액은 계좌이체가 불가합니다.</li>
-									</ul>
-								</div>
 								<div class="check-field check-next-payment">
 									<label class="form-checkbox">
 										<input type="checkbox" class="checkbox" />
@@ -2498,7 +2257,7 @@
 
 		<!-- 매장 위치 -->
 		<div id="modalShopLocation" class="modal" tabindex="-1" role="dialog" data-modal>
-			<div class="modal-dialog modal-order" role="document">
+			<div class="modal-dialog" role="document">
 				<div class="modal__header">
 					<h1 class="modal__header__title">매장위치</h1>
 					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
@@ -2508,6 +2267,7 @@
 				<div class="modal__body">
 					<div class="shop-location">
 						<div class="map">지도영역<br /><br /></div>
+						<p class="shop-tag">아울렛</p>
 						<p class="shop-name">헤지스 명동점 SPACE H</p>
 						<p class="shop-address">서울특별시 중구 충무로 2가 63-1</p>
 						<a href="tel:031-701-1643" class="shop-call">031-701-1643</a>
@@ -2528,8 +2288,8 @@
 				<div class="modal__body">
 					<div class="coupon-change">
 						<p class="max-sale-benefit">
-							<label class="form-radio">
-								<input type="radio" class="radio" name="checkMaxSale" />
+							<label class="form-checkbox">
+								<input type="checkbox" class="checkbox" id="checkMaxSale" name="checkMaxSale" />
 								<span class="name"><i class="icon-sale"></i>최대 할인 혜택으로 적용</span>
 							</label>
 						</p>
@@ -2544,10 +2304,10 @@
 											<i class="icon"></i>
 											<div class="box">
 												<span class="coupon-name">일반 쿠폰</span>
-												<div class="coupon-inofo">
-													<span class="coupon-inofo__price">-8,450원</span>
-													<span class="coupon-inofo__sale">5% 할인</span>
-													<span class="coupon-inofo__date">2022.01.01 까지</span>
+												<div class="coupon-info">
+													<span class="coupon-info__price">-8,450원</span>
+													<span class="coupon-info__sale">5% 할인</span>
+													<span class="coupon-info__date">2022.01.01 까지</span>
 												</div>
 											</div>
 										</div>
@@ -2564,10 +2324,10 @@
 											<i class="icon"></i>
 											<div class="box">
 												<span class="coupon-name">일반 쿠폰</span>
-												<div class="coupon-inofo">
-													<span class="coupon-inofo__price">-8,450원</span>
-													<span class="coupon-inofo__sale">5% 할인</span>
-													<span class="coupon-inofo__date">2022.01.01 까지</span>
+												<div class="coupon-info">
+													<span class="coupon-info__price">-8,450원</span>
+													<span class="coupon-info__sale">5% 할인</span>
+													<span class="coupon-info__date">2022.01.01 까지</span>
 												</div>
 											</div>
 										</div>
@@ -2578,10 +2338,10 @@
 											<i class="icon"></i>
 											<div class="box">
 												<span class="coupon-name">일반 쿠폰</span>
-												<div class="coupon-inofo">
-													<span class="coupon-inofo__price">-15,450원</span>
-													<span class="coupon-inofo__sale">15% 할인</span>
-													<span class="coupon-inofo__date">2022.01.01 까지</span>
+												<div class="coupon-info">
+													<span class="coupon-info__price">-15,450원</span>
+													<span class="coupon-info__sale">15% 할인</span>
+													<span class="coupon-info__date">2022.01.01 까지</span>
 												</div>
 											</div>
 										</div>
@@ -2593,6 +2353,87 @@
 				</div>
 				<div class="modal__footer">
 					<button type="button" class="form-button form-button--main">24,000원 할인받기</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 배송지 목록 -->
+		<div id="modalDeliveryList" class="modal modal--full modal--delivery-list" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">배송지 목록</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="delivery-list">
+						<ul class="delivery-list__area">
+							<li>
+								<div class="form-radio">
+									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
+									<i class="icon"></i>
+									<div class="box">
+										<div class="delivery-info">
+											<span class="delivery-info__zipcode">06230</span>
+											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
+											<span class="delivery-info__phone">010-1234-5678</span>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-radio">
+									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
+									<i class="icon"></i>
+									<div class="box">
+										<div class="delivery-info">
+											<span class="delivery-info__zipcode">06230</span>
+											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
+											<span class="delivery-info__phone">010-1234-5678</span>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-radio">
+									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
+									<i class="icon"></i>
+									<div class="box">
+										<div class="delivery-info">
+											<span class="delivery-info__zipcode">06230</span>
+											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
+											<span class="delivery-info__phone">010-1234-5678</span>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="form-radio">
+									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
+									<i class="icon"></i>
+									<div class="box">
+										<div class="delivery-info">
+											<span class="delivery-info__zipcode">06230</span>
+											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
+											<span class="delivery-info__phone">010-1234-5678</span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<button type="button" class="button-more">더보기</button>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<ul class="button-group">
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
+						</li>
+						<li class="button-group__item">
+							<button type="button" class="form-button form-button--main">확인</button>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -2612,6 +2453,18 @@
 					} else {
 						$('.direct-message-bx').hide();
 					}
+				});
+
+				$('.family-member .name').click(function () {
+					$('input[name=checkFamily]').prop('checked', function () {
+						return !$(this).prop('checked');
+					});
+				});
+
+				$('.max-sale-benefit .name').click(function () {
+					$('input[name=checkFamily]').prop('checked', function () {
+						return !$(this).prop('checked');
+					});
 				});
 			});
 		</script>

@@ -28,18 +28,18 @@ export default class TabController {
   activateTab(tab) {
     const controls = tab.getAttribute('aria-controls');
     const panel = document.querySelector(`#${controls}`);
-    tab.removeAttribute('tabindex');
-    tab.setAttribute('aria-selected', 'true');
     if (panel) {
+      tab.removeAttribute('tabindex');
+      tab.setAttribute('aria-selected', 'true');
       panel.removeAttribute('hidden');
     }
   }
   deactivateTab(tab) {
     const controls = tab.getAttribute('aria-controls');
     const panel = document.querySelector(`#${controls}`);
-    tab.setAttribute('tabindex', '-1');
-    tab.setAttribute('aria-selected', 'false');
     if (panel) {
+      tab.setAttribute('tabindex', '-1');
+      tab.setAttribute('aria-selected', 'false');
       panel.setAttribute('hidden', 'hidden');
     }
   }
