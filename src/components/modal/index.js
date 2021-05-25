@@ -81,7 +81,11 @@ export default class ModalController {
   }
 
   async open(element, modalOption) {
+    if(element.jquery || element.length) {
+      element = element[0]
+    }
     const { options } = this;
+    const focusableElements = element.querySelectorAll(focusableSelector);
     const info = {
       ...modalDefault,
       ...getParams(element.dataset.modal),
@@ -103,14 +107,21 @@ export default class ModalController {
     if (info.dim) {
       element.classList.add('modal--dim');
     }
-
-    const focusableElements = element.querySelectorAll(focusableSelector);
-    focusableElements[0].focus();
-
     element.classList.add(options.activeClass);
+    focusableElements[0].focus();
     this.openedLayers.push(info);
+
+    if(info.timer){
+      window.setTimeout(()=> {
+        this.close(element);
+      }, Number(info.timer) * 1000);
+    }
+
   }
   close(element) {
+    if(element.jquery || element.length) {
+      element = element[0]
+    }
     const { options, openedLayers } = this;
     let closedLayer;
     openedLayers.forEach((layer, i) => {
@@ -139,9 +150,4 @@ export default class ModalController {
     }
   }
   closeAll() {}
-  // onLoad(){}
-  // onResizeStart() {}
-  // onResize() {}
-  // onResizeEnd() {}
-  // onViewtypeChange(value, oldValue) {}
 }

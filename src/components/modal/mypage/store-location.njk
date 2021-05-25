@@ -1,0 +1,120 @@
+{# 헤지스 스토어 안내 #}
+<div id="modalStoreLocation" class="modal modal--store-location" tabindex="-1" role="dialog" data-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <h1 class="modal__header__title">해지스 스토어 안내</h1>
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+        <i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="store-location-guide">
+        <div class="tabs">
+          <div class="tablist" role="tablist" aria-label="스토어 안내">
+            <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="storeLocation-tab" id="storeLocation">매장 위치</button>
+            <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="storePickupGuide-tab" id="storePickupGuide" tabindex="-1">픽업 안내</button>
+          </div>
+          <div class="tabpanel" tabindex="0" role="tabpanel" id="storeLocation-tab" aria-labelledby="storeLocation">
+            <div class="store-location">
+              <div class="store-location__map" style="height: 300px;background:#efefef;">
+                지도 영역
+              </div>
+              <div class="store-location__info">
+                <div class="store__title">
+                  <p class="store__name">헤지스 스페이스 H</p>
+                  <a href="tel:02-756-1341" class="store__phone">02-756-1341</a>
+                </div>
+                <div class="store__info">
+                  <div class="store__info__row">
+                    <dl class="info">
+                      <dt class="info__title">매장 주소</dt>
+                      <dd class="info__content">서울 특별시 중구 명동8가길 28 명동헤지스</dd>
+                    </dl>
+                    <dl class="info">
+                      <dt class="info__title">교통 편의</dt>
+                      <dd class="info__content">4호선 명동역 9번 출구 앞</dd>
+                    </dl>
+                    <dl class="info">
+                      <dt class="info__title">주차 시설</dt>
+                      <dd class="info__content">매장 앞 우리은행 건물 주차 가능 <span class="comment">(주차권 지급)</span></dd>
+                    </dl>
+                  </div>
+                  <div class="store__info__row">
+                    <dl class="info">
+                      <dt class="info__title">영업 시간</dt>
+                      <dd class="info__content">10:00 ~ 21:00</dd>
+                    </dl>
+                    <dl class="info">
+                      <dt class="info__title">휴무 안내</dt>
+                      <dd class="info__content">명절 당일 <span class="comment">(연 2회 휴무)</span></dd>
+                    </dl>
+                    <dl class="info">
+                      <dt class="info__title">방문 혜택</dt>
+                      <dd class="info__content">
+                        <ul class="guide">
+                          <li class="guide__item">기본 수선 무료 서비스 <span class="comment">(자사제품)</span></li>
+                          <li class="guide__item">매장 픽업 서비스 <span class="comment">(2,500점 마일리지 혜택 제공)</span></li>
+                          <li class="guide__item">무료 교환/반품 대행서비스 <span class="comment">(자사제품/배송비지원)</span></li>
+                          <li class="guide__item">온라인 전용 베스트상품 착장 체험 서비스</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" tabindex="0" role="tabpanel" id="storePickupGuide-tab" aria-labelledby="storePickupGuide" hidden>
+            <!-- 픽업 안내 -->
+            <div class="pickup-guide">
+              <div class="pickup-guide__row">
+                <dl class="guide">
+                  <dt class="guide__title">매장배송 픽업 서비스 안내</dt>
+                  <dd class="guide__item">
+                    주문 완료 후 선택하신 헤지스 스토어로 택배 배송 후
+                    상품이 매장 도착 시 방문하시면 됩니다. 
+                    <p class="comment">(주문 후 배송조회에서 픽업 배송 정보 확인 가능)</p>
+                  </dd>
+                  <dd class="guide__item">
+                    픽업상품 수령 전, 매장 직원에게 헤지스 닷컴 모바일에서 주문내역을 보여주신 뒤 ‘픽업완료‘ 버튼을 클릭하세요. 
+                  </dd>
+                </dl>
+                <dl class="guide">
+                  <dt class="guide__title">주의사항</dt>
+                  <dd class="guide__item">
+                    픽업 주문하여 매장 도착 이후 72시간 내 미수령 시 자동 결제 취소<span class="comment">(반품)</span> 처리 됩니다.
+                  </dd>
+                  <dd class="guide__item">
+                    픽업상품은 본인<span class="comment">(헤지스 계정 기준)</span>외 대리수령 불가합니다.
+                  </dd>
+                  <dd class="guide__item">
+                    고객님의 헤지스 닷컴 계정으로 로그인하여 마이페이지 ‘픽업완료‘ 버튼을 클릭하여 완료 처리한 시점에 상품을 인계해 드립니다.
+                  </dd>
+                  <dd class="guide__item">
+                    매장을 방문하지 않은 상품 미수령 상태에서 ‘픽업완료’ 버튼을 클릭하지 마세요.
+                  </dd>
+                </dl>
+              </div>
+              <div class="pickup-guide__row">
+                <dl class="guide">
+                  <dt class="guide__title">픽업 주문 마일리지 적립 안내</dt>
+                  <dd class="guide__item">
+                    적립기준 : 픽업 서비스 이용 후, 매장 수령한 주문 기준
+                  </dd>
+                  <dd class="guide__item">
+                    적립시점 : 픽업 완료 버튼 클릭 후, +10일 이후 적립
+                    <p class="comment">(단, 픽업 수령 완료 후 중간 반품 시 적립 취소)</p>
+                  </dd>
+                  <dd class="guide__item">
+                    적립 마일리지 : 주문 건별 2,500점 적립
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //픽업 안내 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

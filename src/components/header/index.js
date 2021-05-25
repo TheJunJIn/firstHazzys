@@ -3,7 +3,8 @@ import UIModule from '../ui-module';
 export const defaults = {
   root: '.shell-header',
   hideOnScrollDown: true,
-  hideOnScrollThreshold: 100
+  hideOnScrollThreshold: 100,
+  overlap: false
   // hideOnScrollAfter: 60 // 기본값: 헤더 높이
 };
 
@@ -21,6 +22,10 @@ export default class Header extends UIModule {
 
     if (!this.getOption('hideOnScrollAfter')) {
       this.setOption('hideOnScrollAfter', this.height);
+    }
+
+    if(this.options.overlap) {
+      this.root.classList.add('shell-header--overrap');
     }
 
     const firstScroll = {};

@@ -1,0 +1,33 @@
+{# 취소/교환/반품 내역 삭제 #}
+<div id="modalDeleteClaimHistory" class="modal" tabindex="-1" role="dialog" data-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <h1 class="modal__header__title">취소/교환/반품 내역 삭제</h1>
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+        <i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="message">
+        <div class="message__text">
+          요청하신 내역을 삭제하시겠습니까?
+        </div>
+        <div class="message__text message__text--small">
+          <div class="message__hilite">
+            삭제 시 주문 내역이 표시되지 않으며 복구할 수 없습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <ul class="button-group">
+        <li class="button-group__item">
+          <button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
+        </li>
+        <li class="button-group__item">
+          <button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

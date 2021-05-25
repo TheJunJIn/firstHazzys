@@ -8,9 +8,10 @@ import autoprefixer from 'autoprefixer';
 import postcssClean from 'postcss-clean';
 import spritesmith from 'gulp.spritesmith-multi';
 import browserSync from 'browser-sync';
-import { createEnv, layoutToExtends, isInclude } from './utils/nunjucks-env';
+import { createEnv, layoutToExtends, middleware } from './utils/nunjucks-env';
 import readJson from './utils/read-json';
 import through from 'through2';
+import skipUnchanged from './utils/skip-unchanged';
 
 sass.compiler = nodeSass;
 const isProduction = process.env.NODE_ENV === 'production';
@@ -23,12 +24,16 @@ const clean = {
     del([
       'src/cmsstatic/asset/images/sprite-*.png',
       'src/components/sprites/*.scss'
-    ])
+    ]),
+  checksums: {
+    all: () => del('dist/*.checksums.json'),
+    markup: () => del('dist/markup.checksums.json'),
+    styles: () => del('dist/styles.checksums.json')
+  }
 };
 
-function makeMarkupTask(src) {
+const markup = () => {
   const SRC = path.resolve(__dirname, 'src');
-  const DEST = path.resolve(__dirname, 'dist');
   const njk = {
     path: {
       layout: path.resolve(SRC, 'layouts'),
@@ -36,85 +41,56 @@ function makeMarkupTask(src) {
     },
     data: {},
     layout: {},
-    env: null,
-    destFilter: null
+    env: createEnv(),
+    destFilter: plugins.filter(['src/**/*', '!src/{layouts,components}/**'])
   };
+  njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
+  njk.data.categories = readJson(
+    path.resolve(njk.path.data, 'categories.json')
+  );
 
-  let dest = 'dist/';
-  if (src) {
-    const relToSrc = path.relative(SRC, src);
-    dest = path.dirname(path.resolve(DEST, relToSrc));
-  }
-  const gulpSrc = src || [
-    'src/**/*.njk',
-    '!src/layouts/**/*.njk',
-    '!src/components/**/*.njk'
-  ];
-
-  return function markup() {
-    njk.env = createEnv();
-    njk.destFilter = plugins.filter([
-      'src/**/*',
-      '!src/layouts/**',
-      '!src/components/**'
-    ]);
-    njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
-    njk.data.categories = readJson(path.resolve(njk.path.data, 'categories.json'));
-    njk.layout = {};
-    const onlyUseBasename = !!src && process.platform === "win32";
-
-    return gulp
-      .src(gulpSrc)
-      .pipe(plugins.plumberNotifier())
-      .pipe(plugins.data((file) => layoutToExtends(njk, file)))
-      .pipe(plugins.nunjucks.compile(njk.data, { env: njk.env }))
-      .pipe(njk.destFilter)
-      .pipe(plugins.prettier())
-      .pipe(
-        plugins.if(
-          onlyUseBasename,
-          through.obj(function (file, _, cb) {
-            file.path = path.basename(file.path);
-            cb(null, file);
-          })
-        )
-      )
-      .pipe(gulp.dest(dest));
-  };
-}
+  return gulp
+    .src(['src/**/*.njk', '!src/{layouts,components}/**/*.njk'])
+    .pipe(plugins.plumberNotifier())
+    .pipe(skipUnchanged({ file: 'dist/markup.checksums.json' }))
+    .pipe(plugins.data((file) => layoutToExtends(njk, file)))
+    .pipe(plugins.nunjucks.compile(njk.data, { env: njk.env }))
+    .pipe(njk.destFilter)
+    .pipe(plugins.prettier())
+    .pipe(gulp.dest('dist/'));
+};
 
 const styles = () => {
-  return gulp
-    .src([
-      'src/asset/css/**/*.scss',
-      '!**/_*/**/*',
-      '!**/_*'
-    ])
-    .pipe(plugins.plumberNotifier())
-    .pipe(plugins.newer('dist/asset/css/'))
-    .pipe(plugins.if(!isProduction, plugins.sourcemaps.init()))
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(
-      plugins.postcss([
-        autoprefixer({
-          grid: 'autoplace'
-        })
-      ])
-    )
-    .pipe(
-      plugins.if(
-        isProduction,
+  return (
+    gulp
+      .src(['src/asset/css/**/*.scss', '!**/_*/**/*', '!**/_*'])
+      .pipe(plugins.plumberNotifier())
+      .pipe(skipUnchanged({ file: 'dist/styles.checksums.json' }))
+      // .pipe(plugins.newer('dist/asset/css/'))
+      .pipe(plugins.if(!isProduction, plugins.sourcemaps.init()))
+      .pipe(sass.sync().on('error', sass.logError))
+      .pipe(
         plugins.postcss([
-          postcssClean({
-            aggressiveMerging: false,
-            restructuring: false,
-            format: 'keep-breaks'
+          autoprefixer({
+            grid: 'autoplace'
           })
         ])
       )
-    )
-    .pipe(plugins.if(!isProduction, plugins.sourcemaps.write()))
-    .pipe(gulp.dest('dist/asset/css/'));
+      .pipe(
+        plugins.if(
+          isProduction,
+          plugins.postcss([
+            postcssClean({
+              aggressiveMerging: false,
+              restructuring: false,
+              format: 'keep-breaks'
+            })
+          ])
+        )
+      )
+      .pipe(plugins.if(!isProduction, plugins.sourcemaps.write()))
+      .pipe(gulp.dest('dist/asset/css/'))
+  );
 };
 
 const sprites = () => {
@@ -189,7 +165,11 @@ const svgSprites = () => {
 
 const image = () => {
   return gulp
-    .src(['src/cmsstatic/asset/images/**/*.{png,jpg,jpeg,gif}', '!**/_*/**/*', '!**/_*'])
+    .src([
+      'src/cmsstatic/asset/images/**/*.{png,jpg,jpeg,gif}',
+      '!**/_*/**/*',
+      '!**/_*'
+    ])
     .pipe(plugins.plumberNotifier())
     .pipe(plugins.newer('dist/cmsstatic/asset/images/'))
     .pipe(
@@ -251,27 +231,31 @@ const serve = () => {
     files: 'dist',
     notify: false,
     ui: false,
+    middleware
   });
 };
 
 const startWatchers = () => {
-  gulp.watch('src/**/*.scss', styles);
+  gulp.watch(['src/asset/css/**/*.scss', '!**/_*/**/*', '!**/_*'], styles);
+  gulp.watch(
+    ['src/**/_*.scss', 'src/**/_*/**/*.scss', 'src/components/**/*.scss'],
+    gulp.series(clean.checksums.styles, styles)
+  );
   gulp.watch('src/cmsstatic/asset/images/**/*.{png,jpg,jpeg,gif}', image);
-  gulp.watch('src/cmsstatic/asset/fonts/**/*.{woff,woff2,eot,ttf,otf}', copy.font);
+  gulp.watch(
+    'src/cmsstatic/asset/fonts/**/*.{woff,woff2,eot,ttf,otf}',
+    copy.font
+  );
   gulp.watch('src/cmsstatic/asset/media/**/*.{mp4,ogg,webm}', copy.media);
-  gulp.watch('src/**/*.njk').on('change', (file) => {
-    let task;
-    if (isInclude(file)) {
-      task = makeMarkupTask();
-    } else {
-      task = makeMarkupTask(file);
+  // gulp.watch(['src/**/*.njk', '!src/{layouts,components}/**/*.njk'], markup);
+  // gulp.watch(
+  //   'src/{layouts,components}/**/*.njk',
+  //   gulp.series(clean.checksums.markup, markup)
+  // );
+  gulp.watch('src/**/*.njk').on('change', () => {
+    if (bs && bs.active) {
+      bs.reload();
     }
-    gulp.series(task, function (cb) {
-      if (bs && bs.reload) {
-        bs.reload();
-      }
-      cb();
-    })();
   });
 };
 
@@ -290,29 +274,40 @@ const prefixPath = (content, prefix = '/ui-publish') => {
 };
 
 const uiPublish = () => {
-  return gulp.src('dist/**/*')
-    .pipe(through.obj(function (file, _, cb) {
-      const ext = path.extname(file.path);
+  return gulp
+    .src('dist/**/*')
+    .pipe(
+      through.obj(function (file, _, cb) {
+        const ext = path.extname(file.path);
 
-      if (ext === '.css' || ext === '.html' || ext === ".json" || ext === ".js") {
-        const fileContents = file.contents.toString();
-        const pathReplaced = prefixPath(fileContents);
-        file.contents = Buffer.from(pathReplaced);
-      }
+        if (
+          ext === '.css' ||
+          ext === '.html' ||
+          ext === '.json' ||
+          ext === '.js'
+        ) {
+          const fileContents = file.contents.toString();
+          const pathReplaced = prefixPath(fileContents);
+          file.contents = Buffer.from(pathReplaced);
+        }
 
-      cb(null, file);
-    }))
+        cb(null, file);
+      })
+    )
     .pipe(gulp.dest('ui-publish/'));
 };
 
 const copyTaskList = [copy.ico, copy.font, copy.media];
-const cleanTask = gulp.parallel([clean.demo]);
+const cleanTask = gulp.parallel([clean.demo, clean.checksums.all]);
 const spritesTask = gulp.series([clean.sprites, sprites]);
-const buildTask = gulp.parallel(makeMarkupTask(), styles, svgSprites, image);
+const buildTask = gulp.parallel(markup, styles, svgSprites, image);
 const copyTask = gulp.parallel(copyTaskList);
 const build = gulp.parallel(buildTask, copyTask);
 
-const watchTask = gulp.series(build, startWatchers);
+const watchTask = gulp.series(
+  gulp.parallel(styles, svgSprites, image),
+  startWatchers
+);
 const serveTask = gulp.parallel(watchTask, serve);
 
 // export { build as default, cleanTask as clean, watchTask as watch, sprites };

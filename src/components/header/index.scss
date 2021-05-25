@@ -15,7 +15,7 @@
   backdrop-filter: blur(4px);
   background-color: rgba(255, 255, 255, 0.8);
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 20;
   transition: transform 0.3s;
 
   &.is-hidden {
@@ -25,14 +25,26 @@
     }
   }
 
-  &.shell-header--white {
+  // &.shell-header--white {
+  //   -webkit-backdrop-filter: none;
+  //   backdrop-filter: none;
+  //   background-color: transparent;
+  // }
+  // 마이페이지 메인,혜택, 메인 등..
+  &.shell-header--overrap {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background-color: transparent;
+    border-bottom: 0;
   }
 
   @include mq('desktop'){
     border-bottom: 0;
+    &.shell-header--overrap {
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
   }
 
   &__title {
@@ -42,6 +54,7 @@
   &__logo {
     display: inline-block;
     vertical-align: top;
+    width: 90px;
     height: 36px;
     color: #000;
     .svg-icon {
@@ -102,16 +115,16 @@
             line-height: 14px;
           }
         }
-        @at-root {
-          .shell-header--white #{&} {
-            .button {
-              color: #fff;
-            }
-            .cart-count {
-              color: #000;
-            }
-          }
-        }
+        // @at-root {
+        //   .shell-header--white #{&} {
+        //     .button {
+        //       color: #fff;
+        //     }
+        //     .cart-count {
+        //       color: #000;
+        //     }
+        //   }
+        // }
       }
     }
   }

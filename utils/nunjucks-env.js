@@ -8,6 +8,7 @@ const shortcodes = require('./shortcodes');
 const filters = require('./filters');
 const globals = require('./nunjucks-globals');
 const HighlightExtension = require('./highlight');
+const readJson = require('./read-json');
 
 /** @returns {nunjucks.Environment} */
 function createEnv() {
@@ -44,7 +45,9 @@ function compileTemplate(src, env) {
 }
 
 function layoutToExtends(njk, file) {
-  const { content, data } = matter(file.contents.toString());
+  const fileIsString = typeof file === 'string';
+  const fileContents = fileIsString ? file : file.contents.toString();
+  const { content, data } = matter(fileContents);
   let newContent = content;
 
   if (typeof data.layout === 'string') {
@@ -70,6 +73,10 @@ function layoutToExtends(njk, file) {
       `;
   }
 
+  if (fileIsString) {
+    return newContent;
+  }
+
   file.contents = Buffer.from(newContent);
   return data || {};
 }
@@ -82,12 +89,63 @@ function isInclude(path) {
   const normalizedPath = path.replace(/\\/g, '/');
   return !!['src/layouts/', 'src/components/'].find(
     (includePath) => normalizedPath.indexOf(includePath) > -1
-  );;
+  );
+}
+
+function middleware(req, res, next) {
+  const SRC = path.resolve(process.cwd(), 'src');
+  const njk = {
+    path: {
+      layout: path.resolve(SRC, 'layouts'),
+      data: path.resolve(SRC, '_data')
+    },
+    data: {},
+    layout: {},
+    env: createEnv()
+  };
+  njk.data.site = readJson(path.resolve(njk.path.data, 'site.json'));
+  njk.data.categories = readJson(
+    path.resolve(njk.path.data, 'categories.json')
+  );
+
+  let pathname = req.url;
+
+  if (pathname.endsWith('/')) {
+    pathname += 'index.html';
+  }
+
+  if (pathname.endsWith('.html')) {
+    const njkPath = path.resolve(
+      SRC,
+      pathname.replace(/^\//, '').replace('.html', '.njk')
+    );
+
+    let fileContents;
+
+    try {
+      fileContents = readFileSync(njkPath, { encoding: 'utf8' });
+      fileContents = layoutToExtends(njk, fileContents);
+    } catch (error) {
+      console.error(error);
+      next();
+      return;
+    }
+
+    const env = createEnv();
+    return env.renderString(fileContents, njk.data, (error, result) => {
+      console.log('[njk]', njkPath);
+      res.setHeader('Content-Type', 'text/html');
+      res.end(result);
+    });
+  }
+
+  next();
 }
 
 module.exports = {
   createEnv,
   compileTemplate,
   layoutToExtends,
-  isInclude
+  isInclude,
+  middleware
 };
