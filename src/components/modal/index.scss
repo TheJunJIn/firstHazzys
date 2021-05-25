@@ -422,9 +422,9 @@
     .max-sale-benefit {
       margin-bottom: 20px;
       text-align: center;
-      .form-radio {
+      .form-checkbox {
         text-align: center;
-        .radio {
+        .checkbox {
           &:checked {
             + .name {
               border: solid 1px $color-solid-point;
