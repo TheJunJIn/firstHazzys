@@ -2128,6 +2128,16 @@
   // 리뷰 이미지 보기
   &.modal--review-photo-view {
     .modal-dialog {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      transform: none;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .modal-dialog {
       background-color: #000;
     }
     .modal__header {
@@ -2276,6 +2286,16 @@
     }
   }
   &.modal--detail-photo-view {
+    .modal-dialog {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      transform: none;
+      max-width: 100%;
+      margin: 0 auto;
+    }
     .modal__header {
       position: absolute;
       width: 100%;

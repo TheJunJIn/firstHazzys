@@ -1,0 +1,368 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+
+$mypage-address-small-name: 'mypage-address-small';
+$mypage-address-small-x: 148px;
+$mypage-address-small-y: 102px;
+$mypage-address-small-offset-x: -148px;
+$mypage-address-small-offset-y: -102px;
+$mypage-address-small-width: 24px;
+$mypage-address-small-height: 24px;
+$mypage-address-small-total-width: 206px;
+$mypage-address-small-total-height: 190px;
+$mypage-address-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-address-small: (148px, 102px, -148px, -102px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'address-small', );
+$mypage-arrow-right-step-name: 'mypage-arrow-right-step';
+$mypage-arrow-right-step-x: 182px;
+$mypage-arrow-right-step-y: 140px;
+$mypage-arrow-right-step-offset-x: -182px;
+$mypage-arrow-right-step-offset-y: -140px;
+$mypage-arrow-right-step-width: 8px;
+$mypage-arrow-right-step-height: 20px;
+$mypage-arrow-right-step-total-width: 206px;
+$mypage-arrow-right-step-total-height: 190px;
+$mypage-arrow-right-step-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-arrow-right-step: (182px, 140px, -182px, -140px, 8px, 20px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'arrow-right-step', );
+$mypage-badgebook-small-name: 'mypage-badgebook-small';
+$mypage-badgebook-small-x: 34px;
+$mypage-badgebook-small-y: 132px;
+$mypage-badgebook-small-offset-x: -34px;
+$mypage-badgebook-small-offset-y: -132px;
+$mypage-badgebook-small-width: 24px;
+$mypage-badgebook-small-height: 24px;
+$mypage-badgebook-small-total-width: 206px;
+$mypage-badgebook-small-total-height: 190px;
+$mypage-badgebook-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-badgebook-small: (34px, 132px, -34px, -132px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'badgebook-small', );
+$mypage-benefit-small-name: 'mypage-benefit-small';
+$mypage-benefit-small-x: 62px;
+$mypage-benefit-small-y: 132px;
+$mypage-benefit-small-offset-x: -62px;
+$mypage-benefit-small-offset-y: -132px;
+$mypage-benefit-small-width: 24px;
+$mypage-benefit-small-height: 24px;
+$mypage-benefit-small-total-width: 206px;
+$mypage-benefit-small-total-height: 190px;
+$mypage-benefit-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-benefit-small: (62px, 132px, -62px, -132px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'benefit-small', );
+$mypage-cart-name: 'mypage-cart';
+$mypage-cart-x: 76px;
+$mypage-cart-y: 94px;
+$mypage-cart-offset-x: -76px;
+$mypage-cart-offset-y: -94px;
+$mypage-cart-width: 30px;
+$mypage-cart-height: 30px;
+$mypage-cart-total-width: 206px;
+$mypage-cart-total-height: 190px;
+$mypage-cart-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-cart: (76px, 94px, -76px, -94px, 30px, 30px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'cart', );
+$mypage-claim-small-name: 'mypage-claim-small';
+$mypage-claim-small-x: 90px;
+$mypage-claim-small-y: 132px;
+$mypage-claim-small-offset-x: -90px;
+$mypage-claim-small-offset-y: -132px;
+$mypage-claim-small-width: 24px;
+$mypage-claim-small-height: 24px;
+$mypage-claim-small-total-width: 206px;
+$mypage-claim-small-total-height: 190px;
+$mypage-claim-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-claim-small: (90px, 132px, -90px, -132px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'claim-small', );
+$mypage-coupon-large-name: 'mypage-coupon-large';
+$mypage-coupon-large-x: 0px;
+$mypage-coupon-large-y: 94px;
+$mypage-coupon-large-offset-x: 0px;
+$mypage-coupon-large-offset-y: -94px;
+$mypage-coupon-large-width: 34px;
+$mypage-coupon-large-height: 34px;
+$mypage-coupon-large-total-width: 206px;
+$mypage-coupon-large-total-height: 190px;
+$mypage-coupon-large-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-coupon-large: (0px, 94px, 0px, -94px, 34px, 34px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'coupon-large', );
+$mypage-coupon-small-name: 'mypage-coupon-small';
+$mypage-coupon-small-x: 118px;
+$mypage-coupon-small-y: 132px;
+$mypage-coupon-small-offset-x: -118px;
+$mypage-coupon-small-offset-y: -132px;
+$mypage-coupon-small-width: 24px;
+$mypage-coupon-small-height: 24px;
+$mypage-coupon-small-total-width: 206px;
+$mypage-coupon-small-total-height: 190px;
+$mypage-coupon-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-coupon-small: (118px, 132px, -118px, -132px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'coupon-small', );
+$mypage-lfmembers-name: 'mypage-lfmembers';
+$mypage-lfmembers-x: 0px;
+$mypage-lfmembers-y: 74px;
+$mypage-lfmembers-offset-x: 0px;
+$mypage-lfmembers-offset-y: -74px;
+$mypage-lfmembers-width: 84px;
+$mypage-lfmembers-height: 16px;
+$mypage-lfmembers-total-width: 206px;
+$mypage-lfmembers-total-height: 190px;
+$mypage-lfmembers-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-lfmembers: (0px, 74px, 0px, -74px, 84px, 16px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'lfmembers', );
+$mypage-listsearch-small-name: 'mypage-listsearch-small';
+$mypage-listsearch-small-x: 146px;
+$mypage-listsearch-small-y: 132px;
+$mypage-listsearch-small-offset-x: -146px;
+$mypage-listsearch-small-offset-y: -132px;
+$mypage-listsearch-small-width: 24px;
+$mypage-listsearch-small-height: 24px;
+$mypage-listsearch-small-total-width: 206px;
+$mypage-listsearch-small-total-height: 190px;
+$mypage-listsearch-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-listsearch-small: (146px, 132px, -146px, -132px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'listsearch-small', );
+$mypage-mileage-large-name: 'mypage-mileage-large';
+$mypage-mileage-large-x: 38px;
+$mypage-mileage-large-y: 94px;
+$mypage-mileage-large-offset-x: -38px;
+$mypage-mileage-large-offset-y: -94px;
+$mypage-mileage-large-width: 34px;
+$mypage-mileage-large-height: 34px;
+$mypage-mileage-large-total-width: 206px;
+$mypage-mileage-large-total-height: 190px;
+$mypage-mileage-large-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-mileage-large: (38px, 94px, -38px, -94px, 34px, 34px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'mileage-large', );
+$mypage-mileage-small-name: 'mypage-mileage-small';
+$mypage-mileage-small-x: 182px;
+$mypage-mileage-small-y: 0px;
+$mypage-mileage-small-offset-x: -182px;
+$mypage-mileage-small-offset-y: 0px;
+$mypage-mileage-small-width: 24px;
+$mypage-mileage-small-height: 24px;
+$mypage-mileage-small-total-width: 206px;
+$mypage-mileage-small-total-height: 190px;
+$mypage-mileage-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-mileage-small: (182px, 0px, -182px, 0px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'mileage-small', );
+$mypage-myinfo-small-name: 'mypage-myinfo-small';
+$mypage-myinfo-small-x: 182px;
+$mypage-myinfo-small-y: 28px;
+$mypage-myinfo-small-offset-x: -182px;
+$mypage-myinfo-small-offset-y: -28px;
+$mypage-myinfo-small-width: 24px;
+$mypage-myinfo-small-height: 24px;
+$mypage-myinfo-small-total-width: 206px;
+$mypage-myinfo-small-total-height: 190px;
+$mypage-myinfo-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-myinfo-small: (182px, 28px, -182px, -28px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'myinfo-small', );
+$mypage-push-name: 'mypage-push';
+$mypage-push-x: 110px;
+$mypage-push-y: 94px;
+$mypage-push-offset-x: -110px;
+$mypage-push-offset-y: -94px;
+$mypage-push-width: 30px;
+$mypage-push-height: 30px;
+$mypage-push-total-width: 206px;
+$mypage-push-total-height: 190px;
+$mypage-push-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-push: (110px, 94px, -110px, -94px, 30px, 30px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'push', );
+$mypage-push-small-name: 'mypage-push-small';
+$mypage-push-small-x: 182px;
+$mypage-push-small-y: 56px;
+$mypage-push-small-offset-x: -182px;
+$mypage-push-small-offset-y: -56px;
+$mypage-push-small-width: 24px;
+$mypage-push-small-height: 24px;
+$mypage-push-small-total-width: 206px;
+$mypage-push-small-total-height: 190px;
+$mypage-push-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-push-small: (182px, 56px, -182px, -56px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'push-small', );
+$mypage-qna-name: 'mypage-qna';
+$mypage-qna-x: 148px;
+$mypage-qna-y: 0px;
+$mypage-qna-offset-x: -148px;
+$mypage-qna-offset-y: 0px;
+$mypage-qna-width: 30px;
+$mypage-qna-height: 30px;
+$mypage-qna-total-width: 206px;
+$mypage-qna-total-height: 190px;
+$mypage-qna-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-qna: (148px, 0px, -148px, 0px, 30px, 30px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'qna', );
+$mypage-qna-small-name: 'mypage-qna-small';
+$mypage-qna-small-x: 182px;
+$mypage-qna-small-y: 84px;
+$mypage-qna-small-offset-x: -182px;
+$mypage-qna-small-offset-y: -84px;
+$mypage-qna-small-width: 24px;
+$mypage-qna-small-height: 24px;
+$mypage-qna-small-total-width: 206px;
+$mypage-qna-small-total-height: 190px;
+$mypage-qna-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-qna-small: (182px, 84px, -182px, -84px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'qna-small', );
+$mypage-recent-name: 'mypage-recent';
+$mypage-recent-x: 148px;
+$mypage-recent-y: 34px;
+$mypage-recent-offset-x: -148px;
+$mypage-recent-offset-y: -34px;
+$mypage-recent-width: 30px;
+$mypage-recent-height: 30px;
+$mypage-recent-total-width: 206px;
+$mypage-recent-total-height: 190px;
+$mypage-recent-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-recent: (148px, 34px, -148px, -34px, 30px, 30px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'recent', );
+$mypage-recent-small-name: 'mypage-recent-small';
+$mypage-recent-small-x: 182px;
+$mypage-recent-small-y: 112px;
+$mypage-recent-small-offset-x: -182px;
+$mypage-recent-small-offset-y: -112px;
+$mypage-recent-small-width: 24px;
+$mypage-recent-small-height: 24px;
+$mypage-recent-small-total-width: 206px;
+$mypage-recent-small-total-height: 190px;
+$mypage-recent-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-recent-small: (182px, 112px, -182px, -112px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'recent-small', );
+$mypage-recent-x-large-name: 'mypage-recent-x-large';
+$mypage-recent-x-large-x: 0px;
+$mypage-recent-x-large-y: 0px;
+$mypage-recent-x-large-offset-x: 0px;
+$mypage-recent-x-large-offset-y: 0px;
+$mypage-recent-x-large-width: 70px;
+$mypage-recent-x-large-height: 70px;
+$mypage-recent-x-large-total-width: 206px;
+$mypage-recent-x-large-total-height: 190px;
+$mypage-recent-x-large-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-recent-x-large: (0px, 0px, 0px, 0px, 70px, 70px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'recent-x-large', );
+$mypage-review-name: 'mypage-review';
+$mypage-review-x: 148px;
+$mypage-review-y: 68px;
+$mypage-review-offset-x: -148px;
+$mypage-review-offset-y: -68px;
+$mypage-review-width: 30px;
+$mypage-review-height: 30px;
+$mypage-review-total-width: 206px;
+$mypage-review-total-height: 190px;
+$mypage-review-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-review: (148px, 68px, -148px, -68px, 30px, 30px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'review', );
+$mypage-review-small-name: 'mypage-review-small';
+$mypage-review-small-x: 0px;
+$mypage-review-small-y: 166px;
+$mypage-review-small-offset-x: 0px;
+$mypage-review-small-offset-y: -166px;
+$mypage-review-small-width: 24px;
+$mypage-review-small-height: 24px;
+$mypage-review-small-total-width: 206px;
+$mypage-review-small-total-height: 190px;
+$mypage-review-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-review-small: (0px, 166px, 0px, -166px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'review-small', );
+$mypage-wish-name: 'mypage-wish';
+$mypage-wish-x: 0px;
+$mypage-wish-y: 132px;
+$mypage-wish-offset-x: 0px;
+$mypage-wish-offset-y: -132px;
+$mypage-wish-width: 30px;
+$mypage-wish-height: 30px;
+$mypage-wish-total-width: 206px;
+$mypage-wish-total-height: 190px;
+$mypage-wish-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-wish: (0px, 132px, 0px, -132px, 30px, 30px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'wish', );
+$mypage-wish-small-name: 'mypage-wish-small';
+$mypage-wish-small-x: 28px;
+$mypage-wish-small-y: 166px;
+$mypage-wish-small-offset-x: -28px;
+$mypage-wish-small-offset-y: -166px;
+$mypage-wish-small-width: 24px;
+$mypage-wish-small-height: 24px;
+$mypage-wish-small-total-width: 206px;
+$mypage-wish-small-total-height: 190px;
+$mypage-wish-small-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-wish-small: (28px, 166px, -28px, -166px, 24px, 24px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'wish-small', );
+$mypage-wish-x-large-name: 'mypage-wish-x-large';
+$mypage-wish-x-large-x: 74px;
+$mypage-wish-x-large-y: 0px;
+$mypage-wish-x-large-offset-x: -74px;
+$mypage-wish-x-large-offset-y: 0px;
+$mypage-wish-x-large-width: 70px;
+$mypage-wish-x-large-height: 70px;
+$mypage-wish-x-large-total-width: 206px;
+$mypage-wish-x-large-total-height: 190px;
+$mypage-wish-x-large-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$mypage-wish-x-large: (74px, 0px, -74px, 0px, 70px, 70px, 206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', 'wish-x-large', );
+$sprite-mypage-width: 206px;
+$sprite-mypage-height: 190px;
+$sprite-mypage-image: '/cmsstatic/asset/images/sprite-mypage.png';
+$sprite-mypage-sprites: ($mypage-address-small, $mypage-arrow-right-step, $mypage-badgebook-small, $mypage-benefit-small, $mypage-cart, $mypage-claim-small, $mypage-coupon-large, $mypage-coupon-small, $mypage-lfmembers, $mypage-listsearch-small, $mypage-mileage-large, $mypage-mileage-small, $mypage-myinfo-small, $mypage-push, $mypage-push-small, $mypage-qna, $mypage-qna-small, $mypage-recent, $mypage-recent-small, $mypage-recent-x-large, $mypage-review, $mypage-review-small, $mypage-wish, $mypage-wish-small, $mypage-wish-x-large, );
+$sprite-mypage: (206px, 190px, '/cmsstatic/asset/images/sprite-mypage.png', $sprite-mypage-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-size($sprite) {
+  $sprite-width: nth($sprite, 7);
+  $sprite-height: nth($sprite, 8);
+  background-size: $sprite-width $sprite-height;
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+  @include sprite-size($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  .sprite-mypage {
+    background-image: url('/cmsstatic/asset/images/sprite-mypage.png');
+    background-size: 206px 190px;
+  }
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .sprite-mypage-#{$sprite-name} {
+      @include sprite-position($sprite);
+      @include sprite-width($sprite);
+      @include sprite-height($sprite);
+    }
+  }
+}

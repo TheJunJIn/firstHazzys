@@ -1,0 +1,352 @@
+@import './variables';
+@import '../../components/sprites/sprite-common.scss';
+
+/* Component containers
+----------------------------------*/
+// .ui-widget {}
+// .ui-widget .ui-widget {}
+// .ui-widget input,
+// .ui-widget select,
+// .ui-widget textarea,
+// .ui-widget button {
+// 	font-family: Arial,Helvetica,sans-serif/*{ffDefault}*/;
+// 	font-size: 1em;
+// }
+// .ui-widget.ui-widget-content {
+// 	border: 1px solid #c5c5c5/*{borderColorDefault}*/;
+// }
+.ui-widget-content {
+  border: 1px solid #000;
+  background: #fff;
+  color: #919191;
+}
+.ui-widget-content a {
+  color: #000;
+}
+.ui-widget-header {
+  color: #000 /*{fcHeader}*/;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+}
+.ui-widget-header a {
+  color: #000 /*{fcHeader}*/;
+}
+
+// /* Interaction states
+// ----------------------------------*/
+// .ui-state-default,
+// .ui-widget-content .ui-state-default,
+// .ui-widget-header .ui-state-default,
+// .ui-button,
+
+// /* We use html here because we need a greater specificity to make sure disabled
+// works properly when clicked or hovered */
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+  border: 1px solid #c5c5c5 /*{borderColorDefault}*/;
+  background: #f6f6f6 /*{bgColorDefault}*/ /*{bgImgUrlDefault}*/
+    /*{bgDefaultXPos}*/ /*{bgDefaultYPos}*/ /*{bgDefaultRepeat}*/;
+  font-weight: normal /*{fwDefault}*/;
+  color: #000 /*{fcDefault}*/;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+a.ui-button,
+a:link.ui-button,
+a:visited.ui-button,
+.ui-button {
+  color: #000;
+  text-decoration: none;
+}
+// .ui-state-hover,
+// .ui-widget-content .ui-state-hover,
+// .ui-widget-header .ui-state-hover,
+// .ui-state-focus,
+// .ui-widget-content .ui-state-focus,
+// .ui-widget-header .ui-state-focus,
+// .ui-button:hover,
+// .ui-button:focus {
+// 	border: 1px solid #cccccc/*{borderColorHover}*/;
+// 	background: #ededed/*{bgColorHover}*/ /*{bgImgUrlHover}*/ /*{bgHoverXPos}*/ /*{bgHoverYPos}*/ /*{bgHoverRepeat}*/;
+// 	font-weight: normal/*{fwDefault}*/;
+// 	color: #2b2b2b/*{fcHover}*/;
+// }
+// .ui-state-hover a,
+// .ui-state-hover a:hover,
+// .ui-state-hover a:link,
+// .ui-state-hover a:visited,
+// .ui-state-focus a,
+// .ui-state-focus a:hover,
+// .ui-state-focus a:link,
+// .ui-state-focus a:visited,
+// a.ui-button:hover,
+// a.ui-button:focus {
+// 	color: #2b2b2b/*{fcHover}*/;
+// 	text-decoration: none;
+// }
+
+// .ui-visual-focus {
+// 	box-shadow: 0 0 3px 1px rgb(94, 158, 214);
+// }
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  background: #ff781e;
+  color: #fff;
+  border-radius: 32px;
+  overflow: hidden;
+	// border: 1px solid #003eff/*{borderColorActive}*/;
+	// background: #007fff/*{bgColorActive}*/ /*{bgImgUrlActive}*/ /*{bgActiveXPos}*/ /*{bgActiveYPos}*/ /*{bgActiveRepeat}*/;
+	// font-weight: normal/*{fwDefault}*/;
+	// color: #ffffff/*{fcActive}*/;
+}
+// .ui-icon-background,
+// .ui-state-active .ui-icon-background {
+// 	border: #003eff/*{borderColorActive}*/;
+// 	background-color: #ffffff/*{fcActive}*/;
+// }
+// .ui-state-active a,
+// .ui-state-active a:link,
+// .ui-state-active a:visited {
+// 	color: #ffffff/*{fcActive}*/;
+// 	text-decoration: none;
+// }
+
+// /* Interaction Cues
+// ----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  border: 1px solid $color-line-point;
+  border-radius: 32px;
+}
+.ui-state-checked {
+  border: 1px solid #dad55e /*{borderColorHighlight}*/;
+  background: #fffa90 /*{bgColorHighlight}*/;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+  color: #777620 /*{fcHighlight}*/;
+}
+// .ui-state-error,
+// .ui-widget-content .ui-state-error,
+// .ui-widget-header .ui-state-error {
+// 	border: 1px solid #f1a899/*{borderColorError}*/;
+// 	background: #fddfdf/*{bgColorError}*/ /*{bgImgUrlError}*/ /*{bgErrorXPos}*/ /*{bgErrorYPos}*/ /*{bgErrorRepeat}*/;
+// 	color: #5f3f3f/*{fcError}*/;
+// }
+// .ui-state-error a,
+// .ui-widget-content .ui-state-error a,
+// .ui-widget-header .ui-state-error a {
+// 	color: #5f3f3f/*{fcError}*/;
+// }
+// .ui-state-error-text,
+// .ui-widget-content .ui-state-error-text,
+// .ui-widget-header .ui-state-error-text {
+// 	color: #5f3f3f/*{fcError}*/;
+// }
+// .ui-priority-primary,
+// .ui-widget-content .ui-priority-primary,
+// .ui-widget-header .ui-priority-primary {
+// 	font-weight: bold;
+// }
+// .ui-priority-secondary,
+// .ui-widget-content .ui-priority-secondary,
+// .ui-widget-header .ui-priority-secondary {
+// 	opacity: .7;
+// 	filter:Alpha(Opacity=70); /* support: IE8 */
+// 	font-weight: normal;
+// }
+// .ui-state-disabled,
+// .ui-widget-content .ui-state-disabled,
+// .ui-widget-header .ui-state-disabled {
+// 	opacity: .35;
+// 	filter:Alpha(Opacity=35); /* support: IE8 */
+// 	background-image: none;
+// }
+// .ui-state-disabled .ui-icon {
+// 	filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
+// }
+
+/*!
+ * jQuery UI Datepicker 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/datepicker/#theming
+ */
+
+.ui-datepicker {
+  width: 17em;
+  display: none;
+  border: solid 1px #000000;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+  // -webkit-backdrop-filter: blur(6px);
+  // backdrop-filter: blur(6px);
+  // background-color: rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+}
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: 24px 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 26px;
+  width: 18px;
+  height: 18px;
+}
+.ui-datepicker .ui-datepicker-prev {
+  left: 18px;
+  span {
+    @include sprite($common-arrow-left-round);
+  }
+  &:hover,
+  &:active {
+    span {
+      @include sprite-position($common-arrow-left-round-black);
+    }
+  }
+}
+.ui-datepicker .ui-datepicker-next {
+  right: 18px;
+  span {
+    @include sprite($common-arrow-right-round);
+  }
+  &:hover,
+  &:active {
+    span {
+      @include sprite-position($common-arrow-right-round-black);
+    }
+  }
+}
+// .ui-datepicker .ui-datepicker-prev span,
+// .ui-datepicker .ui-datepicker-next span {
+// }
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: 500;
+}
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 45%;
+}
+.ui-datepicker table {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 32px;
+  border-collapse: collapse;
+  margin: 0 0 0.4em;
+}
+.ui-datepicker th {
+  text-align: center;
+  font-weight: 300;
+  border: 0;
+}
+.ui-datepicker td {
+  border: 0;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  width: 32px;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: 0.7em 0 0 0;
+  padding: 0 0.2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: 0.5em 0.2em 0.4em;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: auto;
+  overflow: visible;
+  background: #000;
+  border: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto 0.4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+
+/* Icons */
+.ui-datepicker .ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  left: 0.5em;
+  top: 0.3em;
+}
+
+
+// ui-datepicker-current
+// ui-state-default
+// ui-priority-secondary
+// ui-corner-all
+
+// ui-datepicker-close
+// ui-state-default
+// ui-priority-primary
+// ui-corner-all

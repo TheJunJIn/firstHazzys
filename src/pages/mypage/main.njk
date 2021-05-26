@@ -1,0 +1,346 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--mypage shell-main--mypage-main">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
+    <div class="main-container">
+      <h2 class="main-header__title">마이페이지</h2>
+      <div class="main-header__my-info">
+        <a href="#" class="my-info__membership grade">
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
+          <span class="grade__name"><span>RED</span> 회원</span>
+          <!--
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/s-platinum.png" alt="S-Platinum"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/platinum.png" alt="platinum"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/gold.png" alt="Gold"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/silver.png" alt="Sliver"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/black.png" alt="Black"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/purple.png" alt="Purple"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
+          -->
+        </a>
+        <div class="my-info__message">
+          <p class="message__title">해지수님, 안녕하세요. 🥰</p>
+          <p class="message__content">이번 주는 봄 신상이 많아요.</p>
+        </div>
+        <ul class="my-info__asset">
+          <li class="asset__item">
+            <a href="#" class="asset__value asset__value--coupon">3장</a>
+          </li>
+          <li class="asset__item">
+            <a href="#" class="asset__value asset__value--mileage">20,000M</a>
+          </li>
+        </ul>
+        <a href="#" class="my-info__more">내 정보 수정</a>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main">
+        <!-- 뱃지 -->
+        <div class="my-badge">
+          <div class="my-badge__title">
+            헤지스닷컴 고객님만을 위한 특별한 혜택이 기다리고 있어요.<br>
+            내가 받은 뱃지와 각 뱃지의 혜택들을 확인해 보세요!
+          </div>
+          <div class="my-badge__list">
+
+          </div>
+          <div class="my-badge__util">
+            <button type="button" class="form-button form-button--main">MY BADGE</button>
+          </div>
+        </div>
+        <!-- // 뱃지 -->
+
+        <div class="my-page-state">
+          <a href="#" class="state">
+            <i class="state__icon sprite-mypage-cart"></i>
+            <span class="state__title">주문 내역</span>
+            <span class="state__count">3</span>
+          </a>
+          <a href="#" class="state">
+            <i class="state__icon sprite-mypage-wish"></i>
+            <span class="state__title">위시 리스트</span>
+            <span class="state__count">4</span>
+          </a>
+          <a href="#" class="state">
+            <i class="state__icon sprite-mypage-recent"></i>
+            <span class="state__title">최근 본 상품</span>
+            <span class="state__count">5</span>
+          </a>
+          <!-- 없을 경우 빈값 또는 html 삭제 -->
+          <a href="#" class="state">
+            <i class="state__icon sprite-mypage-push"></i>
+            <span class="state__title">재입고 알림</span>
+            <span class="state__count"></span>
+          </a>
+          <a href="#" class="state">
+            <i class="state__icon sprite-mypage-qna"></i>
+            <span class="state__title">내 문의 내역</span>
+            <span class="state__count">99</span>
+          </a>
+          <a href="#" class="state">
+            <i class="state__icon sprite-mypage-review"></i>
+            <span class="state__title">내 상품평</span>
+            <span class="state__count">3</span>
+          </a>
+        </div>
+
+        <!-- 주문/배송 조회 -->
+        <div class="summary summary--order">
+          <div class="summary__title">주문/배송 조회</div>
+          <div class="summary__content">
+            <ul class="order-state">
+              <!--  0이 아니면 count--active 클래스 추가 -->
+              <li class="order-state__item">
+                <a href="#"><span class="count count--active">1</span>주문접수</a>
+              </li>
+              <li class="order-state__item">
+                <a href="#"><span class="count">0</span>결제완료</a>
+              </li>
+              <li class="order-state__item">
+                <a href="#"><span class="count count--active">3</span>상품준비중</a>
+              </li>
+              <li class="order-state__item">
+                <a href="#"><span class="count count--active">6</span>배송중</a>
+              </li>
+              <li class="order-state__item order-state__item--complete">
+                <a href="#"><span class="count">20</span>배송완료</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="summary__more">취소/교환/반품 1개</a>
+        </div>
+        <!-- // 주문/배송 조회 -->
+
+        <!-- 최근 본 상품 -->
+        <div class="summary summary--recent">
+          <div class="summary__title">최근 본 상품<span class="count">(25)</span></div>
+          <div class="summary__content">
+            <div class="swiper-container swiper-container--recent">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_2.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_3.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_4.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_5.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_6.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <a href="#" class="summary__more">전체보기</a>
+        </div>
+        <!-- // 최근 본 상품 -->
+
+        <!-- 최근 본 상품 -->
+        <div class="summary summary--recent">
+          <div class="summary__title">최근 본 상품<span class="count">(0)</span></div>
+          <div class="summary__content">
+            <div class="no-data">
+              <i class="sprite-mypage sprite-mypage-recent-x-large"></i>
+              <p class="message">최근 본 상품이 없습니다.</p>
+              <div class="util">
+                <a href="#" class="form-button form-button--main">쇼핑하러 가기</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="summary__more">전체보기</a>
+        </div>
+        <!-- // 최근 본 상품 -->
+
+        <!-- 위시리스트 -->
+        <div class="summary summary--wishlist">
+          <div class="summary__title">위시리스트<span class="count">(20)</span></div>
+          <div class="summary__content">
+            <div class="swiper-container swiper-container--wishlist">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_2.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_3.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_4.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_5.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="product-image">
+                    <img src="/cmsstatic/asset/images/temp/product_310x416_6.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <a href="#" class="summary__more">전체보기</a>
+        </div>
+        <!-- //위시리스트 -->
+
+        <!-- 위시리스트 -->
+        <div class="summary summary--wishlist">
+          <div class="summary__title">위시리스트 <span class="count">(0)</span></div>
+          <div class="summary__content">
+            <div class="no-data">
+              <i class="sprite-mypage sprite-mypage-wish-x-large"></i>
+              <p class="message">위시 리스트가 없습니다.</p>
+              <div class="util">
+                <a href="#" class="form-button form-button--main">쇼핑하러 가기</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="summary__more">전체보기</a>
+        </div>
+        <!-- //위시리스트 -->
+
+      </div>
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 내역</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나만의 혜택</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 뱃지</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 태그</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/mypage.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/mypage.js"></script>
+<script>
+$(function(){
+  // 최근 본 상품
+  new Swiper('.summary .swiper-container', {
+    loop: false,
+    freeMode: true,
+    spaceBetween: 30,
+    slidesOffsetBefore: 0,
+    slidesOffsetAfter: 0,
+    slidesPerView: 'auto',
+    breakpoints: {
+      1023: {
+        spaceBetween: 20,
+        slidesOffsetBefore: 10,
+        slidesOffsetAfter: 10,
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+  // 위시리스트
+
+})
+</script>
+{% endblock js %}
