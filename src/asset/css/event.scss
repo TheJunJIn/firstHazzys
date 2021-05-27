@@ -1,0 +1,938 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_swiper.scss';
+@import '_ui-slider.scss';
+@import '_aos.scss';
+@import '../../components/sprites/sprite-common.scss';
+
+.main-header {
+  position: relative;
+  margin-bottom: 36px;
+  &__title {
+    padding: 10px 0 0;
+    color: $color-text-emphasize;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+  }
+  &__btn-back {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    width: 40px;
+    height: 40px;
+
+  }
+  @include mq('desktop') {
+    &__title {
+      margin-bottom: 60px;
+      font-size: 24px;
+      line-height: 34px;
+      text-align: left;
+    }
+    &__btn-back {
+      display: none;
+    }
+  }
+}
+
+
+// 이벤트 리스트
+.event-wrap{
+  .tablist {
+    margin: 0 10px;
+  }
+}
+.event-list {
+  li {
+    position: relative;
+    margin-top: 30px;
+    .event-thumb {
+      display: block;
+      position: relative;
+      margin-bottom: 10px;
+      text-decoration: none;
+      .event-img {
+        width: 100%;
+      }
+      .d-day {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        width: 70px;
+        height: 24px;
+        background-color: $color-solid-emphasize;
+        color: $color-text-white;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+    .event-info {
+      position: relative;
+      padding: 0 10px;
+      &__name {
+        margin-bottom: 10px;
+        color: $color-text-emphasize;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      &__date {
+        color: $color-text-primary;
+        font-size: 14px;
+      }
+      .button-winner {
+        display: block;
+        width: 120px;
+        height: 34px;
+        margin-top: 25px;
+        border: 1px solid $color-line-ready;
+        color: $color-text-emphasize;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 34px;
+        text-align: center;
+        text-decoration: none;
+        &:after {
+          content: '';
+          display: inline-block;
+          @include sprite($common-arrow-right-link-over);
+          vertical-align: -5px;
+        }
+      }
+    }
+  }
+}
+// 이벤트 상세
+
+.detail-info {
+  margin: 0 10px 30px;
+  &__name {
+    display: block;
+    margin-bottom: 10px;
+    color: $color-text-emphasize;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &__date {
+    display: block;
+    color: $color-text-primary;
+    font-size: 14px;
+  }
+}
+.image-content {
+  margin: 0 20px 20px;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
+.image-content.full {
+  margin: 0 0 20px;
+}
+.text-content {
+  margin: 0 10px 60px;
+  &__type-a {
+    margin-bottom: 10px;
+    color: $color-text-emphasize;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    @include keep-word;
+    text-align: center;
+  }
+  &__type-b {
+    color: $color-text-emphasize;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    @include keep-word;
+    text-align: center;
+  }
+  .dl-type {
+    &__title {
+      margin-bottom: 20px;
+      color: $color-text-emphasize;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+    &__list {
+      display: flex;
+      margin-bottom: 10px;
+      color: $color-text-emphasize;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 22px;
+      .num {
+        display: inline-block;
+        font-weight: 500;
+        font-style: normal;
+      }
+      .text {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.reward {
+  margin: 0 10px 30px;
+  &__title {
+    color: $color-text-emphasize;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  &__content {
+    color: $color-text-emphasize;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+}
+.note-list {
+  margin-bottom: 60px;
+  padding: 40px 10px 30px;
+  background-color: #f8f8f8;
+  &__title {
+    margin-bottom: 20px;
+    color: $color-text-emphasize;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__content {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    color: $color-text-primary;
+    font-size: 12px;
+    line-height: 18px;
+    &:before{
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 7px;
+      width: 2px;
+      height: 2px;
+      background-color: $color-grey-02;
+    }
+  }
+}
+.button-join {
+  width: 165px;
+  margin: 0 auto 60px auto;
+  .form-button {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+.event-vote {
+  margin: 0 0 60px;
+}
+.tabs-orange {
+  [role="tablist"] {
+    display: flex;
+    margin: 0 10px 40px;
+  }
+  [role="tab"] {
+    position: relative;
+    width: 100%;
+    background-color: $color-solid-white;
+    border: 0;
+    border-bottom: 2px solid $color-line-border;
+    color: $color-text-primary;
+    outline: 0;
+    font-size: 14px;
+    font-weight: 300;
+    height: 50px;
+    &[aria-selected="true"] {
+      outline: 0;
+      border-bottom: 2px solid $color-line-point;
+      color: $color-text-point;
+      font-weight: 500;
+      &:before {
+        border-bottom-color: transparent;
+      }
+    }
+    &:first-child {
+      border-left-width: 0;
+    }
+    &:last-child {
+      border-right-width: 0;
+    }
+  }
+}
+.like-list {
+  padding-bottom: 20px;
+  @include self-clear;
+  &__item {
+    position: relative;
+    float: left;
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    .like-thmb {
+      object-fit: contain;
+      img {
+        width: 100%;
+      }
+    }
+    .like-box {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      width: 64px;
+      height: 30px;
+      background-color: $color-solid-white;
+      border-radius: 20px;
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+      line-height: 30px;
+      .button {
+        position: relative;
+        margin-left: 8px;
+        .event-sprite-like {
+          display: inline-block;
+          vertical-align: middle;
+          @include sprite($common-icon-like);
+          text-indent: 100%;
+          line-height: 2;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+      &__num {
+        color: $color-text-emphasize;
+        font-size: 12px;
+      }
+    }
+    .like-box.on {
+      .button {
+        .event-sprite-like  {
+          @include sprite($common-icon-like-on);
+        }
+      }
+    }
+  }
+}
+.button-more {
+  margin: 0 10px;
+}
+.reply-text-wrap {
+  margin: 60px 10px;
+  padding-top: 100px;
+  border-top: 1px solid $color-line-border;
+  .textarea {
+    position: relative;
+    margin-bottom: 20px;
+    .text-count-box {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 14px;
+    }
+  }
+  .button-regist {
+    width: 165px;
+    margin: 0 auto;
+    .form-button {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+.reply-list {
+  margin: 0 10px 40px;
+  .reply-box {
+    padding: 20px 0;
+    border-bottom: 1px solid $color-line-border;
+    &:first-child {
+      padding-top: 0;
+    }
+    .user-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .reply-text {
+      margin-bottom: 20px;
+      color: $color-text-emphasize;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .like-box {
+      width: 100%;
+      height: 30px;
+      border: solid 1px $color-line-ready;
+      border-radius: 2px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      .button {
+        position: relative;
+        margin-left: 8px;
+        .event-sprite-like {
+          display: inline-block;
+          vertical-align: middle;
+          @include sprite($common-icon-like);
+          text-indent: 100%;
+          line-height: 2;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+      .num {
+        color: $color-text-emphasize;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+    .like-box.on {
+      .button {
+        .event-sprite-like  {
+          @include sprite($common-icon-like-on);
+        }
+      }
+      .num {
+        color: $color-text-point;
+      }
+    }
+  }
+}
+
+// 상품 리스트
+.event-detail {
+  .product-list-container {
+    &:before {
+      content: '';
+      display: block;
+      margin: 0 10px;
+      border-top: 1px solid $color-line-border;
+    }
+    .product-list{
+      .product-list__item {
+        margin: 60px 0 0;
+      }
+    } 
+  }
+}
+
+// 이벤트 참여
+.event-write {
+  margin: 0 10px;
+}
+.event-id {
+  margin-bottom: 40px;
+  color: $color-text-primary;
+  font-size: 14px;
+  em {
+    font-weight: 500;
+    font-style: normal;
+  }
+}
+.title-line {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $color-line-emphasize;
+  color: $color-text-emphasize;
+  font-size: 14px;
+}
+.content-write {
+  margin-bottom: 40px;
+}
+.photo-upload {
+  overflow: hidden;
+  margin-bottom: 60px;
+  .swiper-container {
+    width: 100%;
+    margin-left: -10px;
+  }
+  .swiper-slide {
+    width: 90px;
+  }
+  .upload-content {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      .sprite-image-close {
+        display: block;
+        @include sprite($common-icon-close-small);
+        text-indent: 100%;
+        line-height: 2;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+  .upload-content.file-upload {
+    border: 1px dashed $color-line-ready;
+    .image-add {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      appearance: none;
+      opacity: 0;
+      z-index: 1;
+    }
+    .add-text {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      width: 90px;
+      color: $color-text-emphasize;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      &:before {
+        content: '';
+        display: block;
+        margin: 0 auto 5px auto;
+        @include sprite($common-icon-photo);
+      }
+    }
+  }
+}
+.button-group {
+  display: flex;
+  .button-group__item {
+    width: 100%;
+    + .button-group__item {
+      margin-left: 10px;
+    }
+  }
+}
+
+// 이벤트 참여 완료
+.event-complete {
+  text-align: center;
+  .complete-text-1 {
+    color: $color-text-emphasize;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 28px;
+  }
+  .complete-text-2 {
+    color: $color-text-emphasize;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+  }
+  .badge-image {
+    margin-bottom: 30px;
+    .badge {
+      border-radius: 100%;
+      box-shadow: 0 20px 20px 0 rgba(248, 152, 0, 0.3);
+    }
+  }
+  .badge-text {
+    margin-bottom: 60px;
+    color: $color-text-emphasize;
+    font-size: 14px;
+    line-height: 22px;
+    .link {
+      color: $color-text-point;
+    }
+  }
+  .button-complete {
+    width: 165px;
+    margin: 0 auto;
+    .form-button {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+// 팝업
+.modal {
+  &.modal--event-vote-view {
+    .modal__header {
+      background: none;
+      backdrop-filter: none;
+    }
+    .modal__body {
+      padding: 0;
+    }
+    .event-vote-view {
+      .swiper-container {
+        .vote-image {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
+        .swiper-pagination {
+          position: absolute;
+          bottom: 25px;
+          right: 25px;
+          top: auto;
+          left: auto;
+          .swiper-pagination-current {
+            display: inline-block;
+            left: auto;
+            right: 1px;
+          }
+          .swiper-pagination-total {
+            display: inline-block;
+            right: auto;
+            &:before {
+              content: '/';
+            }
+          }
+        }
+        .swiper-button-prev {
+          display: none;
+        }
+        .swiper-button-next {
+          display: none;
+        }
+      }
+      .vote-content {
+        position: relative;
+        margin-top: 20px;
+        padding-bottom: 100px;
+        &__id {
+          margin: 0 10px 10px;
+          font-size: 14px;
+          line-height: 22px;
+        }
+        &__text {
+          margin: 0 10px 40px;
+          color: $color-text-emphasize;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 22px;
+        }
+        .vote-content__reply {
+          margin: 0 10px;
+          .title-line {
+            .num {
+              color: $color-text-point;
+              font-size: 14px;
+              font-weight: 500;
+              font-style: normal;
+            }
+          }
+          .vote-reply-list {
+            .reply-box {
+              padding: 20px 0;
+              border-bottom: 1px solid $color-line-border;
+              &:first-child {
+                padding-top: 0;
+              }
+              .user-info {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                font-size: 14px;
+              }
+              .reply-text {
+                color: $color-text-emphasize;
+                font-size: 14px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+        .button-reply-regist {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 70px;
+          padding: 10px;
+          background-color: $color-solid-white;
+          box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.1);
+          box-sizing: border-box;
+          textarea.form-text {
+            overflow: hidden;
+            min-height: 50px;
+            border: 1px solid $color-line-ready;
+            resize: none;
+          }
+          .form-button {
+            display: none;
+          }
+        }
+        .button-reply-regist.active {
+          display: flex;
+          textarea.form-text {
+            padding: 9px;
+            border: 1px solid $color-line-emphasize;
+            line-height: 20px;
+          }
+          .form-button {
+            display: block;
+            flex: 0 0 80px;
+            width: 80px;
+            height: 50px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@include mq('desktop') {
+  .shell-main--event {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 15px 0;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+  .main-header.event-back {
+    padding-bottom: 24px;
+    .button {
+      display: block;
+      position: relative;
+      top: auto;
+      left: auto;
+    }
+  }
+  // 이벤트 리스트
+  .event-wrap {
+    width: 1170px;
+    margin: 0 auto;
+    .tablist {
+      margin: 0;
+    }
+  }
+  .event-list {
+    @include self-clear;
+    li {
+      float: left;
+      width: 50%;
+      margin: 54px 0 0 0;
+      box-sizing: border-box;
+      &:nth-child(odd) {
+        padding-right: 22px;
+      }
+      &:nth-child(even) {
+        padding-left: 22px;
+      }
+      .event-thumb {
+        margin-bottom: 20px;
+      }
+      .event-info {
+        &__name {
+          padding-right: 120px;
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .button-winner {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  // 이벤트 상세
+  .detail-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 60px;
+    &__name {
+      margin-bottom: 0;
+      font-size: 24px;
+      line-height: 34px;
+    }
+    &__date {
+      line-height: 34px;
+    }
+  }
+  .image-content {
+    margin-bottom: 60px;
+    img {
+      width: auto;
+    }
+  }
+  .image-content.align-right {
+    text-align: right;
+  }
+  .image-content.align-left {
+    text-align: left;
+  }
+  .text-content {
+    margin: 0 10px 100px;
+    &__type-a {
+      margin-bottom: 20px;
+      font-size: 24px;
+      line-height: 34px;
+    }
+    .dl-type {
+      &__title {
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+    }
+  }
+  .reward {
+    margin: 0 0 30px;
+    &__title {
+      font-size: 24px;
+      line-height: 34px;
+    }
+    &__content {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  .note-list {
+    margin-bottom: 60px;
+    padding: 60px 40px 50px;
+    background-color: #f8f8f8;
+    &__title {
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 34px;
+    }
+    &__content {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  .button-join {
+    width: 300px;
+  }
+  .button-more {
+    width: 340px;
+    margin: 0 auto;
+  }
+  .tabs-orange {
+    [role="tablist"] {
+      margin: 0 0 40px;
+    }
+  }
+  .like-list {
+    &__item {
+      width: 25%;
+      padding: 0 15px;
+    }
+  }
+  .reply-text-wrap {
+    margin: 100px 0;
+    .textarea {
+      margin-bottom: 40px;
+    }
+  }
+  .reply-list {
+    .reply-box {
+      @include self-clear;
+      .like-box {
+        float: right;
+        width: 120px;
+      }
+    }
+  }
+
+  // 상품 리스트
+  .event-detail {
+    .product-list-container {
+      .product-list{
+        padding: 40px 0 0;
+      } 
+    }
+  }
+  // 이벤트 참여
+  .event-write{
+    margin: 0;
+    .button-group {
+      justify-content: center;
+      .button-group__item {
+        width: 165px;
+        .form-button {
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  .event-participate {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    .content-write {
+      width: 540px;
+      margin: 0;
+    }
+    .photo-upload {
+      width: 540px;
+      margin: 0 0 0 90px;
+      .upload-content {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+
+  // 이벤트 참여완료
+  .event-complete {
+    .complete-text-1 {
+      font-size: 24px;
+      line-height: 34px;
+    }
+    .complete-text-2 {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  // 팝업
+  .modal {
+    &.modal--event-vote-view {
+      .modal__header {
+        width: 460px;
+      }
+      .modal-dialog {
+        width: 920px;
+        height: 460px;
+      }
+      .event-vote-view {
+        display: flex;
+        justify-content: space-between;
+        .swiper-container {
+          width: 460px;
+        }
+        .vote-content {
+          width: 460px;
+          padding-bottom: 77px;
+          
+        .vote-content__reply {
+          max-height: 240px;
+          overflow: scroll;
+          overflow-x: hidden;
+          -webkit-overflow-scrolling: touch;
+          }
+        }
+      }
+    }
+  }
+}
