@@ -31,6 +31,9 @@
     <button type="button" class="form-button form-button--main" data-modal-open="#modalDeleteClaimHistory">
       취소/교환/반품 내역 삭제
     </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalRegisterCoupon">
+      나의 쿠폰 등록
+    </button>
   </div>
 </main>
 {% endblock %}
@@ -57,6 +60,8 @@
 {# 취소/교환/반품 내역 삭제 #modalDeleteClaimHistory #}
 {% include "modal/mypage/confirm-delete-claim-history.njk" %}
 
+{# 나의 쿠폰 등록 #modalRegisterCoupon #}
+{% include "modal/mypage/register-coupon.njk" %}
 {% endblock modal %}
 
 {% block css %}
@@ -65,4 +70,7 @@
 
 {% block js %}
 <script src="/asset/js/mypage.js"></script>
+<script>
+{# ui.modal.open($('#modalRegisterCoupon')); #}
+</script>
 {% endblock js %}

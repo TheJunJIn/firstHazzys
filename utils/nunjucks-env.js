@@ -133,7 +133,7 @@ function middleware(req, res, next) {
 
     const env = createEnv();
     return env.renderString(fileContents, njk.data, (error, result) => {
-      console.log('[njk]', njkPath);
+      // console.log('[njk]', njkPath);
       res.setHeader('Content-Type', 'text/html');
       res.end(result);
     });

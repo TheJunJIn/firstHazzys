@@ -1,0 +1,195 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--mypage">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
+    <div class="main-container">
+      <h2 class="main-header__title">마이페이지</h2>
+      <div class="main-header__my-info">
+        <a href="#" class="my-info__membership grade">
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
+          <span class="grade__name"><span>RED</span> 회원</span>
+          <!--
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/s-platinum.png" alt="S-Platinum"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/platinum.png" alt="platinum"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/gold.png" alt="Gold"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/silver.png" alt="Sliver"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/black.png" alt="Black"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/purple.png" alt="Purple"></span>
+          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
+          -->
+        </a>
+        <div class="my-info__message">
+          <p class="message__title">해지수님, 안녕하세요. 🥰</p>
+          <p class="message__content">이번 주는 봄 신상이 많아요.</p>
+        </div>
+        <ul class="my-info__asset">
+          <li class="asset__item">
+            <a href="#" class="asset__value asset__value--coupon">3장</a>
+          </li>
+          <li class="asset__item">
+            <a href="#" class="asset__value asset__value--mileage">20,000M</a>
+          </li>
+        </ul>
+        <a href="#" class="my-info__more">내 정보 수정</a>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--benefit">
+        <div class="main-content__header">
+          <h3 class="main-content__title">나만의 혜택</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="mypage-benefit-container">
+          <div class="tabs tab--benefit">
+            <div class="tablist" role="tablist">
+              <button type="button" class="tab" role="tab" aria-selected="false">쿠폰</button>
+              <button type="button" class="tab" role="tab" aria-selected="true">마일리지</button>
+              <button type="button" class="tab" role="tab" aria-selected="false">나의 뱃지</button>
+            </div>
+            <div class="tabpanel">
+
+              <div class="benefit-mileage">
+                <h3 class="benefit-mileage__title">김헤지 님의 마일리지</h3>
+                <div class="benefit-mileage__content">
+                  <ul class="mileage-info">
+                    <li class="mileage-info__item">
+                      <span class="mileage-info__name">사용 가능 마일리지</span>
+                      <span class="mileage-info__value">1,060 M</span>
+                    </li>
+                    <li class="mileage-info__item">
+                      <span class="mileage-info__name">적립 예정 마일리지</span>
+                      <span class="mileage-info__value">200 M</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="benefit-mileage">
+                <h3 class="benefit-mileage__title">적립 내역</h3>
+                <div class="benefit-mileage__content">
+                  <div class="mileage-history">
+                    <!-- 필터 -->
+                    <div class="form-select-container">
+                      <div class="form-select">
+                        <select class="select">
+                          <option value="">사용 여부</option>
+                        </select>
+                        <i class="icon"></i>
+                      </div>
+                      <div class="form-select">
+                        <select class="select">
+                          <option value="">최근 3개월</option>
+                        </select>
+                        <i class="icon"></i>
+                      </div>
+                    </div>
+                    <!-- //필터 -->
+                    <!-- 목록 -->
+                    <div class="mileage-history-list">
+                      <div class="no-data">
+                        <i class="sprite-common sprite-common-no-coupon"></i>
+                        <p class="message">적립된 마일리지가 없습니다.</p>
+                      </div>
+                    </div>
+                    <!-- //목록 -->
+
+                    <ul class="guide">
+                      <li class="guide__item">마일리지란? LF 브랜드 상품 구매 시에 적립과 사용이 가능합니다.</li>
+                      <li class="guide__item">마일리지는 10M 단위부터 사용이 가능하며, 오프라인 매장에서도 사용이 가능합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 내역</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나만의 혜택</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+              </li>
+              <li class="menu__item active">
+                <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 뱃지</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 태그</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+  {% include "modal/member/find-password.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/mypage.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/mypage.js"></script>
+{% endblock js %}
