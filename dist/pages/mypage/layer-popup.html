@@ -1788,6 +1788,7 @@
 					<button type="button" class="form-button form-button--main" data-modal-open="#modalReturnCostGuide">예상 반품비</button>
 					<button type="button" class="form-button form-button--main" data-modal-open="#modalExchangeCostGuide">예상 교환비</button>
 					<button type="button" class="form-button form-button--main" data-modal-open="#modalDeleteClaimHistory">취소/교환/반품 내역 삭제</button>
+					<button type="button" class="form-button form-button--main" data-modal-open="#modalRegisterCoupon">나의 쿠폰 등록</button>
 				</div>
 			</main>
 
@@ -1940,6 +1941,7 @@
 			</div>
 		</div>
 
+		<!-- 주문내역 삭제 -->
 		<div id="modalDeleteOrderHistory" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
@@ -1971,7 +1973,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- // 주문내역 삭제 -->
 
+		<!-- 상품 수령 -->
 		<div id="modalConfirmShipped" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
@@ -2000,7 +2004,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- // 상품 수령 -->
 
+		<!-- 상품 픽업 -->
 		<div id="modalConfirmPickedup" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
@@ -2026,11 +2032,13 @@
 				</div>
 			</div>
 		</div>
+		<!-- //상품 픽업 -->
 
+		<!-- 헤지스 스토어 안내 -->
 		<div id="modalStoreLocation" class="modal modal--store-location" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
-					<h1 class="modal__header__title">해지스 스토어 안내</h1>
+					<h1 class="modal__header__title">헤지스 스토어 안내</h1>
 					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
 						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
 					</button>
@@ -2060,10 +2068,6 @@
 													<dt class="info__title">교통 편의</dt>
 													<dd class="info__content">4호선 명동역 9번 출구 앞</dd>
 												</dl>
-												<dl class="info">
-													<dt class="info__title">주차 시설</dt>
-													<dd class="info__content">매장 앞 우리은행 건물 주차 가능 <span class="comment">(주차권 지급)</span></dd>
-												</dl>
 											</div>
 											<div class="store__info__row">
 												<dl class="info">
@@ -2074,6 +2078,14 @@
 													<dt class="info__title">휴무 안내</dt>
 													<dd class="info__content">명절 당일 <span class="comment">(연 2회 휴무)</span></dd>
 												</dl>
+											</div>
+											<div class="store__info__row">
+												<dl class="info">
+													<dt class="info__title">주차 시설</dt>
+													<dd class="info__content">매장 앞 우리은행 건물 주차 가능 <span class="comment">(주차권 지급)</span></dd>
+												</dl>
+											</div>
+											<div class="store__info__row">
 												<dl class="info">
 													<dt class="info__title">방문 혜택</dt>
 													<dd class="info__content">
@@ -2102,6 +2114,8 @@
 											</dd>
 											<dd class="guide__item">픽업상품 수령 전, 매장 직원에게 헤지스 닷컴 모바일에서 주문내역을 보여주신 뒤 ‘픽업완료‘ 버튼을 클릭하세요.</dd>
 										</dl>
+									</div>
+									<div class="pickup-guide__row">
 										<dl class="guide">
 											<dt class="guide__title">주의사항</dt>
 											<dd class="guide__item">픽업 주문하여 매장 도착 이후 72시간 내 미수령 시 자동 결제 취소<span class="comment">(반품)</span> 처리 됩니다.</dd>
@@ -2129,7 +2143,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- //헤지스 스토어 안내 -->
 
+		<!-- 예상 반품비 -->
 		<div id="modalReturnCostGuide" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
@@ -2148,7 +2164,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- // 예상 반품비 -->
 
+		<!-- 예상 교환비 -->
 		<div id="modalExchangeCostGuide" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
@@ -2167,7 +2185,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- // 예상 교환비 -->
 
+		<!-- 취소/교환/반품 내역 삭제 -->
 		<div id="modalDeleteClaimHistory" class="modal" tabindex="-1" role="dialog" data-modal>
 			<div class="modal-dialog" role="document">
 				<div class="modal__header">
@@ -2196,10 +2216,41 @@
 				</div>
 			</div>
 		</div>
+		<!-- // 취소/교환/반품 내역 삭제 -->
+
+		<!-- 나의 쿠폰 등록 -->
+		<div id="modalRegisterCoupon" class="modal modal--register-coupon" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<h1 class="modal__header__title">나의 쿠폰 등록</h1>
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="message">
+						<div class="message__text">
+							발급 받으신 쿠폰을 입력해주세요.<br />
+							영문 대/소문자를 구분하여 입력해주세요.
+						</div>
+						<div class="coupon-register-form">
+							<div class="input-block">
+								<input type="text" class="form-text" placeholder="쿠폰 번호를 입력해주세요" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal__footer">
+					<button type="button" class="form-button form-button--main" data-modal-close>쿠폰 등록하기</button>
+				</div>
+			</div>
+		</div>
+		<!-- // 나의 쿠폰 등록 -->
 
 		<script src="/asset/js/vendor.js"></script>
 		<script src="/asset/js/ui.js"></script>
 
 		<script src="/asset/js/mypage.js"></script>
+		<script></script>
 	</body>
 </html>

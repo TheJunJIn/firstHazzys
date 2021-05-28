@@ -16,7 +16,8 @@
 		<link rel="stylesheet" href="/asset/css/common.css" />
 		<!-- 개별 CSS -->
 
-		<link rel="stylesheet" href="/asset/css/order.css" />
+		<link rel="stylesheet" href="/asset/css/event.css" />
+		<link rel="stylesheet" href="/asset/css/list.css" />
 	</head>
 	<body>
 		<div class="app">
@@ -1762,307 +1763,861 @@
 				</div>
 			</div>
 
-			<main class="shell-main shell-main--order">
-				<div class="main-header">
-					<h2 class="main-header__title">주문서</h2>
-					<button type="button" class="button main-header__btn-back" aria-label="닫기" data-sidebar-close>
-						<i class="sprite-icon sprite-common sprite-common-back">닫기</i>
+			<main class="shell-main shell-main--event">
+				<div class="main-header event-back">
+					<h2 class="main-header__title">이벤트 상세</h2>
+					<button type="button" class="button main-header__btn-back">
+						<i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
 					</button>
 				</div>
 				<div class="main-content">
-					<!-- 주문서 -->
-					<div class="order-wrap order-sheet">
-						<div class="product-wrap">
-							<!-- 주문 상품 -->
-							<div class="order-product" data-accordion role="tablist">
-								<div class="accordion__item active" data-accordion-item>
-									<div class="accordion__title">
-										<button type="button" class="button" data-tab-toggle role="tab" aria-controls="order-accordion" id="order-accordion-label">
-											<span class="title">주문상품</span>
-											<span class="num">(2개)</span>
-										</button>
-									</div>
-									<!-- is-desktop 타이틀 영역 -->
-									<div class="product-th">
-										<span class="title-info">상품정보</span>
-										<span class="title-price">상품금액</span>
-									</div>
-									<div class="accordion__content" data-tab-content role="tabpanel" aria-labelledby="order-accordion-label" id="order-accordion">
-										<!-- 주문서 상품 리스트 -->
-										<div class="product-list">
-											<ul>
-												<li>
-													<div class="product-detail">
-														<div class="product-detail__thmb-img">
-															<a href="#">
-																<img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
-															</a>
-														</div>
-														<div class="product-detail__detail-info">
-															<p class="brand-name">HAZZYS ACC</p>
-															<p class="product-name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
-															<p class="product-opt">차콜그레이 / 68 XL / 1개</p>
-															<!-- is-mobile 일 때 가격 -->
-															<div class="price-bx">
-																<div class="product-price">
-																	<span class="sale-price">680,000</span>
-																	<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-																</div>
-																<div class="real-price">
-																	<del>966,000</del>
-																	<span class="sale">40%</span>
-																</div>
-															</div>
-															<div class="point-delivery">
-																<p class="point-delivery__bx"><span class="tx-color-orange">1,070M</span> 적립예정</p>
-																<p class="point-delivery__bx"><span class="tx-color-orange">03/24(수)</span> 도착예정 <span class="tx-color-gray">(15시 이전 결제 시)</span></p>
-															</div>
-														</div>
-													</div>
-													<!-- is-desktop 일 때 가격 -->
-													<div class="price-bx web-price">
-														<div class="product-price">
-															<span class="sale-price">680,000</span>
-															<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-														</div>
-														<p class="tx-family-price">패밀리 회원가 적용 중</p>
-													</div>
-												</li>
-												<li>
-													<div class="product-detail">
-														<div class="product-detail__thmb-img">
-															<a href="#">
-																<img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
-															</a>
-														</div>
-														<div class="product-detail__detail-info">
-															<p class="brand-name">HAZZYS ACC</p>
-															<p class="product-name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
-															<p class="product-opt">차콜그레이 / 68 XL / 1개</p>
-															<div class="price-bx">
-																<div class="product-price">
-																	<span class="sale-price">680,000</span>
-																	<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-																</div>
-																<div class="real-price">
-																	<del>966,000</del>
-																	<span class="sale">40%</span>
-																</div>
-															</div>
-															<div class="point-delivery">
-																<p class="point-delivery__bx"><span class="tx-color-orange">1,070M</span> 적립예정</p>
-																<p class="point-delivery__bx"><span class="tx-color-orange">03/24(수)</span> 도착예정 <span class="tx-color-gray">(15시 이전 결제 시)</span></p>
-															</div>
-														</div>
-													</div>
-													<div class="price-bx web-price">
-														<div class="product-price">
-															<span class="sale-price">680,000</span>
-															<button type="button" class="question-mark button-price-info" data-modal-open="#modalPriceDetail">가격안내</button>
-														</div>
-														<p class="tx-family-price">패밀리 회원가 적용 중</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
+					<!-- 이벤트 상세 -->
+					<div class="event-detail">
+						<div class="detail-info">
+							<span class="detail-info__name">당신의 반려견에게 왕관을 씌워주세요!</span>
+							<span class="detail-info__date">2021.04.22 ~ 2021.05.06</span>
+						</div>
+						<!-- 이미지 컨텐츠 풀사이즈 -->
+						<p class="image-content full">
+							<img src="/cmsstatic/asset/images/temp/event_1170x845_1.jpg" alt="이미지명" />
+						</p>
+						<!-- 텍스트 컨텐츠 리스트형 -->
+						<div class="text-content">
+							<p class="text-content__type-a">남다른 내 반쪽, 반려동물에게 OOO을 씌워주세요</p>
+							<p class="text-content__type-b">강아지, 고양이, 햄스터 등 그 어떤 반려동물도 좋아요! 독특한 아이템을 씌우는 분은 당첨 확률 UP!</p>
+						</div>
+						<!-- 이미지 컨텐츠 왼쪽 정렬 -->
+						<p class="image-content align-left">
+							<img src="/cmsstatic/asset/images/temp/event_700x700_1.jpg" alt="이미지명" />
+						</p>
+						<!-- 이미지 컨텐츠 오른쪽 정렬 -->
+						<p class="image-content align-right">
+							<img src="/cmsstatic/asset/images/temp/event_700x700_1.jpg" alt="이미지명" />
+						</p>
+						<!-- 텍스트 컨텐츠 리스트형 -->
+						<div class="text-content">
+							<dl class="dl-type">
+								<dt class="dl-type__title">이벤트 참여 방법</dt>
+								<dd class="dl-type__list">
+									<em class="num">01</em>
+									<span class="text">헤지스닷컴(www.hazzys.com) 사이트 접속 후 이벤트 페이지 참여하기 클릭!</span>
+								</dd>
+								<dd class="dl-type__list">
+									<em class="num">01</em>
+									<span class="text">여러분만의 ‘왕관’을 쓴 반려동물 사진과 당첨되어야 하는 사유를 작성하여 업로드해주세요!</span>
+								</dd>
+							</dl>
+						</div>
+						<!-- REWARD -->
+						<dl class="reward">
+							<dt class="reward__title">REWARD 01</dt>
+							<dd class="reward__content">좋아요를 가장 많이 받은 1등에겐 헤지스닷컴 이용권 100만원, 2등 50만원, 3등 30만원을 제공합니다.</dd>
+						</dl>
+						<dl class="reward">
+							<dt class="reward__title">REWARD 02</dt>
+							<dd class="reward__content">59,000원 상당의 헤지스 반팔 티셔츠와 MARPPLE과 콜라보레이션 제작한 산책 목줄을 함께 보내드립니다.</dd>
+						</dl>
+						<dl class="reward">
+							<dt class="reward__title">REWARD 03</dt>
+							<dd class="reward__content">참여한 모든 분들께 7%의 플러스 쿠폰을 제공해 드립니다.</dd>
+						</dl>
+						<!-- 이벤트 참여하기 버튼 -->
+						<p class="button-join"><button type="button" class="form-button active">이벤트 참여하기</button></p>
+						<!-- 유의사항 -->
+						<dl class="note-list">
+							<dt class="note-list__title">유의사항</dt>
+							<dd class="note-list__content">헤지스닷컴 회원만 참여가능하며, 사진업로드는 jpg, jpeg로만 가능합니다. (IOS 사용자의 경우 “이벤트참여 > 사진업로드 > 사진찍기 > 바로 사진추가”로 참여 부탁드립니다.)</dd>
+							<dd class="note-list__content">플러스쿠폰의 경우 이벤트 참여와 이벤트 투표하신 고객님들께 자동 발급됩니다. (마이페이지 > 나의혜택 > 쿠폰조회 메뉴에서 확인 가능)</dd>
+							<dd class="note-list__content">당첨된 회원님에게는 개별 연락드리며 참여시 수집된 성함, 이메일, 핸드폰번호 등의 정보는 당첨 안내 목적으로만 활용됩니다.</dd>
+							<dd class="note-list__content">당첨자 발표는 2021년 4월 15일 (목) 헤지스닷컴 홈페이지에 게시됩니다.</dd>
+							<dd class="note-list__content">당첨자 발표 후 정보 변경, 상품 교환 및 반품이 불가합니다. (재고 부족으로 인해 다른 상품으로 대체될수도 있으니 양해를 부탁드립니다.)</dd>
+							<dd class="note-list__content">라이크헤지스 이벤트로 참여하신 반려동물 사진 및 콘텐츠 등은 헤지스닷컴의 마케팅 목적으로 활용될 수 있습니다.</dd>
+							<dd class="note-list__content">이벤트 리워드는 당사의 사정에 따라 사전 고지 없이 변경 혹은 취소될 수 있습니다.</dd>
+						</dl>
+						<!-- 등록순 투표순 리스트 -->
+						<div class="event-vote">
+							<div class="tabs-orange">
+								<div class="tablist" role="tablist" aria-label="sort">
+									<button type="button" class="tab" role="tab" aria-selected="true" aria-controls="registSort-tab" id="registSort">등록순</button>
+									<button type="button" class="tab" role="tab" aria-selected="false" aria-controls="voteSort-tab" id="voteSort" tabindex="-1">투표순</button>
+								</div>
+								<!-- 등록순 -->
+								<div class="tabpanel" tabindex="0" role="tabpanel" id="registSort-tab" aria-labelledby="registSort">
+									<ul class="like-list">
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_1.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">1234</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_2.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_3.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">1234</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_4.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_1.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">1234</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_2.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_3.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">1234</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_4.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- 투표순 -->
+								<div class="tabpanel" tabindex="0" role="tabpanel" id="voteSort-tab" aria-labelledby="voteSort" hidden>
+									<ul class="like-list">
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_4.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">123</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_3.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_2.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">123</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_1.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_4.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">123</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_3.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_2.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box on">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">123</span>
+											</div>
+										</li>
+										<li class="like-list__item">
+											<a href="#" class="like-thmb" data-modal-open="#modalEventVoteView">
+												<img src="/cmsstatic/asset/images/temp/event_270x270_1.jpg" alt="이미지명" />
+											</a>
+											<div class="like-box">
+												<button type="button" class="button"><i class="event-sprite-like">좋아요</i></button>
+												<span class="like-box__num">127</span>
+											</div>
+										</li>
+									</ul>
 								</div>
 							</div>
+							<p class="button-more">
+								<button type="button" class="form-button form-button--plain">더보기 (1/20)</button>
+							</p>
 						</div>
-						<!-- 결제 예정 금액 -->
-						<div class="mnodr-total">
-							<h3 class="mnodr-tit">결제 예정 금액</h3>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">상품금액</dt>
-								<dd class="mnodr-bx__price">344,100원</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">즉시할인</dt>
-								<dd class="mnodr-bx__price">-34,410원</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">추가할인</dt>
-								<dd class="mnodr-bx__price">0원</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">보유마일리지</dt>
-								<dd class="mnodr-bx__price">0M</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">배송비</dt>
-								<dd class="mnodr-bx__price">무료</dd>
-							</dl>
-							<dl class="mnodr-bx">
-								<dt class="mnodr-bx__tit">적립예정</dt>
-								<dd class="mnodr-bx__price">17,000M</dd>
-							</dl>
-							<div class="total-price">
-								<dl class="mnodr-bx">
-									<dt class="mnodr-bx__tit">총 결제 예정 금액</dt>
-									<dd class="mnodr-bx__price">309,900원</dd>
-								</dl>
-								<dl class="mnodr-bx">
-									<dt class="mnodr-bx__tit">제품 구입비 적용가</dt>
-									<dd class="mnodr-bx__price">209,900원</dd>
-								</dl>
-							</div>
-							<p class="coupon-mileage-text">쿠폰 및 마일리지 사용에 따라 최종 결제금액은 달라질 수 있습니다.</p>
-							<div class="button-bx">
-								<button type="button" class="form-button form-button--point">다음단계</button>
-							</div>
-						</div>
-						<!-- 배송정보 입력 전 -->
-						<div class="delivery-info" data-accordion role="tablist">
-							<div class="accordion__item active" data-accordion-item>
-								<div class="accordion__title">
-									<button type="button" class="button" data-tab-toggle role="tab" aria-controls="delivery-accordion" id="delivery-accordion-label">
-										<span class="title">배송정보</span>
-									</button>
-								</div>
-								<div class="accordion__content" data-tab-content role="tabpanel" aria-labelledby="delivery-accordion-label" id="delivery-accordion">
-									<!-- 배송정보 컨텐츠 -->
-									<div class="tabs">
-										<div class="tablist" role="tablist" aria-label="review">
-											<button type="button" class="tab" role="tab" aria-selected="true" aria-controls="generalDelivery-tab" id="generalDelivery">일반 배송</button>
-											<button type="button" class="tab" role="tab" aria-selected="false" aria-controls="shopPickup-tab" id="shopPickup" tabindex="-1">매장 픽업 <span class="layer-speech-bubble">2,500M 적립혜택</span></button>
-										</div>
-										<div class="tabpanel" tabindex="0" role="tabpanel" id="generalDelivery-tab" aria-labelledby="generalDelivery">
-											<div class="delivery-link">
-												<button type="button" class="link">신규 배송지</button>
-												<button type="button" class="link">배송지 변경</button>
-											</div>
-											<!-- 일반 배송 -->
-											<div class="delivery-form">
-												<div class="delivery-bx-left">
-													<div class="input-block member-name">
-														<input type="text" class="form-text" placeholder="받는 분 성함을 입력해 주세요" />
+						<!-- //등록순 투표순 리스트 -->
+						<!-- 상품 목록 -->
+						<div class="product-list-container">
+							<ul class="product-list" id="productList" data-size="m">
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
 													</div>
-													<div class="form-flex form-phone">
-														<span class="form-select">
-															<select class="select">
-																<option value="">010</option>
-																<option value="011">011</option>
-																<option value="016">016</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-														<div class="input-block form-phone-input">
-															<input type="text" class="form-text" placeholder="-없이 숫자만 입력해 주세요" />
-														</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
 													</div>
 												</div>
-												<div class="delivery-bx-right">
-													<div class="form-flex form-address">
-														<div class="input-block form-address-inp">
-															<input type="text" class="form-text" />
-														</div>
-														<div class="address-search">
-															<button type="button" class="form-button form-button--plain">주소 검색</button>
-														</div>
-													</div>
-													<div class="input-block form-address-detail">
-														<input type="text" class="form-text" />
-													</div>
-													<div class="input-block form-address-detail">
-														<input type="text" class="form-text" placeholder=" 상세 주소를 입력해 주세요" />
-													</div>
-													<div class="check-field basics-delivery-setting">
-														<label class="form-checkbox">
-															<input type="checkbox" class="checkbox" />
-															<span class="name">기본 배송지로 설정</span>
-														</label>
-													</div>
-													<div class="delivery-requst-select">
-														<span class="form-select">
-															<select class="select" required>
-																<option value="" disabled selected>배송 요청 사항을 선택해 주세요</option>
-																<option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
-																<option value="부재시, 문앞에 놓아주세요.">부재시, 문앞에 놓아주세요.</option>
-																<option value="직접 받겠습니다.">직접 받겠습니다.</option>
-																<option value="부재시, 문앞에 놓아주세요.">부재시, 문앞에 놓아주세요.</option>
-																<option value="배송전에 연락주세요.">배송전에 연락주세요.</option>
-																<option value="직접입력">직접입력</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-													</div>
-													<div class="check-field">
-														<label class="form-checkbox delivery-request-save">
-															<input type="checkbox" class="checkbox" />
-															<span class="name">배송 요청 사항 저장</span>
-														</label>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
 													</div>
 												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
 											</div>
 										</div>
-										<!-- 매장 픽업 -->
-										<div class="tabpanel" tabindex="0" role="tabpanel" id="shopPickup-tab" aria-labelledby="shopPickup" hidden>
-											<div class="shop-pickup">
-												<button type="button" class="button-map-view" data-modal-open="#modalShopLocation">위치 보기</button>
-												<p class="spaceh-text-1">SPACE H 에서 여러분을 기다리고 있습니다.</p>
-												<p class="spaceh-text-2">SPACE H 헤지스 명동점에서 상품을 픽업하시면 프리미엄 서비스를 경험하실 수 있습니다.</p>
-												<div class="visit-member-info">
-													<div class="input-block info-name">
-														<input type="text" class="form-text" placeholder="방문하실 분의 이름을 입력해주세요" />
-													</div>
-													<div class="form-flex info-phone">
-														<span class="form-select">
-															<select class="select">
-																<option value="">010</option>
-																<option value="011">011</option>
-																<option value="016">016</option>
-															</select>
-															<i class="icon"></i>
-														</span>
-														<div class="input-block info-phone-input">
-															<input type="text" class="form-text" placeholder="-없이 숫자만 입력해 주세요" />
-														</div>
-													</div>
-												</div>
-												<div class="spaceh-pickup-benefit">
-													<h3 class="title">SPACE H 픽업 혜택</h3>
-													<ul class="pickup-benefit-list">
-														<li>
-															<i class="icon-benefit icon-benefit-1"></i>
-															<span class="text">픽업 후 추가<br />2,500M 적립</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-2"></i>
-															<span class="text">무료<br />반품/교환</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-3"></i>
-															<span class="text">무료 수선/<br />스타일링</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-4"></i>
-															<span class="text">무료<br />선물포장</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-5"></i>
-															<span class="text">온라인전용<br />상품 피팅</span>
-														</li>
-														<li>
-															<i class="icon-benefit icon-benefit-6"></i>
-															<span class="text">상품<br />클리닝</span>
-														</li>
-													</ul>
-												</div>
-												<dl class="shop-pickup-note">
-													<dt>유의 사항</dt>
-													<dd>결제완료 2~3일 후 픽업이 가능합니다.</dd>
-													<dd>매장에 주문하신 상품이 도착하면 연락처로 픽업 안내 연락을 드립니다.</dd>
-													<dd>매장 방문 후 주문내역을 직원에게 보여주시고, 상품을 픽업해주세요.</dd>
-													<dd>매장 픽업 10일 후 2,500M가 추가 적립됩니다.</dd>
-													<dd>매장 도착 후 3일 이내 미 수령 시 자동 반품됩니다.</dd>
-												</dl>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">남녀공용남녀공용남녀공용남녀공용 크림화이트 ATTABOY 맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
 											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart active" data-modal-open="#modalWishlistRemove">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
 										</div>
 									</div>
-								</div>
-							</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_2.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_2.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_3.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_3.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">985,980</span>
+												<span class="product__price-info">
+													<span class="retail">985,980</span>
+													<span class="discount">4%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_4.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_4.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_4.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">남녀공용남녀공용남녀공용남녀공용 크림화이트 ATTABOY 맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">885,980</span>
+												<span class="product__price-info">
+													<span class="retail">885,980</span>
+													<span class="discount">2%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<!-- 품절 -->
+								<li class="product-list__item" data-aos="product">
+									<div class="product product--soldout">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+											<a href="#" class="product__image-state">
+												<div class="state">
+													<p class="message" data-aos="fade-right">SOLD OUT</p>
+												</div>
+											</a>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">남녀공용남녀공용남녀공용남녀공용 크림화이트 ATTABOY 맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+								<!-- //품절 -->
+
+								<!-- 예약배송 -->
+								<li class="product-list__item" data-aos="product">
+									<div class="product product--scheduled">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_2.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_2.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+											<div class="state">
+												<p class="message-container">
+													<span class="icon"><i class="sprite-common sprite-common-clock"></i></span>
+													<span class="message" data-aos>예약배송</span>
+												</p>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+								<!-- //예약배송  -->
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_7.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_8.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_8.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_8.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_9.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_9.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_10.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_10.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_10.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_10.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_11.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_11.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-list__item" data-aos="product">
+									<div class="product">
+										<div class="product__image">
+											<div class="swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_12.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_12.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+													<div class="swiper-slide">
+														<a href="#" class="product-image">
+															<img src="/cmsstatic/asset/images/temp/product_310x416_12.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination-container">
+													<div class="swiper-pagination"></div>
+													<div class="swiper-progress">
+														<span class="swiper-progress__fill"></span>
+													</div>
+												</div>
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+										</div>
+										<div class="product__content">
+											<a href="#" class="product__info">
+												<p class="product__brand">HAZZYS LADIES</p>
+												<p class="product__name">맨투맨 티셔츠</p>
+											</a>
+											<div class="product__price">
+												<span class="product__price-sale">85,980</span>
+												<span class="product__price-info">
+													<span class="retail">85,980</span>
+													<span class="discount">24%</span>
+												</span>
+											</div>
+										</div>
+										<div class="product__util">
+											<button type="button" class="button button--heart" data-modal-open="#modalWishlistAdd">
+												<i class="sprite-common sprite-common-heart">위시리스트</i>
+											</button>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<!-- //상품 목록 -->
 						</div>
+						<!-- //상품 목록 -->
 					</div>
+					<!-- //이벤트 상세 -->
 				</div>
 			</main>
 
@@ -2215,256 +2770,110 @@
 			</div>
 		</div>
 
-		<!-- 가격안내 -->
-		<div id="modalPriceDetail" class="modal" tabindex="-1" role="dialog" data-modal>
+		<!-- 위시리스트 담기 -->
+		<div id="modalWishlistAdd" class="modal modal--top-bottom" tabindex="-1" role="dialog" data-modal="timer:2">
 			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">가격 안내</h1>
-				</div>
 				<div class="modal__body">
-					<div class="price-guide">
-						<div class="price-guide__group">
-							<ul class="group__item">
-								<li class="section">
-									<span class="label">
-										<em>일반 쿠폰 5%</em>
-									</span>
-									<span class="value">
-										<em>- 6,450</em>
-									</span>
-								</li>
-								<li class="section">
-									<span class="label">
-										<em>할인가</em>
-									</span>
-									<span class="value">
-										<em class="point">160,550</em>
-									</span>
-								</li>
-							</ul>
-						</div>
-						<div class="price-guide__comment">상품에 기본 할인이 적용된 가격입니다. 주문서에서 더 큰 할인을 받아보세요.</div>
-					</div>
-				</div>
-				<div class="modal__footer">
-					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- 이용 약관 -->
-		<div id="modalOrderAgree" class="modal modal--order-policy" tabindex="-1" role="dialog" data-modal>
-			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">이용약관</h1>
-					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
-						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
-					</button>
-				</div>
-				<div class="modal__body">
-					<dl class="order-agree">
-						<dt class="order-agree__title">주문 동의</dt>
-						<dd class="order-agree__box">주문할 상품의 상품명, 가격, 배송정보 등 판매조건을 확인하였으며, 구매진행에 동의합니다. (전자상거래법 제8조 2항)</dd>
-					</dl>
-					<dl class="order-agree box-2">
-						<dt class="order-agree__title">개인정보 수집 및 이용 동의</dt>
-						<dd class="order-agree__box">
-							수집목적<br />
-							구매한 물품의 배송/설치 등 고객과 체결한 계약의 이행<br /><br />
-							수집항목<br />
-							배송정보 (주문자 및 수취인 이름, 주소, 연락처)<br />
-							결제정보 (신용카드, 계좌, 휴대폰 정보) 보유기간 : 수집 목적 달성 시 까지<br />
-							단, 관계 법령의 규정에 의하여 일정 기간 보유하여야할 필요가 있는 경우, 해당 기간동안 보관합니다.<br />
-							법령에 따라 보관하여야 하는 기간은 홈페이지 하단의 ‘개인정보처리방침’을 참고하시기 바랍니다.<br />
-							개인정보 수집 및 이용 동의를 거부하실 권리가 있으며, 이를 거부 시 결제가 제한됩니다.<br />
-						</dd>
-					</dl>
-				</div>
-				<div class="modal__footer">
-					<button type="button" class="form-button form-button--main" data-modal-close>확인</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- 매장 위치 -->
-		<div id="modalShopLocation" class="modal" tabindex="-1" role="dialog" data-modal>
-			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">매장위치</h1>
-					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
-						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
-					</button>
-				</div>
-				<div class="modal__body">
-					<div class="shop-location">
-						<div class="map">지도영역<br /><br /></div>
-						<p class="shop-tag">아울렛</p>
-						<p class="shop-name">헤지스 명동점 SPACE H</p>
-						<p class="shop-address">서울특별시 중구 충무로 2가 63-1</p>
-						<a href="tel:031-701-1643" class="shop-call">031-701-1643</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- 쿠폰 변경 -->
-		<div id="modalCouponChange" class="modal modal--bottom-top" tabindex="-1" role="dialog" data-modal>
-			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">쿠폰 변경</h1>
-					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
-						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
-					</button>
-				</div>
-				<div class="modal__body">
-					<div class="coupon-change">
-						<p class="max-sale-benefit">
-							<label class="form-checkbox">
-								<input type="checkbox" class="checkbox" id="checkMaxSale" name="checkMaxSale" />
-								<span class="name"><i class="icon-sale"></i>최대 할인 혜택으로 적용</span>
-							</label>
+					<div class="message message--center">
+						<p class="message__text">
+							<span class="icon-block">
+								<i class="sprite-icon sprite-common sprite-common-heart-plus"></i>
+							</span>
+							위시리스트에 상품이 담겼습니다.<br />
 						</p>
-						<div class="coupon-wrap">
-							<div class="coupon-box">
-								<p class="product-name">21SS 가먼트다잉 블루종 점퍼</p>
-								<p class="product-opt">차콜그레이 / 95</p>
-								<ul class="coupon-list">
-									<li>
-										<div class="form-radio">
-											<input type="radio" class="radio" name="checkCoupon" title="쿠폰 선택" />
-											<i class="icon"></i>
-											<div class="box">
-												<span class="coupon-name">일반 쿠폰</span>
-												<div class="coupon-info">
-													<span class="coupon-info__price">-8,450원</span>
-													<span class="coupon-info__sale">5% 할인</span>
-													<span class="coupon-info__date">2022.01.01 까지</span>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="coupon-box">
-								<p class="product-name">21SS 가먼트다잉 블루종 점퍼</p>
-								<p class="product-opt">차콜그레이 / 95</p>
-								<ul class="coupon-list">
-									<li>
-										<div class="form-radio">
-											<input type="radio" class="radio" name="checkCoupon" title="쿠폰 선택" />
-											<i class="icon"></i>
-											<div class="box">
-												<span class="coupon-name">일반 쿠폰</span>
-												<div class="coupon-info">
-													<span class="coupon-info__price">-8,450원</span>
-													<span class="coupon-info__sale">5% 할인</span>
-													<span class="coupon-info__date">2022.01.01 까지</span>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="form-radio">
-											<input type="radio" class="radio" name="checkCoupon" title="쿠폰 선택" />
-											<i class="icon"></i>
-											<div class="box">
-												<span class="coupon-name">일반 쿠폰</span>
-												<div class="coupon-info">
-													<span class="coupon-info__price">-15,450원</span>
-													<span class="coupon-info__sale">15% 할인</span>
-													<span class="coupon-info__date">2022.01.01 까지</span>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
 					</div>
 				</div>
 				<div class="modal__footer">
-					<button type="button" class="form-button form-button--main">24,000원 할인받기</button>
+					<a href="#" class="form-button form-button--main">위시리스트 바로가기</a>
 				</div>
 			</div>
 		</div>
 
-		<!-- 배송지 목록 -->
-		<div id="modalDeliveryList" class="modal modal--full modal--delivery-list" tabindex="-1" role="dialog" data-modal>
+		<!-- 위시리스트 삭제 -->
+		<div id="modalWishlistRemove" class="modal modal--top-bottom" tabindex="-1" role="dialog" data-modal="timer:2">
 			<div class="modal-dialog" role="document">
-				<div class="modal__header">
-					<h1 class="modal__header__title">배송지 목록</h1>
-					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
-						<i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
-					</button>
-				</div>
 				<div class="modal__body">
-					<div class="delivery-list">
-						<ul class="delivery-list__area">
-							<li>
-								<div class="form-radio">
-									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
-									<i class="icon"></i>
-									<div class="box">
-										<div class="delivery-info">
-											<span class="delivery-info__zipcode">06230</span>
-											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
-											<span class="delivery-info__phone">010-1234-5678</span>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="form-radio">
-									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
-									<i class="icon"></i>
-									<div class="box">
-										<div class="delivery-info">
-											<span class="delivery-info__zipcode">06230</span>
-											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
-											<span class="delivery-info__phone">010-1234-5678</span>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="form-radio">
-									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
-									<i class="icon"></i>
-									<div class="box">
-										<div class="delivery-info">
-											<span class="delivery-info__zipcode">06230</span>
-											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
-											<span class="delivery-info__phone">010-1234-5678</span>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="form-radio">
-									<input type="radio" class="radio" name="checkDelivery" title="배송지 선택" />
-									<i class="icon"></i>
-									<div class="box">
-										<div class="delivery-info">
-											<span class="delivery-info__zipcode">06230</span>
-											<span class="delivery-info__address">서울특별시 강남구 언주로 301</span>
-											<span class="delivery-info__phone">010-1234-5678</span>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<button type="button" class="button-more">더보기</button>
+					<div class="message message--center">
+						<p class="message__text">
+							<span class="icon-block">
+								<i class="sprite-icon sprite-common sprite-common-heart-minus"></i>
+							</span>
+							위시리스트에 담긴 상품이 삭제되었습니다.
+						</p>
 					</div>
 				</div>
 				<div class="modal__footer">
-					<ul class="button-group">
-						<li class="button-group__item">
-							<button type="button" class="form-button form-button--plain" data-modal-close>취소</button>
-						</li>
-						<li class="button-group__item">
-							<button type="button" class="form-button form-button--main">확인</button>
-						</li>
-					</ul>
+					<a href="#" class="form-button form-button--main">위시리스트 바로가기</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalEventVoteView" class="modal modal--full modal--event-vote-view" tabindex="-1" role="dialog" data-modal>
+			<div class="modal-dialog" role="document">
+				<div class="modal__header">
+					<button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+						<i class="sprite-icon sprite-common sprite-common-close-layer-white">닫기</i>
+					</button>
+				</div>
+				<div class="modal__body">
+					<div class="event-vote-view">
+						<div class="swiper-container" id="eventVoteView">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="vote-image">
+										<img src="/cmsstatic/asset/images/temp/event_460x460_1.jpg" alt="이미지명" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="vote-image">
+										<img src="/cmsstatic/asset/images/temp/event_460x460_2.jpg" alt="이미지명" />
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="vote-image">
+										<img src="/cmsstatic/asset/images/temp/event_460x460_3.jpg" alt="이미지명" />
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">1</span>/<span class="swiper-pagination-total">9</span></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+						<div class="vote-content">
+							<p class="vote-content__id">haz***</p>
+							<p class="vote-content__text">울집 아기 댕댕이 너무 귀엽죠? 너무 귀여워서 이 귀여움을 카메라에 다 담을 순 없지만 헤지스의 왕관처럼 댕댕만의 왕관을 카리스마있게 써봤어용</p>
+							<div class="vote-content__reply">
+								<h3 class="title-line">댓글 <em class="num">3</em></h3>
+								<ul class="vote-reply-list">
+									<li class="reply-box">
+										<div class="user-info">
+											<span class="user-id">haz*** 님</span>
+											<span class="regist-date">2021.05.05</span>
+										</div>
+										<p class="reply-text">강아지가 너무 귀여워요~</p>
+									</li>
+									<li class="reply-box">
+										<div class="user-info">
+											<span class="user-id">haz*** 님</span>
+											<span class="regist-date">2021.05.05</span>
+										</div>
+										<p class="reply-text">추천 누르고 가요!</p>
+									</li>
+									<li class="reply-box">
+										<div class="user-info">
+											<span class="user-id">haz*** 님</span>
+											<span class="regist-date">2021.05.05</span>
+										</div>
+										<p class="reply-text">재미있는 아이디어네요.</p>
+									</li>
+								</ul>
+							</div>
+							<div class="button-reply-regist">
+								<textarea id="replyTextRegist" class="form-text" cols="40" row="5" placeholder="댓글을 입력해주세요"></textarea>
+								<button type="button" class="form-button form-button--main">입력</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -2472,18 +2881,96 @@
 		<script src="/asset/js/vendor.js"></script>
 		<script src="/asset/js/ui.js"></script>
 
-		<script src="/asset/js/order.js"></script>
+		<script src="/asset/js/event.js"></script>
 		<script>
-			$(function () {
-				// 배송 요청 사항 직접입력
-				$('.direct-message-bx').hide();
+			var productList = [];
+			function swierInit(element, isLoop) {
+				var instance = $(element).data('swiper');
+				if (instance) {
+					instance.update();
+					return false;
+				}
 
-				$('.select').change(function () {
-					if ($(this).val() == 'direct') {
-						$('.direct-message-bx').show();
-					} else {
-						$('.direct-message-bx').hide();
+				var swiper = new Swiper(element, {
+					loop: isLoop,
+					pagination: {
+						el: '.swiper-pagination'
+					},
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev'
+					},
+					on: {
+						init: function () {
+							if (isLoop) {
+								swiperPagination(this);
+							}
+						},
+						slideChange: function () {
+							if (isLoop) {
+								swiperPagination(this);
+							}
+						},
+						resize: function () {
+							// throttle
+							this.update();
+						},
+						update: function () {
+							if (isLoop) {
+								swiperPagination(this);
+							}
+						}
 					}
+				});
+
+				if (isLoop) {
+					$(element).addClass('is-active');
+				} else {
+					swiper.detachEvents();
+				}
+				$(element).data('swiper', swiper);
+				productList.push(swiper);
+			}
+
+			function swiperPagination(instance) {
+				var swiper = instance;
+				var slides = swiper.slides;
+				var length = swiper.params.loop ? slides.length - 2 : slides.length;
+				var percent = ((swiper.realIndex + 1) / length) * 100;
+				window.setTimeout(function () {
+					$(swiper.pagination.el)
+						.parent()
+						.find('.swiper-progress__fill')
+						.width(percent + '%');
+				}, 10);
+			}
+
+			$(function () {
+				// 상품 슬라이더
+				$('.product-list-container .swiper-container').each(function () {
+					var $element = $(this);
+					// 동적으로 추가되는 상품도 아래와 같이 추가필요함
+					swierInit($element[0], $element.find('.swiper-slide').length > 1);
+				});
+
+				// 이벤트 투표 상세 팝업 이미지 슬라이드
+				new Swiper('#eventVoteView', {
+					loop: false,
+					slidesPerView: 'auto',
+					pagination: {
+						el: '.swiper-pagination',
+						type: 'fraction'
+					},
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev'
+					}
+				});
+
+				// 이벤트 상세 투표 팝업 댓글 입력 임시
+				$('#replyTextRegist').on('click', function () {
+					$('.button-reply-regist').addClass('active');
+					$('#replyTextRegist').attr('placeholder', '');
 				});
 			});
 		</script>
