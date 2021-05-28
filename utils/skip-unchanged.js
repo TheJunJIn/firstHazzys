@@ -62,7 +62,7 @@ function skipUnchanged(options = {}) {
       .digest('hex');
 
     if (checksums[key] === fileChecksum) {
-      console.log('file unchanged:', key);
+      // console.log('file unchanged:', key);
       cb(null, null);
       return;
     }

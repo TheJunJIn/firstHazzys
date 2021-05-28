@@ -340,7 +340,7 @@ $field-font-size: 14px;
   width: 100%;
   height: $field-height;
   padding: 0 9px;
-  border: 1px solid $color-line-default;
+  border: 1px solid $color-line-ready;
   color: $color-text-emphasize;
   font-size: $field-font-size;
   line-height: $field-height;
@@ -504,7 +504,7 @@ $select-font-size: 14px;
     line-height: $select-height;
     padding: 0 40px 0 10px;
     box-sizing: border-box;
-    border: 1px solid $color-line-default;
+    border: 1px solid $color-line-ready;
     border-radius: 2px;
     font-size: $select-font-size;
     color: $color-text-emphasize;
@@ -656,5 +656,43 @@ $select-font-size: 14px;
       height: 30px;
       border-radius: 100%;
     }
+  }
+}
+
+// datepicker
+.form-date-picker {
+  position: relative;
+  padding-right: 76px;
+  @include self-clear;
+
+  .input-block {
+    position: relative;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 12px;
+    .form-text {
+      height: 40px;
+      line-height: 40px;
+    }
+    + .input-block {
+      padding-right: 6px;
+      padding-left: 6px;
+      &:before {
+        content: '~';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-100%, -50%);
+      }
+    }
+  }
+  .form--submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72px;
+    height: 40px;
+    line-height: 40px;
   }
 }
