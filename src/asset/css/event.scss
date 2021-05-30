@@ -104,8 +104,8 @@
     }
   }
 }
-// 이벤트 상세
 
+// 이벤트 상세
 .detail-info {
   margin: 0 10px 30px;
   &__name {
@@ -920,6 +920,14 @@
         justify-content: space-between;
         .swiper-container {
           width: 460px;
+          .swiper-button-prev {
+            display: block;
+            left: 0;
+          }
+          .swiper-button-next {
+            display: block;
+            right: 0;
+          }
         }
         .vote-content {
           width: 460px;
