@@ -1390,8 +1390,36 @@
         font-size: 12px;
       }
     }
+    .member-info {
+      margin-bottom: 4px;
+      color: $color-text-emphasize;
+      font-size: 14px;
+      em {
+        margin-right: 10px;
+        color: $color-text-point;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .num {
+        position: relative;
+        margin-left: 6px;
+        padding-left: 7px;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 2px;
+          left: 0;
+          width: 1px;
+          height: 14px;
+          background-color: $color-grey-01;
+        }
+      }
+    }
     .real-address {
-      margin-bottom: 0;
+      margin-bottom: 20px;
+      color: $color-text-primary;
+      font-size: 14px;
+      line-height: 24px;
     }
   }
   .product-wrap {
