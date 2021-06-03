@@ -1,0 +1,335 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+
+$customer-answer-name: 'customer-answer';
+$customer-answer-x: 136px;
+$customer-answer-y: 112px;
+$customer-answer-offset-x: -136px;
+$customer-answer-offset-y: -112px;
+$customer-answer-width: 16px;
+$customer-answer-height: 16px;
+$customer-answer-total-width: 160px;
+$customer-answer-total-height: 160px;
+$customer-answer-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-answer: (136px, 112px, -136px, -112px, 16px, 16px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'answer', );
+$customer-badge-name: 'customer-badge';
+$customer-badge-x: 108px;
+$customer-badge-y: 0px;
+$customer-badge-offset-x: -108px;
+$customer-badge-offset-y: 0px;
+$customer-badge-width: 24px;
+$customer-badge-height: 24px;
+$customer-badge-total-width: 160px;
+$customer-badge-total-height: 160px;
+$customer-badge-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-badge: (108px, 0px, -108px, 0px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'badge', );
+$customer-benefit-name: 'customer-benefit';
+$customer-benefit-x: 0px;
+$customer-benefit-y: 0px;
+$customer-benefit-offset-x: 0px;
+$customer-benefit-offset-y: 0px;
+$customer-benefit-width: 50px;
+$customer-benefit-height: 50px;
+$customer-benefit-total-width: 160px;
+$customer-benefit-total-height: 160px;
+$customer-benefit-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-benefit: (0px, 0px, 0px, 0px, 50px, 50px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'benefit', );
+$customer-benefit-small-name: 'customer-benefit-small';
+$customer-benefit-small-x: 108px;
+$customer-benefit-small-y: 28px;
+$customer-benefit-small-offset-x: -108px;
+$customer-benefit-small-offset-y: -28px;
+$customer-benefit-small-width: 24px;
+$customer-benefit-small-height: 24px;
+$customer-benefit-small-total-width: 160px;
+$customer-benefit-small-total-height: 160px;
+$customer-benefit-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-benefit-small: (108px, 28px, -108px, -28px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'benefit-small', );
+$customer-birth-name: 'customer-birth';
+$customer-birth-x: 108px;
+$customer-birth-y: 56px;
+$customer-birth-offset-x: -108px;
+$customer-birth-offset-y: -56px;
+$customer-birth-width: 24px;
+$customer-birth-height: 24px;
+$customer-birth-total-width: 160px;
+$customer-birth-total-height: 160px;
+$customer-birth-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-birth: (108px, 56px, -108px, -56px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'birth', );
+$customer-card-small-name: 'customer-card-small';
+$customer-card-small-x: 0px;
+$customer-card-small-y: 108px;
+$customer-card-small-offset-x: 0px;
+$customer-card-small-offset-y: -108px;
+$customer-card-small-width: 24px;
+$customer-card-small-height: 24px;
+$customer-card-small-total-width: 160px;
+$customer-card-small-total-height: 160px;
+$customer-card-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-card-small: (0px, 108px, 0px, -108px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'card-small', );
+$customer-chatchat-name: 'customer-chatchat';
+$customer-chatchat-x: 54px;
+$customer-chatchat-y: 0px;
+$customer-chatchat-offset-x: -54px;
+$customer-chatchat-offset-y: 0px;
+$customer-chatchat-width: 50px;
+$customer-chatchat-height: 50px;
+$customer-chatchat-total-width: 160px;
+$customer-chatchat-total-height: 160px;
+$customer-chatchat-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-chatchat: (54px, 0px, -54px, 0px, 50px, 50px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'chatchat', );
+$customer-chatchat-small-name: 'customer-chatchat-small';
+$customer-chatchat-small-x: 28px;
+$customer-chatchat-small-y: 108px;
+$customer-chatchat-small-offset-x: -28px;
+$customer-chatchat-small-offset-y: -108px;
+$customer-chatchat-small-width: 24px;
+$customer-chatchat-small-height: 24px;
+$customer-chatchat-small-total-width: 160px;
+$customer-chatchat-small-total-height: 160px;
+$customer-chatchat-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-chatchat-small: (28px, 108px, -28px, -108px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'chatchat-small', );
+$customer-coin-name: 'customer-coin';
+$customer-coin-x: 56px;
+$customer-coin-y: 108px;
+$customer-coin-offset-x: -56px;
+$customer-coin-offset-y: -108px;
+$customer-coin-width: 24px;
+$customer-coin-height: 24px;
+$customer-coin-total-width: 160px;
+$customer-coin-total-height: 160px;
+$customer-coin-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-coin: (56px, 108px, -56px, -108px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'coin', );
+$customer-coupon-small-name: 'customer-coupon-small';
+$customer-coupon-small-x: 84px;
+$customer-coupon-small-y: 108px;
+$customer-coupon-small-offset-x: -84px;
+$customer-coupon-small-offset-y: -108px;
+$customer-coupon-small-width: 24px;
+$customer-coupon-small-height: 24px;
+$customer-coupon-small-total-width: 160px;
+$customer-coupon-small-total-height: 160px;
+$customer-coupon-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-coupon-small: (84px, 108px, -84px, -108px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'coupon-small', );
+$customer-delivery-small-name: 'customer-delivery-small';
+$customer-delivery-small-x: 136px;
+$customer-delivery-small-y: 0px;
+$customer-delivery-small-offset-x: -136px;
+$customer-delivery-small-offset-y: 0px;
+$customer-delivery-small-width: 24px;
+$customer-delivery-small-height: 24px;
+$customer-delivery-small-total-width: 160px;
+$customer-delivery-small-total-height: 160px;
+$customer-delivery-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-delivery-small: (136px, 0px, -136px, 0px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'delivery-small', );
+$customer-etc-small-name: 'customer-etc-small';
+$customer-etc-small-x: 136px;
+$customer-etc-small-y: 28px;
+$customer-etc-small-offset-x: -136px;
+$customer-etc-small-offset-y: -28px;
+$customer-etc-small-width: 24px;
+$customer-etc-small-height: 24px;
+$customer-etc-small-total-width: 160px;
+$customer-etc-small-total-height: 160px;
+$customer-etc-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-etc-small: (136px, 28px, -136px, -28px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'etc-small', );
+$customer-faq-name: 'customer-faq';
+$customer-faq-x: 0px;
+$customer-faq-y: 54px;
+$customer-faq-offset-x: 0px;
+$customer-faq-offset-y: -54px;
+$customer-faq-width: 50px;
+$customer-faq-height: 50px;
+$customer-faq-total-width: 160px;
+$customer-faq-total-height: 160px;
+$customer-faq-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-faq: (0px, 54px, 0px, -54px, 50px, 50px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'faq', );
+$customer-infomation-small-name: 'customer-infomation-small';
+$customer-infomation-small-x: 136px;
+$customer-infomation-small-y: 56px;
+$customer-infomation-small-offset-x: -136px;
+$customer-infomation-small-offset-y: -56px;
+$customer-infomation-small-width: 24px;
+$customer-infomation-small-height: 24px;
+$customer-infomation-small-total-width: 160px;
+$customer-infomation-small-total-height: 160px;
+$customer-infomation-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-infomation-small: (136px, 56px, -136px, -56px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'infomation-small', );
+$customer-inquire-name: 'customer-inquire';
+$customer-inquire-x: 54px;
+$customer-inquire-y: 54px;
+$customer-inquire-offset-x: -54px;
+$customer-inquire-offset-y: -54px;
+$customer-inquire-width: 50px;
+$customer-inquire-height: 50px;
+$customer-inquire-total-width: 160px;
+$customer-inquire-total-height: 160px;
+$customer-inquire-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-inquire: (54px, 54px, -54px, -54px, 50px, 50px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'inquire', );
+$customer-inquire-small-name: 'customer-inquire-small';
+$customer-inquire-small-x: 136px;
+$customer-inquire-small-y: 84px;
+$customer-inquire-small-offset-x: -136px;
+$customer-inquire-small-offset-y: -84px;
+$customer-inquire-small-width: 24px;
+$customer-inquire-small-height: 24px;
+$customer-inquire-small-total-width: 160px;
+$customer-inquire-small-total-height: 160px;
+$customer-inquire-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-inquire-small: (136px, 84px, -136px, -84px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'inquire-small', );
+$customer-mend-name: 'customer-mend';
+$customer-mend-x: 0px;
+$customer-mend-y: 136px;
+$customer-mend-offset-x: 0px;
+$customer-mend-offset-y: -136px;
+$customer-mend-width: 24px;
+$customer-mend-height: 24px;
+$customer-mend-total-width: 160px;
+$customer-mend-total-height: 160px;
+$customer-mend-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-mend: (0px, 136px, 0px, -136px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'mend', );
+$customer-myinfo-small-name: 'customer-myinfo-small';
+$customer-myinfo-small-x: 28px;
+$customer-myinfo-small-y: 136px;
+$customer-myinfo-small-offset-x: -28px;
+$customer-myinfo-small-offset-y: -136px;
+$customer-myinfo-small-width: 24px;
+$customer-myinfo-small-height: 24px;
+$customer-myinfo-small-total-width: 160px;
+$customer-myinfo-small-total-height: 160px;
+$customer-myinfo-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-myinfo-small: (28px, 136px, -28px, -136px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'myinfo-small', );
+$customer-notice-small-name: 'customer-notice-small';
+$customer-notice-small-x: 56px;
+$customer-notice-small-y: 136px;
+$customer-notice-small-offset-x: -56px;
+$customer-notice-small-offset-y: -136px;
+$customer-notice-small-width: 24px;
+$customer-notice-small-height: 24px;
+$customer-notice-small-total-width: 160px;
+$customer-notice-small-total-height: 160px;
+$customer-notice-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-notice-small: (56px, 136px, -56px, -136px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'notice-small', );
+$customer-pin-name: 'customer-pin';
+$customer-pin-x: 108px;
+$customer-pin-y: 84px;
+$customer-pin-offset-x: -108px;
+$customer-pin-offset-y: -84px;
+$customer-pin-width: 16px;
+$customer-pin-height: 16px;
+$customer-pin-total-width: 160px;
+$customer-pin-total-height: 160px;
+$customer-pin-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-pin: (108px, 84px, -108px, -84px, 16px, 16px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'pin', );
+$customer-receipt-small-name: 'customer-receipt-small';
+$customer-receipt-small-x: 84px;
+$customer-receipt-small-y: 136px;
+$customer-receipt-small-offset-x: -84px;
+$customer-receipt-small-offset-y: -136px;
+$customer-receipt-small-width: 24px;
+$customer-receipt-small-height: 24px;
+$customer-receipt-small-total-width: 160px;
+$customer-receipt-small-total-height: 160px;
+$customer-receipt-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-receipt-small: (84px, 136px, -84px, -136px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'receipt-small', );
+$customer-return-small-name: 'customer-return-small';
+$customer-return-small-x: 112px;
+$customer-return-small-y: 136px;
+$customer-return-small-offset-x: -112px;
+$customer-return-small-offset-y: -136px;
+$customer-return-small-width: 24px;
+$customer-return-small-height: 24px;
+$customer-return-small-total-width: 160px;
+$customer-return-small-total-height: 160px;
+$customer-return-small-image: '/cmsstatic/asset/images/sprite-customer.png';
+$customer-return-small: (112px, 136px, -112px, -136px, 24px, 24px, 160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', 'return-small', );
+$sprite-customer-width: 160px;
+$sprite-customer-height: 160px;
+$sprite-customer-image: '/cmsstatic/asset/images/sprite-customer.png';
+$sprite-customer-sprites: ($customer-answer, $customer-badge, $customer-benefit, $customer-benefit-small, $customer-birth, $customer-card-small, $customer-chatchat, $customer-chatchat-small, $customer-coin, $customer-coupon-small, $customer-delivery-small, $customer-etc-small, $customer-faq, $customer-infomation-small, $customer-inquire, $customer-inquire-small, $customer-mend, $customer-myinfo-small, $customer-notice-small, $customer-pin, $customer-receipt-small, $customer-return-small, );
+$sprite-customer: (160px, 160px, '/cmsstatic/asset/images/sprite-customer.png', $sprite-customer-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-size($sprite) {
+  $sprite-width: nth($sprite, 7);
+  $sprite-height: nth($sprite, 8);
+  background-size: $sprite-width $sprite-height;
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+  @include sprite-size($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  .sprite-customer {
+    background-image: url('/cmsstatic/asset/images/sprite-customer.png');
+    background-size: 160px 160px;
+  }
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .sprite-customer-#{$sprite-name} {
+      @include sprite-position($sprite);
+      @include sprite-width($sprite);
+      @include sprite-height($sprite);
+    }
+  }
+}

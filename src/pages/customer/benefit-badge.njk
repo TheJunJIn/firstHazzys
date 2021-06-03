@@ -1,0 +1,133 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--customer">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/customer-visual.jpg);">
+    <div class="main-container">
+      <!-- 고객센터 메인 상단 -->
+      <h2 class="main-header__title">고객센터</h2>
+      <div class="main-header__text">해지수님, 궁금하신 점을 해결해 드릴게요. 😊</div>
+      <!-- //고객센터 메인 상단 -->
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--benefit">
+        <div class="main-content__header">
+          <h3 class="main-content__title">회원 혜택</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <!-- 회원 혜택 -->
+        <div class="benefit-wrap">
+          <div class="tablist benefit-tab" role="tablist">
+            <button type="button" class="tab" role="tab" aria-selected="false">등급별 혜택 안내</button>
+            <button type="button" class="tab" role="tab" aria-selected="true">헤지스 배지 안내</button>
+          </div>
+          <!-- 헤지스 배지 안내 -->
+          <div class="tabpanel">
+            <!-- 임시 추후 삭제 -->
+            <div style="width:100%;height:180px;border:1px solid red;text-align:center;line-height:180px;">마이페이지 공통영역 추가예정</div>
+            <!-- //임시 추후 삭제 -->
+          </div>
+          <!-- //헤지스 배지 안내 -->
+        </div>
+        <!-- //회원 혜택 -->
+      </div>
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">FAQ</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-delivery-small"></i>배송</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-card-small"></i>주문/결제</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-return-small"></i>취소/반품/교환</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-receipt-small"></i>영수증/세금계산서</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-myinfo-small"></i>회원정보/서비스</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-coupon-small"></i>쿠폰/마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-etc-small"></i>기타</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">1:1 문의</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-inquire-small"></i>1:1 문의</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">실시간 채팅</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-chatchat-small"></i>나의 주문 관련 문의</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-infomation-small"></i>주문 외 문의</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">공지사항</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-notice-small"></i>공지사항</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-benefit-small"></i>등급별 혜택 안내</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-myinfo-small"></i>헤지스 배지 안내</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/customer.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/customer.js"></script>
+<script>
+  $(function () {
+    // 파일 업로드 슬라이드
+    new Swiper('#levelBenefitInfo', {
+      loop: false,
+      freeMode: true,
+      spaceBetween: 10,
+      slidesPerView: 'auto',
+    })
+  });
+</script>
+{% endblock js %}
