@@ -1,0 +1,241 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--customer">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/customer-visual.jpg);">
+    <div class="main-container">
+      <!-- 고객센터 메인 상단 -->
+      <h2 class="main-header__title">고객센터</h2>
+      <div class="main-header__text">해지수님, 궁금하신 점을 해결해 드릴게요. 😊</div>
+      <!-- //고객센터 메인 상단 -->
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--benefit">
+        <div class="main-content__header">
+          <h3 class="main-content__title">회원 혜택</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <!-- 회원 혜택 -->
+        <div class="benefit-wrap">
+          <div class="tablist benefit-tab" role="tablist">
+            <button type="button" class="tab" role="tab" aria-selected="true">등급별 혜택 안내</button>
+            <button type="button" class="tab" role="tab" aria-selected="false">헤지스 배지 안내</button>
+          </div>
+          <!-- 등급별 혜택 안내 -->
+          <div class="tabpanel">
+            <!-- 임시 추후 삭제 -->
+            <div style="width:100%;height:180px;margin-bottom:30px;border:1px solid red;text-align:center;line-height:180px;box-sizing:border-box;">마이페이지 공통영역 추가예정</div>
+            <!-- //임시 추후 삭제 -->
+            <!-- 유의사항 -->
+            <div class="note-wrap">
+              <h3 class="note-wrap__title">유의사항</h3>
+              <ul class="note-wrap__accordion" data-accordion="data-accordion" role="tablist">
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit1-accordion" id="benefit1-accordion-label">
+                      <i class="sprite-customer-infomation-small"></i>등급산정 안내
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit1-accordion-label" id="benefit1-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">헤지스닷컴 등급 산정일 기준으로 등급 및 혜택이 자동 부여됩니다.</li>
+                      <li class="text-box">매월 1회 등급 산정하며, 직전 6개월 구매실적에 따라 매월 1일 등급이 변동됩니다.</li>
+                      <li class="text-box">헤지스닷컴 등급은 할인쿠폰 사용금액을 제외한 실결제 금액 기준으로 산정되며, 산정 기간 내 주문한 상품을 취소/반품 시 등급이 하락될 수 있습니다.</li>
+                      <li class="text-box">등급 혜택은 본인인증 후 가입한 헤지스닷컴 회원에게 제공됩니다.</li>
+                      <li class="text-box">신규가입 시 WHITE 등급의 혜택이 제공되며, 가입 이후 구매한 실적은 익월 등급 산정 시 반영됩니다.</li>
+                      <li class="text-box">등급혜택은 당사의 사정에 의해 축소 및 조기종료 또는 변경될 수 있습니다.</li>
+                      <li class="text-box">부당한 방법으로 획득한 고객등급은 심사 후 재조정될 수 있습니다.</li>
+                      <li class="text-box">LF Members 오프라인 혜택 내용은 LF Members 사이트에서 확인하실 수 있습니다. <a href="#" class="link">LF Members 바로가기</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit2-accordion" id="benefit2-accordion-label">
+                      <i class="sprite-customer-coin"></i>구매적립
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit2-accordion-label" id="benefit2-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">헤지스닷컴에서 상품(정상/이월) 구매 시, 등급별 적립율에 따라 구매일로부터 14일 후 마일리지가 적립됩니다.</li>
+                      <li class="text-box">일부 상품은 적립 대상에서 제외될 수 있습니다.</li>
+                      <li class="text-box">구매적립은 본인인증 후 헤지스닷컴에서 가입한 헤지스닷컴 회원에게 제공됩니다.</li>
+                      <li class="text-box">LF Members 오프라인 매장에서 구매 시 브랜드/상품별 적립율에 따라 적립되며, 자세한 내용은 LF Members 사이트에서 확인하실 수 있습니다. <a href="#" class="link">LF Members 사이트 바로가기</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit3-accordion" id="benefit3-accordion-label">
+                      <i class="sprite-customer-benefit-small"></i>할인혜택
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit3-accordion-label" id="benefit3-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">헤지스닷컴에서 상품 구매 시 상품쿠폰 및 플러스 쿠폰을 사용하실 수 있습니다.</li>
+                      <li class="text-box">등급별 쿠폰은 보유하신 쿠폰수량에 따라 각 상품별로 적용하실 수 있습니다.</li>
+                      <li class="text-box">등급별 쿠폰은 발급한 당월기간 내에서만 사용 가능합니다.(유효기간은 해당월의 말까지 적용)	</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit4-accordion" id="benefit4-accordion-label">
+                      <i class="sprite-customer-benefit-small"></i>무료배송/교환/반품
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit4-accordion-label" id="benefit4-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">헤지스닷컴에서 구매한 자사상품의 배송/교환/반품 서비스를 무료로 이용할 수 있는 쿠폰입니다.</li>
+                      <li class="text-box">무료교환/반품 쿠폰의 유효기간은 발급한 해당 월의 말까지 적용되며,  주문/교환/반품 신청 화면에서 쿠폰으로 적용하실 수 있습니다.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit5-accordion" id="benefit5-accordion-label">
+                      <i class="sprite-customer-benefit-small"></i>수선서비스
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit5-accordion-label" id="benefit5-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">LF에서 구매하신 자사상품의 수선이 필요한 경우, 전국 오프라인 매장 및 고객센터 통해 수선 서비스를 이용하실 수 있습니다.</li>
+                      <li class="text-box">단, 아래의 경우는 A/S수선이 불가능합니다.
+                        <p class="low-text">1) 제조연한이 오래되어 원부자재 수급이 불가능한 경우</p>
+                        <p class="low-text">2) 기장 수선 및 기술적으로 수선이 불가능한 경우 (ex. 리폼(사이즈수선), 염색, 판갈이, 분실 부자재 제작 등)</p>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit6-accordion" id="benefit6-accordion-label">
+                      <i class="sprite-customer-benefit-small"></i>배지혜택
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit6-accordion-label" id="benefit6-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">배지혜택은 배지별 발행기준에 따라 지급됩니다.</li>
+                      <li class="text-box">배지혜택은 배지유형별로 별도로 혜택이 지급됩니다.
+                        <p class="low-text">- 등급 승급 시 발행되는 회원 배지의 경우 신규가입을 제외하고 매월 1일 승급배지 혜택을 지급합니다.</p>
+                        <p class="low-text">- 구매 건수에 따라 발행되는 구매 배지의 경우 첫 구매 미 한달 내 누적구매가 최대 4건까지 배송완료일기준 +7일 이후 지급합니다.</p>
+                        <p class="low-text">- 최초상품평 or 포토 상품평 작성 건수에 따라 발행되는 리뷰 배지의 경우, 최초 상품평 건수 및 포토 상품평 건수에 따라 배송완료일 +7일 이후, 포토상품평의 경우 승인완료일에 내 지급합니다.</p>
+                        <p class="low-text">- 이벤트참여에 따라 발행되는 이벤트 배지의 경우, 이벤트별로 혜택 상이하나 참여 완료 시 즉시 지급합니다.</p>
+                        <p class="low-text">- 구매/리뷰 배지의 경우 배지 5개 이상 보유 시 1년마다 추가 사은품을 매년 1일에 지급합니다.</p>
+                      </li>
+                      <li class="text-box">유효기간은 회원배지의 경우 1년, 구매/리뷰배지는 지급완료일 기준 90일, 이벤트배지의 별도 유효기간에 따라 사용하실 수 있습니다.</li>
+                      <li class="text-box">자세한 배지 혜택은 마이페이지 >나의정보> 배지혜택에서 확인하실 수 있습니다. <a href="#" class="link">배지혜택 바로가기</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="accordion__item" data-accordion-item="data-accordion-item">
+                  <div class="accordion__title">
+                    <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit7-accordion" id="benefit7-accordion-label">
+                      <i class="sprite-customer-benefit-small"></i>생일혜택
+                    </button>
+                  </div>
+                  <div class="accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="benefit7-accordion-label" id="benefit7-accordion">
+                    <ul class="text-list">
+                      <li class="text-box">생일기념 혜택은 등급 구분없이 동일한 혜택을 지급합니다.</li>
+                      <li class="text-box">생일 7일 전에 15% 할인쿠폰이 지급되며, 발급일로부터 14일간 사용 가능합니다. (14일 이후 자동 소멸)</li>
+                      <li class="text-box">회원정보에 생일이 등록되지 않은 회원은 생일 혜택을 받을 수 없으며, 휴면회원의 경우 혜택이 지급되지 않을 수 있습니다.</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //유의사항 -->
+          </div>
+          <!-- //등급별 혜택 안내 -->
+        </div>
+        <!-- //회원 혜택 -->
+      </div>
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">FAQ</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-delivery-small"></i>배송</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-card-small"></i>주문/결제</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-return-small"></i>취소/반품/교환</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-receipt-small"></i>영수증/세금계산서</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-myinfo-small"></i>회원정보/서비스</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-coupon-small"></i>쿠폰/마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-etc-small"></i>기타</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">1:1 문의</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-inquire-small"></i>1:1 문의</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">실시간 채팅</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-chatchat-small"></i>나의 주문 관련 문의</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-infomation-small"></i>주문 외 문의</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">공지사항</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-notice-small"></i>공지사항</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-benefit-small"></i>등급별 혜택 안내</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-customer-myinfo-small"></i>헤지스 배지 안내</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/customer.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/customer.js"></script>
+{% endblock js %}

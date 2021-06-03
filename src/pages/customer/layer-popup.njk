@@ -1,0 +1,29 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main">
+  <div class="main-content">
+    <style>
+      .main-content {margin-top:100px;}
+      .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+    </style>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalInquiryAgree">개인정보 수집 및 이용 동의 팝업</button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalOrderSearch">주문 조회 팝업</button>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{# 개인정보 수집 및 이용 동의 #modalInquiryAgree #}
+{% include "modal/customer/inquiry-agree.njk" %}
+{# 주문 조회 #modalOrderSearch #}
+{% include "modal/customer/order-search.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/customer.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/customer.js"></script>
+{% endblock js %}
