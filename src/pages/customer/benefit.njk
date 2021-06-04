@@ -27,9 +27,156 @@
           </div>
           <!-- 등급별 혜택 안내 -->
           <div class="tabpanel">
-            <!-- 임시 추후 삭제 -->
-            <div style="width:100%;height:180px;margin-bottom:30px;border:1px solid red;text-align:center;line-height:180px;box-sizing:border-box;">마이페이지 공통영역 추가예정</div>
-            <!-- //임시 추후 삭제 -->
+            <!-- 등급별 혜택 안내 -->
+            <div class="membership-benefit">
+              <div class="membership-benefit__description">
+                고객님께 받은 사랑을 혜택으로 돌려드려요.<br>
+                실적에 따라 달라지는 다양한 혜택을 확인해보세요.
+              </div>
+              <div class="membership-benefit__swiper">
+                <!-- 뱃지 -->
+                <div class="swiper-badge">
+                  <div class="swiper-container" id="badgeSwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <span class="membership__badge hazzys-badge hazzys-badge--member-white">
+                          <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-white.png" alt="White"></span>
+                        </span>
+                      </div>
+                      <div class="swiper-slide">
+                        <span class="membership__badge hazzys-badge hazzys-badge--member-blue">
+                          <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-blue.png" alt="Blue"></span>
+                        </span>
+                      </div>
+                      <div class="swiper-slide">
+                        <span class="membership__badge hazzys-badge hazzys-badge--member-red">
+                          <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="RED"></span>
+                        </span>
+                      </div>
+                      <div class="swiper-slide">
+                        <span class="membership__badge hazzys-badge hazzys-badge--member-purple">
+                          <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-purple.png" alt="PURPLE"></span>
+                        </span>
+                      </div>
+                      <div class="swiper-slide">
+                        <span class="membership__badge hazzys-badge hazzys-badge--member-black-s">
+                          <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLACK S"></span>
+                        </span>
+                      </div>
+                      <div class="swiper-slide">
+                        <span class="membership__badge hazzys-badge hazzys-badge--member-black-r">
+                          <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-r.png" alt="BLACK R"></span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+                <!-- //뱃지 -->
+                <!-- 설명 -->
+                <div class="swiper-grade" id="badgeSwiperContent">
+                  <!-- White -->
+                  <dl class="grade grade--member-white">
+                    <dt class="grade__name">WHITE</dt>
+                    <dd class="grade__condition">신규 회원</dd>
+                    <dd class="grade__benefit">
+                      <ul class="benefit">
+                        <li class="benefit__item">온라인 구매 시 최대 1% 적립</li>
+                        <li class="benefit__item">온라인 구매 시 월 10% 상품쿠폰 1매</li>
+                        <li class="benefit__item">온라인 구매 시 월  5% 플러스쿠폰 1매</li>
+                        <li class="benefit__item">무료반품 월 1회</li>
+                        <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <!-- // White -->
+            
+                  <!-- Blue -->
+                  <dl class="grade grade--member-blue">
+                    <dt class="grade__name">BLUE</dt>
+                    <dd class="grade__condition">6개월간 구매건수 1회 이상 회원</dd>
+                    <dd class="grade__benefit">
+                      <ul class="benefit">
+                        <li class="benefit__item">온라인 구매 시 최대 1% 적립</li>
+                        <li class="benefit__item">온라인 구매 시 월 12% 상품쿠폰 1매</li>
+                        <li class="benefit__item">온라인 구매 시 월  5% 플러스쿠폰 1매</li>
+                        <li class="benefit__item">무료반품 월 1회</li>
+                        <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <!-- //Blue -->
+
+                  <!-- Red -->
+                  <dl class="grade grade--member-red">
+                    <dt class="grade__name">RED</dt>
+                    <dd class="grade__condition">6개월간 구매금액 10만 원 이상 회원</dd>
+                    <dd class="grade__benefit">
+                      <ul class="benefit">
+                        <li class="benefit__item">온라인 구매 시 최대 2% 적립</li>
+                        <li class="benefit__item">온라인 구매 시 월 12% 상품쿠폰 1매</li>
+                        <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 1매</li>
+                        <li class="benefit__item">무료반품 월 1회</li>
+                        <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <!-- //Red -->
+
+                  <!-- Purple -->
+                  <dl class="grade grade--member-purple">
+                    <dt class="grade__name">PURPLE</dt>
+                    <dd class="grade__condition">6개월간 구매금액 30만 원 이상 회원</dd>
+                    <dd class="grade__benefit">
+                      <ul class="benefit">
+                        <li class="benefit__item">온라인 구매 시 최대 2% 적립</li>
+                        <li class="benefit__item">온라인 구매 시 월 12% 상품쿠폰 2매</li>
+                        <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 1매</li>
+                        <li class="benefit__item">무료반품 월 2회</li>
+                        <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <!-- //Purple -->
+
+                  <!-- BLACK S -->
+                  <dl class="grade grade--member-black-s">
+                    <dt class="grade__name">BLACK S</dt>
+                    <dd class="grade__condition">6개월간 구매금액 50만 원 이상 회원</dd>
+                    <dd class="grade__benefit">
+                      <ul class="benefit">
+                        <li class="benefit__item">온라인 구매 시 최대 3% 적립</li>
+                        <li class="benefit__item">온라인 구매 시 월 15% 상품쿠폰 2매</li>
+                        <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 1매</li>
+                        <li class="benefit__item">무료반품 월 2회</li>
+                        <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <!-- //BLACK S -->
+
+                  <!-- BLACK R -->
+                  <dl class="grade grade--member-black-r">
+                    <dt class="grade__name">BLACK R</dt>
+                    <dd class="grade__condition">6개월간 구매금액 100만 원 이상 회원</dd>
+                    <dd class="grade__benefit">
+                      <ul class="benefit">
+                        <li class="benefit__item">온라인 구매 시 최대 3% 적립</li>
+                        <li class="benefit__item">온라인 구매 시 월 15% 상품쿠폰 2매</li>
+                        <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 2매</li>
+                        <li class="benefit__item">무료반품 월 2회</li>
+                        <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <!-- //BLACK R -->
+
+                </div>
+                <!-- //설명 -->
+              </div>
+            </div>
+            <!-- //등급별 혜택 안내 -->
             <!-- 유의사항 -->
             <div class="note-wrap">
               <h3 class="note-wrap__title">유의사항</h3>
@@ -238,4 +385,41 @@
 
 {% block js %}
 <script src="/asset/js/customer.js"></script>
+<script>
+function badgeContent(idx){
+  if(!idx) {
+    idx = 0;
+  }
+  
+  var badgeContent = $('#badgeSwiperContent');
+  badgeContent
+    .find(' > .grade')
+    .removeClass('active')
+    .eq(idx)
+    .addClass('active');
+}
+$(function(){
+
+  var swiper = new Swiper('#badgeSwiper', {
+    loop: true,
+    init: false,
+    initialSlide: 0,
+    spaceBetween: 40,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+  swiper.on('slideChange', function(){
+    badgeContent(swiper.realIndex);
+  });
+  swiper.on('init', function(){
+    badgeContent(swiper.realIndex);
+    $(swiper.el).addClass('swiper-container--active');
+  });
+  swiper.init();
+})
+</script>
 {% endblock js %}

@@ -34,6 +34,12 @@
     <button type="button" class="form-button form-button--main" data-modal-open="#modalRegisterCoupon">
       나의 쿠폰 등록
     </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalBadgeBenefit">
+      배지 혜택
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalReviewBadgeGuide">
+      상품평 배지 발급 조건
+    </button>
   </div>
 </main>
 {% endblock %}
@@ -62,6 +68,13 @@
 
 {# 나의 쿠폰 등록 #modalRegisterCoupon #}
 {% include "modal/mypage/register-coupon.njk" %}
+
+{# 배지 혜택  #modalBadgeBenefit #}
+{% include "modal/mypage/badge-benefit.njk" %}
+
+{# 상품평 배지 발급 조건  #modalReviewBadgeGuide #}
+{% include "modal/mypage/review-badge-guide.njk" %}
+
 {% endblock modal %}
 
 {% block css %}
@@ -71,6 +84,6 @@
 {% block js %}
 <script src="/asset/js/mypage.js"></script>
 <script>
-{# ui.modal.open($('#modalRegisterCoupon')); #}
+{# ui.modal.open($('#modalReviewBadgeGuide')); #}
 </script>
 {% endblock js %}

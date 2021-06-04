@@ -3,37 +3,7 @@
 {% block content %}
 <main class="shell-main shell-main--mypage">
   <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
-    <div class="main-container">
-      <h2 class="main-header__title">마이페이지</h2>
-      <div class="main-header__my-info">
-        <a href="#" class="my-info__membership grade">
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
-          <span class="grade__name"><span>RED</span> 회원</span>
-          <!--
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/s-platinum.png" alt="S-Platinum"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/platinum.png" alt="platinum"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/gold.png" alt="Gold"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/silver.png" alt="Sliver"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/black.png" alt="Black"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/purple.png" alt="Purple"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
-          -->
-        </a>
-        <div class="my-info__message">
-          <p class="message__title">해지수님, 안녕하세요. 🥰</p>
-          <p class="message__content">이번 주는 봄 신상이 많아요.</p>
-        </div>
-        <ul class="my-info__asset">
-          <li class="asset__item">
-            <a href="#" class="asset__value asset__value--coupon">3장</a>
-          </li>
-          <li class="asset__item">
-            <a href="#" class="asset__value asset__value--mileage">20,000M</a>
-          </li>
-        </ul>
-        <a href="#" class="my-info__more">내 정보 수정</a>
-      </div>
-    </div>
+    {% include "partials/mypage/main-header.njk" %}
   </div>
   <div class="main-content">
     <div class="main-container main-content__body">
@@ -90,7 +60,7 @@
                 <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
               </li>
               <li class="menu__item">
-                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 뱃지</a>
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 배지</a>
               </li>
             </ul>
           </li>

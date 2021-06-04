@@ -1286,4 +1286,75 @@
       }
     }
   }
+  // 배지 획득
+  &.modal--obtain-badge {
+    .modal-dialog {
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100%;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.9);
+      transform: none;
+    }
+    .modal__footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .obtain-badge {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      transform: translateY(-50%);
+      &__preview {
+        margin: 0 auto;
+        .hazzys-badge {
+          width: 160px;
+          height: 160px;
+        }
+      }
+      &__title {
+        margin-top: 40px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 34px;
+        color: $color-text-emphasize;
+      }
+      &__description {
+        margin-top: 20px;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 18px;
+      }
+    }
+    @include mq('desktop') {
+      .modal-dialog {
+        width: 500px;
+        top: 50%;
+        height: auto;
+        transform: translate(0, -50%);
+      }
+      .modal__footer {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        padding: 0 40px;
+      }
+      .obtain-badge {
+        position: relative;
+        top: auto;
+        width: 100%;
+        transform: none;
+      }
+    }
+  }
 }
