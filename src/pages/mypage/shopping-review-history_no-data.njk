@@ -1,0 +1,117 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--mypage">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
+    {% include "partials/mypage/main-header.njk" %}
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--shpping">
+        <div class="main-content__header main-content__header--sub">
+          <h3 class="main-content__title">내 상품평</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="mypage-shpping-container">
+          <div class="my-review-container">
+            <div class="tabs tab--review">
+              <div class="tablist" role="tablist">
+                <button type="button" class="tab" role="tab" aria-selected="false">상품평 작성(2)</button>
+                <button type="button" class="tab" role="tab" aria-selected="true">내가 쓴 상품평</button>
+              </div>
+              <div class="tabpanel">
+                <div class="no-data">
+                  <i class="sprite-common sprite-common-no-review"></i>
+                  <p class="message">등록된 상품평이 없습니다.<br>최초 상품평을 등록해주세요.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 내역</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나만의 혜택</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 배지</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 태그</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+              </li>
+              <li class="menu__item active">
+                <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+  {% include "modal/member/find-password.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/mypage.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/mypage.js"></script>
+{% endblock js %}

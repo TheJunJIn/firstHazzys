@@ -530,47 +530,68 @@ $select-font-size: 14px;
 // Tab
 // =============================================================================
 .tabs {
-  [role="tablist"] {
+  > [role="tablist"] {
     display: flex;
     margin-bottom: 10px;
-  }
-  [role="tab"] {
-    position: relative;
-    width: 100%;
-    border: 0;
-    background: #f8f8f8;
-    outline: 0;
-    font-size: 14px;
-    font-weight: 300;
-    height: 50px;
-    border-top: 1px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    &:before {
-      content: '';
-      position: absolute;
-      left: -1px;
-      right: -1px;
-      bottom: 0;
-      border-bottom: 1px solid $color-line-emphasize;
-    }
-
-    &[aria-selected="true"] {
-      background-color: #fff;
+    > [role="tab"] {
+      position: relative;
+      width: 100%;
+      border: 0;
+      background: #f8f8f8;
       outline: 0;
-      border-top: 1px solid $color-line-emphasize;
-      border-left: 1px solid $color-line-emphasize;
-      border-right: 1px solid $color-line-emphasize;
-      font-weight: 400;
+      font-size: 14px;
+      font-weight: 300;
+      height: 50px;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
       &:before {
-        border-bottom-color: transparent;
+        content: '';
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        bottom: 0;
+        border-bottom: 1px solid $color-line-emphasize;
+      }
+  
+      &[aria-selected="true"] {
+        background-color: #fff;
+        outline: 0;
+        border-top: 1px solid $color-line-emphasize;
+        border-left: 1px solid $color-line-emphasize;
+        border-right: 1px solid $color-line-emphasize;
+        font-weight: 400;
+        &:before {
+          border-bottom-color: transparent;
+        }
+      }
+      &:first-child {
+        border-left-width: 0;
+      }
+      &:last-child {
+        border-right-width: 0;
       }
     }
-    &:first-child {
-      border-left-width: 0;
-    }
-    &:last-child {
-      border-right-width: 0;
+  }
+  &.tabs--depth2 {
+    > [role="tablist"] {
+      > [role="tab"] {
+        background: #fff;
+        color: $color-text-primary;
+        height: 46px;
+        border: 0;
+        border-bottom: 2px solid $color-line-border;
+        &:before {
+          content: none;
+        }
+        &[aria-selected="true"] {
+          font-weight: 500;
+          color: $color-text-emphasize;
+          background-color: #fff;
+          border: 0;
+          border-bottom: 2px solid $color-line-emphasize;
+        }
+      }
     }
   }
 }

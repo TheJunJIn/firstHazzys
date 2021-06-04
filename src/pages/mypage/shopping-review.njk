@@ -1,0 +1,228 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--mypage">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
+    {% include "partials/mypage/main-header.njk" %}
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--shpping">
+        <div class="main-content__header main-content__header--sub">
+          <h3 class="main-content__title">내 상품평</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="mypage-shpping-container">
+          <div class="my-review-container">
+            <div class="tabs tab--review">
+              <div class="tablist" role="tablist">
+                <button type="button" class="tab" role="tab" aria-selected="true">상품평 작성(2)</button>
+                <button type="button" class="tab" role="tab" aria-selected="false">내가 쓴 상품평</button>
+              </div>
+              <div class="tabpanel">
+                <div class="review-benefit-container">
+                  <!-- 마일리지 혜택 -->
+                  <div class="review-benefit">
+                    <div class="review-benefit__header">
+                      <h3 class="review-benefit__title">마일리지 혜택</h3>
+                    </div>
+                    <div class="review-benefit__content">
+                      <p class="review-mileage-guide">구매하신 상품 2건의 상품평을 작성하시면 최대 2,500 M 를 드려요!</p>
+                      <ul class="review-mileage">
+                        <li class="review-mileage__item">
+                          <span class="review-mileage__name">평점 등록</span>
+                          <span class="review-mileage__value">100 M</span>
+                        </li>
+                        <li class="review-mileage__item">
+                          <span class="review-mileage__name">내용 등록</span>
+                          <span class="review-mileage__value">400 M</span>
+                        </li>
+                        <li class="review-mileage__item">
+                          <span class="review-mileage__name">추가 정보 등록</span>
+                          <span class="review-mileage__value">500 M</span>
+                        </li>
+                        <li class="review-mileage__item">
+                          <span class="review-mileage__name">사진 등록</span>
+                          <span class="review-mileage__value">500 M</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- // 마일리지 혜택 -->
+
+                  <!-- 배지 혜택 -->
+                  <div class="review-benefit">
+                    <div class="review-benefit__header">
+                      <h3 class="review-benefit__title">배지 혜택</h3>
+                    </div>
+                    <div class="review-benefit__content">
+                      <p class="review-badge-guide">
+                        상품평을 작성하시면 작성 횟수에 따라 <strong>BADGE</strong>를 드립니다.
+                      </p>
+                      <button type="button" class="button button--badge-condition">발급조건 보기</button>
+                    </div>
+                  </div>
+                  <!-- // 배지 혜택 -->
+                </div>
+
+                <!-- 상품 목록 -->
+                <div class="review-order-list">
+                  <ul class="order-list">
+                    <li class="order-list__item">
+                      <div class="order">
+                        <div class="order__header">
+                          <p class="title">결제 일자</p>
+                          <p class="date">2021.03.29</p>
+                        </div>
+                        <div class="order__info">
+                          <div class="product product--order">
+                            <a href="#" class="product__image">
+                              <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                            </a>
+                            <div class="product__content">
+                              <a href="#" class="product__info">
+                                <p class="product__brand">HAZZZYS ACC</p>
+                                <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                              </a>
+                              <div class="product__option">
+                                <p class="product__option__name">
+                                  <span class="option__item">차콜그레이</span>
+                                  <span class="option__item">68 XL</span>
+                                  <span class="option__item">1개</span>
+                                </p>
+                              </div>
+                              <div class="product__util">
+                                <button type="button" class="button">상품평 작성</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="order-list__item">
+                      <div class="order">
+                        <div class="order__header">
+                          <p class="title">결제 일자</p>
+                          <p class="date">2021.03.29</p>
+                        </div>
+                        <div class="order__info">
+                          <div class="product product--order">
+                            <a href="#" class="product__image">
+                              <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                            </a>
+                            <div class="product__content">
+                              <a href="#" class="product__info">
+                                <p class="product__brand">HAZZZYS ACC</p>
+                                <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                              </a>
+                              <div class="product__option">
+                                <p class="product__option__name">
+                                  <span class="option__item">차콜그레이</span>
+                                  <span class="option__item">68 XL</span>
+                                  <span class="option__item">1개</span>
+                                </p>
+                              </div>
+                              <div class="product__util">
+                                <button type="button" class="button">상품평 작성</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="review-order-guide">결제일 기준 90일 이내 작성 가능합니다.</p>
+                </div>
+                <!-- //상품 목록 -->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 내역</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나만의 혜택</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 배지</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 태그</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+              </li>
+              <li class="menu__item active">
+                <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+  {% include "modal/member/find-password.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/mypage.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/mypage.js"></script>
+{% endblock js %}
