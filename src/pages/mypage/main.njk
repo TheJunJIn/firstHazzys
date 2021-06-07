@@ -3,55 +3,105 @@
 {% block content %}
 <main class="shell-main shell-main--mypage shell-main--mypage-main">
   <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
-    <div class="main-container">
-      <h2 class="main-header__title">마이페이지</h2>
-      <div class="main-header__my-info">
-        <a href="#" class="my-info__membership grade">
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
-          <span class="grade__name"><span>RED</span> 회원</span>
-          <!--
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/s-platinum.png" alt="S-Platinum"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/platinum.png" alt="platinum"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/gold.png" alt="Gold"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/silver.png" alt="Sliver"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/black.png" alt="Black"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/purple.png" alt="Purple"></span>
-          <span class="grade__icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red"></span>
-          -->
-        </a>
-        <div class="my-info__message">
-          <p class="message__title">해지수님, 안녕하세요. 🥰</p>
-          <p class="message__content">이번 주는 봄 신상이 많아요.</p>
-        </div>
-        <ul class="my-info__asset">
-          <li class="asset__item">
-            <a href="#" class="asset__value asset__value--coupon">3장</a>
-          </li>
-          <li class="asset__item">
-            <a href="#" class="asset__value asset__value--mileage">20,000M</a>
-          </li>
-        </ul>
-        <a href="#" class="my-info__more">내 정보 수정</a>
-      </div>
-    </div>
+    {% include "partials/mypage/main-header.njk" %}
   </div>
   <div class="main-content">
     <div class="main-container main-content__body">
       <div class="main-content__main">
-        <!-- 뱃지 -->
+        <!-- 배지 -->
         <div class="my-badge">
           <div class="my-badge__title">
             헤지스닷컴 고객님만을 위한 특별한 혜택이 기다리고 있어요.<br>
-            내가 받은 뱃지와 각 뱃지의 혜택들을 확인해 보세요!
+            내가 받은 배지와 각 배지의 혜택들을 확인해 보세요!
           </div>
           <div class="my-badge__list">
-
+            <div class="swiper-badge">
+              <div class="swiper-container" id="badgeSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="badge-container">
+                      <div class="hazzys-badge hazzys-badge--intro">
+                        <div class="hazzys-badge__front">
+                          <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                          <span class="badge-count">3</span>
+                        </div>
+                        <div class="hazzys-badge__back">
+                          <div class="badge-content">
+                            <img src="/cmsstatic/asset/images/badge/sample-back.png" alt="10% 쿠폰 임시이미지">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="badge-container">
+                      <div class="hazzys-badge hazzys-badge--intro">
+                        <div class="hazzys-badge__front">
+                          <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                        </div>
+                        <div class="hazzys-badge__back">
+                          <div class="badge-content">
+                            <img src="/cmsstatic/asset/images/badge/sample-back.png" alt="10% 쿠폰 임시이미지">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="badge-container">
+                      <div class="hazzys-badge hazzys-badge--intro">
+                        <div class="hazzys-badge__front">
+                          <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                          <span class="badge-count">2</span>
+                        </div>
+                        <div class="hazzys-badge__back">
+                          <div class="badge-content">
+                            <img src="/cmsstatic/asset/images/badge/sample-back.png" alt="10% 쿠폰 임시이미지">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="badge-container">
+                      <div class="hazzys-badge hazzys-badge--intro">
+                        <div class="hazzys-badge__front">
+                          <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                        </div>
+                        <div class="hazzys-badge__back">
+                          <div class="badge-content">
+                            <img src="/cmsstatic/asset/images/badge/sample-back.png" alt="10% 쿠폰 임시이미지">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="badge-container">
+                      <div class="hazzys-badge hazzys-badge--intro">
+                        <div class="hazzys-badge__front">
+                          <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                          <span class="badge-count">3</span>
+                        </div>
+                        <div class="hazzys-badge__back">
+                          <div class="badge-content">
+                            <img src="/cmsstatic/asset/images/badge/sample-back.png" alt="10% 쿠폰 임시이미지">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
           </div>
           <div class="my-badge__util">
             <button type="button" class="form-button form-button--main">MY BADGE</button>
           </div>
         </div>
-        <!-- // 뱃지 -->
+        <!-- // 배지 -->
 
         <div class="my-page-state">
           <a href="#" class="state">
@@ -94,9 +144,6 @@
             <ul class="order-state">
               <!--  0이 아니면 count--active 클래스 추가 -->
               <li class="order-state__item">
-                <a href="#"><span class="count count--active">1</span>주문접수</a>
-              </li>
-              <li class="order-state__item">
                 <a href="#"><span class="count">0</span>결제완료</a>
               </li>
               <li class="order-state__item">
@@ -113,6 +160,142 @@
           <a href="#" class="summary__more">취소/교환/반품 1개</a>
         </div>
         <!-- // 주문/배송 조회 -->
+
+        <!-- 최근 주문 내역 -->
+        <div class="summary summary--latest-order">
+          <div class="summary__title">주문/배송 조회</div>
+          <div class="summary__content">
+            <div class="product-order-list">
+                <ul class="order-list">
+                  <!-- 배송중 -->
+                  <li class="order-list__item">
+                    <div class="order">
+                      <div class="order__info">
+                        <div class="product product--order">
+                          <a href="#" class="product__image">
+                            <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                          </a>
+                          <div class="product__content">
+                            <a href="#" class="product__info">
+                              <p class="product__brand">HAZZZYS ACC</p>
+                              <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                            </a>
+                            <div class="product__option">
+                              <p class="product__option__name">
+                                <span class="option__item">차콜그레이</span>
+                                <span class="option__item">68 XL</span>
+                                <span class="option__item">1개</span>
+                              </p>
+                            </div>
+                            <div class="product__price">
+                              <span class="product__price-sale">966,000</span>
+                            </div>
+                            <div class="product__order">
+                              <p class="product__order-state">
+                                <a href="#">배송중</a>
+                              </p>
+                              <div class="product__order-shipping">
+                                <em class="date">03/24(수)</em>도착
+                              </div>
+                            </div>
+                            <div class="product__util">
+                              <button type="button" class="button">배송 조회</button>
+                              <button type="button" class="button">상품 수령</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- //배송중 -->
+                  <!-- 배송중 -->
+                  <li class="order-list__item">
+                    <div class="order">
+                      <div class="order__info">
+                        <div class="product product--order">
+                          <a href="#" class="product__image">
+                            <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                          </a>
+                          <div class="product__content">
+                            <a href="#" class="product__info">
+                              <p class="product__brand">HAZZZYS ACC</p>
+                              <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                            </a>
+                            <div class="product__option">
+                              <p class="product__option__name">
+                                <span class="option__item">차콜그레이</span>
+                                <span class="option__item">68 XL</span>
+                                <span class="option__item">1개</span>
+                              </p>
+                            </div>
+                            <div class="product__price">
+                              <span class="product__price-sale">966,000</span>
+                            </div>
+                            <div class="product__order">
+                              <p class="product__order-state">
+                                <a href="#">배송중</a>
+                              </p>
+                              <div class="product__order-shipping">
+                                <em class="date">03/24(수)</em>도착
+                              </div>
+                            </div>
+                            <div class="product__util">
+                              <button type="button" class="button">배송 조회</button>
+                              <button type="button" class="button">상품 수령</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- //배송중 -->
+                  <!-- 배송중 -->
+                  <li class="order-list__item">
+                    <div class="order">
+                      <div class="order__info">
+                        <div class="product product--order">
+                          <a href="#" class="product__image">
+                            <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                          </a>
+                          <div class="product__content">
+                            <a href="#" class="product__info">
+                              <p class="product__brand">HAZZZYS ACC</p>
+                              <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                            </a>
+                            <div class="product__option">
+                              <p class="product__option__name">
+                                <span class="option__item">차콜그레이</span>
+                                <span class="option__item">68 XL</span>
+                                <span class="option__item">1개</span>
+                              </p>
+                            </div>
+                            <div class="product__price">
+                              <span class="product__price-sale">966,000</span>
+                            </div>
+                            <div class="product__order">
+                              <p class="product__order-state">
+                                <a href="#">배송중</a>
+                              </p>
+                              <div class="product__order-shipping">
+                                <em class="date">03/24(수)</em>도착
+                              </div>
+                            </div>
+                            <div class="product__util">
+                              <button type="button" class="button">배송 조회</button>
+                              <button type="button" class="button">상품 수령</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- //배송중 -->
+                </ul>
+              </div>
+          </div>
+          <a href="#" class="summary__more">전체보기</a>
+        </div>
+        <!-- // 최근 주문 내역 -->
 
         <!-- 최근 본 상품 -->
         <div class="summary summary--recent">
@@ -262,7 +445,7 @@
                 <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
               </li>
               <li class="menu__item">
-                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 뱃지</a>
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 배지</a>
               </li>
             </ul>
           </li>
@@ -318,8 +501,88 @@
 {% block js %}
 <script src="/asset/js/mypage.js"></script>
 <script>
+function flip(element, reverse){
+  var root = element.querySelector('.hazzys-badge--intro');
+  var front = root.querySelector('.hazzys-badge__front');
+  var back = root.querySelector('.hazzys-badge__back');
+  if(!reverse) {
+    var duration = 2000;
+    var animation = anime.timeline({
+      loop: false,
+      easing: 'easeOutQuint',
+      targets: root,
+    })
+    .add({
+      targets: root,
+      rotateY: [
+        { value: 0, duration: 1 },
+        { value: 720, duration: duration }
+      ]
+    })
+    .add({
+      targets: front,
+      easing: 'linear',
+      opacity: [
+        { value: 1, duration: 1 },
+        { value: 0, delay: ( duration / 3.1), duration: 10},
+      ]
+    }, '-='+ duration)
+    .add({
+      targets: back,
+      easing: 'linear',
+      rotateY: [
+        { value: -180, duration: 1 },
+        { value: 0, delay: ( duration / 3.1), duration: 10},
+      ],
+      endDelay: 2000,
+    }, '-='+ duration);
+    $(root).addClass('fliped').data(animation, animation);
+    
+    animation.finished.then(function(){
+      flip($(root).parent()[0], true);
+    });
+  } else {
+    if(!$(root).hasClass('fliped')){
+      return false;
+    }
+    var instance = $(root).data(animation);
+    instance.pause();
+    instance.seek(0);
+    var duration = 300;
+    var animation = anime.timeline({
+      loop: false,
+      easing: 'easeOutQuint',
+      targets: root,
+    })
+    .add({
+      targets: root,
+      easing: 'linear',
+      rotateY: [
+        { value: -360, duration: 1 },
+        { value: 0, duration: duration },
+      ]
+    })
+    .add({
+      targets: back,
+      easing: 'linear',
+      rotateY: [
+        { value: 0, duration: 1},
+        { value: -180, delay: (duration / 2), duration: 10 },
+      ]
+    }, '-='+ duration)
+    .add({
+      targets: front,
+      easing: 'linear',
+      opacity: [
+        { value: 0, duration: 1},
+        { value: 1, delay: (duration / 2), duration: 10 },
+      ]
+    }, '-='+ duration);
+    $(root).removeClass('fliped');
+  }
+}
 $(function(){
-  // 최근 본 상품
+  // 최근 본 상품, 위시리스트
   new Swiper('.summary .swiper-container', {
     loop: false,
     freeMode: true,
@@ -339,8 +602,55 @@ $(function(){
       prevEl: '.swiper-button-prev'
     }
   });
-  // 위시리스트
 
-})
+  // 배지
+  var flipBadgeIndex = null;
+  var flipBadgeTimer;
+  var badgeSwiper = new Swiper('#badgeSwiper', {
+    loop: false,
+    init: false,
+    initialSlide: 0,
+    spaceBetween: 30,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+  badgeSwiper.on('slideChange', function(){
+    $(badgeSwiper.slides).each(function(i){
+      if(i !== badgeSwiper.activeIndex) {
+        flip($(this)[0], true);
+      }
+    })
+
+    flipBadgeIndex = badgeSwiper.activeIndex;
+    window.clearTimeout(flipBadgeTimer)
+    flipBadgeTimer = window.setTimeout(function(){
+      if(flipBadgeIndex === badgeSwiper.activeIndex){
+        flip(badgeSwiper.slides[badgeSwiper.activeIndex], false);
+      } else {
+        flipBadgeIndex = null;
+      }
+    }, 600);
+  });
+  badgeSwiper.on('init', function(){
+    $(badgeSwiper.el).addClass('swiper-container--active');
+    if(flipBadgeIndex !== null) {
+      flip(badgeSwiper.slides[badgeSwiper.previousIndex], true);
+    }
+    flipBadgeIndex = badgeSwiper.activeIndex;
+    window.clearTimeout(flipBadgeTimer)
+    flipBadgeTimer = window.setTimeout(function(){
+      if(flipBadgeIndex === badgeSwiper.activeIndex){
+        flip(badgeSwiper.slides[badgeSwiper.activeIndex], false);
+      } else {
+        flipBadgeIndex = null;
+      }
+    }, 1500);
+  });
+  badgeSwiper.init();
+});
 </script>
 {% endblock js %}

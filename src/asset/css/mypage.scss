@@ -36,6 +36,9 @@
     height: 395px;
   }
 }
+.shell-main--mypage-membership {
+  padding-top: 0;
+}
 
 @include mq('desktop') {
   .shell-main--mypage {
@@ -107,9 +110,10 @@
       .grade__icon {
         display: inline-block;
         vertical-align: middle;
-        img {
+        .hazzys-badge {
           width: 20px;
-          vertical-align: middle;
+          height: 20px;
+          vertical-align: top;
         }
       }
       .grade__name {
@@ -119,6 +123,7 @@
         font-weight: 300;
         color: $color-text-emphasize;
         vertical-align: middle;
+        margin-top: -1px;
         span {
           font-weight: 450;
         }
@@ -330,7 +335,6 @@
       margin-top: 11px;
       height: 180px;
       position: relative;
-      border: 1px solid red;
       &:before {
         content: 'MY \A Benefit \A Badges';
         position: absolute;
@@ -347,6 +351,39 @@
         text-transform: uppercase;
         white-space: pre;
         text-align: center;
+      }
+
+      .swiper-badge {
+        .swiper-container {
+          opacity: 0;
+          &.swiper-container--active {
+            opacity: 1;
+          }
+        }
+        .swiper-slide {
+          position: relative;
+          width: 120px;
+        }
+        .badge-container {
+          padding: 30px 0 30px;
+          box-sizing: content-box;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          visibility: hidden;
+        }
+        .swiper-button-prev {
+          left: 0;
+          &:after {
+            @include sprite($common-arrow-left-swiper-transparent);
+          }
+        }
+        .swiper-button-next {
+          right: 0;
+          &:after {
+            @include sprite($common-arrow-right-swiper-transparent);
+          }
+        }
       }
     }
     &__util {
@@ -374,6 +411,14 @@
           width: 200px;
         }
       }
+      &__list {
+        .swiper-badge {
+          .swiper-button-prev,
+          .swiper-button-next {
+            visibility: visible;
+          }
+        }
+      }
     }
   }
 
@@ -384,7 +429,7 @@
     &__title {
       margin: 0 10px 30px;
       padding: 15px 0;
-      font-weight: 14px;
+      font-size: 14px;
       font-weight: 500;
       color: $color-text-emphasize;
       line-height: 1;
@@ -428,7 +473,7 @@
     &__more {
       position: absolute;
       top: 18px;
-      right: 0;
+      right: 10px;
       padding-right: 12px;
       font-size: 12px;
       line-height: 1;
@@ -528,11 +573,67 @@
         }
       }
     }
+    &.summary--latest-order {
+      .summary__title {
+        margin-bottom: 0;
+      }
+      .product-order-list {
+        margin: 0 10px;
+        .no-data {
+          text-align: center;
+          .sprite-common,
+          .sprite-mypage {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .message {
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 300;
+            color: $color-text-emphasize;
+          }
+        }
+        .order-list {
+          // 상품 목록
+          .order {
+            &__util {
+              display: flex;
+              justify-content: space-between;
+              padding-top: 12px;
+              margin-bottom: 12px;
+              .button {
+                position: relative;
+                width: 100%;
+                height: 30px;
+                border-radius: 2px;
+                border: solid 1px #c9c9c9;
+                text-align: center;
+                + .button {
+                  margin-left: 5px;
+                }
+              }
+            }
+            &__info {
+              border-top: 1px solid $color-line-border;
+              .product {
+                padding: 30px 0 30px;
+                + .product {
+                  border-top: 1px solid $color-line-border;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     @include mq('desktop') {
       margin-top: 65px;
       &__title {
         margin: 0 0 30px;
+      }
+      &__more {
+        right: 0;
       }
       &.summary--order {
         margin-top: 75px;
@@ -555,6 +656,15 @@
           .swiper-button-next {
             right: 0;
           }
+        }
+      }
+      &.summary--latest-order {
+        .summary__title {
+          margin-bottom: 0;
+        }
+        .product-order-list {
+          margin-left: 0;
+          margin-right: 0;
         }
       }
     }
@@ -2011,7 +2121,871 @@
       }
     }
   }
+
+  // 배지 혜택 안내
+  .mypage-benefit-container {
+    .mypage-benefit__title {
+      padding: 30px 0 40px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      color: $color-text-emphasize;
+      .text-block {
+        display: block;
+        text-align: center;
+      }
+    }
+    .tab--badge {
+      margin: 0 10px;
+      .tablist {
+        margin-bottom: 30px;
+      }
+    }
+    .member-badge-container {
+      .badge-list {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $color-line-border;
+        &__item {
+          + .badge-list__item {
+            margin-top: 40px;
+          }
+
+          .badge {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            &__name {
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            // &__preview {}
+          }
+          .hazzys-badge {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+          }
+        }
+      }
+      .badge-guide {
+        margin-top: 40px;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 300;
+        position: relative;
+        padding-left: 10px;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 7px;
+          left: 0;
+          width: 2px;
+          height: 2px;
+          background: $color-solid-default;
+          vertical-align: middle;
+        }
+      }
+    }
+    .shopping-badge-container {
+      padding-bottom: 50px;
+      .badge-list {
+        &__item {
+          + .badge-list__item {
+            margin-top: 50px;
+          }
+          display: flex;
+
+          .badge {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            flex-basis: 140px;
+            min-width: 140px;
+            &__name {
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            // &__preview {}
+          }
+          .badge-benefit {
+            margin: 10px 0 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            &__title {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+              strong {
+                font-weight: 500;
+                color: $color-text-point;
+              }
+            }
+            &__list {
+              margin-top: 20px;
+            }
+            &__item {
+              + .badge-benefit__item {
+                margin-top: 10px;
+              }
+              position: relative;
+              padding-left: 10px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-solid-emphasize;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                background: $color-solid-emphasize;
+                vertical-align: middle;
+              }
+              .condition {
+                display: block;
+              }
+            }
+          }
+          .hazzys-badge {
+            width: 94px;
+            height: 94px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .review-badge-container {
+      padding-bottom: 50px;
+      .review-type-container {
+        &:first-child {
+          margin-top: -5px;
+        }
+        + .review-type {
+          margin-top: 65px;
+        }
+      }
+      .review-type {
+        + .review-type {
+          margin-top: 65px;
+        }
+        &__title {
+          padding: 15px 0;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          color: $color-text-emphasize;
+          border-bottom: 1px solid $color-line-emphasize;
+        }
+        &__content {
+          margin-top: 30px;
+        }
+      }
+      .badge-list {
+        &__item {
+          + .badge-list__item {
+            margin-top: 50px;
+          }
+          display: flex;
+
+          .badge {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            flex-basis: 140px;
+            min-width: 140px;
+            &__name {
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            // &__preview {}
+          }
+          .badge-benefit {
+            margin: 10px 0 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            &__title {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+              strong {
+                font-weight: 500;
+                color: $color-text-point;
+              }
+            }
+            &__list {
+              margin-top: 20px;
+            }
+            &__item {
+              + .badge-benefit__item {
+                margin-top: 10px;
+              }
+              position: relative;
+              padding-left: 10px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-solid-emphasize;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                background: $color-solid-emphasize;
+                vertical-align: middle;
+              }
+              .condition {
+                display: block;
+              }
+            }
+          }
+          .hazzys-badge {
+            width: 94px;
+            height: 94px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      .mypage-benefit__title {
+        padding: 60px 0;
+        .text-block {
+          display: inline-block;
+          + .text-block {
+            margin-left: 5px;
+          }
+        }
+      }
+      .tab--badge {
+        margin-left: 0;
+        margin-right: 0;
+        .tablist {
+          margin-bottom: 80px;
+        }
+      }
+      .member-badge-container {
+        .badge-list {
+          padding-bottom: 60px;
+          @include self-clear;
+          margin-top: -50px;
+          &__item {
+            float: left;
+            width: 25%;
+            // margin: 50px;
+            margin: 50px 0 0;
+            + .badge-list__item {
+              margin-top: 50px;
+            }
+            .badge {
+              &__name {
+                height: 36px;
+              }
+            }
+          }
+        }
+      }
+      .shopping-badge-container {
+        .badge-list {
+          padding-left: 150px;
+          &__item {
+            + .badge-list__item {
+              margin-top: 60px;
+            }
+            .badge-benefit {
+              margin: 20px 0 0 50px;
+              &__item {
+                .condition {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+      .review-badge-container {
+        .review-type-container {
+          + .review-type {
+            margin-top: 95px;
+          }
+          display: flex;
+          justify-content: space-between;
+        }
+        .review-type {
+          + .review-type {
+            margin-top: 0;
+            margin-left: 70px;
+          }
+        }
+        .badge-list {
+          &__item {
+            + .badge-list__item {
+              margin-top: 60px;
+            }
+            .badge {
+              &__name {
+                height: 36px;
+              }
+            }
+            .badge-benefit {
+              margin: 20px 0 0 30px;
+              &__item {
+                .condition {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+          &.badge-list--special {
+            padding-left: 150px;
+            &__item {
+              border: 1px solid red;
+              .badge-benefit {
+                margin: 20px 0 0 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+// 페이지 내용 - 나의 정보 - 회원 혜택
+// =============================================================================
+.main-content__main--membership {
+  overflow: hidden;
+  @include mq('desktop', 'max') {
+    .main-content__header {
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      margin-bottom: 0;
+      z-index: 2;
+      .main-content__title {
+        color: #fff;
+      }
+    }
+    .main-content__header {
+      .main-content__btn-back {
+        position: absolute;
+        top: 16px;
+        left: 10px;
+      }
+    }
+  }
+  .membership {
+    position: relative;
+    min-height: 584px;
+    padding: 150px 10px 0;
+    background-image: linear-gradient(to top, #cc97a1, #eedabc 52%, #ff9532 102%);
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+    }
+    &:before {
+      top: 70px;
+      left: -70px;
+      width: 160px;
+      height: 160px;
+      background-color: #f2ebdd;
+    }
+    &:after {
+      top: 210px;
+      right: -150px;
+      width: 260px;
+      height: 260px;
+      background-color: #e9e0ce;
+    }
+    @include mq('desktop') {
+      min-height: 294px;
+      border-radius: 20px;
+      padding: 60px 30px 60px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      &:before {
+        top: -20px;
+        left: -50px;
+        background-color: #f2ebdd;
+      }
+      &:after {
+        top: 120px;
+        right: -150px;
+        background-color: #e9e0ce;
+      }
+    }
+    &.membership--member-white {
+      background-image: linear-gradient(to top, #cc97a1, #eedabc 52%, #ff9532 102%);
+      &:before {
+        background-color: #f2ebdd;
+      }
+      &:after {
+        background-color: #e9e0ce;
+      }
+    }
+    &.membership--member-blue {
+      background-image: linear-gradient(to top, #a594b2, #eedabc 52%, #1e91ff 102%);
+      &:before {
+        background-color: #0086ff;
+      }
+      &:after {
+        background-color: #006ccd;
+      }
+    }
+    &.membership--member-red {
+      background-image: linear-gradient(to top, #a594b2, #eedabc 52%, #ed4242 102%);
+      &:before {
+        background-color: #ff2800;
+      }
+      &:after {
+        background-color: #cc2000;
+      }
+    }
+    &.membership--member-purple {
+      background-image: linear-gradient(to top, #a594b2, #eedabc 52%, #9e41e0 102%);
+      &:before {
+        background-color: #7400ff;
+      }
+      &:after {
+        background-color: #5a00c6;
+      }
+    }
+    &.membership--member-black-s {
+      background-image: linear-gradient(to top, #87bdb8, #eedabc 52%, #4d2a2a 102%);
+      &:before {
+        background-color: #212121;
+      }
+      &:after {
+        background-color: #000000;
+      }
+    }
+    &.membership--member-black-r {
+      background-image: linear-gradient(to top, #87bdb8, #eedabc 52%, #ff781e 102%);
+      &:before {
+        background-color: #ff781e;
+      }
+      &:after {
+        background-color: #eb6f1c;
+      }
+    }
+    // 카드
+    .membership__card {
+      position: relative;
+      height: 174px;
+      padding: 20px;
+      border-radius: 20px;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
+      border: solid 1px rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 2;
+      box-sizing: border-box;
+      color: $color-text-emphasize;
+      .membership{
+        &__grade{
+          font-size: 28px;
+          font-weight: 600;
+          line-height: 1;
+        }
+        &__number{
+          margin-top: 14px;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1;
+        }
+        &__user {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 18px;
+
+          .name {
+            display: block;
+          }
+          .date {
+            margin-top: 2px;
+            display: block;
+          }
+        }
+        &__badge {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 30px;
+          height: 30px;
+        }
+        &__logo {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+      @include mq('desktop') {
+        margin: 0;
+        min-width: 340px;
+        flex-basis: 340px;
+      }
+    }
+    .membership__benefit {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 40px;
+      .benefit-list {
+        overflow: hidden;
+        margin: 10px 0 0 0;
+        &__item {
+          position: relative;
+          width: 50%;
+          float: left;
+          margin: 30px 0 0 0;
+          padding-left: 40px;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 400;
+          box-sizing: border-box;
+          color: #fff;
+          white-space: nowrap;
+          letter-spacing: -1px;
+          > .sprite-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+      @include mq('desktop') {
+        padding-bottom: 0;
+        margin-left: 30px;
+        .benefit-list {
+          margin: -30px 0 0 0;
+        }
+      }
+    }
+  }
+  .membership-benefit {
+    padding: 40px 0 45px;
+    &__title {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: $color-text-emphasize;
+      text-align: center;
+    }
+    &__description {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 18px;
+      text-align: center;
+    }
+    &__swiper {
+      .swiper-badge {
+        .swiper-slide {
+          position: relative;
+          padding: 40px 0 30px;
+          width: 160px;
+          height: 160px;
+          box-sizing: content-box;
+
+          &.swiper-slide-active {
+            .membership__badge {
+              width: 160px;
+              height: 160px;
+              &:before {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+        .membership__badge {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 120px;
+          height: 120px;
+          transition: all 0.8s ease-out;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width :100%;
+            height: 100%;
+            border-radius: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            transition: all 0.8s ease-out;
+          }
+        }
+        .swiper-container {
+          opacity: 0;
+          &.swiper-container--active {
+            opacity: 1;
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          visibility: hidden;
+          top: 100%;
+          margin-top: 0;
+          transform: translate(0, 10px);
+        }
+        .swiper-button-prev {
+          left: 0;
+          &:after {
+            @include sprite($common-arrow-left-swiper-transparent);
+          }
+        }
+        .swiper-button-next {
+          right: 0;
+          &:after {
+            @include sprite($common-arrow-right-swiper-transparent);
+          }
+        }
+      }
+      .swiper-grade {
+        position: relative;
+        .grade {
+          text-align: center;
+          color: $color-text-emphasize;
+          visibility: hidden;
+          opacity: 0;
+          // max-height: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: visibility 0.5s 0.1s cubic-bezier(0.25, 1, 0.5, 1),
+            opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+          .grade__name,
+          .grade__condition,
+          .grade__benefit {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+
+          &.active {
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+            // max-height: none;
+            transition: visibility 0.01s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+            .grade__name,
+            .grade__condition,
+            .grade__benefit {
+              opacity: 1;
+              transform: translateY(0);
+              transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            .grade__name {
+              transition-delay: 0.3s;
+            }
+            .grade__condition {
+              transition-delay: 0.5s;
+            }
+            .grade__benefit {
+              transition-delay: 0.6s;
+            }
+          }
+          &.grade--member-white .grade__name {
+            color: #f2ebdd;
+          }
+          &.grade--member-blue .grade__name {
+            color: #0086ff;
+          }
+          &.grade--member-red .grade__name {
+            color: #ff2800;
+          }
+          &.grade--member-purple .grade__name {
+            color: #7400ff;
+          }
+          // &.grade--member-black-s .grade__name {}
+          &.grade--member-black-r .grade__name {
+            color: #ff781e;
+          }
+
+          &__name {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1;
+          }
+          &__condition {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+          }
+          &__benefit {
+            margin-top: 30px;
+            .benefit {
+              &__item {
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
+                color: $color-text-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      padding: 60px 0 45px;
+      &__swiper {
+        .swiper-badge {
+          .swiper-container {
+            overflow: visible;
+          }
+          .swiper-button-prev,
+          .swiper-button-next {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+  .membership-notice {
+    margin: 0 10px;
+    &__title {
+      padding: 15px 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
+    &__content {
+      .accordion--notice {
+        .accordion__title {
+          > .button {
+            width: 100%;
+            height: 54px;
+            text-align: left;
+            vertical-align: top;
+            position: relative;
+            padding-left: 34px;
+            > i {
+              position: absolute;
+              top: 13px;
+              left: 0;
+              display: inline-block;
+              background-image: url($sprite-mypage-image);
+              background-size: $sprite-mypage-width $sprite-mypage-height;
+            }
+          }
+        }
+        .accordion__content {
+          border-top: 1px solid #e6e6e6;
+          .guide {
+            padding: 30px 0 20px;
+          }
+        }
+      }
+      .text-list {
+        .text-box {
+          position: relative;
+          margin-top: 10px;
+          color: $color-text-emphasize;
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 18px;
+          .link {
+            color: $color-text-emphasize;
+          }
+          .low-text {
+            padding-left: 10px;
+            text-indent: -10px;
+          }
+          &:first-child {
+            margin-top: 0;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: -10px;
+            width: 2px;
+            height: 2px;
+            background-color: $color-solid-emphasize;
+          }
+        }
+      }
+
+      .guide {
+        padding-bottom: 40px;
+        .guide__inner {
+          margin-top: 5px;
+          .guide__item {
+            text-indent: -10px;
+            &:before {
+              content: none;
+            }
+            + .guide__item {
+              margin-top: 0;
+            }
+          }
+        }
+        &__item {
+          + .guide__item {
+            margin-top: 10px;
+          }
+          font-size: 12px;
+          line-height: 18px;
+          font-weight: 300;
+          position: relative;
+          padding-left: 10px;
+          color: $color-text-emphasize;
+
+          .link {
+            color: $color-text-emphasize;
+            text-decoration: underline;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 0;
+            width: 2px;
+            height: 2px;
+            background: $color-solid-emphasize;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
 
 // 페이지 내용 - 나만의 혜택
 // =============================================================================
@@ -2023,7 +2997,7 @@
   }
   .mypage-benefit-container {
     .tab--benefit {
-      .tablist {
+      > .tablist {
         margin: 0 10px 30px;
       }
     }
@@ -2040,7 +3014,7 @@
         font-weight: 300;
         color: $color-text-emphasize;
       }
-      +.benefit-coupon {
+      + .benefit-coupon {
         margin-top: 60px;
       }
     }
@@ -2126,12 +3100,12 @@
               margin-right: -1px;
               z-index: 2;
             }
-            &__type{
+            &__type {
               font-size: 12px;
               font-weight: 300;
               line-height: 18px;
             }
-            &__name{
+            &__name {
               margin-top: 10px;
               font-size: 18px;
               font-weight: 600;
@@ -2148,7 +3122,7 @@
                 }
               }
             }
-            &__condition{
+            &__condition {
               margin-top: 4px;
               font-size: 14px;
               font-weight: 300;
@@ -2169,7 +3143,7 @@
                 border-left: 1px solid $color-line-border;
               }
             }
-            &__state{
+            &__state {
               position: absolute;
               display: inline-block;
               top: 14px;
@@ -2328,7 +3302,6 @@
                     color: $color-text-point;
                   }
                 }
-
               }
             }
             .list-more {
@@ -2343,9 +3316,276 @@
         }
       }
     }
+    .benefit-badge-container {
+      margin: 0 10px;
+      .benefit-badge {
+        + .benefit-badge {
+          margin-top: 55px;
+        }
+        &__title {
+          padding: 15px 0;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          color: $color-text-emphasize;
+          border-bottom: 1px solid $color-line-emphasize;
+        }
+        &__content {
+          padding: 30px 0 0;
+        }
+      }
+      .member-badge {
+        .badge {
+          display: flex;
+          flex-direction: column-reverse;
+          text-align: center;
+          &__name {
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            color: $color-text-emphasize;
+          }
+        }
+        .hazzys-badge {
+          width: 140px;
+          height: 140px;
+          margin: 0 auto;
+        }
+      }
+      .badge-summary-container {
+        margin-top: 24px;
+        .badge-summary {
+          border-bottom: 1px solid $color-line-border;
+          display: flex;
+          padding: 16px 0;
+          justify-content: space-between;
+          &__title {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            color: $color-text-emphasize;
+          }
+          &__content {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            color: $color-text-primary;
+            strong {
+              font-weight: 500;
+              color: $color-text-point;
+            }
+          }
+        }
+      }
+      .tabs--depth2 {
+        margin-top: 45px;
+        > .tablist {
+          margin-bottom: 45px;
+        }
+      }
+      .user-badge {
+        &__list {
+          @include self-clear;
+          margin: -20px 0 -20px 0;
+        }
+        &__item {
+          float: left;
+          width: 33.3%;
+          padding: 20px 0;
+          .hazzys-badge {
+            margin: 0 auto;
+          }
+        }
+      }
+      .user-badge-detail {
+        .badge-list {
+          margin-top: -30px;
+          &__item {
+            padding: 30px 0;
+            border-bottom: 1px solid $color-line-border;
+            .badge-coupon-container {
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-around;
+            }
+            .badge {
+              padding-top: 36px;
+              position: relative;
+              margin-left: -10px;
+              display: flex;
+              flex-direction: column-reverse;
+              text-align: center;
+              flex-basis: 120px;
+              min-width: 120px;
+              &__date {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+                font-size: 14px;
+              }
+              &__name {
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18px;
+                color: $color-text-emphasize;
+              }
+              // &__preview {}
+            }
+            .badge-coupon {
+              margin-left: 20px;
+              margin-top: 36px;
+              box-sizing: border-box;
+              // width: 230px;
+
+              &__title {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 18px;
+                color: $color-text-emphasize;
+                strong {
+                  font-weight: 500;
+                  color: $color-text-point;
+                }
+              }
+              &__list {
+                margin-top: 20px;
+              }
+              &__item {
+                width: 230px;
+                + .badge-coupon__item {
+                  margin-top: 12px;
+                }
+                .coupon {
+                  position: relative;
+                  overflow: hidden;
+                  padding: 14px;
+                  height: 98px;
+                  box-sizing: border-box;
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid green;
+                    border: 1px solid $color-line-ready;
+                    border-radius: 6px;
+                    box-sizing: border-box;
+                  }
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid $color-line-ready;
+                    border-radius: 100%;
+                    transform: translate(50%, -50%);
+                    background: #fff;
+                    margin-right: -1px;
+                    z-index: 2;
+                  }
+                  &__name {
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 18px;
+                    .icon {
+                      .name {
+                        display: inline-block;
+                        vertical-align: middle;
+                      }
+                    }
+                  }
+                  &__condition {
+                    margin-top: 6px;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 18px;
+                  }
+                  &__expiration {
+                    position: absolute;
+                    bottom: 14px;
+                    left: 14px;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 18px;
+                    color: $color-text-primary;
+                    .countdown {
+                      margin-left: 10px;
+                      padding-left: 10px;
+                      color: $color-text-point;
+                      border-left: 1px solid $color-line-border;
+                    }
+                  }
+                  &__state {
+                    position: absolute;
+                    display: inline-block;
+                    top: 10px;
+                    right: 10px;
+                    padding: 4px 8px 0 9px;
+                    height: 22px;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 18px;
+                    color: #fff;
+                    background-color: $color-solid-ready;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                  }
+
+                  &.active {
+                    &:before,
+                    &:after {
+                      border-color: $color-line-emphasize;
+                    }
+                    .coupon__type,
+                    .coupon__name,
+                    .coupon__condition {
+                      color: $color-text-emphasize;
+                    }
+                    .coupon__state {
+                      background-color: $color-solid-point;
+                    }
+                  }
+                }
+              }
+            }
+            .hazzys-badge {
+              width: 94px;
+              height: 94px;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+      .accordion--notice {
+        margin-top: -10px;
+        .accordion__title {
+          > .button {
+            width: 100%;
+            height: 54px;
+            text-align: left;
+            vertical-align: top;
+          }
+        }
+        .accordion__content {
+          border-top: 1px solid #e6e6e6;
+          .guide {
+            padding: 30px 0 20px;
+          }
+        }
+      }
+    }
     @include mq('desktop') {
       .tab--benefit {
-        .tablist {
+        > .tablist {
           margin-left: 0;
           margin-right: 0;
           margin-bottom: 60px;
@@ -2406,8 +3646,72 @@
                 margin: 60px auto 0;
               }
             }
-              .guide {
+            .guide {
               margin-top: 100px;
+            }
+          }
+        }
+      }
+      .benefit-badge-container {
+        margin-left: 0;
+        margin-right: 0;
+        .benefit-badge {
+          + .benefit-badge {
+            margin-top: 85px;
+          }
+        }
+        .member-badge {
+          margin-top: 30px;
+        }
+        .badge-summary-container {
+          margin-top: 45px;
+        }
+        .tabs--depth2 {
+          margin-top: 65px;
+          > .tablist {
+            margin-bottom: 60px;
+          }
+        }
+        .user-badge {
+          &__list {
+            margin: -25px -20px -25px -20px;
+          }
+          &__item {
+            width: auto;
+            padding: 25px 20px;
+          }
+        }
+        .user-badge-detail {
+          .badge-list {
+            margin-top: -60px;
+            &__item {
+              padding: 40px 0 52px;
+              .badge-coupon-container {
+                justify-content: space-between;
+              }
+              .badge {
+                margin: 0 auto;
+              }
+              .badge-coupon {
+                margin-left: 0;
+                margin-top: 36px;
+                width: 520px;
+                padding-left: 60px;
+                border-left: 1px solid $color-line-border;
+                box-sizing: content-box;
+                &__list {
+                  overflow: hidden;
+                  margin: 10px -20px 0 -20px;
+                }
+                &__item {
+                  width: 250px;
+                  float: left;
+                  margin: 20px 0 0 20px;
+                  + .badge-coupon__item {
+                    margin-top: 20px;
+                  }
+                }
+              }
             }
           }
         }
@@ -2449,7 +3753,6 @@
         line-height: 40px;
       }
     }
-
   }
 
   .product-list-count {
@@ -2784,7 +4087,7 @@
   }
   // 상품 목록 AOS
   .product-list {
-    [data-aos="product"] {
+    [data-aos='product'] {
       opacity: 0;
       transition-property: transform, opacity;
       transition-duration: 200ms;
@@ -2807,7 +4110,7 @@
       }
     }
     &[data-size='xs'] {
-      [data-aos="product"] {
+      [data-aos='product'] {
         &:nth-child(4n - 3) {
           &.aos-animate {
             transition-delay: 100ms;
@@ -2831,7 +4134,7 @@
       }
     }
     &[data-size='s'] {
-      [data-aos="product"] {
+      [data-aos='product'] {
         &:nth-child(3n - 2) {
           &.aos-animate {
             transition-delay: 100ms;
@@ -2850,14 +4153,14 @@
       }
     }
     &[data-size='l'] {
-      [data-aos="product"] {
+      [data-aos='product'] {
         &.aos-animate {
           transition-delay: 200ms;
         }
       }
     }
     @include mq('desktop') {
-      [data-aos="product"] {
+      [data-aos='product'] {
         &:nth-child(4n - 3) {
           &.aos-animate {
             transition-delay: 150ms;
@@ -2881,7 +4184,7 @@
       }
       // 6
       &[data-size='xs'] {
-        [data-aos="product"] {
+        [data-aos='product'] {
           &:nth-child(6n - 5) {
             &.aos-animate {
               transition-delay: 50ms;
@@ -2916,7 +4219,7 @@
       }
       // 5
       &[data-size='s'] {
-        [data-aos="product"] {
+        [data-aos='product'] {
           &:nth-child(5n - 4) {
             &.aos-animate {
               transition-delay: 100ms;
@@ -2945,7 +4248,7 @@
         }
       }
       &[data-size='l'] {
-        [data-aos="product"] {
+        [data-aos='product'] {
           &:nth-child(2n - 1) {
             &.aos-animate {
               transition-delay: 200ms;
@@ -2961,6 +4264,1184 @@
     }
   }
 }
+// 리뷰, 내 문의 내역, 재입고 알림
+.my-review-container,
+.my-qna-container,
+.restock-push-container {
+  > .tabs {
+    .tablist {
+      margin: 0 10px 30px;
+    }
+  }
+  .no-data {
+    text-align: center;
+    .sprite-common,
+    .sprite-mypage {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .message {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+      color: $color-text-emphasize;
+    }
+    .util {
+      margin-top: 60px;
+      text-align: center;
+      .form-button {
+        display: block;
+        margin: 0 auto;
+        width: 165px;
+        height: 40px;
+        font-size: 12px;
+        line-height: 40px;
+      }
+    }
+  }
+  .list-more {
+    margin-top: 40px;
+  }
+  @include mq('desktop') {
+    > .tabs {
+      .tablist {
+        margin: 0 0 60px;
+      }
+    }
+    .list-more {
+      margin: 40px auto 0;
+      text-align: center;
+      .form-button {
+        width: 340px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+.my-review-container {
+  .review-benefit-container {
+    .review-benefit {
+      margin: 0 10px;
+      + .review-benefit {
+        margin-top: 45px;
+      }
+      &__header {
+        padding: 15px 0;
+      }
+      &__title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        color: $color-text-emphasize;
+      }
+      &__content {
+        border-top: 1px solid $color-line-emphasize;
+        padding: 20px 0;
+        .review-mileage-guide {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 18px;
+          color: $color-text-emphasize;
+        }
+        // 마일리지 혜택
+        .review-mileage {
+          margin: 30px -10px 0;
+          display: flex;
+          &__item {
+            flex: 1;
+            height: 58px;
+            padding: 2px 0;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            box-sizing: border-box;
+            + .review-mileage__item {
+              .review-mileage__value {
+                position: relative;
+                &:before {
+                  content: '';
+                }
+              }
+            }
+          }
+          .review-mileage {
+            &__name,
+            &__value {
+              text-align: center;
+            }
+            &__name {
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            &__value {
+              font-size: 18px;
+              font-weight: 500;
+              line-height: 30px;
+              color: $color-text-point;
+              &:before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                @include sprite($mypage-plus);
+              }
+            }
+          }
+        }
+        // 배지 혜택
+        .review-badge-guide {
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 18px;
+          color: $color-text-emphasize;
+          strong {
+            color: $color-text-point;
+            font-weight: 500;
+          }
+        }
+        .button--badge-condition {
+          position: relative;
+          margin-top: 20px;
+          display: inline-block;
+          padding-right: 12px;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 18px;
+          text-decoration: none;
+          color: $color-text-emphasize;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 0;
+            @include sprite($common-landing-small-black);
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      display: flex;
+      .review-benefit {
+        flex: 1;
+        margin: 0;
+        + .review-benefit {
+          margin-left: 70px;
+          margin-top: 0;
+        }
+        .review-mileage-guide {
+          display: none;
+        }
+        .review-mileage {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  // 리뷰 가능 상품 목록
+  .review-order-list {
+    margin: 30px 10px 0;
+    .order-list {
+      border-bottom: 1px solid $color-line-border;
+      // .order-list__item {}
+      // 상품 목록
+      .order {
+        border-top: 1px solid #000;
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          .title {
+            font-size: 12px;
+            line-height: 18px;
+            color: $color-text-emphasize;
+          }
+          .date {
+            font-family: $font-gotham;
+            font-size: 12px;
+            line-height: 18px;
+            color: $color-text-primary;
+          }
+        }
+        &__info {
+          border-top: 1px solid $color-line-border;
+          .product {
+            padding: 20px 0 30px;
+            + .product {
+              border-top: 1px solid $color-line-border;
+            }
+            .product__content {
+              padding-bottom: 50px;
+              min-height: 154px;
+              box-sizing: border-box;
+              .product__util {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .review-order-guide {
+      margin: 30px 0 0;
+      position: relative;
+      padding-left: 10px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background: $color-solid-default;
+        vertical-align: middle;
+      }
+    }
+    @include mq('desktop') {
+      margin: 80px 0 0;
+      .review-order-guide {
+        margin-top: 40px;
+      }
+    }
+  }
+  // 상품평 작성
+  &.my-review-container--form {
+    margin-top: -15px;
+    .review-order-product {
+      margin: 40px 10px 30px;
+      padding: 20px 0;
+      border-top: 1px solid $color-line-border;
+      border-bottom: 1px solid $color-line-border;
+    }
+    .review-form-container {
+      + .review-form {
+        margin-top: 28px;
+      }
+    }
+    .review-form {
+      margin: 0 10px;
+      + .review-form,
+      + .review-form-container {
+        margin-top: 28px;
+      }
+      &__header {
+        position: relative;
+        padding: 15px 0;
+      }
+      &__title {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $color-text-emphasize;
+      }
+      &__mileage-tag {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        height: 30px;
+        padding: 2px 9px 0;
+        font-size: 12px;
+        color: $color-text-primary;
+        background-color: #e6e6e6;
+        line-height: 28px;
+        text-align: right;
+        box-sizing: border-box;
+        &:after {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          margin: -2px 0 0 3px;
+          @include sprite($mypage-mileage-x-small);
+        }
+        &.active {
+          background-color: $color-solid-point;
+          color: #fff;
+          &:after {
+            @include sprite-position($mypage-mileage-x-small-white);
+          }
+        }
+      }
+      &__content {
+        border-top: 1px solid $color-line-emphasize;
+        padding: 20px 0;
+        .review-form__star {
+          margin-bottom: 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 0;
+          .radio {
+            position: absolute;
+            visibility: hidden;
+            &:checked {
+              + .star ~ .star {
+                .icon {
+                  @include sprite-position($mypage-review-star);
+                }
+              }
+            }
+          }
+          .star {
+            font-size: 0;
+            display: inline-block;
+            ~ .star {
+              margin-left: 10px;
+            }
+            .icon {
+              display: inline-block;
+              overflow: hidden;
+              text-indent: 100%;
+              line-height: 2;
+              white-space: nowrap;
+              @include sprite($mypage-review-star-active);
+            }
+          }
+        }
+        .review-form__choice {
+          + .review-form__choice {
+            margin-top: 40px;
+          }
+          &__title {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 500;
+            color: $color-text-emphasize;
+          }
+          &__content {
+            margin: 0 -10px;
+            overflow: auto;
+            .review-form-radio-group {
+              padding: 0 10px;
+              display: inline-block;
+              white-space: nowrap;
+              font-size: 0;
+              .form-radio-button {
+                position: relative;
+                display: inline-block;
+                overflow: hidden;
+                + .form-radio-button {
+                  margin-left: 10px;
+                }
+                .radio {
+                  position: absolute;
+                  visibility: hidden;
+                  + .name {
+                    display: inline-block;
+                    font-size: 14px;
+                    padding: 0 15px;
+                    min-width: 70px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    border: 1px solid #c9c9c9;
+                    box-sizing: border-box;
+                  }
+                  &:checked + .name {
+                    color: $color-text-point;
+                    border: 1px solid $color-line-point;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .review-photo-upload {
+          margin: 0 -10px;
+          .swiper-container {
+            width: 100%;
+          }
+          .swiper-slide {
+            width: 90px;
+          }
+          .upload-content {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .button {
+              position: absolute;
+              top: 5px;
+              right: 5px;
+              .sprite-image-close {
+                display: block;
+                @include sprite($common-icon-close-small);
+                text-indent: 100%;
+                line-height: 2;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+            }
+          }
+          .upload-content.file-upload {
+            border: 1px dashed $color-line-ready;
+            .image-add {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              appearance: none;
+              opacity: 0;
+              z-index: 1;
+            }
+            .add-text {
+              position: absolute;
+              bottom: 24px;
+              left: 0;
+              width: 90px;
+              color: $color-text-emphasize;
+              font-size: 14px;
+              line-height: 18px;
+              text-align: center;
+              &:before {
+                content: '';
+                display: block;
+                margin: 0 auto 5px auto;
+                @include sprite($common-icon-photo);
+              }
+            }
+          }
+        }
+        .review-form-size {
+          display: flex;
+          .input-block {
+            flex: 1;
+            position: relative;
+            .form-text {
+              border-radius: 2px 0 0 2px;
+              &:focus {
+                border-right-width: 2px;
+              }
+            }
+            + .input-block {
+              margin-left: -1px;
+              .form-text {
+                border-radius: 0 2px 2px 0;
+                &:focus {
+                  border-right-width: 1px;
+                }
+              }
+            }
+            .form-text {
+              padding-right: 30px;
+            }
+            .unit {
+              position: absolute;
+              top: 15px;
+              right: 10px;
+              font-size: 14px;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+          }
+        }
+        .form-textarea {
+          .form-text {
+            height: 200px;
+          }
+        }
+      }
+    }
+    .review-guide {
+      margin: 35px 10px 0;
+      &__title {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 22px;
+        color: $color-text-primary;
+        border-bottom: 1px solid $color-line-default;
+        .button {
+          display: inline-block;
+          margin-left: 10px;
+          vertical-align: middle;
+          text-indent: 100%;
+          line-height: 2;
+          white-space: nowrap;
+          overflow: hidden;
+          @include sprite($common-arrow-down-dropdown);
+        }
+        &.active {
+          border-bottom: 0;
+          .button {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &__content {
+        padding: 20px 0 0;
+        .guide {
+          &__item {
+            + .guide__item {
+              margin-top: 10px;
+            }
+            position: relative;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 18px;
+            padding-left: 10px;
+            text-indent: -10px;
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 2px;
+              height: 2px;
+              margin-right: 8px;
+              background: $color-solid-ready;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+    .review-form-submit {
+      margin: 60px 0 0;
+    }
+    @include mq('desktop') {
+      margin-top: 25px;
+      .review-order-product {
+        margin: 80px 0 48px;
+      }
+      .review-form-container {
+        display: flex;
+        .review-form {
+          flex: 1;
+          + .review-form {
+            margin-left: 70px;
+            margin-top: 0;
+          }
+        }
+        + .review-form {
+          margin-top: 40px;
+        }
+      }
+      .review-form {
+        margin-left: 0;
+        margin-right: 0;
+        + .review-form,
+        + .review-form-container {
+          margin-top: 40px;
+        }
+        &__content {
+          .review-photo-upload {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+      .review-guide {
+        margin: 50px 0 0;
+      }
+      .review-form-submit {
+        margin: 60px auto 0;
+        text-align: center;
+        .form-button {
+          width: 340px;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  // 내가 쓴 상품평
+  .my-review-list {
+    margin: 0 10px;
+    .review-list {
+      border-bottom: 1px solid $color-line-border;
+      // .order-list__item {}
+      // 상품 목록
+      .order {
+        border-top: 1px solid #000;
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          .title {
+            font-size: 12px;
+            line-height: 18px;
+            color: $color-text-emphasize;
+          }
+          .date {
+            font-family: $font-gotham;
+            font-size: 12px;
+            line-height: 18px;
+            color: $color-text-primary;
+          }
+        }
+        &__info {
+          border-top: 1px solid $color-line-border;
+          .product {
+            padding: 20px 0;
+            + .product {
+              border-top: 1px solid $color-line-border;
+            }
+            .product__content {
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+      .review-container {
+        border-top: 1px solid #e6e6e6;
+        .review-util {
+          position: relative;
+          padding: 16px 0;
+          .benefit {
+            .mileage {
+              font-size: 12px;
+              line-height: 18px;
+              font-weight: 300;
+              strong {
+                font-weight: 500;
+                color: $color-text-point;
+              }
+            }
+            .badge {
+              font-size: 12px;
+              line-height: 18px;
+              font-weight: 500;
+              margin-top: 4px;
+              &:before {
+                content: '';
+                display: inline-block;
+                margin-right: 6px;
+                @include sprite($mypage-plus-round);
+                vertical-align: middle;
+              }
+            }
+          }
+          .util {
+            position: absolute;
+            top: 25px;
+            right: 0;
+            font-size: 0;
+
+            .button {
+              padding: 0 9px;
+              min-width: 50px;
+              height: 22px;
+              font-size: 12px;
+              line-height: 22px;
+              border-radius: 2px;
+              color: $color-text-primary;
+              border: solid 1px #919191;
+              text-align: center;
+              + .button {
+                margin-left: 6px;
+              }
+            }
+          }
+        }
+        .review {
+          padding: 6px 0 40px;
+
+          &__info {
+            display: flex;
+            justify-content: space-between;
+            .rating {
+              .point__icon {
+                display: inline-block;
+                vertical-align: top;
+                @include sprite($common-star-small);
+                .point__value {
+                  display: block;
+                  @include sprite($common-star-small-on);
+                }
+              }
+              .point__number {
+                font-size: 14px;
+                font-weight: 300;
+                color: $color-text-emphasize;
+                vertical-align: top;
+              }
+            }
+            .date {
+              font-size: 12px;
+              line-height: 18px;
+              color: $color-text-primary;
+            }
+          }
+          &__content {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 18px;
+            color: $color-text-emphasize;
+          }
+          &__photo {
+            margin-top: 10px;
+            .photo-container {
+              margin: 0 -10px;
+              .swiper-container {
+                width: 100%;
+              }
+              .swiper-slide {
+                width: 90px;
+              }
+              .upload-content {
+                position: relative;
+                width: 90px;
+                height: 90px;
+                overflow: hidden;
+                img {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+                .button {
+                  position: absolute;
+                  top: 5px;
+                  right: 5px;
+                  .sprite-image-close {
+                    display: block;
+                    @include sprite($common-icon-close-small);
+                    text-indent: 100%;
+                    line-height: 2;
+                    white-space: nowrap;
+                    overflow: hidden;
+                  }
+                }
+              }
+              .upload-content.file-upload {
+                border: 1px dashed $color-line-ready;
+                .image-add {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  appearance: none;
+                  opacity: 0;
+                  z-index: 1;
+                }
+                .add-text {
+                  position: absolute;
+                  bottom: 24px;
+                  left: 0;
+                  width: 90px;
+                  color: $color-text-emphasize;
+                  font-size: 14px;
+                  line-height: 18px;
+                  text-align: center;
+                  &:before {
+                    content: '';
+                    display: block;
+                    margin: 0 auto 5px auto;
+                    @include sprite($common-icon-photo);
+                  }
+                }
+              }
+            }
+            &__guide {
+              margin-top: 30px;
+              font-size: 12px;
+              line-height: 18px;
+              font-weight: 300;
+              position: relative;
+              padding-left: 10px;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                background: $color-solid-default;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include mq('desktop') {
+      margin-right: 0;
+      margin-left: 0;
+      .review-list {
+        .review-container {
+          .review-util {
+            .benefit {
+              .mileage {
+                display: inline-block;
+              }
+              .badge {
+                margin-left: 10px;
+                display: inline-block;
+              }
+            }
+            .util {
+              top: 14px;
+            }
+          }
+          .review {
+            &__photo {
+              .photo-container {
+                margin-left: 0;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.restock-push-container {
+  // 리뷰 가능 상품 목록
+  .restock-push-list {
+    margin: 20px 10px 0;
+    .restock-list {
+      border-bottom: 1px solid $color-line-border;
+      // .restock-list__item {}
+      // 상품 목록
+      .push {
+        border-top: 1px solid #000;
+
+        &__header {
+          padding: 10px 0;
+          .title {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            color: $color-text-primary;
+          }
+        }
+        &__info {
+          border-top: 1px solid $color-line-border;
+          .product {
+            padding: 20px 0 30px;
+            + .product {
+              border-top: 1px solid $color-line-border;
+            }
+            .product__content {
+              padding-bottom: 50px;
+              min-height: 154px;
+              box-sizing: border-box;
+              .product__util {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-top: 0;
+              }
+            }
+          }
+        }
+        &.push--complete {
+          .push__header {
+            .title {
+              color: $color-text-point;
+            }
+          }
+          .push__info {
+            .product {
+              .product__content {
+                padding-bottom: 0;
+                min-height: fit-content;
+              }
+            }
+          }
+        }
+      }
+    }
+    .guide {
+      margin-top: 30px;
+      .guide__item {
+        + .guide__item {
+          margin-top: 10px;
+        }
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 300;
+        position: relative;
+        padding-left: 10px;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 7px;
+          left: 0;
+          width: 2px;
+          height: 2px;
+          background: $color-solid-default;
+          vertical-align: middle;
+        }
+      }
+    }
+    @include mq('desktop') {
+      margin: 45px 0 0;
+      .guide {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+.my-qna-container {
+  .my-qna-list {
+    margin: 0 10px;
+    .qna-list {
+      border-bottom: 1px solid $color-line-border;
+      // .qna-list__item {}
+      // 상품 목록
+      .qna-product {
+        border-top: 1px solid #000;
+
+        // &__header {
+        //   display: flex;
+        //   justify-content: space-between;
+        //   padding: 10px 0;
+        //   .title {
+        //     font-size: 12px;
+        //     line-height: 18px;
+        //     color: $color-text-emphasize;
+        //   }
+        //   .date {
+        //     font-family: $font-gotham;
+        //     font-size: 12px;
+        //     line-height: 18px;
+        //     color: $color-text-primary;
+        //   }
+        // }
+        &__info {
+          border-top: 1px solid $color-line-border;
+          .product {
+            padding: 20px 0;
+            + .product {
+              border-top: 1px solid $color-line-border;
+            }
+            .product__content {
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+      .qna-category {
+        border-top: 1px solid #000;
+        padding: 10px 0;
+        font-size: 12px;
+        line-height: 18px;
+        color: $color-text-emphasize;
+      }
+      .qna-container {
+        padding-bottom: 40px;
+        border-top: 1px solid #e6e6e6;
+        .qna-util {
+          position: relative;
+          padding: 16px 0;
+          .state {
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 500;
+            color: $color-text-point;
+          }
+          .util {
+            position: absolute;
+            top: 14px;
+            right: 0;
+            font-size: 0;
+
+            .button {
+              padding: 0 9px;
+              min-width: 50px;
+              height: 22px;
+              font-size: 12px;
+              line-height: 22px;
+              border-radius: 2px;
+              color: $color-text-primary;
+              border: solid 1px #919191;
+              text-align: center;
+              + .button {
+                margin-left: 6px;
+              }
+            }
+          }
+        }
+        .question {
+          &__header {
+            position: relative;
+            font-size: 12px;
+            line-height: 18px;
+            .title {
+              padding-right: 80px;
+              color: $color-text-emphasize;
+              font-weight: 500;
+              span {
+                display: inline-block;
+                margin-right: 3px;
+              }
+            }
+            .date {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          }
+
+          &__content {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 18px;
+            color: $color-text-emphasize;
+          }
+          &__photo {
+            margin: 20px -10px 0;
+            .swiper-container {
+              width: 100%;
+            }
+            .swiper-slide {
+              width: 90px;
+            }
+            .upload-content {
+              position: relative;
+              width: 90px;
+              height: 90px;
+              overflow: hidden;
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              .button {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                .sprite-image-close {
+                  display: block;
+                  @include sprite($common-icon-close-small);
+                  text-indent: 100%;
+                  line-height: 2;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+              }
+            }
+            .upload-content.file-upload {
+              border: 1px dashed $color-line-ready;
+              .image-add {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                appearance: none;
+                opacity: 0;
+                z-index: 1;
+              }
+              .add-text {
+                position: absolute;
+                bottom: 24px;
+                left: 0;
+                width: 90px;
+                color: $color-text-emphasize;
+                font-size: 14px;
+                line-height: 18px;
+                text-align: center;
+                &:before {
+                  content: '';
+                  display: block;
+                  margin: 0 auto 5px auto;
+                  @include sprite($common-icon-photo);
+                }
+              }
+            }
+          }
+          &.question--secret {
+            .question__header {
+              .title {
+                position: relative;
+                padding-left: 26px;
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  @include sprite($mypage-lock);
+                }
+              }
+            }
+          }
+        }
+        .answer {
+          padding-top: 10px;
+          &__header {
+            text-align: right;
+            .date {
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+          &__content {
+            position: relative;
+            margin-top: 10px;
+            padding-left: 20px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 18px;
+            color: $color-text-primary;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              @include sprite($mypage-answer);
+            }
+          }
+        }
+      }
+    }
+    .list-more {
+      .form-button {
+        + .form-button {
+          margin-top: 60px;
+        }
+      }
+    }
+
+    @include mq('desktop') {
+      margin-right: 0;
+      margin-left: 0;
+      .qna-list {
+        .qna-container {
+          .question__photo {
+            margin-right: 0;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 // 네비게이션
@@ -3239,6 +5720,9 @@
       width: 100%;
       height: 30px;
       border-radius: 2px;
+      font-size: 12px;
+      line-height: 30px;
+      font-weight: 300;
       border: solid 1px #c9c9c9;
       text-align: center;
       + .button {
@@ -3527,7 +6011,6 @@
   }
 }
 
-
 @keyframes scheduled {
   0%,
   100% {
@@ -3804,6 +6287,261 @@
       .form-text {
         height: 40px;
         line-height: 40px;
+      }
+    }
+  }
+  // 배지 혜택
+  &.modal--badge-benefit {
+    .badge-coupon-container {
+      .badge {
+        position: relative;
+        padding-left: 90px;
+        min-height: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__date {
+          margin-top: 10px;
+          font-size: 14px;
+          color: $color-text-primary;
+        }
+        &__name {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 18px;
+          color: $color-text-point;
+        }
+        &__preview {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+      .badge-coupon {
+        margin-top: 30px;
+        &__title {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 18px;
+          color: $color-text-emphasize;
+          strong {
+            font-weight: 500;
+            color: $color-text-point;
+          }
+        }
+        &__list {
+          margin-top: 24px;
+          padding-bottom: 20px;
+        }
+        &__item {
+          + .badge-coupon__item {
+            margin-top: 12px;
+          }
+          .coupon {
+            position: relative;
+            overflow: hidden;
+            padding: 14px;
+            height: 98px;
+            box-sizing: border-box;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 1px solid green;
+              border: 1px solid $color-line-ready;
+              border-radius: 6px;
+              box-sizing: border-box;
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              right: 0;
+              width: 20px;
+              height: 20px;
+              border: 1px solid $color-line-ready;
+              border-radius: 100%;
+              transform: translate(50%, -50%);
+              background: #fff;
+              margin-right: -1px;
+              z-index: 2;
+            }
+            &__name {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 18px;
+              .icon {
+                .name {
+                  display: inline-block;
+                  vertical-align: middle;
+                }
+              }
+            }
+            &__condition {
+              margin-top: 6px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+            }
+            &__expiration {
+              position: absolute;
+              bottom: 14px;
+              left: 14px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-text-primary;
+              .countdown {
+                margin-left: 10px;
+                padding-left: 10px;
+                color: $color-text-point;
+                border-left: 1px solid $color-line-border;
+              }
+            }
+            &__state {
+              position: absolute;
+              display: inline-block;
+              top: 10px;
+              right: 10px;
+              padding: 4px 8px 0 9px;
+              height: 22px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: #fff;
+              background-color: $color-solid-ready;
+              overflow: hidden;
+              box-sizing: border-box;
+            }
+  
+            &.active {
+              &:before,
+              &:after {
+                border-color: $color-line-emphasize;
+              }
+              .coupon__type,
+              .coupon__name,
+              .coupon__condition {
+                color: $color-text-emphasize;
+              }
+              .coupon__state {
+                background-color: $color-solid-point;
+              }
+            }
+          }
+        }
+      }
+      .hazzys-badge {
+        width: 64px;
+        height: 64px;
+      }
+      @include mq('desktop') {
+        .badge {
+          position: relative;
+          padding-left: 120px;
+          min-height: 94px;
+        }
+        .badge-coupon {
+          margin-top: 40px;
+          &__list {
+            margin-top: 30px;
+            padding-bottom: 30px;
+          }
+        }
+        .hazzys-badge {
+          width: 94px;
+          height: 94px;
+        }
+      }
+    }
+  }
+  // 상품평 배지 발급 조건
+  &.modal--review-badge-guide {
+    .review-badge-guide {
+      max-height: 344px;
+      overflow: auto;
+      overflow-x: hidden;
+      padding-bottom: 30px;
+      .review-type {
+        + .review-type {
+          margin-top: 45px;
+        }
+        &__title {
+          padding: 15px 0;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          color: $color-text-emphasize;
+          border-bottom: 1px solid $color-line-emphasize;
+        }
+        &__content {
+          margin-top: 20px;
+        }
+      }
+      .badge-list {
+        &__item {
+          + .badge-list__item {
+            margin-top: 30px;
+          }
+          .badge {
+            &__name {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 22px;
+              color: $color-text-point;
+            }
+            &__condition {
+              margin-top: 10px;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 22px;
+              color: $color-text-emphasize;
+              strong {
+                font-weight: 300;
+                // color: $color-text-point;
+              }
+            }
+            &__benefit {
+              margin: 10px 0 0;
+              // .badge-benefit__list {}
+              .badge-benefit__item {
+                + .badge-benefit__item {
+                  margin-top: 10px;
+                }
+                position: relative;
+                padding-left: 10px;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
+                color: $color-solid-emphasize;
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 7px;
+                  left: 0;
+                  width: 2px;
+                  height: 2px;
+                  background: $color-solid-emphasize;
+                  vertical-align: middle;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      .modal__body {
+        padding-bottom: 40px;
+      }
+      .review-badge-guide {
+        background: #f8f8f8;
+        padding: 15px 20px 30px;
       }
     }
   }

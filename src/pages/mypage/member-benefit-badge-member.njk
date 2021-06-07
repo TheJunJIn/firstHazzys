@@ -1,0 +1,218 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--mypage">
+  <div class="main-header" style="background-image:url(/cmsstatic/asset/images/myapge-visual.jpg);">
+    {% include "partials/mypage/main-header.njk" %}
+  </div>
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--member">
+        <div class="main-content__header">
+          <h3 class="main-content__title">배지 혜택</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="mypage-benefit-container">
+          <p class="mypage-benefit__title"><span class="text-block">모으는 재미가 가득한 </span><span class="text-block">헤지스닷컴 회원만의 특별한 혜택!</span></p>
+          <div class="tabs tab--badge">
+            <div class="tablist" role="tablist">
+              <button type="button" class="tab" role="tab" aria-selected="true">회원 배지</button>
+              <button type="button" class="tab" role="tab" aria-selected="false">구매 배지</button>
+              <button type="button" class="tab" role="tab" aria-selected="false">리뷰 배지</button>
+            </div>
+            <div class="tabpanel">
+              <div class="member-badge-container">
+                <ul class="badge-list">
+                  <li class="badge-list__item">
+                    <dl class="badge">
+                      <dt class="badge__name">Welcome BADGE<br>(White BADGE)</dt>
+                      <dd class="badge__preview">
+                        <div class="hazzys-badge hazzys-badge--member-white">
+                          <div class="hazzys-badge__front">
+                            <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-white.png" alt="White"></div>
+                          </div>
+                          <div class="hazzys-badge__back">
+                            <div class="badge-content">무료배송 쿠폰 1매</div>
+                          </div>
+                          <div class="hazzys-badge__guide">뒤집어보세요</div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="badge-list__item">
+                    <dl class="badge">
+                      <dt class="badge__name">Blue BADGE</dt>
+                      <dd class="badge__preview">
+                        <div class="hazzys-badge hazzys-badge--member-blue">
+                          <div class="hazzys-badge__front">
+                            <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-blue.png" alt="Blue"></div>
+                          </div>
+                          <div class="hazzys-badge__back">
+                            <div class="badge-content">10,000원<br>금액 쿠폰 1매<br>(10만원 이상 구매시<br>사용 가능)</div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="badge-list__item">
+                    <dl class="badge">
+                      <dt class="badge__name">Red BADGE</dt>
+                      <dd class="badge__preview">
+                        <div class="hazzys-badge hazzys-badge--member-red">
+                          <div class="hazzys-badge__front">
+                            <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="Red"></div>
+                          </div>
+                          <div class="hazzys-badge__back">
+                            <div class="badge-content">10,000원<br>금액 쿠폰 1매<br>(10만원 이상 구매시<br>사용 가능)</div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="badge-list__item">
+                    <dl class="badge">
+                      <dt class="badge__name">Purple BADGE</dt>
+                      <dd class="badge__preview">
+                        <div class="hazzys-badge hazzys-badge--member-purple">
+                          <div class="hazzys-badge__front">
+                            <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-purple.png" alt="Purple"></div>
+                          </div>
+                          <div class="hazzys-badge__back">
+                            <div class="badge-content">15,000원<br>금액 쿠폰 1매<br>(10만원 이상 구매시<br>사용 가능)</div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="badge-list__item">
+                    <dl class="badge">
+                      <dt class="badge__name">Black S BADGE</dt>
+                      <dd class="badge__preview">
+                        <div class="hazzys-badge hazzys-badge--member-black-s">
+                          <div class="hazzys-badge__front">
+                            <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLack S"></div>
+                          </div>
+                          <div class="hazzys-badge__back">
+                            <div class="badge-content">20,000원<br>금액 쿠폰 1매<br>(10만원 이상 구매시<br>사용 가능)</div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="badge-list__item">
+                    <dl class="badge">
+                      <dt class="badge__name">Black R BADGE</dt>
+                      <dd class="badge__preview">
+                        <div class="hazzys-badge hazzys-badge--member-black-r">
+                          <div class="hazzys-badge__front">
+                            <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-r.png" alt="Black R"></div>
+                          </div>
+                          <div class="hazzys-badge__back">
+                            <div class="badge-content">20,000원<br>금액 쿠폰 1매<br>(10만원 이상 구매시<br>사용 가능)</div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </li>
+                </ul>
+                <div class="badge-guide">
+                  회원배지는 회원등급 기준으로 회원등급 승급 시 발급됩니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 내역</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나만의 혜택</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 배지</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 쇼핑 태그</p>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-menu__item menu">
+            <p class="menu__title">나의 정보</p>
+            <ul class="menu__list">
+              <li class="menu__item active">
+                <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+              </li>
+              <li class="menu__item">
+                <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+  {% include "modal/member/find-password.njk" %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/mypage.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/mypage.js"></script>
+<script>
+$(function(){
+  $('.hazzys-badge').on('click', function(){
+    $(this).toggleClass('reverse');
+    $(this).find('.hazzys-badge__guide').remove();
+  })
+})
+</script>
+{% endblock js %}

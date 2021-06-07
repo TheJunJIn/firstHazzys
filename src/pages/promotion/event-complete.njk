@@ -1,0 +1,39 @@
+{% extends 'default.njk' %}
+
+{% block content %}
+<main class="shell-main shell-main--event">
+  <div class="main-header">
+    <h2 class="main-header__title">PROMOTION</h2>
+    <button type="button" class="button main-header__btn-back">
+      <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+    </button>
+  </div>
+  <div class="main-content">
+    <!-- 기획전 리스트 -->
+    <div class="event-complete">
+      <p class="complete-text-1">당신의 반려견에게 왕관을 씌워주세요!</p>
+      <p class="complete-text-2">이벤트에 참여가 완료되었습니다.</p>
+      <div class="badge-image">
+        <img class="badge" src="/cmsstatic/asset/images/temp/badge_a_138x138.png" alt="배지명">
+      </div>
+      <p class="badge-text">
+        이벤트에 참여해주신 고객님께 혜택이 가득한 뱃지를 선물해드렸어요.<br>
+        <a href="#" class="link">마이페이지 > 나의 혜택 > 뱃지 혜택</a> 에서 발급받은 뱃지를 확인해보세요.
+      </p>
+      <p class="button-complete"><button type="button" class="form-button form-button--main">확인</button></p>
+    </div>
+    <!-- //기획전 리스트 -->
+  </div>
+</main>
+{% endblock %}
+
+{% block modal %}
+{% endblock modal %}
+
+{% block css %}
+<link rel="stylesheet" href="/asset/css/promotion.css" />
+{% endblock css %}
+
+{% block js %}
+<script src="/asset/js/promotion.js"></script>
+{% endblock js %}

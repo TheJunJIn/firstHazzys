@@ -938,7 +938,517 @@
       margin: 0;
     }
   }
+
+  // 등급별 혜택 안내
+  .membership-benefit {
+    padding: 0 0 45px;
+    overflow: hidden;
+    &__title {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: $color-text-emphasize;
+      text-align: center;
+    }
+    &__description {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 18px;
+      text-align: center;
+    }
+    &__swiper {
+      .swiper-badge {
+        .swiper-slide {
+          position: relative;
+          padding: 40px 0 30px;
+          width: 160px;
+          height: 160px;
+          box-sizing: content-box;
+
+          &.swiper-slide-active {
+            .membership__badge {
+              width: 160px;
+              height: 160px;
+              &:before {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+        .membership__badge {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 120px;
+          height: 120px;
+          transition: all 0.8s ease-out;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width :100%;
+            height: 100%;
+            border-radius: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            transition: all 0.8s ease-out;
+          }
+        }
+        .swiper-container {
+          opacity: 0;
+          &.swiper-container--active {
+            opacity: 1;
+          }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+          visibility: hidden;
+          top: 100%;
+          margin-top: 0;
+          transform: translate(0, 10px);
+        }
+        .swiper-button-prev {
+          left: 0;
+          &:after {
+            @include sprite($common-arrow-left-swiper-transparent);
+          }
+        }
+        .swiper-button-next {
+          right: 0;
+          &:after {
+            @include sprite($common-arrow-right-swiper-transparent);
+          }
+        }
+      }
+      .swiper-grade {
+        position: relative;
+        .grade {
+          text-align: center;
+          color: $color-text-emphasize;
+          visibility: hidden;
+          opacity: 0;
+          // max-height: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: visibility 0.5s 0.1s cubic-bezier(0.25, 1, 0.5, 1),
+            opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+          .grade__name,
+          .grade__condition,
+          .grade__benefit {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+
+          &.active {
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+            // max-height: none;
+            transition: visibility 0.01s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+            .grade__name,
+            .grade__condition,
+            .grade__benefit {
+              opacity: 1;
+              transform: translateY(0);
+              transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            .grade__name {
+              transition-delay: 0.3s;
+            }
+            .grade__condition {
+              transition-delay: 0.5s;
+            }
+            .grade__benefit {
+              transition-delay: 0.6s;
+            }
+          }
+          &.grade--member-white .grade__name {
+            color: #f2ebdd;
+          }
+          &.grade--member-blue .grade__name {
+            color: #0086ff;
+          }
+          &.grade--member-red .grade__name {
+            color: #ff2800;
+          }
+          &.grade--member-purple .grade__name {
+            color: #7400ff;
+          }
+          // &.grade--member-black-s .grade__name {}
+          &.grade--member-black-r .grade__name {
+            color: #ff781e;
+          }
+
+          &__name {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1;
+          }
+          &__condition {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+          }
+          &__benefit {
+            margin-top: 30px;
+            .benefit {
+              &__item {
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
+                color: $color-text-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      padding: 0 0 45px;
+      &__swiper {
+        .swiper-badge {
+          .swiper-container {
+            overflow: visible;
+          }
+          .swiper-button-prev,
+          .swiper-button-next {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+  // 헤지스 배지 안내
+  .hazzys-badge-guide {
+    .tab--badge {
+      margin: 0 10px;
+      .tablist {
+        margin-bottom: 30px;
+      }
+    }
+    .member-badge-container {
+      .badge-list {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $color-line-border;
+        &__item {
+          + .badge-list__item {
+            margin-top: 40px;
+          }
+
+          .badge {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            &__name {
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            // &__preview {}
+          }
+          .hazzys-badge {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+          }
+        }
+      }
+      .badge-guide {
+        margin-top: 40px;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 300;
+        position: relative;
+        padding-left: 10px;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 7px;
+          left: 0;
+          width: 2px;
+          height: 2px;
+          background: $color-solid-default;
+          vertical-align: middle;
+        }
+      }
+    }
+    .shopping-badge-container {
+      padding-bottom: 50px;
+      .badge-list {
+        &__item {
+          + .badge-list__item {
+            margin-top: 50px;
+          }
+          display: flex;
+
+          .badge {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            flex-basis: 140px;
+            min-width: 140px;
+            &__name {
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            // &__preview {}
+          }
+          .badge-benefit {
+            margin: 10px 0 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            &__title {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+              strong {
+                font-weight: 500;
+                color: $color-text-point;
+              }
+            }
+            &__list {
+              margin-top: 20px;
+            }
+            &__item {
+              + .badge-benefit__item {
+                margin-top: 10px;
+              }
+              position: relative;
+              padding-left: 10px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-solid-emphasize;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                background: $color-solid-emphasize;
+                vertical-align: middle;
+              }
+              .condition {
+                display: block;
+              }
+            }
+          }
+          .hazzys-badge {
+            width: 94px;
+            height: 94px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .review-badge-container {
+      padding-bottom: 50px;
+      .review-type-container {
+        &:first-child {
+          margin-top: -5px;
+        }
+        + .review-type {
+          margin-top: 65px;
+        }
+      }
+      .review-type {
+        + .review-type {
+          margin-top: 65px;
+        }
+        &__title {
+          padding: 15px 0;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          color: $color-text-emphasize;
+          border-bottom: 1px solid $color-line-emphasize;
+        }
+        &__content {
+          margin-top: 30px;
+        }
+      }
+      .badge-list {
+        &__item {
+          + .badge-list__item {
+            margin-top: 50px;
+          }
+          display: flex;
+
+          .badge {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            flex-basis: 140px;
+            min-width: 140px;
+            &__name {
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+            }
+            // &__preview {}
+          }
+          .badge-benefit {
+            margin: 10px 0 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            &__title {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: $color-text-emphasize;
+              strong {
+                font-weight: 500;
+                color: $color-text-point;
+              }
+            }
+            &__list {
+              margin-top: 20px;
+            }
+            &__item {
+              + .badge-benefit__item {
+                margin-top: 10px;
+              }
+              position: relative;
+              padding-left: 10px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-solid-emphasize;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                background: $color-solid-emphasize;
+                vertical-align: middle;
+              }
+              .condition {
+                display: block;
+              }
+            }
+          }
+          .hazzys-badge {
+            width: 94px;
+            height: 94px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    @include mq('desktop') {
+      .tab--badge {
+        margin-left: 0;
+        margin-right: 0;
+        .tablist {
+          margin-bottom: 80px;
+        }
+      }
+      .member-badge-container {
+        .badge-list {
+          padding-bottom: 60px;
+          @include self-clear;
+          margin-top: -50px;
+          &__item {
+            float: left;
+            width: 25%;
+            // margin: 50px;
+            margin: 50px 0 0;
+            + .badge-list__item {
+              margin-top: 50px;
+            }
+            .badge {
+              &__name {
+                height: 36px;
+              }
+            }
+          }
+        }
+      }
+      .shopping-badge-container {
+        .badge-list {
+          padding-left: 150px;
+          &__item {
+            + .badge-list__item {
+              margin-top: 60px;
+            }
+            .badge-benefit {
+              margin: 20px 0 0 50px;
+              &__item {
+                .condition {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+      .review-badge-container {
+        .review-type-container {
+          + .review-type {
+            margin-top: 95px;
+          }
+          display: flex;
+          justify-content: space-between;
+        }
+        .review-type {
+          + .review-type {
+            margin-top: 0;
+            margin-left: 70px;
+          }
+        }
+        .badge-list {
+          &__item {
+            + .badge-list__item {
+              margin-top: 60px;
+            }
+            .badge {
+              &__name {
+                height: 36px;
+              }
+            }
+            .badge-benefit {
+              margin: 20px 0 0 30px;
+              &__item {
+                .condition {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+          &.badge-list--special {
+            padding-left: 150px;
+            &__item {
+              border: 1px solid red;
+              .badge-benefit {
+                margin: 20px 0 0 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+
 
 // 팝업
 // =============================================================================
