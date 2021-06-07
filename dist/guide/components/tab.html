@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>HAZZYSㅣ온라인 직영 플래그십 스토어</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="S/S가 가득한 Hazzys.com에 방문하세요. 캐주얼 부터 비즈니스룩 까지, 매일매일 새롭게!" />
+		<meta property="og:url" content="http://www.hazzys.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="HAZZYSㅣ온라인 직영 플래그십 스토어" />
+		<meta property="og:image" content="/cmsstatic/asset/images/logo_hazzys.jpg" />
+		<meta property="og:description" content="S/S가 가득한 Hazzys.com에 방문하세요. 캐주얼 부터 비즈니스룩 까지, 매일매일 새롭게!" />
+		<meta name="referrer" content="unsafe-url" />
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" href="/asset/css/common.css" />
+		<link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" />
+		<link rel="stylesheet" href="/asset/css/guide.css" />
+
+		<script src="/asset/js/vendor.js"></script>
+	</head>
+	<body>
+		<div class="guide">
+			<!-- Navigation -->
+			<aside class="guide-sidebar">
+				<div class="guide-sidebar__scroll-box">
+					<header class="guide-header">
+						<h1 class="guide-header__title">Component Guide</h1>
+					</header>
+					<nav class="guide-menu">
+						<div class="guide-menu__group">
+							<h2 class="guide-menu__title">General</h2>
+							<ul class="guide-menu__list">
+								<li class="guide-menu__item">
+									<a href="/guide/index.html" class="guide-menu__anchor">시작</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="guide-menu__group">
+							<h2 class="guide-menu__title">Layout</h2>
+							<ul class="guide-menu__list">
+								<li class="guide-menu__item">
+									<a href="/guide/layout/index.html" class="guide-menu__anchor" target="_blank">Layout</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/layout/header.html" class="guide-menu__anchor" target="_blank">Header</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/layout/footer.html" class="guide-menu__anchor" target="_blank">Footer</a>
+								</li>
+							</ul>
+						</div>
+						<div class="guide-menu__group">
+							<h2 class="guide-menu__title">Components</h2>
+
+							<ul class="guide-menu__list">
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/checkbox.html" class="guide-menu__anchor">Form:checkbox</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/radio.html" class="guide-menu__anchor">Form:radio</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/text.html" class="guide-menu__anchor">Form:text</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/select.html" class="guide-menu__anchor">Form:select</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/button.html" class="guide-menu__anchor">Buttons</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/tab.html" class="guide-menu__anchor">Tab</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</aside>
+			<!-- // Navigation -->
+			<main role="main" class="guide-main">
+				<article class="guide-contents">
+					<header class="guide-contents__header">
+						<h1 class="guide-contents__title">Tab</h1>
+					</header>
+					<div class="guide-contents__body">
+						<article class="guide-section">
+							<header class="guide-section__header">
+								<h1 class="guide-section__title">input:text</h1>
+							</header>
+							<div class="guide-section__contents">
+								<div class="guide-example">
+									<div class="tabs">
+										<div class="tablist" role="tablist" aria-label="review">
+											<button type="button" class="tab" role="tab" aria-selected="true" aria-controls="allReview-tab" id="allReview">전체리뷰(1,200)</button>
+											<button type="button" class="tab" role="tab" aria-selected="false" aria-controls="photoReview-tab" id="photoReview" tabindex="-1">포토리뷰(10)</button>
+										</div>
+										<div class="tabpanel" tabindex="0" role="tabpanel" id="allReview-tab" aria-labelledby="allReview">내용 1</div>
+										<div class="tabpanel" tabindex="0" role="tabpanel" id="photoReview-tab" aria-labelledby="photoReview" hidden>내용 2</div>
+									</div>
+								</div>
+								<div class="guide-code">
+									<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>review<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allReview-tab<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allReview<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>전체리뷰(1,200)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-selected</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photoReview-tab<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photoReview<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>포토리뷰(10)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allReview-tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allReview<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    내용 1
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photoReview-tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photoReview<span class="token punctuation">"</span></span> <span class="token attr-name">hidden</span><span class="token punctuation">></span></span>
+    내용 2
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+								</div>
+							</div>
+						</article>
+					</div>
+				</article>
+			</main>
+		</div>
+		<script src="/asset/js/ui.js"></script>
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>HAZZYSㅣ온라인 직영 플래그십 스토어</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="S/S가 가득한 Hazzys.com에 방문하세요. 캐주얼 부터 비즈니스룩 까지, 매일매일 새롭게!" />
+		<meta property="og:url" content="http://www.hazzys.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="HAZZYSㅣ온라인 직영 플래그십 스토어" />
+		<meta property="og:image" content="/cmsstatic/asset/images/logo_hazzys.jpg" />
+		<meta property="og:description" content="S/S가 가득한 Hazzys.com에 방문하세요. 캐주얼 부터 비즈니스룩 까지, 매일매일 새롭게!" />
+		<meta name="referrer" content="unsafe-url" />
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" href="/asset/css/common.css" />
+		<link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" />
+		<link rel="stylesheet" href="/asset/css/guide.css" />
+
+		<script src="/asset/js/vendor.js"></script>
+	</head>
+	<body>
+		<div class="guide">
+			<!-- Navigation -->
+			<aside class="guide-sidebar">
+				<div class="guide-sidebar__scroll-box">
+					<header class="guide-header">
+						<h1 class="guide-header__title">Component Guide</h1>
+					</header>
+					<nav class="guide-menu">
+						<div class="guide-menu__group">
+							<h2 class="guide-menu__title">General</h2>
+							<ul class="guide-menu__list">
+								<li class="guide-menu__item">
+									<a href="/guide/index.html" class="guide-menu__anchor">시작</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="guide-menu__group">
+							<h2 class="guide-menu__title">Layout</h2>
+							<ul class="guide-menu__list">
+								<li class="guide-menu__item">
+									<a href="/guide/layout/index.html" class="guide-menu__anchor" target="_blank">Layout</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/layout/header.html" class="guide-menu__anchor" target="_blank">Header</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/layout/footer.html" class="guide-menu__anchor" target="_blank">Footer</a>
+								</li>
+							</ul>
+						</div>
+						<div class="guide-menu__group">
+							<h2 class="guide-menu__title">Components</h2>
+
+							<ul class="guide-menu__list">
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/checkbox.html" class="guide-menu__anchor">Form:checkbox</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/radio.html" class="guide-menu__anchor">Form:radio</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/text.html" class="guide-menu__anchor">Form:text</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/select.html" class="guide-menu__anchor">Form:select</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/form/button.html" class="guide-menu__anchor">Buttons</a>
+								</li>
+								<li class="guide-menu__item">
+									<a href="/guide/components/tab.html" class="guide-menu__anchor">Tab</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</aside>
+			<!-- // Navigation -->
+			<main role="main" class="guide-main">
+				<article class="guide-contents">
+					<header class="guide-contents__header">
+						<h1 class="guide-contents__title">
+							Form
+							<small class="guide-contents__title-small"> input[type='text'], input[type='password'] </small>
+						</h1>
+					</header>
+					<div class="guide-contents__body">
+						<article class="guide-section">
+							<header class="guide-section__header">
+								<h1 class="guide-section__title">input:text</h1>
+							</header>
+							<div class="guide-section__contents">
+								<div class="guide-example">
+									<div class="input-block">
+										<input type="text" class="form-text" placeholder="입력하세요." />
+									</div>
+									<br />
+									<div class="input-block">
+										<input type="text" class="form-text" placeholder="입력하세요." />
+										<p class="input-block__comment">설명이 들어갑니다.</p>
+									</div>
+									<br />
+									<div class="input-block input-block--error">
+										<input type="text" class="form-text" placeholder="입력하세요." />
+										<p class="input-block__comment">오류메세지가 출력됩니다.</p>
+									</div>
+								</div>
+								<div class="guide-code">
+									<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>입력하세요.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 설명 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>입력하세요.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__comment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    설명이 들어갑니다.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 오류 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block input-block--error<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>입력하세요.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__comment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    오류메세지가 출력됩니다.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+								</div>
+							</div>
+						</article>
+
+						<article class="guide-section">
+							<header class="guide-section__header">
+								<h1 class="guide-section__title">input:password</h1>
+							</header>
+							<div class="guide-section__contents">
+								<div class="guide-example">
+									<div class="input-block" data-form-text>
+										<div class="input-block__password">
+											<input type="password" class="form-text" placeholder="비밀번호" />
+											<button class="form-toggle-button" data-form-text-toggle>비밀번호 보기</button>
+										</div>
+									</div>
+									<br />
+									<div class="input-block" data-form-text>
+										<div class="input-block__password">
+											<input type="password" class="form-text" placeholder="비밀번호" />
+											<button class="form-toggle-button" data-form-text-toggle>비밀번호 보기</button>
+										</div>
+										<p class="input-block__comment">설명이 들어갑니다.</p>
+									</div>
+									<br />
+									<div class="input-block input-block--error" data-form-text>
+										<div class="input-block__password">
+											<input type="password" class="form-text" placeholder="비밀번호" />
+											<button class="form-toggle-button" data-form-text-toggle>비밀번호 보기</button>
+										</div>
+										<p class="input-block__comment">설정하신 비밀번호와 일치하지 않아요. 다시 한 번 입력해주세요!</p>
+									</div>
+								</div>
+								<div class="guide-code">
+									<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>비밀번호<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-toggle-button<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text-toggle</span><span class="token punctuation">></span></span>비밀번호 보기<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 설명 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>비밀번호<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-toggle-button<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text-toggle</span><span class="token punctuation">></span></span>비밀번호 보기<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__comment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    설명이 들어갑니다.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 오류 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block input-block--error<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>비밀번호<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-toggle-button<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text-toggle</span><span class="token punctuation">></span></span>비밀번호 보기<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-block__comment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    설정하신 비밀번호와 일치하지 않아요. 다시 한 번 입력해주세요!
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+								</div>
+							</div>
+						</article>
+
+						<article class="guide-section">
+							<header class="guide-section__header">
+								<h1 class="guide-section__title">input:number ( 수량 )</h1>
+							</header>
+							<div class="guide-section__contents">
+								<div class="guide-example">
+									<div class="form-input-qty" data-form-text>
+										<button type="button" class="form-input-qty__decrease" data-form-qty="decrease">-</button>
+										<label class="form-input-qty__input">
+											<input type="number" class="form-text" min="1" max="99" pattern="[0-9]*" value="1" />
+										</label>
+										<button type="button" class="form-input-qty__increase" data-form-qty="increase">+</button>
+									</div>
+								</div>
+								<div class="guide-code">
+									<pre class="language-html"><code class="language-html">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-input-qty<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-text</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-input-qty__decrease<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-qty</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>decrease<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-input-qty__input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-text<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>99<span class="token punctuation">"</span></span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[0-9]*<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-input-qty__increase<span class="token punctuation">"</span></span> <span class="token attr-name">data-form-qty</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>increase<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+								</div>
+							</div>
+						</article>
+					</div>
+				</article>
+			</main>
+		</div>
+		<script src="/asset/js/ui.js"></script>
+	</body>
+</html>
