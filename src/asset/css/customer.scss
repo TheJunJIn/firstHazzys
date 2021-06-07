@@ -859,6 +859,14 @@
       }
     }
   }
+  .badge-guide-text {
+    width: 250px;
+    margin: 0 auto 50px auto;
+    color: $color-text-emphasize;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+  }
   .note-wrap {
     margin: 0 10px;
     &__title {
@@ -931,6 +939,9 @@
     }
   }
   @include mq('desktop') {
+    .badge-guide-text {
+      width: 100%;
+    }
     .benefit-tab {
       margin: 0 0 40px;
     }
@@ -1127,10 +1138,16 @@
   }
   // 헤지스 배지 안내
   .hazzys-badge-guide {
+    margin: 0 10px;
     .tab--badge {
       margin: 0 10px;
       .tablist {
         margin-bottom: 30px;
+      }
+    }
+    .tabs--depth2 {
+      .tablist {
+        margin-bottom: 60px;
       }
     }
     .member-badge-container {
@@ -1354,6 +1371,7 @@
       }
     }
     @include mq('desktop') {
+      margin: 0;
       .tab--badge {
         margin-left: 0;
         margin-right: 0;
