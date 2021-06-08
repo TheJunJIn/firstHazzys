@@ -1016,6 +1016,224 @@
   }
 }
 
+// 본인인증
+// =============================================================================
+.shell-main--member-certify {
+  .main-header {
+    &__title {
+      font-size: 18px;
+    }
+  }
+  .certify-step-wrap{
+    margin-bottom: 60px;
+    .certify-step {
+      display: flex;
+      &__item {
+        position: relative;
+        width: 100%;
+        .sprite-common {
+          display: block;
+          margin: 0 auto 10px auto;
+        }
+        + .certify-step__item {
+          &:before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include sprite($common-arrow-right-certify);
+          }
+        }
+        .text {
+          color: $color-text-primary;
+          font-size: 12px;
+          text-align: center;
+        }
+        &.on {
+          .text {
+          color: $color-text-point;
+          }
+        }
+      }
+    }
+  }
+  .member-form {
+    &__left {
+      margin-bottom: 40px;
+    }
+    &__field-guide {
+      margin-bottom: 60px;
+    }
+    .form-block {
+      display: flex;
+      &__field {
+        width: 100%;
+      }
+      &__field--button {
+        flex: 0 0 106px;
+        width: 106px;
+        margin-left: 6px;
+        text-align: right;
+      }
+      &__field--domain {
+        flex: 0 0 167px;
+        width: 167px;
+        margin-left: 6px;
+      }
+    }
+    &__agreement {
+      margin-top: 50px;
+    }
+  }
+  .certify-text {
+    margin-bottom: 30px;
+    color: $color-text-emphasize;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+  .main-content--certify-complete {
+    .message-card {
+      &__icon {
+        .signup-complete {
+          position: relative;
+          width: 80px;
+          margin: 0 auto;
+          &__firework {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: bottom;
+          }
+        }
+      }
+      &__title {
+        margin-top: 10px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+      &__text {
+        color: $color-text-primary;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+      }
+    }
+    .subscribe {
+      margin-bottom: 40px;
+      text-align: center;
+      &__title {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        color: $color-text-emphasize;
+      }
+      &__guide {
+        margin: 4px 0 30px;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 18px;
+        color: $color-text-primary;
+        a {
+          color: $color-text-point;
+          font-weight: 500;
+          text-decoration: underline;
+        }
+      }
+    }
+    .certify-agreement {
+      margin-bottom: 40px;
+      .agreement__header {
+        margin-bottom: 10px;
+      }
+      .policy-view-button {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        padding: 5px 0 5px 5px;
+        color: $color-text-primary;
+        font-size: 12px;
+        font-weight: 300;
+        text-decoration: underline;
+        outline: 0;
+      }
+      .text-agreement {
+        color: $color-text-primary;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+      }
+    }
+  }
+  @include mq('desktop') {
+    .certify-step-wrap{
+      margin-bottom: 120px;
+      .certify-step {
+        width: 470px;
+        margin: 0 auto;
+        &__item {
+          .text {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .member-form {
+      @include self-clear;
+      &__left {
+        float: left;
+        width: 470px;
+      }
+      &__right {
+        float: right;
+        width: 470px;
+      }
+      &__agreement {
+        margin-top: 60px;
+      }
+    }
+    .certify-text {
+      width: 470px;
+      margin: 0 auto 30px auto;
+      font-size: 18px;
+    }
+    .button-center {
+      width: 470px;
+      margin: 0 auto;
+    }
+    .main-content--certify-complete {
+      .message-card {
+        &__title {
+          font-size: 34px;
+          line-height: 44px;
+        }
+        &__text {
+          + .message-card__body {
+            margin-top: 50px;
+          }
+        }
+      }
+      .subscribe {
+        max-width: 470px;
+        margin: 0 auto 50px auto;
+        &__title,
+        &__guide {
+          font-size: 14px;
+        }
+      }
+      .certify-agreement {
+        width: 470px;
+        margin: 0 auto 50px auto;
+        .text-agreement {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
 // 팝업
 // =============================================================================
 .modal {
