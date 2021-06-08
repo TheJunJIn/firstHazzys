@@ -31,7 +31,12 @@
     <button type="button" class="form-button form-button--main" data-modal-open="#modalFindPassword">
       아이디 찾기 / 비밀번호 재설정 - 이메일/문자 발송 완료
     </button>
-
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalTemporaryMember">
+      임시 회원 안내
+    </button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalDormantMember">
+      휴면 회원 안내
+    </button>
   </div>
 </main>
 {% endblock %}
@@ -57,6 +62,12 @@
 
 {# 아이디 찾기 / 비밀번호 재설정 - 이메일/문자 발송 완료 #}
 {% include "modal/member/find-password.njk" %}
+
+{# 임시 회원 안내 #}
+{% include "modal/member/temporary-member.njk" %}
+
+{# 휴면 회원 안내 #}
+{% include "modal/member/dormant-member.njk" %}
 
 {% endblock modal %}
 

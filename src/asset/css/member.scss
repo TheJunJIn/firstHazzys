@@ -266,6 +266,15 @@
 
 // SNS 연결
 .sns-connect {
+  &__text {
+    padding-top: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $color-text-point;
+    text-align: center;
+  }
   &__title {
     margin-bottom: 14px;
     font-size: 14px;
