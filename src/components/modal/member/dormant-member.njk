@@ -1,8 +1,8 @@
-<!-- 아이디 찾기 / 비밀번호 재설정 -->
-<div id="modalFindPassword" class="modal modal--find-password" tabindex="-1" role="dialog" data-modal>
+<!-- 휴면 회원 안내 -->
+<div id="modalDormantMember" class="modal modal--dormant-member" tabindex="-1" role="dialog" data-modal>
   <div class="modal-dialog" role="document">
     <div class="modal__header">
-      <h1 class="modal__header__title">아이디 찾기/비밀번호 재설정</h1>
+      <h1 class="modal__header__title">휴면 회원 안내</h1>
       <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
         <i class="sprite-icon sprite-common sprite-common-close-layer">닫기</i>
       </button>
@@ -10,18 +10,18 @@
     <div class="modal__body">
       <div class="message">
         <p class="message__text">
-          비밀번호 재설정을 위한 안내 메일을 발송했어요.<br>
-          메일 내 링크를 통해 비밀번호를 재설정해주세요.
+          고객님의 계정은 휴면 상태입니다.
+          <br>헤지스닷컴을 이용하기 위해서는 LF멤버스에서 로그인하여 휴면 해제를 해주세요.
         </p>
       </div>
     </div>
     <div class="modal__footer">
       <ul class="button-group">
         <li class="button-group__item">
-          <a href="#" class="form-button form-button--plain">로그인</a>
+          <a href="#" class="form-button form-button--plain" data-modal-close>취소</a>
         </li>
         <li class="button-group__item">
-          <button type="button" class="form-button form-button--main" data-modal-close>확인</button>
+          <button type="button" class="form-button form-button--main">LF멤버스 로그인</button>
         </li>
       </ul>
     </div>
