@@ -73,111 +73,9 @@
 // 기획전 타입 A
 .promotion-type-a {
   position: relative;
-  &__image {
-    position: relative;
-    margin-bottom: 80px;
-    .promotion-type__swiper {
-      margin-bottom: 40px;
-      .swiper-container {
-        width: 100%;
-      }
-      .swiper-slide {
-        width: 100%;
-      }
-      .promotion-image {
-        position: relative;
-        height: 0;
-        width: 100%;
-        padding-top: 130%;
-        overflow: hidden;
-        > img {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          width: 100%;
-          transform: translateY(-50%);
-          height: auto;
-          pointer-events: auto;
-        }
-        .button{
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 60px;
-          height: 60px;
-          background-color: $color-solid-point;
-          transform: translate(-50%, -50%);
-          .icon-play {
-            content: '';
-            @include sprite($common-icon-play);
-          }
-        }
-      }
-      .swiper-button-prev,
-      .swiper-button-next {
-        z-index: 3;
-        opacity: 1;
-        pointer-events: auto !important;
-      }
-      @include mq('desktop', 'max') {
-        .swiper-button-prev,
-        .swiper-button-next {
-          display: none;
-        }
-      }
-    }
-    .promotion-type__info {
-      margin: 0 10px;
-      .text {
-        margin-bottom: 20px;
-        color: $color-text-emphasize;
-        font-size: 28px;
-        line-height: 38px;
-        text-align: center;
-      }
-      .sub-text {
-        font-size: 14px;
-        line-height: 24px;
-        text-align: center;
-      }
-    }
-  }
-  @include mq('desktop') {
-    .promotion-type-a {
-      &__image {
-        @include self-clear;
-        position: relative;
-        width: 1170px;
-        margin: 0 auto 100px auto;
-        @at-root {
-          .is-fixed #{&} {
-            position: fixed;
-            top: 0;
-            right: 50%;
-          }
-        }
-        .promotion-type__swiper {
-          float: left;
-          width: 570px;
-          margin-bottom: 0;
-          .product-image {
-            padding-top: 115%;
-          }
-          .swiper-button-prev {
-            left: 0;
-          }
-          .swiper-button-next {
-            right: 0;
-          }
-        }
-        .promotion-type__info {
-          float: right;
-          width: 570px;
-          margin: 0 0 0 30px;
-          padding: 262px 100px 0;
-          box-sizing: border-box;
-        }
-      }
+  .image-text {
+    img {
+      width: 100%;
     }
   }
 }
@@ -269,6 +167,7 @@
   .top-contents {
     margin-bottom: 40px;
     .top-promotion-swiper {
+      position: relative;
       margin-bottom: 40px;
       .promotin-banner {
         position: relative;
@@ -283,10 +182,22 @@
           width: 100%;
         }
       }
+      .text-layer {
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        width: 270px;
+        color: $color-text-emphasize;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 38px;
+        z-index: 9;
+      }
       .mark-only {
         position: absolute;
         top: 60px;
         right: 0;
+        z-index: 10;
         @include sprite($common-mark-only);
         .text {
           display: block;
@@ -298,28 +209,6 @@
           line-height: 18px;
           transform: rotate(-345deg);
           text-align: center;
-        }
-      }
-      .text-animation {
-        top: 40px;
-        left: 10px;
-        width: 340px;
-        text-align: left;
-        .title {
-          color: $color-text-emphasize;
-        }
-      }
-      .swiper-slide-active {
-        .text-animation {
-          top: 40px;
-          left: 10px;
-          text-align: left;
-          .title {
-            color: $color-text-emphasize;
-            transform: translateY(0);
-            opacity: 1;
-            transition-delay: 0.3s;
-          }
         }
       }
       @include mq('desktop', 'max') {
@@ -382,36 +271,12 @@
             width: 100%;
           }
         }
+        .text-layer {
+          left: 375px;
+          width: 570px;
+        }
         .mark-only {
-          top: 20px;
-          right: 20px;
-        }
-        .swiper-slide-active {
-          &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -346px;
-            width: 400px;
-            height: 740px;
-            background-color: $color-solid-white;
-            z-index: 10;
-            opacity: 1;
-            transition-delay: 0.3s;
-          }
-          .text-animation {
-            left: -200px;
-            width: 570px;
-          }
-        }
-        .swiper-pagination-container {
-          bottom: 60px;
-        }
-        .swiper-button-prev {
-          left: 0;
-        }
-        .swiper-button-next {
-          right: 0;
+          right: 370px;
         }
       }
       .text-box {
@@ -572,6 +437,7 @@
     width: 300px;
     height: 140px;
     margin: 0 auto 40px auto;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     .benefit-box {
       display: flex;
       position: relative;
@@ -579,7 +445,6 @@
       height: 140px;
       border: 1px solid $color-line-emphasize;
       border-radius: 3px;
-      box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
       z-index: 9;
       box-sizing: border-box;
       .benefit-info {

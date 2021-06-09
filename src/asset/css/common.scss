@@ -274,3 +274,33 @@
     background-color: #ff781e;
   }
 }
+
+// 에러 페이지
+.error-data {
+  margin-top: 60px;
+  text-align: center;
+  &__title {
+    margin-top: 20px;
+    color: $color-text-emphasize;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  &__comment {
+    margin-top: 20px;
+    color: $color-text-primary;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__button {
+    margin-top: 60px;
+    .form-button {
+      width: 165px;
+      height: 40px;
+      font-size: 12px;
+      line-height: 40px;
+    }
+  }
+  @include mq('desktop') {
+    margin-top: 100px;
+  }
+}
