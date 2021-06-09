@@ -2133,14 +2133,8 @@
   $(function () {
     // 기획전 상단 슬라이드 이미지
     new Swiper('#topPromotionSwiper', {
-      loop: true,
-      slidesPerView: 'auto',
-      breakpoints: {
-        1023: {
-        loop: false,
-        slidesPerView: 1,
-        }
-      },
+      loop: false,
+      slidesPerView: 1,
       pagination: {
         el: '.swiper-pagination',
         type: 'fraction'
