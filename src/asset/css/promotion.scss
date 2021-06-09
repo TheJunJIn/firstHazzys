@@ -74,6 +74,7 @@
 .promotion-type-a {
   position: relative;
   .image-text {
+    margin: 0 10px 60px;
     img {
       width: 100%;
     }
@@ -250,9 +251,6 @@
     .top-contents {
       margin-bottom: 60px;
       .top-promotion-swiper {
-        .swiper-wrapper {
-          padding-left: 345px;
-        }
         .swiper-slide {
           width: 670px;
           &:before {
