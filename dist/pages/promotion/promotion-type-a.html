@@ -1768,56 +1768,11 @@
 					<!-- 기획전 타입 A -->
 					<div class="promotion-wrap">
 						<div class="promotion-type-a">
-							<div class="promotion-type-a__image">
-								<!-- 이미지 슬라이드 -->
-								<div class="promotion-type__swiper">
-									<div class="swiper-container" id="promotionSwiper">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide">
-												<div class="promotion-image">
-													<img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="이미지명" />
-													<button type="button" class="button">
-														<i class="sprite-icon icon-play">동영상</i>
-													</button>
-												</div>
-											</div>
-											<div class="swiper-slide">
-												<div class="promotion-image">
-													<img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="이미지명" />
-													<button type="button" class="button">
-														<i class="sprite-icon icon-play">동영상</i>
-													</button>
-												</div>
-											</div>
-											<div class="swiper-slide">
-												<div class="promotion-image">
-													<img src="/cmsstatic/asset/images/temp/product_360x468_1.jpg" alt="이미지명" />
-													<button type="button" class="button">
-														<i class="sprite-icon icon-play">동영상</i>
-													</button>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-pagination-container">
-											<div class="swiper-pagination"></div>
-											<div class="swiper-progress">
-												<span class="swiper-progress__fill"></span>
-											</div>
-										</div>
-										<div class="swiper-button-prev"></div>
-										<div class="swiper-button-next"></div>
-									</div>
-								</div>
-								<!-- //이미지 슬라이드 -->
-								<!-- 기획전 정보 -->
-								<div class="promotion-type__info">
-									<p class="text">My Summer bag<br />Hariato punching</p>
-									<p class="sub-text">
-										헤지스의 헤리티지를 담은 모노그램 패턴, HARIATO 패턴은 다양한 스타일로 출시되어 많은 사랑을 받고 있습니다. 이번 SUMMER 시즌을 맞이하여 헤리아토 패턴을 재 해석한 헤리아토 펀칭라인이 출시되었습니다. 여름을 시원하게 장식할 헤리아토 펀칭백을 지금 헤지스몰에서 만나보세요.
-									</p>
-								</div>
-								<!-- //기획전 정보 -->
-							</div>
+							<!-- 이미지 -->
+							<p class="image-text">
+								<img src="/cmsstatic/asset/images/temp/promotion_680x1000_1.jpg" alt="" />
+							</p>
+							<!-- //이미지 -->
 							<!-- 탭 -->
 							<div class="tabs-floating">
 								<div class="tablist" role="tablist">
@@ -4179,60 +4134,6 @@
 			}
 
 			$(function () {
-				// 기획전 상단 슬라이드 이미지
-				new Swiper('#promotionSwiper', {
-					loop: true,
-					pagination: {
-						el: '.swiper-pagination',
-						type: 'fraction'
-					},
-					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev'
-					},
-					on: {
-						init: function (swiper) {
-							var swiper = this;
-							var length = swiper.slides.length;
-							if (swiper.activeIndex !== swiper.realIndex) {
-								length = length - 2;
-							}
-							var percent = ((swiper.realIndex + 1) / length) * 100;
-							window.setTimeout(function () {
-								$(swiper.pagination.el)
-									.parent()
-									.find('.swiper-progress__fill')
-									.width(percent + '%');
-							}, 10);
-						},
-						touchStart: function (swiper, event) {
-							$(this.el).addClass('is-move');
-						},
-						touchEnd: function (swiper, event) {
-							$(this.el).removeClass('is-move');
-						},
-						progress: function () {
-							var swiper = this;
-							var length = swiper.slides.length;
-							var percent = (swiper.progress / (length - 2)) * (length - 1) * 100;
-
-							if (swiper.activeIndex === swiper.realIndex) {
-								percent = swiper.progress * 100;
-							}
-
-							if (percent > 100) {
-								percent = percent - 100;
-							} else if (percent <= 0) {
-								percent = 100;
-							}
-							$(swiper.pagination.el)
-								.parent()
-								.find('.swiper-progress__fill')
-								.width(percent + '%');
-						}
-					}
-				});
-
 				// 상품 슬라이더
 				$('#productList .swiper-container').each(function () {
 					var $element = $(this);
