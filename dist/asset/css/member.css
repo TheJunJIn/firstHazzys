@@ -20,8 +20,8 @@
 .agreement__header .agreement-check-all .checkbox:checked~.name{font-weight:500}
 .agreement__header .agreement-check-all .name{font-family:"Noto Sans KR",sans-serif;font-weight:300;color:#000;line-height:20px}
 .agreement__header .policy-toggle-button{position:absolute;top:0;right:0;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden;width:20px;height:20px;outline:0}
-.agreement__header .policy-toggle-button:before{content:'';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-374px -324px;width:10px;height:6px;background-size:438px 392px}
-.agreement__header .policy-toggle-button.active:before{background-position:-388px -324px}
+.agreement__header .policy-toggle-button:before{content:'';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-418px -402px;width:10px;height:6px;background-size:438px 408px}
+.agreement__header .policy-toggle-button.active:before{background-position:-324px -212px}
 .agreement__body{display:none}
 .agreement .policy{margin-top:12px;padding:10px 0 0;border-top:1px solid #000}
 .agreement .policy__item{position:relative;padding:5px 30px 5px 0}
@@ -45,6 +45,7 @@
 .validate-list__item+.validate-list__item{margin-left:14px}
 .validate-list__item.valid{color:#000}
 .validate-list__item.invalid{color:red}
+.sns-connect__text{padding-top:10px;margin-bottom:30px;font-size:14px;font-weight:500;line-height:22px;color:#ff781e;text-align:center}
 .sns-connect__title{margin-bottom:14px;font-size:14px;font-weight:300;line-height:22px;color:#000;text-align:center}
 .sns-connect__list{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}
 .sns-connect__item{width:100%;border-radius:2px;overflow:hidden}
@@ -58,9 +59,9 @@
 .member-util{margin-top:20px}
 .member-util .member-util__help{text-align:right}
 .member-util .member-util__help .button{position:relative;padding-right:20px;font-size:12px;font-weight:300;color:#919191}
-.member-util .member-util__help .button:after{content:'';display:block;position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-230px -310px;width:20px;height:20px;background-size:438px 392px}
+.member-util .member-util__help .button:after{content:'';display:block;position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-206px -310px;width:20px;height:20px;background-size:438px 408px}
 .member-util .member-util__help .button:hover{color:#000}
-.member-util .member-util__help .button:hover:after{background-position:-206px -310px}
+.member-util .member-util__help .button:hover:after{background-position:-182px -310px}
 .member-util .member-util__help+.member-util__sns{margin-top:50px}
 .member-util .member-util__help+.member-util__signup{margin-top:30px}
 .member-util .member-util__signup{margin-top:20px}
@@ -244,6 +245,52 @@
 .main-content.main-content--signup-error .member-form,.main-content.main-content--signup-error .member-util{max-width:470px;margin-right:auto;margin-left:auto}
 @media only screen and (min-width:1024px){
 .main-content.main-content--signup-error{margin-top:0}
+}
+.shell-main--member-certify .main-header__title{font-size:18px}
+.shell-main--member-certify .certify-step-wrap{margin-bottom:60px}
+.shell-main--member-certify .certify-step-wrap .certify-step{display:-ms-flexbox;display:flex}
+.shell-main--member-certify .certify-step-wrap .certify-step__item{position:relative;width:100%}
+.shell-main--member-certify .certify-step-wrap .certify-step__item .sprite-common{display:block;margin:0 auto 10px auto}
+.shell-main--member-certify .certify-step-wrap .certify-step__item+.certify-step__item:before{content:'';position:absolute;left:-4px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-404px -308px;width:8px;height:20px;background-size:438px 408px}
+.shell-main--member-certify .certify-step-wrap .certify-step__item .text{color:#919191;font-size:12px;text-align:center}
+.shell-main--member-certify .certify-step-wrap .certify-step__item.on .text{color:#ff781e}
+.shell-main--member-certify .member-form__left{margin-bottom:40px}
+.shell-main--member-certify .member-form__field-guide{margin-bottom:60px}
+.shell-main--member-certify .member-form .form-block{display:-ms-flexbox;display:flex}
+.shell-main--member-certify .member-form .form-block__field{width:100%}
+.shell-main--member-certify .member-form .form-block__field--button{-ms-flex:0 0 106px;flex:0 0 106px;width:106px;margin-left:6px;text-align:right}
+.shell-main--member-certify .member-form .form-block__field--domain{-ms-flex:0 0 167px;flex:0 0 167px;width:167px;margin-left:6px}
+.shell-main--member-certify .member-form__agreement{margin-top:50px}
+.shell-main--member-certify .certify-text{margin-bottom:30px;color:#000;font-size:14px;font-weight:500;line-height:22px}
+.shell-main--member-certify .main-content--certify-complete .message-card__icon .signup-complete{position:relative;width:80px;margin:0 auto}
+.shell-main--member-certify .main-content--certify-complete .message-card__icon .signup-complete__firework{position:absolute;top:0;left:0;-webkit-transform-origin:bottom;transform-origin:bottom}
+.shell-main--member-certify .main-content--certify-complete .message-card__title{margin-top:10px;font-size:24px;line-height:34px}
+.shell-main--member-certify .main-content--certify-complete .message-card__text{color:#919191;font-size:14px;font-weight:300;line-height:20px}
+.shell-main--member-certify .main-content--certify-complete .subscribe{margin-bottom:40px;text-align:center}
+.shell-main--member-certify .main-content--certify-complete .subscribe__title{font-size:12px;font-weight:500;line-height:18px;color:#000}
+.shell-main--member-certify .main-content--certify-complete .subscribe__guide{margin:4px 0 30px;font-size:12px;font-weight:300;line-height:18px;color:#919191}
+.shell-main--member-certify .main-content--certify-complete .subscribe__guide a{color:#ff781e;font-weight:500;text-decoration:underline}
+.shell-main--member-certify .main-content--certify-complete .certify-agreement{margin-bottom:40px}
+.shell-main--member-certify .main-content--certify-complete .certify-agreement .agreement__header{margin-bottom:10px}
+.shell-main--member-certify .main-content--certify-complete .certify-agreement .policy-view-button{position:absolute;top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:5px 0 5px 5px;color:#919191;font-size:12px;font-weight:300;text-decoration:underline;outline:0}
+.shell-main--member-certify .main-content--certify-complete .certify-agreement .text-agreement{color:#919191;font-size:12px;font-weight:300;line-height:20px}
+@media only screen and (min-width:1024px){
+.shell-main--member-certify .certify-step-wrap{margin-bottom:120px}
+.shell-main--member-certify .certify-step-wrap .certify-step{width:470px;margin:0 auto}
+.shell-main--member-certify .certify-step-wrap .certify-step__item .text{font-size:14px}
+.shell-main--member-certify .member-form:after,.shell-main--member-certify .member-form:before{display:table;content:''}
+.shell-main--member-certify .member-form:after{clear:both}
+.shell-main--member-certify .member-form__left{float:left;width:470px}
+.shell-main--member-certify .member-form__right{float:right;width:470px}
+.shell-main--member-certify .member-form__agreement{margin-top:60px}
+.shell-main--member-certify .certify-text{width:470px;margin:0 auto 30px auto;font-size:18px}
+.shell-main--member-certify .button-center{width:470px;margin:0 auto}
+.shell-main--member-certify .main-content--certify-complete .message-card__title{font-size:34px;line-height:44px}
+.shell-main--member-certify .main-content--certify-complete .message-card__text+.message-card__body{margin-top:50px}
+.shell-main--member-certify .main-content--certify-complete .subscribe{max-width:470px;margin:0 auto 50px auto}
+.shell-main--member-certify .main-content--certify-complete .subscribe__guide,.shell-main--member-certify .main-content--certify-complete .subscribe__title{font-size:14px}
+.shell-main--member-certify .main-content--certify-complete .certify-agreement{width:470px;margin:0 auto 50px auto}
+.shell-main--member-certify .main-content--certify-complete .certify-agreement .text-agreement{font-size:14px}
 }
 .modal.modal--reactivated-account .message .message__text+.message__text{margin-top:20px}
 .modal.modal--expired-password .text-button-group{margin-top:20px}

@@ -1772,26 +1772,18 @@
 							<div class="top-contents">
 								<!-- Top 슬라이드 -->
 								<div class="top-promotion-swiper">
+									<span class="text-layer">MEN NEW LINE<br />HAZZYS LONDON LIFE</span>
 									<div class="swiper-container" id="topPromotionSwiper">
 										<div class="swiper-wrapper">
 											<div class="swiper-slide">
 												<div class="promotin-banner">
-													<div class="text-animation">
-														<p class="title">MEN NEW LINE<br />HAZZYS LONDON LIFE</p>
-													</div>
 													<div class="promotion-image">
 														<img src="/cmsstatic/asset/images/temp/promotion_570x740_3.jpg" alt="이미지명" />
 													</div>
-													<span class="mark-only">
-														<em class="text">HAZZYS<br />ONLY</em>
-													</span>
 												</div>
 											</div>
 											<div class="swiper-slide">
 												<div class="promotin-banner">
-													<div class="text-animation">
-														<p class="title">MEN NEW LINE<br />HAZZYS LONDON LIFE</p>
-													</div>
 													<div class="promotion-image">
 														<img src="/cmsstatic/asset/images/temp/promotion_570x740_2.jpg" alt="이미지명" />
 													</div>
@@ -1799,9 +1791,6 @@
 											</div>
 											<div class="swiper-slide">
 												<div class="promotin-banner">
-													<div class="text-animation">
-														<p class="title">MEN NEW LINE<br />HAZZYS LONDON LIFE</p>
-													</div>
 													<div class="promotion-image">
 														<img src="/cmsstatic/asset/images/temp/promotion_570x740_1.jpg" alt="이미지명" />
 													</div>
@@ -1809,9 +1798,6 @@
 											</div>
 											<div class="swiper-slide">
 												<div class="promotin-banner">
-													<div class="text-animation">
-														<p class="title">MEN NEW LINE<br />HAZZYS LONDON LIFE</p>
-													</div>
 													<div class="promotion-image">
 														<img src="/cmsstatic/asset/images/temp/promotion_570x740_3.jpg" alt="이미지명" />
 													</div>
@@ -1819,9 +1805,6 @@
 											</div>
 											<div class="swiper-slide">
 												<div class="promotin-banner">
-													<div class="text-animation">
-														<p class="title">MEN NEW LINE<br />HAZZYS LONDON LIFE</p>
-													</div>
 													<div class="promotion-image">
 														<img src="/cmsstatic/asset/images/temp/promotion_570x740_2.jpg" alt="이미지명" />
 													</div>
@@ -1837,6 +1820,9 @@
 										<div class="swiper-button-prev"></div>
 										<div class="swiper-button-next"></div>
 									</div>
+									<span class="mark-only">
+										<em class="text">HAZZYS<br />ONLY</em>
+									</span>
 								</div>
 								<!-- //Top 슬라이드 -->
 								<dl class="text-box">
@@ -4059,14 +4045,8 @@
 			$(function () {
 				// 기획전 상단 슬라이드 이미지
 				new Swiper('#topPromotionSwiper', {
-					loop: true,
-					slidesPerView: 'auto',
-					breakpoints: {
-						1023: {
-							loop: false,
-							slidesPerView: 1
-						}
-					},
+					loop: false,
+					slidesPerView: 1,
 					pagination: {
 						el: '.swiper-pagination',
 						type: 'fraction'
