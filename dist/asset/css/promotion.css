@@ -497,7 +497,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .promotion-type-d .big-image-slide{margin-bottom:40px}
 .promotion-type-d .big-image-slide .swiper-pagination-fraction{right:20px;text-align:right}
 .promotion-type-d .big-image-slide .promotion-image .button{position:absolute;bottom:20px;left:20px;width:60px;height:60px;background-color:#ff781e}
-.promotion-type-d .big-image-slide .promotion-image .button .icon-play{content:'';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-290px -378px;width:23px;height:23px;background-size:438px 408px}
+.promotion-type-d .big-image-slide .promotion-image .button .icon-play{content:'';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-324px -378px;width:23px;height:23px;background-size:438px 408px}
 .promotion-type-d .tabs-floating{margin:0 10px 60px}
 .promotion-type-d .text-animation{top:40px;left:20px;text-align:left}
 @media only screen and (min-width:1024px){
@@ -511,7 +511,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .promotion-type-e .big-image-slide{margin-bottom:40px}
 .promotion-type-e .big-image-slide .swiper-pagination-fraction{right:20px;text-align:right}
 .promotion-type-e .big-image-slide .promotion-image .button{position:absolute;bottom:20px;left:20px;width:60px;height:60px;background-color:#ff781e}
-.promotion-type-e .big-image-slide .promotion-image .button .icon-play{content:'';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-290px -378px;width:23px;height:23px;background-size:438px 408px}
+.promotion-type-e .big-image-slide .promotion-image .button .icon-play{content:'';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-324px -378px;width:23px;height:23px;background-size:438px 408px}
 .promotion-type-e .tabs-floating{margin:0 10px 60px}
 .promotion-type-e .text-animation{top:50%;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:center}
 @media only screen and (min-width:1024px){
