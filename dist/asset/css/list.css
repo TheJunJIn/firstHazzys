@@ -481,7 +481,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .keyword-container .keyword__util .date{font-size:12px;line-height:18px;color:#919191}
 .keyword-container .keyword__util .date em{font-style:normal;font-weight:450}
 .keyword-container .keyword__util .button--delete{position:relative;padding-right:26px;font-size:12px;line-height:18px;font-weight:300;color:#919191}
-.keyword-container .keyword__util .button--delete:after{content:'';position:absolute;top:-2px;right:0;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-366px -378px;width:20px;height:20px;background-size:438px 408px}
+.keyword-container .keyword__util .button--delete:after{content:'';position:absolute;top:-2px;right:0;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-418px 0;width:20px;height:20px;background-size:438px 408px}
 @media only screen and (min-width:1024px){
 .keyword-container{width:570px;margin:0 auto}
 .keyword-container:after,.keyword-container:before{display:table;content:''}
@@ -752,7 +752,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .sidebar .category-filter>.category-filter__list-item>.category-filter__list>.category-filter__list-item>.category-filter__list>.category-filter__list-item>.button--category{font-size:14px;line-height:20px}
 .sidebar .filter-state__util{padding:10px 0 0 10px}
 .sidebar .filter-state__util .button--reset{position:relative;color:#919191;font-size:14px;font-weight:300;height:20px;padding-top:1px;padding-right:22px}
-.sidebar .filter-state__util .button--reset:after{position:absolute;top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);content:'';display:block;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-418px -120px;width:20px;height:20px;background-size:438px 408px}
+.sidebar .filter-state__util .button--reset:after{position:absolute;top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);content:'';display:block;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-418px -168px;width:20px;height:20px;background-size:438px 408px}
 .sidebar .filter-state__selected{margin:20px 0 0 0;padding:0 0 20px 10px;font-size:0;overflow:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;white-space:nowrap}
 .sidebar .filter-state__selected .filter-tag{position:relative;display:inline-block;height:30px;margin-right:10px;padding:0 22px 0 10px;box-sizing:border-box;border-radius:2px}
 .sidebar .filter-state__selected .filter-tag .name{display:inline-block;font-size:14px;line-height:28px;white-space:nowrap;color:#ff781e}

@@ -20,8 +20,8 @@
 .agreement__header .agreement-check-all .checkbox:checked~.name{font-weight:500}
 .agreement__header .agreement-check-all .name{font-family:"Noto Sans KR",sans-serif;font-weight:300;color:#000;line-height:20px}
 .agreement__header .policy-toggle-button{position:absolute;top:0;right:0;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden;width:20px;height:20px;outline:0}
-.agreement__header .policy-toggle-button:before{content:'';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-418px -402px;width:10px;height:6px;background-size:438px 408px}
-.agreement__header .policy-toggle-button.active:before{background-position:-324px -212px}
+.agreement__header .policy-toggle-button:before{content:'';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-324px -212px;width:10px;height:6px;background-size:438px 408px}
+.agreement__header .policy-toggle-button.active:before{background-position:-338px -212px}
 .agreement__body{display:none}
 .agreement .policy{margin-top:12px;padding:10px 0 0;border-top:1px solid #000}
 .agreement .policy__item{position:relative;padding:5px 30px 5px 0}
