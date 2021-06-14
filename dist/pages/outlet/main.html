@@ -3098,7 +3098,18 @@
 								<button type="button" class="button button--reset" data-filter-reset>초기화</button>
 							</div>
 							<!-- 선택된 필터 -->
-							<div class="filter-state__selected" data-filter-list></div>
+
+							<div class="filter-state__selected" data-filter-list>
+								<!--
+          // window.filter.add 를 이용해서 추가함
+          <span class="filter-tag" data-filter="gender" data-filter-value="M" data-filter-name="남성">
+            <span class="name">남성</span>
+            <button type="button" class="button button--remove" data-filter-remove>
+              <i class="sprite-icon sprite-common sprite-common-remove">삭제</i>
+            </button>
+          </span>
+          -->
+							</div>
 							<!-- //선택된 필터 -->
 							<div class="filter-state__submit">
 								<button type="button" class="form-button form-button--main">200개 상품 보기</button>
@@ -3398,14 +3409,12 @@
 
 			// 품절 임박
 			new Swiper('#soldoutImminentSwiper', {
-				loop: true,
+				loop: false,
 				freeMode: true,
-				centerInsufficientSlides: true,
-				spaceBetween: 30,
 				slidesPerView: 'auto',
+				spaceBetween: 30,
 				breakpoints: {
 					1023: {
-						slidesPerView: 1.3,
 						spaceBetween: 20
 					}
 				},
