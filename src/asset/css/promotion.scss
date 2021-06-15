@@ -411,6 +411,24 @@
   }
   .tabs-floating {
     margin: 0 10px 60px;
+    [role="tablist"] {
+      display: block;
+      width: 100%;
+      @include self-clear;
+    }
+    [role="tab"] {
+      float: left;  
+      width: 33.3333%;
+      border-top: 0 none;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      &:nth-child(3n+1){
+        border-left: 1px solid #000;
+      }
+      &:nth-child(-n+3){
+        border-top: 1px solid #000;
+      }
+    }
   }
   .text-animation {
     top: 50%;
