@@ -113,3 +113,65 @@ class Filter {
 }
 
 window.filter = new Filter();
+
+// 이미지 fixed
+const states = {
+  viewType: null,
+  header: {
+    isHidden: false,
+    height: 60,
+    options: {}
+  }
+};
+
+let scrollDirection = 'down';
+let scrollY = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+window.addEventListener('scroll', () => {
+    const newScrollY = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    const oldScrollY = scrollY;
+    if (newScrollY > scrollY) {
+      scrollDirection = 'down';
+    } else {
+      scrollDirection = 'up';
+    }
+    scrollY = newScrollY <= 0 ? 0 : newScrollY;
+    onDynamicScroll(oldScrollY, scrollY);
+    scrollY = newScrollY;
+  },
+  false,
+);
+
+
+let fixedTop = 0;
+const main = document.querySelector('.shell-main');
+const container = document.querySelector('.promotion-wrap');
+const imageBlock = document.querySelector('.slide-contents');
+function onDynamicScroll(oldScrollY, scrollY){
+  const { height: containerHeight } = container.getBoundingClientRect();
+  const { height: imageBlockHeight } = imageBlock.getBoundingClientRect();
+  let smallerThanWindow = 0;
+
+  if(scrollY < 1){
+    return false;
+  }
+
+  // 스크롤이 헤더의 높이값보다 크거나 같을경우 고정
+  if (scrollY >= states.header.height) {
+    main.classList.add('is-fixed');
+  } else {
+    main.classList.remove('is-fixed');
+    imageBlock.style.top = '';
+  }
+
+  smallerThanWindow = imageBlockHeight - $(window).height();
+  if(scrollDirection === 'down') {
+    fixedTop = Math.min(fixedTop + scrollY - oldScrollY, Math.max(smallerThanWindow, 0));
+  } else {
+    fixedTop = Math.max(fixedTop + scrollY - oldScrollY, 0);
+  }
+  imageBlock.style.top = `${-(fixedTop)}px`;
+  const breakPoint = containerHeight + states.header.height - imageBlockHeight + fixedTop;
+  if(scrollY > breakPoint){
+    imageBlock.style.top = `${-(scrollY - breakPoint + fixedTop)}px`;
+  }
+}

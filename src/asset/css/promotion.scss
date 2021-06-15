@@ -366,14 +366,31 @@
 .promotion-type-e {
   .slide-contents {
     position: relative;
-  }
-  .big-image-slide {
     margin-bottom: 40px;
     .swiper-pagination-fraction {
+      top: auto;
       right: 20px;
+      bottom: 0;
+      left: auto;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 450;
+      line-height: 24px;
+      color: #fff;
       text-align: right;
+      z-index: 3;
+      .swiper-pagination-current,
+      .swiper-pagination-total {
+        position: static;
+        font-size: 14px;
+        font-weight: 450;
+        line-height: 24px;
+      }
     }
     .promotion-image {
+      > img {
+        width: 100%;
+      }
       .button{
         position: absolute;
         bottom: 20px;
@@ -387,6 +404,10 @@
         }
       }
     }
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
   }
   .tabs-floating {
     margin: 0 10px 60px;
@@ -398,22 +419,30 @@
     text-align: center;
   }
   @include mq('desktop') {
-    display: flex;
-    width: 1920px;
-    .type-d-top {
-      width: 960px;
+    @include self-clear;
+    width: 100%;
+    .slide-contents {
+      float: left;
+      width: 50%;
     }
     .right-contents {
-      width: 870px;
-      margin: 40px 0 0 60px;
-    }
-    .big-image-slide {
-      width: 960px;
-      margin-bottom: 0;
+      float: right;
+      width: 50%;
+      margin: 0 0 0 auto;
+      padding: 0 30px 0 60px;
+      box-sizing: border-box;
     }
     .tabs-floating {
-      width: 870px;
+      width: 100%;
       margin: 0 0 60px;
+    }
+    .product-list-option {
+      margin: 0;
+    }
+    .product-list {
+      .product-list__item {
+        padding: 0 10px;
+      } 
     }
   }
 }
@@ -687,6 +716,17 @@
     padding: 100px 0 0;
     max-width: 1920px;
     box-sizing: border-box;
+  }
+  .shell-main--promotion-etype {
+    max-width: 100%;
+    padding-top: 60px;
+  }
+  .shell-main--promotion-etype.is-fixed {
+    .slide-contents {
+      position: fixed;
+      top: 0;
+      right: 50%;
+    }
   }
 
   // 기획전 리스트
