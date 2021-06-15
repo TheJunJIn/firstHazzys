@@ -114,7 +114,7 @@ class Filter {
 
 window.filter = new Filter();
 
-// 이미지 fixed
+// 영역 고정 관련 스크립트
 const states = {
   viewType: null,
   header: {
@@ -140,7 +140,6 @@ window.addEventListener('scroll', () => {
   },
   false,
 );
-
 
 let fixedTop = 0;
 const main = document.querySelector('.shell-main');
