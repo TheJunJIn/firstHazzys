@@ -1,10 +1,14 @@
+import rangesliderJs from 'rangeslider-js'
 import ShoutAndListen from './_util/shout-and-listen';
+
+window.rangesliderJs = rangesliderJs;
 const sal = new ShoutAndListen('detail');
 const shout = sal.shout.bind(sal);
 const listen = sal.listen.bind(sal);
 const report = sal.report.bind(sal);
 
 const { $ } = window;
+
 
 $(function () {
   $(document)

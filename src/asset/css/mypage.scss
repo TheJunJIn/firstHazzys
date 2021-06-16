@@ -374,15 +374,9 @@
         }
         .swiper-button-prev {
           left: 0;
-          &:after {
-            @include sprite($common-arrow-left-swiper-transparent);
-          }
         }
         .swiper-button-next {
           right: 0;
-          &:after {
-            @include sprite($common-arrow-right-swiper-transparent);
-          }
         }
       }
     }
@@ -1098,6 +1092,10 @@
           }
         }
       }
+      // 환불 금액 계산 전 반품비
+      &.order-detail--return-fee {
+        margin-top: 0;
+      }
       // 사유
       &.order-detail--reason {
         .order-detail__content {
@@ -1149,6 +1147,8 @@
           margin-bottom: 30px;
         }
       }
+      // 취소/교환/환불 2단계(비용계산 후 단계)
+      // &.order-detail--step2 {}
     }
     .product-order__util {
       margin: 20px 10px 0;
@@ -1157,8 +1157,6 @@
 
       .form-button {
         position: relative;
-        height: 40px;
-        line-height: 38px;
         font-weight: 500;
         + .form-button {
           margin-left: 5px;
@@ -1689,17 +1687,11 @@
         line-height: 18px;
       }
     }
-    .withdraw-info-container {
-      + .withdraw-info {
-        margin-top: 23px;
-      }
-    }
     .withdraw-info {
       margin-left: 10px;
       margin-right: 10px;
-      + .withdraw-info-container,
       + .withdraw-info {
-        margin-top: 23px;
+        margin-top: 45px;
       }
       &__title {
         padding: 15px 0;
@@ -1708,11 +1700,12 @@
         color: $color-text-emphasize;
       }
       &__content {
-        padding: 20px 0;
+        padding: 20px 0 0;
         border-top: 1px solid $color-line-emphasize;
       }
       .assets {
         display: flex;
+        padding-bottom: 10px;
         &__item {
           flex: 1;
           height: 58px;
@@ -2055,25 +2048,9 @@
         margin-bottom: 85px;
         padding-top: 60px;
       }
-      .withdraw-info-container {
-        display: flex;
-        + .withdraw-info {
-          margin-top: 45px;
-        }
-        .withdraw-info {
-          flex: 1;
-        }
-      }
       .withdraw-info {
         margin-left: 0;
         margin-right: 0;
-        + .withdraw-info-container {
-          margin-top: 45px;
-        }
-        + .withdraw-info {
-          margin-top: 0;
-          margin-left: 70px;
-        }
         .assets {
           margin-top: 10px;
         }
@@ -2755,15 +2732,9 @@
         }
         .swiper-button-prev {
           left: 0;
-          &:after {
-            @include sprite($common-arrow-left-swiper-transparent);
-          }
         }
         .swiper-button-next {
           right: 0;
-          &:after {
-            @include sprite($common-arrow-right-swiper-transparent);
-          }
         }
       }
       .swiper-grade {

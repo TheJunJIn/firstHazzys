@@ -199,8 +199,12 @@ const mainBannerSwiper = new Swiper('.swiper-container--main-banner', {
     }
   },
   autoplay: {
-    delay: 8000,
+    delay: 6000,
     disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
   },
   pagination: {
     el: '.swiper-pagination',
@@ -229,8 +233,6 @@ mainBannerSwiper.on('slideChange', () => {
 mainBannerSwiper.on('init', () => {
   mainBannerSwiperChange(mainBannerSwiper);
 });
-
-mainBannerSwiper.init();
 
 let mainBannerSwiperIndex = 0;
 let mainBannerSwiperTimer = null;
@@ -292,7 +294,7 @@ class CategoryBar extends UIModule {
 
     this.list = this.root.querySelector(this.options.listSelector);
     this.isEnabled;
-    this.isFixed
+    this.isFixed;
 
     this.report('viewType').then(({ viewType }) => {
       this.isEnabled = viewType === 'mobile';
@@ -310,6 +312,20 @@ class CategoryBar extends UIModule {
       this.isEnabled = value === 'mobile';
       this.update();
     });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.root.classList.add('observed')
+          } else {
+            this.root.classList.remove('observed')
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    io.observe(this.list);
   }
   update(){
     const { isEnabled, isFixed } = this;
@@ -722,6 +738,9 @@ class Home extends UIModule {
         }
       });
 
+      // 상단 배너 
+      mainBannerSwiper.init();
+
       // 카테고리
       this.categoryBar = new CategoryBar();
 
@@ -749,6 +768,10 @@ class Home extends UIModule {
   }
   onResizeEnd() {
     const { carousels } = this;
+
+    // 상단 배너 
+    mainBannerSwiper.init();
+
     carousels.forEach((carousel) => {
       if (carousel.resizeUpdate) {
         if (Array.isArray(carousel.swiper)) {
@@ -763,6 +786,9 @@ class Home extends UIModule {
   }
   onViewTypeChange(viewType) {
     const { carousels } = this;
+
+    // 상단 배너 
+    mainBannerSwiper.init();
 
     carousels.forEach((carousel) => {
       if (carousel.mode !== 'both') {

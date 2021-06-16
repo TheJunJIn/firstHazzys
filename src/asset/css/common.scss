@@ -233,12 +233,14 @@
       transform: rotateY(-180deg);
     }
   }
+
   // 구매, 리뷰 배지 (배지 디자인 완료 후 개별 스타일 적용 )
   &.hazzys-badge--mission {
     width: 94px;
     height: 94px;
     box-shadow: 0 15px 15px 0 rgba(248, 152, 0, 0.3);
   }
+
   // 회원 배지 색상
   &.hazzys-badge--member-white {
     box-shadow: 0 20px 20px 0 rgba(199, 176, 142, 0.3);
@@ -247,31 +249,49 @@
     .badge-content {
       color: $color-text-emphasize;
     }
+    &.hazzys-badge--small {
+      box-shadow: 0 4px 4px 0 rgba(199, 176, 142, 0.3);
+    }
   }
   &.hazzys-badge--member-blue {
     box-shadow: 0 20px 20px 0 rgba(67, 82, 129, 0.3);
     border: solid 1px rgba(255, 255, 255, 0.5);
     background-color: #0086ff;
+    &.hazzys-badge--small {
+      box-shadow: 0 4px 4px 0 rgba(67, 82, 129, 0.3);
+    }
   }
   &.hazzys-badge--member-red {
     box-shadow: 0 20px 20px 0 rgba(178, 52, 29, 0.3);
     border: solid 1px rgba(255, 255, 255, 0.5);
     background-color: #ff2800;
+    &.hazzys-badge--small {
+      box-shadow: 0 4px 4px 0 rgba(178, 52, 29, 0.3);
+    }
   }
   &.hazzys-badge--member-purple {
     box-shadow: 0 20px 20px 0 rgba(103, 28, 158, 0.3);
     border: solid 1px rgba(255, 255, 255, 0.5);
     background-color: #7400ff;
+    &.hazzys-badge--small {
+      box-shadow: 0 4px 4px 0 rgba(103, 28, 158, 0.3);
+    }
   }
   &.hazzys-badge--member-black-s {
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
     border: solid 1px rgba(255, 255, 255, 0.5);
     background-color: #212121;
+    &.hazzys-badge--small {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    }
   }
   &.hazzys-badge--member-black-r {
     box-shadow: 0 20px 20px 0 rgba(185, 86, 21, 0.3);
     border: solid 1px rgba(255, 255, 255, 0.5);
     background-color: #ff781e;
+    &.hazzys-badge--small {
+      box-shadow: 0 4px 4px 0 rgba(185, 86, 21, 0.3);
+    }
   }
 }
 
