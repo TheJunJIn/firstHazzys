@@ -1022,15 +1022,9 @@
         }
         .swiper-button-prev {
           left: 0;
-          &:after {
-            @include sprite($common-arrow-left-swiper-transparent);
-          }
         }
         .swiper-button-next {
           right: 0;
-          &:after {
-            @include sprite($common-arrow-right-swiper-transparent);
-          }
         }
       }
       .swiper-grade {

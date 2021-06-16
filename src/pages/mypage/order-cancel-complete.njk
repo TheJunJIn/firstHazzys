@@ -18,16 +18,18 @@
           <div class="product-order-detail">
             <!-- 완료 -->
             <div class="request-complete">
+              <!-- 아이콘 변경 [UPDATE: 0616] -->
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <svg class="icon-complete" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
                   <g fill="none" fill-rule="evenodd">
                     <g stroke="#000" stroke-width="2">
-                      <path d="M41.344 11.514C43.038 14.632 44 18.204 44 22c0 12.15-9.85 22-22 22S0 34.15 0 22 9.85 0 22 0c5.633 0 10.771 2.117 14.663 5.6" transform="translate(-140 -140) translate(60 140) translate(80) translate(18 18)"/>
-                      <path d="M12.915 19.847c.694.347 8.325 8.324 8.325 8.324l11.273-12.833" transform="translate(-140 -140) translate(60 140) translate(80) translate(18 18)"/>
+                      <path class="line" d="M41.344 11.514C43.038 14.632 44 18.204 44 22c0 12.15-9.85 22-22 22S0 34.15 0 22 9.85 0 22 0c5.633 0 10.771 2.117 14.663 5.6" transform="translate(18 18)"/>
+                      <path class="check" d="M12.915 19.847c.694.347 8.325 8.324 8.325 8.324l11.273-12.833" transform="translate(18 18)"/>
                     </g>
                   </g>
                 </svg>
               </div>
+              <!-- //아이콘 변경 [UPDATE: 0616] -->
               <p class="title">주문 취소 신청이 완료되었습니다</p>
               <p class="comment">다른 새로운 상품들이 고객님을 기다리고 있어요~</p>
             </div>
@@ -147,4 +149,20 @@
 
 {% block js %}
 <script src="/asset/js/mypage.js"></script>
+<script>
+// 아이콘 변경 [UPDATE: 0616]
+anime.timeline({
+    loop: false,
+    easing: 'easeInOutSine',
+  }).add({
+    targets: '.icon-complete .line',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    delay: 500,
+    duration: 1000
+  }).add({
+    targets: '.icon-complete .check',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    duration: 400
+  });
+</script>
 {% endblock js %}

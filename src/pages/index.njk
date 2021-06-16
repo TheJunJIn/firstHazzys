@@ -54,6 +54,8 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
     <!-- //배너 이미지 -->
     <!-- 배너 텍스트 -->
@@ -136,24 +138,66 @@
   <div class="section section--category-bar">
     <div class="category-bar">
       <ul class="category-bar__list">
+        <!-- 새로운 아이템이 있을 경우 -->
         <li class="category-bar__item">
           <a href="#" class="category hilite">
-            <span class="thumbnail"><img src="/cmsstatic/asset/images/temp/home-category_1.jpg" alt=""></span>
+            <span class="thumbnail">
+              <img src="/cmsstatic/asset/images/temp/home-category_1.jpg" alt="">
+              <div class="circle-svg">
+                <svg class="circle-svg__item" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                  <defs>
+                    <mask id="dashedMask" maskUnits="userSpaceOnUse">
+                      <circle cx="35" cy="35" r="34" fill="none" stroke="#ff781e" stroke-width="2" stroke-dasharray="3 3" />
+                    </mask>
+                  </defs>
+                  <circle
+                    mask="url(#dashedMask)"
+                    class="circle"
+                    cx="35" cy="35" r="35" fill="none" stroke="#ff781e" stroke-width="2" />
+                </svg>
+                <svg class="circle-svg__item circle-svg__item--second" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                  <circle class="circle" cx="35" cy="35" r="34" fill="none" stroke="#ff781e" stroke-width="2" />
+                </svg>
+              </div>
+            </span>
             <span class="name">LADIES</span>
           </a>
         </li>
+        <!-- //새로운 아이템이 있을 경우 -->
         <li class="category-bar__item">
           <a href="#" class="category">
-            <span class="thumbnail"><img src="/cmsstatic/asset/images/temp/home-category_2.jpg" alt=""></span>
+            <span class="thumbnail">
+              <img src="/cmsstatic/asset/images/temp/home-category_2.jpg" alt="">
+            </span>
             <span class="name">MEN</span>
           </a>
         </li>
+        <!-- 새로운 아이템이 있을 경우 -->
         <li class="category-bar__item">
-          <a href="#" class="category">
-            <span class="thumbnail"><img src="/cmsstatic/asset/images/temp/home-category_3.jpg" alt=""></span>
+          <a href="#" class="category hilite">
+            <span class="thumbnail">
+              <img src="/cmsstatic/asset/images/temp/home-category_3.jpg" alt="">
+              <div class="circle-svg">
+                <svg class="circle-svg__item" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                  <defs>
+                    <mask id="dashedMask" maskUnits="userSpaceOnUse">
+                      <circle cx="35" cy="35" r="34" fill="none" stroke="#ff781e" stroke-width="2" stroke-dasharray="3 3" />
+                    </mask>
+                  </defs>
+                  <circle
+                    mask="url(#dashedMask)"
+                    class="circle"
+                    cx="35" cy="35" r="35" fill="none" stroke="#ff781e" stroke-width="2" />
+                </svg>
+                <svg class="circle-svg__item circle-svg__item--second" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                  <circle class="circle" cx="35" cy="35" r="34" fill="none" stroke="#ff781e" stroke-width="2" />
+                </svg>
+              </div>
+            </span>
             <span class="name">GOLF</span>
           </a>
         </li>
+        <!-- //새로운 아이템이 있을 경우 -->
         <li class="category-bar__item">
           <a href="#" class="category">
             <span class="thumbnail"><img src="/cmsstatic/asset/images/temp/home-category_4.jpg" alt=""></span>

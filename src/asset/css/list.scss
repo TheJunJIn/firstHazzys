@@ -1223,16 +1223,10 @@
     .swiper-button-prev {
       visibility: visible;
       left: -70px;
-      &:after {
-        @include sprite($common-arrow-left-swiper-transparent);
-      }
     }
     .swiper-button-next {
       visibility: visible;
       right: -70px;
-      &:after {
-        @include sprite($common-arrow-right-swiper-transparent);
-      }
     }
   }
 }

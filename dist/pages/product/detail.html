@@ -2099,10 +2099,13 @@
 								<div class="header__title">리뷰</div>
 							</div>
 							<div class="product-review__body">
+								<!-- [UPDATE: 0616] -->
 								<div class="no-data">
 									<i class="sprite-common sprite-common-no-review"></i>
 									<p class="message">등록된 리뷰가 없습니다.</p>
+									<p class="message">최초로 리뷰를 작성해주시는 고객님께는<br />상품에 최초로 리뷰를 등록하신 횟수에 따라 <em>상품할인 쿠폰과 플러스 할인쿠폰을 받을 수 있는 배지를 발급</em>해드립니다.</p>
 								</div>
+								<!-- // [UPDATE: 0616] -->
 							</div>
 						</div>
 
@@ -2113,11 +2116,38 @@
 							</div>
 							<div class="product-benefit__body">
 								<ul class="accordion" data-accordion="data-accordion" role="tablist">
+									<!-- 적립 혜택 [UPDATE: 0616] -->
 									<li class="benefit accordion__item" data-accordion-item="data-accordion-item">
 										<div class="benefit__title accordion__title">
 											<button type="button" class="button benefit__name" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit1-accordion" id="benefit1-accordion-label">적립 혜택</button>
 											<p class="benefit__summary">
-												<span class="icon"><img src="/cmsstatic/asset/images/badge/red.png" alt="Red" /></span>
+												<span class="icon">
+													<!-- RED -->
+													<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-red">
+														<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="Red" /></span>
+													</span>
+													<!-- // RED -->
+													<!--
+                      <span class="hazzys-badge hazzys-badge--small hazzys-badge--member-white">
+                        <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-white.png" alt="White"></span>
+                      </span>
+                      <span class="hazzys-badge hazzys-badge--small hazzys-badge--member-blue">
+                        <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-blue.png" alt="Blue"></span>
+                      </span>
+                      <span class="hazzys-badge hazzys-badge--small hazzys-badge--member-red">
+                        <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="Red"></span>
+                      </span>
+                      <span class="hazzys-badge hazzys-badge--small hazzys-badge--member-purple">
+                        <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-purple.png" alt="Purple"></span>
+                      </span>
+                      <span class="hazzys-badge hazzys-badge--small hazzys-badge--member-black-s">
+                        <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLack S"></span>
+                      </span>
+                      <span class="hazzys-badge hazzys-badge--small hazzys-badge--member-black-r">
+                        <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-r.png" alt="Black R"></span>
+                      </span>
+                      -->
+												</span>
 												<span>최대 800M 적립 예정</span>
 											</p>
 										</div>
@@ -2130,49 +2160,52 @@
 														<dd class="membership__content">
 															<ul class="grade">
 																<li class="grade__item">
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/s-platinum-small.png" alt="S-Platinum" /></span>
-																		S-platinum
+																	<span class="grade__icon">
+																		<span class="icon">
+																			<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-black-r">
+																				<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-r.png" alt="Black R" /></span>
+																			</span>
+																		</span>
+																		<span class="icon">
+																			<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-black-s">
+																				<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLack S" /></span>
+																			</span>
+																		</span>
 																	</span>
-																	&amp;
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/platinum-small.png" alt="platinum" /></span>
-																		Platinum
-																	</span>
-																	<span class="grade__reward">(5%)</span>
-																</li>
-																<li class="grade__item">
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/gold-small.png" alt="Gold" /></span>
-																		Gold
-																	</span>
-																	&amp;
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/silver-small.png" alt="Sliver" /></span>
-																		Sliver
-																	</span>
-																	<span class="grade__reward">(4%)</span>
-																</li>
-																<li class="grade__item">
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/black-small.png" alt="Black" /></span>
-																		Black
-																	</span>
+																	<span class="grade__name"> Black-R &amp; Black-S </span>
 																	<span class="grade__reward">(3%)</span>
 																</li>
 																<li class="grade__item">
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/purple-small.png" alt="Purple" /></span>
-																		Purple
+																	<span class="grade__icon">
+																		<span class="icon">
+																			<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-purple">
+																				<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-purple.png" alt="Purple" /></span>
+																			</span>
+																		</span>
+																		<span class="icon">
+																			<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-red">
+																				<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="Red" /></span>
+																			</span>
+																		</span>
 																	</span>
+																	<span class="grade__name"> Purple &amp; Red </span>
 																	<span class="grade__reward">(2%)</span>
 																</li>
 																<li class="grade__item">
-																	<span class="grade__name">
-																		<span class="icon"><img src="/cmsstatic/asset/images/badge/red-small.png" alt="Red" /></span>
-																		Red
+																	<span class="grade__icon">
+																		<span class="icon">
+																			<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-blue">
+																				<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-blue.png" alt="Blue" /></span>
+																			</span>
+																		</span>
+																		<span class="icon">
+																			<span class="hazzys-badge hazzys-badge--small hazzys-badge--member-white">
+																				<span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-white.png" alt="White" /></span>
+																			</span>
+																		</span>
 																	</span>
-																	<span class="grade__reward">(1%)</span>
+																	<span class="grade__name"> Blue &amp; White </span>
+																	<span class="grade__reward">(3%)</span>
 																</li>
 															</ul>
 														</dd>
@@ -2181,6 +2214,7 @@
 											</ul>
 										</div>
 									</li>
+									<!-- // 적립 혜택 [UPDATE: 0616] -->
 									<li class="benefit accordion__item" data-accordion-item="data-accordion-item">
 										<div class="benefit__title accordion__title">
 											<button type="button" class="button benefit__name" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="benefit2-accordion" id="benefit2-accordion-label">무이자 혜택</button>
@@ -2451,9 +2485,11 @@
 							<li class="product-etc__item">
 								<button type="button" class="button" data-sidebar-open="claimGuide">반품/교환 안내</button>
 							</li>
+							<!-- [UPDATE: 0616] -->
 							<li class="product-etc__item">
-								<button type="button" class="button" data-sidebar-open="hStudio">H 사진관</button>
+								<button type="button" class="button" data-sidebar-open="hStudio">STUDIO H</button>
 							</li>
+							<!-- [UPDATE: 0616] -->
 						</ul>
 					</div>
 				</div>
@@ -2799,7 +2835,7 @@
 						<!-- 리뷰 -->
 						<div id="reviewList" class="sidebar-block">
 							<div class="product-review">
-								<!-- 평점 -->
+								<!-- 평점 일반 [UPDATE: 0616] -->
 								<div class="review__grade">
 									<div class="review__star">
 										<span class="average__icon">
@@ -2808,6 +2844,7 @@
 										</span>
 										<span class="average__number">4.8 / 5</span>
 									</div>
+									<!-- 일반상품 -->
 									<div class="review__item">
 										<table class="table-transparent">
 											<colgroup>
@@ -2838,21 +2875,57 @@
 												</td>
 												<td>100%</td>
 											</tr>
+										</table>
+									</div>
+									<!-- //일반상품 -->
+								</div>
+								<!-- //평점 일반 [UPDATE: 0616] -->
+
+								<!-- 평점 뷰티 [UPDATE: 0616] -->
+								<div class="review__grade">
+									<div class="review__star">
+										<span class="average__icon">
+											<!-- 별점: width: 100%: 별5개, width: 10%: 별 1/2개 -->
+											<span class="average__value" style="width: 90%"></span>
+										</span>
+										<span class="average__number">4.8 / 5</span>
+									</div>
+									<!-- 뷰티상품 -->
+									<div class="review__item">
+										<table class="table-transparent">
+											<colgroup>
+												<col width="60px" />
+												<col width="80px" />
+												<col width="*" />
+												<col width="40px" />
+											</colgroup>
 											<tr>
-												<th>두께</th>
-												<td>적당해요</td>
+												<th>지속력</th>
+												<td>오래가요</td>
 												<td>
 													<span class="chart__icon">
 														<!-- 그래프 수치: width: OO%: -->
-														<span class="chart__value" style="width: 90%"></span>
+														<span class="chart__value" style="width: 98%"></span>
 													</span>
 												</td>
-												<td>90%</td>
+												<td>98%</td>
+											</tr>
+											<tr>
+												<th>보습력</th>
+												<td>촉촉해요</td>
+												<td>
+													<span class="chart__icon">
+														<!-- 그래프 수치: width: OO%: -->
+														<span class="chart__value" style="width: 100%"></span>
+													</span>
+												</td>
+												<td>100%</td>
 											</tr>
 										</table>
 									</div>
+									<!-- //뷰티상품 -->
 								</div>
-								<!-- //평점 -->
+								<!-- //평점 뷰티 [UPDATE: 0616] -->
 
 								<!-- 리뷰(포토) -->
 								<div class="review__gallery">
@@ -3014,10 +3087,13 @@
 										</div>
 										<div class="tabpanel" tabindex="0" role="tabpanel" id="photoReview-tab" aria-labelledby="photoReview" hidden>
 											<!-- 리뷰없음 -->
+											<!-- [UPDATE: 0616] -->
 											<div class="no-data">
 												<i class="sprite-common sprite-common-no-photo-review"></i>
 												<p class="message">등록된 포토 리뷰가 없습니다.</p>
+												<p class="message">포토 리뷰를 등록해주시는 고객님께는 등록하신 포토 리뷰의 횟수에 따라 <em>상품할인 쿠폰과 플러스 할인쿠폰을 받을 수 있는 배지</em>를 드립니다.</p>
 											</div>
+											<!-- //[UPDATE: 0616] -->
 										</div>
 									</div>
 								</div>
@@ -3201,19 +3277,49 @@
 						</div>
 						<!-- 반품/교환 안내 -->
 
-						<!-- H 사진관 -->
+						<!-- STUDIO H [UPDATE: 0616] -->
 						<div id="hStudio" class="sidebar-block">
 							<div class="h-studio">
-								<div class="h-studio__title">당신을 H 사진관에 초대합니다.</div>
+								<div class="h-studio__title">
+									Studio H에서 동일 제품을 착용 후,<br />
+									촬영하신 고객님들의 셀프 사진 콘텐츠 입니다.<br />
+									누구나 스페이스 H 매장에서 이용 가능합니다.
+								</div>
+
+								<!-- 이미지 크기 변경 -->
+								<div class="h-studio__slider thumbnail-slider">
+									<input id="thumbnailSlider" type="range" class="form-range" />
+								</div>
+								<!-- // 이미지 크기 변경 -->
+
 								<div class="h-studio__gallery">
-									<p class="photo"><img src="/cmsstatic/asset/images/temp/h-photo_680x884_1.jpg" alt="" /></p>
-									<p class="photo"><img src="/cmsstatic/asset/images/temp/h-photo_680x884_2.jpg" alt="" /></p>
-									<p class="photo"><img src="/cmsstatic/asset/images/temp/h-photo_680x884_3.jpg" alt="" /></p>
-									<p class="photo"><img src="/cmsstatic/asset/images/temp/h-photo_680x884_4.jpg" alt="" /></p>
+									<ul class="gallery-list" id="hStudioGalleryList" data-size="m">
+										<li class="gallery-list__item">
+											<p class="photo"><img src="/cmsstatic/asset/images/temp/studio-h_420x436_1.jpg" alt="" /></p>
+										</li>
+										<li class="gallery-list__item">
+											<p class="photo"><img src="/cmsstatic/asset/images/temp/studio-h_420x436_2.jpg" alt="" /></p>
+										</li>
+										<li class="gallery-list__item">
+											<p class="photo"><img src="/cmsstatic/asset/images/temp/studio-h_420x436_3.jpg" alt="" /></p>
+										</li>
+										<li class="gallery-list__item">
+											<p class="photo"><img src="/cmsstatic/asset/images/temp/studio-h_420x436_4.jpg" alt="" /></p>
+										</li>
+										<li class="gallery-list__item">
+											<p class="photo"><img src="/cmsstatic/asset/images/temp/studio-h_420x436_5.jpg" alt="" /></p>
+										</li>
+										<li class="gallery-list__item">
+											<p class="photo"><img src="/cmsstatic/asset/images/temp/studio-h_420x436_6.jpg" alt="" /></p>
+										</li>
+									</ul>
+									<div class="gallery-more">
+										<button type="button" class="form-button form-button--plain">더보기 (1/20)</button>
+									</div>
 								</div>
 							</div>
 						</div>
-						<!-- //H 사진관 -->
+						<!-- //STUDIO H [UPDATE: 0616] -->
 					</div>
 				</div>
 			</div>
@@ -3952,7 +4058,7 @@
 					var key = $(this).data('sidebarOpen');
 
 					if (key === 'hStudio') {
-						title = 'H 사진관';
+						title = 'STUDIO H';
 					} else if (key === 'claimGuide') {
 						title = '반품/교환 안내';
 					} else if (key === 'qnaWrite') {
@@ -3969,86 +4075,152 @@
 						title = '리뷰(1,200)';
 					}
 
-					// 코디 - 이미지 슬라이더
+					// STUDIO H 사이즈 변경 [UPDATE: 0616]
+					if (key === 'hStudio') {
+						var sliderElement = document.querySelector('#thumbnailSlider');
+						var sliderHandle = sliderElement['rangeslider-js'];
+						if (!sliderHandle) {
+							rangesliderJs.create(sliderElement, {
+								min: 0,
+								max: 2,
+								value: 1,
+								step: 0.1,
+								// onInit: (value, percent, position) => {},
+								onSlide: (value, percent, position) => {
+									var sliderHandle = sliderElement['rangeslider-js'];
+									var oldType = $('#hStudioGalleryList').attr('data-size') || 'm';
+									var type;
+									if (value <= 0.65) {
+										type = 's';
+									} else if (value > 1.35) {
+										type = 'l';
+									} else {
+										type = 'm';
+									}
+
+									if (oldType !== type) {
+										$('#hStudioGalleryList').attr('data-size', type).css({ opacity: 0 }).animate(
+											{
+												opacity: 1
+											},
+											{
+												duration: 100
+											}
+										);
+									}
+								},
+								onSlideEnd: (value, percent, position) => {
+									var sliderHandle = sliderElement['rangeslider-js'];
+									var newValue;
+									$(sliderHandle.handle).addClass('is-touch-end');
+
+									if (value <= 0.65) {
+										newValue = 0;
+									} else if (value > 1.35) {
+										newValue = 2;
+									} else {
+										newValue = 1;
+									}
+									sliderHandle.update({ value: newValue });
+								}
+							});
+						} else {
+							console.log('슬라이더 업데이트');
+							sliderHandle.update({
+								value: 1
+							});
+						}
+					}
+
+					// 코디 - 이미지 슬라이더 [UPDATE: 0616]
 					if (key === 'coordinationProducts') {
 						$('#' + key)
 							.find('.swiper-container')
 							.each(function () {
-								var swiper = new Swiper($(this)[0], {
-									loop: true,
-									pagination: {
-										el: '.swiper-pagination',
-										type: 'fraction'
-									},
-									on: {
-										init: function (swiper) {
-											var swiper = this;
-											var length = swiper.slides.length;
-											if (swiper.activeIndex !== swiper.realIndex) {
-												length = length - 2;
-											}
-											var percent = ((swiper.realIndex + 1) / length) * 100;
-											window.setTimeout(function () {
+								var swiper = $(this)[0].swiper;
+								if (!swiper) {
+									swiper = new Swiper($(this)[0], {
+										loop: true,
+										pagination: {
+											el: '.swiper-pagination',
+											type: 'fraction'
+										},
+										on: {
+											init: function (swiper) {
+												var swiper = this;
+												var length = swiper.slides.length;
+												if (swiper.activeIndex !== swiper.realIndex) {
+													length = length - 2;
+												}
+												var percent = ((swiper.realIndex + 1) / length) * 100;
+												window.setTimeout(function () {
+													$(swiper.pagination.el)
+														.parent()
+														.find('.swiper-progress__fill')
+														.width(percent + '%');
+												}, 10);
+											},
+											touchStart: function (swiper, event) {
+												$(this.el).addClass('is-move');
+											},
+											touchEnd: function (swiper, event) {
+												$(this.el).removeClass('is-move');
+											},
+											progress: function () {
+												var swiper = this;
+												var length = swiper.slides.length;
+												var percent = (swiper.progress / (length - 2)) * (length - 1) * 100;
+
+												if (swiper.activeIndex === swiper.realIndex) {
+													percent = swiper.progress * 100;
+												}
+
+												if (percent > 100) {
+													percent = percent - 100;
+												} else if (percent <= 0) {
+													percent = 100;
+												}
 												$(swiper.pagination.el)
 													.parent()
 													.find('.swiper-progress__fill')
 													.width(percent + '%');
-											}, 10);
-										},
-										touchStart: function (swiper, event) {
-											$(this.el).addClass('is-move');
-										},
-										touchEnd: function (swiper, event) {
-											$(this.el).removeClass('is-move');
-										},
-										progress: function () {
-											var swiper = this;
-											var length = swiper.slides.length;
-											var percent = (swiper.progress / (length - 2)) * (length - 1) * 100;
-
-											if (swiper.activeIndex === swiper.realIndex) {
-												percent = swiper.progress * 100;
 											}
-
-											if (percent > 100) {
-												percent = percent - 100;
-											} else if (percent <= 0) {
-												percent = 100;
-											}
-											$(swiper.pagination.el)
-												.parent()
-												.find('.swiper-progress__fill')
-												.width(percent + '%');
 										}
-									}
-								});
+									});
+								}
 								window.setTimeout(function () {
 									swiper.update();
 								}, 300);
 							});
 					}
 
-					// 리뷰 - 이미지 슬라이더
+					// 리뷰 - 이미지 슬라이더 [UPDATE: 0616]
 					if (key === 'reviewList') {
-						new Swiper('#' + key + ' .review__gallery .swiper-container', {
-							loop: false,
-							freeMode: true,
-							spaceBetween: 30,
-							slidesOffsetBefore: 0,
-							slidesOffsetAfter: 20,
-							slidesPerView: 'auto',
-							breakpoints: {
-								1023: {
-									spaceBetween: 10,
-									slidesOffsetBefore: 10,
-									slidesOffsetAfter: 10
+						var swiper = $('#' + key + ' .review__gallery .swiper-container')[0].swiper;
+						if (!swiper) {
+							swiper = new Swiper('#' + key + ' .review__gallery .swiper-container', {
+								loop: false,
+								freeMode: true,
+								spaceBetween: 30,
+								slidesOffsetBefore: 0,
+								slidesOffsetAfter: 20,
+								slidesPerView: 'auto',
+								breakpoints: {
+									1023: {
+										spaceBetween: 10,
+										slidesOffsetBefore: 10,
+										slidesOffsetAfter: 10
+									}
+								},
+								navigation: {
+									nextEl: '.swiper-button-next',
+									prevEl: '.swiper-button-prev'
 								}
-							},
-							navigation: {
-								nextEl: '.swiper-button-next',
-								prevEl: '.swiper-button-prev'
-							}
-						});
+							});
+						}
+						window.setTimeout(function () {
+							swiper.update();
+						}, 300);
 					}
 
 					$('#sidebarTitle').text(title);

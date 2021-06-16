@@ -1922,6 +1922,12 @@
 															</label>
 														</div>
 													</div>
+													<div class="product__select">
+														<label class="form-checkbox">
+															<input type="checkbox" class="checkbox" />
+															<i class="icon"></i>
+														</label>
+													</div>
 												</div>
 												<!-- //배송상품 -->
 												<!-- 픽업상품 -->
@@ -1970,6 +1976,12 @@
 															</label>
 														</div>
 													</div>
+													<div class="product__select">
+														<label class="form-checkbox">
+															<input type="checkbox" class="checkbox" />
+															<i class="icon"></i>
+														</label>
+													</div>
 												</div>
 												<!-- //픽업상품 -->
 											</div>
@@ -1977,10 +1989,10 @@
 									</div>
 									<!-- //주문 정보 -->
 
-									<!-- 반품 사유 -->
-									<div class="order-detail order-detail--reason">
+									<!-- 예상 반품비 -->
+									<div class="order-detail order-detail--return-fee">
 										<div class="order-detail__header">
-											<p class="order-detail__title">반품 사유</p>
+											<p class="order-detail__title"></p>
 											<div class="order-detail__util">
 												<div class="return-cost">
 													<span class="cost__title">예상 반품비</span>
@@ -1989,115 +2001,127 @@
 												</div>
 											</div>
 										</div>
-										<div class="order-detail__content">
-											<div class="write-form">
-												<span class="form-select">
-													<select class="select">
-														<option value="">반품 사유를 선택해주세요</option>
-														<option value="구매의사 없어짐">구매의사 없어짐</option>
-														<option value="사이즈변경">사이즈변경</option>
-														<option value="색상변경">색상변경</option>
-														<option value="배송지연">배송지연</option>
-														<option value="쿠폰/마일리지/적립금 미적용">쿠폰/마일리지/적립금 미적용</option>
-														<option value="배송정보변경">배송정보변경</option>
-														<option value="결제수단변경">결제수단변경</option>
-														<option value="다른 상품으로 재주문">다른 상품으로 재주문</option>
-														<option value="가격불만">가격불만</option>
-													</select>
-													<i class="icon"></i>
-												</span>
-												<span class="form-select">
-													<select class="select">
-														<option value="">상세 사유를 선택해주세요</option>
-													</select>
-													<i class="icon"></i>
-												</span>
-												<div class="form-textarea">
-													<textarea class="form-text" cols="30" rows="10">이지윅 에디터 삽입</textarea>
+									</div>
+									<!-- //예상 반품비 -->
+
+									<div class="order-detail order-detail--step2" style="display: none">
+										<!-- 반품 사유 -->
+										<div class="order-detail order-detail--reason">
+											<div class="order-detail__header">
+												<p class="order-detail__title">반품 사유</p>
+												<div class="order-detail__util">
+													<div class="return-cost">
+														<span class="cost__title">예상 반품비</span>
+														<em class="cost__value">2,500 원</em>
+														<button type="button" class="button button--guide">예상 반품비 안내</button>
+													</div>
+												</div>
+											</div>
+											<div class="order-detail__content">
+												<div class="write-form">
+													<span class="form-select">
+														<select class="select">
+															<option value="">반품 사유를 선택해주세요</option>
+															<option value="구매의사 없어짐">구매의사 없어짐</option>
+															<option value="사이즈변경">사이즈변경</option>
+															<option value="색상변경">색상변경</option>
+															<option value="배송지연">배송지연</option>
+															<option value="쿠폰/마일리지/적립금 미적용">쿠폰/마일리지/적립금 미적용</option>
+															<option value="배송정보변경">배송정보변경</option>
+															<option value="결제수단변경">결제수단변경</option>
+															<option value="다른 상품으로 재주문">다른 상품으로 재주문</option>
+															<option value="가격불만">가격불만</option>
+														</select>
+														<i class="icon"></i>
+													</span>
+													<div class="form-textarea">
+														<textarea class="form-text" cols="30" rows="10">이지윅 에디터 삽입</textarea>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<ul class="order-detail-guide">
-										<li class="order-detail-guide__item">사진 첨부시 보다 신속한 반품 처리가 가능합니다.</li>
-									</ul>
-									<!-- // 반품 사유 -->
+										<ul class="order-detail-guide">
+											<li class="order-detail-guide__item">사진 첨부시 보다 신속한 반품 처리가 가능합니다.</li>
+										</ul>
+										<!-- // 반품 사유 -->
 
-									<!-- 수거지 정보 -->
-									<div class="order-detail order-detail--shipping">
-										<div class="order-detail__header">
-											<p class="order-detail__title">수거지 정보</p>
-											<button type="button" class="button order-detail__util">변경</button>
-										</div>
-										<div class="order-detail__content">
-											<div class="info-box">
-												<dl class="info-box__row">
-													<dt class="info-box__header">신청한 분</dt>
-													<dd class="info-box__data">김헤지</dd>
-												</dl>
-												<dl class="info-box__row">
-													<dt class="info-box__header">수거 주소</dt>
-													<dd class="info-box__data">[06017] 서울 강남구 언주로 870 헤지스타워 5층</dd>
-												</dl>
-												<dl class="info-box__row">
-													<dt class="info-box__header">전화번호</dt>
-													<dd class="info-box__data">010-1234-5678</dd>
-												</dl>
+										<!-- 수거지 정보 -->
+										<div class="order-detail order-detail--shipping">
+											<div class="order-detail__header">
+												<p class="order-detail__title">수거지 정보</p>
+												<button type="button" class="button order-detail__util">변경</button>
 											</div>
-										</div>
-									</div>
-									<ul class="order-detail-guide">
-										<li class="order-detail-guide__item">2일 이내 방문 예정 (주말, 공휴일 제외)</li>
-									</ul>
-									<!-- // 수거지 정보 -->
-
-									<!-- 결제 정보 -->
-									<div class="order-detail order-detail--payment">
-										<div class="order-detail__header">
-											<p class="order-detail__title">결제 정보</p>
-										</div>
-										<div class="order-detail__content">
-											<div class="info-box info-box--side">
-												<dl class="info-box__row">
-													<dt class="info-box__header">결제 수단</dt>
-													<dd class="info-box__data">신용카드(신한) / 일시불</dd>
-												</dl>
-												<dl class="info-box__row">
-													<dt class="info-box__header">결제 금액</dt>
-													<dd class="info-box__data">344,500 원</dd>
-												</dl>
-												<dl class="info-box__row">
-													<dt class="info-box__header">반품 상품 금액</dt>
-													<dd class="info-box__data">344,500 원</dd>
-												</dl>
-												<dl class="info-box__row">
-													<dt class="info-box__header">반품비</dt>
-													<dd class="info-box__data">미정</dd>
-												</dl>
-												<div class="info-box__row-group">
+											<div class="order-detail__content">
+												<div class="info-box">
 													<dl class="info-box__row">
-														<dt class="info-box__header">원 주문 배송비</dt>
-														<dd class="info-box__data">0 원</dd>
+														<dt class="info-box__header">신청한 분</dt>
+														<dd class="info-box__data">김헤지</dd>
 													</dl>
 													<dl class="info-box__row">
-														<dt class="info-box__header">반품 배송비</dt>
-														<dd class="info-box__data">2,500 원</dd>
+														<dt class="info-box__header">수거 주소</dt>
+														<dd class="info-box__data">[06017] 서울 강남구 언주로 870 헤지스타워 5층</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">전화번호</dt>
+														<dd class="info-box__data">010-1234-5678</dd>
 													</dl>
 												</div>
-												<dl class="info-box__row info-box__row--total">
-													<dt class="info-box__header">취소 예정 금액</dt>
-													<dd class="info-box__data"><span class="claim">344,500 원</span></dd>
-												</dl>
 											</div>
 										</div>
+										<ul class="order-detail-guide">
+											<li class="order-detail-guide__item">2일 이내 방문 예정 (주말, 공휴일 제외)</li>
+										</ul>
+										<!-- // 수거지 정보 -->
+
+										<!-- 결제 정보 -->
+										<div class="order-detail order-detail--payment">
+											<div class="order-detail__header">
+												<p class="order-detail__title">결제 정보</p>
+											</div>
+											<div class="order-detail__content">
+												<div class="info-box info-box--side">
+													<dl class="info-box__row">
+														<dt class="info-box__header">결제 수단</dt>
+														<dd class="info-box__data">신용카드(신한) / 일시불</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">결제 금액</dt>
+														<dd class="info-box__data">344,500 원</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">반품 상품 금액</dt>
+														<dd class="info-box__data">344,500 원</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">반품비</dt>
+														<dd class="info-box__data">미정</dd>
+													</dl>
+													<div class="info-box__row-group">
+														<dl class="info-box__row">
+															<dt class="info-box__header">원 주문 배송비</dt>
+															<dd class="info-box__data">0 원</dd>
+														</dl>
+														<dl class="info-box__row">
+															<dt class="info-box__header">반품 배송비</dt>
+															<dd class="info-box__data">2,500 원</dd>
+														</dl>
+													</div>
+													<dl class="info-box__row info-box__row--total">
+														<dt class="info-box__header">취소 예정 금액</dt>
+														<dd class="info-box__data"><span class="claim">344,500 원</span></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+										<ul class="order-detail-guide">
+											<li class="order-detail-guide__item">주문시 결제 금액에서 반품 상품 금액과 반품비를 정산한 나머지 금액이 환불될 예정입니다.</li>
+										</ul>
+										<!-- // 결제 정보 -->
 									</div>
-									<ul class="order-detail-guide">
-										<li class="order-detail-guide__item">주문시 결제 금액에서 반품 상품 금액과 반품비를 정산한 나머지 금액이 환불될 예정입니다.</li>
-									</ul>
-									<!-- // 결제 정보 -->
 
 									<div class="product-order__util">
-										<button type="button" class="form-button form-button--main form-button--double">반품 신청</button>
+										<button type="button" class="form-button form-button--main form-button--double">환불 금액 계산</button>
+										<button type="button" class="form-button form-button--main form-button--double" style="display: none">반품 신청</button>
 									</div>
 								</div>
 							</div>

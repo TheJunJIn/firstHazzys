@@ -1,6 +1,7 @@
 @import '_variables.scss';
 @import '_mixins.scss';
 @import '_swiper.scss';
+@import '_ui-slider.scss';
 
 @import '../../components/sidebar/index.scss';
 @import '../../components/sprites/sprite-common.scss';
@@ -99,6 +100,32 @@
       margin: 0 0 0 10px;
       width: 100%;
     }
+  }
+}
+
+// 공통 - 내용없음
+.no-data {
+  text-align: center;
+  .sprite-common {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .message {
+    +.message {
+      margin-top: 10px;
+    }
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    color: $color-text-emphasize;
+    em {
+      font-weight: 300;
+      font-style: normal;
+      color: $color-text-point;
+    }
+  }
+  + .request {
+    margin-top: 30px;
   }
 }
 
@@ -824,16 +851,10 @@
       }
     }
     .no-data {
-      text-align: center;
-      .sprite-common {
-        display: inline-block;
-        vertical-align: top;
-      }
       .message {
-        font-size: 14px;
-        line-height: 24px;
-        font-weight: 300;
-        color: $color-text-emphasize;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
     @include mq('desktop') {
@@ -965,7 +986,7 @@
             font-weight: 300;
             color: $color-text-primary;
             text-align: right;
-            span {
+            > span {
               display: inline-block;
               vertical-align: middle;
               white-space: nowrap;
@@ -976,11 +997,24 @@
               img {
                 width: 100%;
               }
+              .hazzys-badge {
+                width: 20px;
+                height: 20px;
+              }
             }
           }
         }
         &__content {
           padding: 20px 30px 30px 20px;
+        }
+        &.active {
+          .benefit__title {
+            .benefit__summary {
+              > span {
+                color: $color-text-emphasize;
+              }
+            }
+          }
         }
       }
       .benefit-detail {
@@ -1018,22 +1052,24 @@
           .grade {
             &__item {
               + .grade__item {
-                margin-top: 8px;
+                margin-top: 10px;
               }
               font-size: 12px;
               font-family: $font-gotham;
               font-weight: 450;
               line-height: 16px;
               color: $color-text-primary;
-              .grade__name {
-                white-space: nowrap;
+              .grade__icon {
                 .icon {
                   display: inline-block;
-                  width: 16px;
-                  img {
-                    width: 100%;
+                  .hazzys-badge {
+                    width: 16px;
+                    height: 16px;
                   }
                 }
+              }
+              .grade__name {
+                margin-left: 5px;
               }
               .grade__reward {
                 color: $color-text-emphasize;
@@ -1098,7 +1134,7 @@
             .grade {
               &__item {
                 display: inline-block;
-                margin-right: 6px;
+                margin-right: 10px;
                 + .grade__item {
                   margin-top: 0;
                 }
@@ -1584,25 +1620,12 @@
   // 상품 문의 목록
   .product-qna {
     &__title {
-      .no-data {
-        text-align: center;
-        .sprite-common {
-          display: inline-block;
-          vertical-align: top;
-        }
-        .message {
-          font-size: 14px;
-          line-height: 24px;
-          font-weight: 300;
-          color: $color-text-emphasize;
-        }
-        + .request {
-          margin-top: 30px;
-        }
-      }
       .request {
-        width: 165px;
-        margin: 0 auto;
+        text-align: center;
+        .button,
+        .form-button {
+          width: 165px;
+        }
       }
     }
     &__list {
@@ -1821,33 +1844,89 @@
     }
   }
 
-  // H 사진관
+  // STUDIO H
   .h-studio {
     &__title {
-      margin-bottom: 40px;
+      padding-top: 10px;
+      margin-bottom: 60px;
       font-size: 14px;
       font-weight: 300;
       line-height: 24px;
       color: $color-text-emphasize;
       text-align: center;
     }
+    // &__slider {}
     &__gallery {
-      .photo {
-        + .photo {
-          margin-top: 40px;
+      .gallery-list {
+        @include self-clear;
+        margin: 0 -10px;
+        padding-top: 10px;
+        &__item {
+          float: left;
+          width: 50%;
+          padding: 20px 10px 0;
+          box-sizing: border-box;
         }
-        text-align: center;
+        .photo {
+          img {
+            width: 100%;
+          }
+        }
 
-        img {
-          max-width: 100%;
+        &[data-size='s'] {
+          padding-top: 10px;
+          .gallery-list__item {
+            width: 33.33333%;
+            padding: 20px 10px 0;
+          }
         }
+        &[data-size='l'] {
+          padding-top: 0;
+          .gallery-list__item {
+            width: 100%;
+            padding: 30px 10px 0;
+          }
+        }
+      }
+      .gallery-more {
+        margin-top: 40px;
       }
     }
     @include mq('desktop') {
+      &__title {
+        margin-bottom: 80px;
+      }
+      &__slider {
+        width: 170px;
+        margin: 0 auto;
+      }
       &__gallery {
-        .photo {
-          + .photo {
-            margin-top: 80px;
+        .gallery-list {
+          margin: 0 -15px;
+          padding-top: 30px;
+          &__item {
+            padding: 30px 15px 0;
+          }
+          .photo {
+            img {
+              width: 100%;
+            }
+          }
+          &[data-size='s'] {
+            margin: 0 -15px;
+            padding-top: 30px;
+            .gallery-list__item {
+              width: 33.33333%;
+              padding: 30px 15px 0;
+            }
+          }
+          &[data-size='l'] {
+            margin: 0;
+            padding-top: 0;
+            .gallery-list__item {
+              width: 100%;
+              padding: 60px 0 0;
+            }
           }
         }
       }
@@ -1857,6 +1936,10 @@
   // 리뷰
   .product-review  {
     .review__grade {
+      // 마크업 확인용 (상단 평점정보 일반/뷰티)
+      + .review__grade {
+        margin-top: 30px;
+      }
       .review__star {
         text-align: center;
         .average__icon {
@@ -1947,19 +2030,6 @@
       margin-top: 60px;
       .tabpanel {
         padding: 30px 0 0 0;
-        .no-data {
-          text-align: center;
-          .sprite-common {
-            display: inline-block;
-            vertical-align: top;
-          }
-          .message {
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 300;
-            color: $color-text-emphasize;
-          }
-        }
       }
       .review-filter {
         display: flex;
@@ -2066,6 +2136,13 @@
       }
       .review-more {
         margin-top: 40px;
+      }
+      .no-data {
+        .message {
+          max-width: 360px;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
     @include mq('desktop') {
@@ -2428,8 +2505,6 @@
     }
     .product__price {
       margin-top: 10px;
-      font-size: 16px;
-      font-weight: 450;
     }
     .product__util {
       position: absolute;
@@ -2505,7 +2580,6 @@
 // 플로팅 상품 정보
 .product-detail-sticky {
   position: relative;
-  z-index: 15;
 }
 
 .product-detail-sticky__content {
@@ -2525,6 +2599,7 @@
 
   .product-detail-sticky.is-active & {
     opacity: 1;
+    z-index: 15;
   }
 
   .header_is_hidden & {
@@ -2546,6 +2621,11 @@
     }
     .product__info {
       padding: 10px 20px 0 0;
+      .product__name {
+        line-height: 18px;
+        height: 18px;
+        @include text-ellipsis-line($line: 1);
+      }
     }
     .product__price {
       margin-top: 10px;
