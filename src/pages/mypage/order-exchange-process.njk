@@ -9,7 +9,7 @@
     <div class="main-container main-content__body">
       <div class="main-content__main main-content__main--shopping">
         <div class="main-content__header">
-          <h3 class="main-content__title">반품 신청</h3>
+          <h3 class="main-content__title">교환 신청</h3>
           <button type="button" class="button main-content__btn-back">
             <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
           </button>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="order-product-list">
-                  <!-- 배송상품 -->
+                  <!-- 상품 -->
                   <div class="product product--order product--order-claim">
                     <a href="#" class="product__image">
                       <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
@@ -57,12 +57,23 @@
                       </div>
                       <div class="product__claim-option">
                         <label class="form-select-container">
-                          <span class="form-label">반품 수량</span>
+                          <span class="form-label">교환 수량</span>
                           <span class="form-select">
                             <select class="select">
                               <option value="1">1</option>
                               <option value="2">2</option>
                               <option value="3">3</option>
+                            </select>
+                            <i class="icon"></i>
+                          </span>
+                        </label>
+                        <label class="form-select-container">
+                          <span class="form-label">사이즈</span>
+                          <span class="form-select">
+                            <select class="select">
+                              <option value="1">100</option>
+                              <option value="2">200</option>
+                              <option value="3">300</option>
                             </select>
                             <i class="icon"></i>
                           </span>
@@ -76,8 +87,8 @@
                       </label>
                     </div>
                   </div>
-                  <!-- //배송상품 -->
-                  <!-- 픽업상품 -->
+                  <!-- //상품 -->
+                  <!-- 상품 -->
                   <div class="product product--order product--order-claim">
                     <a href="#" class="product__image">
                       <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
@@ -93,30 +104,29 @@
                           <span class="option__item">68 XL</span>
                           <span class="option__item">1개</span>
                         </p>
-                        <button type="button" class="button product__option__change">옵션 변경</button>
                       </div>
                       <div class="product__price">
                         <span class="product__price-sale">966,000</span>
                       </div>
-                      <div class="product__order">
-                        <p class="product__order-state">
-                          <span class="date">평균 배송 2-3일</span>
-                        </p>
-                        <div class="product__order-shipping">
-                          <button type="button" class="button button--guide">매장 안내</button>
-                          <span class="state-tag">
-                            <span class="state-tag__name">매장 픽업</span>
-                          </span>
-                        </div>
-                      </div>
                       <div class="product__claim-option">
                         <label class="form-select-container">
-                          <span class="form-label">반품 수량</span>
+                          <span class="form-label">교환 수량</span>
                           <span class="form-select">
                             <select class="select">
                               <option value="1">1</option>
                               <option value="2">2</option>
                               <option value="3">3</option>
+                            </select>
+                            <i class="icon"></i>
+                          </span>
+                        </label>
+                        <label class="form-select-container">
+                          <span class="form-label">사이즈</span>
+                          <span class="form-select">
+                            <select class="select">
+                              <option value="1">100</option>
+                              <option value="2">200</option>
+                              <option value="3">300</option>
                             </select>
                             <i class="icon"></i>
                           </span>
@@ -130,38 +140,23 @@
                       </label>
                     </div>
                   </div>
-                  <!-- //픽업상품 -->
+                  <!-- //상품 -->
                 </div>
 
               </div>
             </div>
             <!-- //주문 정보 -->
 
-            <!-- 예상 반품비 -->
-            <div class="order-detail order-detail--return-fee">
-              <div class="order-detail__header">
-                <p class="order-detail__title"></p>
-                <div class="order-detail__util">
-                  <div class="return-cost">
-                    <span class="cost__title">예상 반품비</span>
-                    <em class="cost__value">2,500 원</em>
-                    <button type="button"  class="button button--guide">예상 반품비 안내</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- //예상 반품비 -->
-
-            <div class="order-detail order-detail--step2" style="display: none">
-              <!-- 반품 사유 -->
+            <div class="order-detail order-detail--step2">
+              <!-- 교환 사유 -->
               <div class="order-detail order-detail--reason">
                 <div class="order-detail__header">
-                  <p class="order-detail__title">반품 사유</p>
+                  <p class="order-detail__title">교환 사유</p>
                   <div class="order-detail__util">
                     <div class="return-cost">
-                      <span class="cost__title">예상 반품비</span>
+                      <span class="cost__title">예상 교환비</span>
                       <em class="cost__value">2,500 원</em>
-                      <button type="button"  class="button button--guide">예상 반품비 안내</button>
+                      <button type="button"  class="button button--guide">예상 교환비 안내</button>
                     </div>
                   </div>
                 </div>
@@ -169,7 +164,7 @@
                   <div class="write-form">
                     <span class="form-select">
                       <select class="select">
-                        <option value="">반품 사유를 선택해주세요</option>
+                        <option value="">교환 사유를 선택해주세요</option>
                         <option value="구매의사 없어짐">구매의사 없어짐</option>
                         <option value="사이즈변경">사이즈변경</option>
                         <option value="색상변경">색상변경</option>
@@ -191,7 +186,7 @@
               <ul class="order-detail-guide">
                 <li class="order-detail-guide__item">사진 첨부시 보다 신속한 반품 처리가 가능합니다.</li>
               </ul>
-              <!-- // 반품 사유 -->
+              <!-- // 교환 사유 -->
 
               <!-- 수거지 정보 -->
               <div class="order-detail order-detail--shipping">
@@ -221,55 +216,74 @@
               </ul>
               <!-- // 수거지 정보 -->
 
-              <!-- 결제 정보 -->
-              <div class="order-detail order-detail--payment">
+              <!-- 배송지 정보 -->
+              <div class="order-detail order-detail--shipping">
                 <div class="order-detail__header">
-                  <p class="order-detail__title">결제 정보</p>
+                  <p class="order-detail__title">배송지 정보</p>
+                  <button type="button" class="button order-detail__util">변경</button>
                 </div>
                 <div class="order-detail__content">
-                  <div class="info-box info-box--side">
+                  <div class="info-box">
                     <dl class="info-box__row">
-                      <dt class="info-box__header">결제 수단</dt>
-                      <dd class="info-box__data">신용카드(신한) / 일시불</dd>
+                      <dt class="info-box__header">받는 분</dt>
+                      <dd class="info-box__data">김헤지</dd>
                     </dl>
                     <dl class="info-box__row">
-                      <dt class="info-box__header">결제 금액</dt>
-                      <dd class="info-box__data">344,500 원</dd>
+                      <dt class="info-box__header">배송 주소</dt>
+                      <dd class="info-box__data">[06017] 서울 강남구 언주로 870 헤지스타워 5층</dd>
                     </dl>
                     <dl class="info-box__row">
-                      <dt class="info-box__header">반품 상품 금액</dt>
-                      <dd class="info-box__data">344,500 원</dd>
-                    </dl>
-                    <dl class="info-box__row">
-                      <dt class="info-box__header">반품비</dt>
-                      <dd class="info-box__data">미정</dd>
-                    </dl>
-                    <div class="info-box__row-group">
-                      <dl class="info-box__row">
-                        <dt class="info-box__header">원 주문 배송비</dt>
-                        <dd class="info-box__data">0 원</dd>
-                      </dl>
-                      <dl class="info-box__row">
-                        <dt class="info-box__header">반품 배송비</dt>
-                        <dd class="info-box__data">2,500 원</dd>
-                      </dl>
-                    </div>
-                    <dl class="info-box__row info-box__row--total">
-                      <dt class="info-box__header">취소 예정 금액</dt>
-                      <dd class="info-box__data"><span class="claim">344,500 원</span></dd>
+                      <dt class="info-box__header">전화번호</dt>
+                      <dd class="info-box__data">010-1234-5678</dd>
                     </dl>
                   </div>
                 </div>
               </div>
+              <!-- // 배송지 정보 -->
+
+              <!-- 교환비 결제 -->
+              <div class="order-detail order-detail--payment-method">
+                <div class="order-detail__header">
+                  <p class="order-detail__title">교환비 결제</p>
+                </div>
+                <div class="order-detail__content">
+                  <ul class="select-payment">
+                    <li>
+                      <label class="form-radio">
+                        <input type="radio" class="radio" name="checkPayment">
+                        <span class="name"><i class="icon-payment icon-payment-1"></i>신용카드</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-radio">
+                        <input type="radio" class="radio" name="checkPayment">
+                        <span class="name"><i class="icon-payment icon-payment-2"></i>실시간 계좌이체</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-radio">
+                        <input type="radio" class="radio" name="checkPayment">
+                        <span class="name"><i class="icon-payment icon-payment-3"></i>카카오페이</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="form-radio">
+                        <input type="radio" class="radio" name="checkPayment">
+                        <span class="name"><i class="icon-payment icon-payment-4"></i>네이버페이</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <ul class="order-detail-guide">
-                <li class="order-detail-guide__item">주문시 결제 금액에서 반품 상품 금액과 반품비를 정산한 나머지 금액이 환불될 예정입니다.</li>
+                <li class="order-detail-guide__item">재고 사정에 따라 교환 접수 이후 품절이 발생할 수 있는 점 양해 부탁드립니다.</li>
               </ul>
-              <!-- // 결제 정보 -->
+              <!-- // 교환비 결제 -->
             </div>
 
             <div class="product-order__util">
-              <button type="button" class="form-button form-button--main form-button--double">환불 금액 계산</button>
-              <button type="button" class="form-button form-button--main form-button--double" style="display: none">반품 신청</button>
+              <button type="button" class="form-button form-button--main form-button--double" style="display: none">교환비 확인</button>
+              <button type="button" class="form-button form-button--main form-button--double">교환 신청</button>
             </div>
 
           </div>
