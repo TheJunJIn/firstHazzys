@@ -137,17 +137,11 @@
       display: block;
       top: -400px;
       left: -70px;
-      &:after {
-        @include sprite($common-arrow-left-swiper-transparent);
-      }
     }
     .swiper-button-next {
       display: block;
       top: -400px;
       right: -70px;
-      &:after {
-        @include sprite($common-arrow-right-swiper-transparent);
-      }
     }
   }
 }

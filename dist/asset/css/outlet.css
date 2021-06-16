@@ -37,15 +37,15 @@
 }
 .swiper-button-next,.swiper-button-prev{position:absolute;top:50%;z-index:10;cursor:pointer;display:block;margin-top:-15px}
 .swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}
-.swiper-button-next:after,.swiper-button-prev:after{display:block;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden}
+.swiper-button-next:after,.swiper-button-prev:after{display:block;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);background-color:rgba(255,255,255,.4)}
 .swiper-button-prev,.swiper-container-rtl .swiper-button-next{left:30px;right:auto}
-.swiper-button-prev:after,.swiper-container-rtl .swiper-button-next:after{content:'prev';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-166px -84px;width:30px;height:30px;background-size:473px 448px}
+.swiper-button-prev:after,.swiper-container-rtl .swiper-button-next:after{content:'prev';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-250px -84px;width:30px;height:30px;background-size:473px 470px}
 .swiper-container--controls-bottom .swiper-button-prev,.swiper-container-rtl .swiper-button-next{top:auto;margin-top:0;left:auto;right:30px;bottom:0}
-.swiper-container--controls-bottom .swiper-button-prev:after,.swiper-container-rtl .swiper-button-next:after{background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-452px -73px;width:20px;height:20px;background-size:473px 448px}
+.swiper-container--controls-bottom .swiper-button-prev:after,.swiper-container-rtl .swiper-button-next:after{background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-452px -73px;width:20px;height:20px;background-size:473px 470px}
 .swiper-button-next,.swiper-container-rtl .swiper-button-prev{right:30px;left:auto}
-.swiper-button-next:after,.swiper-container-rtl .swiper-button-prev:after{content:'next';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-252px -176px;width:30px;height:30px;background-size:473px 448px}
+.swiper-button-next:after,.swiper-container-rtl .swiper-button-prev:after{content:'next';background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-166px -84px;width:30px;height:30px;background-size:473px 470px}
 .swiper-container--controls-bottom .swiper-button-next,.swiper-container-rtl .swiper-button-prev{top:auto;margin-top:0;bottom:0}
-.swiper-container--controls-bottom .swiper-button-next:after,.swiper-container-rtl .swiper-button-prev:after{right:0;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-452px -145px;width:20px;height:20px;background-size:473px 448px}
+.swiper-container--controls-bottom .swiper-button-next:after,.swiper-container-rtl .swiper-button-prev:after{right:0;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-452px -145px;width:20px;height:20px;background-size:473px 470px}
 .swiper-button-lock{display:none}
 .swiper-pagination-container{position:absolute;left:0;bottom:20px;width:100%;z-index:10;height:14px}
 .swiper-progress{position:absolute;top:6px;left:30px;right:30px;height:1px;background-color:#e6e6e6;text-align:left}
@@ -371,7 +371,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .is-desktop .category-navigation{margin-top:100px}
 .category-navigation{position:relative;z-index:11;text-transform:uppercase}
 .category-navigation .dropdown-controller{-webkit-tap-highlight-color:transparent}
-.category-navigation .dropdown-controller::after{content:'';position:absolute;top:50%;right:25px;margin-top:-5px;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-122px -128px;width:10px;height:10px;background-size:473px 448px}
+.category-navigation .dropdown-controller::after{content:'';position:absolute;top:50%;right:25px;margin-top:-5px;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s;background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-122px -128px;width:10px;height:10px;background-size:473px 470px}
 .category-navigation .dropdown-controller[aria-expanded=true]::after{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 .category-navigation .category-title .dropdown-controller[aria-expanded=true]{font-weight:700}
 .category-navigation .category-main-nav-toggle{position:relative;vertical-align:top;border:none;background:0 0;font-size:100%;line-height:1.7;font-family:inherit;text-transform:inherit}
@@ -445,9 +445,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .outlet-key-banner .swiper-slide .banner--key .banner__description{overflow:hidden;width:340px;height:56px;font-size:18px;line-height:28px}
 .outlet-key-banner .swiper-slide-next,.outlet-key-banner .swiper-slide-prev{-webkit-filter:blur(8px);filter:blur(8px);background-color:rgba(255,255,255,.2)}
 .outlet-key-banner .swiper-button-prev{display:block;top:-400px;left:-70px}
-.outlet-key-banner .swiper-button-prev:after{background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-250px -84px;width:30px;height:30px;background-size:473px 448px}
 .outlet-key-banner .swiper-button-next{display:block;top:-400px;right:-70px}
-.outlet-key-banner .swiper-button-next:after{background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-252px -142px;width:30px;height:30px;background-size:473px 448px}
 }
 .floating-category{position:relative}
 .floating-category .category-list{margin:0 10px 80px}
@@ -489,7 +487,7 @@ button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-
 .soldout-imminent .swiper-slide .product__info .info-wrap .price-utill__real{margin-left:6px;color:#fff;font-size:14px;line-height:16px}
 .soldout-imminent .swiper-slide .product__util{position:absolute;right:10px;top:10px;z-index:3}
 .soldout-imminent .swiper-slide .product__util>.button{outline:0}
-.soldout-imminent .swiper-slide .product__util>.button.button--heart.active .sprite-common-heart{background-position:-418px -272px}
+.soldout-imminent .swiper-slide .product__util>.button.button--heart.active .sprite-common-heart{background-position:-418px -136px}
 .soldout-imminent .swiper-slide .product__util>.button .sprite-common{display:block;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden}
 .soldout-imminent .swiper-button-next,.soldout-imminent .swiper-button-prev{visibility:hidden}
 @media only screen and (min-width:1024px){
