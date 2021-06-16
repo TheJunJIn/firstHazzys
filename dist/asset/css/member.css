@@ -20,7 +20,7 @@
 .agreement__header .agreement-check-all .checkbox:checked~.name{font-weight:500}
 .agreement__header .agreement-check-all .name{font-family:"Noto Sans KR",sans-serif;font-weight:300;color:#000;line-height:20px}
 .agreement__header .policy-toggle-button{position:absolute;top:0;right:0;text-indent:100%;line-height:2;white-space:nowrap;overflow:hidden;width:20px;height:20px;outline:0}
-.agreement__header .policy-toggle-button:before{content:'';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-324px -212px;width:10px;height:6px;background-size:473px 448px}
+.agreement__header .policy-toggle-button:before{content:'';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-324px -212px;width:10px;height:6px;background-size:473px 470px}
 .agreement__header .policy-toggle-button.active:before{background-position:-338px -212px}
 .agreement__body{display:none}
 .agreement .policy{margin-top:12px;padding:10px 0 0;border-top:1px solid #000}
@@ -59,7 +59,7 @@
 .member-util{margin-top:20px}
 .member-util .member-util__help{text-align:right}
 .member-util .member-util__help .button{position:relative;padding-right:20px;font-size:12px;font-weight:300;color:#919191}
-.member-util .member-util__help .button:after{content:'';display:block;position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-452px -121px;width:20px;height:20px;background-size:473px 448px}
+.member-util .member-util__help .button:after{content:'';display:block;position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-452px -121px;width:20px;height:20px;background-size:473px 470px}
 .member-util .member-util__help .button:hover{color:#000}
 .member-util .member-util__help .button:hover:after{background-position:-452px -97px}
 .member-util .member-util__help+.member-util__sns{margin-top:50px}
@@ -251,7 +251,7 @@
 .shell-main--member-certify .certify-step-wrap .certify-step{display:-ms-flexbox;display:flex}
 .shell-main--member-certify .certify-step-wrap .certify-step__item{position:relative;width:100%}
 .shell-main--member-certify .certify-step-wrap .certify-step__item .sprite-common{display:block;margin:0 auto 10px auto}
-.shell-main--member-certify .certify-step-wrap .certify-step__item+.certify-step__item:before{content:'';position:absolute;left:-4px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:-439px -394px;width:8px;height:20px;background-size:473px 448px}
+.shell-main--member-certify .certify-step-wrap .certify-step__item+.certify-step__item:before{content:'';position:absolute;left:-4px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);background-image:url(/cmsstatic/asset/images/sprite-common.png);background-position:0 -450px;width:8px;height:20px;background-size:473px 470px}
 .shell-main--member-certify .certify-step-wrap .certify-step__item .text{color:#919191;font-size:12px;text-align:center}
 .shell-main--member-certify .certify-step-wrap .certify-step__item.on .text{color:#ff781e}
 .shell-main--member-certify .member-form__left{margin-bottom:40px}

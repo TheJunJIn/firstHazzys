@@ -1861,107 +1861,268 @@
 				</div>
 				<div class="main-content">
 					<div class="main-container main-content__body">
-						<div class="main-content__main main-content__main--member">
+						<div class="main-content__main main-content__main--shopping">
 							<div class="main-content__header">
-								<h3 class="main-content__title">회원 탈퇴</h3>
+								<h3 class="main-content__title">반품 신청</h3>
 								<button type="button" class="button main-content__btn-back">
 									<i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
 								</button>
 							</div>
-							<div class="mypage-member-container">
-								<!-- 메세지 -->
-								<div class="withdraw-message">
-									<div class="withdraw-message__icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
-											<g fill="none" fill-rule="evenodd">
-												<g class="tears-svg" cx="100" cy="100">
-													<path stroke="#000" stroke-width="2" d="m 60.798656,49.645357 c 0,3.453535 -2.161767,6.253183 -4.827677,6.253183 -2.666718,0 -4.827678,-2.799648 -4.827678,-6.254051 0,-4.809072 4.827678,-9.843053 4.827678,-9.843053 0,0 4.828484,5.033981 4.828484,9.843921 z " />
-												</g>
-												<path
-													stroke="#000"
-													stroke-width="2"
-													d="M34.646 54.153c-2.267.604-4.649.926-7.106.926C12.33 55.079 0 42.749 0 27.539 0 12.329 12.33 0 27.54 0c15.209 0 27.539 12.329 27.539 27.539 0 3.684-.724 7.2-2.037 10.413"
-													transform="translate(-140 -170) translate(10 170) translate(130) translate(12 12) "
-												/>
-												<path
-													fill="#000"
-													d="M21.574 18.373c0 1.583-1.283 2.865-2.866 2.865-1.582 0-2.865-1.282-2.865-2.865 0-1.582 1.283-2.865 2.865-2.865 1.583 0 2.866 1.283 2.866 2.865M39.236 18.373c0 1.583-1.283 2.865-2.865 2.865-1.583 0-2.866-1.282-2.866-2.865 0-1.582 1.283-2.865 2.866-2.865 1.582 0 2.865 1.283 2.865 2.865"
-													transform="translate(-140 -170) translate(10 170) translate(130) translate(12 12) "
-												/>
-												<path
-													stroke="#000"
-													stroke-width="2"
-													d="M36.371 32.993s-3.029-4.428-8.826-4.428c-5.797 0-8.826 4.428-8.826 4.428M19.002 10.073s-2.549 3.104-6.318 3.436M36.077 10.073s2.55 3.104 6.318 3.436"
-													transform="translate(-140 -170) translate(10 170) translate(130) translate(12 12) "
-												/>
-											</g>
-										</svg>
-									</div>
-									<p class="withdraw-message__title">김헤지 님 헤지스닷컴 계정을 삭제하시겠어요?</p>
-									<p class="withdraw-message__comment">헤지스닷컴을 이용하시면서 불편했던 사항을 남겨주시면<br />서비스 개선을 위한 소중한 자료로 활용하겠습니다.</p>
-								</div>
-								<!-- //메세지 -->
+							<div class="product-order-container">
+								<div class="product-order-detail">
+									<!-- 주문 정보 -->
+									<div class="order-detail order-detail--product">
+										<div class="order-detail__header">
+											<p class="order-detail__title">주문 정보</p>
+										</div>
+										<div class="order-detail__content">
+											<div class="info-box info-box--side">
+												<dl class="info-box__row">
+													<dt class="info-box__header">주문번호</dt>
+													<dd class="info-box__data">602435586</dd>
+												</dl>
+												<dl class="info-box__row">
+													<dt class="info-box__header">주문일자</dt>
+													<dd class="info-box__data">2021.03.29</dd>
+												</dl>
+											</div>
 
-								<div class="withdraw-info">
-									<p class="withdraw-info__title">소멸 예정 혜택</p>
-									<div class="withdraw-info__content">
-										<ul class="assets">
-											<li class="assets__item">
-												<span class="asset__name">보유 쿠폰</span>
-												<span class="asset__value">3 장</span>
-											</li>
-											<li class="assets__item">
-												<span class="asset__name">마일리지</span>
-												<span class="asset__value">500 M</span>
-											</li>
-											<li class="assets__item">
-												<span class="asset__name">나의 배지</span>
-												<span class="asset__value">5 개</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<!-- 본인확인 삭제 [UPDATE: 0616] -->
-								<div class="withdraw-info">
-									<p class="withdraw-info__title">탈퇴 사유를 선택해주세요</p>
-									<div class="withdraw-info__content">
-										<div class="write-form">
-											<span class="form-select">
-												<select class="select">
-													<option value="">탈퇴사유를 선택해주세요</option>
-												</select>
-												<i class="icon"></i>
-											</span>
-											<div class="form-textarea">
-												<textarea class="form-text" cols="30" rows="10" placeholder="추가 의견을 남겨주시면 헤지스닷컴의 개선을 위한 소중한 자료로 활용하겠습니다."></textarea>
+											<div class="order-product-list">
+												<!-- 배송상품 -->
+												<div class="product product--order product--order-claim">
+													<a href="#" class="product__image">
+														<img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+													</a>
+													<div class="product__content">
+														<a href="#" class="product__info">
+															<p class="product__brand">HAZZZYS ACC</p>
+															<p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+														</a>
+														<div class="product__option">
+															<p class="product__option__name">
+																<span class="option__item">차콜그레이</span>
+																<span class="option__item">68 XL</span>
+																<span class="option__item">1개</span>
+															</p>
+														</div>
+														<div class="product__price">
+															<span class="product__price-sale">966,000</span>
+														</div>
+														<div class="product__claim-option">
+															<label class="form-select-container">
+																<span class="form-label">반품 수량</span>
+																<span class="form-select">
+																	<select class="select">
+																		<option value="1">1</option>
+																		<option value="2">2</option>
+																		<option value="3">3</option>
+																	</select>
+																	<i class="icon"></i>
+																</span>
+															</label>
+														</div>
+													</div>
+													<div class="product__select">
+														<label class="form-checkbox">
+															<input type="checkbox" class="checkbox" />
+															<i class="icon"></i>
+														</label>
+													</div>
+												</div>
+												<!-- //배송상품 -->
+												<!-- 픽업상품 -->
+												<div class="product product--order product--order-claim">
+													<a href="#" class="product__image">
+														<img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자" />
+													</a>
+													<div class="product__content">
+														<a href="#" class="product__info">
+															<p class="product__brand">HAZZZYS ACC</p>
+															<p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+														</a>
+														<div class="product__option">
+															<p class="product__option__name">
+																<span class="option__item">차콜그레이</span>
+																<span class="option__item">68 XL</span>
+																<span class="option__item">1개</span>
+															</p>
+															<button type="button" class="button product__option__change">옵션 변경</button>
+														</div>
+														<div class="product__price">
+															<span class="product__price-sale">966,000</span>
+														</div>
+														<div class="product__order">
+															<p class="product__order-state">
+																<span class="date">평균 배송 2-3일</span>
+															</p>
+															<div class="product__order-shipping">
+																<button type="button" class="button button--guide">매장 안내</button>
+																<span class="state-tag">
+																	<span class="state-tag__name">매장 픽업</span>
+																</span>
+															</div>
+														</div>
+														<div class="product__claim-option">
+															<label class="form-select-container">
+																<span class="form-label">반품 수량</span>
+																<span class="form-select">
+																	<select class="select">
+																		<option value="1">1</option>
+																		<option value="2">2</option>
+																		<option value="3">3</option>
+																	</select>
+																	<i class="icon"></i>
+																</span>
+															</label>
+														</div>
+													</div>
+													<div class="product__select">
+														<label class="form-checkbox">
+															<input type="checkbox" class="checkbox" />
+															<i class="icon"></i>
+														</label>
+													</div>
+												</div>
+												<!-- //픽업상품 -->
 											</div>
 										</div>
 									</div>
-								</div>
-								<!-- // 본인확인 삭제  [UPDATE: 0616] -->
+									<!-- //주문 정보 -->
 
-								<div class="withdraw-info">
-									<p class="withdraw-info__title">탈퇴 전 유의사항을 꼭! 확인해주세요</p>
-									<div class="withdraw-info__content">
-										<div class="withdraw-caution">
-											<ul class="guide">
-												<li class="guide__item">헤지스닷컴 주문내역에 있는 고객님의 정보는 회원탈퇴 이후에도 전자상거래 등에서의 소비자보호에 관한 법률 시행령이 정한 일정기간 동안 보존됩니다.</li>
-												<li class="guide__item">회원탈퇴 후 재가입시에는 신규가입으로 처리되며, 탈퇴시점으로부터 2개월 후에 재 가입 가능합니다.</li>
-												<li class="guide__item">회원 탈퇴 후 SNS로 간편가입 하시는 경우, 탈퇴시점으로부터 2개월 후에 정회원 인증 및 주문이 가능합니다.</li>
-												<li class="guide__item">헤지스닷컴 탈퇴 시 고객님께서 보유하셨던 e기프트 마일리지, 마일리지, 쿠폰은 모두 삭제 됩니다.</li>
-												<li class="guide__item">헤지스닷컴 탈퇴 시 LF Members는 유지되며 오프라인 매장에서 LF 마일리지 적립 및 사용 가능합니다.</li>
-												<li class="guide__item">취소/반품/교환 신청 등 서비스가 진행 중인 고객님은 모든 처리가 완료된 후에 탈퇴가 가능합니다.</li>
-												<li class="guide__item">배송 등 거래가 진행 중인 고객님은 모든 거래가 완료된 후에 탈퇴가 가능합니다.</li>
-												<li class="guide__item">LF Members Family 사이트의 탈퇴를 원하시는 경우, LF Mem bers 또는 각 Family 사이트를 방문하시어 탈퇴를 진행해 주시기 바랍니다.</li>
-											</ul>
-											<a href="#" class="members-link">LF members 사이트 바로가기</a>
+									<!-- 예상 반품비 -->
+									<div class="order-detail order-detail--return-fee" style="display: none">
+										<div class="order-detail__header">
+											<p class="order-detail__title"></p>
+											<div class="order-detail__util">
+												<div class="return-cost">
+													<span class="cost__title">예상 반품비</span>
+													<em class="cost__value">2,500 원</em>
+													<button type="button" class="button button--guide">예상 반품비 안내</button>
+												</div>
+											</div>
 										</div>
 									</div>
-								</div>
+									<!-- //예상 반품비 -->
 
-								<div class="withdraw-submit">
-									<button type="button" class="form-button form-button--main">탈퇴 신청</button>
+									<div class="order-detail order-detail--step2">
+										<!-- 반품 사유 -->
+										<div class="order-detail order-detail--reason">
+											<div class="order-detail__header">
+												<p class="order-detail__title">반품 사유</p>
+												<div class="order-detail__util">
+													<div class="return-cost">
+														<span class="cost__title">예상 반품비</span>
+														<em class="cost__value">2,500 원</em>
+														<button type="button" class="button button--guide">예상 반품비 안내</button>
+													</div>
+												</div>
+											</div>
+											<div class="order-detail__content">
+												<div class="write-form">
+													<span class="form-select">
+														<select class="select">
+															<option value="">반품 사유를 선택해주세요</option>
+															<option value="구매의사 없어짐">구매의사 없어짐</option>
+															<option value="사이즈변경">사이즈변경</option>
+															<option value="색상변경">색상변경</option>
+															<option value="배송지연">배송지연</option>
+															<option value="쿠폰/마일리지/적립금 미적용">쿠폰/마일리지/적립금 미적용</option>
+															<option value="배송정보변경">배송정보변경</option>
+															<option value="결제수단변경">결제수단변경</option>
+															<option value="다른 상품으로 재주문">다른 상품으로 재주문</option>
+															<option value="가격불만">가격불만</option>
+														</select>
+														<i class="icon"></i>
+													</span>
+													<div class="form-textarea">
+														<textarea class="form-text" cols="30" rows="10">이지윅 에디터 삽입</textarea>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="order-detail-guide">
+											<li class="order-detail-guide__item">사진 첨부시 보다 신속한 반품 처리가 가능합니다.</li>
+										</ul>
+										<!-- // 반품 사유 -->
+
+										<!-- 수거지 정보 -->
+										<div class="order-detail order-detail--shipping">
+											<div class="order-detail__header">
+												<p class="order-detail__title">수거지 정보</p>
+												<button type="button" class="button order-detail__util">변경</button>
+											</div>
+											<div class="order-detail__content">
+												<div class="info-box">
+													<dl class="info-box__row">
+														<dt class="info-box__header">신청한 분</dt>
+														<dd class="info-box__data">김헤지</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">수거 주소</dt>
+														<dd class="info-box__data">[06017] 서울 강남구 언주로 870 헤지스타워 5층</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">전화번호</dt>
+														<dd class="info-box__data">010-1234-5678</dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+										<ul class="order-detail-guide">
+											<li class="order-detail-guide__item">2일 이내 방문 예정 (주말, 공휴일 제외)</li>
+										</ul>
+										<!-- // 수거지 정보 -->
+
+										<!-- 결제 정보 -->
+										<div class="order-detail order-detail--payment">
+											<div class="order-detail__header">
+												<p class="order-detail__title">결제 정보</p>
+											</div>
+											<div class="order-detail__content">
+												<div class="info-box info-box--side">
+													<dl class="info-box__row">
+														<dt class="info-box__header">결제 수단</dt>
+														<dd class="info-box__data">신용카드(신한) / 일시불</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">결제 금액</dt>
+														<dd class="info-box__data">344,500 원</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">반품 상품 금액</dt>
+														<dd class="info-box__data">344,500 원</dd>
+													</dl>
+													<dl class="info-box__row">
+														<dt class="info-box__header">반품비</dt>
+														<dd class="info-box__data">미정</dd>
+													</dl>
+													<div class="info-box__row-group">
+														<dl class="info-box__row">
+															<dt class="info-box__header">원 주문 배송비</dt>
+															<dd class="info-box__data">0 원</dd>
+														</dl>
+														<dl class="info-box__row">
+															<dt class="info-box__header">반품 배송비</dt>
+															<dd class="info-box__data">2,500 원</dd>
+														</dl>
+													</div>
+													<dl class="info-box__row info-box__row--total">
+														<dt class="info-box__header">취소 예정 금액</dt>
+														<dd class="info-box__data"><span class="claim">344,500 원</span></dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+										<ul class="order-detail-guide">
+											<li class="order-detail-guide__item">주문시 결제 금액에서 반품 상품 금액과 반품비를 정산한 나머지 금액이 환불될 예정입니다.</li>
+										</ul>
+										<!-- // 결제 정보 -->
+									</div>
+
+									<div class="product-order__util">
+										<button type="button" class="form-button form-button--main form-button--double" style="display: none">환불 금액 계산</button>
+										<button type="button" class="form-button form-button--main form-button--double">반품 신청</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1972,8 +2133,7 @@
 								<li class="sidebar-menu__item menu">
 									<p class="menu__title">나의 쇼핑 내역</p>
 									<ul class="menu__list">
-										<li class="menu__item"></li>
-										<li class="menu__item">
+										<li class="menu__item active">
 											<a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
 										</li>
 										<li class="menu__item">
@@ -2021,7 +2181,7 @@
 										<li class="menu__item">
 											<a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
 										</li>
-										<li class="menu__item active">
+										<li class="menu__item">
 											<a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
 										</li>
 										<li class="menu__item">
@@ -2219,18 +2379,5 @@
 		<script src="/asset/js/ui.js"></script>
 
 		<script src="/asset/js/mypage.js"></script>
-		<script>
-			$(function () {
-				// 아이콘 애니메이션
-				anime({
-					targets: '.tears-svg path',
-					d: 'm 62.05,58.602118 c 0,3.977 -2.68,7.201 -5.985,7.201 -3.306,0 -5.985,-3.224 -5.985,-7.202 0,-5.538 5.985,-11.335 5.985,-11.335 0,0 5.986,5.797 5.986,11.336 z',
-					duration: 600,
-					endDelay: 150,
-					loop: true,
-					easing: 'easeInOutBack'
-				});
-			});
-		</script>
 	</body>
 </html>
