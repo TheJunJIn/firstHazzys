@@ -377,6 +377,23 @@
 // 폼 공통
 .member-form {
   .member-form__field {
+    &__title {
+      margin-bottom: 30px;
+      color: $color-text-emphasize;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+      @include mq('desktop') {
+        font-size: 16px;
+      }
+    }
+    .form-button {
+      .sprite-icon {
+        vertical-align: middle;
+        margin-top: -3px;
+      }
+    }
+
     + .member-form__field {
       margin-top: 10px;
     }
@@ -388,6 +405,12 @@
     }
     + .member-form__notice {
       margin-top: 40px;
+    }
+    + .member-form__field__cert {
+      margin-top: 40px;
+    }
+    + .member-form__agreement {
+      margin-top: 60px;
     }
   }
   .member-form__agreement {
@@ -690,6 +713,10 @@
       padding-top: 48px;
 
       &__icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 10px;
+
         .signup-cash {
           display: inline-block;
           position: relative;
@@ -701,11 +728,11 @@
       
           &__group {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 6px;
+            left: 6px;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             overflow: hidden;
           }
       
@@ -715,8 +742,8 @@
             top: 0;
             left: 0;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             margin: 0;
             padding: 0;
             background-color: #fff;
@@ -728,8 +755,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             line-height: 34px;
             overflow: hidden;
             text-align: center;
@@ -753,9 +780,9 @@
       
           &__group {
             position: absolute;
-            top: 14px;
-            left: 8px;
-            width: 30px;
+            top: 9px;
+            left: 4px;
+            width: 28px;
             height: 23px;
             overflow: hidden;
           }
@@ -765,7 +792,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 30px;
+            width: 28px;
             height: 23px;
             margin: 0;
             padding: 0;
@@ -793,13 +820,14 @@
             }
           }
         }
+
         .signup-return-coupon {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
         }
         @keyframes anime-signup-cash {
           0%, 25% {

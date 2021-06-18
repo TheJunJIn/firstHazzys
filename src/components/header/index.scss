@@ -1,9 +1,6 @@
 @import '_variables.scss';
 @import '_mixins.scss';
 
-// @include mq('tablet'){}
-// @include mq('desktop'){}
-// @include mq('desktop-wide'){}
 .shell-header {
   position: fixed;
   top: 0;
@@ -25,48 +22,20 @@
     }
   }
 
-  @include mq('desktop', 'max') {
-    &.shell-header--white {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-      background-color: transparent;
-      border-bottom: 0;
-    }
-  }
-  // 마이페이지 메인,혜택, 메인 등..
-  &.shell-header--overrap {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background-color: transparent;
-    border-bottom: 0;
-  }
-
-  @include mq('desktop'){
-    border-bottom: 0;
-    &.shell-header--overrap {
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
-    }
-  }
-
   &__title {
     padding: 10px 0 10px 10px;
-    height: 40px;
+    height: 60px;
+    box-sizing: border-box;
+    // @include mq('desktop'){
+    //   padding: 16px 0 16px 30px;
+    // }
   }
   &__logo {
     display: inline-block;
     vertical-align: top;
-    width: 90px;
+    width: 81px;
     height: 36px;
     color: #000;
-    @include mq('desktop', 'max') {
-      @at-root {
-        .shell-header--white #{&} {
-          color: #fff;
-        }
-      }
-    }
     .svg-icon {
       width: 100%;
       height: 100%;
@@ -76,6 +45,11 @@
     position: absolute;
     top: 15px;
     right: 10px;
+    .svg-icon {
+      width: 30px;
+      height: 30px;
+    }
+
     &.util {
       @include self-clear;
       .util__item {
@@ -86,55 +60,138 @@
         // 마이페이지
         &.util__item--member {
           display: none;
-          @include mq('desktop') {
-            display: block;
-          }
         }
         // 네비게이션
-        &.util__item--navigation {
-          @include mq('desktop') {
-            display: none;
-          }
-        }
+        // &.util__item--navigation {}
         .button {
           position: relative;
           color: #000;
           outline: 0;
-          .svg-icon {
-            width: 30px;
-            height: 30px;
-            @include mq('desktop') {
-              width: 24px;
-              height: 24px;
+
+          &.button--cart {
+            .fill {
+              display: none;
+            }
+            .cart-count:not(:empty) {
+              + .svg-icon {
+                .fill {
+                  display: block;
+                }
+              }
             }
           }
         }
         .cart-count {
           position: absolute;
-          bottom: 4px;
+          bottom: 2px;
           left: 0;
           width: 100%;
           text-align: center;
-          font-size: 10px;
+          font-size: 12px;
           line-height: 16px;
-          font-weight: 600;
+          font-weight: 500;
           color: #fff;
-          @include mq('desktop') {
-            bottom: 2px;
-            font-weight: 400;
-            line-height: 14px;
+        }
+        // @include mq('desktop', 'max') {
+        //   @at-root {
+        //     .shell-header--white #{&} {
+        //       .button {
+        //         color: #fff;
+        //         .svg-icon {
+        //           .g {
+        //             filter: auto; // Error로 초기화
+        //           }
+        //         }
+        //       }
+        //       .cart-count {
+        //         color: #000;
+        //       }
+        //     }
+        //   }
+        // }
+      }
+    }
+  }
+  @include mq('desktop', 'max') {
+    // 마이페이지 메인 투명배경, Black
+    &.shell-header--overrap {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background-color: transparent;
+      border-bottom: 0;
+    }
+    // 마이페이지 나의 정보 - 회원 혜택: 투명배경, White
+    &.shell-header--white {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background-color: transparent;
+      border-bottom: 0;
+      .shell-header__logo {
+        color: #fff;
+      }
+      .shell-header__util {
+        &.util {
+          .util__item {
+            .button {
+              color: #fff;
+            }
+            .cart-count {
+              color: #000;
+            }
           }
         }
-        @include mq('desktop', 'max') {
-          @at-root {
-            .shell-header--white #{&} {
-              .button {
-                color: #fff;
-              }
-              .cart-count {
-                color: #000;
-              }
+      }
+    }
+
+    &:not(.shell-header--white) {
+      .shell-header__util {
+        .svg-icon {
+          .g {
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+  @include mq('desktop'){
+    border-bottom: 0;
+    &__title {
+      padding: 16px 0 16px 30px;
+    }
+    &__logo {
+      width: 63px;
+      height: 28px;
+    }
+    &__util {
+      top: 18px;
+      right: 30px;
+      .svg-icon {
+        width: 24px;
+        height: 24px;
+        .g {
+          filter: none;
+        }
+      }
+      &.util {
+        .util__item {
+          // 마이페이지
+          &.util__item--member {
+            display: block;
+          }
+          // 네비게이션
+          &.util__item--navigation {
+            display: none;
+          }
+          .button {
+            &:hover {
+              color: $color-text-point;
             }
+          }
+          .cart-count {
+            bottom: 1px;
+            font-weight: 400;
+            line-height: 14px;
+            font-size: 10px;
           }
         }
       }
