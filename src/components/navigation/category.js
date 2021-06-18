@@ -5,6 +5,7 @@ const defaults = {
   root: '#category',
   containerSelector: '.category-inner',
   mainCategorySelector: '.category__main',
+  categoryItemsSelector: '.category-list__item',
   subCategorySelector: '.category__sub',
   subCategoryItemsClass: 'category-depth--2',
   indicatorSelector: '.category__indicator',
@@ -40,7 +41,8 @@ export default class Category extends UIModule {
     }
 
     const mainMenuRoot = root.querySelector(options.mainCategorySelector);
-    const mainMenuButons = mainMenuRoot.querySelectorAll('.anchor.menu');
+    const mainMenuItems = mainMenuRoot.querySelectorAll(options.categoryItemsSelector);
+    const mainMenuButtons = mainMenuRoot.querySelectorAll('.anchor.menu');
     const menuButtons = root.querySelectorAll('.anchor.menu');
     const backButtons = root.querySelectorAll('.category-depth__back');
     const subMenuRoot = root.querySelector(options.subCategorySelector);
@@ -51,6 +53,7 @@ export default class Category extends UIModule {
     this.mainMenuRoot = mainMenuRoot;
     this.subMenuRoot = subMenuRoot;
     this.subMenuItems = subMenuItems;
+    this.activeSubMenu;
 
     this.indicator = mainMenuRoot.querySelector(options.indicatorSelector);
     this.mode = null;
@@ -154,12 +157,28 @@ export default class Category extends UIModule {
       }
     }
 
-    mainMenuButons.forEach((menu) => {
+    // Indicator
+    const mainMenuCategory = mainMenuRoot.querySelector('.category-list')
+    mainMenuCategory.addEventListener('mouseenter', (e) => {
+      this.indicator.classList.remove('is-hidden');
+    })
+    root.addEventListener('mouseleave', (e) => {
+      this.indicator.classList.add('is-hidden');
+    })
+    mainMenuItems.forEach((menu) => {
       menu.addEventListener('mouseenter', (e) => {
         if (this.mode === 'desktop') {
           const { currentTarget: button } = e;
+          this.activeIndicator(button);
+        }
+      });
+    });
+    mainMenuButtons.forEach((menu) => {
+      menu.addEventListener('mouseenter', async (e) => {
+        if (this.mode === 'desktop') {
+          const { currentTarget: button } = e;
           const element = subMenuRoot.querySelector(button.dataset.category);
-          this.select(element, button);
+          await this.select(element);
         }
       });
       menu.addEventListener('mouseenter', menuDelayOpen, false);
@@ -183,6 +202,22 @@ export default class Category extends UIModule {
       panel = this.container;
     }
     element.style.display = 'block';
+
+    const list = element.closest('.category-list');
+    if(list){
+      const listContainer = list.closest('.category-depth');
+      const siblings = Array.prototype.filter.call(listContainer.querySelectorAll('.category-list'), (element) => {
+        return element.parentNode === listContainer;
+      });
+      siblings.forEach((sibling)=> {
+        if(sibling === list) {
+          sibling.classList.remove('is-hidden');
+        } else {
+          sibling.classList.add('is-hidden');
+        }
+      })
+    }
+
     anime({
       targets: panel,
       translateX: [
@@ -207,6 +242,14 @@ export default class Category extends UIModule {
       panel = this.container;
     }
 
+    if(!isMainCategory) {
+      const siblings = Array.prototype.filter.call(panel.querySelectorAll('.category-list'), (element) => {
+        return element.parentNode === panel;
+      });
+      siblings.forEach((sibling)=> {
+        sibling.classList.remove('is-hidden');
+      })
+    }
     await anime({
       targets: panel,
       translateX: [
@@ -221,20 +264,31 @@ export default class Category extends UIModule {
     }
   }
 
-  async select(element, button) {
-    const { subMenuItems, indicator, options } = this;
-
-    // 인디케이터
-    const { width: indicatorWidth, left: indicatorLeft } = getDemensions(
-      button
-    );
-    indicator.style.width = `${indicatorWidth + 10}px`;
-    indicator.style.left = `${indicatorLeft - 5}px`;
+  // PC 카테고리 선택
+  async select(element) {
+    const { subMenuItems, states, options } = this;
 
     // 하위 메뉴 변경
     subMenuItems.forEach((menu) => {
       if (menu === element) {
         menu.classList.add(options.activeClass);
+        this.activeSubMenu = menu;
+        const { height } = menu.getBoundingClientRect();
+
+        this.states.desktop.height = height + 100;
+
+        if(states.desktop.opened){
+          this.subMenuRoot.style.height = `${height + 100}px`;
+
+          // 빠른변경으로 인해 일시적으로 높이 값이 다를 경우 체크
+          window.clearTimeout(this.states.desktop.selectTimer);
+          this.states.desktop.selectTimer = window.setTimeout(()=> {
+            const { height } = this.subMenuRoot.getBoundingClientRect();
+            if(height !== this.states.desktop.height) {
+              this.subMenuRoot.style.height = `${this.states.desktop.height}px`;
+            }
+          }, 100);
+        }
       } else {
         menu.classList.remove(options.activeClass);
       }
@@ -247,7 +301,6 @@ export default class Category extends UIModule {
     const { desktop } = states;
     desktop.opened = true;
     subMenuRoot.style.visibility = 'visible';
-    this.indicator.classList.remove('is-hidden');
 
     await anime({
       targets: subMenuRoot,
@@ -263,16 +316,35 @@ export default class Category extends UIModule {
     const { subMenuRoot, states } = this;
     const { desktop } = states;
     desktop.opened = false;
-    this.indicator.classList.add('is-hidden');
     await anime({
       targets: subMenuRoot,
       height: 0,
       easing: 'easeOutCubic',
       duration: 400
     }).finished;
+    this.activeSubMenu = null;
     if(!this.states.desktop.opened) {
       subMenuRoot.style.visibility = 'hidden';
     }
+  }
+
+  // PC 인디케이터
+  activeIndicator(button){
+    const { indicator, options } = this;
+
+    // 인디케이터
+    const { width: indicatorWidth, left: indicatorLeft } = getDemensions(
+      button
+    );
+    if(button.classList.contains('category-list__item--hilite')){
+      indicator.classList.add('hilite');
+    } else {
+      indicator.classList.remove('hilite');
+    }
+
+    indicator.style.width = `${indicatorWidth - 20}px`;
+    indicator.style.left = `${indicatorLeft + 10}px`;
+
   }
 
   async reset(mode){
