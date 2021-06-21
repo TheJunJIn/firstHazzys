@@ -9,12 +9,18 @@
     <h2 class="title">공통 팝업</h2>
     <style>
       .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+      .group { display: flex; width:80%;margin:20px auto;}
+      .group  .form-button + .form-button { margin-left: 20px;}
     </style>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalZipcodeFind">우편번호 찾기</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryList">배송지 목록</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalShopFind">매장 찾기</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalShopLocation">매장 위치</button>
     <button type="button" class="form-button form-button--main" onclick="openBadge()";>배지 획득</button>
+    <div class="group">
+      <button type="button" class="form-button form-button--plain" onclick="ui.loading.show()">로딩 On: ui.loading.show();</button>
+      <button type="button" class="form-button form-button--main" onclick="ui.loading.hide()">로딩 Off: ui.loading.hide();</button>
+    </div>
   </div>
 </main>
 {% endblock %}

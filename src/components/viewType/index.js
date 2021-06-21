@@ -18,7 +18,7 @@ export default class ViewType extends UIModule {
      * desktop, mobile 외 레이아웃이 있을 경우 변경
      */
     const html = document.documentElement;
-    const isDesktop = window.innerWidth > parseInt(variables.desktopWidth, 10);
+    const isDesktop = window.innerWidth >= parseInt(variables.desktopWidth, 10);
     const suffixClassList = ['desktop', 'mobile'];
     const viewType = isDesktop ? suffixClassList[0] : suffixClassList[1];
     if (this.viewType != viewType) {

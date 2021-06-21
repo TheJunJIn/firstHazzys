@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <g fill="none" fill-rule="evenodd">
-        <g stroke="currentColor" transform="translate(4 3)">
-            <circle cx="8" cy="3" r="2.5"/>
-            <path d="M10 7.5c1.519 0 2.894.616 3.89 1.61.994.996 1.61 2.371 1.61 3.89h0v3.5H.5V13c0-1.519.616-2.894 1.61-3.89C3.107 8.117 4.482 7.5 6 7.5h4z"/>
-        </g>
-    </g>
-</svg>

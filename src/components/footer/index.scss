@@ -1,10 +1,12 @@
 .shell-footer {
-  margin: 120px 10px 5px;
+  margin: 120px 10px 0;
+  padding-bottom: 50px;
   border-top: 1px solid #000;
 
   .footer {
     &__media {
       padding: 40px 0 60px;
+      border-bottom: 1px solid #e6e6e6;
       text-align: center;
       .footer__logo {
         font-size: 0;
@@ -38,23 +40,22 @@
       }
     }
     &__sitemap {
-      padding: 40px 0 30px;
-      border-top: 1px solid #e6e6e6;
-      display: flex;
+      margin-top: 60px;
       .sitemap {
         width: 100%;
+        display: flex;
+        justify-content: space-around;
 
         &__item {
-          font-family: $font-noto-sans;
           font-weight: 300;
           font-size: 12px;
-          color: #000;
+          line-height: 18px;
+          color: $color-text-emphasize;
           &.strong {
-            font-weight: 700;
+            font-weight: 600;
           }
           a {
             display: inline-block;
-            padding: 8px 0 7px;
             font-family: inherit;
             font-weight: inherit;
             color: inherit;
@@ -65,7 +66,7 @@
     }
 
     &--company {
-      margin-top: 30px;
+      margin-top: 40px;
     }
     &__location {
       font-size: 12px;
@@ -73,11 +74,12 @@
       font-family: $font-noto-sans;
       font-weight: 300;
       color: #919191;
-      > span {
+      text-align: center;
+      padding: 0 5px;
+      .location-group__item {
         position: relative;
         margin-right: 7px;
         padding-right: 8px;
-        white-space: nowrap;
         &:after {
           content: '';
           position: absolute;
@@ -86,7 +88,7 @@
           width: 1px;
           height: 10px;
           background: #919191;
-          transform: translateY(-50%);
+          margin-top: -4px;
           opacity: .6;
         }
         &:last-child {
@@ -96,48 +98,96 @@
             content: none;
           }
         }
+        a {
+          color: $color-text-emphasize;
+          text-decoration: underline;
+        }
       }
     }
     &__copyright {
       margin-top: 20px;
       font-size: 12px;
-      line-height: 22px;
+      line-height: 18px;
       font-family: $font-gotham;
-      color: #919191;
+      text-align: center;
     }
   }
   @include mq('desktop') {
     margin: 0 30px;
     margin-top: 300px;
     .footer {
-      @include self-clear;
+      position: relative;
+      padding: 50px 0 0 270px;
+
       &__media {
-        float: left;
-        padding: 40px 0 60px;
-        text-align: left;
+        padding: 0;
+          border-bottom: 0;
+        .footer__logo {
+          position: absolute;
+          top: 50px;
+          left: 0;
+          .sprite-common-logo-footer {
+            @include sprite($common-logo-footer-large)
+          }
+        }
         .media {
-          margin-top: 12px;
-          margin-left: -9px;
-          text-align: left;
+          margin-top: 0;
+          position: absolute;
+          top: 50px;
+          right: 0;
+        }
+      }
+      &__sitemap {
+        margin-top: 10px;
+        display: block;
+        .sitemap {
+          justify-content: flex-start;
           &__item {
-            + .media__item {
-              margin-left: 5px;
+            + .sitemap__item {
+              margin-left: 30px;
             }
           }
         }
       }
-      &__sitemap {
-        float: right;
-        border-top: 0;
-        .sitemap {
-          width: 170px;
-          + .sitemap {
-            margin-left: 130px;
+      &--company {
+        margin-top: 30px;
+        padding-top: 0;
+      }
+      &__location {
+        text-align: left;
+        padding: 0;
+        .location-group {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 7px;
+          padding-right: 8px;
+          &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 1px;
+            height: 10px;
+            background: #919191;
+            margin-top: -4px;
+            opacity: .6;
+          }
+          &:last-child {
+            &:after {
+              content: none;
+            }
+          }
+        }
+        .location-group__item {
+          &:after {
+            margin-top: -4px;
           }
         }
       }
       &__copyright {
-        margin-top: 0;
+        margin-top: 10px;
+        text-align: left;
       }
     }
   }

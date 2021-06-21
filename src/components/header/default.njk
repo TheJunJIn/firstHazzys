@@ -1,31 +1,128 @@
+<!-- [UPDATE: 0618] -->
 <header class="shell-header{% if isWhiteHeader %} shell-header--white{% endif %}">
   <h1 class="shell-header__title">
-    <a href="#" class="shell-header__logo">{% icon "logo", '', [90, 40], 'Hazzys' %}</a>
+    <a href="#" class="shell-header__logo">
+      <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="90" height="40" viewBox="0 0 90 40">
+        <g fill-rule="evenodd" fill="currentColor">
+          <path d="M73.589.232L69.59 7.264 65.587.232 62.708.232 68.146 9.801 68.146 16.101 71.038 16.101 71.038 9.807 76.479.232zM9.386.232L9.386 6.829 2.676 6.829 2.676.232 0 .232 0 16.101 2.676 16.101 2.676 9.505 9.386 9.505 9.386 16.101 12.061 16.101 12.061.232zM32.796.233L32.796 2.908 39.9 2.908 32.551 16.101 44.178 16.101 44.178 13.426 37.104 13.426 44.431.233zM24.035.233H21.41l-5.975 15.868h2.573l1.314-3.48.168-.44h6.524l.168.44 1.314 3.48h2.573L24.094.233h-.059zm-1.283 3.374l2.245 5.898h-4.49l2.245-5.898zM48.009.233L48.009 2.908 55.114 2.908 47.765 16.101 59.392 16.101 59.392 13.426 52.318 13.426 59.645.233zM86.594 7.39l-2.245-.908c-1.32-.501-2.566-.974-2.566-2.228 0-1.16 1.01-1.882 2.635-1.882 1.303 0 2.422.434 3.522 1.364l.088.075 1.507-1.736-.083-.08C88.14.727 86.305 0 84.418 0c-3.13 0-5.492 1.893-5.492 4.402 0 1.87 1.146 3.277 3.405 4.183l2.265.928.069.029c1.438.602 2.477 1.037 2.477 2.347 0 1.278-1.138 2.073-2.968 2.073-1.486 0-3.083-.674-4.271-1.803l-.088-.083-1.67 1.865.085.082c1.524 1.468 3.674 2.311 5.9 2.311 3.456 0 5.87-1.906 5.87-4.634 0-2.6-1.82-3.67-3.406-4.31" transform="translate(-139.000000, -472.000000) translate(139.000000, 472.000000) translate(0.000000, 12.000000)"/>
+        </g>
+      </svg>
+    </a>
   </h1>
   <ul class="shell-header__util util">
     <li class="util__item">
       <button type="button" class="button" data-modal-open="#modalHeaderSearch">
-        {% icon "search", '', [24, 24], '검색' %}
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <defs>
+            <filter id="jju1wnv6ra" width="123.8%" height="123.8%" x="-11.1%" y="-11.1%" filterUnits="objectBoundingBox">
+              <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+              <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+              <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g fill="none" fill-rule="evenodd" stroke="currentColor">
+            <g class="g" filter="url(#jju1wnv6ra)" transform="translate(-165.000000, -205.000000) translate(125.000000, 205.000000) translate(40.000000, 0.000000) translate(3.750000, 3.750000)">
+              <circle cx="8.75" cy="8.75" r="8.25"/>
+              <path d="M22.5 22.5L15.881 15.881"/>
+            </g>
+          </g>
+        </svg>
       </button>
     </li>
     <li class="util__item util__item--member">
       <a href="#" class="button">
-        {% icon "my", '', [24, 24], '마이페이지' %}
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <defs>
+            <filter id="gzw6w04wga" width="125%" height="123.5%" x="-12.5%" y="-11.8%" filterUnits="objectBoundingBox">
+              <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+              <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+              <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g fill="none" fill-rule="evenodd" stroke="currentColor">
+            <g class="g" filter="url(#gzw6w04wga)" transform="translate(-165.000000, -404.000000) translate(125.000000, 205.000000) translate(40.000000, 199.000000) translate(5.000000, 3.750000)">
+              <circle cx="10" cy="3.75" r="3.25"/>
+              <path d="M14 9.25c1.519 0 2.894.616 3.89 1.61.994.996 1.61 2.371 1.61 3.89h0v6H.5v-6c0-1.519.616-2.894 1.61-3.89.996-.994 2.371-1.61 3.89-1.61h0z"/>
+            </g>
+          </g>
+        </svg>
       </a>
     </li>
     <li class="util__item">
       <a href="#" class="button button--cart">
-      {% icon "cart", '', [24, 24], '장바구니' %}</a>
+        <span class="cart-count"></span>
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <defs>
+            <filter id="7kgmm4a9ra" width="125%" height="124.4%" x="-12.5%" y="-13.3%" filterUnits="objectBoundingBox">
+              <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+              <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+              <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g fill="none" fill-rule="evenodd" stroke="currentColor">
+            <g class="g" filter="url(#7kgmm4a9ra)" transform="translate(-165.000000, -255.000000) translate(125.000000, 205.000000) translate(40.000000, 50.000000) translate(5.000000, 3.750000)">
+              <path d="M17.562 8l1.867 14H.57L2.438 8h15.124z"/>
+              <path d="M6.875-.625h2.5c2.071 0 3.75 1.679 3.75 3.75 0 2.071-1.679 3.75-3.75 3.75h-2.5 0" transform="translate(10.000000, 3.125000) rotate(-90.000000) translate(-10.000000, -3.125000)"/>
+              <path class="fill" fill="currentColor" d="M18 7.5L2 7.5 0 22.5 20 22.5z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
     </li>
     <li class="util__item">
       <a href="#" class="button button--cart">
-        {% icon "cart-fill", '', [24, 24], '장바구니' %}
         <span class="cart-count">3</span>
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <defs>
+            <filter id="ftk1y5bk4a" width="125%" height="124.4%" x="-12.5%" y="-13.3%" filterUnits="objectBoundingBox">
+              <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+              <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+              <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+            <g class="g" filter="url(#ftk1y5bk4a)" transform="translate(-165.000000, -305.000000) translate(125.000000, 205.000000) translate(40.000000, 100.000000) translate(5.000000, 3.750000)">
+              <path fill="currentColor" d="M18 7.5L2 7.5 0 22.5 20 22.5z"/>
+              <path stroke="currentColor" d="M6.875-.625h2.5c2.071 0 3.75 1.679 3.75 3.75 0 2.071-1.679 3.75-3.75 3.75h-2.5 0" transform="translate(10.000000, 3.125000) rotate(-90.000000) translate(-10.000000, -3.125000)"/>
+              <path class="fill" fill="currentColor" d="M18 7.5L2 7.5 0 22.5 20 22.5z"/>
+            </g>
+          </g>
+        </svg>
       </a>
     </li>
     <li class="util__item util__item--navigation">
       <a href="#" class="button" data-nav-toggle>
-      {% icon "menu", '', [24, 24], '메뉴열기' %}</a>
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <defs>
+            <filter id="zyn58ne49a" width="122.2%" height="125%" x="-11.1%" y="-12.5%" filterUnits="objectBoundingBox">
+              <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+              <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+              <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g fill="none" fill-rule="evenodd" stroke="currentColor">
+            <g class="g" filter="url(#zyn58ne49a)" transform="translate(-165.000000, -354.000000) translate(125.000000, 205.000000) translate(40.000000, 149.000000) translate(3.750000, 5.000000)">
+              <path d="M.5 6.75H22V13.25H.5zM0 .625L22.5.625M0 19.375L22.5 19.375"/>
+            </g>
+          </g>
+        </svg>
+      </a>
     </li>
   </ul>
 </header>
+<!-- // [UPDATE: 0618] -->

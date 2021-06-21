@@ -11,6 +11,7 @@ import AccordionController from '../../components/accordion';
 import TabController from '../../components/tab';
 import TopButton from '../../components/top-button';
 import getScrollbarWidth from './_util/get-scrollbar-width';
+import Loading from '../../components/loading';
 
 const $ = window.jQuery;
 const defaults = {
@@ -42,6 +43,8 @@ class UI extends ShoutAndListen {
     new FoldableController();
     new AccordionController();
     new TabController();
+    this.loading = new Loading();
+
     const modules = {
       viewType,
       header,
