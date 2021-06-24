@@ -247,7 +247,7 @@
 // 품절 임박
 .soldout-imminent {
   position: relative;
-  margin: 100px 10px 0;
+  margin: 100px 10px 100px;
   .soldout-info {
     display: flex;
     justify-content: space-between;
@@ -369,6 +369,7 @@
       -webkit-backdrop-filter: blur(4px);
       backdrop-filter: blur(4px);
       background-color: rgba(255, 255, 255, 0.8);
+      box-sizing: border-box;
       z-index: 11;
       &__text {
         margin-bottom: 30px;
