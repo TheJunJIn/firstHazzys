@@ -70,17 +70,14 @@
 }
 
 .category-title {
-  padding: 40px 0 36px;
-  text-align: center;
-  color: #000;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 1.7;
-  letter-spacing: 5px;
-
-  .is-desktop & {
-    display: none;
-  }
+  // padding: 40px 0 36px;
+  // text-align: center;
+  // color: #000;
+  // font-weight: normal;
+  // font-size: 20px;
+  // line-height: 1.7;
+  // letter-spacing: 5px;
+  display: none;
 }
 
 .category-nav-dropdown {
@@ -116,7 +113,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 6px;
 
   &.overflows {
     padding-bottom: 13px;
@@ -154,12 +150,16 @@
 }
 
 .category-sub-nav {
+  padding-top: 40px;
   margin-bottom: 60px;
   color: #000;
 
   a {
     color: inherit;
     text-decoration: none;
+  }
+  .is-desktop & {
+    padding-top: 0;
   }
 }
 
@@ -200,6 +200,7 @@
 
 .category-sub-nav_depth_2,
 .category-sub-nav_depth_3 {
+  height: 26px;
   font-size: 14px;
   line-height: 1.86;
 
@@ -273,7 +274,38 @@
       margin-left: 40px;
     }
   }
+  .category-fixed-nav {
+    display: none !important;
+  }
+
+  .category-navigation.is-fixed {
+    .category-sub-nav_depth_2 {
+      .category-scroller {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        padding: 7px 0;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        background-color: rgba(255, 255, 255, 0.8);
+        box-sizing: border-box;
+        transition: transform 0.3s;
+      }
+    }
+  }
+  &.header_is_hidden {
+    .category-navigation.is-fixed {
+      .category-sub-nav_depth_2 {
+        .category-scroller {
+          transform: translateY(-60px);
+        }
+      }
+    }
+  }
 }
+
 
 .category-fixed-nav {
   display: none;
@@ -300,6 +332,7 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 1;
+  text-transform: inherit;
 
   & + &::before {
     content: '';
@@ -329,5 +362,8 @@
   .category-nav-dropdown {
     position: fixed;
     top: 120px;
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 }
