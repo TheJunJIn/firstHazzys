@@ -444,7 +444,7 @@ class CategoryNavigation extends UIModule {
   }
 
   set isFixed(value) {
-    if (value && states.viewType === 'mobile') {
+    if (value/* && states.viewType === 'mobile'*/) {
       this.root.classList.add('is-fixed');
     } else {
       this.root.classList.remove('is-fixed');

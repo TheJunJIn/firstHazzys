@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :export{desktopWidth:1024px}
-@font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham.woff) format("woff");font-weight:400;font-style:normal}
-@font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham-Book.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham-Book.woff) format("woff");font-weight:450;font-style:normal}
+@font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham-Light.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham-Light.woff) format("woff");font-weight:200;font-style:normal}
+@font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham-Book.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham-Book.woff) format("woff");font-weight:300;font-style:normal}
 @font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham-Medium.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham-Medium.woff) format("woff");font-weight:500;font-style:normal}
 @font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham-Bold.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham-Bold.woff) format("woff");font-weight:600;font-style:normal}
 @font-face{font-family:Gotham;src:url(/cmsstatic/asset/fonts/Gotham-Black.woff2) format("woff2"),url(/cmsstatic/asset/fonts/Gotham-Black.woff) format("woff");font-weight:700;font-style:normal}
