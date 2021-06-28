@@ -1286,6 +1286,66 @@
       }
     }
   }
+  // 배송지 등록
+  &.modal--delivery-add {
+    .modal__body {
+      padding-bottom: 100px;
+    }
+    .delivery-add {
+      .button-delivery-list {
+        @include self-clear;
+        margin-bottom: 20px;
+        .button {
+          float: right;
+          position: relative;
+          padding-right: 20px;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            @include sprite($common-landing-xsmall-black);
+          }
+        }
+      }
+      .form-flex {
+        display: flex;
+      }
+      .member-name {
+        margin-bottom: 10px;
+      }
+      .form-phone {
+        margin-bottom: 10px;
+        .form-select {
+          flex: 0 0 90px;
+          width: 90px;
+        }
+        .form-phone-input {
+          width: 100%;
+          margin: 0 0 0 10px;
+        }
+      }
+      .form-address {
+        margin-bottom: 10px;
+        .form-address-inp {
+          width: 100%;
+        }
+        .address-search {
+          flex: 0 0 106px;
+          width: 106px;
+          margin: 0 0 0 10px;
+        }
+      }
+      .form-address-detail {
+        margin-bottom: 10px;
+      }
+      .basics-delivery-setting {
+        .name{
+          color: $color-text-emphasize;
+        }
+      }
+    }
+  }
   // 배지 획득
   &.modal--obtain-badge {
     .modal-dialog {
