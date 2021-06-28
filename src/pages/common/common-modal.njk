@@ -14,6 +14,7 @@
     </style>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalZipcodeFind">우편번호 찾기</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryList">배송지 목록</button>
+    <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryAdd">배송지 등록</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalShopFind">매장 찾기</button>
     <button type="button" class="form-button form-button--main" data-modal-open="#modalShopLocation">매장 위치</button>
     <button type="button" class="form-button form-button--main" onclick="openBadge()";>배지 획득</button>
@@ -30,15 +31,14 @@
 {% include "modal/common/zipcode-find.njk" %}
 {# 배송지 목록 #modalDeliveryList #}
 {% include "modal/common/delivery-list.njk" %}
+{# 배송지 등록 #modalDeliveryAdd #}
+{% include "modal/common/delivery-add.njk" %}
 {# 매장 찾기 #modalShopFind #}
 {% include "modal/common/shop-find.njk" %}
 {# 매장 위치 #modalShopFind #}
 {% include "modal/common/shop-location.njk" %}
-
 {# 배지 획득 #modalObtainBadge #}
 {% include "modal/common/obtain-badge.njk" %}
-
-
 {% endblock modal %}
 
 {% block css %}
