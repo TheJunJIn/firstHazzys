@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>HAZZYSㅣ온라인 직영 플래그십 스토어</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="S/S가 가득한 Hazzys.com에 방문하세요. 캐주얼 부터 비즈니스룩 까지, 매일매일 새롭게!">
+    <meta property="og:url" content="http://www.hazzys.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HAZZYSㅣ온라인 직영 플래그십 스토어">
+    <meta property="og:image" content="/ui-publish/cmsstatic/asset/images/logo_hazzys.jpg">
+    <meta property="og:description" content="S/S가 가득한 Hazzys.com에 방문하세요. 캐주얼 부터 비즈니스룩 까지, 매일매일 새롭게!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/ui-publish/asset/css/common.css">
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" />
+    <link rel="stylesheet" href="/ui-publish/asset/css/guide.css" />
+  </head>
+  <body>
+    <div class="guide">
+      <aside class="guide-sidebar">
+        <div class="guide-sidebar__scroll-box">
+          <header class="guide-header">
+            <h1 class="guide-header__title">Component Guide</h1>
+          </header>
+          <nav class="guide-menu">
+            <div class="guide-menu__group">
+              <h2 class="guide-menu__title">General</h2>
+              <ul class="guide-menu__list">
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/index.html" class="guide-menu__anchor">시작</a>
+                </li>
+              </ul>
+            </div>
+            {# <div class="guide-menu__group">
+              <h2 class="guide-menu__title">Theme</h2>
+              <ul class="guide-menu__list">
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/theme/color.html" class="guide-menu__anchor">Color</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/theme/font.html" class="guide-menu__anchor">Font</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/theme/icon.html" class="guide-menu__anchor">Icon</a>
+                </li>
+              </ul>
+            </div> #}
+            <div class="guide-menu__group">
+              <h2 class="guide-menu__title">Layout</h2>
+              <ul class="guide-menu__list">
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/layout/index.html" class="guide-menu__anchor" target="_blank">Layout</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/layout/header.html" class="guide-menu__anchor" target="_blank">Header</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/layout/footer.html" class="guide-menu__anchor" target="_blank">Footer</a>
+                </li>
+              </ul>
+            </div>
+            <div class="guide-menu__group">
+              <h2 class="guide-menu__title">Components</h2>
+
+              <ul class="guide-menu__list">
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/form/checkbox.html" class="guide-menu__anchor">Form:checkbox</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/form/radio.html" class="guide-menu__anchor">Form:radio</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/form/text.html" class="guide-menu__anchor">Form:text</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/form/select.html" class="guide-menu__anchor">Form:select</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/form/button.html" class="guide-menu__anchor">Buttons</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/tab.html" class="guide-menu__anchor">Tab</a>
+                </li>
+                {# 
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/button-group.html" class="guide-menu__anchor">Button group</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/tab.html" class="guide-menu__anchor">Tab Menu</a>
+                </li>
+                <li class="guide-menu__item">
+                  <a href="/ui-publish/guide/components/accordion.html" class="guide-menu__anchor">Accordion</a>
+                </li> #}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </aside>
+      <main role="main" class="guide-main">
+        <article class="guide-contents">
+          <header class="guide-contents__header">
+            <h1 class="guide-contents__title">
+              시작
+              <small class="guide-contents__title-small"> 환경설정 및 구조 </small>
+            </h1>
+          </header>
+          <div class="guide-contents__body">
+            <section class="guide-section">
+              <header class="guide-section__header">
+                <h1 class="guide-section__title">프로젝트 실행</h1>
+              </header>
+              <div class="guide-section__contents">
+                <div class="guide-description">
+                  <p class="guide-description__text">
+                    * 해당 프로젝트의 지원 브라우저 리스트는 <span class="code">`.browserslistrc`</span> 파일을 참고하시기 바랍니다.
+                  </p>
+                </div>
+                <ol class="guide-description">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      1. git 저장소에서 프로젝트를 Clone 합니다.
+                    </p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      2. <span class="code">npm install</span> 명령어로 패키지를 설치합니다.
+                    </p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      3. <span class="code">npm start</span> 명령어로 로컬서버를 실행을 합니다.
+                    </p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      4. <span class="code">npm run sprites</span> 명령어로 스프라이트 이미지(png)를 생성할 수 있습니다.
+                    </p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      5. <span class="code">npm run build</span> 명령어로 빌드하여 <span class="code">/dist</span> 디렉토리에 산출물을 생성할 수 있습니다.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </section>
+        
+            <section class="guide-section">
+              <header class="guide-section__header">
+                <h1 class="guide-section__title">프로젝트 구조</h1>
+              </header>
+              <div class="guide-section__contents">
+                <ul class="guide-description guide-description--list-type guide-description__list">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      프로젝트 구조는 크게 <span class="code">assets</span>, <span class="code">components</span>,
+                      <span class="code">guide</span>, <span class="code">pages</span>,
+                      <span class="code">layouts</span>, <span class="code">_data</span>로 나뉘어 있습니다.
+                    </p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      <span class="code">gulp</span>, <span class="code">gulp</span>, <span class="code">webpack</span> 으로 작업환경이 구성되어 있습니다.
+                    </p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      <span class="code">Node v14.16.0 (LTS)</span> 에서 정상 작동 합니다.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+        
+              <div class="guide-section__contents">
+                <h2 class="guide-section__title guide-section__title--sub">layouts, _data</h2>
+                <ul class="guide-description guide-description--list-type guide-description__list">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">nunjunks(.njk)에서 사용하는 공통 layout 과 data 가 있는 디렉토리입니다.</p>
+                  </li>
+                </ul>
+              </div>
+        
+              <div class="guide-section__contents">
+                <h2 class="guide-section__title guide-section__title--sub">assets</h2>
+                <ul class="guide-description guide-description--list-type guide-description__list">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">
+                      scss(css), images(jpg,png,svg), javascript(js)가 있는 디렉토리입니다. 
+                    </p>
+                  </li>
+                </ul>
+              </div>
+        
+              <div class="guide-section__contents">
+                <h2 class="guide-section__title guide-section__title--sub">components</h2>
+                <ul class="guide-description guide-description--list-type guide-description__list">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">UI 모듈이 있는 디렉토리입니다.</p>
+                  </li>
+                </ul>
+              </div>
+        
+              <div class="guide-section__contents">
+                <h2 class="guide-section__title guide-section__title--sub">guide</h2>
+                <ul class="guide-description guide-description--list-type guide-description__list">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">가이드 관련 파일이 있는 디렉토리입니다.</p>
+                  </li>
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">프로젝트 내에 쓰이는 파일과 별개로 관리됩니다.</p>
+                  </li>
+                </ul>
+              </div>
+        
+              <div class="guide-section__contents">
+                <h2 class="guide-section__title guide-section__title--sub">Pages</h2>
+                <ul class="guide-description guide-description--list-type guide-description__list">
+                  <li class="guide-description__item">
+                    <p class="guide-description__text">html파일이 있는 디렉토리입니다.</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+    </div>
+    <!-- Common JS -->
+    <script src="/ui-publish/asset/js/vendor.js"></script>
+    <script src="/ui-publish/asset/js/ui.js"></script>
+  </body>
+</html>
