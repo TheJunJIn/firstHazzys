@@ -1,5 +1,5 @@
 # Build results
-# dist/
+dist/
 dist/asset/js/manifest.json
 dist/asset/js/*.LICENSE.txt
 .cache/
