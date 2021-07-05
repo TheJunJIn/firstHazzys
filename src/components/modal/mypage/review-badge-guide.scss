@@ -1,0 +1,85 @@
+// 상품평 배지 발급 조건
+.modal--review-badge-guide {
+  .review-badge-guide {
+    max-height: 344px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+    .review-type {
+      + .review-type {
+        margin-top: 45px;
+      }
+      &__title {
+        padding: 15px 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        color: $color-text-emphasize;
+        border-bottom: 1px solid $color-line-emphasize;
+      }
+      &__content {
+        margin-top: 20px;
+      }
+    }
+    .badge-list {
+      &__item {
+        + .badge-list__item {
+          margin-top: 30px;
+        }
+        .badge {
+          &__name {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22px;
+            color: $color-text-point;
+          }
+          &__condition {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            color: $color-text-emphasize;
+            strong {
+              font-weight: 300;
+              // color: $color-text-point;
+            }
+          }
+          &__benefit {
+            margin: 10px 0 0;
+            // .badge-benefit__list {}
+            .badge-benefit__item {
+              + .badge-benefit__item {
+                margin-top: 10px;
+              }
+              position: relative;
+              padding-left: 10px;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+              color: $color-solid-emphasize;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                background: $color-solid-emphasize;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq('desktop') {
+    .modal__body {
+      padding-bottom: 40px;
+    }
+    .review-badge-guide {
+      background: #f8f8f8;
+      padding: 15px 20px 30px;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--shopping">
+              <div class="main-content__header">
+                <h3 class="main-content__title">주문 취소</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="product-order-container">
+                <div class="product-order-detail">
+                  <!-- 완료 -->
+                  <div class="request-complete">
+                    <!-- 아이콘 변경 [UPDATE: 0616] -->
+                    <div class="icon">
+                      <svg class="icon-complete" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                        <g fill="none" fill-rule="evenodd">
+                          <g stroke="#000" stroke-width="2">
+                            <path class="line" d="M33.433 4.355C30.795 2.303 27.623.862 24.096.28 12.806-1.584 2.143 6.057.28 17.347-1.584 28.637 6.058 39.3 17.347 41.164c11.29 1.863 21.953-5.78 23.816-17.068.865-5.234-.314-10.334-2.953-14.484" transform="translate(19.000000, 19.000000)"/>
+                            <path class="check" d="M12 18.662c.665.332 7.981 7.98 7.981 7.98l10.807-12.303" transform="translate(19.000000, 19.000000)"/>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <!-- //아이콘 변경 [UPDATE: 0616] -->
+                    <p class="title">주문 취소 신청이 완료되었습니다</p>
+                    <p class="comment">다른 새로운 상품들이 고객님을 기다리고 있어요~</p>
+                  </div>
+                  <!-- //완료 -->
+
+                  <!-- 주문 정보 -->
+                  <div class="order-detail order-detail--product">
+                    <div class="order-detail__content">
+                      <div class="info-box info-box--side">
+                        <dl class="info-box__row">
+                          <dt class="info-box__header">주문번호</dt>
+                          <dd class="info-box__data">602435586</dd>
+                        </dl>
+                        <dl class="info-box__row">
+                          <dt class="info-box__header">주문일자</dt>
+                          <dd class="info-box__data">2021.03.29</dd>
+                        </dl>
+                        <dl class="info-box__row">
+                          <dt class="info-box__header">결제 수단</dt>
+                          <dd class="info-box__data">신용카드(신한) / 일시불</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //주문 정보 -->
+                  <ul class="order-detail-guide">
+                    <li class="order-detail-guide__item">신용카드는 4~5일 영업일 이내 환불됩니다.</li>
+                  </ul>
+
+                  <div class="product-order__util">
+                    <a href="#" class="form-button form-button--plain">쇼핑 하기</a>
+                    <button type="button" class="form-button form-button--main">취소 내역 조회</button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0101'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+    <script>
+    // 아이콘 변경 [UPDATE: 0616]
+    anime.timeline({
+        loop: false,
+        easing: 'easeInOutSine',
+      }).add({
+        targets: '.icon-complete .line',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        delay: 500,
+        duration: 1000
+      }).add({
+        targets: '.icon-complete .check',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        duration: 400
+      });
+    </script>
+  </body>
+</html>

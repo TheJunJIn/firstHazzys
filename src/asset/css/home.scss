@@ -1,7 +1,5 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '_swiper.scss';
-@import '_aos.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
 @import '../../components/sprites/sprite-common.scss';
 @import '../../components/videoController/index.scss';
 
@@ -251,9 +249,6 @@
         min-height: 288px;
         margin: 0;
         padding: 40px 40px 66px;
-        // -webkit-backdrop-filter: blur(4px);
-        // backdrop-filter: blur(4px);
-        // background-color: rgba(255, 255, 255, 0.95);
         box-sizing: border-box;
         text-decoration: none;
         &:before {
@@ -310,9 +305,7 @@
             transform: translateY(0);
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
               opacity 0.3s linear;
-            -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
-            background-color: rgba(255, 255, 255, 0.95);
+              @include background-blur(4px, 0.95);
           }
         }
       }
@@ -354,9 +347,7 @@
       text-indent: 100%;
       line-height: 2;
       overflow: hidden;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.4);
+      @include background-blur(4px, 0.4);
       border-radius: 100%;
       @include sprite($common-close-round);
     }
@@ -405,9 +396,7 @@
     overflow-y: hidden;
     text-align: center;
     padding-bottom: 20px;
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    background-color: rgba(255, 255, 255, 0.8);
+    @include background-blur(2px, 0.8);
 
     &__list {
       padding: 0 5px;
@@ -724,9 +713,7 @@
         width: 60px;
         top: 0;
         height: 100%;
-        -webkit-backdrop-filter: blur(4px);
-        backdrop-filter: blur(4px);
-        background-color: rgba(255, 255, 255, 0.8);
+        @include background-blur(4px, 0.8);
         z-index: 3;
       }
       &__image {
@@ -1103,9 +1090,7 @@
         left: 10px;
         right: 10px;
         height: 1px;
-        -webkit-backdrop-filter: blur(6px);
-        backdrop-filter: blur(6px);
-        background-color: rgba(0, 0, 0, 0.02);
+        @include background-blur(6px, 0.02, 'black');
         &__progress {
           display: inline-block;
           height: 1px;
@@ -1207,9 +1192,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
-      background-color: rgba(0, 0, 0, 0.02);
+      @include background-blur(4px, 0.02, 'black');
     }
 
     img {
@@ -1421,3 +1404,4 @@
     opacity: 1;
   }
 }
+

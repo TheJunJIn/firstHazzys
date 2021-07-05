@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/customer.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--customer">
+        @@include('pages/customer/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--inquiry">
+              <div class="main-content__header">
+                <h3 class="main-content__title">1:1 문의</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <!-- 1:1 문의 -->
+              <div class="inquiry-wrap">
+                <form action="#">
+                  <div class="inquiry-layout">
+                    <!-- 문의유형, 주문번호 -->
+                    <div cclass="inquiry-layout__left">
+                      <h3 class="form-title">문의 유형<span class="form-title__required">*</span></h3>
+                      <div class="type-form">
+                        <span class="type-form__state form-select">
+                          <select class="select">
+                            <option value="">선택</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                          </select>
+                          <i class="icon"></i>
+                        </span>
+                        <span class="type-form__date form-select">
+                          <select class="select">
+                            <option value="">선택</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                          </select>
+                          <i class="icon"></i>
+                        </span>
+                      </div>
+                      <h3 class="form-title">주문번호</h3>
+                      <div class="order-num">
+                        <div class="order-num__input input-block">
+                          <input type="text" class="form-text">
+                          <p class="text">[배송, 반품, 교환, 주문취소, 환불] 문의는 필수입력 사항입니다.</p>
+                        </div>
+                        <div class="order-num__button">
+                          <button type="button" class="form-button form-button--plain" data-modal-open="#modalOrderSearch">주문 조회</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //문의유형, 주문번호 -->
+                    <!-- 휴대전화, 이메일 -->
+                    <div class="inquiry-layout__right">
+                      <h3 class="form-title">휴대전화<span class="form-title__required">*</span></h3>
+                      <div class="phone-form">
+                        <span class="phone-form__select form-select">
+                          <select class="select">
+                            <option value="">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                          </select>
+                          <i class="icon"></i>
+                        </span>
+                        <div class="phone-form__input input-block">
+                          <input type="text" class="form-text" placeholder="-없이 숫자만 입력해 주세요">
+                        </div>
+                      </div>
+                      <h3 class="form-title">이메일<span class="form-title__required">*</span></h3>
+                      <div class="email-form">
+                        <div class="email-form__input input-block">
+                          <input type="text" class="form-text" placeholder="이메일">
+                        </div>
+                        <div class="email-form__select">
+                          <span class="form-select">
+                            <select class="select">
+                              <option value="">직접 입력</option>
+                              <option value="gmail.com">@gmail.com</option>
+                              <option value="naver.com">@naver.com</option>
+                            </select>
+                            <i class="icon"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //휴대전화, 이메일 -->
+                  </div>
+                  <!-- 제목 -->
+                  <div class="inquiry-title">
+                    <h3 class="form-title">제목<span class="form-title__required">*</span></h3>
+                    <div class="input-block">
+                      <input type="text" id="inquiryTitle" class="form-text" onfocus="textCheck('#inquiryTitle');">
+                      <span class="text-count-box">
+                        <span class="text-count">0</span>/30
+                      </span>
+                    </div>
+                  </div>
+                  <!-- //제목 -->
+                  <!-- 내용 -->
+                  <div class="inquiry-content">
+                    <h3 class="form-title">내용<span class="form-title__required">*</span></h3>
+                    <textarea id="inquiryContent" class="form-text" cols="40" row="5" placeholder="접수하신 문의 내용에 계좌번호 등의 개인정보가 포함된 경우, 임의 삭제될 수 있습니다." onfocus="textCheck('#inquiryContent');"></textarea>
+                    <span class="text-count-box">
+                      <span class="text-count">0</span>/2000
+                    </span>
+                  </div>
+                  <!-- //내용 -->
+                  <!-- 이미지 업로드 -->
+                  <div class="photo-upload">
+                    <div class="swiper-container swiper-container--controls-bottom" id="inquiryPhotoRegist">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="upload-content file-upload">
+                            <input type="file" id="imageUpload" name="imageUpload" class="image-add" title="사진추가" accept="image/*">
+                            <span class="add-text">사진추가</span>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_1.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_2.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_3.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_4.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_2.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_3.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="upload-content">
+                            <img src="/cmsstatic/asset/images/temp/event_90x90_4.jpg" alt="이미지명">
+                            <button type="button" class="button">
+                              <i class="sprite-image-close">삭제</i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //이미지 업로드 -->
+                  <div class="inquiry-agreement">
+                    <label class="form-checkbox ">
+                      <input type="checkbox" class="checkbox">
+                      <span class="name">1:1문의 상담을 위한 개인정보 수집이용에 동의합니다.</span>
+                    </label>
+                    <button type="button" class="button agreement-button" data-modal-open="#modalInquiryAgree">내용보기</button>
+                  </div>
+                  <div class="button-inquiry">
+                    <button type="button" class="form-button active">1:1 문의하기</button>
+                  </div>
+                </form>
+              </div>
+              <!-- //1:1 문의 -->
+            </div>
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/customer/_partials/sidebar-menu.html')
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- 개인정보 수집 및 이용 동의 #modalInquiryAgree -->
+    @@include('components/modal/customer/inquiry-agree.html')
+
+    <!-- 주문 조회 #modalOrderSearch -->
+    @@include('components/modal/customer/order-search.html')
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/customer.js"></script>
+    <script>
+      $(function () {
+        // 파일 업로드 슬라이드
+        new Swiper('#inquiryPhotoRegist', {
+          loop: false,
+          freeMode: true,
+          spaceBetween: 10,
+          slidesPerView: 'auto',
+        })
+      });
+
+      //글자수 체크
+      function textCheck(formId) {
+        var checkId = formId;
+        var countText = $(checkId).next().children();
+        $(checkId).on('keyup paste', function(e) {
+          var length = this.value.length;
+          var maxLength = 300;
+          if (length > maxLength) {
+            this.value = this.value.substring(0, maxLength);
+            alert('메시지는 한글 ' + maxLength + '자까지 입력 가능합니다.');
+            $(checkId).focus();
+          }
+          $(countText).html(this.value.length);
+        }).trigger('keyup');
+      }
+    </script>
+  </body>
+</html>

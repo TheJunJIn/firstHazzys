@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--benefit">
+              <div class="main-content__header">
+                <h3 class="main-content__title">나만의 혜택</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-benefit-container">
+                <div class="tabs tab--benefit">
+                  <div class="tablist" role="tablist">
+                    <button type="button" class="tab" role="tab" aria-selected="true">쿠폰</button>
+                    <button type="button" class="tab" role="tab" aria-selected="false">마일리지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="false">나의 배지</button>
+                  </div>
+                  <div class="tabpanel">
+                    <!-- 보유 쿠폰 -->
+                    <div class="no-data">
+                      <i class="sprite-common sprite-common-no-mileage"></i>
+                      <p class="message">보유 중인 쿠폰이 없습니다.</p>
+                    </div>
+                    <!-- //보유 쿠폰 -->
+
+                    <!-- 쿠폰 등록 -->
+                    <div class="benefit-coupon">
+                      <h3 class="benefit-coupon__title">쿠폰 등록</h3>
+                      <div class="benefit-coupon__content">
+                        <ul class="guide">
+                          <li class="guide__item">상품 상세페이지에 적용되어 있는 일반쿠폰, PLUS쿠폰은 주문 시 자동으로 적용됩니다.</li>
+                          <li class="guide__item">PLUS쿠폰은 일반쿠폰 및 쇼핑백쿠폰과 중복해서 사용하실 수 있습니다.</li>
+                          <li class="guide__item">일반쿠폰과 쇼핑백쿠폰은 함께 사용하실 수 없습니다.</li>
+                          <li class="guide__item">고객님의 변심으로 인한 취소, 반품은 쿠폰이 재발급되지 않습니다.</li>
+                          <li class="guide__item">발급된 쿠폰의 유효기간은 조기 종료/마감 될 수 있습니다.</li>
+                        </ul>
+                        <div class="list-more">
+                          <button type="button" class="form-button form-button--main">쿠폰 등록</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //쿠폰 등록 -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0201'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

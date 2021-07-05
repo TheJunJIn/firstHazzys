@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--member">
+              <div class="main-content__header">
+                <h3 class="main-content__title">배지 혜택</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-benefit-container">
+                <p class="mypage-benefit__title"><span class="text-block">모으는 재미가 가득한 </span><span class="text-block">헤지스닷컴 회원만의 특별한 혜택!</span></p>
+                <div class="tabs tab--badge">
+                  <div class="tablist" role="tablist">
+                    <button type="button" class="tab" role="tab" aria-selected="false">회원 배지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="false">구매 배지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="true">리뷰 배지</button>
+                  </div>
+                  <div class="tabpanel">
+                    <div class="review-badge-container">
+                      <div class="review-type-container">
+                        <!-- 텍스트 상품평 작성 -->
+                        <div class="review-type">
+                          <div class="review-type__title">텍스트 상품평 작성</div>
+                          <div class="review-type__content">
+                            <ul class="badge-list">
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Nano Influencer<br>BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">상품별 최초 <strong>1</strong>건 상품평 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">10,000원 금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Micro Influencer<br>BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">상품별 최초 <strong>5</strong>건 상품평 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">15,000원  금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Mega Influencer BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">상품별 최초 <strong>10</strong>건 상품평 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">15,000원  금액 쿠폰 2매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Star Influencer<br>BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">한 달 기준 <strong>4</strong>번째 구매 시</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">20,000원  금액 쿠폰 2매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                    <li class="badge-benefit__item">꽃 배송</li>
+                                  </ul>
+                                </div>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- //텍스트 상품평 작성 -->
+                        <!-- 포토 상품평 작성 -->
+                        <div class="review-type">
+                          <div class="review-type__title">포토 상품평 작성</div>
+                          <div class="review-type__content">
+                            <ul class="badge-list">
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Bronze Smart<br>Consumer BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">포토 상품평 <strong>1</strong>건 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">10,000원 금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Silver Smart<br>Consumer BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">포토 상품평 <strong>10</strong>건 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">15,000원  금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Gold Smart<br>Consumer BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">포토 상품평 <strong>20</strong>건 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">15,000원  금액 쿠폰 2매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="badge-list__item">
+                                <dl class="badge">
+                                  <dt class="badge__name">Diamond Smart<br>Consumer BADGE</dt>
+                                  <dd class="badge__preview">
+                                    <!-- 배지 Sample (추후 변경) -->
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                    </div>
+                                    <!-- // 배지 Sample -->
+                                  </dd>
+                                </dl>
+                                <div class="badge-benefit">
+                                  <p class="badge-benefit__title">포토 상품평 <strong>40</strong>건 작성</p>
+                                  <ul class="badge-benefit__list">
+                                    <li class="badge-benefit__item">무료 반품권 1매</li>
+                                    <li class="badge-benefit__item">20,000원  금액 쿠폰 2매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                                    <li class="badge-benefit__item">꽃 배송</li>
+                                  </ul>
+                                </div>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- // 포토 상품평 작성 -->
+                      </div>
+                      <!-- 특별 배지 -->
+                      <div class="review-type">
+                        <div class="review-type__title">특별 배지</div>
+                        <div class="review-type__content">
+                          <ul class="badge-list badge-list--special">
+                            <li class="badge-list__item">
+                              <dl class="badge">
+                                <dt class="badge__name">Hazzys BADGE</dt>
+                                <dd class="badge__preview">
+                                  <!-- 배지 Sample (추후 변경) -->
+                                  <div class="hazzys-badge hazzys-badge--special hazzys-badge--mission">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                  </div>
+                                  <!-- // 배지 Sample -->
+                                </dd>
+                              </dl>
+                              <div class="badge-benefit">
+                                <p class="badge-benefit__title">리뷰 배지 <strong>5</strong>개이상 보유 시</p>
+                                <ul class="badge-benefit__list">
+                                  <li class="badge-benefit__item">연초에 헤지스닷컴이 정성껏 준비한 사은품을 드립니다.</li>
+                                </ul>
+                              </div>
+                            </li>
+
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- // 특별 배지 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0401'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

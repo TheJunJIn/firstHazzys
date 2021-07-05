@@ -1,0 +1,68 @@
+// 아이디 찾기 / 비밀번호 재설정 - 계정선택
+.modal--find-account-list {
+  .select-account {
+    &__title {
+      margin-bottom: 20px;
+      font-family: $font-noto-sans;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 300;
+      color: #000;
+    }
+    &__list {
+      max-height: 320px;
+      overflow: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    &__item {
+      padding: 20px;
+      border: 1px solid #c9c9c9;
+      + .select-account__item {
+        margin-top: 10px;
+      }
+      &.active {
+        border-color: #000;
+      }
+    }
+    .account {
+      position: relative;
+      &__info {
+        &__item {
+          + .account__info__item {
+            margin-top: 5px;
+          }
+        }
+        .info {
+          font-size: 14px;
+          font-weight: 300;
+          &__label {
+            width: 60px;
+            display: inline-block;
+            white-space: nowrap;
+            color: #919191;
+            vertical-align: middle;
+          }
+          &__value {
+            display: inline-block;
+            color: #000;
+            vertical-align: middle;
+          }
+        }
+      }
+      &__radio {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+      }
+    }
+    @include mq('desktop') {
+      &__title {
+        font-size: 24px;
+        line-height: 44px;
+        font-weight: 500;
+      }
+    }
+  }
+}

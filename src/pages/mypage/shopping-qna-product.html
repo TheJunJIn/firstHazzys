@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--shpping">
+              <div class="main-content__header main-content__header--sub">
+                <h3 class="main-content__title">내 문의 내역</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-shpping-container">
+                <div class="my-qna-container">
+                  <div class="tabs tab--qna">
+                    <div class="tablist" role="tablist">
+                      <button type="button" class="tab" role="tab" aria-selected="true">상품 문의 내역</button>
+                      <button type="button" class="tab" role="tab" aria-selected="false">1:1 문의 내역</button>
+                    </div>
+                    <div class="tabpanel">
+                      <!-- 문의 목록 -->
+                      <div class="my-qna-list">
+                        <ul class="qna-list">
+                          <li class="qna-list__item">
+                            <div class="qna-product">
+                              <div class="qna-product__info">
+                                <div class="product product--order">
+                                  <a href="#" class="product__image">
+                                    <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                                  </a>
+                                  <div class="product__content">
+                                    <a href="#" class="product__info">
+                                      <p class="product__brand">HAZZZYS ACC</p>
+                                      <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                                    </a>
+                                    <div class="product__option">
+                                      <p class="product__option__name">
+                                        <span class="option__item">차콜그레이</span>
+                                        <span class="option__item">68 XL</span>
+                                        <span class="option__item">1개</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="qna-container">
+                              <div class="qna-util">
+                                <div class="state">
+                                  답변 완료
+                                </div>
+                                <div class="util">
+                                  <!-- <button type="button" class="button">수정</button> -->
+                                  <button type="button" class="button">삭제</button>
+                                </div>
+                              </div>
+                              <!-- 비밀글: question--secret 클래스 추가 -->
+                              <div class="question question--secret">
+                                <div class="question__header">
+                                  <div class="title"><span>Q.</span>재입고</div>
+                                  <div class="date">2021.04.02</div>
+                                </div>
+                                <div class="question__content">
+                                  재입고 언제 되나요? 재입고 신청하면 휴대폰으로 알림이 오나요?
+                                </div>
+                              </div>
+                              <div class="answer">
+                                <div class="answer__header">
+                                  <div class="date">2021.04.02</div>
+                                </div>
+                                <div class="answer__content">
+                                  안녕하세요 고객님. 문의하신 상품의 재입고 일정은 현재 별도로 확인되지 않습니다. 알림 신청 후 15일 이내에 상품이 재입고 되면 등록된 휴대폰 번호로 알림을 발송해 드립니다.
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="qna-list__item">
+                            <div class="qna-product">
+                              <div class="qna-product__info">
+                                <div class="product product--order">
+                                  <a href="#" class="product__image">
+                                    <img src="/cmsstatic/asset/images/temp/product_80x104_1.jpg" alt="네이비로고 자수 면 벙거지 모자">
+                                  </a>
+                                  <div class="product__content">
+                                    <a href="#" class="product__info">
+                                      <p class="product__brand">HAZZZYS ACC</p>
+                                      <p class="product__name">네이비로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모로고 자수 면 벙거지 모자</p>
+                                    </a>
+                                    <div class="product__option">
+                                      <p class="product__option__name">
+                                        <span class="option__item">차콜그레이</span>
+                                        <span class="option__item">68 XL</span>
+                                        <span class="option__item">1개</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="qna-container">
+                              <div class="qna-util">
+                                <div class="state">
+                                  답변 대기
+                                </div>
+                                <div class="util">
+                                  <button type="button" class="button">수정</button>
+                                  <button type="button" class="button">삭제</button>
+                                </div>
+                              </div>
+                              <div class="question">
+                                <div class="question__header">
+                                  <div class="title"><span>Q.</span>재입고</div>
+                                  <div class="date">2021.04.02</div>
+                                </div>
+                                <div class="question__content">
+                                  재입고 언제 되나요? 재입고 신청하면 휴대폰으로 알림이 오나요?
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="list-more">
+                          <button type="button" class="form-button form-button--plain">더보기 (1/20)</button>
+                        </div>
+                      </div>
+                      <!-- //문의 목록 -->
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0305'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

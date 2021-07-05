@@ -1,7 +1,7 @@
+@import '../../asset/css/variables.scss';
+@import '../../asset/css/mixins.scss';
 
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '../../components/sprites/sprite-common.scss';
+@import '../sprites/sprite-common.scss';
 
 .accordion {
   list-style-type: none;

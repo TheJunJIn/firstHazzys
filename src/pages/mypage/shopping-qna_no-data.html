@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+<main class="shell-main shell-main--mypage">
+  @@include('pages/mypage/_partials/main-header.html')
+  <div class="main-content">
+    <div class="main-container main-content__body">
+      <div class="main-content__main main-content__main--shpping">
+        <div class="main-content__header main-content__header--sub">
+          <h3 class="main-content__title">내 문의 내역</h3>
+          <button type="button" class="button main-content__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="mypage-shpping-container">
+          <div class="my-qna-container">
+            <div class="tabs tab--qna">
+              <div class="tablist" role="tablist">
+                <button type="button" class="tab" role="tab" aria-selected="false">상품 문의 내역</button>
+                <button type="button" class="tab" role="tab" aria-selected="true">1:1 문의 내역</button>
+              </div>
+              <div class="tabpanel">
+                <div class="no-data">
+                  <i class="sprite-common sprite-common-no-qna"></i>
+                  <p class="message">문의하신 내역이 없습니다.<br>문의를 등록하시면 빠른 시일 내에 답변 드릴게요.</p>
+                  <div class="util">
+                    <a href="#" class="form-button form-button--main">1:1 문의하기</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="main-content__aside">
+        <!-- 메뉴 -->
+        @@include('pages/mypage/_partials/sidebar-menu.html', {
+          menuCode: 'M0305'
+        })
+        <!-- // 메뉴 -->
+      </div>
+    </div>
+  </div>
+</main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

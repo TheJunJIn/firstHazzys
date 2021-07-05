@@ -5,14 +5,6 @@ const defaults = {
   activeClass: 'active'
 };
 
-const modalDefault = {
-  dim: true,
-  opener: null,
-  esc: true,
-  timer: null,
-  dimClose: true
-};
-
 export default class Sidebar extends UIModule {
   constructor(params = {}) {
     super({
@@ -20,19 +12,6 @@ export default class Sidebar extends UIModule {
       ...params
     });
 
-    // const sidebar = this;
-    // this.listen('hideHeader', () => {
-    //   header.hide();
-    // });
-    // this.listen('showHeader', () => {
-    //   header.show();
-    // });
-    // this.listen('toggleHeader', () => {
-    //   header.toggle();
-    // });
-    // this.listen('scroll', (scrollY) => {
-    //   console.log('scroll', scrollY);
-    // });
     const sidebar = this;
     document.addEventListener('click', (e) => {
       const { target } = e;
@@ -50,18 +29,18 @@ export default class Sidebar extends UIModule {
   }
 
   show() {
-    this.root.classList.add('active');
+    this.root?.classList.add('active');
     this.shout('header', 'hide');
 
     window.setTimeout(() => {
-      this.shout('UI', 'scrollLock');
+      this.shout('scrollLock', 'lock');
     }, 300);
   }
 
   hide() {
-    this.root.classList.remove('active');
+    this.root?.classList.remove('active');
     window.setTimeout(() => {
-      this.shout('UI', 'scrollRelease');
+      this.shout('scrollLock', 'release');
       this.shout('header', 'show');
     }, 300);
   }

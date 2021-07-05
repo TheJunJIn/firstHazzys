@@ -8,10 +8,19 @@
   height: 100%;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: visibility 0.1s 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.3s 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 100;
-  transition-delay: 0.2s;
+
+  &:before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   .sidebar {
     position: absolute;
@@ -23,7 +32,6 @@
     box-sizing: border-box;
     transform: translate(100%, 0);
     transition: transform 0.3s ease-out;
-    transition-delay: 0s;
 
     &__header {
       position: absolute;
@@ -80,15 +88,6 @@
 // 상품상세 ( 50% )
 // =============================================================================
 .shell-sidebar--product-detail {
-  &:before {
-    background-color: rgba(0, 0, 0, 0.6);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
   @include mq('desktop') {
     .sidebar {
       width: 50%;
@@ -115,15 +114,6 @@
 // 상품목록/검색결과 ( 670px )
 // =============================================================================
 .shell-sidebar--product-filter {
-  &:before {
-    background-color: rgba(0, 0, 0, 0.6);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
   .sidebar {
     &__header {
       height: 60px;

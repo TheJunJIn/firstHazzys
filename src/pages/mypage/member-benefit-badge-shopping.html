@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--member">
+              <div class="main-content__header">
+                <h3 class="main-content__title">배지 혜택</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-benefit-container">
+                <p class="mypage-benefit__title"><span class="text-block">모으는 재미가 가득한 </span><span class="text-block">헤지스닷컴 회원만의 특별한 혜택!</span></p>
+                <div class="tabs tab--badge">
+                  <div class="tablist" role="tablist">
+                    <button type="button" class="tab" role="tab" aria-selected="false">회원 배지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="true">구매 배지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="false">리뷰 배지</button>
+                  </div>
+                  <div class="tabpanel">
+                    <div class="shopping-badge-container">
+                      <ul class="badge-list">
+                        <li class="badge-list__item">
+                          <dl class="badge">
+                            <dt class="badge__name">First Love BADGE</dt>
+                            <dd class="badge__preview">
+                              <!-- 배지 Sample (추후 변경) -->
+                              <div class="hazzys-badge hazzys-badge--mission">
+                                <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                              </div>
+                              <!-- // 배지 Sample -->
+                            </dd>
+                          </dl>
+                          <div class="badge-benefit">
+                            <p class="badge-benefit__title">첫구매 시</p>
+                            <ul class="badge-benefit__list">
+                              <li class="badge-benefit__item">5% 플러스 쿠폰 1매</li>
+                              <li class="badge-benefit__item">10,000원  금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="badge-list__item">
+                          <dl class="badge">
+                            <dt class="badge__name">Double BADGE</dt>
+                            <dd class="badge__preview">
+                              <!-- 배지 Sample (추후 변경) -->
+                              <div class="hazzys-badge hazzys-badge--mission">
+                                <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                              </div>
+                              <!-- // 배지 Sample -->
+                            </dd>
+                          </dl>
+                          <div class="badge-benefit">
+                            <p class="badge-benefit__title">한 달 기준 <strong>2</strong>번째 구매 시</p>
+                            <ul class="badge-benefit__list">
+                              <li class="badge-benefit__item">6% 플러스 쿠폰 1매</li>
+                              <li class="badge-benefit__item">15,000원  금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="badge-list__item">
+                          <dl class="badge">
+                            <dt class="badge__name">Triple BADGE</dt>
+                            <dd class="badge__preview">
+                              <!-- 배지 Sample (추후 변경) -->
+                              <div class="hazzys-badge hazzys-badge--mission">
+                                <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                              </div>
+                              <!-- // 배지 Sample -->
+                            </dd>
+                          </dl>
+                          <div class="badge-benefit">
+                            <p class="badge-benefit__title">한 달 기준 <strong>3</strong>번째 구매 시</p>
+                            <ul class="badge-benefit__list">
+                              <li class="badge-benefit__item">7% 플러스 쿠폰 1매</li>
+                              <li class="badge-benefit__item">15,000원  금액 쿠폰 1매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="badge-list__item">
+                          <dl class="badge">
+                            <dt class="badge__name">King BADGE</dt>
+                            <dd class="badge__preview">
+                              <!-- 배지 Sample (추후 변경) -->
+                              <div class="hazzys-badge hazzys-badge--mission">
+                                <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                              </div>
+                              <!-- // 배지 Sample -->
+                            </dd>
+                          </dl>
+                          <div class="badge-benefit">
+                            <p class="badge-benefit__title">한 달 기준 <strong>4</strong>번째 구매 시</p>
+                            <ul class="badge-benefit__list">
+                              <li class="badge-benefit__item">8% 플러스 쿠폰 1매</li>
+                              <li class="badge-benefit__item">20,000원  금액 쿠폰 2매<span class="condition">(10만원 이상 구매 시 사용)</span></li>
+                              <li class="badge-benefit__item">꽃배송</li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="badge-list__item">
+                          <dl class="badge">
+                            <dt class="badge__name">Hazzys BADGE</dt>
+                            <dd class="badge__preview">
+                              <!-- 배지 Sample (추후 변경) -->
+                              <div class="hazzys-badge hazzys-badge--special hazzys-badge--mission">
+                                <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                              </div>
+                              <!-- // 배지 Sample -->
+                            </dd>
+                          </dl>
+                          <div class="badge-benefit">
+                            <p class="badge-benefit__title">구매 배지 <strong>5</strong>개이상 보유 시</p>
+                            <ul class="badge-benefit__list">
+                              <li class="badge-benefit__item">연초에 헤지스닷컴이 정성껏 준비한 사은품을 드립니다.</li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0401'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/guide.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main">
+        <dl class="control">
+          <dt>Header</dt>
+          <dd>
+            <button type="button" onclick="ui.header.show();">Show</button>
+            <button type="button" onclick="ui.header.hide();">Header Hide</button>
+          </dd>
+        </dl>
+        <dl class="control">
+          <dt>[Mobile] Navigation</dt>
+          <dd>
+            <button type="button" onclick="ui.nav.show();">Show</button>
+            <button type="button" onclick="ui.nav.hide();">Header Hide</button>
+          </dd>
+        </dl>
+        <dl class="control">
+          <dt>Sidebar</dt>
+          <dd>
+            <button type="button" onclick="ui.sidebar.show();">Show</button>
+            <button type="button" onclick="ui.sidebar.hide();">Header Hide</button>
+          </dd>
+        </dl>
+        <dl class="control">
+          <dt>Top Button</dt>
+          <dd>
+            <button type="button" onclick="ui.topButton.show();">Show</button>
+            <button type="button" onclick="ui.topButton.hide();">Header Hide</button>
+          </dd>
+        </dl>
+        <dl class="control">
+          <dt>Loading</dt>
+          <dd>
+            <button type="button" onclick="ui.loading.show();">Show</button>
+            <button type="button" onclick="ui.loading.hide();">Header Hide</button>
+          </dd>
+        </dl>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Sidebar -->
+      <div class="shell-sidebar" tabindex="-1" role="dialog">
+        <div class="sidebar">
+          <button type="button" class="button" aria-label="닫기" data-sidebar-close>닫기</button>
+        </div>
+      </div>
+      <!-- //Sidebar -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer --><!-- // Page Layer -->
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS --><!-- //Page JS -->
+  </body>
+</html>

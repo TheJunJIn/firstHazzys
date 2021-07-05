@@ -1,0 +1,61 @@
+<ul class="sidebar-menu">
+  <li class="sidebar-menu__item menu">
+    <p class="menu__title">나의 쇼핑 내역</p>
+    <ul class="menu__list">
+      <li class="menu__item@@if (context.menuCode === 'M0101') { active}">
+        <a href="#"><i class="sprite-mypage-listsearch-small"></i>주문/배송 조회</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0102') { active}">
+        <a href="#"><i class="sprite-mypage-claim-small"></i>취소/교환/반품</a>
+      </li>
+    </ul>
+  </li>
+  <li class="sidebar-menu__item menu">
+    <p class="menu__title">나만의 혜택</p>
+    <ul class="menu__list">
+      <li class="menu__item@@if (context.menuCode === 'M0201') { active}">
+        <a href="#"><i class="sprite-mypage-coupon-small"></i>쿠폰</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0202') { active}">
+        <a href="#"><i class="sprite-mypage-mileage-small"></i>마일리지</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0203') { active}">
+        <a href="#"><i class="sprite-mypage-badgebook-small"></i>나의 배지</a>
+      </li>
+    </ul>
+  </li>
+  <li class="sidebar-menu__item menu">
+    <p class="menu__title">나의 쇼핑 태그</p>
+    <ul class="menu__list">
+      <li class="menu__item@@if (context.menuCode === 'M0301') { active}">
+        <a href="#"><i class="sprite-mypage-wish-small"></i>위시 리스트</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0302') { active}">
+        <a href="#"><i class="sprite-mypage-recent-small"></i>최근 본 상품</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0303') { active}">
+        <a href="#"><i class="sprite-mypage-review-small"></i>내 상품평</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0304') { active}">
+        <a href="#"><i class="sprite-mypage-push-small"></i>재입고 알림 내역</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0305') { active}">
+        <a href="#"><i class="sprite-mypage-qna-small"></i>내 문의 내역</a>
+      </li>
+    </ul>
+  </li>
+  <li class="sidebar-menu__item menu">
+    <p class="menu__title">나의 정보</p>
+    <ul class="menu__list">
+      <li class="menu__item@@if (context.menuCode === 'M0401') { active}">
+        <a href="#"><i class="sprite-mypage-benefit-small"></i>회원 혜택</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0402') { active}">
+        <a href="#"><i class="sprite-mypage-myinfo-small"></i>내 정보 변경 / 회원 탈퇴</a>
+      </li>
+      <li class="menu__item@@if (context.menuCode === 'M0403') { active}">
+        <a href="#"><i class="sprite-mypage-address-small"></i>배송지 관리</a>
+      </li>
+    </ul>
+  </li>
+</ul>

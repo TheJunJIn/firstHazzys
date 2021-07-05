@@ -1,0 +1,79 @@
+<nav class="category-navigation" aria-label="카테고리">
+  <div class="category-main-nav">
+    <h2 class="category-title">@@depth_1</h2>
+    <div class="category-fixed-nav">
+      <button type="button" class="category-fixed-nav__button dropdown-controller" aria-controls="catMainDropdown" aria-expanded="false">@@depth_1</button>
+      @@if(context.depth_2 && context.depth_2_list) {
+      <button type="button" class="category-fixed-nav__button dropdown-controller" aria-controls="catSubDropdown" aria-expanded="false">@@depth_2</button>
+      }
+    </div>
+    <div class="category-nav-dropdown" id="catMainDropdown" hidden>
+      <ul class="category-dropdown-list" aria-label="최상위 카테고리">
+        @@for (var i = 0; i < depth_1_list.length; i++) {
+          @@include('components/navigation/list-category-item.html', {
+            "categoryName": "`+depth_1_list[i]+`",
+            "activeCategoryName": "`+depth_1+`",
+          })
+        }
+      </ul>
+    </div>
+    @@if(context.depth_2 && context.depth_2_list) {
+    <div class="category-nav-dropdown" id="catSubDropdown" hidden>
+      <ul class="category-dropdown-list" aria-label="@@depth_1 하위 카테고리">
+          @@for (var i = 0; i < depth_2_list.length; i++) {
+            @@include('components/navigation/list-category-item.html', {
+              "categoryName": "`+depth_2_list[i]+`",
+              "activeCategoryName": "`+depth_2+`"
+            })
+          }
+      </ul>
+    </div>
+    }
+  </div>
+
+  <div class="category-sub-nav">
+    <div class="category-sub-nav_depth_1">
+      <div class="category-scroller">
+        <ul class="category-nav-list" aria-label="카테고리">
+          @@for (var i = 0; i < depth_1_list.length; i++) {
+            @@include('components/navigation/list-category-item.html', {
+              "categoryName": "`+depth_1_list[i]+`",
+              "activeCategoryName": "`+depth_1+`",
+            })
+          }
+        </ul>
+      </div>
+    </div>
+
+    @@if(context.depth_2 && context.depth_2_list) {
+    <div class="category-sub-nav_depth_2">
+      <div class="category-scroller">
+        <ul class="category-nav-list" aria-label="@@depth_1 하위 카테고리">
+          @@for (var i = 0; i < depth_2_list.length; i++) {
+            @@include('components/navigation/list-category-item.html', {
+              "categoryName": "`+depth_2_list[i]+`",
+              "activeCategoryName": "`+depth_2+`"
+            })
+          }
+        </ul>
+      </div>
+    </div>
+    }
+
+    @@if(context.depth_3 && context.depth_3_list) {
+    <div class="category-sub-nav_depth_3">
+      <div class="category-scroller">
+        <ul class="category-nav-list" aria-label="@@depth_2 하위 카테고리">
+          @@for (var i = 0; i < depth_3_list.length; i++) {
+            @@include('components/navigation/list-category-item.html', {
+              "categoryName": "`+depth_3_list[i]+`",
+              "activeCategoryName": "`+depth_3+`"
+            })
+          }
+        </ul>
+      </div>
+    </div>
+    }
+
+  </div>
+</nav>

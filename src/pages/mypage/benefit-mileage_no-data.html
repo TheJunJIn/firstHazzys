@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--benefit">
+              <div class="main-content__header">
+                <h3 class="main-content__title">나만의 혜택</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-benefit-container">
+                <div class="tabs tab--benefit">
+                  <div class="tablist" role="tablist">
+                    <button type="button" class="tab" role="tab" aria-selected="false">쿠폰</button>
+                    <button type="button" class="tab" role="tab" aria-selected="true">마일리지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="false">나의 배지</button>
+                  </div>
+                  <div class="tabpanel">
+
+                    <div class="benefit-mileage">
+                      <h3 class="benefit-mileage__title">김헤지 님의 마일리지</h3>
+                      <div class="benefit-mileage__content">
+                        <ul class="mileage-info">
+                          <li class="mileage-info__item">
+                            <span class="mileage-info__name">사용 가능 마일리지</span>
+                            <span class="mileage-info__value">1,060 M</span>
+                          </li>
+                          <li class="mileage-info__item">
+                            <span class="mileage-info__name">적립 예정 마일리지</span>
+                            <span class="mileage-info__value">200 M</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="benefit-mileage">
+                      <h3 class="benefit-mileage__title">적립 내역</h3>
+                      <div class="benefit-mileage__content">
+                        <div class="mileage-history">
+                          <!-- 필터 -->
+                          <div class="form-select-container">
+                            <div class="form-select">
+                              <select class="select">
+                                <option value="">사용 여부</option>
+                              </select>
+                              <i class="icon"></i>
+                            </div>
+                            <div class="form-select">
+                              <select class="select">
+                                <option value="">최근 3개월</option>
+                              </select>
+                              <i class="icon"></i>
+                            </div>
+                          </div>
+                          <!-- //필터 -->
+                          <!-- 목록 -->
+                          <div class="mileage-history-list">
+                            <div class="no-data">
+                              <i class="sprite-common sprite-common-no-coupon"></i>
+                              <p class="message">적립된 마일리지가 없습니다.</p>
+                            </div>
+                          </div>
+                          <!-- //목록 -->
+
+                          <ul class="guide">
+                            <li class="guide__item">마일리지란? LF 브랜드 상품 구매 시에 적립과 사용이 가능합니다.</li>
+                            <li class="guide__item">마일리지는 10M 단위부터 사용이 가능하며, 오프라인 매장에서도 사용이 가능합니다.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0202'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

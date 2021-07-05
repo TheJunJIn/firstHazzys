@@ -1,0 +1,167 @@
+// 이벤트 투표 상세
+.modal--event-vote-view {
+  .modal__header {
+    background: none;
+    backdrop-filter: none;
+  }
+  .modal__body {
+    padding: 0;
+  }
+  .event-vote-view {
+    .swiper-container {
+      .vote-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+      }
+      .swiper-pagination {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        top: auto;
+        left: auto;
+        .swiper-pagination-current {
+          display: inline-block;
+          left: auto;
+          right: 1px;
+        }
+        .swiper-pagination-total {
+          display: inline-block;
+          right: auto;
+          &:before {
+            content: '/';
+          }
+        }
+      }
+      .swiper-button-prev {
+        display: none;
+      }
+      .swiper-button-next {
+        display: none;
+      }
+    }
+    .vote-content {
+      position: relative;
+      margin-top: 20px;
+      padding-bottom: 100px;
+      &__id {
+        margin: 0 10px 10px;
+        font-size: 14px;
+        line-height: 22px;
+      }
+      &__text {
+        margin: 0 10px 40px;
+        color: $color-text-emphasize;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+      }
+      .vote-content__reply {
+        margin: 0 10px;
+        .title-line {
+          .num {
+            color: $color-text-point;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+          }
+        }
+        .vote-reply-list {
+          .reply-box {
+            padding: 20px 0;
+            border-bottom: 1px solid $color-line-border;
+            &:first-child {
+              padding-top: 0;
+            }
+            .user-info {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+              font-size: 14px;
+            }
+            .reply-text {
+              color: $color-text-emphasize;
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+      .button-reply-regist {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        background-color: $color-solid-white;
+        box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        textarea.form-text {
+          overflow: hidden;
+          min-height: 50px;
+          border: 1px solid $color-line-ready;
+          resize: none;
+        }
+        .form-button {
+          display: none;
+        }
+      }
+      .button-reply-regist.active {
+        display: flex;
+        textarea.form-text {
+          padding: 9px;
+          border: 1px solid $color-line-emphasize;
+          line-height: 20px;
+        }
+        .form-button {
+          display: block;
+          flex: 0 0 80px;
+          width: 80px;
+          height: 50px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  @include mq('desktop') {
+    .modal__header {
+      width: 460px;
+    }
+    .modal-dialog {
+      width: 920px;
+      height: 460px;
+    }
+    .event-vote-view {
+      display: flex;
+      justify-content: space-between;
+      .swiper-container {
+        width: 460px;
+        .swiper-button-prev {
+          display: block;
+          left: 0;
+        }
+        .swiper-button-next {
+          display: block;
+          right: 0;
+        }
+      }
+      .vote-content {
+        width: 460px;
+        padding-bottom: 77px;
+
+        .vote-content__reply {
+          max-height: 240px;
+          overflow: scroll;
+          overflow-x: hidden;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    }
+  }
+}

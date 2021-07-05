@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/order.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--order">
+        <div class="main-header">
+          <h2 class="main-header__title">쇼핑백</h2>
+          <button type="button" class="button main-header__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="main-content">
+          <div class="empty-shoppingbag">
+            <p class="empty-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <g fill="none" fill-rule="evenodd">
+                  <g stroke="#000" stroke-width="2">
+                    <path d="M17.5-2.5h5c5.523 0 10 4.477 10 10s-4.477 10-10 10h-5 0" transform="translate(-140 -150) translate(10 150) translate(130) translate(15 12) rotate(-90 25 7.5) "/>
+                    <path d="M44.124 18.5L48.858 54H1.142l4.734-35.5h38.248z" transform="translate(-140 -150) translate(10 150) translate(130) translate(15 12) "/>
+                  </g>
+                </g>
+              </svg>
+            </p>
+            <p class="empty-text">쇼핑백이 비어 있어요!!</p>
+            <p class="whis-text">쇼핑백에 담긴 상품은 30일동안 보관되며<br>더 오래 보관하시려면 위시리스트에 담아주세요.</p>
+            <button type="button" class="form-button active">쇼핑하러 가기</button>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/order.js"></script>
+    <script>
+    anime({
+      targets: '.empty-icon',
+      rotate: [-10, 10],
+      duration: 500,
+      endDelay: 30,
+      loop: true,
+      direction: 'alternate',
+      easing: 'cubicBezier(0.39, 0.4, 0.45, 0.97)',
+    });
+    </script>
+  </body>
+</html>

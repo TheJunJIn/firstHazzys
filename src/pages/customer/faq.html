@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/customer.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--customer">
+        @@include('pages/customer/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--faq">
+              <div class="main-content__header">
+                <h3 class="main-content__title">FAQ</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <!-- FAQ 카테고리 -->
+              <div class="faq-menu">
+                <ul class="list">
+                  <li class="active">
+                    <a href="#">전체</a>
+                  </li>
+                  <li>
+                    <a href="#">배송</a>
+                  </li>
+                  <li>
+                    <a href="#">주문/결제</a>
+                  </li>
+                  <li>
+                    <a href="#">취소/반품/교환</a>
+                  </li>
+                  <li>
+                    <a href="#">영수증/세금계산서</a>
+                  </li>
+                  <li>
+                    <a href="#">회원정보/서비스</a>
+                  </li>
+                  <li>
+                    <a href="#">쿠폰/마일리지</a>
+                  </li>
+                  <li>
+                    <a href="#">기타</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //FAQ 카테고리 -->
+              <!-- FAQ 컨텐츠 상세 -->
+              <div class="faq-contents">
+                <div class="faq-contents__title">전체</div>
+                <div class="faq-contents__content">
+                  <ul class="faq-contents__list accordion" data-accordion="data-accordion" role="tablist">
+                    <li class="accordion__item" data-accordion-item="data-accordion-item">
+                      <div class="accordion__title">
+                        <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="faq1-accordion" id="faq1-accordion-label">
+                          <p class="faq-menu">[주문/결제]</p>
+                          <p class="faq-content">주문했는데 주문 내역이 보이지 않아요.</p>
+                        </button>
+                      </div>
+                      <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="faq1-accordion-label" id="faq1-accordion">
+                        선물 포장 서비스는 LFmall 모바일에서 일부 상품에 한해 제공되고 있으며, 대상 상품 구매 시 [선물 포장재 동봉, 선물포장 서비스] 중에 선택 가능합니다.
+                        <br>※ 대상 상품 조회 방법
+                        <br>- 상품명 하단에 '선물포장' 마크 표시
+                        <br>- 상품 검색 필터에 '선물포장' 선택 조회
+                        <br>- 상품 상세페이지 상품명 하단에 '무료 선물포장 가능' 노출 상품
+                      </div>
+                    </li>
+                    <li class="accordion__item" data-accordion-item="data-accordion-item">
+                      <div class="accordion__title">
+                        <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="faq2-accordion" id="faq2-accordion-label">
+                          <p class="faq-menu">[주문/결제]</p>
+                          <p class="faq-content">text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line</p>
+                        </button>
+                      </div>
+                      <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="faq2-accordion-label" id="faq2-accordion">
+                        선물 포장 서비스는 LFmall 모바일에서 일부 상품에 한해 제공되고 있으며, 대상 상품 구매 시 [선물 포장재 동봉, 선물포장 서비스] 중에 선택 가능합니다.
+                        <br>※ 대상 상품 조회 방법
+                        <br>- 상품명 하단에 '선물포장' 마크 표시
+                        <br>- 상품 검색 필터에 '선물포장' 선택 조회
+                        <br>- 상품 상세페이지 상품명 하단에 '무료 선물포장 가능' 노출 상품
+                      </div>
+                    </li>
+                    <li class="accordion__item" data-accordion-item="data-accordion-item">
+                      <div class="accordion__title">
+                        <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="faq3-accordion" id="faq3-accordion-label">
+                          <p class="faq-menu">[주문/결제]</p>
+                          <p class="faq-content">주문했는데 주문 내역이 보이지 않아요.</p>
+                        </button>
+                      </div>
+                      <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="faq3-accordion-label" id="faq3-accordion">
+                        선물 포장 서비스는 LFmall 모바일에서 일부 상품에 한해 제공되고 있으며, 대상 상품 구매 시 [선물 포장재 동봉, 선물포장 서비스] 중에 선택 가능합니다.
+                        <br>※ 대상 상품 조회 방법
+                        <br>- 상품명 하단에 '선물포장' 마크 표시
+                        <br>- 상품 검색 필터에 '선물포장' 선택 조회
+                        <br>- 상품 상세페이지 상품명 하단에 '무료 선물포장 가능' 노출 상품
+                      </div>
+                    </li>
+                    <li class="accordion__item" data-accordion-item="data-accordion-item">
+                      <div class="accordion__title">
+                        <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="faq4-accordion" id="faq4-accordion-label">
+                          <p class="faq-menu">[주문/결제]</p>
+                          <p class="faq-content">text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line text 2line</p>
+                        </button>
+                      </div>
+                      <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="faq4-accordion-label" id="faq4-accordion">
+                        선물 포장 서비스는 LFmall 모바일에서 일부 상품에 한해 제공되고 있으며, 대상 상품 구매 시 [선물 포장재 동봉, 선물포장 서비스] 중에 선택 가능합니다.
+                        <br>※ 대상 상품 조회 방법
+                        <br>- 상품명 하단에 '선물포장' 마크 표시
+                        <br>- 상품 검색 필터에 '선물포장' 선택 조회
+                        <br>- 상품 상세페이지 상품명 하단에 '무료 선물포장 가능' 노출 상품
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //FAQ 컨텐츠 상세 -->
+              <p class="button-more">
+                <button type="button" class="form-button form-button--plain">더보기 (1/20)</button>
+              </p>
+            </div>
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/customer/_partials/sidebar-menu.html')
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/customer.js"></script>
+
+  </body>
+</html>

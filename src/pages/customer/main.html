@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/customer.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html', {
+        modifierClass: "shell-header--white"
+      })
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--customer shell-main--customer-main">
+        @@include('pages/customer/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main">
+              <!-- 고객센터 메뉴 링크 -->
+              <div class="customer-link">
+                <ul class="link-list">
+                  <li>
+                    <a href="javascript:;"><i class="sprite-customer-inquire"></i>1:1 문의</a>
+                    </li>
+                  <li>
+                    <a href="javascript:;"><i class="sprite-customer-chatchat"></i>실시간 채팅</a>
+                    </li>
+                  <li>
+                    <a href="javascript:;"><i class="sprite-customer-benefit"></i>회원 혜택</a>
+                    </li>
+                  <li>
+                    <a href="javascript:;"><i class="sprite-customer-faq"></i>FAQ</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //고객센터 메뉴 링크 -->
+
+              <!-- FAQ TOP 10 -->
+              <div class="summary summary--faq">
+                <div class="summary__title">FAQ TOP 10</div>
+                <div class="summary__content">
+                  <div class="swiper-container swiper-container--controls-bottom">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">1</span>
+                          <span class="faq-item__text">회원가입시 혜택은 무엇인가요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">2</span>
+                          <span class="faq-item__text">주문 상품 배송확은 어디서 하나요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">3</span>
+                          <span class="faq-item__text">배송비는 얼마인가요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">1</span>
+                          <span class="faq-item__text">회원가입시 혜택은 무엇인가요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">2</span>
+                          <span class="faq-item__text">주문 상품 배송확은 어디서 하나요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">3</span>
+                          <span class="faq-item__text">배송비는 얼마인가요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">1</span>
+                          <span class="faq-item__text">회원가입시 혜택은 무엇인가요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">2</span>
+                          <span class="faq-item__text">주문 상품 배송확은 어디서 하나요?</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="faq-item">
+                          <span class="faq-item__num">3</span>
+                          <span class="faq-item__text">배송비는 얼마인가요?</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+                <a href="#" class="summary__more">전체보기</a>
+              </div>
+              <!-- //FAQ TOP 10 -->
+              <!-- 공지사항 -->
+              <div class="summary summary--notice">
+                <div class="summary__title">공지사항</div>
+                <div class="summary__content">
+                  <ul class="notice-list">
+                    <li class="notice-item">
+                      <a href="#">
+                        <span class="notice-item__text">[점검안내] 5/1(토) 오전 01시 ~ 07시</span>
+                        <span class="notice-item__date">2021.04.27</span>
+                      </a>
+                    </li>
+                    <li class="notice-item">
+                      <a href="#">
+                        <span class="notice-item__text">[점검안내] 4/24(토) 오전 02시 ~ 06시</span>
+                        <span class="notice-item__date">2021.04.27</span>
+                      </a>
+                    </li>
+                    <li class="notice-item">
+                      <a href="#">
+                        <span class="notice-item__text">[공지] 라이크헤지스 이벤트 종료 안내</span>
+                        <span class="notice-item__date">2021.04.27</span>
+                      </a>
+                    </li>
+                    <li class="notice-item">
+                      <a href="#">
+                        <span class="notice-item__text">[공지] 이용약관 개정 및 마일리지 서비스 변경 일자</span>
+                        <span class="notice-item__date">2021.04.27</span>
+                      </a>
+                    </li>
+                    <li class="notice-item">
+                      <a href="#">
+                        <span class="notice-item__text">[공지] RED 등급 혜택 변경 안내 (21년4월1일)</span>
+                        <span class="notice-item__date">2021.04.27</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="summary__more">전체보기</a>
+              </div>
+              <!-- //공지사항 -->
+              <!-- 고객센터 전화 -->
+              <dl class="customer-center">
+                <dt class="customer-center__title">고객센터</dt>
+                <dd class="customer-center__call">
+                  <p class="call-num">1544-5114</p>
+                  <p class="call-time">상담시간 : 월~금 9:00~18:00<br>(주말, 공휴일 휴무)</p>
+                  <a href="tel:155-5114" class="call-button">전화 연결 (유료)</a>
+                </dd>
+              </dl>
+              <!-- //고객센터 전화 -->
+            </div>
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/customer/_partials/sidebar-menu.html')
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/customer.js"></script>
+    <script>
+      $(function(){
+        // FAQ TOP 10
+        new Swiper('.summary .swiper-container', {
+          loop: false,
+          freeMode: true,
+          spaceBetween: 10,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          slidesPerView: 'auto',
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          breakpoints: {
+            1023: {
+              slidesOffsetBefore: 10,
+              slidesOffsetAfter: 10,
+            }
+          }
+        });
+      })
+      </script>
+  </body>
+</html>

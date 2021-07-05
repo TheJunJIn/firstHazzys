@@ -17,7 +17,7 @@ $breakpoints: (
 }
 
 // No User Selection
-@mixin no-user-select() {
+@mixin no-user-select {
   /* autoprefixer: off */
   -webkit-user-drag: none;
   -webkit-user-select: none;
@@ -27,13 +27,13 @@ $breakpoints: (
 }
 
 // 단어 단위로 줄바꿈
-@mixin keep-word() {
+@mixin keep-word {
   word-break: keep-all;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-@mixin text-ellipsis() {
+@mixin text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -46,8 +46,7 @@ $breakpoints: (
   overflow: hidden;
 }
 
-// Self Clear
-@mixin self-clear() {
+@mixin self-clear {
   &:before,
   &:after {
     display: table;
@@ -66,4 +65,31 @@ $breakpoints: (
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+@mixin text-hidden {
+  text-indent: 110%;
+  line-height: 2;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// White 배경 Blur 효과
+// @include background-blur(4px, 0.2, 'black');
+@mixin background-blur($blur: 4px, $opacity: 0.8, $color: white) {
+  -webkit-backdrop-filter: blur($blur);
+  backdrop-filter: blur($blur);
+  @if $color == 'black' {
+    background-color: rgba(0, 0, 0, $opacity);
+  }
+  @else {
+    background-color: rgba(255, 255, 255, $opacity);
+  }
+}
+
+// White 배경 Blur 효과 삭제
+@mixin background-blur-reset {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background-color: transparent;
 }

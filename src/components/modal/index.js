@@ -1,5 +1,18 @@
+import UIModule from '../ui-module';
 import triggerEvent from '../../asset/js/_util/trigger-event';
 import getParams from '../../asset/js/_util/get-params';
+
+function getTargetElement(target) {
+  let element;
+  if (typeof target === 'string') {
+    element = document.querySelector(target);
+  } else if (target instanceof Element) {
+    element = target;
+  } else if (target.jquery || target.length) {
+    element = target[0];
+  }
+  return element;
+}
 
 const focusableSelector =
   'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
@@ -19,14 +32,19 @@ const modalDefault = {
   opener: null,
   esc: true,
   timer: null,
-  dimClose: true
+  dimClose: true,
+  lock: false
 };
 
-export default class ModalController {
+export default class ModalController extends UIModule {
   constructor(params = {}) {
-    const options = { ...defaults, ...params };
-    this.options = options;
+    super({
+      ...defaults,
+      ...params
+    });
+    this.scrollLocked;
     this.openedLayers = [];
+    const { options } = this;
 
     document.addEventListener('click', (e) => {
       const { target } = e;
@@ -80,12 +98,15 @@ export default class ModalController {
     });
   }
 
-  async open(element, modalOption) {
-    if(element.jquery || element.length) {
-      element = element[0]
-    }
+  async open(target, modalOption) {
     const { options } = this;
+    const element = getTargetElement(target);
+
+    if (!element || !element instanceof Element) {
+      return false;
+    }
     const focusableElements = element.querySelectorAll(focusableSelector);
+
     const info = {
       ...modalDefault,
       ...getParams(element.dataset.modal),
@@ -93,60 +114,76 @@ export default class ModalController {
       element
     };
 
-    if(modalOption?.preopen){
-      await modalOption.preopen?.();
+    // Example
+    // ui.modal.open($('#id'), {
+    //   open: (next) => {
+    //     window.setTimeout(() => {
+    //       next();
+    //     }, 1000);
+    //   },
+    //   opened: (info) => {}
+    // });
+    if (info?.open) {
+      await (() => {
+        return new Promise((resolve) => {
+          info.open?.(resolve);
+        });
+      })();
     }
-
-    triggerEvent('open', {
-      target: element,
-      detail: {
-        ...info
-      },
-    });
 
     if (info.dim) {
       element.classList.add('modal--dim');
     }
+
     element.classList.add(options.activeClass);
     focusableElements[0].focus();
     this.openedLayers.push(info);
 
-    if(info.timer){
-      window.setTimeout(()=> {
+    if (info.lock) {
+      const { scrollLocked } = await this.report('scrollLock');
+      if (!scrollLocked) {
+        this.shout('scrollLock', 'lock');
+      }
+    }
+
+    if (info?.opened) {
+      info.opened?.(info);
+    }
+
+    if (info.timer) {
+      window.setTimeout(() => {
         this.close(element);
       }, Number(info.timer) * 1000);
     }
-
   }
-  close(element) {
-    if(element.jquery || element.length) {
-      element = element[0]
-    }
+
+  async close(target) {
     const { options, openedLayers } = this;
+    const element = getTargetElement(target);
+
     let closedLayer;
     openedLayers.forEach((layer, i) => {
       if (element === layer.element) {
-        triggerEvent('close', {
-          target: element,
-          detail: {
-            ...layer
-          },
-        });
         if (layer.opener) {
           layer.opener.focus();
         }
         layer.element.classList.remove(options.activeClass);
-        closedLayer = {...layer, index: i};
+        closedLayer = { ...layer, index: i };
       }
     });
     if (closedLayer) {
       let openLayers = openedLayers.slice();
       openLayers.splice(closedLayer.index, 1);
       this.openedLayers = openLayers;
+      if (closedLayer.lock) {
+        const { scrollLocked } = await this.report('scrollLock');
+        if (scrollLocked) {
+          this.shout('scrollLock', 'release');
+        }
+      }
     } else {
-      // ModalController를 사용하지 않고 열린 Layer
+      // openedLayers에 없는 Layer
       element.classList.remove(options.activeClass);
-      console.log('닫기');
     }
   }
   closeAll() {}

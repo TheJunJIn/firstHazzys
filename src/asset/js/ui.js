@@ -1,58 +1,97 @@
 import { throttle } from 'throttle-debounce';
 import ShoutAndListen from './_util/shout-and-listen';
-import Header from '../../components/header';
+
+// Layout
 import ViewType from '../../components/viewType';
+import Header from '../../components/header';
 import Navigation from '../../components/navigation';
 import Sidebar from '../../components/sidebar';
+import TopButton from '../../components/top-button';
+import Loading from '../../components/loading';
 import ModalController from '../../components/modal';
+import ScrollLock from '../../components/scroll-lock';
+
+// ui
 import FormController from '../../components/form';
 import FoldableController from '../../components/foldable';
 import AccordionController from '../../components/accordion';
 import TabController from '../../components/tab';
-import TopButton from '../../components/top-button';
-import getScrollbarWidth from './_util/get-scrollbar-width';
-import Loading from '../../components/loading';
 
 const $ = window.jQuery;
-const defaults = {
-  scrollLockClass: 'scroll-lock'
-};
+const defaults = {};
 
-const OVERRAP_STYLE_HEADER_LIST = ['shell-main--mypage-main']
 class UI extends ShoutAndListen {
   constructor(params = {}) {
     super();
-
-    // Header 스타일
-    const pageMainElement = document.querySelector('.shell-main');
-    const isOverlap  = OVERRAP_STYLE_HEADER_LIST.reduce( (acc, current)=> {
-      if(pageMainElement?.classList?.contains?.(current)) {
-        acc = true;
-      }
-      return acc;
-    }, false);
-
     const options = { ...defaults, ...params };
-    const viewType = new ViewType({ name: 'viewType' });
-    const header = new Header({ name: 'header', overlap: isOverlap });
-    const nav = new Navigation({ name: 'nav' });
-    const sidebar = new Sidebar({ name: 'sidebar' });
-    const modalController = new ModalController({ name: 'modalController' });
-    const topButton = new TopButton({ name: 'topButton' });
+
+    /**
+     * ViewType (is-mobile | is-desktop)
+     */
+    new ViewType({ name: 'viewType' });
+
+    /**
+     * ScrollLock
+     *  scrollLock.lock();
+     *  scrollLock.release();
+     */
+    this.scrollLock = new ScrollLock({ name: 'scrollLock' });
+
+    /**
+     * Header
+     * header.show();
+     * header.hide();
+     */
+    this.header = new Header({ name: 'header'});
+
+    /**
+     * Navigation ( Mobile )
+     * nav.show()
+     * nav.hide()
+     */
+    this.nav = new Navigation({ name: 'nav' });
+
+    /**
+     * Sidebar ( Desktop )
+     * sidebar.show();
+     * sidebar.hide();
+     */
+    this.sidebar = new Sidebar({ name: 'sidebar' });
+
+    /**
+     * Top Button
+     * topButton.show();
+     * topButton.hide();
+     */
+    this.topButton = new TopButton({ name: 'topButton' });
+
+    /**
+     * Loading
+     * loading.show();
+     * loading.hide();
+     */
+    this.loading = new Loading();
+
+    /**
+     * Modal
+     * modal.open();
+     * modal.close();
+     */
+    this.modal = new ModalController({ name: 'modalController' });
+
+    this.options = options;
+
+    /**
+     * 확인 중
+     */
+    this.modules = {
+      sidebar: this.sidebar
+    }
     new FormController();
     new FoldableController();
     new AccordionController();
     new TabController();
-    this.loading = new Loading();
 
-    const modules = {
-      viewType,
-      header,
-      nav,
-      sidebar,
-      topButton,
-      modalController
-    };
     const instance = this;
     let resizeTimeOutFunction;
     let scrollTimeOutFunction;
@@ -98,9 +137,6 @@ class UI extends ShoutAndListen {
       })
     };
 
-    this.options = options;
-    this.modules = modules;
-
     window.addEventListener(
       'load',
       () => {
@@ -111,22 +147,26 @@ class UI extends ShoutAndListen {
     window.addEventListener('scroll', this.listeners.scroll);
     window.addEventListener('resize', this.listeners.resize);
 
-    this.modal = modalController;
-
-    $('.button--clear').each(function(){
+    $('.button--clear').each(function () {
       var inputblock = $(this).closest('.input-block');
       var inputForm = inputblock.find('input.form-text');
       var clearButton = $(this);
-      inputForm.off('.clear').on('propertychange.clear change.clear keyup.clear paste.clear input.clear', function(){
-        if($(this).val() !== '') {
-          clearButton.show();
-        } else {
-          clearButton.hide();
-        }
-      }).change();
-      clearButton.off('.clear').on('click.clear', function(){
+      inputForm
+        .off('.clear')
+        .on(
+          'propertychange.clear change.clear keyup.clear paste.clear input.clear',
+          function () {
+            if ($(this).val() !== '') {
+              clearButton.show();
+            } else {
+              clearButton.hide();
+            }
+          }
+        )
+        .change();
+      clearButton.off('.clear').on('click.clear', function () {
         inputForm.val('').change().focus();
-      })
+      });
     });
   }
   // 각 모듈에 on*() 메소드를 지정하고 이를 ui.js에서 일괄 관리하는대신 각 모듈에서 shout(), listen() 메소드를 사용
@@ -135,29 +175,6 @@ class UI extends ShoutAndListen {
   // onResize() 대신 module.listen("resize")
   // onResizeEnd() 대신 module.listen("resizeEnd")
   // onViewtypeChange(value, oldValue) 대신 module.listen("viewTypeChange", ({value, oldValue}) => {})
-  scrollLock() {
-    const { options } = this;
-    const { body } = document;
-    const { scrollY, pageYOffset } = window;
-    const app = document.querySelector('.app');
-    const scrollbar = getScrollbarWidth();
-    body.classList.add(options.scrollLockClass);
-    body.style.position = 'fixed';
-    body.style.top = `-${(scrollY || pageYOffset)}px`;
-    app.style.paddingRight = `${scrollbar}px`;
-  }
-  scrollRelease() {
-    const { options } = this;
-    const { body } = document;
-    const app = document.querySelector('.app');
-    const scrollY = body.style.top;
-    body.classList.remove(options.scrollLockClass);
-    body.style.position = '';
-    body.style.top = '';
-    body.style.right = '';
-    app.style.paddingRight = '';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
-  }
   destroy() {
     super.destroy();
     const { listeners } = this;
@@ -168,4 +185,4 @@ class UI extends ShoutAndListen {
   }
 }
 
-window.ui = new UI();
+window.ui = new UI({ name: 'UI' });

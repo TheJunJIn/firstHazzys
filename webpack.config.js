@@ -2,7 +2,6 @@ const path = require('path');
 const globEntry = require('webpack-glob-entry');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -20,7 +19,6 @@ module.exports = {
     publicPath: '/asset/js/'
   },
   plugins: [
-    new WebpackManifestPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",

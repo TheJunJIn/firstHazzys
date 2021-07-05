@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--benefit">
+              <div class="main-content__header">
+                <h3 class="main-content__title">나만의 혜택</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-benefit-container">
+                <div class="tabs tab--benefit">
+                  <div class="tablist" role="tablist">
+                    <button type="button" class="tab" role="tab" aria-selected="false">쿠폰</button>
+                    <button type="button" class="tab" role="tab" aria-selected="false">마일리지</button>
+                    <button type="button" class="tab" role="tab" aria-selected="true">나의 배지</button>
+                  </div>
+                  <div class="tabpanel">
+                    <div class="benefit-badge-container">
+                      <div class="benefit-badge">
+                        <div class="benefit-badge__title">김헤지 님의 보유 배지 (6)</div>
+                        <div class="benefit-badge__content">
+                          <!-- 회원 배지 -->
+                          <div class="member-badge">
+                            <!-- White BADGE -->
+                            <dl class="badge">
+                              <dt class="badge__name">Welcome BADGE</dt>
+                              <dd class="badge__preview">
+                                <div class="hazzys-badge hazzys-badge--member-white">
+                                  <div class="hazzys-badge__front">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-white.png" alt="White"></div>
+                                  </div>
+                                </div>
+                              </dd>
+                            </dl>
+                            <!-- //White BADGE -->
+                            <!-- Blue BADGE -->
+                            <dl class="badge" style="display: none">
+                              <dt class="badge__name">Blue BADGE</dt>
+                              <dd class="badge__preview">
+                                <div class="hazzys-badge hazzys-badge--member-blue">
+                                  <div class="hazzys-badge__front">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-blue.png" alt="Blue"></div>
+                                  </div>
+                                </div>
+                              </dd>
+                            </dl>
+                            <!-- //Blue BADGE -->
+                            <!-- Red BADGE -->
+                            <dl class="badge" style="display: none">
+                              <dt class="badge__name">Red BADGE</dt>
+                              <dd class="badge__preview">
+                                <div class="hazzys-badge hazzys-badge--member-red">
+                                  <div class="hazzys-badge__front">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="Red"></div>
+                                  </div>
+                                </div>
+                              </dd>
+                            </dl>
+                            <!-- //Red BADGE -->
+                            <!-- Purple BADGE -->
+                            <dl class="badge" style="display: none">
+                              <dt class="badge__name">Purple BADGE</dt>
+                              <dd class="badge__preview">
+                                <div class="hazzys-badge hazzys-badge--member-purple">
+                                  <div class="hazzys-badge__front">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-purple.png" alt="Purple"></div>
+                                  </div>
+                                </div>
+                              </dd>
+                            </dl>
+                            <!-- //Purple BADGE -->
+                            <!-- Black S BADGE -->
+                            <dl class="badge" style="display: none">
+                              <dt class="badge__name">Black S BADGE</dt>
+                              <dd class="badge__preview">
+                                <div class="hazzys-badge hazzys-badge--member-black-s">
+                                  <div class="hazzys-badge__front">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLack S"></div>
+                                  </div>
+                                </div>
+                              </dd>
+                            </dl>
+                            <!-- //Black S BADGE -->
+                            <!-- Black R BADGE -->
+                            <dl class="badge" style="display: none">
+                              <dt class="badge__name">Black R BADGE</dt>
+                              <dd class="badge__preview">
+                                <div class="hazzys-badge hazzys-badge--member-black-r">
+                                  <div class="hazzys-badge__front">
+                                    <div class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-r.png" alt="Black R"></div>
+                                  </div>
+                                </div>
+                              </dd>
+                            </dl>
+                            <!-- //Black R BADGE -->
+                          </div>
+                          <!-- //회원 배지 -->
+
+                          <!-- 배지 현황 -->
+                          <div class="badge-summary-container">
+                            <dl class="badge-summary">
+                              <dt class="badge-summary__title">내가 구매왕</dt>
+                              <dd class="badge-summary__content">3개 중 <strong>2개 사용가능</strong></dd>
+                            </dl>
+                            <dl class="badge-summary">
+                              <dt class="badge-summary__title">내가 바로 인플루언서</dt>
+                              <dd class="badge-summary__content">1개 중 <strong>1개 사용가능</strong></dd>
+                            </dl>
+                            <dl class="badge-summary">
+                              <dt class="badge-summary__title">이벤트 참여</dt>
+                              <dd class="badge-summary__content">7개 중 <strong>5개 사용가능</strong></dd>
+                            </dl>
+                          </div>
+                          <!-- //배지 현황 -->
+
+                          <!-- 배지 보기/혜택 보기-->
+                          <div class="tabs tabs--depth2">
+                            <div class="tablist" role="tablist" aria-label="badge-list">
+                              <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="badgeViewTypeList-tab" id="badgeViewTypeList">배지 보기</button>
+                              <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="badgeViewTypeBenefit-tab" id="badgeViewTypeBenefit" tabindex="-1">혜택 보기</button>
+                            </div>
+                            <!-- 배지 보기 -->
+                            <div class="tabpanel" tabindex="0" role="tabpanel" id="badgeViewTypeList-tab" aria-labelledby="badgeViewTypeList">
+                                <div class="user-badge">
+                                <!-- 목록 -->
+                                <ul class="user-badge__list">
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                        <span class="badge-date">D-7</span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                        <span class="badge-date">D-2</span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--special hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="user-badge__item">
+                                    <div class="hazzys-badge hazzys-badge--mission">
+                                      <div class="hazzys-badge__front">
+                                        <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                        <span class="badge-state">사용 완료</span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <!-- //배지 보기 -->
+                            <!-- 혜택 보기 -->
+                            <div class="tabpanel" tabindex="0" role="tabpanel" id="badgeViewTypeBenefit-tab" aria-labelledby="badgeViewTypeBenefit" hidden>
+                              <div class="user-badge-detail">
+                                <ul class="badge-list">
+                                  <li class="badge-list__item">
+                                    
+                                    <div class="badge-coupon-container">
+                                      <dl class="badge">
+                                        <dt class="badge__name">First Love BADGE</dt>
+                                        <dd class="badge__preview">
+                                          <!-- 배지 Sample (추후 변경) -->
+                                          <div class="hazzys-badge hazzys-badge--mission">
+                                            <div class="hazzys-badge__front">
+                                              <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                            </div>
+                                          </div>
+                                          <!-- // 배지 Sample -->
+                                        </dd>
+                                        <dd class="badge__date">2021.01.03</dd>
+                                      </dl>
+                                      <div class="badge-coupon">
+                                        <p class="badge-coupon__title">
+                                          이 배지에 <strong>2</strong>개의 쿠폰이 있어요
+                                        </p>
+                                        <ul class="badge-coupon__list">
+                                          <li class="badge-coupon__item">
+                                            <div class="coupon active">
+                                              <p class="coupon__name">
+                                                <span class="name">5% 등급 쿠폰</span>
+                                              </p>
+                                              <p class="coupon__condition">
+                                                5% 할인
+                                              </p>
+                                              <p class="coupon__expiration">
+                                                <span class="term">2020.01.03 ~ 2020.01.28</span>
+                                                <span class="countdown">D-2</span>
+                                              </p>
+                                            </div>
+                                          </li>
+                                          <li class="badge-coupon__item">
+                                            <div class="coupon">
+                                              <p class="coupon__name">
+                                                <span class="name">10,000원 금액 쿠폰</span>
+                                              </p>
+                                              <p class="coupon__condition">
+                                                100,000원 이상 구매 시 사용 가능
+                                              </p>
+                                              <p class="coupon__expiration">
+                                                <span class="term">2020.01.03 ~ 2020.01.28</span>
+                                              </p>
+                                              <span class="coupon__state">사용</span>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="badge-list__item">
+                                    
+                                    <div class="badge-coupon-container">
+                                      <dl class="badge">
+                                        <dt class="badge__name">First Love BADGE</dt>
+                                        <dd class="badge__preview">
+                                          <!-- 배지 Sample (추후 변경) -->
+                                          <div class="hazzys-badge hazzys-badge--mission">
+                                            <div class="hazzys-badge__front">
+                                              <div class="badge-name"><img src="/cmsstatic/asset/images/badge/sample.png" alt="임시이미지"></div>
+                                            </div>
+                                          </div>
+                                          <!-- // 배지 Sample -->
+                                        </dd>
+                                        <dd class="badge__date">2021.01.03</dd>
+                                      </dl>
+                                      <div class="badge-coupon">
+                                        <p class="badge-coupon__title">
+                                          이 배지에 <strong>2</strong>개의 쿠폰이 있어요
+                                        </p>
+                                        <ul class="badge-coupon__list">
+                                          <li class="badge-coupon__item">
+                                            <div class="coupon active">
+                                              <p class="coupon__name">
+                                                <span class="name">5% 등급 쿠폰</span>
+                                              </p>
+                                              <p class="coupon__condition">
+                                                5% 할인
+                                              </p>
+                                              <p class="coupon__expiration">
+                                                <span class="term">2020.01.03 ~ 2020.01.28</span>
+                                                <span class="countdown">D-2</span>
+                                              </p>
+                                            </div>
+                                          </li>
+                                          <li class="badge-coupon__item">
+                                            <div class="coupon">
+                                              <p class="coupon__name">
+                                                <span class="name">10,000원 금액 쿠폰</span>
+                                              </p>
+                                              <p class="coupon__condition">
+                                                100,000원 이상 구매 시 사용 가능
+                                              </p>
+                                              <p class="coupon__expiration">
+                                                <span class="term">2020.01.03 ~ 2020.01.28</span>
+                                              </p>
+                                              <span class="coupon__state">사용</span>
+                                            </div>
+                                          </li>
+                                          <li class="badge-coupon__item">
+                                            <div class="coupon">
+                                              <p class="coupon__name">
+                                                <span class="name">10,000원 금액 쿠폰</span>
+                                              </p>
+                                              <p class="coupon__condition">
+                                                100,000원 이상 구매 시 사용 가능
+                                              </p>
+                                              <p class="coupon__expiration">
+                                                <span class="term">2020.01.03 ~ 2020.01.28</span>
+                                              </p>
+                                              <span class="coupon__state">사용</span>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <!-- //혜택 보기 -->
+                          </div>
+                          <!-- // 배지 보기/혜택 보기-->
+
+                        </div>
+                      </div>
+
+                      <!-- 유의사항 -->
+                      <div class="benefit-badge">
+                        <div class="benefit-badge__title">유의사항</div>
+                        <div class="benefit-badge__content">
+                          <ul class="accordion accordion--notice" data-accordion="data-accordion">
+                            <li class="accordion__item" data-accordion-item="data-accordion-item">
+                              <div class="accordion__title">
+                                <button type="button" class="button" data-tab-toggle="data-tab-toggle">회원배지혜택</button>
+                              </div>
+                              <div class="accordion__content" data-tab-content="data-tab-content">
+                                <ul class="guide">
+                                  <li class="guide__item">
+                                    헤지스닷컴 등급 산정일 기준으로 회원 배지혜택이 자동 부여됩니다.<br>
+                                    [Blue badge, Red badge, Purple badge, Black S badge, Black R badge]<br>
+                                    매월 1회 등급 산정하며, 직전 6개월 구매실적에 따라 매월 1일 등급이 변동됨에 따라 회원 배지를 부여합니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    신규가입 시 Welcome Badge(White badge)의 혜택이 제공되며, 가입이후 회원등급 산정에 따라 익월 회원 배지혜택 산정에도 반영됩니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    부당한 방법으로 획득한 고객등급은 심사 후 재조정될 수 있습니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    회원배지별 제공된 쿠폰유형과 수량에 따라 각 상품별로 적용하실 수 있습니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    회원배지혜택은 발급완료일로부터 1년동안 사용 가능합니다.(발급완료일+365일)
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="accordion__item" data-accordion-item="data-accordion-item">
+                              <div class="accordion__title">
+                                <button type="button" class="button" data-tab-toggle="data-tab-toggle">구매배지혜택</button>
+                              </div>
+                              <div class="accordion__content" data-tab-content="data-tab-content">
+                                <ul class="guide">
+                                  <li class="guide__item">
+                                    헤지스닷컴에서 구매한 주문건수 기준으로 구매배지 혜택이 자동 부여됩니다.<br>
+                                    [First love badge, Double badge, Triple badge, (month) King badge]<br>
+                                    헤지스닷컴에서 상품(정상/이월) 구매 건수에 따라, 구매 후 수령완료일(=배송완료)로 7일 후 구매배지가 자동 부여됩니다.<br>
+                                    [(Year) Hazzys badge]<br>
+                                    구매 배지를 5개 이상 보유한 고객의 경우 매년 1월 1일, 전년도 기준으로 산정 헤지스닷컴에서 사은품을 제공합니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    구매 배지별 제공된 쿠폰유형과 수량에 따라 각 상품별로 적용하실 수 있습니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    구매배지 혜택은 발급완료일 기준 90일동안 사용 가능합니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    [(month) King badge]으로 부여되는 꽃배송 상품권의 경우 당월 기준으로 익월 1일 고객님께 상품권으로 부여됩니다.
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="accordion__item" data-accordion-item="data-accordion-item">
+                              <div class="accordion__title">
+                                <button type="button" class="button" data-tab-toggle="data-tab-toggle">리뷰배지혜택</button>
+                              </div>
+                              <div class="accordion__content" data-tab-content="data-tab-content">
+                                <ul class="guide">
+                                  <li class="guide__item">
+                                    헤지스닷컴에서 작성한 상품평 기준으로 리뷰배지 혜택이 자동 부여됩니다.<br>
+                                    [nano Influencer badge , micro Influencer badge, Mega Influencer badge, Star Influencer badge<br>
+                                    Bronze smart consumer badge, Silver smart consumer badge, Gold smart consumer badge, Diamond Influencer badge]<br>
+                                    텍스트상품평의 경우 배송완료+7일이후 상품별 최초 등록한 상품평에 대해 리뷰 배지가 발급됩니다.<br>
+                                    포토상품평의 경우 올려주신 포토 검수완료일 기준으로 +0일이내 배지가 부여됩니다. <br>
+                                    [(Year) Hazzys Star badge]<br>
+                                    리뷰 배지를 5개 이상 보유한 고객의 경우 매년 1월 1일, 전년도 기준으로 산정 헤지스닷컴에서 사은품을 제공합니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    리뷰 배지별 제공된 쿠폰유형과 수량에 따라 각 상품별로 적용하실 수 있습니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    리뷰 배지혜택은 발급완료일 기준 90일동안 사용 가능합니다.<br>
+                                    [Mega Influencer badge, Star Influencer badge, Gold smart consumer badge, Diamond Influencer badge]<br>
+                                    위와 같이 리뷰 배지로 부여되는 커피교환권/ 꽃배송 상품권의 경우 당월 기준으로 익월 1일 고객님께 상품권으로 부여됩니다.
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="accordion__item" data-accordion-item="data-accordion-item">
+                              <div class="accordion__title">
+                                <button type="button" class="button" data-tab-toggle="data-tab-toggle">이벤트참여 배지혜택</button>
+                              </div>
+                              <div class="accordion__content" data-tab-content="data-tab-content">
+                                <ul class="guide">
+                                  <li class="guide__item">
+                                    헤지스닷컴에서 참여한 이벤트 기준으로 참여 완료되면 이벤트참여배지가 바로 자동 부여되며 혜택은 배지별로 상이합니다.<br>
+                                    [(Year) Hazzys player badge]<br>
+                                    이벤트 참여 배지를 5개 이상 보유한 고객의 경우 매년 1월 1일, 전년도 기준으로 산정 헤지스닷컴에서 사은품을 제공합니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    이벤트 참여 배지별 제공된 쿠폰유형과 수량에 따라 각 상품별로 적용하실 수 있습니다.
+                                  </li>
+                                  <li class="guide__item">
+                                    이벤트참여 혜택은 발급 당시 유효기간 내에서만 사용 가능합니다.
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="accordion__item" data-accordion-item="data-accordion-item">
+                              <div class="accordion__title">
+                                <button type="button" class="button" data-tab-toggle="data-tab-toggle">기타</button>
+                              </div>
+                              <div class="accordion__content" data-tab-content="data-tab-content">
+                                <ul class="guide">
+                                  <li class="guide__item">배지혜택은 당사의 사정에 의해 축소 및 조기종료 또는 변경될 수 있습니다.</li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- //유의사항 -->
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0101'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

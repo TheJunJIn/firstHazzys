@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/customer.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--customer">
+        @@include('pages/customer/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--notice">
+              <div class="main-content__header">
+                <h3 class="main-content__title">공지사항</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <!-- 공지사항 -->
+              <div class="notice-wrap">
+                <ul class="notice-list accordion" data-accordion="data-accordion" role="tablist">
+                  <li class="important accordion__item" data-accordion-item="data-accordion-item">
+                    <div class="accordion__title">
+                      <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="notice1-accordion" id="notice1-accordion-label">
+                        <p class="notice-content">HAZZYS.COM(헤지스닷컴) 이용약관 개정</p>
+                        <p class="notice-date">21.04.27</p>
+                      </button>
+                    </div>
+                    <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="notice1-accordion-label" id="notice1-accordion">
+                      <em>#Like Hazzys</em> #라이크헤지스 이벤트가 
+                      <br>고객님의 많은 참여와 관심 속에 종료되었습니다.
+                      <br>사전에 공지해드린 대로 <em>4/15(목)에 이벤트 당첨자가 발표</em>될 예정입니다.
+                      <br>당첨자분들께는 개별 연락 드리도록 하겠습니다.
+                      <br>보내주신 많은 성원에 감사드립니다.
+                    </div>
+                  </li>
+                  <li class="accordion__item" data-accordion-item="data-accordion-item">
+                    <div class="accordion__title">
+                      <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="notice2-accordion" id="notice2-accordion-label">
+                        <p class="notice-content">[점검안내] 5/1(토) 오전 01시 ~ 07시</p>
+                        <p class="notice-date">21.04.27</p>
+                      </button>
+                    </div>
+                    <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="notice2-accordion-label" id="notice2-accordion">
+                      <em>#Like Hazzys</em> #라이크헤지스 이벤트가 
+                      <br>고객님의 많은 참여와 관심 속에 종료되었습니다.
+                      <br>사전에 공지해드린 대로 <em>4/15(목)에 이벤트 당첨자가 발표</em>될 예정입니다.
+                      <br>당첨자분들께는 개별 연락 드리도록 하겠습니다.
+                      <br>보내주신 많은 성원에 감사드립니다.
+                    </div>
+                  </li>
+                  <li class="accordion__item" data-accordion-item="data-accordion-item">
+                    <div class="accordion__title">
+                      <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="notice3-accordion" id="notice3-accordion-label">
+                        <p class="notice-content">라이크헤지스 이벤트 종료 안내</p>
+                        <p class="notice-date">21.04.27</p>
+                      </button>
+                    </div>
+                    <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="notice3-accordion-label" id="notice3-accordion">
+                      <em>#Like Hazzys</em> #라이크헤지스 이벤트가 
+                      <br>고객님의 많은 참여와 관심 속에 종료되었습니다.
+                      <br>사전에 공지해드린 대로 <em>4/15(목)에 이벤트 당첨자가 발표</em>될 예정입니다.
+                      <br>당첨자분들께는 개별 연락 드리도록 하겠습니다.
+                      <br>보내주신 많은 성원에 감사드립니다.
+                    </div>
+                  </li>
+                  <li class="accordion__item" data-accordion-item="data-accordion-item">
+                    <div class="accordion__title">
+                      <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="notice4-accordion" id="notice4-accordion-label">
+                        <p class="notice-content">HAZZYS.COM(헤지스닷컴) 이용약관 개정</p>
+                        <p class="notice-date">21.04.27</p>
+                      </button>
+                    </div>
+                    <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="notice4-accordion-label" id="notice4-accordion">
+                      <em>#Like Hazzys</em> #라이크헤지스 이벤트가 
+                      <br>고객님의 많은 참여와 관심 속에 종료되었습니다.
+                      <br>사전에 공지해드린 대로 <em>4/15(목)에 이벤트 당첨자가 발표</em>될 예정입니다.
+                      <br>당첨자분들께는 개별 연락 드리도록 하겠습니다.
+                      <br>보내주신 많은 성원에 감사드립니다.
+                    </div>
+                  </li>
+                  <li class="accordion__item" data-accordion-item="data-accordion-item">
+                    <div class="accordion__title">
+                      <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="notice5-accordion" id="notice5-accordion-label">
+                        <p class="notice-content">[점검안내] 5/1(토) 오전 01시 ~ 07시</p>
+                        <p class="notice-date">21.04.27</p>
+                      </button>
+                    </div>
+                    <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="notice5-accordion-label" id="notice5-accordion">
+                      <em>#Like Hazzys</em> #라이크헤지스 이벤트가 
+                      <br>고객님의 많은 참여와 관심 속에 종료되었습니다.
+                      <br>사전에 공지해드린 대로 <em>4/15(목)에 이벤트 당첨자가 발표</em>될 예정입니다.
+                      <br>당첨자분들께는 개별 연락 드리도록 하겠습니다.
+                      <br>보내주신 많은 성원에 감사드립니다.
+                    </div>
+                  </li>
+                  <li class="accordion__item" data-accordion-item="data-accordion-item">
+                    <div class="accordion__title">
+                      <button type="button" class="button" data-tab-toggle="data-tab-toggle" role="tab" aria-controls="notice6-accordion" id="notice6-accordion-label">
+                        <p class="notice-content">라이크헤지스 이벤트 종료 안내</p>
+                        <p class="notice-date">21.04.27</p>
+                      </button>
+                    </div>
+                    <div class="detail-content accordion__content" data-tab-content="data-tab-content" role="tabpanel" aria-labelledby="notice6-accordion-label" id="notice6-accordion">
+                      <em>#Like Hazzys</em> #라이크헤지스 이벤트가 
+                      <br>고객님의 많은 참여와 관심 속에 종료되었습니다.
+                      <br>사전에 공지해드린 대로 <em>4/15(목)에 이벤트 당첨자가 발표</em>될 예정입니다.
+                      <br>당첨자분들께는 개별 연락 드리도록 하겠습니다.
+                      <br>보내주신 많은 성원에 감사드립니다.
+                    </div>
+                  </li>
+                </ul>
+                <p class="button-more">
+                  <button type="button" class="form-button form-button--plain">더보기 (1/20)</button>
+                </p>
+              </div>
+              <!-- //공지사항 -->
+            </div>
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/customer/_partials/sidebar-menu.html')
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/customer.js"></script>
+  </body>
+</html>

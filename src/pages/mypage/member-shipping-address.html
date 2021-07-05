@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--member">
+              <div class="main-content__header main-content__header--sub">
+                <h3 class="main-content__title">배송지 관리</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-member-container">
+
+                <div class="shipping-address">
+                  <div class="shipping-address__header">
+                    <div class="count">
+                      총 <span>4</span>곳
+                    </div>
+                    <div class="util">
+                      <button type="button" class="button button--delete">전체 삭제</button>
+                    </div>
+                  </div>
+                  <div class="shipping-address__content">
+                    <ul class="address-list">
+                      <li class="address-list__item">
+                        <div class="form-radio">
+                          <input type="radio" class="radio" name="checkDelivery" title="배송지 선택">
+                          <i class="icon"></i>
+                          <div class="address">
+                            <div class="address-inner">
+                              <span class="address__zipcode"><span class="comment">(기본 배송지)</span>06230</span>
+                              <span class="address__address">서울특별시 강남구 언주로 301</span>
+                              <span class="address__phone">010-1234-5678</span>
+                            </div>
+                          </div>
+                          <div class="address-util">
+                            <button type="button" class="button button--modify">수정</button>
+                            <button type="button" class="button button--delete">삭제</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="address-list__item">
+                        <div class="form-radio">
+                          <input type="radio" class="radio" name="checkDelivery" title="배송지 선택">
+                          <i class="icon"></i>
+                          <div class="address">
+                            <div class="address-inner">
+                              <span class="address__zipcode">06230</span>
+                              <span class="address__address">서울특별시 강남구 언주로 301</span>
+                              <span class="address__phone">010-1234-5678</span>
+                            </div>
+                          </div>
+                          <div class="address-util">
+                            <button type="button" class="button button--modify">수정</button>
+                            <button type="button" class="button button--delete">삭제</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="address-list__item">
+                        <div class="form-radio">
+                          <input type="radio" class="radio" name="checkDelivery" title="배송지 선택">
+                          <i class="icon"></i>
+                          <div class="address">
+                            <div class="address-inner">
+                              <span class="address__zipcode">06230</span>
+                              <span class="address__address">서울특별시 강남구 언주로 서울특별시 강남구 언주로 서울특별시</span>
+                              <span class="address__phone">010-1234-5678</span>
+                            </div>
+                          </div>
+                          <div class="address-util">
+                            <button type="button" class="button button--modify">수정</button>
+                            <button type="button" class="button button--delete">삭제</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="address-list__item">
+                        <div class="form-radio">
+                          <input type="radio" class="radio" name="checkDelivery" title="배송지 선택">
+                          <i class="icon"></i>
+                          <div class="address">
+                            <div class="address-inner">
+                              <span class="address__zipcode">06230</span>
+                              <span class="address__address">서울특별시 강남구 언주로 301</span>
+                              <span class="address__phone">010-1234-5678</span>
+                            </div>
+                          </div>
+                          <div class="address-util">
+                            <button type="button" class="button button--modify">수정</button>
+                            <button type="button" class="button button--delete">삭제</button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="shipping-address__submit">
+                    <button type="button" class="form-button form-button--plain">배송지 추가</button>
+                    <button type="button" class="form-button form-button--main">기본 배송지 설정</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0403'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

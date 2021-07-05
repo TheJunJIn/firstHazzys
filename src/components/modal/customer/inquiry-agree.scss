@@ -1,0 +1,27 @@
+// 개인정보 수집 및 이용 동의
+.modal--inquiry-agree {
+  .inquiry-agree {
+    height: 222px;
+    overflow: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+    background-color: #f8f8f8;
+    .agree {
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      &__title {
+        color: $color-text-emphasize;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 300;
+      }
+      &__content {
+        color: #717171;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 300;
+      }
+    }
+  }
+}

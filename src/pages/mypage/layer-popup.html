@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main">
+        <div class="main-content">
+          <style>
+            .main-content { padding-top: 100px;}
+            .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+          </style>
+          <style>
+            .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+          </style>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalDeleteOrderHistory">
+            주문내역 삭제
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalConfirmShipped">
+            상품을 수령하셨어요?
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalConfirmPickedup">
+            픽업상품을 매장에서 수령하셨어요? 
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalStoreLocation">
+            헤지스 스토어 안내
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalReturnCostGuide">
+            예상 반품비
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalExchangeCostGuide">
+            예상 교환비
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalDeleteClaimHistory">
+            취소/교환/반품 내역 삭제
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalRegisterCoupon">
+            나의 쿠폰 등록
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalBadgeBenefit">
+            배지 혜택
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalReviewBadgeGuide">
+            상품평 배지 발급 조건
+          </button>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- 주문내역 삭제 #modalDeleteOrderHistory -->
+    @@include('components/modal/mypage/confirm-delete-order-history.html')
+
+    <!-- 상품 수령 #modalConfirmShipped -->
+    @@include('components/modal/mypage/confirm-shipped.html')
+
+    <!-- 상품 픽업 #modalConfirmPickedup -->
+    @@include('components/modal/mypage/confirm-pickedup.html')
+
+    <!-- 헤지스 스토어 안내 #modalStoreLocation -->
+    @@include('components/modal/mypage/store-location.html')
+
+    <!-- 예상 반품비 #modalReturnCostGuide -->
+    @@include('components/modal/mypage/return-cost-guide.html')
+
+    <!-- 예상 교환비 #modalExchangeCostGuide -->
+    @@include('components/modal/mypage/exchange-cost-guide.html')
+
+    <!-- 취소/교환/반품 내역 삭제 #modalDeleteClaimHistory -->
+    @@include('components/modal/mypage/confirm-delete-claim-history.html')
+
+    <!-- 나의 쿠폰 등록 #modalRegisterCoupon -->
+    @@include('components/modal/mypage/register-coupon.html')
+
+    <!-- 배지 혜택  #modalBadgeBenefit -->
+    @@include('components/modal/mypage/badge-benefit.html')
+
+    <!-- 상품평 배지 발급 조건  #modalReviewBadgeGuide -->
+    @@include('components/modal/mypage/review-badge-guide.html')
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>
