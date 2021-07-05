@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--shopping">
+
+              <div class="main-content__header main-content__header--main">
+                <h3 class="main-content__title">나의 쇼핑 내역</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+
+              <div class="tabs tab--order-type">
+                <div class="tablist" role="tablist">
+                  <button type="button" class="tab" role="tab" aria-selected="true">주문/배송 조회</button>
+                  <button type="button" class="tab" role="tab" aria-selected="false">취소/교환/반품</button>
+                </div>
+                <!-- 주문/배송 조회 -->
+                <div class="tabpanel">
+                  <!-- 기간 설정 -->
+                  <div class="order-list-filter">
+                    <div class="form-select-container">
+                      <div class="form-select">
+                        <select class="select">
+                          <option value="">기간전체</option>
+                          <option value="1">최근 1개월</option>
+                          <option value="1">최근 2개월</option>
+                          <option value="1">최근 3개월</option>
+                          <option value="1">최근 6개월</option>
+                          <option value="1">최근 1년</option>
+                          <option value="1">직접입력</option>
+                        </select>
+                        <i class="icon"></i>
+                      </div>
+                    </div>
+                    <div class="form-date-picker">
+                      <div class="input-block">
+                        <input type="text" class="form-text datepicker" readonly>
+                      </div>
+                      <div class="input-block">
+                        <input type="text" class="form-text datepicker" readonly>
+                      </div>
+                      <button type="button" class="form--submit form-button form-button--main">조회</button>
+                    </div>
+                  </div>
+                  <!-- //기간 설정 -->
+
+                  <div class="product-order-container">
+                    <!-- 목록 -->
+                    <div class="product-order-list">
+                      <div class="no-data">
+                        <i class="sprite-common sprite-common-no-history"></i>
+                        <p class="message">고객님의 주문/배송 이력이 없습니다.<br>조회 기간을 다시 선택해주세요.</p>
+                      </div>
+                    </div>
+                    <!-- //목록 -->
+                  </div>
+
+                </div>
+                <!-- //주문/배송 조회 -->
+              </div>
+
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0101'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+    <script>
+    $(function(){
+      $(".datepicker" ).datepicker({
+          closeText: '닫기',
+          prevText: '이전달',
+          nextText: '다음달',
+          currentText: '오늘',
+          monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+          monthNamesShort: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+          dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+          dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+          dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+          weekHeader: 'Wk',
+          dateFormat: 'yy-mm-dd',
+          firstDay: 0,
+          showMonthAfterYear: true,
+          yearSuffix: '.',
+          showButtonPanel: false,
+          beforeShow: function (input, datepicker) {},
+          onClose : function (dateText, datepicker) {},
+          buttonImageOnly: false,
+          changeMonth: false,
+          changeYear: false,
+          yearRange: "-10:+5",
+          showOn: "focus", // focus, button, both
+          showAnim: "show",  // show, fadeIn, slideDown
+          duration: 0,
+          ignoreReadonly: true
+      });
+    })
+    </script>
+  </body>
+</html>

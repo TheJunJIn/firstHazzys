@@ -1,0 +1,236 @@
+// 주문 조회
+.modal--order-search {
+  transition-delay: 0.2s;
+  .modal-dialog {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: none;
+    transform: translate(0, 100%);
+    transition: transform 0.3s ease-out;
+    transition-delay: 0s;
+  }
+  .modal__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    z-index: 2;
+    @include background-blur(4px, 0.8);
+    &__title {
+      font-size: 18px;
+      line-height: 60px;
+      font-weight: 500;
+      color: #000;
+      text-align: left;
+      padding-left: 10px;
+      border-bottom: 1px solid $color-line-emphasize;
+    }
+    &__button {
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .modal__body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 90px 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  .order-search {
+    .month-tab {
+      display: flex;
+      margin-bottom: 20px;
+      .button {
+        display: inline-block;
+        width: 25%;
+        height: 40px;
+        margin-left: 10px;
+        border-radius: 2px;
+        border: solid 1px $color-line-ready;
+        color: $color-text-emphasize;
+        font-size: 12px;
+        line-height: 40px;
+        text-align: center;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      .button.active {
+        border: 1px solid $color-line-point;
+        color: $color-text-point;
+      }
+    }
+  }
+  .order-list {
+    margin-bottom: 30px;
+    &__item {
+      margin-top: 10px;
+      .form-radio{
+        width: 100%;
+        .icon {
+          position: absolute;
+          top: 24px;
+          right: 20px;
+        }
+      }
+      .radio:checked {
+        ~ .order-detail {
+          border-color: $color-line-emphasize;
+        }
+      }
+      .order-detail {
+        padding: 15px;
+        border-radius: 2px;
+        border: solid 1px $color-line-ready;
+        &__num {
+          margin-bottom: 20px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid $color-line-border;
+          color: $color-text-emphasize;
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 18px;
+          em {
+            font-weight: 500;
+            font-style: normal;
+          }
+        }
+      }
+      .order-product {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        margin-top: 10px;
+        &__image {
+          display: block;
+          width: 60px;
+          flex: 0 0 60px;
+          text-decoration: none;
+          img {
+            width: 100%;
+            vertical-align: top;
+          }
+        }
+        &__detail {
+          width: 100%;
+          margin-left: 10px;
+          .product-info {
+            text-decoration: none;
+            &__brand {
+              margin-bottom: 2px;
+              color: $color-text-emphasize;
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 18px;
+            }
+            &__name {
+              margin-bottom: 2px;
+              color: $color-text-emphasize;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 18px;
+            }
+            &__option {
+              .option {
+                color: $color-text-primary;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
+                + .option {
+                  &:before {
+                    content: '/';
+                    margin-left: 2px;
+                    padding-right: 3px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  &.active {
+    transition-delay: 0s;
+    .modal-dialog {
+      transform: translate(0, 0);
+      transition-delay: 0.2s;
+    }
+  }
+  .button-more {
+    text-align: center;
+    .button {
+      color: $color-text-primary;
+      font-size: 14px;
+      .icon {
+        display: inline-block;
+        margin-left: 4px;
+        @include sprite($common-arrow-down-dropdown);
+      }
+    }
+  }
+  .button-regist {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  @include mq('desktop') {
+    .modal-dialog {
+      max-width: 650px;
+      top: 50%;
+      bottom: auto;
+      height: 680px;
+      transform: translateY(-50%);
+    }
+    .modal__header {
+      height: 90px;
+      padding: 0 40px;
+      &__title {
+        line-height: 80px;
+        text-align: center;
+      }
+    }
+    .modal__body {
+      padding: 90px 40px 20px;
+    }
+    &.active {
+      transition-delay: 0s;
+      .modal-dialog {
+        transform: translateY(-50%);
+        transition-delay: 0.2s;
+      }
+    }
+    .order-search {
+      padding-top: 20px;
+      .button-more {
+        margin-bottom: 40px;
+      }
+      .button-regist {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 420px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

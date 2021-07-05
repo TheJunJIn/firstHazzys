@@ -1,5 +1,5 @@
-@import '_variables.scss';
-@import '_mixins.scss';
+@import '../../asset/css/variables.scss';
+@import '../../asset/css/mixins.scss';
 
 .shell-header {
   position: fixed;
@@ -8,12 +8,27 @@
   width: 100%;
   height: 60px;
   border-bottom: 1px solid #000;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.8);
-  box-sizing: border-box;
   z-index: 20;
-  transition: transform 0.3s;
+  transition: $transition-header-hidden;
+  @include background-blur;
+
+  // Mobile
+  @include mq('desktop', 'max') {
+    // 마이페이지 메인 투명배경, Black
+    &.shell-header--transparent {
+      @include background-blur-reset;
+      border-bottom: 0;
+    }
+    // 마이페이지 나의 정보 - 회원 혜택: 투명배경, White
+    &.shell-header--white {
+      @include background-blur-reset;
+      border-bottom: 0;
+    }
+  }
+
+  @include mq('desktop') {
+    border-bottom: 0;
+  }
 
   &.is-hidden {
     transform: translateY(-100%);
@@ -26,16 +41,28 @@
     padding: 10px 0 10px 10px;
     height: 60px;
     box-sizing: border-box;
-    // @include mq('desktop'){
-    //   padding: 16px 0 16px 30px;
-    // }
+    @include mq('desktop') {
+      padding: 16px 0 16px 30px;
+    }
   }
+
   &__logo {
     display: inline-block;
     vertical-align: top;
     width: 81px;
     height: 36px;
-    color: #000;
+    color: $color-text-emphasize;
+
+    @include mq('desktop', 'max') {
+      @at-root .shell-header--white #{&} {
+        color: #fff;
+      }
+    }
+
+    @include mq('desktop') {
+      width: 63px;
+      height: 28px;
+    }
     .svg-icon {
       width: 100%;
       height: 100%;
@@ -45,106 +72,65 @@
     position: absolute;
     top: 15px;
     right: 10px;
+    @include self-clear;
+
     .svg-icon {
       width: 30px;
       height: 30px;
     }
+    .util__item {
+      float: left;
+      + .util__item {
+        margin-left: 10px;
+      }
+      // 마이페이지
+      &.util__item--member {
+        display: none;
+      }
+      // 네비게이션
+      // &.util__item--navigation {}
+      .button {
+        position: relative;
+        color: #000;
+        outline: 0;
 
-    &.util {
-      @include self-clear;
-      .util__item {
-        float: left;
-        + .util__item {
-          margin-left: 10px;
-        }
-        // 마이페이지
-        &.util__item--member {
-          display: none;
-        }
-        // 네비게이션
-        // &.util__item--navigation {}
-        .button {
-          position: relative;
-          color: #000;
-          outline: 0;
-
-          &.button--cart {
-            .fill {
-              display: none;
-            }
-            .cart-count:not(:empty) {
-              + .svg-icon {
-                .fill {
-                  display: block;
-                }
+        &.button--cart {
+          .fill {
+            display: none;
+          }
+          .cart-count:not(:empty) {
+            + .svg-icon {
+              .fill {
+                display: block;
               }
             }
           }
         }
-        .cart-count {
-          position: absolute;
-          bottom: 2px;
-          left: 0;
-          width: 100%;
-          text-align: center;
-          font-size: 12px;
-          line-height: 16px;
-          font-weight: 500;
-          color: #fff;
-        }
-        // @include mq('desktop', 'max') {
-        //   @at-root {
-        //     .shell-header--white #{&} {
-        //       .button {
-        //         color: #fff;
-        //         .svg-icon {
-        //           .g {
-        //             filter: auto; // Error로 초기화
-        //           }
-        //         }
-        //       }
-        //       .cart-count {
-        //         color: #000;
-        //       }
-        //     }
-        //   }
-        // }
       }
-    }
-  }
-  @include mq('desktop', 'max') {
-    // 마이페이지 메인 투명배경, Black
-    &.shell-header--overrap {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-      background-color: transparent;
-      border-bottom: 0;
-    }
-    // 마이페이지 나의 정보 - 회원 혜택: 투명배경, White
-    &.shell-header--white {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-      background-color: transparent;
-      border-bottom: 0;
-      .shell-header__logo {
+      .cart-count {
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
         color: #fff;
       }
-      .shell-header__util {
-        &.util {
-          .util__item {
-            .button {
-              color: #fff;
-            }
-            .cart-count {
-              color: #000;
-            }
+    }
+    @include mq('desktop', 'max') {
+      @at-root .shell-header--white #{&} {
+        .util__item {
+          .button {
+            color: #fff;
+          }
+          .cart-count {
+            color: #000;
           }
         }
       }
-    }
-
-    &:not(.shell-header--white) {
-      .shell-header__util {
+      @at-root .shell-header:not(.shell-header--white) #{&} {
         .svg-icon {
           .g {
             filter: none;
@@ -152,17 +138,7 @@
         }
       }
     }
-  }
-  @include mq('desktop'){
-    border-bottom: 0;
-    &__title {
-      padding: 16px 0 16px 30px;
-    }
-    &__logo {
-      width: 63px;
-      height: 28px;
-    }
-    &__util {
+    @include mq('desktop') {
       top: 18px;
       right: 30px;
       .svg-icon {
@@ -172,27 +148,25 @@
           filter: none;
         }
       }
-      &.util {
-        .util__item {
-          // 마이페이지
-          &.util__item--member {
-            display: block;
+      .util__item {
+        // 마이페이지
+        &.util__item--member {
+          display: block;
+        }
+        // 네비게이션
+        &.util__item--navigation {
+          display: none;
+        }
+        .button {
+          &:hover {
+            color: $color-text-point;
           }
-          // 네비게이션
-          &.util__item--navigation {
-            display: none;
-          }
-          .button {
-            &:hover {
-              color: $color-text-point;
-            }
-          }
-          .cart-count {
-            bottom: 1px;
-            font-weight: 400;
-            line-height: 14px;
-            font-size: 10px;
-          }
+        }
+        .cart-count {
+          bottom: 1px;
+          font-weight: 400;
+          line-height: 14px;
+          font-size: 10px;
         }
       }
     }

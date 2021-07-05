@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/event.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--event">
+        <div class="main-header event-back">
+          <h2 class="main-header__title">이벤트 참여</h2>
+          <button type="button" class="button main-header__btn-back">
+            <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+          </button>
+        </div>
+        <div class="main-content">
+          <!-- 이벤트 참여 -->
+          <div class="event-write">
+            <p class="event-id"><em>신청인 아이디</em> hazzys123</p>
+            <div class="event-participate">
+              <div class="content-write">
+                <h3 class="title-line">최소 10자 이상 등록해주세요.</h3>
+                <textarea class="form-text" cols="40" row="5" placeholder="내용을 입력해주세요"></textarea>
+              </div>
+              <div class="photo-upload">
+                <h3 class="title-line">사진을 등록해주세요.</h3>
+                <div class="swiper-container swiper-container--controls-bottom" id="eventPhotoRegist">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="upload-content file-upload">
+                        <input type="file" id="imageUpload" name="imageUpload" class="image-add" title="사진추가" accept="image/*">
+                        <span class="add-text">사진추가</span>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_1.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_2.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_3.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_4.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_2.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_3.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="upload-content">
+                        <img src="/cmsstatic/asset/images/temp/event_90x90_4.jpg" alt="이미지명">
+                        <button type="button" class="button">
+                          <i class="sprite-image-close">삭제</i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="button-group">
+              <li class="button-group__item">
+                <button type="button" class="form-button form-button--plain">취소</button>
+              </li>
+              <li class="button-group__item">
+                <button type="button" class="form-button form-button--main">이벤트 참여</button>
+              </li>
+            </ul>
+          </div>
+          <!-- //이벤트 참여 -->
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/event.js"></script>
+    <script>
+      $(function () {
+        // 파일 업로드 슬라이드
+        new Swiper('#eventPhotoRegist', {
+          loop: false,
+          freeMode: true,
+          spaceBetween: 10,
+          slidesOffsetBefore: 10,
+          slidesOffsetAfter: 10,
+          slidesPerView: 'auto',
+        })
+      });
+    </script>
+  </body>
+</html>

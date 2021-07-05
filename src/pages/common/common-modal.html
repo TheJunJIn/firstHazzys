@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--member shell-main--member-row">
+        <div class="main-content">
+          <style>
+            .title {padding:20px 0;font-size:16px;font-weight:300;text-align:center;}
+          </style>
+          <h2 class="title">공통 팝업</h2>
+          <style>
+            .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+            .group { display: flex; width:80%;margin:20px auto;}
+            .group  .form-button + .form-button { margin-left: 20px;}
+          </style>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalZipcodeFind">우편번호 찾기</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryList">배송지 목록</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalDeliveryAdd">배송지 등록</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalShopFind">매장 찾기</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalShopLocation">매장 위치</button>
+          <button type="button" class="form-button form-button--main" onclick="openBadge()">배지 획득</button>
+          <button type="button" class="form-button form-button--plain" onclick="openHomeBanner('#modalHomeNoticeCenter')">홈 배너 중앙</button>
+          <button type="button" class="form-button form-button--plain" onclick="openHomeBanner('#modalHomeNoticeBottom')">홈 배너 하단</button>
+          <div class="group">
+            <button type="button" class="form-button form-button--plain" onclick="ui.loading.show()">로딩 On: ui.loading.show();</button>
+            <button type="button" class="form-button form-button--main" onclick="ui.loading.hide()">로딩 Off: ui.loading.hide();</button>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- 우편번호 찾기 #modalZipcodeFind -->
+    @@include('components/modal/common/zipcode-find.html')
+
+    <!-- 배송지 목록 #modalDeliveryList -->
+    @@include('components/modal/common/delivery-list.html')
+
+    <!-- 배송지 등록 #modalDeliveryAdd -->
+    @@include('components/modal/common/delivery-add.html')
+
+    <!-- 매장 찾기 #modalShopFind -->
+    @@include('components/modal/common/shop-find.html')
+
+    <!-- 매장 위치 #modalShopLocation -->
+    @@include('components/modal/common/shop-location.html')
+
+    <!-- 배지 획득 #modalObtainBadge -->
+    @@include('components/modal/common/obtain-badge.html')
+
+    <!-- 배너 (중앙) #modalHomeNoticeCenter -->
+    @@include('components/modal/home/center.html')
+    <!-- 배너 (하단) #modalHomeNoticeBottom -->
+    @@include('components/modal/home/bottom.html')
+
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script>
+    // 메인 팝업 배너
+    function openHomeBanner(selector){
+      var modal = $(selector);
+
+      ui.modal.open(modal);
+      if($(modal).find('.swiper-slide').length > 1) {
+        var swiperElement = $(modal).find('.swiper-container');
+        var swiper;
+        if(swiperElement.swiper) {
+          swiper = swiperElement.swiper;
+        } else {
+          swiper = new Swiper($(modal).find('.swiper-container'), {
+            loop: true,
+            autoplay: {
+              delay: 3000,
+            },
+            pagination: {
+              el: '.swiper-pagination--home-banner',
+              type: "progressbar",
+              clickable: false,
+            },
+          })
+        }
+        swiper.update();
+        // console.log(swiper);
+      }
+    }
+    // 배지 획득
+    function openBadge(){
+      ui.modal.open($('#modalObtainBadge'));
+      var layer = document.querySelector('#modalObtainBadge');
+      var root = layer.querySelector('.hazzys-badge');
+      var front = root.querySelector('.hazzys-badge__front');
+      var back = root.querySelector('.hazzys-badge__back');
+      var duration = 2000;
+      var animation = anime.timeline({
+          loop: false,
+          easing: 'easeOutQuint',
+          targets: root,
+        })
+        .add({
+          targets: root,
+          easing: 'easeOutBounce',
+          opacity: [
+            { value: 0, duration: 0  },
+            { value: 1, delay: 300, duration: 500 }
+          ],
+          scale: [
+            { value: 0.6, delay: 1000, duration: 0  },
+            { value: 1, duration: 500 }
+          ],
+          endDelay: 800,
+        })
+        .add({
+          targets: root,
+          easing: 'easeOutQuint',
+          rotateY: [
+            { value: 0, duration: 1 },
+            { value: 720, duration: duration }
+          ]
+        })
+        .add({
+          targets: front,
+          easing: 'linear',
+          opacity: [
+            { value: 1, duration: 0 },
+            { value: 0, delay: ( duration / 3.1), duration: 10},
+          ]
+        }, '-='+ duration)
+        .add({
+          targets: back,
+          easing: 'linear',
+          rotateY: [
+            { value: -180, duration: 0 },
+            { value: 0, delay: ( duration / 3.1), duration: 10},
+          ],
+          endDelay: 2000,
+        }, '-='+ duration);
+    }
+    </script>
+  </body>
+</html>

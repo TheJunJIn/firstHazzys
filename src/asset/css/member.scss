@@ -1,5 +1,6 @@
-@import '_variables.scss';
-@import '_mixins.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+
 @import '../../components/sprites/sprite-common.scss';
 
 // 가입 단계
@@ -573,27 +574,6 @@
   }
 }
 
-
-// .main-visual {
-//   height: 200px;
-//   background-color: rgba(244, 0, 0, 0.1);
-//   + .main-content {
-//     margin-top: 0;
-//   }
-//   @at-root {
-//     .shell-main--member-row #{&} {
-//       @include mq('desktop') {
-//         width: 470px;
-//         height: 556px;
-//         opacity: 0.48;
-//         background-color: #000000;
-//         + .main-content {
-//           padding-top: 0;
-//         }
-//       }
-//     }
-//   }
-// }
 .main-header {
   margin: 0 10px;
   padding-top: 20px;
@@ -1264,153 +1244,20 @@
 
 // 팝업
 // =============================================================================
-.modal {
-  // 휴면 해제 안내
-  &.modal--reactivated-account {
-    .message {
-      .message__text + .message__text {
-        margin-top: 20px;
-      }
-    }
-  }
-  // 비밀번호 변경 안내
-  &.modal--expired-password {
-    .text-button-group {
-      margin-top: 20px;
-    }
-    @include mq('desktop') {
-      .text-button-group {
-        margin-top: 30px;
-      }
-    }
-  }
-  // 아이디 찾기 / 비밀번호 재설정 - 계정선택
-  &.modal--find-account-list {
-    .select-account {
-      &__title {
-        margin-bottom: 20px;
-        font-family: $font-noto-sans;
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 300;
-        color: #000;
-      }
-      &__list {
-        max-height: 320px;
-        overflow: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-      }
-      &__item {
-        padding: 20px;
-        border: 1px solid #c9c9c9;
-        + .select-account__item {
-          margin-top: 10px;
-        }
-        &.active {
-          border-color: #000;
-        }
-      }
-      .account {
-        position: relative;
-        &__info {
-          &__item {
-            + .account__info__item {
-              margin-top: 5px;
-            }
-          }
-          .info {
-            font-size: 14px;
-            font-weight: 300;
-            &__label {
-              width: 60px;
-              display: inline-block;
-              white-space: nowrap;
-              color: #919191;
-              vertical-align: middle;
-            }
-            &__value {
-              display: inline-block;
-              color: #000;
-              vertical-align: middle;
-            }
-          }
-        }
-        &__radio {
-          position: absolute;
-          top: 50%;
-          right: 30px;
-          transform: translateY(-50%);
-        }
-      }
-      @include mq('desktop') {
-        &__title {
-          font-size: 24px;
-          line-height: 44px;
-          font-weight: 500;
-        }
-      }
-    }
-  }
-  // 마케팅 정보 수신 동의
-  &.modal--agreement-marketing {
-    .modal__footer {
-      margin-top: 0;
-    }
-    .terms-agreement {
-      &__box {
-        height: 110px;
-        overflow: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        font-size: 12px;
-        line-height: 22px;
-        font-weight: 300;
-        padding: 10px;
-        color: #717171;
-        background-color: #f8f8f8;
-        box-sizing: border-box;
-      }
-      &__form {
-        margin-top: 26px;
-        display: flex;
-        justify-content: space-between;
-      }
-      @include mq('desktop') {
-        &__form {
-          margin-top: 30px;
-        }
-      }
-    }
-  }
-  // 약관 보기
-  &.modal--policy-view {
-    .modal__footer {
-      margin-top: 5px;
-    }
-    .policy {
-      &__content {
-        overflow: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        font-size: 12px;
-        line-height: 22px;
-        font-weight: 300;
-        box-sizing: border-box;
-        height: 220px;
-        padding: 10px;
-        color: #717171;
-        background-color: #f8f8f8;
-      }
-    }
-    @include mq('desktop') {
-      .modal__header {
-        .modal__header__title {
-          line-height: 34px;
-        }
-      }
-    }
-  }
-  // 탈퇴 회원
-  // &.modal--withdrawn-member {}
-}
+// 휴면 해제 안내
+@import '../../components/modal/member/reactivated-account.scss';
+
+// 비밀번호 변경 안내
+@import '../../components/modal/member/expired-password.scss';
+
+// 아이디 찾기 / 비밀번호 재설정 - 계정선택
+@import '../../components/modal/member/find-account-list.scss';
+
+// 마케팅 정보 수신 동의
+@import '../../components/modal/member/agreement-marketing.scss';
+
+// 약관 보기
+@import '../../components/modal/member/policy-view.scss';
+
+// 탈퇴 회원
+// .modal--withdrawn-member {}

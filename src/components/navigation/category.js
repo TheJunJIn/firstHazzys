@@ -1,5 +1,5 @@
-import anime from 'animejs/lib/anime.es.js';
 import UIModule from '../ui-module';
+const anime = window.anime;
 
 const defaults = {
   root: '#category',
@@ -56,7 +56,7 @@ export default class Category extends UIModule {
     this.activeSubMenu;
 
     this.indicator = mainMenuRoot.querySelector(options.indicatorSelector);
-    this.mode = null;
+    this.viewType = null;
     this.states = {
       mobile: {
         opened: []
@@ -73,7 +73,7 @@ export default class Category extends UIModule {
     menuButtons.forEach((menuButton) => {
       menuButton.addEventListener('click', (e) => {
         const { currentTarget: button } = e;
-        if (this.mode === 'mobile') {
+        if (this.viewType === 'mobile') {
           // 1depth -> 2depth
           if (button.closest(options.mainCategorySelector)) {
             const element =
@@ -110,7 +110,7 @@ export default class Category extends UIModule {
 
     backButtons.forEach((backButton) => {
       backButton.addEventListener('click', (e) => {
-        if (this.mode === 'mobile') {
+        if (this.viewType === 'mobile') {
           const { currentTarget: button } = e;
           const category = button.closest('.category-depth');
           this.out(category);
@@ -119,17 +119,17 @@ export default class Category extends UIModule {
     });
 
     this.report('viewType').then(({ viewType }) => {
-      this.mode = viewType;
+      this.viewType = viewType;
     });
 
     this.listen('viewTypeChanged', async ({ value, oldValue }) => {
-      this.mode = value;
+      this.viewType = value;
       this.reset(oldValue);
     });
 
 
     const menuDelayOpen = (e) => {
-      if(this.mode === 'desktop') {
+      if(this.viewType === 'desktop') {
         const { desktop } = this.states;
         desktop.focused = true;
         window.clearTimeout(desktop.timer);
@@ -143,7 +143,7 @@ export default class Category extends UIModule {
       }
     }
     const menuDelayClose = (e) => {
-      if(this.mode === 'desktop') {
+      if(this.viewType === 'desktop') {
         const { desktop } = this.states;
         desktop.focused = false;
         window.clearTimeout(desktop.timer);
@@ -167,7 +167,7 @@ export default class Category extends UIModule {
     })
     mainMenuItems.forEach((menu) => {
       menu.addEventListener('mouseenter', (e) => {
-        if (this.mode === 'desktop') {
+        if (this.viewType === 'desktop') {
           const { currentTarget: button } = e;
           this.activeIndicator(button);
         }
@@ -175,7 +175,7 @@ export default class Category extends UIModule {
     });
     mainMenuButtons.forEach((menu) => {
       menu.addEventListener('mouseenter', async (e) => {
-        if (this.mode === 'desktop') {
+        if (this.viewType === 'desktop') {
           const { currentTarget: button } = e;
           const element = subMenuRoot.querySelector(button.dataset.category);
           await this.select(element);
@@ -347,16 +347,16 @@ export default class Category extends UIModule {
 
   }
 
-  async reset(mode){
+  async reset(viewType){
     const { subMenuRoot, states } = this;
     const { mobile } = states;
-    if(mode === 'mobile') {
+    if(viewType === 'mobile') {
       if(mobile.opened.length){
         for (const item of mobile.opened) {
           await this.out(item);
         }
       }
-    } else if (mode === 'desktop') {
+    } else {
       await this.close();
       subMenuRoot.style.height = '';
       subMenuRoot.style.visibility = '';

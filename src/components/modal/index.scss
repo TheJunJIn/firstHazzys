@@ -218,9 +218,7 @@
       height: 60px;
       box-sizing: border-box;
       z-index: 2;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
+      @include background-blur(4px, 0.8);
       &__title {
         font-size: 18px;
         line-height: 60px;
@@ -503,7 +501,7 @@
               color: $color-text-point;
             }
             + .name:before{
-              @include sprite-position($order-check-on);
+              @include sprite-position($common-check-on);
             }
           }
         }
@@ -515,7 +513,7 @@
           font-size: 12px;
           line-height: 30px;
           &:before {
-            @include sprite($order-check);
+            @include sprite($common-check);
           }
         }
       }
@@ -555,7 +553,7 @@
               .radio {
                 &:checked {
                   + .icon {
-                    @include sprite-position($order-radio-on);
+                    @include sprite-position($common-radio2-on);
                     + .box {
                       border: 1px solid $color-line-point;
                     }
@@ -566,7 +564,7 @@
                 position: absolute;
                 top: 22px;
                 right: 10px;
-                @include sprite($order-radio);
+                @include sprite($common-radio2);
               }
               .box {
                 width: 100%;
@@ -603,818 +601,66 @@
   }
 }
 
-// 개별 팝업
-.modal {
-  &.modal--product-option {
-    .modal__body {
-      .product-option {
-        position: relative;
-        padding: 23px 0 35px;
-        margin: 0 10px;
-        &__guide {
-          position: absolute;
-          top: 15px;
-          right: 0;
-          font-size: 12px;
-          font-weight: 300;
-          color: $color-text-primary;
-          outline: 0;
-          &:after {
-            content: '';
-            display: inline-block;
-            margin-left: 1px;
-            @include sprite($common-landing-small-grey);
-          }
-        }
-        &__color {
-          margin: 0 -10px;
-          padding: 10px 0 30px;
-          text-align: center;
-          border-bottom: 1px solid $color-line-border;
-          .colorchip {
-            display: inline-block;
-            white-space: nowrap;
-            padding: 0 30px;
-            font-size: 0;
-            vertical-align: top;
-            &__item {
-              display: inline-block;
-              border-radius: 100%;
-              overflow: hidden;
-              border: 1px solid transparent;
-              &.active {
-                border-color: $color-line-emphasize;
-              }
-              + .colorchip__item {
-                margin-left: 15px;
-              }
-            }
-            &__link {
-              border: 2px solid transparent;
-              box-sizing: content-box;
-              display: block;
-              width: 30px;
-              height: 30px;
-              border-radius: 100%;
-              overflow: hidden;
-              img {
-                width: 100%;
-                display: inline-block;
-                white-space: nowrap;
-              }
-            }
-          }
-          ~ .product-option__size {
-            margin-top: 30px;
-          }
-          ~ .product-option__qty {
-            margin-top: 30px;
-          }
-        }
-        &__size {
-          margin: 0 -10px;
-          padding: 10px 0 30px;
-          overflow: auto;
-          overflow-y: hidden;
-          text-align: center;
-          border-bottom: 1px solid $color-line-border;
-          .form-radio-select-group {
-            padding: 0 30px;
-            display: inline-block;
-          }
-          ~ .product-option__qty {
-            margin-top: 20px;
-          }
-        }
-        &__qty {
-          padding-top: 10px;
-          text-align: center;
-          .qty-message {
-            margin-top: 20px;
-            font-size: 16px;
-            font-weight: 300;
-            color: $color-text-emphasize;
-          }
-        }
-        @include mq('desktop') {
-          margin: 0;
-          padding: 60px 0 40px;
-          &__guide {
-            top: 20px;
-            font-size: 14px;
-            color: $color-text-emphasize;
-            &:after {
-              @include sprite($common-landing-small-black);
-            }
-          }
-          &__color {
-            margin: 0;
-            padding-top: 20px;
-            text-align: left;
-            .colorchip {
-              padding: 0;
-            }
-            ~ .product-option__size {
-              margin-top: 20px;
-            }
-            ~ .product-option__qty {
-              margin-top: 20px;
-            }
-          }
-          &__size {
-            margin: 0;
-            padding-top: 20px;
-            text-align: left;
-            .form-radio-select-group {
-              .form-radio .name {
-                min-width: 70px;
-              }
-              padding: 0;
-            }
-            ~ .product-option__qty {
-              margin-top: 20px;
-            }
-          }
-          &__qty {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            text-align: left;
-            .qty-message {
-              margin-top: 0;
-            }
-          }
-        }
-      }
-    }
-    @include mq('desktop') {
-      .modal__footer {
-        margin: 30px 40px 60px;
-      }
-    }
-  }
-}
-
-// 검색
-.modal.modal--global-search {
+// 메인 홈 배너
+.modal.modal--home-notice {
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
   .modal-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    transform: none;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .modal__header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0;
-    width: 100%;
-    height: 60px;
-    box-sizing: border-box;
-    z-index: 2;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    background-color: rgba(255, 255, 255, 0.8);
-
-    &__title {
-      font-size: 18px;
-      line-height: 60px;
-      font-weight: 300;
-      color: #000;
-      text-align: center;
-    }
-    &__button {
-      top: 0;
-      left: 0;
-      right: auto;
-      width: 60px;
-      height: 60px;
-    }
+    border-radius: 20px;
+    overflow: hidden;
   }
   .modal__body {
-    position: relative;
-    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow: auto;
-    overflow-x: hidden;
-    padding-top: 60px;
-  }
-
-  transition-delay: 0.2s;
-  .modal-dialog {
-    transform: translate(100%, 0);
-    transition: transform 0.3s ease-out;
-    transition-delay: 0s;
-  }
-  &.active {
-    transition-delay: 0s;
-    .modal-dialog {
-      transform: translate(0, 0);
-      transition-delay: 0.2s;
-    }
-  }
-  @include mq('desktop') {
-    .modal-dialog {
-      top: 100px;
-      left: auto;
-      right: 30px;
-      height: auto;
-      width: 580px;
-      max-width: none;
-      margin: 0;
-      transform: translate(0, -60px);
-      background: transparent;
-      .modal__header {
-        display: none;
-      }
-      .modal__body {
-        padding-top: 0;
-        height: auto;
-        overflow: visible;
-        max-height: none;
-      }
-    }
-    &.active {
-      transition-delay: 0s;
-      .modal-dialog {
-        transform: translate(0, 0);
-        transition-delay: 0s;
-      }
-    }
-  }
-}
-
-.global-search-form {
-  > .input-block {
-    position: relative;
-    margin: 0 10px;
-    .form-text {
-      padding-right: 70px;
-      border-color: #c9c9c9;
-      &:focus {
-        border-color: #000;
-      }
-    }
-    .button--clear {
-      position: absolute;
-      top: 15px;
-      right: 44px;
-      display: none;
-      cursor: pointer;
-    }
-    .button--search {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 44px;
-      height: 50px;
-    }
-  }
-  .keyword--related {
-    margin: 10px 10px 0;
-
-    .keyword__list {
-      padding: 0 10px;
-    }
-    .keyword__item {
-      padding: 5px 0;
-      a {
-        position: relative;
-        display: block;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 20px;
-        text-decoration: none;
-        color: $color-text-emphasize;
-        &:after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
-          @include sprite($common-arrow-up-search);
-        }
-        mark {
-          background: transparent;
-          font-style: normal;
-          color: $color-text-point;
-        }
-      }
-    }
-  }
-
-  + .global-search-helper {
-    margin-top: 30px;
-  }
-  @include mq('desktop') {
-    > .input-block {
-      width: 100%;
-      margin: 0;
-      .form-text {
-        height: 80px;
-        border: 0;
-        font-size: 24px;
-        padding: 0 120px 0 20px;
-        &::placeholder {
-          font-size: 24px;
-        }
-      }
-      .button--clear {
-        top: 20px;
-        right: 70px;
-        .sprite-common-clear {
-          @include sprite($common-clear-large);
-        }
-      }
-      .button--search {
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        .sprite-common-search {
-          @include sprite($common-search-large);
-        }
-      }
-    }
-    .keyword--related {
-      margin: 20px 0 0 0;
-      background-color: #fff;
-      .keyword__list {
-        padding: 30px;
-        min-height: 300px;
-        box-sizing: border-box;
-      }
-      .keyword__item {
-        padding: 5px 0;
-      }
-    }
-  }
-}
-.global-search-helper {
-  padding: 0 0 50px;
-  @include mq('desktop') {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-.global-search-keyword {
-  margin: 0 20px;
-  .keyword {
-    position: relative;
-    + .keyword {
-      margin-top: 40px;
-    }
-    &__title {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 20px;
-      color: $color-text-emphasize;
-      ~ .keyword__list {
-        margin-top: 10px;
-      }
-    }
-    &__list {
-      .keyword__item {
-        font-size: 14px;
-        font-weight: 300;
-        padding: 6px 0;
+    .swiper-container {
+      padding-bottom: 2px;
+      .banner {
         a {
-          display: inline-block;
-          font-size: inherit;
-          font-weight: inherit;
-          line-height: 18px;
-          color: $color-text-emphasize;
-          text-decoration: none;
-          vertical-align: top;
-        }
-      }
-    }
-    &__util {
-      position: absolute;
-      top: 0;
-      right: 0;
-      .date {
-        font-size: 12px;
-        line-height: 18px;
-        color: $color-text-primary;
-        em {
-          font-style: normal;
-          font-weight: 450;
-        }
-      }
-      .button--delete {
-        position: relative;
-        padding-right: 26px;
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: 300;
-        color: $color-text-primary;
-        &:after {
-          content: '';
-          position: absolute;
-          top: -2px;
-          right: 0;
-          @include sprite($common-clear);
-        }
-      }
-    }
-  }
-  @include mq('desktop') {
-    width: 350px;
-    margin: 0;
-    padding: 30px 36px 50px 30px;
-    background-color: #fff;
-    box-sizing: border-box;
-  }
-}
-.global-search-recommend {
-  margin: 40px 20px 0;
-  .keyword {
-    position: relative;
-    &__title {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 20px;
-      color: $color-text-emphasize;
-    }
-    &__list {
-      font-size: 0;
-      margin: 10px -10px 0 -10px;
-      .keyword__item {
-        display: inline-block;
-        height: 34px;
-        margin: 10px 0 0 10px;
-        a {
-          display: inline-block;
-          padding: 0 10px;
-          height: 34px;
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 32px;
-          color: $color-text-point;
-          white-space: nowrap;
-          text-decoration: none;
-          box-sizing: border-box;
-          border-radius: 2px;
-          border: solid 1px $color-line-point;
-          vertical-align: top;
-        }
-      }
-    }
-  }
-  @include mq('desktop') {
-    width: 220px;
-    margin: 0;
-    padding: 30px 30px 50px;
-    background-color: #fff;
-    box-sizing: border-box;
-    .keyword {
-      &__list {
-        margin: 20px 0 0 0;
-        .keyword__item {
           display: block;
-          margin: 0;
-          + .keyword__item {
-            margin-top: 14px;
+          img {
+            width: 100%;
           }
         }
       }
-    }
-  }
-}
-
-.modal {
-  // 우편번호 찾기
-  &.modal--find-zipcode {
-    .modal__body {
-      padding-bottom: 100px;
-    }
-  }
-  // 매장 찾기
-  &.modal--shop-find {
-    .modal__body {
-      padding-bottom: 20px;
-    }
-    .shop-contents{
-      // max-height: 300px;
-      // overflow: scroll;
-      // overflow-x: hidden;
-      // -webkit-overflow-scrolling: touch;
-      .brand-area {
-        margin-bottom: 10px;
-      }
-      .address-area {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        .form-select{
-          width: 50%;
-          .select {
-            color: $color-text-disabled;
-          }
-          &:last-child {
-            margin-left: 6px;
-          }
-        }
-      }
-      .shop-search {
-        position: relative;
-        margin-bottom: 20px;
-        .button--search {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 44px;
-          height: 50px;
-        }
-      }
-      .btn-shop-find {
-        margin-bottom: 40px;
-      }
-      .shop-total {
-        margin-bottom: 30px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid $color-line-border;
-        font-size: 14px;
-        font-weight: 300;
-        &__num {
-          color: $color-text-point;
-          font-weight: 500;
-        }
-      }
-      .shop {
-        &__list {
-          margin-bottom: 30px;
-          .name {
-            margin-bottom: 6px;
-            color: $color-text-emphasize;
-            font-size: 14px;
-            font-weight: 500;
-          }
-          .address {
-            margin-bottom: 20px;
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 20px;
-          }
-          .button-area {
-            display: flex;
-            justify-content: space-between;
-            .button {
-              display: block;
-              width: 50%;
-              height: 40px;
-              border: 1px solid $color-line-border;
-              border-radius: 2px;
-              font-size: 12px;
-              line-height: 40px;
-              text-align: center;
-              &:last-child {
-                margin-left: 8px;
-              }
-            }
-            &__call {
-              &:before {
-                content: '';
-                display: inline-block;
-                vertical-align: middle;
-                @include sprite($common-tel);
-              }
-            }
-            &__shop {
-              &:before {
-                content: '';
-                display: inline-block;
-                vertical-align: middle;
-                @include sprite($common-rocation-info);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  // 배송지 목록
-  &.modal--delivery-list {
-    .modal__body {
-      padding-bottom: 100px;
-    }
-    .delivery-list {
-      &__area {
-        li {
-          .form-radio {
-            display: block;
-            margin-top: 10px;
-            .radio {
-              &:checked {
-                + .icon {
-                  + .box {
-                    border: 1px solid $color-line-emphasize;
-                  }
-                }
-              }
-            }
-            .icon {
-              position: absolute;
-              top: 50%;
-              right: 20px;
-              transform: translate(0, -50%);
-            }
-            .box {
-              width: 100%;
-              height: 100%;
-              padding: 20px 10px;
-              border: 1px solid $color-line-ready;
-              box-sizing: border-box;
-              .delivery-info {
-                font-size: 14px;
-                line-height: 14px;
-                &__zipcode {
-                  display: block;
-                  margin-bottom: 14px;
-                  color: $color-text-emphasize;
-                  font-weight: 500;
-                }
-                &__address {
-                  display: block;
-                  margin-bottom: 15px;
-                  padding-right: 30px;
-                  color: $color-text-emphasize;
-                  font-weight: 300;
-                  line-height:18px;
-                }
-                &__phone {
-                  display: block;
-                  color: $color-text-primary;
-                }
-              }
-            }
-          }
-          &:first-child {
-            margin-top: 0;
-          }
-        }
-      }
-      .button-more {
-        display: block;
-        position: relative;
-        width: 40px;
-        height: 40px;
-        margin: 30px auto 0 auto;
-        color: $color-text-primary;
-        background: none;
-        border: 0 none;
-        font-size: 14px;
-        text-align: center;
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 50%;
-          right: -14px;
-          transform: translate(0, -50%);
-          @include sprite($common-arrow-down-dropdown);
-        }
-      }
-    }
-  }
-  // 배송지 등록
-  &.modal--delivery-add {
-    .modal__body {
-      padding-bottom: 100px;
-    }
-    .delivery-add {
-      .button-delivery-list {
-        @include self-clear;
-        margin-bottom: 20px;
-        .button {
-          float: right;
-          position: relative;
-          padding-right: 20px;
-          &:after {
-            content: '';
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            @include sprite($common-landing-xsmall-black);
-          }
-        }
-      }
-      .form-flex {
-        display: flex;
-      }
-      .member-name {
-        margin-bottom: 10px;
-      }
-      .form-phone {
-        margin-bottom: 10px;
-        .form-select {
-          flex: 0 0 90px;
-          width: 90px;
-        }
-        .form-phone-input {
-          width: 100%;
-          margin: 0 0 0 10px;
-        }
-      }
-      .form-address {
-        margin-bottom: 10px;
-        .form-address-inp {
-          width: 100%;
-        }
-        .address-search {
-          flex: 0 0 106px;
-          width: 106px;
-          margin: 0 0 0 10px;
-        }
-      }
-      .form-address-detail {
-        margin-bottom: 10px;
-      }
-      .basics-delivery-setting {
-        .name{
-          color: $color-text-emphasize;
-        }
-      }
-    }
-  }
-  // 배지 획득
-  &.modal--obtain-badge {
-    .modal-dialog {
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 100%;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.9);
-      transform: none;
-    }
-    .modal__footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 0 10px;
-      box-sizing: border-box;
-      margin-left: 0;
-      margin-right: 0;
-    }
-    .obtain-badge {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      transform: translateY(-50%);
-      &__preview {
-        margin: 0 auto;
-        .hazzys-badge {
-          width: 160px;
-          height: 160px;
-        }
-      }
-      &__title {
-        margin-top: 40px;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 34px;
-        color: $color-text-emphasize;
-      }
-      &__description {
-        margin-top: 20px;
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 18px;
-      }
-    }
-    @include mq('desktop') {
-      .modal-dialog {
-        width: 500px;
-        top: 50%;
-        height: auto;
-        transform: translate(0, -50%);
-      }
-      .modal__footer {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        padding: 0 40px;
-      }
-      .obtain-badge {
-        position: relative;
+      .swiper-pagination--home-banner {
+        bottom: 0;
         top: auto;
-        width: 100%;
-        transform: none;
+        height: 2px;
+      }
+    }
+  }
+  .modal__footer {
+    margin: 0;
+    .text-button-group {
+      .text-button-group__item {
+        + .text-button-group__item {
+          position: relative;
+          &:before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            content: '';
+            width: 1px;
+            height: 22px;
+            background: #e6e6e6;
+            margin-top: -11px;
+          }
+          border-left: 0;
+        }
+        .button {
+          height: 60px;
+        }
+      }
+    }
+  }
+  &.modal--bottom-top {
+    .modal-dialog {
+      border-radius: 20px 20px 0 0;
+      @include mq('desktop') {
+        border-radius: 20px;
       }
     }
   }
 }
+
+// 사이트 공통 팝업 - 스타일
+@import './common/index.scss';

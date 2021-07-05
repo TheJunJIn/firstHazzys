@@ -1,14 +1,161 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '_swiper.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
 @import '_datepicker.scss';
-@import '_ui-slider.scss';
-@import '_aos.scss';
-
+@import 'ui-slider.scss';
+@import '../../components/accordion/index.scss';
 @import '../../components/sprites/sprite-common.scss';
 @import '../../components/sprites/sprite-mypage.scss';
 @include sprites($sprite-mypage-sprites);
 @import '../../components/sprites/sprite-order.scss';
+
+@mixin product-type-list {
+  .product {
+    &__image {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+      .product__image-state {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .state {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        z-index: 10;
+        .message {
+          font-size: 12px;
+          line-height: 24px;
+          height: 24px;
+          font-weight: 300;
+          color: $color-text-emphasize;
+          background-color: #fff;
+          box-sizing: border-box;
+        }
+      }
+    }
+    &__content {
+      position: relative;
+    }
+    &__info {
+      display: block;
+      font-size: 12px;
+      line-height: 18px;
+      color: $color-text-emphasize;
+      text-decoration: none;
+      .product__brand {
+        font-family: $font-gotham;
+        font-weight: 500;
+      }
+      .product__name {
+        font-weight: 300;
+        color: $color-text-primary;
+      }
+    }
+    &__price {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      font-family: $font-gotham;
+      font-size: 14px;
+      font-weight: 500;
+      .product__price-sale {
+        color: $color-text-emphasize;
+      }
+      .product__price-info {
+        .retail {
+          text-decoration: line-through;
+          color: $color-text-primary;
+        }
+        .discount {
+          color: $color-text-point;
+        }
+      }
+    }
+    &.product--soldout {
+      .product__image {
+        .product__image-state:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 5;
+        }
+        .swiper-pagination-container {
+          visibility: hidden;
+        }
+        .state {
+          overflow: hidden;
+          .message {
+            font-weight: 500;
+            border-radius: 24px;
+            padding: 5px 7px 0;
+            line-height: 15px;
+          }
+        }
+      }
+      .product__util {
+        visibility: hidden;
+      }
+    }
+    &.product--scheduled {
+      .product__image {
+        .state {
+          font-size: 0;
+          .icon,
+          .sprite-common {
+            display: inline-block;
+            vertical-align: top;
+          }
+          .icon {
+            padding: 4px;
+            background: #fff;
+            border-radius: 24px;
+          }
+          .message-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            &:hover {
+              .message {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+          .message {
+            position: relative;
+            margin-left: -10px;
+            padding: 5px 10px 0;
+            height: 24px;
+            line-height: 16px;
+            border-radius: 0 24px 24px 0;
+            white-space: nowrap;
+            display: inline-block;
+            z-index: -1;
+            opacity: 0;
+            transform: translate3d(-100px, 0, 0);
+            &.aos-animate {
+              animation: scheduled 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 // 상단 이미지 배경
 .shell-main--mypage {
@@ -95,10 +242,8 @@
     padding: 40px 20px 12px;
     box-sizing: border-box;
     border-radius: 20px;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+    @include background-blur(4px, 0.8);
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
 
     .my-info__membership {
       position: absolute;
@@ -544,23 +689,29 @@
         .swiper-slide {
           width: 120px;
         }
-        .product-image {
-          display: block;
-          position: relative;
-          width: 120px;
-          height: 0;
-          padding-top: 130%;
-          overflow: hidden;
-          img {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            transform: translateY(-50%);
-            height: auto;
-            // object-fit: cover;
+        .product {
+          @include product-type-list;
+          &__content {
+            margin-top: 10px;
+          }
+          &__info {
+            .product__brand {
+              @include text-ellipsis;
+            }
+            .product__name {
+              @include text-ellipsis;
+            }
+          }
+          &__price {
+            margin-top: 5px;
+            .product__price-info {
+              .retail {
+                display: none;
+              }
+            }
           }
         }
+        
         .swiper-button-prev,
         .swiper-button-next {
           visibility: hidden;
@@ -645,9 +796,11 @@
             visibility: visible;
           }
           .swiper-button-prev {
+            top: 78px;
             left: 0;
           }
           .swiper-button-next {
+            top: 78px;
             right: 0;
           }
         }
@@ -2571,11 +2724,9 @@
       height: 174px;
       padding: 20px;
       border-radius: 20px;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
+      @include background-blur(4px, 0.8);
       box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1);
       border: solid 1px rgba(255, 255, 255, 0.5);
-      background-color: rgba(255, 255, 255, 0.8);
       z-index: 2;
       box-sizing: border-box;
       color: $color-text-emphasize;
@@ -3052,7 +3203,6 @@
               left: 0;
               width: 100%;
               height: 100%;
-              border: 1px solid green;
               border: 1px solid $color-line-ready;
               border-radius: 6px;
               box-sizing: border-box;
@@ -3082,9 +3232,10 @@
               font-weight: 600;
               line-height: 30px;
               .icon {
-                img {
-                  margin-right: 4px;
+                margin-right: 4px;
+                .hazzys-badge {
                   width: 16px;
+                  height: 16px;
                   vertical-align: middle;
                 }
                 .name {
@@ -5997,523 +6148,11 @@
 
 // 팝업
 // =============================================================================
-.modal {
-  &.modal--store-location {
-    transition-delay: 0.2s;
-    .modal-dialog {
-      position: absolute;
-      top: 180px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      max-width: none;
-      transform: translate(0, 100%);
-      transition: transform 0.3s ease-out;
-      transition-delay: 0s;
-    }
-    .modal__header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 0 10px;
-      width: 100%;
-      height: 60px;
-      box-sizing: border-box;
-      z-index: 2;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
-      &__title {
-        font-size: 18px;
-        line-height: 60px;
-        font-weight: 500;
-        color: #000;
-        text-align: left;
-        padding-left: 10px;
-        border-bottom: 1px solid $color-line-emphasize;
-      }
-      &__button {
-        top: 0;
-        right: 0;
-        width: 60px;
-        height: 60px;
-      }
-    }
-    .modal__body {
-      position: relative;
-      height: 100%;
-      margin: 0;
-      padding: 90px 10px 20px;
-      box-sizing: border-box;
-      overflow: auto;
-      overflow-x: hidden;
-    }
-    .store-location-guide {
-      .tabs {
-        .tablist {
-          margin-bottom: 30px;
-        }
-      }
-      .pickup-guide {
-        padding-bottom: 40px;
-        &__row {
-          + .pickup-guide__row {
-            margin-top: 40px;
-          }
-        }
-        .guide {
-          + .guide {
-            margin-top: 40px;
-          }
-          font-size: 14px;
-          line-height: 20px;
-          font-weight: 300;
-          color: $color-text-emphasize;
-
-          &__title {
-            margin-bottom: 20px;
-            font-weight: 500;
-          }
-          &__item {
-            + .guide__item {
-              margin-top: 12px;
-            }
-            position: relative;
-            padding-left: 10px;
-            &:before {
-              content: '';
-              position: absolute;
-              top: 7px;
-              left: 0;
-              width: 2px;
-              height: 2px;
-              background: $color-solid-emphasize;
-              vertical-align: middle;
-            }
-          }
-          .comment {
-            color: $color-text-primary;
-          }
-        }
-      }
-      .store-location {
-        &__map {
-          margin-bottom: 20px;
-        }
-        &__info {
-          .store__title {
-            display: flex;
-            justify-content: space-between;
-            .store__name {
-              margin-right: 20px;
-              font-size: 18px;
-              font-weight: 500;
-              line-height: 30px;
-              color: $color-text-emphasize;
-            }
-            .store__phone {
-              display: inline-block;
-              padding: 4px 12px 0;
-              border: 1px solid $color-line-border;
-              color: $color-text-emphasize;
-              height: 30px;
-              font-size: 12px;
-              line-height: 24px;
-              font-weight: 300;
-              text-decoration: none;
-              box-sizing: border-box;
-              &:before {
-                content: '';
-                display: inline-block;
-                @include sprite($common-tel);
-                vertical-align: top;
-                margin-right: 3px;
-              }
-            }
-          }
-          .store__info {
-            margin-top: 40px;
-          }
-          .store__info__row {
-            + .store__info__row {
-              margin-top: 30px;
-            }
-          }
-          .info {
-            + .info {
-              margin-top: 30px;
-            }
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 20px;
-            color: $color-text-emphasize;
-            &__title {
-              font-weight: 500;
-              margin-bottom: 10px;
-            }
-            // &__content {}
-            .comment {
-              color: $color-text-primary;
-            }
-          }
-        }
-        .guide {
-          &__item {
-            line-height: 24px;
-            position: relative;
-            padding-left: 10px;
-            &:before {
-              content: '';
-              position: absolute;
-              top: 7px;
-              left: 0;
-              width: 2px;
-              height: 2px;
-              background: $color-solid-emphasize;
-              vertical-align: middle;
-            }
-          }
-        }
-      }
-    }
-    &.active {
-      transition-delay: 0s;
-      .modal-dialog {
-        transform: translate(0, 0);
-        transition-delay: 0.2s;
-      }
-    }
-    @include mq('desktop') {
-      .modal-dialog {
-        max-width: 650px;
-        top: 50%;
-        bottom: auto;
-        height: 680px;
-        transform: translateY(-50%);
-      }
-
-      .modal__header {
-        height: 90px;
-        padding: 0 40px;
-        &__title {
-          line-height: 80px;
-          text-align: center;
-        }
-      }
-      .modal__body {
-        padding: 90px 40px 20px;
-      }
-
-      &.active {
-        transition-delay: 0s;
-        .modal-dialog {
-          transform: translateY(-50%);
-          transition-delay: 0.2s;
-        }
-      }
-      .store-location-guide {
-        padding-top: 20px;
-        .pickup-guide {
-          .pickup-guide__row {
-            display: flex;
-            .guide {
-              flex: 1;
-              + .guide {
-                margin-left: 30px;
-                margin-top: 0;
-              }
-            }
-          }
-        }
-        .store-location {
-          &__map {
-            margin-bottom: 40px;
-          }
-          &__info {
-            .store__title {
-              justify-content: flex-start;
-            }
-            .store__info__row {
-              display: flex;
-            }
-            .info {
-              flex: 1;
-              + .info {
-                margin-top: 0;
-                margin-left: 30px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  // 나의 쿠폰 등록
-  &.modal--register-coupon {
-    .message__text {
-      color: $color-text-emphasize;
-    }
-    .coupon-register-form {
-      margin-top: 20px;
-      .form-text {
-        height: 40px;
-        line-height: 40px;
-      }
-    }
-  }
-  // 배지 혜택
-  &.modal--badge-benefit {
-    .badge-coupon-container {
-      .badge {
-        position: relative;
-        padding-left: 90px;
-        min-height: 64px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        &__date {
-          margin-top: 10px;
-          font-size: 14px;
-          color: $color-text-primary;
-        }
-        &__name {
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 18px;
-          color: $color-text-point;
-        }
-        &__preview {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-        }
-      }
-      .badge-coupon {
-        margin-top: 30px;
-        &__title {
-          font-size: 14px;
-          font-weight: 300;
-          line-height: 18px;
-          color: $color-text-emphasize;
-          strong {
-            font-weight: 500;
-            color: $color-text-point;
-          }
-        }
-        &__list {
-          margin-top: 24px;
-          padding-bottom: 20px;
-        }
-        &__item {
-          + .badge-coupon__item {
-            margin-top: 12px;
-          }
-          .coupon {
-            position: relative;
-            overflow: hidden;
-            padding: 14px;
-            height: 98px;
-            box-sizing: border-box;
-            &:before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              border: 1px solid green;
-              border: 1px solid $color-line-ready;
-              border-radius: 6px;
-              box-sizing: border-box;
-            }
-            &:after {
-              content: '';
-              position: absolute;
-              top: 50%;
-              right: 0;
-              width: 20px;
-              height: 20px;
-              border: 1px solid $color-line-ready;
-              border-radius: 100%;
-              transform: translate(50%, -50%);
-              background: #fff;
-              margin-right: -1px;
-              z-index: 2;
-            }
-            &__name {
-              font-size: 14px;
-              font-weight: 600;
-              line-height: 18px;
-              .icon {
-                .name {
-                  display: inline-block;
-                  vertical-align: middle;
-                }
-              }
-            }
-            &__condition {
-              margin-top: 6px;
-              font-size: 12px;
-              font-weight: 300;
-              line-height: 18px;
-            }
-            &__expiration {
-              position: absolute;
-              bottom: 14px;
-              left: 14px;
-              font-size: 12px;
-              font-weight: 300;
-              line-height: 18px;
-              color: $color-text-primary;
-              .countdown {
-                margin-left: 10px;
-                padding-left: 10px;
-                color: $color-text-point;
-                border-left: 1px solid $color-line-border;
-              }
-            }
-            &__state {
-              position: absolute;
-              display: inline-block;
-              top: 10px;
-              right: 10px;
-              padding: 4px 8px 0 9px;
-              height: 22px;
-              font-size: 12px;
-              font-weight: 300;
-              line-height: 18px;
-              color: #fff;
-              background-color: $color-solid-ready;
-              overflow: hidden;
-              box-sizing: border-box;
-            }
-  
-            &.active {
-              &:before,
-              &:after {
-                border-color: $color-line-emphasize;
-              }
-              .coupon__type,
-              .coupon__name,
-              .coupon__condition {
-                color: $color-text-emphasize;
-              }
-              .coupon__state {
-                background-color: $color-solid-point;
-              }
-            }
-          }
-        }
-      }
-      .hazzys-badge {
-        width: 64px;
-        height: 64px;
-      }
-      @include mq('desktop') {
-        .badge {
-          position: relative;
-          padding-left: 120px;
-          min-height: 94px;
-        }
-        .badge-coupon {
-          margin-top: 40px;
-          &__list {
-            margin-top: 30px;
-            padding-bottom: 30px;
-          }
-        }
-        .hazzys-badge {
-          width: 94px;
-          height: 94px;
-        }
-      }
-    }
-  }
-  // 상품평 배지 발급 조건
-  &.modal--review-badge-guide {
-    .review-badge-guide {
-      max-height: 344px;
-      overflow: auto;
-      overflow-x: hidden;
-      padding-bottom: 30px;
-      .review-type {
-        + .review-type {
-          margin-top: 45px;
-        }
-        &__title {
-          padding: 15px 0;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 1;
-          color: $color-text-emphasize;
-          border-bottom: 1px solid $color-line-emphasize;
-        }
-        &__content {
-          margin-top: 20px;
-        }
-      }
-      .badge-list {
-        &__item {
-          + .badge-list__item {
-            margin-top: 30px;
-          }
-          .badge {
-            &__name {
-              font-size: 14px;
-              font-weight: 500;
-              line-height: 22px;
-              color: $color-text-point;
-            }
-            &__condition {
-              margin-top: 10px;
-              font-size: 14px;
-              font-weight: 300;
-              line-height: 22px;
-              color: $color-text-emphasize;
-              strong {
-                font-weight: 300;
-                // color: $color-text-point;
-              }
-            }
-            &__benefit {
-              margin: 10px 0 0;
-              // .badge-benefit__list {}
-              .badge-benefit__item {
-                + .badge-benefit__item {
-                  margin-top: 10px;
-                }
-                position: relative;
-                padding-left: 10px;
-                font-size: 12px;
-                font-weight: 300;
-                line-height: 18px;
-                color: $color-solid-emphasize;
-                &:before {
-                  content: '';
-                  position: absolute;
-                  top: 7px;
-                  left: 0;
-                  width: 2px;
-                  height: 2px;
-                  background: $color-solid-emphasize;
-                  vertical-align: middle;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    @include mq('desktop') {
-      .modal__body {
-        padding-bottom: 40px;
-      }
-      .review-badge-guide {
-        background: #f8f8f8;
-        padding: 15px 20px 30px;
-      }
-    }
-  }
-}
+// 헤지스 스토어 안내
+@import '../../components/modal/mypage/store-location.scss';
+// 나의 쿠폰 등록
+@import '../../components/modal/mypage/register-coupon.scss';
+// 배지 혜택
+@import '../../components/modal/mypage/badge-benefit.scss';
+// 상품평 배지 발급 조건
+@import '../../components/modal/mypage/review-badge-guide.scss';

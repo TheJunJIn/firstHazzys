@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/order.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--order">
+        <div class="main-header">
+          <h2 class="main-header__title">주문 레이어 팝업 목록</h2>
+        </div>
+        <div class="main-content">
+          <style>
+            .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+          </style>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceDetail">가격안내 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalProductOption">상품 옵션 선택 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalOrderFail">주문 실패 재결제 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalSoldOut">주문 실패 품절상품 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalNoFamily">패밀리카드 미체크 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalOrderAgree">주문 이용약관 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalShopLocation">매장 위치안내 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalCouponChange">쿠폰 변경 팝업</button>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- 가격안내 #modalPriceDetail -->
+    @@include('components/modal/product/price-detail.html')
+    <!-- 옵션 변경 #modalProductOption -->
+    @@include('components/modal/order/product-option.html')
+    <!-- 주문 실패 재결제  #modalOrderFail -->
+    @@include('components/modal/order/order-fail.html')
+    <!-- 주문 실패 품절상품 #modalSoldOut -->
+    @@include('components/modal/order/order-soldout.html')
+    <!-- 패밀리카드 미선택 #modalNoFamily -->
+    @@include('components/modal/order/no-family.html')
+    <!-- 주문 이용 약관 #modalOrderAgree -->
+    @@include('components/modal/order/order-agree.html')
+    <!-- 매장 위치 #modalShopLocation -->
+    @@include('components/modal/order/shop-location.html')
+    <!-- 쿠폰변경 #modalCouponChange -->
+    @@include('components/modal/order/coupon-change.html')
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/order.js"></script>
+  </body>
+</html>

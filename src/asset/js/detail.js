@@ -1,5 +1,6 @@
-import rangesliderJs from 'rangeslider-js'
+import rangesliderJs from 'rangeslider-js';
 import ShoutAndListen from './_util/shout-and-listen';
+import ZoomCursor from '../../components/zoom-cursor';
 
 window.rangesliderJs = rangesliderJs;
 const sal = new ShoutAndListen('detail');
@@ -8,7 +9,6 @@ const listen = sal.listen.bind(sal);
 const report = sal.report.bind(sal);
 
 const { $ } = window;
-
 
 $(function () {
   $(document)
@@ -24,9 +24,6 @@ const states = {
     isHidden: false,
     height: 60,
     options: {}
-  },
-  productImage: {
-    isFixed: false
   }
 };
 
@@ -72,6 +69,63 @@ const productDetailSticky = {
   }
 };
 
+// 이미지영역 고정 정보
+const productDetailImageSticky = {
+  __cache: {},
+  top: 0,
+  height: 0,
+  containerHeight: 0,
+  get container() {
+    if (this.__cache.container) {
+      return this.__cache.container;
+    }
+    this.__cache.container = document.querySelector('.product-detail');
+    return this.__cache.container;
+  },
+  get element() {
+    if (this.__cache.element) {
+      return this.__cache.element;
+    }
+
+    this.__cache.element = document.querySelector('.product-detail__image');
+    return this.__cache.element;
+  },
+  get isEnabled() {
+    return states.viewType === 'desktop';
+  },
+  updateHeight() {
+    if (this.isEnabled && this.element && this.container) {
+      this.height = this.element.getBoundingClientRect().height;
+      this.containerHeight = this.container.getBoundingClientRect().height;
+    }
+  },
+  changeStyleTop(scrollY = window.scrollY) {
+    if (this.isEnabled && this.element && this.container) {
+      let breakPoint = this.containerHeight - this.height + states.header.height;
+      if(states.header.isHidden) {
+        breakPoint += states.header.height
+      }
+      if (scrollY > breakPoint) {
+        console.log('scrollY > breakPoint')
+        this.element.style.top = `${-(scrollY - breakPoint)}px`;
+      } else {
+        this.element.style.top = '';
+      }
+    }
+    if(!this.isEnabled && this.element){
+      this.top = 0;
+      this.element.style.top = '';
+    }
+  },
+}
+
+
+// 대표이미지 확대보기 마우스 커서 
+const imageBlock = document.querySelector('.product-detail__image');
+const zoomCursor = new ZoomCursor({
+  root: imageBlock
+});
+
 function setTopButtonOffset() {
   if (states.viewType === 'mobile') {
     const totalAmount = document.querySelector('.total-amount');
@@ -96,6 +150,13 @@ function onViewTypeChange(viewType) {
   productDetailSticky.showIfNeeded();
   hideOnScrollAfter = productDetailSticky.top || states.header.height;
 
+  // zoomCursor
+  if(viewType === 'desktop') {
+    zoomCursor.enable();
+  } else {
+    zoomCursor.disable();
+  }
+
   if (typeof hideOnScrollAfter === 'number') {
     shout('header', [
       'setOption',
@@ -107,22 +168,31 @@ function onViewTypeChange(viewType) {
   setTopButtonOffset();
 }
 
+
 listen('load', () => {
   productDetailSticky.updateTop();
   productDetailSticky.showIfNeeded();
-
+  productDetailImageSticky.updateHeight();
+  productDetailImageSticky.changeStyleTop();
 });
 listen('resize', () => {
   productDetailSticky.updateTop();
   productDetailSticky.showIfNeeded();
+  productDetailImageSticky.updateHeight();
+  productDetailImageSticky.changeStyleTop();
 });
 
 listen('scroll', ({ scrollY }) => {
   productDetailSticky.showIfNeeded(scrollY);
+  productDetailImageSticky.changeStyleTop(scrollY);
 });
 
 listen('viewTypeChanged', ({ value }) => {
   onViewTypeChange(value);
+});
+
+listen('headerIsHidden', (value) => {
+  states.header.isHidden = value;
 });
 
 report('viewType').then(({ viewType }) => {
@@ -132,56 +202,3 @@ report('viewType').then(({ viewType }) => {
 report('header').then((state) => {
   states.header = Object.assign({}, state);
 });
-
-
-let scrollDirection = 'down';
-let scrollY = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
-window.addEventListener('scroll', () => {
-    const newScrollY = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
-    const oldScrollY = scrollY;
-    if (newScrollY > scrollY) {
-      scrollDirection = 'down';
-    } else {
-      scrollDirection = 'up';
-    }
-    scrollY = newScrollY <= 0 ? 0 : newScrollY;
-    onDynamicScroll(oldScrollY, scrollY);
-    scrollY = newScrollY;
-  },
-  false,
-);
-
-
-let fixedTop = 0;
-const main = document.querySelector('.shell-main');
-const container = document.querySelector('.product-detail');
-const imageBlock = document.querySelector('.product-detail__image');
-function onDynamicScroll(oldScrollY, scrollY){
-  const { height: containerHeight } = container.getBoundingClientRect();
-  const { height: imageBlockHeight } = imageBlock.getBoundingClientRect();
-  let smallerThanWindow = 0;
-
-  if(scrollY < 1){
-    return false;
-  }
-
-  // 스크롤이 헤더의 높이값보다 크거나 같을경우 고정
-  if (scrollY >= states.header.height) {
-    main.classList.add('is-fixed');
-  } else {
-    main.classList.remove('is-fixed');
-    imageBlock.style.top = '';
-  }
-
-  smallerThanWindow = imageBlockHeight - $(window).height();
-  if(scrollDirection === 'down') {
-    fixedTop = Math.min(fixedTop + scrollY - oldScrollY, Math.max(smallerThanWindow, 0));
-  } else {
-    fixedTop = Math.max(fixedTop + scrollY - oldScrollY, 0);
-  }
-  imageBlock.style.top = `${-(fixedTop)}px`;
-  const breakPoint = containerHeight + states.header.height - imageBlockHeight + fixedTop;
-  if(scrollY > breakPoint){
-    imageBlock.style.top = `${-(scrollY - breakPoint + fixedTop)}px`;
-  }
-}

@@ -1,11 +1,9 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '_swiper.scss';
-@import '_ui-slider.scss';
-@import '_aos.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+
 @import '../../components/sidebar/index.scss';
 @import '../../components/sprites/sprite-common.scss';
-@import '../../components/navigation/list-category.scss';
+// @import '../../components/navigation/list-category.scss';
 
 .main-header {
   position: relative;
@@ -530,6 +528,7 @@
     &:after {
       bottom: -12px;
       right: 93px;
+      box-shadow: inset 0 20px 20px 0 rgba(0, 0, 0, 0.1);
     }
     .button--coupon-down {
       display: block;

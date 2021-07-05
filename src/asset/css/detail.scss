@@ -1,8 +1,9 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '_swiper.scss';
-@import '_ui-slider.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'ui-slider.scss';
 
+@import '../../components/accordion/index.scss';
+@import '../../components/table/index.scss';
 @import '../../components/sidebar/index.scss';
 @import '../../components/sprites/sprite-common.scss';
 
@@ -156,7 +157,7 @@
           transform: translateY(-50%);
           height: auto;
           pointer-events: auto;
-          cursor: url('/cmsstatic/asset/images/cursor-open.png'), auto;
+          // cursor: url('/cmsstatic/asset/images/cursor-open.png'), auto;
         }
       }
       .swiper-button-prev,
@@ -197,6 +198,34 @@
           white-space: nowrap;
           overflow: hidden;
         }
+      }
+    }
+    .zoom-cursor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: solid 1px #000;
+      border-radius: 100%;
+      opacity: 0;
+      transition: opacity .1s linear;
+      transform: translate(-50%, -50%);
+      @include background-blur(4px, 0.4);
+      z-index: 10;
+      pointer-events: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include sprite($common-cursor-plus);
+      }
+      &.active {
+        opacity: 1;
+        transition-duration: .3s;
       }
     }
   }
@@ -635,9 +664,7 @@
       // display: flex; // 옵션선택 후 가격이 노출되면, 없앨 수 가 없음;;
       justify-content: space-between;
       align-items: center;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
+      @include background-blur(4px, 0.8);
       height: 50px;
       padding: 0 10px;
       font-size: 16px;
@@ -1393,16 +1420,18 @@
   @include mq('desktop') {
     @include self-clear;
     &__image {
-      position: relative;
-      float: left;
       width: 50%;
+      position: fixed;
+      top: 0;
+      right: 50%;
+      padding-top: 60px;
+
       @at-root {
-        .is-fixed #{&} {
-          position: fixed;
-          top: 0;
-          right: 50%;
+        .header_is_hidden #{&} {
+          transform: translateY(-60px); // 헤더 높이값 만큼
         }
       }
+
       .product-detail__swiper {
         .product-image {
           padding-top: 115%;
@@ -1410,7 +1439,7 @@
       }
       .product-detail__util {
         right: 30px;
-        top: 30px;
+        top: 90px;
       }
     }
     &__info {
@@ -1422,7 +1451,6 @@
     }
   }
 }
-
 // 우측 사이드바
 // =============================================================================
 .shell-sidebar {
@@ -1715,7 +1743,7 @@
     @include mq('desktop') {
       &__title {
         .request {
-          width: 200px;
+          // width: 200px;
         }
       }
       &__list {
@@ -2188,8 +2216,6 @@
   }
 }
 
-
-
 // 팝업
 // =============================================================================
 .modal {
@@ -2550,7 +2576,11 @@
     }
   }
   @include mq('desktop') {
-    margin-top: 250px;
+    position: relative;
+    margin-top: 0;
+    padding-top: 250px;
+    z-index: 2;
+    background-color: #fff;
     &__title {
       font-family: $font-gotham;
       font-weight: 600;

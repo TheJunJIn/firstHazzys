@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/member.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--member shell-main--member-column">
+        <div class="main-header">
+          <h2 class="main-header__title">간편 회원가입</h2>
+        </div>
+        <div class="main-content">
+          <form action="#">
+            <div class="member-form-group">
+              <div class="member-form member-form--signup">
+                <!-- 아이디 -->
+                <div class="member-form__field form-block">
+                  <div class="form-block__field">
+                    <div class="input-block">
+                      <input type="text" class="form-text" placeholder="아이디">
+                    </div>
+                  </div>
+                  <div class="form-block__field form-block__field--button">
+                    <button type="button" class="form-button">중복 확인</button>
+                    <button type="button" class="form-button active">중복 확인</button>
+                  </div>
+                </div>
+
+                <!-- 이름 -->
+                <div class="member-form__field">
+                  <div class="input-block">
+                    <input type="text" class="form-text" placeholder="이름">
+                  </div>
+                </div>
+
+                <!-- 이메일 -->
+                <div class="member-form__field form-block">
+                  <div class="form-block__field">
+                    <div class="input-block">
+                      <input type="text" class="form-text" placeholder="이메일">
+                    </div>
+                  </div>
+                  <div class="form-block__field form-block__field--domain">
+                    <span class="form-select">
+                      <select class="select">
+                        <option value="">직접 입력</option>
+                        <option value="gmail.com">@gmail.com</option>
+                        <option value="naver.com">@naver.com</option>
+                      </select>
+                      <i class="icon"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- 본인인증 [UPDATE: 0618] -->
+                <div class="member-form__field member-form__field__cert">
+                  <p class="member-form__field__title">안전한 회원가입을 위한 본인인증 단계입니다.</p>
+                  <button type="button" class="form-button form-button--plain">휴대전화 인증</button>
+                  <button type="button" class="form-button form-button--plain">
+                    <i class="sprite-icon sprite-common sprite-common-checkbox-plain-on"></i>
+                    본인인증이 완료되었습니다.
+                  </button>
+                </div>
+                <!-- //본인인증 [UPDATE: 0618] -->
+
+              </div>
+              <div class="member-form member-form--signup">
+
+                <!-- 추천인 아이디 [UPDATE: 0618] -->
+                <div class="member-form__field member-form__field__cert">
+                  <p class="member-form__field__title">추천인 아이디를 입력하시면 추가 혜택을 드려요!</p>
+                  <div class="form-block">
+                    <div class="form-block__field">
+                      <div class="input-block">
+                        <input type="text" class="form-text" placeholder="[선택] 추천인 아이디">
+                      </div>
+                    </div>
+                    <div class="form-block__field form-block__field--button">
+                      <button type="button" class="form-button">아이디 확인</button>
+                      <button type="button" class="form-button active">아이디 확인</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 추천인 아이디 [UPDATE: 0618] -->
+
+                <!-- 14세 이상 -->
+                <div class="member-form__agreement agreement">
+                  <div class="agreement__header">
+                    <label class="form-checkbox agreement-check-all">
+                      <input type="checkbox" class="checkbox">
+                      <span class="name">[필수] 만 14세 이상입니다.</span>
+                    </label>
+                  </div>
+                </div>
+                <!-- //14세 이상 -->
+
+                <!-- 헤지스닷컴 이용약관 동의 -->
+                <div class="member-form__agreement agreement" data-foldable>
+                  <div class="agreement__header">
+                    <label class="form-checkbox agreement-check-all">
+                      <input type="checkbox" class="checkbox">
+                      <span class="name">[필수] 헤지스닷컴 이용 약관 모두 동의</span>
+                    </label>
+                    <button type="button" class="button policy-toggle-button" data-foldable-toggle>열기/닫기</button>
+                  </div>
+                  <div class="agreement__body" data-foldable-content>
+                    <ul class="policy">
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[필수] 헤지스닷컴 이용약관</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox" />
+                          <span class="name">[필수] 개인정보 수집 및 이용 동의</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox" />
+                          <span class="name">[선택] 헤지스닷컴 마케팅 정보 수신 동의</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- LF members 이용약관 동의 -->
+                <div class="member-form__agreement agreement" data-foldable>
+                  <div class="agreement__header">
+                    <label class="form-checkbox agreement-check-all">
+                      <input type="checkbox" class="checkbox">
+                      <span class="name">[필수] LFmembers 이용약관 모두 동의</span>
+                    </label>
+                    <button type="button" class="button policy-toggle-button" data-foldable-toggle>열기/닫기</button>
+                  </div>
+                  <div class="agreement__body" data-foldable-content>
+                    <ul class="policy">
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[필수] LFmembers 통합이용약관</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[필수] LFmembers 개인정보 수집 및 이용 동의</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[선택] LFmembers 마케팅 정보 수신 동의</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- LF members 패밀리사이트 약관 동의 -->
+                <div class="member-form__agreement agreement" data-foldable>
+                  <div class="agreement__header">
+                    <label class="form-checkbox agreement-check-all">
+                      <input type="checkbox" class="checkbox">
+                      <span class="name">[선택] LFmembers 패밀리사이트 이용약관</span>
+                    </label>
+                    <button type="button" class="button policy-toggle-button" data-foldable-toggle>열기/닫기</button>
+                  </div>
+                  <div class="agreement__body" data-foldable-content>
+                    <ul class="policy">
+                      <li class="policy__item">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[선택] 어라운드더코너 이용약관 모두 동의</span>
+                        </label>
+                      </li>
+                      <li class="policy__item policy__item--indent">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[필수] 어라운드더코너 이용약관</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                      <li class="policy__item policy__item--indent">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[필수] 어라운드더코너 개인정보 수집 및 이용 안내</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                      <li class="policy__item policy__item--indent">
+                        <label class="policy__name form-checkbox form-checkbox--plain">
+                          <input type="checkbox" class="checkbox">
+                          <span class="name">[선택] 어라운드더코너 마케팅 정보 수신 동의</span>
+                        </label>
+                        <button type="button" class="button policy-view-button">보기</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+
+                <!-- 개인정보 유효기간 설정 -->
+                <div class="member-form__field privacy_expiry_date member-form__field-guide">
+                  <div class="privacy_expiry_date__title">개인정보 유효기간 설정</div>
+                  <div class="privacy_expiry_date__content">미 선택 시 개인정보 유효기간은 1년으로 설정됩니다.</div>
+                  <div class="form-block">
+                    <div class="form-block__field">
+                      <label class="form-radio form-radio">
+                        <input type="radio" name="privacy_expiry_date" class="radio">
+                        <span class="name">회원 탈퇴시까지</span>
+                      </label>
+                    </div>
+                    <div class="form-block__field">
+                      <label class="form-radio form-radio">
+                        <input type="radio" name="privacy_expiry_date" class="radio">
+                        <span class="name">3년</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="member-form__field member-form__submit">
+                  <button type="button" class="form-button">회원가입</button>
+                  <button type="button" class="form-button active">회원가입</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/member.js"></script>
+  </body>
+</html>

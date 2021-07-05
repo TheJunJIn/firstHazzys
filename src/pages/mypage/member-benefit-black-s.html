@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html', {
+        modifierClass: "shell-header--white"
+      })
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage shell-main--mypage-membership">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--membership">
+              <div class="main-content__header main-content__header--sub">
+                <h3 class="main-content__title">회원혜택</h3>
+              </div>
+
+              <!-- 회원등급 : BLACK S -->
+              <div class="membership membership--member-black-s">
+                <div class="membership__card">
+                  <p class="membership__grade">BLACK S</p>
+                  <p class="membership__number">9101328512000000</p>
+                  <p class="membership__user">
+                    <span class="name">해지수님은 BLACK S 회원입니다.</span>
+                    <span class="date">2019.04.07</span>
+                  </p>
+                  <span class="membership__badge hazzys-badge hazzys-badge--member-black-s">
+                    <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLACK S"></span>
+                  </span>
+                  <span class="membership__logo"><i class="sprite-icon sprite-mypage sprite-mypage-lfmembers">LF Members</i></span>
+                </div>
+                <div class="membership__benefit">
+                  <ul class="benefit-list">
+                    <li class="benefit-list__item">
+                      <i class="sprite-icon sprite-mypage sprite-mypage-coin-white"></i>
+                      온라인 구매 시<br>최대 3% 적립
+                    </li>
+                    <li class="benefit-list__item">
+                      <i class="sprite-icon sprite-mypage sprite-mypage-coupon-white"></i>
+                      온라인 구매 시 <br>월 15% 상품쿠폰 2매
+                    </li>
+                    <li class="benefit-list__item">
+                      <i class="sprite-icon sprite-mypage sprite-mypage-super-coupon-white"></i>
+                      온라인 구매 시 <br>월  7% 플러스쿠폰  1매
+                    </li>
+                    <li class="benefit-list__item">
+                      <i class="sprite-icon sprite-mypage sprite-mypage-claim-white"></i>
+                      무료 반품<br>월 2회
+                    </li>
+                    <li class="benefit-list__item">
+                      <i class="sprite-icon sprite-mypage sprite-mypage-birth-white"></i>
+                      생일 혜택 <br>15% 상품쿠폰
+                    </li>
+                    <li class="benefit-list__item">
+                      <i class="sprite-icon sprite-mypage sprite-mypage-badge-white"></i>
+                      최초 승급 시<br>배지 혜택
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- //회원등급 : BLACK S -->
+
+              <!-- 등급별 혜택 안내 -->
+              <div class="membership-benefit">
+                <p class="membership-benefit__title">등급별 혜택 안내</p>
+                <div class="membership-benefit__description">
+                  고객님께 받은 사랑을 혜택으로 돌려드려요.<br>
+                  실적에 따라 달라지는 다양한 혜택을 확인해보세요.
+                </div>
+                <div class="membership-benefit__swiper">
+                  <!-- 배지 -->
+                  <div class="swiper-badge">
+                    <div class="swiper-container" id="badgeSwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <span class="membership__badge hazzys-badge hazzys-badge--member-white">
+                            <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-white.png" alt="White"></span>
+                          </span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span class="membership__badge hazzys-badge hazzys-badge--member-blue">
+                            <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-blue.png" alt="Blue"></span>
+                          </span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span class="membership__badge hazzys-badge hazzys-badge--member-red">
+                            <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-red.png" alt="RED"></span>
+                          </span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span class="membership__badge hazzys-badge hazzys-badge--member-purple">
+                            <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-purple.png" alt="PURPLE"></span>
+                          </span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span class="membership__badge hazzys-badge hazzys-badge--member-black-s">
+                            <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-s.png" alt="BLACK S"></span>
+                          </span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span class="membership__badge hazzys-badge hazzys-badge--member-black-r">
+                            <span class="badge-name"><img src="/cmsstatic/asset/images/badge/txt-black-r.png" alt="BLACK R"></span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                  <!-- //배지 -->
+                  <!-- 설명 -->
+                  <div class="swiper-grade" id="badgeSwiperContent">
+                    <!-- White -->
+                    <dl class="grade grade--member-white">
+                      <dt class="grade__name">WHITE</dt>
+                      <dd class="grade__condition">신규 회원</dd>
+                      <dd class="grade__benefit">
+                        <ul class="benefit">
+                          <li class="benefit__item">온라인 구매 시 최대 1% 적립</li>
+                          <li class="benefit__item">온라인 구매 시 월 10% 상품쿠폰 1매</li>
+                          <li class="benefit__item">온라인 구매 시 월  5% 플러스쿠폰 1매</li>
+                          <li class="benefit__item">무료반품 월 1회</li>
+                          <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <!-- // White -->
+              
+                    <!-- Blue -->
+                    <dl class="grade grade--member-blue">
+                      <dt class="grade__name">BLUE</dt>
+                      <dd class="grade__condition">6개월간 구매건수 1회 이상 회원</dd>
+                      <dd class="grade__benefit">
+                        <ul class="benefit">
+                          <li class="benefit__item">온라인 구매 시 최대 1% 적립</li>
+                          <li class="benefit__item">온라인 구매 시 월 12% 상품쿠폰 1매</li>
+                          <li class="benefit__item">온라인 구매 시 월  5% 플러스쿠폰 1매</li>
+                          <li class="benefit__item">무료반품 월 1회</li>
+                          <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <!-- //Blue -->
+
+                    <!-- Red -->
+                    <dl class="grade grade--member-red">
+                      <dt class="grade__name">RED</dt>
+                      <dd class="grade__condition">6개월간 구매금액 10만 원 이상 회원</dd>
+                      <dd class="grade__benefit">
+                        <ul class="benefit">
+                          <li class="benefit__item">온라인 구매 시 최대 2% 적립</li>
+                          <li class="benefit__item">온라인 구매 시 월 12% 상품쿠폰 1매</li>
+                          <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 1매</li>
+                          <li class="benefit__item">무료반품 월 1회</li>
+                          <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <!-- //Red -->
+
+                    <!-- Purple -->
+                    <dl class="grade grade--member-purple">
+                      <dt class="grade__name">PURPLE</dt>
+                      <dd class="grade__condition">6개월간 구매금액 30만 원 이상 회원</dd>
+                      <dd class="grade__benefit">
+                        <ul class="benefit">
+                          <li class="benefit__item">온라인 구매 시 최대 2% 적립</li>
+                          <li class="benefit__item">온라인 구매 시 월 12% 상품쿠폰 2매</li>
+                          <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 1매</li>
+                          <li class="benefit__item">무료반품 월 2회</li>
+                          <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <!-- //Purple -->
+
+                    <!-- BLACK S -->
+                    <dl class="grade grade--member-black-s">
+                      <dt class="grade__name">BLACK S</dt>
+                      <dd class="grade__condition">6개월간 구매금액 50만 원 이상 회원</dd>
+                      <dd class="grade__benefit">
+                        <ul class="benefit">
+                          <li class="benefit__item">온라인 구매 시 최대 3% 적립</li>
+                          <li class="benefit__item">온라인 구매 시 월 15% 상품쿠폰 2매</li>
+                          <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 1매</li>
+                          <li class="benefit__item">무료반품 월 2회</li>
+                          <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <!-- //BLACK S -->
+
+                    <!-- BLACK R -->
+                    <dl class="grade grade--member-black-r">
+                      <dt class="grade__name">BLACK R</dt>
+                      <dd class="grade__condition">6개월간 구매금액 100만 원 이상 회원</dd>
+                      <dd class="grade__benefit">
+                        <ul class="benefit">
+                          <li class="benefit__item">온라인 구매 시 최대 3% 적립</li>
+                          <li class="benefit__item">온라인 구매 시 월 15% 상품쿠폰 2매</li>
+                          <li class="benefit__item">온라인 구매 시 월  7% 플러스쿠폰 2매</li>
+                          <li class="benefit__item">무료반품 월 2회</li>
+                          <li class="benefit__item">생일 혜택  15% 상품쿠폰</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <!-- //BLACK R -->
+
+                  </div>
+                  <!-- //설명 -->
+                </div>
+              </div>
+              <!-- //등급별 혜택 안내 -->
+
+              <!-- 유의사항 -->
+              @@include('pages/mypage/_partials/member-benefit-membership-notice.html')
+              <!-- //유의사항 -->
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0401'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+    <script>
+    function badgeContent(idx){
+      if(!idx) {
+        idx = 0;
+      }
+      var badgeContent = $('#badgeSwiperContent');
+      badgeContent
+        .find(' > .grade')
+        .removeClass('active')
+        .eq(idx)
+        .addClass('active');
+    }
+    $(function(){
+
+      var swiper = new Swiper('#badgeSwiper', {
+        loop: false,
+        init: false,
+        // initialSlide:  White: 0, Blue: 1, Red: 2 .... 회원등급에 따라 설정
+        initialSlide: 4,
+        spaceBetween: 40,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+      swiper.on('slideChange', function(){
+        badgeContent(swiper.activeIndex);
+      });
+      swiper.on('init', function(){
+        badgeContent(swiper.activeIndex);
+        $(swiper.el).addClass('swiper-container--active');
+      });
+      swiper.init();
+    })
+    </script>
+  </body>
+</html>

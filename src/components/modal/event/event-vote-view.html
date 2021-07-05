@@ -1,0 +1,72 @@
+<!-- 이벤트 투표 상세 -->
+<div id="modalEventVoteView" class="modal modal--full modal--event-vote-view" tabindex="-1" role="dialog" data-modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal__header">
+      <button type="button" class="modal__header__button" aria-label="닫기" data-modal-close>
+        <i class="sprite-icon sprite-common sprite-common-close-layer-white">닫기</i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="event-vote-view">
+        <div class="swiper-container" id="eventVoteView">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="vote-image">
+                <img src="/cmsstatic/asset/images/temp/event_460x460_1.jpg" alt="이미지명">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="vote-image">
+                <img src="/cmsstatic/asset/images/temp/event_460x460_2.jpg" alt="이미지명">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="vote-image">
+                <img src="/cmsstatic/asset/images/temp/event_460x460_3.jpg" alt="이미지명">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-fraction">
+            <span class="swiper-pagination-current">1</span>/<span class="swiper-pagination-total">9</span>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="vote-content">
+          <p class="vote-content__id">haz***</p>
+          <p class="vote-content__text">울집 아기 댕댕이 너무 귀엽죠? 너무 귀여워서 이 귀여움을 카메라에 다 담을 순 없지만 헤지스의 왕관처럼 댕댕만의 왕관을 카리스마있게 써봤어용</p>
+          <div class="vote-content__reply">
+            <h3 class="title-line">댓글 <em class="num">3</em></h3>
+            <ul class="vote-reply-list">
+              <li class="reply-box">
+                <div class="user-info">
+                  <span class="user-id">haz*** 님</span>
+                  <span class="regist-date">2021.05.05</span>
+                </div>
+                <p class="reply-text">강아지가 너무 귀여워요~</p>
+              </li>
+              <li class="reply-box">
+                <div class="user-info">
+                  <span class="user-id">haz*** 님</span>
+                  <span class="regist-date">2021.05.05</span>
+                </div>
+                <p class="reply-text">추천 누르고 가요!</p>
+              </li>
+              <li class="reply-box">
+                <div class="user-info">
+                  <span class="user-id">haz*** 님</span>
+                  <span class="regist-date">2021.05.05</span>
+                </div>
+                <p class="reply-text">재미있는 아이디어네요.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="button-reply-regist">
+            <textarea id="replyTextRegist" class="form-text" cols="40" row="5" placeholder="댓글을 입력해주세요"></textarea>
+            <button type="button" class="form-button form-button--main">입력</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

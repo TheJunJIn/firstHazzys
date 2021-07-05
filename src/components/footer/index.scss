@@ -1,7 +1,14 @@
+@import '../../asset/css/variables.scss';
+@import '../../asset/css/mixins.scss';
+
 .shell-footer {
   margin: 120px 10px 0;
   padding-bottom: 50px;
   border-top: 1px solid #000;
+  @include mq('desktop') {
+    margin: 0 30px;
+    margin-top: 300px;
+  }
 
   .footer {
     &__media {
@@ -13,10 +20,7 @@
         line-height: 0;
         .sprite-common {
           display: inline-block;
-          text-indent: 100%;
-          line-height: 2;
-          white-space: nowrap;
-          overflow: hidden;
+          @include text-hidden;
         }
       }
       .media {
@@ -28,10 +32,7 @@
           display: inline-block;
           .sprite-common {
             display: inline-block;
-            text-indent: 100%;
-            line-height: 2;
-            white-space: nowrap;
-            overflow: hidden;
+            @include text-hidden;
           }
           + .media__item {
             margin-left: 20px;
@@ -108,14 +109,9 @@
       margin-top: 20px;
       font-size: 12px;
       line-height: 18px;
-      font-family: $font-gotham;
       text-align: center;
     }
-  }
-  @include mq('desktop') {
-    margin: 0 30px;
-    margin-top: 300px;
-    .footer {
+    @include mq('desktop') {
       position: relative;
       padding: 50px 0 0 270px;
 

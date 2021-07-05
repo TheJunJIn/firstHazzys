@@ -1,5 +1,5 @@
-@import '_variables.scss';
-@import '_mixins.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
 @import '../../components/sprites/sprite-common.scss';
 @import '../../components/sprites/sprite-order.scss';
 @include sprites($sprite-order-sprites);
@@ -1017,7 +1017,7 @@
             .radio {
               &:checked {
                 + .name:before{
-                  @include sprite-position($order-radio-on);
+                  @include sprite-position($common-radio-on);
                 }
               }
             }
@@ -1025,7 +1025,7 @@
               color: $color-text-emphasize;
               font-size: 12px;
               &:before {
-                @include sprite($order-radio);
+                @include sprite($common-radio);
               }
             }
           }
@@ -1064,7 +1064,7 @@
                 color: $color-text-point;
               }
               + .name:before{
-                @include sprite-position($order-check-on);
+                @include sprite-position($common-check-on);
               }
             }
           }
@@ -1076,7 +1076,7 @@
             font-size: 12px;
             line-height: 30px;
             &:before {
-              @include sprite($order-check);
+              @include sprite($common-check);
             }
           }
         }
@@ -1155,14 +1155,14 @@
           .radio {
             &:checked {
               + .name:before{
-                @include sprite-position($order-radio-on);
+                @include sprite-position($common-radio-on);
               }
             }
           }
           .name {
             color: $color-text-emphasize;
             &:before {
-              @include sprite($order-radio);
+              @include sprite($common-radio);
             }
           }
           + .form-radio {
@@ -1580,45 +1580,7 @@
     line-height: 24px;
     text-align: center;
   }
-
-  // 주문 이용 약관
-  &.modal--order-policy {
-    .order-agree {
-      &__title {
-        color: $color-text-emphasize;
-        font-size: 12px;
-        line-height: 22px;
-      }
-      &__box {
-        height: 90px;
-        margin-top: 5px;
-        overflow: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: 300;
-        padding: 10px;
-        color: #717171;
-        background-color: #f8f8f8;
-        box-sizing: border-box;
-      }
-      + .order-agree {
-        margin-top: 10px;
-      }
-    }
-    @include mq('desktop') {
-      .order-agree {
-        &__title {
-          font-size: 14px;
-        }
-        &__box {
-          margin-top: 15px;
-        }
-        + .order-agree {
-          margin-top: 25px;
-        }
-      }
-    }
-  }
 }
+
+// 주문 이용 약관
+@import '../../components/modal/order/order-agree.scss';

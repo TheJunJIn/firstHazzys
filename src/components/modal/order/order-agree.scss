@@ -1,0 +1,40 @@
+// 주문 이용 약관
+.modal--order-policy {
+  .order-agree {
+    &__title {
+      color: $color-text-emphasize;
+      font-size: 12px;
+      line-height: 22px;
+    }
+    &__box {
+      height: 90px;
+      margin-top: 5px;
+      overflow: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+      padding: 10px;
+      color: #717171;
+      background-color: #f8f8f8;
+      box-sizing: border-box;
+    }
+    + .order-agree {
+      margin-top: 10px;
+    }
+  }
+  @include mq('desktop') {
+    .order-agree {
+      &__title {
+        font-size: 14px;
+      }
+      &__box {
+        margin-top: 15px;
+      }
+      + .order-agree {
+        margin-top: 25px;
+      }
+    }
+  }
+}

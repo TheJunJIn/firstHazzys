@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/member.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--member shell-main--member-column">
+        <div class="main-content main-content--signup-error">
+          <div class="message-card">
+            <div class="message-card__title">
+              <span class="title__text">헤지스닷컴에</span>
+              <span class="title__text">이미 가입하셨어요~</span>
+            </div>
+            <div class="message-card__body">
+              <div class="box">
+                <div class="info">
+                  <span class="info__label">아이디</span>
+                  <span class="info__value">hazzyshazzys123</span>
+                </div>
+                <div class="info">
+                  <span class="info__label">가입일자</span>
+                  <span class="info__value">2021.03.30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="member-form">
+            <div class="member-form__field member-form__submit">
+              <button type="button" class="form-button form-button--main">로그인</button>
+            </div>
+          </div>
+          <div class="member-util">
+            <div class="member-util__help">
+              <a href="#" class="button">아이디/비밀번호 찾기</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/member.js"></script>
+  </body>
+</html>

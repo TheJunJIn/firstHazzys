@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/customer.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--member shell-main--member-row">
+        <div class="main-content">
+          <style>
+            .main-content {
+                margin-top: 100px;
+            }
+            .main-content > .form-button {
+              display: block;
+              width: 80%;
+              margin: 20px auto;
+            }
+          </style>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalInquiryAgree">개인정보 수집 및 이용 동의 팝업</button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalOrderSearch">주문 조회 팝업</button>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- 개인정보 수집 및 이용 동의 #modalInquiryAgree -->
+    @@include('components/modal/customer/inquiry-agree.html')
+
+    <!-- 주문 조회 #modalOrderSearch -->
+    @@include('components/modal/customer/order-search.html')
+
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/customer.js"></script>
+  </body>
+</html>

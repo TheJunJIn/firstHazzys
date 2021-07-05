@@ -1,4 +1,4 @@
-@import './variables';
+@import 'variables.scss';
 @import '../../components/sprites/sprite-common.scss';
 
 $themeColor: #ff781e !default;
@@ -186,7 +186,7 @@ $colors: (
   &.swiper-button-disabled {
     opacity: 0.35;
     cursor: auto;
-    pointer-events: none;
+    // pointer-events: none;
   }
   &:after {
     display: block;
@@ -194,9 +194,7 @@ $colors: (
     line-height: 2;
     white-space: nowrap;
     overflow: hidden;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    background-color: rgba(255, 255, 255, 0.4);
+    @include background-blur;
   }
 }
 .swiper-button-prev,

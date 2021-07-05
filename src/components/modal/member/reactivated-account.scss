@@ -1,0 +1,8 @@
+// 휴면 해제 안내
+.modal--reactivated-account {
+  .message {
+    .message__text + .message__text {
+      margin-top: 20px;
+    }
+  }
+}

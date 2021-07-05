@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/detail.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main">
+        <div class="main-content">
+          <style>
+            .main-content { padding-top: 100px;}
+            .main-content > .form-button {display:block;width:80%;margin:20px auto;}
+          </style>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceDetail">
+            가격안내
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceGuest">
+            로그인 안내 레이어
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalPriceUser">
+            내쿠폰 적용 가격 안내
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalShareSns">
+            공유하기
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalRestockNotificationComplete">
+            재입고 알림신청 완료
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalWishlistAdd">
+            위시리스트 담기
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalWishlistRemove">
+            위시리스트 삭제
+          </button>
+          <button type="button" class="form-button form-button--main" data-modal-open="#modalShoppingbagAdd">
+            쇼핑백 담기
+          </button>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+
+    <!-- 가격안내 #modalPriceDetail -->
+    @@include('components/modal/product/price-detail.html')
+
+    <!-- 로그인 안내 레이어 #modalPriceGuest -->
+    @@include('components/modal/product/price-guest.html')
+
+    <!-- 내쿠폰 적용 가격 안내 #modalPriceUser -->
+    @@include('components/modal/product/price-user.html')
+
+    <!-- 공유하기 #modalShareSns -->
+    @@include('components/modal/product/share-sns.html')
+
+    <!-- 재입고 알림신청 완료 #modalRestockNotificationComplete -->
+    @@include('components/modal/product/restock-notification-complete.html')
+
+    <!-- 위시리스트 담기 #modalWishlistAdd -->
+    @@include('components/modal/product/wishlist-add.html')
+    <!-- 위시리스트 삭제 #modalWishlistRemove -->
+    @@include('components/modal/product/wishlist-remove.html')
+
+    <!-- 쇼핑백 담기 #modalShoppingbagAdd -->
+    @@include('components/modal/product/shoppingbag-add.html')
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+  </body>
+</html>

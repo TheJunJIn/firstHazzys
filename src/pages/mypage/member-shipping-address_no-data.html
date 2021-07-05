@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('pages/_layout/head_meta.html')
+    @@include('pages/_layout/head_link.html')
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/asset/css/mypage.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      @@include('components/header/default.html')
+      <!-- //Header -->
+
+      <!-- Navigation -->
+      @@include('components/navigation/default.html')
+      <!-- //Navigation -->
+
+      <!-- 본문 -->
+      <main class="shell-main shell-main--mypage">
+        @@include('pages/mypage/_partials/main-header.html')
+        <div class="main-content">
+          <div class="main-container main-content__body">
+            <div class="main-content__main main-content__main--member">
+              <div class="main-content__header main-content__header--sub">
+                <h3 class="main-content__title">배송지 관리</h3>
+                <button type="button" class="button main-content__btn-back">
+                  <i class="sprite-icon sprite-common sprite-common-back">뒤로가기</i>
+                </button>
+              </div>
+              <div class="mypage-member-container">
+
+                <div class="shipping-address">
+                  <div class="shipping-address__content">
+                    <div class="no-data">
+                      <i class="sprite-common sprite-common-home-large"></i>
+                      <p class="message">등록된 고객님의 배송지가 없습니다.<br>빠른 주문을 위해 고객님의 배송지를 등록해주세요~</p>
+                      <div class="util">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="shipping-address__submit">
+                    <button type="button" class="form-button form-button--main form-button--single">배송지 추가</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="main-content__aside">
+              <!-- 메뉴 -->
+              @@include('pages/mypage/_partials/sidebar-menu.html', {
+                menuCode: 'M0403'
+              })
+              <!-- // 메뉴 -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //본문 -->
+
+      <!-- Footer -->
+      @@include('components/footer/default.html')
+      <!-- //Footer -->
+    </div>
+
+    <!-- Common Layer -->
+    @@include('pages/_layout/body_modal.html')
+    <!-- // Common Layer -->
+
+    <!-- Page Layer -->
+    <!-- // Page Layer -->
+
+    @@include('pages/_layout/body_script.html')
+    <!-- Page JS -->
+    <script src="/asset/js/mypage.js"></script>
+  </body>
+</html>

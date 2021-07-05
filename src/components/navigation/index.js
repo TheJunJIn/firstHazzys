@@ -1,12 +1,12 @@
-import anime from 'animejs/lib/anime.es.js';
 import UIModule from '../ui-module';
 import Category from './category';
+const anime = window.anime;
+
 const defaults = {
   root: '.shell-navigation',
   containerSelector: '.navigation-container',
   buttonSelector: '[data-nav-toggle]',
-  activeClass: 'active',
-  isActive: false
+  activeClass: 'active'
 };
 
 export default class Navigation extends UIModule {
@@ -21,6 +21,21 @@ export default class Navigation extends UIModule {
       return;
     }
 
+
+    this.viewType = null;
+    this.inProgress = false;
+
+    this.report('viewType').then(({ viewType }) => {
+      this.viewType = viewType;
+    });
+
+    this.listen('viewTypeChanged', async ({ value }) => {
+      this.viewType = value;
+      if (value === 'desktop') {
+        this.reset();
+      }
+    });
+
     const container = root && root.querySelector(options.containerSelector);
     this.category = new Category({ name: 'category' });
 
@@ -28,13 +43,11 @@ export default class Navigation extends UIModule {
       const buttons = document.querySelectorAll(options.buttonSelector);
       buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
-          if (this.enable) {
+          if (!this.inProgress) {
             e.preventDefault();
             const action = button.dataset.navToggle
               ? button.dataset.navToggle
-              : this.isActive
-              ? 'hide'
-              : 'show';
+              : 'toggle';
             try {
               this?.[action]?.();
             } catch (e) {
@@ -46,7 +59,7 @@ export default class Navigation extends UIModule {
       document.addEventListener('keyup', (e) => {
         if ((e.key === 'Escape' || e.key === 'Esc') && this.isActive) {
           const { mobile } = this.category.states;
-          if(mobile.opened.length){
+          if (mobile.opened.length) {
             this.category.out();
           } else {
             this.hide();
@@ -55,19 +68,20 @@ export default class Navigation extends UIModule {
       });
     }
     this.container = container;
-    this.enable = true;
+  }
 
-    this.listen('viewTypeChanged', async ({ value, oldValue }) => {
-      const enable = value === 'mobile' ? true : false;
-      if (!enable && oldValue) {
-        await this.reset();
-      }
-      this.enable = enable;
-    });
+  get isActive(){
+    return this.root.classList.contains(this.options.activeClass);
   }
   async show(withoutAnimation = false) {
     const { root, container, options } = this;
-    this.enable = false;
+
+    if (this.viewType !== 'mobile' || this.inProgress || this.isActive) {
+      return false;
+    }
+
+    this.inProgress = true;
+
     if (!withoutAnimation) {
       anime({
         targets: root,
@@ -89,13 +103,18 @@ export default class Navigation extends UIModule {
       }).finished;
     }
     root.classList.add(options.activeClass);
-    this.isActive = true;
-    this.enable = true;
-    this.shout('UI', 'scrollLock');
+    this.inProgress = false;
+    this.shout('scrollLock', 'lock');
   }
   async hide(withoutAnimation = false) {
     const { root, container, options } = this;
-    this.enable = false;
+
+    if (!this.isActive) {
+      return false;
+    }
+
+    this.inProgress = true;
+
     if (!withoutAnimation) {
       await anime({
         targets: container,
@@ -118,11 +137,19 @@ export default class Navigation extends UIModule {
         }
       }).finished;
     }
+
     root.classList.remove(options.activeClass);
-    this.isActive = false;
-    this.enable = true;
-    this.shout('UI', 'scrollRelease');
+    this.inProgress = false;
+    this.shout('scrollLock', 'release');
+
     this.category.reset('mobile');
+  }
+  toggle() {
+    if (this.isActive) {
+      this.hide();
+    } else {
+      this.show();
+    }
   }
   async reset() {
     const { root, container } = this;

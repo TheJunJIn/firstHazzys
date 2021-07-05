@@ -1,298 +1,39 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '../../cmsstatic/asset/fonts/gotham/index';
-@import '../../cmsstatic/asset/fonts/noto-sans/index.scss';
-@import '_reset.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'webfont.scss';
+@import 'reset.scss';
 
 @import '../../components/sprites/sprite-common.scss';
 @include sprites($sprite-common-sprites);
-@import '../../components/sprites/sprite-order.scss';
-@import '../../components/header/index.scss';
-@import '../../components/navigation/index.scss';
-@import '../../components/footer/index.scss';
-@import '../../components/top-button/index.scss';
-
+@import 'swiper.scss';
 .sprite-icon {
   display: inline-block;
-  text-indent: 100%;
-  line-height: 2;
-  overflow: hidden;
-  white-space: nowrap;
+  @include text-hidden;
 }
+
+// Form 요소
+@import '../../components/form/index.scss';
+
+// Header
+@import '../../components/header/index.scss';
+// Navagation
+@import '../../components/navigation/index.scss';
+// Sidebar
+@import '../../components/sidebar/index.scss';
+// Footer
+@import '../../components/footer/index.scss';
+// Top 버튼
+@import '../../components/top-button/index.scss';
+// Loading
+@import '../../components/loading/index.scss';
+// Modal
+@import '../../components/modal/index.scss';
+// Badge
+@import '../../components/badge/index.scss';
+
+
 .shell-main {
   padding-top: 60px;
-}
-
-// TODO - 각 페이지에서 사용하는 css로 이동
-@import '../../components/form/index.scss';
-@import '../../components/table/index.scss';
-@import '../../components/accordion/index.scss';
-@import '../../components/modal/index.scss';
-
-
-@keyframes badgeGuide {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  20%,
-  70% {
-    opacity: 1;
-  }
-}
-.hazzys-badge {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  border-radius: 100%;
-  transform-origin: center;
-  perspective: 150rem;
-  transition: all 0.6s cubic-bezier(0.78, 0.3, 0.24, 0.65);
-  display: inline-block;
-  text-decoration: none;
-
-  &__front,
-  &__back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    backface-visibility: hidden;
-    transition: all .6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-  &__back {
-    opacity: 0;
-    transform: rotateY(180deg);
-  }
-  &__guide {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
-    font-weight: 300;
-    padding: 2px 12px 0 14px;
-    height: 24px;
-    line-height: 22px;
-    color: #fff;
-    white-space: nowrap;
-    border-radius: 14px;
-    box-sizing: border-box;
-    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.4);
-    transform-origin: center;
-    transition: all .6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    animation: badgeGuide 3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    animation-iteration-count: 1;
-    opacity: 0;
-  }
-  &.reverse {
-    transform: rotateY(180deg);
-    .hazzys-badge__front {
-      opacity: 0;
-    }
-    .hazzys-badge__back {
-      opacity: 1;
-      backface-visibility: visible;
-    }
-    .hazzys-badge__guide {
-      opacity: 0;
-      animation: none;
-    }
-  }
-
-  .badge-name {
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .badge-state {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
-    font-weight: 300;
-    padding: 2px 7px 0 7px;
-    height: 24px;
-    line-height: 22px;
-    color: #fff;
-    white-space: nowrap;
-    border-radius: 14px;
-    box-sizing: border-box;
-    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .badge-date {
-    position: absolute;
-    right: 1px;
-    top: 2px;
-    border: 1px solid $color-line-point;
-    border-radius: 15px;
-    background: #fff;
-    height: 20px;
-    padding: 1px 7px 0;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    color: $color-text-point;
-    white-space: nowrap;
-    box-sizing: border-box;
-  }
-  .badge-count {
-    position: absolute;
-    right: 6px;
-    top: 6px;
-    border: 1px solid #fff;
-    border-radius: 15px;
-    background: #000;
-    height: 20px;
-    padding: 1px 4px 0;
-    min-width: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    color: #fff;
-    white-space: nowrap;
-    box-sizing: border-box;
-  }
-  .badge-content {
-    padding: 0 15px;
-    width: 100%;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: center;
-    color: #fff;
-    box-sizing: border-box;
-    img {
-      width: 100%;
-    }
-  }
-  &.hazzys-badge--special {
-    &:before {
-      content: '';
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      border-radius: 100%;
-      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
-      @include sprite($common-special);
-      z-index: 2;
-    }
-    .badge-date {
-      right: 24px;
-    }
-  }
-
-  // 마이페이지 메인 배지 (배지 디자인 완료 후 개별 스타일 적용 )
-  &.hazzys-badge--intro {
-    width: 120px;
-    height: 120px;
-    transition: none;
-    .badge-content {
-      padding: 0;
-    }
-
-    .hazzys-badge__front,
-    .hazzys-badge__back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      backface-visibility: hidden;
-      transition: all .2s cubic-bezier(0.8, -0.4, 0.2, 1.7);
-      // transition: none;
-    }
-    .hazzys-badge__back {
-      opacity: 1;
-      transform: rotateY(-180deg);
-    }
-  }
-  // 배지 획득 (배지 디자인 완료 후 개별 스타일 적용 )
-  &.hazzys-badge--obtain {
-    transition: none;
-    .badge-content {
-      padding: 0;
-    }
-
-    .hazzys-badge__front,
-    .hazzys-badge__back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      backface-visibility: hidden;
-      transition: all .2s cubic-bezier(0.8, -0.4, 0.2, 1.7);
-    }
-    .hazzys-badge__back {
-      opacity: 1;
-      transform: rotateY(-180deg);
-    }
-  }
-
-  // 구매, 리뷰 배지 (배지 디자인 완료 후 개별 스타일 적용 )
-  &.hazzys-badge--mission {
-    width: 94px;
-    height: 94px;
-    box-shadow: 0 15px 15px 0 rgba(248, 152, 0, 0.3);
-  }
-
-  // 회원 배지 색상
-  &.hazzys-badge--member-white {
-    box-shadow: 0 20px 20px 0 rgba(199, 176, 142, 0.3);
-    border: solid 1px rgba(255, 255, 255, 0.5);
-    background-color: #f2ebdd;
-    .badge-content {
-      color: $color-text-emphasize;
-    }
-    &.hazzys-badge--small {
-      box-shadow: 0 4px 4px 0 rgba(199, 176, 142, 0.3);
-    }
-  }
-  &.hazzys-badge--member-blue {
-    box-shadow: 0 20px 20px 0 rgba(67, 82, 129, 0.3);
-    border: solid 1px rgba(255, 255, 255, 0.5);
-    background-color: #0086ff;
-    &.hazzys-badge--small {
-      box-shadow: 0 4px 4px 0 rgba(67, 82, 129, 0.3);
-    }
-  }
-  &.hazzys-badge--member-red {
-    box-shadow: 0 20px 20px 0 rgba(178, 52, 29, 0.3);
-    border: solid 1px rgba(255, 255, 255, 0.5);
-    background-color: #ff2800;
-    &.hazzys-badge--small {
-      box-shadow: 0 4px 4px 0 rgba(178, 52, 29, 0.3);
-    }
-  }
-  &.hazzys-badge--member-purple {
-    box-shadow: 0 20px 20px 0 rgba(103, 28, 158, 0.3);
-    border: solid 1px rgba(255, 255, 255, 0.5);
-    background-color: #7400ff;
-    &.hazzys-badge--small {
-      box-shadow: 0 4px 4px 0 rgba(103, 28, 158, 0.3);
-    }
-  }
-  &.hazzys-badge--member-black-s {
-    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
-    border: solid 1px rgba(255, 255, 255, 0.5);
-    background-color: #212121;
-    &.hazzys-badge--small {
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-    }
-  }
-  &.hazzys-badge--member-black-r {
-    box-shadow: 0 20px 20px 0 rgba(185, 86, 21, 0.3);
-    border: solid 1px rgba(255, 255, 255, 0.5);
-    background-color: #ff781e;
-    &.hazzys-badge--small {
-      box-shadow: 0 4px 4px 0 rgba(185, 86, 21, 0.3);
-    }
-  }
 }
 
 // 에러 페이지
@@ -322,44 +63,5 @@
   }
   @include mq('desktop') {
     margin-top: 100px;
-  }
-}
-
-.loading {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.3s 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  
-
-  &__icon {
-    position: relative;
-    width: 170px;
-    height: 170px;
-    border-radius: 100%;
-    // background-color: rgba(255, 255, 255, 0.6);
-    .svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      fill: none;
-      stroke: #000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width:2px;
-    }
-  }
-  &.active {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
 }

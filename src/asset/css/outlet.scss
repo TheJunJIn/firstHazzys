@@ -1,8 +1,6 @@
-@import '_variables.scss';
-@import '_mixins.scss';
-@import '_swiper.scss';
-@import '_ui-slider.scss';
-@import '_aos.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'ui-slider.scss';
 @import '../../components/sidebar/index.scss';
 @import '../../components/sprites/sprite-common.scss';
 @import '../../components/navigation/list-category.scss';
@@ -217,9 +215,7 @@
       overflow: auto;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
+      @include background-blur(4px, 0.8);
       box-sizing: border-box;
       &__item {
         width: auto;
@@ -366,9 +362,7 @@
       width: 375px;
       height: 100%;
       padding-top: 210px;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.8);
+      @include background-blur(4px, 0.8);
       box-sizing: border-box;
       z-index: 11;
       &__text {
@@ -422,6 +416,13 @@
 }
 
 @include mq('desktop') {
+  .shell-main--outlet {
+    .main-header {
+      &__title {
+        display: none;
+      }
+    }
+  }
   .shell-main--outlet-home {
     .main-header {
       &__title {

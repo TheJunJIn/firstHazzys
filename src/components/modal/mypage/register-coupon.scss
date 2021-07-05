@@ -1,0 +1,13 @@
+// 나의 쿠폰 등록
+.modal--register-coupon {
+  .message__text {
+    color: $color-text-emphasize;
+  }
+  .coupon-register-form {
+    margin-top: 20px;
+    .form-text {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}

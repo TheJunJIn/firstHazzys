@@ -1,0 +1,28 @@
+// 약관 보기
+.modal--policy-view {
+  .modal__footer {
+    margin-top: 5px;
+  }
+  .policy {
+    &__content {
+      overflow: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      font-size: 12px;
+      line-height: 22px;
+      font-weight: 300;
+      box-sizing: border-box;
+      height: 220px;
+      padding: 10px;
+      color: #717171;
+      background-color: #f8f8f8;
+    }
+  }
+  @include mq('desktop') {
+    .modal__header {
+      .modal__header__title {
+        line-height: 34px;
+      }
+    }
+  }
+}
